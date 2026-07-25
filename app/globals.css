@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --foreground: 0, 0%, 0%;
-  --background: 0, 0%, 100%;
+  --color-elindo: #296462;
+  --color-dark-gray: #262626;
+  --color-gray: #39414d;
+  --color-light-gray: #f4f4f4;
 }
 
 * {
@@ -15,10 +19,92 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--color-dark-gray);
+  background-color: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-gray);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-elindo);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-dark-gray);
+}
+
+.container-x {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-x {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-elindo);
+  color: white;
+  padding: 0.875rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid var(--color-elindo);
+}
+
+.btn-primary:hover {
+  background-color: #1f4e4c;
+  border-color: #1f4e4c;
+  color: white;
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-elindo);
+  padding: 0.875rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  border: 2px solid var(--color-elindo);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-elindo);
+  color: white;
+}
+
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }

@@ -1,9 +1,25 @@
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import About from './components/About';
+import Properties from './components/Properties';
+import WhyUs from './components/WhyUs';
+import CtaBanner from './components/CtaBanner';
+import Footer from './components/Footer';
+
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center text-primary px-4">
-        HALLO ALI
-      </h1>
-    </div>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Properties />
+        <WhyUs />
+        <CtaBanner />
+      </main>
+      <Footer />
+    </>
   );
 }
