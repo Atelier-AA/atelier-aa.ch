@@ -4,6 +4,7 @@ import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
 import { kontaktFragen } from '@/data/insights';
 import FragenAntworten from '@/components/insights/FragenAntworten';
+import KontaktFormular from '@/components/kontakt/KontaktFormular';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -104,6 +105,17 @@ export default function KontaktPage() {
             </div>
           </div>
         </div>
+
+        <section className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
+          <h2 className="mb-4 text-2xl md:text-3xl font-light text-ink">
+            Schreiben Sie uns
+          </h2>
+          <p className="mb-10 text-graphite leading-relaxed">
+            Je konkreter Ihre Angaben, desto genauer können wir antworten. Ort, Art
+            des Vorhabens und Zeithorizont helfen uns am meisten.
+          </p>
+          <KontaktFormular />
+        </section>
 
         <div className="max-w-3xl">
           <FragenAntworten fragen={kontaktFragen} titel="Häufige Fragen" />

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
 
@@ -70,24 +71,100 @@ export default function ImpressumPage() {
             </section>
 
             <section>
-              <h2 className="text-xs uppercase tracking-widest text-stone mb-3">
-                Haftungsausschluss
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Zweck der Gesellschaft
               </h2>
               <p>
-                Die Inhalte dieser Webseite werden mit grösstmöglicher Sorgfalt
-                erstellt. Der Autor übernimmt jedoch keine Gewähr für die Richtigkeit,
-                Vollständigkeit und Aktualität der bereitgestellten Inhalte.
+                Projektentwicklung, Konzeption, Entwurf, Planung und Realisierung von
+                Bauvorhaben aller Art, Kauf, Verkauf, Verwaltung und Vermittlung von
+                Immobilien sowie das Erbringen von Immobiliendienstleistungen aller Art.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xs uppercase tracking-widest text-stone mb-3">
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Aufsicht und Berufsausübung
+              </h2>
+              <p>
+                Die Berufsbezeichnung «Architekt» ist in der Schweiz kantonal geregelt.
+                Wir erbringen unsere Leistungen nach den Ordnungen des Schweizerischen
+                Ingenieur- und Architektenvereins (SIA), insbesondere SIA 102 für
+                Leistungen und Honorare der Architektinnen und Architekten.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Haftungsausschluss
+              </h2>
+              <p>
+                Die Inhalte dieser Website werden mit grösstmöglicher Sorgfalt erstellt.
+                Für die Richtigkeit, Vollständigkeit und Aktualität übernehmen wir jedoch
+                keine Gewähr. Angaben zu Kosten, Fristen und Verfahren sind
+                Erfahrungswerte und keine Zusicherung; verbindlich sind allein
+                Angebote und Verträge im Einzelfall.
+              </p>
+              <p className="mt-4">
+                Haftungsansprüche wegen Schäden materieller oder immaterieller Art, die
+                aus dem Zugriff auf oder der Nutzung dieser Website entstehen, sind
+                ausgeschlossen, soweit nicht Vorsatz oder grobe Fahrlässigkeit vorliegt.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Verweise auf fremde Websites
+              </h2>
+              <p>
+                Diese Website enthält Links zu Websites Dritter, unter anderem zu unserem
+                Immobilienpartner Elindo Immobilien GmbH. Für deren Inhalte sind
+                ausschliesslich die jeweiligen Anbieter verantwortlich. Zum Zeitpunkt der
+                Verlinkung waren keine rechtswidrigen Inhalte erkennbar; eine dauernde
+                inhaltliche Kontrolle ist ohne konkreten Anlass nicht zumutbar.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
                 Urheberrecht
               </h2>
               <p>
-                Alle Bilder, Texte und weiteren Inhalte auf dieser Webseite sind
-                urheberrechtlich geschützt. Eine Verwendung bedarf der schriftlichen
-                Zustimmung der Atelier AA Architekten GmbH.
+                Alle Inhalte dieser Website — Texte, Bilder, Pläne, Visualisierungen und
+                das Logo — sind urheberrechtlich geschützt. Eine Verwendung,
+                Vervielfältigung oder Weitergabe bedarf der vorherigen schriftlichen
+                Zustimmung der {firma.name}.
+              </p>
+              <p className="mt-4">
+                Die Rechte an den abgebildeten Projektfotografien liegen bei der
+                {' '}{firma.name} beziehungsweise bei den jeweiligen Fotografinnen und
+                Fotografen.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Datenschutz
+              </h2>
+              <p>
+                Informationen zur Bearbeitung Ihrer Personendaten finden Sie in unserer{' '}
+                <Link
+                  href="/datenschutzerklaerung"
+                  className="underline underline-offset-4 transition-colors hover:text-ink"
+                >
+                  Datenschutzerklärung
+                </Link>
+                .
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Anwendbares Recht und Gerichtsstand
+              </h2>
+              <p>
+                Es gilt ausschliesslich schweizerisches Recht. Gerichtsstand ist der Sitz
+                der Gesellschaft in {firma.ort}, soweit keine zwingenden gesetzlichen
+                Bestimmungen entgegenstehen.
               </p>
             </section>
           </div>

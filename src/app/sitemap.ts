@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { projekte } from '@/data/projekte';
 import { insights } from '@/data/insights';
+import { team } from '@/data/team';
 
 const BASIS = 'https://www.atelier-aa.ch';
 
@@ -43,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(i.datum),
       changeFrequency: 'yearly' as const,
       priority: 0.6,
+    })),
+    ...team.map((m) => ({
+      url: `${BASIS}/ueber-uns/${m.slug}`,
+      lastModified: heute,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
     })),
   ];
 }

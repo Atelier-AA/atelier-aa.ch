@@ -22,8 +22,11 @@ Ordner `src/data/` zu bearbeiten.
 9. [Design nicht kaputt machen](#9-design-nicht-kaputt-machen)
 10. [Für Gemini und KI-Suche optimieren](#10-für-gemini-und-ki-suche-optimieren)
 11. [Firmenangaben ändern](#11-firmenangaben-ändern)
-12. [Claude-Skills zum Delegieren](#12-claude-skills-zum-delegieren)
-13. [Offene Punkte](#13-offene-punkte)
+12. [Elindo Immobilien als Partner](#12-elindo-immobilien-als-partner)
+13. [Rechtliche Seiten](#13-rechtliche-seiten)
+14. [Claude-Skills zum Delegieren](#14-claude-skills-zum-delegieren)
+15. [Dieses Handbuch aktualisieren](#15-dieses-handbuch-aktualisieren)
+16. [Offene Punkte](#16-offene-punkte)
 
 ---
 
@@ -75,6 +78,10 @@ git add -A
 git commit -m "Kurze Beschreibung, was geändert wurde"
 git push
 ```
+
+**Zuletzt: Handbuch aktualisieren.** Wenn die Änderung etwas an den Abläufen,
+Pfaden oder Regeln ändert, gehört das hier hinein — siehe
+[Abschnitt 15](#15-dieses-handbuch-aktualisieren).
 
 > **Warum die ganze Seite prüfen?** Inhalte werden mehrfach verwendet. Ein
 > Projekt erscheint auf der Projektseite, in „Weitere Projekte" unter jedem
@@ -128,9 +135,33 @@ bestimmt die Anzeige):
   kanton: 'ZH',                          // Kürzel, erscheint als "AFFOLTERN AM ALBIS ZH"
   kunde: 'Muster AG',                    // oder null, wenn nicht genannt werden darf
   jahr: '2026',
+  typ: 'Mehrfamilienhaus',               // Gebäudekategorie, wichtig für die Suche
+  leistungen: [                          // was wir in diesem Projekt gemacht haben
+    'Entwurf',
+    'Baugesuch',
+    'Ausführungsplanung',
+    'Bauleitung',
+  ],
   beschreibung:
-    'Zwei bis drei Sätze über das Projekt. Was war die Aufgabe, was ist die '
-    + 'Antwort darauf. Nüchtern, ohne Werbesprache.',
+    'Zwei bis drei Sätze für Übersicht und Suchergebnis. Ort und Kanton '
+    + 'ausschreiben — danach wird gesucht.',
+  abschnitte: [                          // 3 bis 4 Abschnitte, siehe unten
+    {
+      titel: 'Die Aufgabe',
+      absaetze: ['Erster Absatz.', 'Zweiter Absatz.'],
+    },
+  ],
+  daten: [                               // Eckdaten-Tabelle
+    { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
+    { label: 'Bauweise', wert: 'Massivbau' },
+    { label: 'Status', wert: 'In Realisierung' },
+  ],
+  fragen: [                              // 2 bis 3 Fragen zum Projekttyp
+    {
+      frage: 'Wie lange dauert ein Mehrfamilienhaus?',
+      antwort: 'Zwei bis vier Sätze, erster Satz beantwortet die Frage.',
+    },
+  ],
   thumbnail: '/images/projekte/wohnhaus-baerenweg/thumb.jpg',
   heroImage: '/images/projekte/wohnhaus-baerenweg/hero.jpg',
   galerie: [
@@ -139,9 +170,30 @@ bestimmt die Anzeige):
     '/images/projekte/wohnhaus-baerenweg/03.jpg',
     '/images/projekte/wohnhaus-baerenweg/04.jpg',
   ],
-  featured: true,                        // true = erscheint auch auf der Expertise-Seite
+  featured: true,                        // true = erscheint auf Startseite und Expertise
 },
 ```
+
+### Die Textabschnitte — der wichtigste Teil
+
+Eine Projektseite, die nur aus Bildern und drei Zeilen besteht, wird von
+Suchmaschinen und KI-Systemen nicht als Quelle herangezogen. Schreiben Sie
+deshalb **drei bis vier Abschnitte** mit je zwei Absätzen. Bewährte Gliederung:
+
+| Abschnitt | Inhalt |
+|---|---|
+| Die Aufgabe | Was war gefordert, was gab der Ort her, welche Konflikte bestanden |
+| Volumen / Lösung | Wie haben wir darauf geantwortet und warum so |
+| Grundrisse | Wie ist innen organisiert, für wen |
+| Konstruktion und Nachhaltigkeit | Bauweise, Materialien, Wärmeerzeugung |
+
+Schreiben Sie **Ortsnamen, Kanton und Gebäudetyp aus**: «Mehrfamilienhaus in
+Untersiggenthal im Kanton Aargau» statt «das Projekt». Genau danach wird
+gesucht — bei Google und in KI-Anfragen.
+
+Die **Fragen** funktionieren wie bei den Insights (siehe
+[Abschnitt 5](#5-neuen-insights-beitrag-schreiben)): so formuliert, wie eine
+Bauherrschaft sie stellt, erster Satz beantwortet sie.
 
 Wichtig zu den Feldern:
 
@@ -158,7 +210,9 @@ Wichtig zu den Feldern:
 Die neue Seite entsteht automatisch unter `/referenzen/<slug>`. Kontrolliere:
 
 - [ ] `/projekte` — neue Kachel da, Bild lädt, Titel und Ort richtig
-- [ ] `/referenzen/<slug>` — Detailseite komplett
+- [ ] `/referenzen/<slug>` — Detailseite komplett: Abschnitte, Eckdaten,
+      Leistungen, Q&A aufklappbar
+- [ ] `/` — Startseite, falls `featured: true` (erste drei erscheinen dort)
 - [ ] `/expertise` — falls `featured: true`
 - [ ] Unter einem **anderen** Projekt bei „Weitere Projekte"
 - [ ] Mobil bei 390px
@@ -170,9 +224,14 @@ automatisch aus `projekte.ts`.
 
 ## 4. Neue Mitarbeiterin oder neuen Mitarbeiter ergänzen
 
+Jede Person hat eine eigene Unterseite unter `/ueber-uns/<slug>`, die beim
+Klick auf das Porträt geöffnet wird.
+
 ### Schritt 1: Foto vorbereiten
 
-- **Quadratisch zuschneiden** (1:1), ca. 800×800 px
+- **Quadratisch zuschneiden** (1:1), ca. 800×800 px. Angezeigt wird ein
+  Ausschnitt im Verhältnis 3:4 — lassen Sie oben und unten Luft, damit beim
+  Beschnitt nichts Wichtiges verloren geht.
 - Möglichst gleiche Bildsprache wie die bestehenden Porträts: gleicher
   Hintergrund, ähnlicher Ausschnitt, ähnliche Helligkeit. Ein Foto, das
   herausfällt, sieht im Raster sofort falsch aus.
@@ -186,11 +245,26 @@ automatisch aus `projekte.ts`.
 
 ```ts
 {
+  slug: 'celine-mueller',                // Adresse: /ueber-uns/celine-mueller
   name: 'Céline Müller',
   rolle: 'Architektin',
   bild: '/images/team/celine-mueller.jpg',
+  kurz: 'Ein Satz, was diese Person im Büro verantwortet.',
+  schwerpunkte: [                        // 3 bis 4 Fachgebiete
+    'Ausführungsplanung',
+    'Detailentwicklung',
+    'Materialisierung',
+  ],
+  absaetze: [                            // 2 bis 3 Absätze zu Werdegang und Haltung
+    'Erster Absatz: Was macht diese Person, in welcher Projektphase.',
+    'Zweiter Absatz: Woran sie besonders interessiert ist.',
+  ],
+  email: null,                            // eigene Adresse oder null (dann Bürokontakt)
 },
 ```
+
+Der `slug` muss **kleingeschrieben, mit Bindestrich und ohne Umlaute** sein und
+darf nicht doppelt vorkommen.
 
 Die Reihenfolge in der Datei ist die Reihenfolge auf der Seite. Geschäftsführung
 steht zuoberst.
@@ -199,16 +273,31 @@ steht zuoberst.
 `Geschäftsführer, Dipl. Architekt` · `Architektin` · `Architekt` ·
 `Bauleiter` · `Praktikantin`
 
+### Was in die Texte gehört
+
+Die Personenseiten sind kein Lebenslauf. Zwei bis drei Absätze genügen, aber sie
+sollen etwas sagen: In welcher Projektphase arbeitet diese Person, was
+interessiert sie fachlich, wie geht sie an eine Aufgabe heran. Ein Satz in
+direkter Rede lockert auf, ist aber kein Muss.
+
+Fachliche Schwerpunkte helfen zusätzlich der Auffindbarkeit — sie erscheinen als
+`knowsAbout` in den strukturierten Daten und ordnen die Person einem Fachgebiet
+zu.
+
 ### Schritt 3: Prüfen
 
 - [ ] `/ueber-uns` — Foto lädt, Name und Rolle richtig geschrieben
+- [ ] **Hover über das Porträt** — Bild vergrössert sich leicht, Pfeil erscheint
+- [ ] Klick öffnet `/ueber-uns/<slug>` — Text, Schwerpunkte und Kontakt stimmen
+- [ ] Auf der Personenseite unten: die anderen drei Porträts sind verlinkt
 - [ ] Das Raster ist noch ausgeglichen (bei 4 oder 8 Personen sieht es am
       besten aus; bei 5 entsteht eine Lücke — das ist normal)
 - [ ] Mobil
 
 **Wenn jemand das Büro verlässt:** Eintrag aus `team.ts` entfernen **und** die
 Bilddatei löschen. Ein Foto, das im Netz bleibt, obwohl die Person gegangen
-ist, kann datenschutzrechtlich problematisch sein.
+ist, kann datenschutzrechtlich problematisch sein. Die Unterseite verschwindet
+automatisch.
 
 ---
 
@@ -306,7 +395,36 @@ Regeln für die Antworten:
 
 ## 6. Startseite ändern
 
-Die Startseite besteht aus zwei Teilen:
+Die Startseite besteht aus zehn Abschnitten. Sie werden in
+`src/app/page.tsx` zusammengesetzt; die Inhalte stehen grösstenteils in
+`src/data/startseite.ts`.
+
+| Reihenfolge | Abschnitt | Inhalt bearbeiten in |
+|---|---|---|
+| 1 | Bildbereich (Slider) | `src/components/home/HeroSlider.tsx` |
+| 2 | Haltung / Einleitung | `src/components/home/IntroSection.tsx` |
+| 3 | Leistungen | `src/data/startseite.ts`, `leistungen` |
+| 4 | Referenzen | automatisch: `featured: true` in `projekte.ts` |
+| 5 | Ablauf in vier Phasen | `src/data/startseite.ts`, `ablauf` |
+| 6 | Einsatzgebiet und Zahlen | `src/data/startseite.ts`, `regionen`, `zahlen` |
+| 7 | Insights | automatisch: die drei neuesten Beiträge |
+| 8 | Immobilienpartner Elindo | `src/data/partner.ts` |
+| 9 | Häufige Fragen | `src/data/startseite.ts`, `startseiteFragen` |
+| 10 | Kontakt | `src/components/home/KontaktSection.tsx` |
+
+Die Reihenfolge zu ändern heisst, in `src/app/page.tsx` die Zeilen zu
+verschieben. Abschnitte 3 bis 9 können ohne Weiteres umgestellt werden;
+Bildbereich (1) und Kontakt (10) sollten an ihrer Stelle bleiben.
+
+**Wichtig beim Einsatzgebiet:** Die Ortsliste in `regionen` ist der Grund, warum
+Suchanfragen wie «Architekt Affoltern am Albis» oder «Architekturbüro Baar»
+funktionieren. Nehmen Sie nur Orte auf, in denen Sie wirklich arbeiten — eine
+aufgeblähte Liste wird von Google als Spam gewertet.
+
+**Zu den Kundenstimmen:** In `startseite.ts` sind `stimmen` und `zeigeStimmen`
+vorbereitet, aber deaktiviert. Erfundene Bewertungen sind nach dem Gesetz gegen
+den unlauteren Wettbewerb unzulässig. Erst echte Rückmeldungen mit schriftlicher
+Freigabe einsetzen, dann `zeigeStimmen` auf `true` setzen.
 
 ### Der Bildbereich oben (Slider)
 
@@ -346,6 +464,9 @@ stehen direkt im Text — hier darf geändert werden, aber der Ton sollte bleibe
 - [ ] Klick auf die Projektbezeichnung führt zum richtigen Projekt
 - [ ] **Mobil**: Logo und Menü sind über dem Bild lesbar
 - [ ] Nach unten scrollen: Logo schrumpft zum „A", Kopfzeile wird weiss
+- [ ] Alle zehn Abschnitte einmal durchscrollen — keine leeren Bereiche
+- [ ] Q&A aufklappen
+- [ ] Der Elindo-Link öffnet sich in einem neuen Tab
 
 ---
 
@@ -391,16 +512,20 @@ noch auftaucht, bevor du es löschst.
 | Was du ändern willst | Datei |
 |---|---|
 | Projekte (alle Angaben) | `src/data/projekte.ts` |
-| Team | `src/data/team.ts` |
+| Team und Personenseiten | `src/data/team.ts` |
 | Insights-Beiträge | `src/data/insights.ts` |
 | Fragen auf der Kontaktseite | `src/data/insights.ts`, Liste `kontaktFragen` |
+| Leistungen, Ablauf, Regionen, Zahlen, Startseiten-Fragen | `src/data/startseite.ts` |
+| Expertise-Inhalte und deren Fragen | `src/data/expertise.ts` |
+| Elindo Immobilien (Adresse, Leistungen) | `src/data/partner.ts` |
 | Adresse, Telefon, E-Mail, UID | `src/data/firma.ts` |
 | Menüpunkte | `src/data/navigation.ts` |
-| Text der Startseite | `src/components/home/IntroSection.tsx` |
+| Text der Startseite (Einleitung) | `src/components/home/IntroSection.tsx` |
 | Slider der Startseite | `src/components/home/HeroSlider.tsx` |
+| Reihenfolge der Startseiten-Abschnitte | `src/app/page.tsx` |
 | Text „Über uns" | `src/app/ueber-uns/page.tsx` |
-| Text „Expertise" | `src/app/expertise/page.tsx` |
 | Text „offene Stellen" | `src/components/ueber-uns/OffeneStellen.tsx` |
+| Kontaktformular | `src/components/kontakt/KontaktFormular.tsx` |
 | Impressum | `src/app/impressum/page.tsx` |
 | Datenschutzerklärung | `src/app/datenschutzerklaerung/page.tsx` |
 
@@ -425,6 +550,8 @@ public/
     │   └── vorname-nachname.jpg        Porträt, quadratisch
     ├── insights/
     │   └── <thema>.jpg                 Beitragsbild, querformat
+    ├── expertise/
+    │   └── <thema>.jpg                 Bild im Themenblock, 4:3
     └── kontakt/
         └── kontakt-hero.jpg            Titelbild Kontaktseite
 ```
@@ -632,7 +759,77 @@ local.ch führten noch die veraltete Bachstrasse 29.
 
 ---
 
-## 12. Claude-Skills zum Delegieren
+## 12. Elindo Immobilien als Partner
+
+Elindo Immobilien GmbH in Zug ist unser Immobilienpartner für Bewertung,
+Marktbeurteilung und Vermarktung. Beide Unternehmen sind **rechtlich und
+wirtschaftlich eigenständig** und arbeiten projektbezogen zusammen.
+
+Alle Angaben stehen in `src/data/partner.ts`. Verlinkt ist Elindo an drei
+Stellen:
+
+| Stelle | Datei |
+|---|---|
+| Startseite, Abschnitt „Immobilienpartner" | `src/components/home/PartnerSection.tsx` |
+| Expertise, Abschnitt „Bewertung und Vermarktung" | `src/app/expertise/page.tsx` |
+| Insights-Beitrag zur Partnerschaft | `src/data/insights.ts` |
+
+### Was bei Erwähnungen zu beachten ist
+
+- **Immer erkennbar machen, dass es zwei Unternehmen sind.** Formulierungen wie
+  „unsere Immobilienabteilung" wären irreführend und rechtlich riskant.
+- Externe Links tragen `target="_blank"` und `rel="noopener"`.
+- Kein `rel="sponsored"` oder `nofollow` — es ist keine bezahlte Platzierung.
+- Wenn sich Elindos Leistungen oder Adresse ändern, nur `partner.ts` anpassen.
+
+### Warum das für Anfragen nützt
+
+Die Verweise sprechen Menschen an, die ein Grundstück besitzen oder verkaufen
+wollen und noch nicht wissen, ob sie bauen oder verkaufen sollen. Diese Gruppe
+findet über Elindo zu uns und umgekehrt. Für den Umkehrweg wäre eine
+Verlinkung von elindo.ch auf atelier-aa.ch sinnvoll — das muss dort eingerichtet
+werden.
+
+---
+
+## 13. Rechtliche Seiten
+
+### Impressum
+
+`src/app/impressum/page.tsx`. Enthält Firma, Kontakt, Unternehmensdaten,
+Gesellschaftszweck, Berufsausübung, Haftungsausschluss, Verweise auf fremde
+Websites, Urheberrecht, Datenschutz-Hinweis und Gerichtsstand. Adresse und UID
+kommen aus `firma.ts`.
+
+### Datenschutzerklärung
+
+`src/app/datenschutzerklaerung/page.tsx`, aufgebaut nach dem revidierten
+Schweizer Datenschutzgesetz mit zwölf Abschnitten.
+
+**Zwei Abschnitte müssen an den tatsächlichen Betrieb angepasst werden:**
+
+| Abschnitt | Was zu prüfen ist |
+|---|---|
+| 3. Hosting und Server-Logfiles | Anbieter und Serverstandort eintragen. Bei Vercel liegt eine Auftragsbearbeitung mit US-Bezug vor — das muss benannt werden. |
+| 8. Schriften und externe Dienste | Gilt nur, solange die Schrift lokal ausgeliefert wird. Wird ein externer Dienst eingebaut (Karten, Videos, Analytics), muss der Abschnitt erweitert werden. |
+
+**Wichtig:** Das Datum „Stand" oben auf der Seite bei jeder inhaltlichen
+Änderung mitpflegen (Variable `stand` in der Datei).
+
+**Beide Seiten vor der Veröffentlichung juristisch prüfen lassen.** Die Texte
+sind sorgfältig aufgebaut, aber keine Rechtsberatung.
+
+### Wann die Datenschutzerklärung angepasst werden muss
+
+- Sobald das Kontaktformular tatsächlich versendet (Empfänger, Dienstleister)
+- Bei Einbau von Analytics, Google Maps, eingebetteten Videos oder Schriften
+  von externen Servern
+- Bei einem Wechsel des Hosting-Anbieters
+- Bei einem Newsletter oder einem Bewerbungsportal
+
+---
+
+## 14. Claude-Skills zum Delegieren
 
 Skills sind gespeicherte Arbeitsanweisungen, die du mit `/name` aufrufst. Sie
 liegen als Markdown-Dateien im Projekt und lassen sich mit dem Team teilen —
@@ -673,12 +870,16 @@ Dann:
 4. Eintrag am Anfang von src/data/projekte.ts einfügen. Bauherrschaft
    null setzen, wenn ungenannt — keine Platzhalter erfinden.
 5. npm run type-check und npm run build.
-6. Prüfen: /projekte, /referenzen/<slug>, /expertise (bei featured),
+6. Prüfen: /projekte, /referenzen/<slug>, / und /expertise (bei featured),
    "Weitere Projekte" unter einem anderen Projekt, mobil bei 390px.
-7. Zusammenfassen, was geändert wurde, und Screenshots zeigen.
+7. HANDBUCH.md aktualisieren, falls sich Abläufe oder Felder geändert haben.
+8. Zusammenfassen, was geändert wurde, und Screenshots zeigen.
 
 Halte dich an HANDBUCH.md. Erfinde keine Angaben — frag nach.
 ```
+
+**Der Schritt „Handbuch aktualisieren" gehört in jeden Skill** als
+vorletzter Punkt. Siehe [Abschnitt 15](#15-dieses-handbuch-aktualisieren).
 
 ### Sechs empfohlene Skills
 
@@ -715,19 +916,62 @@ Rückfrage laufen.
 
 ---
 
-## 13. Offene Punkte
+## 15. Dieses Handbuch aktualisieren
+
+**Regel: Nach jeder abgeschlossenen Änderung an der Website wird dieses Handbuch
+nachgezogen.** Ein Handbuch, das nicht mehr stimmt, ist schlimmer als keines —
+es führt in die Irre.
+
+### Wann eine Aktualisierung nötig ist
+
+| Was geändert wurde | Was im Handbuch nachzuziehen ist |
+|---|---|
+| Neues Feld in `projekte.ts`, `team.ts`, `insights.ts` | Beispielcode im betreffenden Abschnitt |
+| Neuer Abschnitt auf der Startseite | Tabelle in Abschnitt 6 |
+| Neue Seite oder Route | Abschnitt 8 (Ablagepfade), ggf. Abschnitt 10 |
+| Neuer Bildordner oder andere Grössen | Abschnitt 8 (Ablage und Grössen) |
+| Farbe, Umschaltpunkt, Schriftgrösse geändert | Abschnitt 9 (Design) |
+| Neues Markup oder robots/sitemap angepasst | Abschnitt 10 (KI-Suche) |
+| Offener Punkt erledigt | Abschnitt 16 (Zeile entfernen) |
+| Neuer offener Punkt entstanden | Abschnitt 16 (Zeile ergänzen) |
+
+### Wie
+
+1. Betroffene Abschnitte anpassen, nicht neue anhängen — sonst widersprechen
+   sich zwei Stellen.
+2. Beispielcode gegen die echte Datei prüfen: Stimmen alle Feldnamen noch?
+3. Verweise auf Dateipfade prüfen, wenn Dateien umbenannt wurden.
+4. Datum unten aktualisieren.
+5. Handbuch **im gleichen Commit** wie die Änderung mitschicken. Dann ist
+   nachvollziehbar, was zusammengehört.
+
+### Wenn Sie mit Claude arbeiten
+
+Nehmen Sie den Satz in Ihren Auftrag mit auf: *«Ergänze anschliessend das
+Handbuch.»* Die vorgeschlagenen Skills in Abschnitt 14 enthalten diesen Schritt
+bereits als letzten Punkt.
+
+---
+
+## 16. Offene Punkte
 
 Stand Juli 2026 — Dinge, die bewusst offen sind:
 
-| Punkt | Stand |
-|---|---|
-| **Kontaktformular** | Nicht umgesetzt. Die alte Website hatte ein Forminator-Formular mit fünf Feldern. Für den Nachbau braucht es eine Entscheidung über den Mailversand (z. B. Resend) und die Empfängeradresse. Aktuell zeigt die Kontaktseite Adresse, Telefon und E-Mail. |
-| **Projektbeschreibungen** | Neu geschrieben, weil in der alten Datenbank Lorem ipsum stand. Bitte fachlich prüfen. |
-| **Bauherrschaften** | Bei drei von vier Projekten auf `null`, weil in der alten Datenbank „testkunde" bzw. „test AG" stand. Echte Namen können ergänzt werden. |
-| **Insights-Bilder** | Behelfsweise Architekturfotos von Atelier AA. Eigene Motive zum Thema wären besser. |
-| **Galeriebilder** | Die Dateien `01.jpg` bis `04.jpg` sind teils noch aus dem alten Bestand und nicht alle projektspezifisch geprüft. |
-| **Verzeichniseinträge** | search.ch und local.ch führen noch Bachstrasse 29 statt 39. |
-| **Handelsregisternummer** | Die alte Website nannte „CH-020.4.074.716-1" — eine Nummer der bis 2016 gültigen Systematik, extern nicht bestätigt. Im Impressum steht jetzt die UID, die heute maßgeblich ist. |
+| Punkt | Stand | Priorität |
+|---|---|---|
+| **Kontaktformular versendet nicht** | Als Vorschau vorhanden (`src/components/kontakt/KontaktFormular.tsx`) mit deutlichem Hinweis. Es fehlen: API-Route, Versanddienst (z. B. Resend) mit Schlüssel in `.env.local`, Spamschutz und serverseitige Prüfung. Die Anleitung steht als Kommentar in der Datei. | hoch |
+| **Rechtstexte juristisch prüfen** | Impressum und Datenschutzerklärung sind vollständig aufgebaut, aber nicht anwaltlich geprüft. Zwei Abschnitte müssen an den Betrieb angepasst werden (siehe Abschnitt 13). | hoch |
+| **Kundenstimmen** | In `startseite.ts` vorbereitet, aber deaktiviert (`zeigeStimmen = false`). Erfundene Bewertungen sind nach UWG unzulässig — echte Rückmeldungen mit schriftlicher Freigabe einholen. | mittel |
+| **Google-Bewertungen** | Noch nicht eingebunden. `AggregateRating`-Markup darf nur echte, überprüfbare Bewertungen abbilden. Zuerst ein Google-Business-Profil pflegen und Bewertungen sammeln. | mittel |
+| **Team-Texte** | Die Absätze auf den Personenseiten sind Beispiele und fachlich zu prüfen — besonders Werdegang und Zuständigkeiten. | mittel |
+| **Projekt-Eckdaten** | Angaben zu Bauweise, Wärmeerzeugung und Status sind plausibel, aber nicht projektgenau verifiziert. Bitte gegen die Projektakten prüfen. | mittel |
+| **Kostenangaben in den Beiträgen** | Zahlen (Franken pro Kubikmeter, Umbaukosten, Honorarprozente) sind Erfahrungswerte. Sie sollten fachlich bestätigt und jährlich überprüft werden. | mittel |
+| **Bauherrschaften** | Bei drei von vier Projekten `null`, weil in der alten Datenbank „testkunde" bzw. „test AG" stand. Echte Namen können ergänzt werden. | niedrig |
+| **Insights- und Expertise-Bilder** | Behelfsweise Architekturfotos aus dem Bestand. Eigene Motive zum jeweiligen Thema wären besser. | niedrig |
+| **Galeriebilder** | Die Dateien `01.jpg` bis `04.jpg` sind teils noch aus dem alten Bestand und nicht alle projektspezifisch geprüft. | niedrig |
+| **Verzeichniseinträge** | search.ch und local.ch führen noch Bachstrasse 29 statt 39. | niedrig |
+| **Rückverlinkung von Elindo** | Für den gegenseitigen Nutzen sollte elindo.ch auf atelier-aa.ch verlinken. Muss dort eingerichtet werden. | niedrig |
+| **Handelsregisternummer** | Die alte Website nannte „CH-020.4.074.716-1" — eine Nummer der bis 2016 gültigen Systematik, extern nicht bestätigt. Im Impressum steht jetzt die UID, die heute maßgeblich ist. | erledigt |
 
 ---
 
@@ -748,3 +992,10 @@ grep -rn "dateiname" src/
 ```
 
 Prüfbreiten: **390 px** (Handy) · **800 px** (Tablet) · **1200 px** (Desktop)
+
+Die vier Schritte nach jeder Änderung:
+**type-check → build → im Browser prüfen (drei Breiten) → Handbuch nachziehen**
+
+---
+
+*Handbuch zuletzt aktualisiert: Juli 2026*

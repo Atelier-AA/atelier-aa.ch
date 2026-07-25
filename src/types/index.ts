@@ -1,3 +1,21 @@
+/** Ein benannter Textabschnitt mit einem oder mehreren Absätzen. */
+export interface Abschnitt {
+  titel: string;
+  absaetze: string[];
+}
+
+/** Frage-und-Antwort-Paar für Q&A-Bereiche. */
+export interface InsightFrage {
+  frage: string;
+  antwort: string;
+}
+
+/** Eckdaten eines Projekts als Beschriftung-Wert-Paar. */
+export interface ProjektDaten {
+  label: string;
+  wert: string;
+}
+
 export interface Projekt {
   slug: string;
   title: string;
@@ -7,7 +25,22 @@ export interface Projekt {
   /** Bauherrschaft. `null`, wenn nicht öffentlich genannt. */
   kunde: string | null;
   jahr: string;
+  /** Kurzfassung für Übersicht und Meta-Description. */
   beschreibung: string;
+  /** Gebäudekategorie, z. B. 'Mehrfamilienhaus'. Für Filter und Suchbegriffe. */
+  typ: string;
+  /** Leistungsumfang, den wir in diesem Projekt erbracht haben. */
+  leistungen: string[];
+  /**
+   * Ausführliche Projektbeschreibung in Abschnitten: Aufgabe, Lösung,
+   * Konstruktion, Nachhaltigkeit. Gibt Suchmaschinen und KI-Systemen
+   * substanziellen Text statt nur einer Bildergalerie.
+   */
+  abschnitte: Abschnitt[];
+  /** Weitere Eckdaten (Geschossfläche, Bauweise, Status …). */
+  daten: ProjektDaten[];
+  /** Häufige Fragen zu diesem Projekttyp. */
+  fragen: InsightFrage[];
   thumbnail: string;
   heroImage: string;
   galerie: string[];
@@ -15,9 +48,19 @@ export interface Projekt {
 }
 
 export interface TeamMember {
+  /** Kleingeschriebener Bezeichner für die Detailseite, z. B. 'aljili-aljisami'. */
+  slug: string;
   name: string;
   rolle: string;
   bild: string;
+  /** Einzeiler unter dem Namen auf der Detailseite. */
+  kurz: string;
+  /** Fachliche Schwerpunkte. */
+  schwerpunkte: string[];
+  /** Werdegang und Haltung, ein Absatz je Eintrag. */
+  absaetze: string[];
+  /** E-Mail-Adresse für die direkte Kontaktaufnahme. `null`, wenn keine. */
+  email: string | null;
 }
 
 export interface NavLink {
@@ -25,17 +68,11 @@ export interface NavLink {
   label: string;
 }
 
-/** Ein Abschnitt im Fliesstext eines Beitrags. */
-export interface InsightAbschnitt {
-  titel: string;
-  absaetze: string[];
-}
-
-/** Frage-und-Antwort-Paar im Q&A-Teil eines Beitrags. */
-export interface InsightFrage {
-  frage: string;
-  antwort: string;
-}
+/**
+ * Ein Abschnitt im Fliesstext eines Beitrags.
+ * @deprecated Verwende `Abschnitt` — gleicher Aufbau, allgemeiner benannt.
+ */
+export type InsightAbschnitt = Abschnitt;
 
 export interface Insight {
   slug: string;
@@ -49,6 +86,6 @@ export interface Insight {
   /** Geschätzte Lesedauer in Minuten. */
   lesezeit: number;
   bild: string;
-  abschnitte: InsightAbschnitt[];
+  abschnitte: Abschnitt[];
   fragen: InsightFrage[];
 }
