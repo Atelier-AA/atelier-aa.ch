@@ -4,11 +4,14 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
 
+// Inter als Variable Font — wie im alten WordPress-Theme, das
+// `fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap`
+// eingebunden hat. Ohne `weight` liefert next/font die Variable-Achse aus, statt
+// einzelne statische Schnitte.
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  weight: ['300', '400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -32,6 +35,11 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_CH',
     siteName: 'Atelier AA Architekten',
+  },
+  // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
+  icons: {
+    icon: '/favicon-32.png',
+    apple: '/apple-touch-icon.png',
   },
 };
 

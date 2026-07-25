@@ -6,6 +6,7 @@ import ProjektMeta from '@/components/projekte/ProjektMeta';
 import ProjektGalerie from '@/components/projekte/ProjektGalerie';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
+import { ortMitKanton } from '@/lib/utils';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,7 +44,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   return (
     <>
       <div className="pt-24 md:pt-28">
-        <ProjektHero image={projekt.heroImage} alt={`${projekt.title}, ${projekt.ort}`} />
+        <ProjektHero image={projekt.heroImage} alt={`${projekt.title}, ${ortMitKanton(projekt)}`} />
 
         <Container className="mt-16 md:mt-20">
           <div className="max-w-3xl">
@@ -60,7 +61,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
           <ProjektMeta
             kunde={projekt.kunde}
-            ort={projekt.ort}
+            ort={ortMitKanton(projekt)}
             jahr={projekt.jahr}
           />
 

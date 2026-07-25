@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import { cn, ortMitKanton } from '@/lib/utils';
 
 interface Slide {
   image: string;
   projekt: string;
   ort: string;
+  /** Kantonskürzel, wie auf der alten Website hinter dem Ort geführt. */
+  kanton: string;
   href: string;
 }
 
@@ -17,18 +19,21 @@ const slides: Slide[] = [
     image: '/images/hero/hero-kuenten.jpg',
     projekt: 'MFH Künten',
     ort: 'Künten',
+    kanton: 'AG',
     href: '/referenzen/mfh-kuenten',
   },
   {
     image: '/images/hero/hero-untersiggenthal.jpg',
     projekt: 'MFH Untersiggenthal',
     ort: 'Untersiggenthal',
+    kanton: 'AG',
     href: '/referenzen/mfh-untersiggenthal',
   },
   {
     image: '/images/hero/hero-hohwarting.png',
     projekt: 'MFH Hochwarting',
     ort: 'Baden',
+    kanton: 'AG',
     href: '/referenzen/mfh-hochwarting',
   },
 ];
@@ -43,8 +48,12 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
 
+  // Volle Bildschirmhöhe wie im alten Theme (`.fullscreen .n2-section-smartslider
+  // { height: 100vh }`). `h-svh` nutzt auf Mobilgeräten die sichtbare Höhe, damit die
+  // ein-/ausfahrende Browserleiste den Hero nicht abschneidet; `h-screen` bleibt
+  // Fallback für Browser ohne svh-Support.
   return (
-    <section className="relative w-full h-[92vh] min-h-[560px] overflow-hidden bg-ink">
+    <section className="relative w-full h-screen h-svh overflow-hidden bg-ink">
       {slides.map((slide, idx) => (
         <div
           key={slide.image}
@@ -56,7 +65,7 @@ export default function HeroSlider() {
         >
           <Image
             src={slide.image}
-            alt={`${slide.projekt}, ${slide.ort}`}
+            alt={`${slide.projekt}, ${ortMitKanton(slide)}`}
             fill
             priority={idx === 0}
             className="object-cover"
@@ -75,8 +84,10 @@ export default function HeroSlider() {
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light">
                 {slides[current].projekt}
-                <span className="block text-lg md:text-xl mt-2 opacity-80">
-                  {slides[current].ort}
+                {/* Ort mit Kantonskürzel, uppercase und gesperrt wie
+                    `.referenzen__ort` im alten Theme. */}
+                <span className="block text-base md:text-lg mt-2 uppercase tracking-[0.1em] opacity-80">
+                  {ortMitKanton(slides[current])}
                 </span>
               </h1>
             </Link>

@@ -21,8 +21,11 @@ export default function Navigation({
             <Link
               href={item.href}
               onClick={onNavigate}
+              // Farbe erbt vom Container (`text-ink`/`text-white` am Header),
+              // damit sie über dem dunklen Hero umgeschaltet werden kann, ohne
+              // dass sich zwei gleich spezifische Tailwind-Klassen überlagern.
               className={cn(
-                'text-sm uppercase tracking-widest text-ink hover:text-stone transition-colors',
+                'text-sm uppercase tracking-widest text-current transition-colors hover:opacity-60',
                 linkClassName
               )}
             >

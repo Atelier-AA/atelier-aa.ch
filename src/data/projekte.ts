@@ -5,6 +5,7 @@ export const projekte: Projekt[] = [
     slug: 'mfh-sihlaurain',
     title: 'MFH Sihlaurain 2 und 4',
     ort: 'Murgenthal',
+    kanton: 'AG',
     kunde: 'Lagos AG',
     jahr: '2025',
     beschreibung:
@@ -23,6 +24,7 @@ export const projekte: Projekt[] = [
     slug: 'mfh-hochwarting',
     title: 'MFH Hochwarting',
     ort: 'Baden',
+    kanton: 'AG',
     kunde: 'Privat',
     jahr: '2025',
     beschreibung:
@@ -41,6 +43,7 @@ export const projekte: Projekt[] = [
     slug: 'mfh-kuenten',
     title: 'MFH Künten',
     ort: 'Künten',
+    kanton: 'AG',
     kunde: 'Privat',
     jahr: '2024',
     beschreibung:
@@ -59,6 +62,7 @@ export const projekte: Projekt[] = [
     slug: 'mfh-untersiggenthal',
     title: 'MFH Untersiggenthal',
     ort: 'Untersiggenthal',
+    kanton: 'AG',
     kunde: 'Privat',
     jahr: '2024',
     beschreibung:
