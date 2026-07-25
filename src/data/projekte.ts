@@ -1,6 +1,35 @@
 import type { Projekt } from '@/types';
 
+/**
+ * Referenzprojekte.
+ *
+ * Titel, Ort, Jahr und Bauherrschaft stammen aus dem Custom-Post-Type `films`
+ * der alten Website (Meta-Felder `_ort`, `_jahr`, `_kunde`). Wo dort noch
+ * Platzhalter hinterlegt waren ("testkunde", "test AG"), steht hier `null`
+ * statt einer erfundenen Angabe.
+ *
+ * Reihenfolge wie auf der alten Projektübersicht: neuestes Projekt zuerst.
+ */
 export const projekte: Projekt[] = [
+  {
+    slug: 'mfh-untersiggenthal',
+    title: 'MFH Untersiggenthal',
+    ort: 'Untersiggenthal',
+    kanton: 'AG',
+    kunde: null,
+    jahr: '2026',
+    beschreibung:
+      'Ein Mehrfamilienhaus, das seine Umgebung ernst nimmt. Die vertikale Gliederung der Fassade nimmt den Rhythmus der Nachbarschaft auf und übersetzt ihn in eine ruhige, zeitgemässe Form. Grosszügige Öffnungen und vorgelagerte Balkone verbinden die Wohnräume mit dem Garten.',
+    thumbnail: '/images/projekte/mfh-untersiggenthal/thumb.jpg',
+    heroImage: '/images/projekte/mfh-untersiggenthal/hero.jpg',
+    galerie: [
+      '/images/projekte/mfh-untersiggenthal/01.jpg',
+      '/images/projekte/mfh-untersiggenthal/02.jpg',
+      '/images/projekte/mfh-untersiggenthal/03.jpg',
+      '/images/projekte/mfh-untersiggenthal/04.jpg',
+    ],
+    featured: true,
+  },
   {
     slug: 'mfh-sihlaurain',
     title: 'MFH Sihlaurain 2 und 4',
@@ -9,9 +38,9 @@ export const projekte: Projekt[] = [
     kunde: 'Lagos AG',
     jahr: '2025',
     beschreibung:
-      'Zwei Mehrfamilienhäuser mit hoher Wohnqualität und klarer Formensprache. Die Baukörper fügen sich präzise in die Topografie ein und bieten durchdachte Grundrisse mit grosszügigen Aussenräumen.',
-    thumbnail: '/images/projekte/mfh-sihlaurain/thumb.jpg',
-    heroImage: '/images/projekte/mfh-sihlaurain/01.jpg',
+      'Zwei Mehrfamilienhäuser als Ensemble gedacht. Die Baukörper stehen in einem klaren Verhältnis zueinander und fassen einen gemeinsamen Aussenraum. Durchdachte Grundrisse und ein sorgfältiger Umgang mit Ressourcen prägen das Projekt von der ersten Skizze an.',
+    thumbnail: '/images/projekte/mfh-sihlaurain/thumb.png',
+    heroImage: '/images/projekte/mfh-sihlaurain/hero.png',
     galerie: [
       '/images/projekte/mfh-sihlaurain/01.jpg',
       '/images/projekte/mfh-sihlaurain/02.jpg',
@@ -21,35 +50,16 @@ export const projekte: Projekt[] = [
     featured: true,
   },
   {
-    slug: 'mfh-hochwarting',
-    title: 'MFH Hochwarting',
-    ort: 'Baden',
-    kanton: 'AG',
-    kunde: 'Privat',
-    jahr: '2025',
-    beschreibung:
-      'Ein zeitgenössisches Mehrfamilienhaus mit fein abgestimmten Materialien. Sorgfältig gestaltete Fassadendetails und ein zurückhaltender Umgang mit Farben schaffen eine ruhige, würdevolle Präsenz im Quartier.',
-    thumbnail: '/images/projekte/mfh-hochwarting/thumb.jpg',
-    heroImage: '/images/projekte/mfh-hochwarting/01.jpg',
-    galerie: [
-      '/images/projekte/mfh-hochwarting/01.jpg',
-      '/images/projekte/mfh-hochwarting/02.jpg',
-      '/images/projekte/mfh-hochwarting/03.jpg',
-      '/images/projekte/mfh-hochwarting/04.jpg',
-    ],
-    featured: true,
-  },
-  {
     slug: 'mfh-kuenten',
-    title: 'MFH Künten',
+    title: 'Mehrfamilienhaus Künten',
     ort: 'Künten',
     kanton: 'AG',
-    kunde: 'Privat',
+    kunde: null,
     jahr: '2024',
     beschreibung:
-      'Ein Mehrfamilienhaus, das sich selbstverständlich in die dörfliche Struktur einfügt. Die reduzierte Materialisierung und die klare Volumetrie unterstreichen den zeitgenössischen Charakter des Gebäudes.',
+      'Wohnen am Hang, präzise in die Topografie gesetzt. Die gestaffelten Baukörper reagieren auf das Gelände und schaffen für jede Wohnung einen eigenen Aussenraum mit Aussicht. Zurückhaltende Materialien lassen die Architektur im Kontext ruhig wirken.',
     thumbnail: '/images/projekte/mfh-kuenten/thumb.jpg',
-    heroImage: '/images/projekte/mfh-kuenten/01.jpg',
+    heroImage: '/images/projekte/mfh-kuenten/hero.jpg',
     galerie: [
       '/images/projekte/mfh-kuenten/01.jpg',
       '/images/projekte/mfh-kuenten/02.jpg',
@@ -59,21 +69,21 @@ export const projekte: Projekt[] = [
     featured: true,
   },
   {
-    slug: 'mfh-untersiggenthal',
-    title: 'MFH Untersiggenthal',
-    ort: 'Untersiggenthal',
+    slug: 'mfh-hochwarting',
+    title: 'Mehrfamilienhaus Hochwarting',
+    ort: 'Glashütten',
     kanton: 'AG',
-    kunde: 'Privat',
-    jahr: '2024',
+    kunde: null,
+    jahr: '2021',
     beschreibung:
-      'Ein Projekt geprägt von präzisen Proportionen und einer sorgfältigen Materialwahl. Die Wohnungen orientieren sich zur besten Aussicht und bieten hohe Aufenthaltsqualität in allen Räumen.',
-    thumbnail: '/images/projekte/mfh-untersiggenthal/thumb.jpg',
-    heroImage: '/images/projekte/mfh-untersiggenthal/01.jpg',
+      'Ein Wohnbau mit klarer Ordnung und feinen Details. Die Fassade ist sorgfältig proportioniert, die Materialwahl bewusst reduziert. Innen sind die Grundrisse so organisiert, dass Gemeinschaft und Rückzug gleichermassen möglich sind.',
+    thumbnail: '/images/projekte/mfh-hochwarting/thumb.jpg',
+    heroImage: '/images/projekte/mfh-hochwarting/hero.jpg',
     galerie: [
-      '/images/projekte/mfh-untersiggenthal/01.jpg',
-      '/images/projekte/mfh-untersiggenthal/02.jpg',
-      '/images/projekte/mfh-untersiggenthal/03.jpg',
-      '/images/projekte/mfh-untersiggenthal/04.jpg',
+      '/images/projekte/mfh-hochwarting/01.jpg',
+      '/images/projekte/mfh-hochwarting/02.jpg',
+      '/images/projekte/mfh-hochwarting/03.jpg',
+      '/images/projekte/mfh-hochwarting/04.jpg',
     ],
     featured: false,
   },

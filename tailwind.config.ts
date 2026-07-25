@@ -4,6 +4,11 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      screens: {
+        // Das alte Theme schaltet die Navigation bei 960px um
+        // (`@media screen and (max-width: 960px)`), nicht bei Tailwinds 1024px.
+        lg: '961px',
+      },
       colors: {
         ink: '#111111',
         graphite: '#3a3a3a',

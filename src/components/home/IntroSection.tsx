@@ -12,18 +12,18 @@ export default function IntroSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-ink leading-tight mb-10">
             Wir glauben an Architektur mit bleibendem Wert.
           </h2>
+          {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <p className="text-lg md:text-xl text-graphite leading-relaxed mb-6">
-            Als Atelier für Architektur und Städtebau realisieren wir Bauten, die durch
-            klare Formensprache, sorgfältige Materialisierung und einen respektvollen
-            Umgang mit dem Kontext überzeugen.
+            Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität
+            in sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen
+            und Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie
+            schafft Lebensqualität, Orientierung und Zugehörigkeit.
           </p>
           <p className="text-base text-graphite leading-relaxed mb-12">
-            Jedes Projekt entsteht aus dem Dialog mit unseren Bauherrschaften. Wir hören
-            zu, denken mit und begleiten Sie von der ersten Idee bis zur schlüsselfertigen
-            Übergabe – mit dem Anspruch, Räume zu schaffen, die inspirieren und lange
-            Bestand haben.
+            Entdecken Sie Projekte, die aus Haltung entstehen und für die Zukunft
+            gedacht sind.
           </p>
-          <Button href="/projekte" variant="outline">
+          <Button href="/projekte" variant="text">
             alle Projekte ansehen
           </Button>
         </div>

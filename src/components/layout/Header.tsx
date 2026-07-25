@@ -63,12 +63,12 @@ export default function Header() {
 
           {/* Links erben die Farbe vom Header — weiss über dem Hero, sonst schwarz,
               wie `.page-id-861 .site-header.has-menu .menu-item a` im alten Theme. */}
-          <Navigation className="hidden md:block" />
+          <Navigation className="hidden lg:block" />
 
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-50 flex flex-col gap-1.5 p-2"
+            className="lg:hidden relative z-50 flex flex-col gap-1.5 p-2"
             aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
             aria-expanded={mobileOpen}
           >

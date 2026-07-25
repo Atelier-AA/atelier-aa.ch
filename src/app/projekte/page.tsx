@@ -26,16 +26,17 @@ export default function ProjektePage() {
         <ProjektGrid projekte={projekte} />
 
         <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
+          {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}
           <h2 className="text-2xl md:text-3xl font-light text-ink mb-6">
             Architektur mit Verantwortung
           </h2>
           <p className="text-graphite leading-relaxed mb-8">
-            Wir verstehen Bauen als Verantwortung – gegenüber unseren Bauherrschaften,
-            der Umwelt und dem Ort. Erfahren Sie mehr über unsere Haltung und das
-            Team hinter Atelier AA.
+            Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir Architektur,
+            die Funktion, Gestaltung und Nachhaltigkeit verbindet – mit klarer Haltung
+            und langfristigem Mehrwert.
           </p>
           <Button href="/ueber-uns" variant="text">
-            über uns
+            Mehr über uns
           </Button>
         </div>
       </Container>

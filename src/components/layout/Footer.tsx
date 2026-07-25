@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { navigation, footerLegal } from '@/data/navigation';
+import { firma } from '@/data/firma';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -14,17 +15,25 @@ export default function Footer() {
               Kontakt
             </h3>
             <address className="not-italic text-sm leading-relaxed space-y-1">
-              <p className="text-white">Atelier AA Architekten GmbH</p>
-              <p>Bachstrasse 29</p>
-              <p>8912 Obfelden</p>
+              <p className="text-white">{firma.name}</p>
+              <p>{firma.strasse}</p>
+              <p>
+                {firma.plz} {firma.ort}
+              </p>
               <p className="pt-3">
-                <a href="tel:+41447700506" className="hover:text-white transition-colors">
-                  +41 44 770 05 06
+                <a
+                  href={`tel:${firma.telefonHref}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {firma.telefon}
                 </a>
               </p>
               <p>
-                <a href="mailto:info@atelier-aa.ch" className="hover:text-white transition-colors">
-                  info@atelier-aa.ch
+                <a
+                  href={`mailto:${firma.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {firma.email}
                 </a>
               </p>
             </address>

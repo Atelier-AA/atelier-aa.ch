@@ -9,17 +9,19 @@ export default function OffeneStellen() {
           <p className="text-xs uppercase tracking-widest text-stone mb-6">
             Karriere
           </p>
+          {/* Titel und Text wörtlich von der alten Seite (Post 2, Abschnitt
+              "offene Stellen"). */}
           <h2 className="text-3xl md:text-4xl font-light text-ink mb-8 leading-tight">
-            Wir suchen Verstärkung.
+            offene Stellen
           </h2>
           <p className="text-lg text-graphite leading-relaxed mb-10">
-            Wenn Sie unsere Leidenschaft für sorgfältige Architektur teilen und Ihre
-            Erfahrung in einem inspirierenden Team einbringen möchten, freuen wir uns
-            auf Ihre Bewerbung. Aktuelle Ausschreibungen und initiative Bewerbungen
-            senden Sie bitte direkt an uns.
+            Architektur entsteht bei uns im Team. Wenn Sie Leidenschaft für klare,
+            reduzierte Räume, Nachhaltigkeit und präzises Arbeiten teilen, freuen wir
+            uns auf Ihre Bewerbung. Werden Sie Teil von Atelier AA und gestalten Sie
+            mit uns Räume, die Bestand haben.
           </p>
-          <Button href="/kontakt" variant="outline">
-            Kontakt aufnehmen
+          <Button href="/kontakt" variant="text">
+            Kontaktieren Sie uns
           </Button>
         </div>
       </Container>

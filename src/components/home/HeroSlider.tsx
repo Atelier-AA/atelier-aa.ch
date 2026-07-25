@@ -14,27 +14,29 @@ interface Slide {
   href: string;
 }
 
+// Slides und Bilder wie im Smart-Slider "Slider Startseite" (slider 2) der
+// alten Website; Reihenfolge und Bildzuordnung aus wp_nextend2_..._slides.
 const slides: Slide[] = [
   {
-    image: '/images/hero/hero-kuenten.jpg',
-    projekt: 'MFH Künten',
-    ort: 'Künten',
+    image: '/images/hero/slide-hochwarting.png',
+    projekt: 'MFH Hochwarting',
+    ort: 'Glashütten',
     kanton: 'AG',
-    href: '/referenzen/mfh-kuenten',
+    href: '/referenzen/mfh-hochwarting',
   },
   {
-    image: '/images/hero/hero-untersiggenthal.jpg',
+    image: '/images/hero/slide-untersiggenthal.jpg',
     projekt: 'MFH Untersiggenthal',
     ort: 'Untersiggenthal',
     kanton: 'AG',
     href: '/referenzen/mfh-untersiggenthal',
   },
   {
-    image: '/images/hero/hero-hohwarting.png',
-    projekt: 'MFH Hochwarting',
-    ort: 'Baden',
+    image: '/images/hero/slide-kuenten.jpg',
+    projekt: 'Mehrfamilienhaus Künten',
+    ort: 'Künten',
     kanton: 'AG',
-    href: '/referenzen/mfh-hochwarting',
+    href: '/referenzen/mfh-kuenten',
   },
 ];
 

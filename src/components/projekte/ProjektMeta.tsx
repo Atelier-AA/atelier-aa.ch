@@ -1,12 +1,13 @@
 interface ProjektMetaProps {
-  kunde: string;
+  /** Bauherrschaft; `null` blendet die Spalte aus. */
+  kunde: string | null;
   ort: string;
   jahr: string;
 }
 
 export default function ProjektMeta({ kunde, ort, jahr }: ProjektMetaProps) {
   const items = [
-    { label: 'Kunde', value: kunde },
+    ...(kunde ? [{ label: 'Bauherrschaft', value: kunde }] : []),
     { label: 'Ort', value: ort },
     { label: 'Jahr', value: jahr },
   ];

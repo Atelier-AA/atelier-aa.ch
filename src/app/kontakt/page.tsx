@@ -31,10 +31,11 @@ export default function KontaktPage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-ink leading-tight mb-10">
               Der erste Schritt ist ein Gespräch.
             </h1>
+            {/* Text wörtlich von der alten Kontaktseite (Post 88). */}
             <p className="text-lg text-graphite leading-relaxed">
-              Ob konkretes Bauvorhaben, eine erste Idee oder eine Frage zu unserer
-              Arbeit – wir freuen uns über Ihre Kontaktaufnahme. Vereinbaren Sie
-              gerne ein unverbindliches Erstgespräch.
+              Wir stehen für einen offenen, direkten Austausch und freuen uns über
+              neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
+              Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
             </p>
           </div>
 
