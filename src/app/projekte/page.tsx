@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: 'Projekte',
   description:
-    'Aktuelle und realisierte Architekturprojekte von Atelier AA Architekten. Mehrfamilienhäuser, Wohnbau und massgeschneiderte Lösungen in der Schweiz.',
+    'Referenzprojekte von Atelier AA Architekten GmbH aus Obfelden ZH: Mehrfamilienhäuser in Untersiggenthal, Murgenthal, Künten und Glashütten. Wohnbau, Umbau und Sanierung in den Kantonen Zürich und Aargau.',
 };
 
 export default function ProjektePage() {

@@ -7,7 +7,7 @@ import { insights } from '@/data/insights';
 export const metadata: Metadata = {
   title: 'Insights',
   description:
-    'Fachbeiträge von Atelier AA Architekten zu Digitalisierung, kreislauffähigem Bauen und der Rolle des Architekten im Planungsprozess.',
+    'Fachbeiträge von Atelier AA Architekten GmbH zu KI im Entwurf, kreislauffähigem Bauen und der Rolle des Architekten. Mit Antworten auf häufige Fragen zu Honorar, Planungsphasen und Ablauf.',
 };
 
 export default function InsightsPage() {

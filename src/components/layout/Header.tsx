@@ -40,7 +40,10 @@ export default function Header() {
       </a>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-30 transition-all duration-300',
+          'fixed top-0 left-0 right-0 transition-all duration-300',
+          // Bei offenem Menü über das Overlay (z-40) heben, damit Logo und
+          // Burger sichtbar und bedienbar bleiben; sonst darunter.
+          mobileOpen ? 'z-50' : 'z-30',
           scrolled || mobileOpen
             ? 'bg-white/95 backdrop-blur border-b border-mist py-4'
             : 'bg-transparent py-6',
@@ -65,29 +68,35 @@ export default function Header() {
               wie `.page-id-861 .site-header.has-menu .menu-item a` im alten Theme. */}
           <Navigation className="hidden lg:block" />
 
+          {/* Burger, der beim Öffnen zum Schliessen-Kreuz wird. Liegt mit z-50
+              über dem Menü-Overlay (z-40) und ist damit auch im offenen Zustand
+              bedienbar — deshalb braucht das Overlay kein eigenes X.
+              Die äusseren Linien wandern um genau ihren Abstand zur Mitte
+              (gap 6px + 1px Linie = 7px) und kreuzen sich dort exakt. */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative z-50 flex flex-col gap-1.5 p-2"
+            className="lg:hidden relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
             aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             <span
               className={cn(
-                'block w-6 h-px bg-current transition-transform duration-300',
-                mobileOpen && 'rotate-45 translate-y-2'
+                'block h-px w-6 bg-current transition-transform duration-300 ease-out',
+                mobileOpen && 'translate-y-[7px] rotate-45'
               )}
             />
             <span
               className={cn(
-                'block w-6 h-px bg-current transition-opacity duration-300',
+                'block h-px w-6 bg-current transition-opacity duration-300 ease-out',
                 mobileOpen && 'opacity-0'
               )}
             />
             <span
               className={cn(
-                'block w-6 h-px bg-current transition-transform duration-300',
-                mobileOpen && '-rotate-45 -translate-y-2'
+                'block h-px w-6 bg-current transition-transform duration-300 ease-out',
+                mobileOpen && '-translate-y-[7px] -rotate-45'
               )}
             />
           </button>

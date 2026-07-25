@@ -1,16 +1,38 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import { firma } from '@/data/firma';
+import { kontaktFragen } from '@/data/insights';
+import FragenAntworten from '@/components/insights/FragenAntworten';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
   description:
-    'Kontaktieren Sie Atelier AA Architekten. Bachstrasse 29, 8912 Obfelden. Telefon +41 44 770 05 06.',
+    'Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden, Kanton Zürich. Telefon +41 44 770 05 06, info@atelier-aa.ch. Erstgespräch für Neubau, Umbau und Sanierung.',
 };
 
 export default function KontaktPage() {
+  // FAQPage-Markup zu den sichtbaren Fragen weiter unten. Ergänzt die
+  // Organisationsdaten im Layout um konkrete Antworten zu Region, Leistungen
+  // und Ablauf — die Fragen, mit denen Interessenten tatsächlich suchen.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://www.atelier-aa.ch/kontakt#faq',
+    inLanguage: 'de-CH',
+    mainEntity: kontaktFragen.map((f) => ({
+      '@type': 'Question',
+      name: f.frage,
+      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+    })),
+  };
+
   return (
     <div className="pt-24 md:pt-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-mist">
         <Image
           src="/images/kontakt/kontakt-hero.jpg"
@@ -45,9 +67,11 @@ export default function KontaktPage() {
                 Adresse
               </p>
               <address className="not-italic text-lg text-ink leading-relaxed">
-                Atelier AA Architekten GmbH<br />
-                Bachstrasse 29<br />
-                8912 Obfelden
+                {firma.name}
+                <br />
+                {firma.strasse}
+                <br />
+                {firma.plz} {firma.ort}
               </address>
             </div>
 
@@ -56,8 +80,11 @@ export default function KontaktPage() {
                 Telefon
               </p>
               <p className="text-lg text-ink">
-                <a href="tel:+41447700506" className="hover:text-graphite transition-colors">
-                  +41 44 770 05 06
+                <a
+                  href={`tel:${firma.telefonHref}`}
+                  className="hover:text-graphite transition-colors"
+                >
+                  {firma.telefon}
                 </a>
               </p>
             </div>
@@ -68,14 +95,18 @@ export default function KontaktPage() {
               </p>
               <p className="text-lg text-ink">
                 <a
-                  href="mailto:info@atelier-aa.ch"
+                  href={`mailto:${firma.email}`}
                   className="hover:text-graphite transition-colors"
                 >
-                  info@atelier-aa.ch
+                  {firma.email}
                 </a>
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="max-w-3xl">
+          <FragenAntworten fragen={kontaktFragen} titel="Häufige Fragen" />
         </div>
       </Container>
     </div>

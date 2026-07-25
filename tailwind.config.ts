@@ -5,9 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        // Das alte Theme schaltet die Navigation bei 960px um
-        // (`@media screen and (max-width: 960px)`), nicht bei Tailwinds 1024px.
-        lg: '961px',
+        // Das alte Theme schaltet bei 960px um, hatte aber nur vier
+        // Menüpunkte. Mit fünf (inkl. Insights) überlappt die Navigation dort
+        // das Logo, deshalb erst ab 1100px auf die Desktop-Leiste wechseln.
+        lg: '1100px',
       },
       colors: {
         ink: '#111111',

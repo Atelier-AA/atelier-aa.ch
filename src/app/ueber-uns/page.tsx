@@ -8,7 +8,7 @@ import { team } from '@/data/team';
 export const metadata: Metadata = {
   title: 'Über uns',
   description:
-    'Wir gestalten Architektur mit Verantwortung. Lernen Sie das Team von Atelier AA Architekten kennen.',
+    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH. Geführt von Aljili Aljisami, Dipl. Architekt. Wir planen Wohn- und Gewerbebauten mit Fokus auf Nachhaltigkeit und langfristigen Wert.',
 };
 
 export default function UeberUnsPage() {

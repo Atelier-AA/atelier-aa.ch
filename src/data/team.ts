@@ -2,7 +2,7 @@ import type { TeamMember } from '@/types';
 
 export const team: TeamMember[] = [
   {
-    name: 'Aljili Alisami',
+    name: 'Aljili Aljisami',
     rolle: 'Geschäftsführer, Dipl. Architekt',
     bild: '/images/team/aljili-alisami.jpg',
   },

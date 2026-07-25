@@ -44,22 +44,54 @@ export default async function InsightDetailPage({ params }: PageProps) {
 
   const weitere = getWeitereInsights(slug, 2);
 
-  // FAQPage-Markup, damit die Q&A-Paare in Suchergebnissen erkannt werden.
-  const faqSchema = {
+  const BASIS = 'https://www.atelier-aa.ch';
+  const url = `${BASIS}/insights/${insight.slug}`;
+
+  /**
+   * Strukturierte Daten in einem Graph: Der Beitrag selbst als `Article`, die
+   * Q&A-Paare als `FAQPage`. Beides zusammen erlaubt KI-Systemen, den Text
+   * einer Quelle, einem Datum und einem Thema zuzuordnen und die Antworten
+   * direkt zu zitieren.
+   *
+   * Die Antworten stehen zusätzlich als sichtbarer Text im HTML — Markup allein
+   * genügt nicht, es muss den Seiteninhalt widerspiegeln.
+   */
+  const schema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: insight.fragen.map((f) => ({
-      '@type': 'Question',
-      name: f.frage,
-      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-    })),
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `${url}#article`,
+        headline: insight.titel,
+        description: insight.lead,
+        image: `${BASIS}${insight.bild}`,
+        datePublished: insight.datum,
+        dateModified: insight.datum,
+        inLanguage: 'de-CH',
+        articleSection: insight.kategorie,
+        author: { '@id': `${BASIS}/#organisation` },
+        publisher: { '@id': `${BASIS}/#organisation` },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+        about: insight.abschnitte.map((a) => ({ '@type': 'Thing', name: a.titel })),
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        inLanguage: 'de-CH',
+        mainEntity: insight.fragen.map((f) => ({
+          '@type': 'Question',
+          name: f.frage,
+          acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+        })),
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       <article className="pt-32 md:pt-40">

@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
+import { firma } from '@/data/firma';
 
 export const metadata: Metadata = {
   title: 'Impressum',
-  description: 'Impressum und rechtliche Angaben von Atelier AA Architekten GmbH.',
+  description:
+    'Impressum von Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden. UID CHE-237.040.294.',
 };
 
 export default function ImpressumPage() {
@@ -24,10 +26,13 @@ export default function ImpressumPage() {
                 Firma
               </h2>
               <address className="not-italic text-ink text-lg">
-                Atelier AA Architekten GmbH<br />
-                Bachstrasse 29<br />
-                8912 Obfelden<br />
-                Schweiz
+                {firma.name}
+                <br />
+                {firma.strasse}
+                <br />
+                {firma.plz} {firma.ort}
+                <br />
+                {firma.land}
               </address>
             </section>
 
@@ -36,12 +41,12 @@ export default function ImpressumPage() {
                 Kontakt
               </h2>
               <p className="text-ink text-lg">
-                <a href="tel:+41447700506" className="hover:text-graphite">
-                  +41 44 770 05 06
+                <a href={`tel:${firma.telefonHref}`} className="hover:text-graphite">
+                  {firma.telefon}
                 </a>
                 <br />
-                <a href="mailto:info@atelier-aa.ch" className="hover:text-graphite">
-                  info@atelier-aa.ch
+                <a href={`mailto:${firma.email}`} className="hover:text-graphite">
+                  {firma.email}
                 </a>
                 <br />
                 www.atelier-aa.ch
@@ -53,12 +58,14 @@ export default function ImpressumPage() {
                 Unternehmensdaten
               </h2>
               <dl className="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-8 gap-y-2 text-ink">
+                <dt className="text-stone">Rechtsform:</dt>
+                <dd>Gesellschaft mit beschränkter Haftung</dd>
                 <dt className="text-stone">UID:</dt>
-                <dd>CHE-237.040.294</dd>
+                <dd>{firma.uid}</dd>
                 <dt className="text-stone">Handelsregister:</dt>
-                <dd>CH-020.4.074.716-1</dd>
+                <dd>Kanton Zürich, eingetragen seit {firma.gruendung}</dd>
                 <dt className="text-stone">Vertretungsberechtigt:</dt>
-                <dd>Aljili Alisami</dd>
+                <dd>{firma.vertretungsberechtigt}</dd>
               </dl>
             </section>
 

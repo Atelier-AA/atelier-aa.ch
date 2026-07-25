@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
+import { firma } from '@/data/firma';
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
-  description: 'Datenschutzerklärung von Atelier AA Architekten GmbH.',
+  description:
+    'Datenschutzerklärung von Atelier AA Architekten GmbH, Obfelden: welche Daten wir bearbeiten, zu welchem Zweck und welche Rechte Sie haben.',
 };
 
 export default function DatenschutzPage() {
@@ -32,8 +34,8 @@ export default function DatenschutzPage() {
                 Verantwortliche Stelle
               </h2>
               <address className="not-italic">
-                Atelier AA Architekten GmbH<br />
-                Bachstrasse 29, 8912 Obfelden<br />
+                {firma.name}<br />
+                {firma.strasse}, {firma.plz} {firma.ort}<br />
                 info@atelier-aa.ch
               </address>
             </section>

@@ -7,7 +7,7 @@ import { getFeaturedProjekte } from '@/data/projekte';
 export const metadata: Metadata = {
   title: 'Expertise',
   description:
-    'Architektur und Innenarchitektur mit Klarheit und Verantwortung. Wir verbinden ökologische, ökonomische und soziokulturelle Anforderungen zu nachhaltigen Konzepten.',
+    'Leistungen von Atelier AA Architekten GmbH: Architektur, Innenarchitektur, Umbau und Sanierung, zirkuläres Bauen, Projektentwicklung und Bauleitung. Für Bauherrschaften in den Kantonen Zürich und Aargau.',
 };
 
 /**
