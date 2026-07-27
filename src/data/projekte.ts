@@ -225,6 +225,86 @@ export const projekte: Projekt[] = [
     featured: true,
   },
   {
+    slug: 'mfh-letten',
+    title: 'Mehrfamilienhaus Letten',
+    ort: 'Ottenbach',
+    kanton: 'ZH',
+    kunde: null,
+    jahr: '2023',
+    typ: 'Mehrfamilienhaus',
+    leistungen: [
+      'Machbarkeitsstudie',
+      'Projektierung',
+      'Ausschreibungsplanung',
+      'Ausführungsplanung',
+      'Bauleitung',
+    ],
+    beschreibung:
+      'Umnutzung eines ehemaligen Bürogebäudes in Ottenbach im Kanton Zürich zu einem Mehrfamilienhaus mit acht Wohnungen. Auskragende Balkone im Dachgeschoss prägen das neue Erscheinungsbild.',
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: [
+          'Das Gebäude in Ottenbach im Kanton Zürich wurde ursprünglich als Bürohaus genutzt und entsprach hinsichtlich Raumstruktur, Technik und Nutzung nicht mehr den heutigen Anforderungen. Im Rahmen einer umfassenden Kernsanierung haben wir die bestehende Bausubstanz bis auf den Rohbau zurückgeführt und vollständig in ein modernes Mehrfamilienhaus transformiert.',
+          'Ziel war die nachhaltige Weiterentwicklung des Bestands und die Schaffung von zeitgemässem Wohnraum, statt das Gebäude abzureissen und neu zu bauen. Eine Umnutzung stellt andere Anforderungen als ein Neubau: Tragstruktur, Geschosshöhen und Erschliessung sind vorgegeben und müssen in die neue Nutzung integriert werden.',
+        ],
+      },
+      {
+        titel: 'Acht Wohnungen aus einem Bürohaus',
+        absaetze: [
+          'Durch die Umnutzung konnten insgesamt acht Wohnungen realisiert werden. Dafür haben wir die bestehende Gebäudestruktur grundlegend neu organisiert und an die Anforderungen modernen Wohnens angepasst.',
+          'Gleichzeitig erfolgte die Erneuerung der technischen Infrastruktur sowie die gezielte Aufwertung der Gebäudehülle. Wärmedämmung, Fenster und Haustechnik entsprechen damit heutigem Standard, ohne dass die Struktur des ehemaligen Bürohauses ersetzt werden musste.',
+        ],
+      },
+      {
+        titel: 'Die auskragenden Balkone',
+        absaetze: [
+          'Eine besondere Herausforderung stellte die Realisierung der auskragenden Balkone im Dachgeschoss dar. Die anspruchsvolle konstruktive Umsetzung erforderte eine präzise Planung und enge Abstimmung aller Beteiligten.',
+          'Die neu geschaffenen Aussenräume prägen das Erscheinungsbild des Gebäudes und schaffen einen wesentlichen Mehrwert für die Bewohnerinnen und Bewohner. Wo vorher ein geschlossenes Bürohaus stand, öffnen sich jetzt grosszügige Balkone zum Umfeld.',
+        ],
+      },
+      {
+        titel: 'Von der Machbarkeitsstudie bis zur Bauleitung',
+        absaetze: [
+          'Das Projekt wurde von der ersten Machbarkeitsstudie über die Projektierung und Ausschreibung bis hin zur Ausführungsplanung und Begleitung der Bauleitung durchgehend von uns betreut.',
+          'Durch die sorgfältige Koordination sämtlicher Projektbeteiligter konnte die Transformation des ehemaligen Bürogebäudes in Ottenbach in ein hochwertiges Mehrfamilienhaus erfolgreich umgesetzt werden.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Umnutzung eines Bürogebäudes' },
+      { label: 'Wohnungen', wert: 'Acht Wohnungen' },
+      { label: 'Besonderheit', wert: 'Auskragende Balkone im Dachgeschoss' },
+      { label: 'Status', wert: 'Realisiert' },
+    ],
+    fragen: [
+      {
+        frage: 'Lohnt sich die Umnutzung eines Bürogebäudes zu Wohnraum?',
+        antwort:
+          'Oft ja, wenn Tragstruktur und Geschosshöhen mitspielen. Der Rohbau bleibt erhalten, was Aushub und Rückbau spart, während Grundrisse, Haustechnik und Gebäudehülle vollständig erneuert werden. Ob sich das im Einzelfall rechnet, zeigt eine Machbarkeitsstudie zu Beginn.',
+      },
+      {
+        frage: 'Wie werden auskragende Balkone konstruktiv gelöst?',
+        antwort:
+          'Auskragende Balkone brauchen eine durchdachte Lastabtragung, meist über verstärkte Deckenplatten oder eingespannte Träger, kombiniert mit einer Wärmedämmung, die die Kältebrücke am Auskragungspunkt unterbricht. Die Details müssen früh mit dem Tragwerksplaner abgestimmt werden, weil sie die Statik des ganzen Geschosses beeinflussen.',
+      },
+      {
+        frage: 'Wie lange dauert eine Kernsanierung mit Umnutzung?',
+        antwort:
+          'Von der Machbarkeitsstudie bis zum Einzug rechnen Sie meist mit zwei bis drei Jahren, je nach Bewilligungsverfahren und Umfang der Eingriffe. Weil die bestehende Struktur genutzt wird, entfällt die Rohbauzeit eines Neubaus, dafür verlängert eine sorgfältige Bestandsaufnahme die Planungsphase.',
+      },
+    ],
+    thumbnail: '/images/projekte/mfh-letten/thumb.jpg',
+    heroImage: '/images/projekte/mfh-letten/hero.jpg',
+    galerie: [
+      '/images/projekte/mfh-letten/01.jpg',
+      '/images/projekte/mfh-letten/02.jpg',
+      '/images/projekte/mfh-letten/03.jpg',
+      '/images/projekte/mfh-letten/04.jpg',
+    ],
+    featured: true,
+  },
+  {
     slug: 'mfh-hochwarting',
     title: 'Mehrfamilienhaus Hochwarting',
     ort: 'Glashütten',

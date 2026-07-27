@@ -11,12 +11,11 @@ interface MobileMenuProps {
 }
 
 /**
- * Vollbild-Menü für Mobile und Tablet.
+ * Vollbild-Menü für alle Bildschirmgrössen (kein separates Desktop-Menü mehr).
  *
  * Nachbau von `.primary-navigation-open .primary-menu-container` im alten
  * Theme: weisses Overlay über die volle Höhe, Menü vertikal zentriert und
- * linksbündig, Einträge in 2.25rem (`--global--font-size-xl`). Der Breakpoint
- * liegt wie dort bei 960px, nicht bei Tailwinds md (768px).
+ * linksbündig, Einträge in 2.25rem (`--global--font-size-xl`).
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   useEffect(() => {
@@ -42,7 +41,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   return (
     <div
       id="mobile-menu"
-      className="fixed inset-0 z-40 bg-white lg:hidden"
+      className="fixed inset-0 z-40 bg-white"
       role="dialog"
       aria-modal="true"
       aria-label="Hauptnavigation"

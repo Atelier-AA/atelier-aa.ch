@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Container from '@/components/ui/Container';
-import Navigation from './Navigation';
 import MobileMenu from './MobileMenu';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
@@ -64,19 +63,17 @@ export default function Header() {
             <Logo collapsed={collapsed} />
           </Link>
 
-          {/* Links erben die Farbe vom Header — weiss über dem Hero, sonst schwarz,
-              wie `.page-id-861 .site-header.has-menu .menu-item a` im alten Theme. */}
-          <Navigation className="hidden lg:block" />
-
           {/* Burger, der beim Öffnen zum Schliessen-Kreuz wird. Liegt mit z-50
               über dem Menü-Overlay (z-40) und ist damit auch im offenen Zustand
               bedienbar — deshalb braucht das Overlay kein eigenes X.
               Die äusseren Linien wandern um genau ihren Abstand zur Mitte
-              (gap 6px + 1px Linie = 7px) und kreuzen sich dort exakt. */}
+              (gap 6px + 1px Linie = 7px) und kreuzen sich dort exakt.
+              Auf allen Breiten sichtbar — es gibt keine horizontale
+              Desktop-Navigation mehr, nur noch das Burger-Menü. */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
+            className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
             aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
