@@ -3,10 +3,10 @@ import type { TeamMember } from '@/types';
 /**
  * Team.
  *
- * Namen und Rollen aus der alten Website (Post 2). Die Texte für die
- * Personenseiten sind Beispiele und fachlich zu prüfen — sie zeigen den
- * gewünschten Aufbau: ein Einzeiler, drei bis vier Schwerpunkte und zwei bis
- * drei Absätze zu Werdegang und Haltung.
+ * Namen und Rollen vom Büro bestätigt (Stand Juli 2026). Fatime Aljili und
+ * Riccarda Tscharner sind kurz gehalten, da nur die Rolle bestätigt ist, nicht
+ * ein ausführlicher Werdegang — bitte bei Gelegenheit ausbauen. Ejup Bajrami
+ * und Yakup Uslu (beide Projektleiter) fehlen noch, bis ihre Fotos vorliegen.
  *
  * Reihenfolge in der Datei = Reihenfolge auf der Seite.
  */
@@ -14,7 +14,7 @@ export const team: TeamMember[] = [
   {
     slug: 'aljili-aljisami',
     name: 'Aljili Aljisami',
-    rolle: 'Geschäftsführer, Dipl. Architekt',
+    rolle: 'Inhaber, Geschäftsführer',
     bild: '/images/team/aljili-aljisami.jpg',
     kurz: 'Gründer von Atelier AA, verantwortlich für Entwurf und Projektleitung.',
     schwerpunkte: [
@@ -31,59 +31,26 @@ export const team: TeamMember[] = [
     email: 'info@atelier-aa.ch',
   },
   {
-    slug: 'melissa-hoffmann',
-    name: 'Melissa Hoffmann',
-    rolle: 'Architektin',
-    bild: '/images/team/melissa-hoffmann.jpg',
-    kurz: 'Verantwortet Ausführungsplanung und Detailentwicklung.',
-    schwerpunkte: [
-      'Ausführungsplanung',
-      'Detailentwicklung',
-      'Materialisierung',
-      'Ausschreibung und Vergabe',
-    ],
+    slug: 'fatime-aljili',
+    name: 'Fatime Aljili',
+    rolle: 'Personal',
+    bild: '/images/team/fatime-aljili.jpg',
+    kurz: 'Verantwortlich für Personalfragen im Büro.',
+    schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [
-      'Melissa Hoffmann begleitet Projekte von der Bewilligung bis zur Baufreigabe — die Phase, in der ein Entwurf zur Konstruktion wird. Ihre Arbeit entscheidet darüber, ob eine gestalterische Absicht am Bau ankommt oder auf dem Weg verloren geht.',
-      'Ihr besonderes Interesse gilt Anschlüssen und Übergängen: wie ein Fenster in der Fassade sitzt, wie ein Balkon thermisch getrennt wird, wie zwei Materialien aufeinandertreffen. Details, die niemandem auffallen, wenn sie stimmen.',
-      'In der Ausschreibung achtet sie darauf, dass die Beschriebe präzise sind. Eine unklare Position wird auf der Baustelle teuer oder falsch ausgeführt — meist beides.',
+      'Fatime Aljili ist im Büro für Personalfragen verantwortlich. Sie sorgt dafür, dass organisatorische Abläufe im Hintergrund reibungslos funktionieren.',
     ],
     email: null,
   },
   {
-    slug: 'veronique-mayer',
-    name: 'Veronique Mayer',
-    rolle: 'Architektin',
-    bild: '/images/team/veronique-mayer.jpg',
-    kurz: 'Arbeitet an Entwurf, Wettbewerben und Machbarkeitsstudien.',
-    schwerpunkte: [
-      'Entwurf und Wettbewerbe',
-      'Machbarkeitsstudien',
-      'Nachhaltigkeit und zirkuläres Bauen',
-      'Visualisierung',
-    ],
+    slug: 'riccarda-tscharner',
+    name: 'Riccarda Tscharner',
+    rolle: 'Assistentin der Geschäftsleitung',
+    bild: '/images/team/riccarda-tscharner.jpg',
+    kurz: 'Unterstützt die Geschäftsleitung in administrativen und organisatorischen Aufgaben.',
+    schwerpunkte: ['Administration', 'Büroorganisation', 'Unterstützung der Geschäftsleitung'],
     absaetze: [
-      'Veronique Mayer arbeitet am Anfang der Projekte: Machbarkeitsstudien, Volumenuntersuchungen, Wettbewerbsbeiträge. Sie prüft, was auf einem Grundstück möglich ist, bevor über Gestaltung gesprochen wird.',
-      'Nachhaltigkeit versteht sie als Rechenaufgabe, nicht als Haltungsfrage. Sie bringt Lebenszykluskosten und graue Energie früh in die Diskussion — dann, wenn Entscheide noch günstig zu ändern sind.',
-      'Ihre Visualisierungen dienen der Klärung, nicht der Werbung: Sie zeigen Bauherrschaften, was entstehen wird, auch wenn ein anderes Bild leichter zu verkaufen wäre.',
-    ],
-    email: null,
-  },
-  {
-    slug: 'sandor-azzati',
-    name: 'Sandor Azzati',
-    rolle: 'Architekt',
-    bild: '/images/team/sandor-azzati.jpg',
-    kurz: 'Führt Bauleitung und Kostenkontrolle auf der Baustelle.',
-    schwerpunkte: [
-      'Bauleitung',
-      'Kostenkontrolle',
-      'Terminplanung',
-      'Umbau im bewohnten Zustand',
-    ],
-    absaetze: [
-      'Sandor Azzati ist auf der Baustelle, wenn aus Plänen Gebäude werden. Er koordiniert Unternehmer, kontrolliert Ausführung und Kosten und vertritt dabei die Interessen der Bauherrschaft.',
-      'Seine Erfahrung liegt besonders bei Umbauten im bewohnten Zustand — Sanierungen, bei denen die Mieterschaft während der Arbeiten im Haus bleibt. Das verlangt eine Etappierung, die technisch funktioniert und für die Bewohnenden erträglich bleibt.',
-      'Bei Nachträgen prüft er konsequent, ob eine Leistung tatsächlich zusätzlich ist oder im Werkvertrag bereits enthalten war. Diese Arbeit ist unspektakulär und macht einen erheblichen Teil der Kostensicherheit aus.',
+      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen und sorgt für einen reibungslosen Ablauf im Büroalltag.',
     ],
     email: null,
   },
