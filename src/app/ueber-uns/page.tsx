@@ -55,7 +55,13 @@ export default function UeberUnsPage() {
           <p className="text-xs uppercase tracking-widest text-stone mb-10">
             Team
           </p>
-          <TeamGrid members={team} />
+          {/* Geschäftsleitung (2) in der ersten Zeile, das übrige Team (3)
+              darunter — bewusste Gliederung statt eines durchgehenden
+              4er-Rasters. */}
+          <TeamGrid members={team.slice(0, 2)} lgCols={2} />
+          <div className="mt-8 md:mt-10">
+            <TeamGrid members={team.slice(2)} lgCols={3} />
+          </div>
         </Container>
       </div>
 

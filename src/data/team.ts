@@ -3,12 +3,13 @@ import type { TeamMember } from '@/types';
 /**
  * Team.
  *
- * Namen und Rollen vom Büro bestätigt (Stand Juli 2026). Fatime Aljili und
- * Riccarda Tscharner sind kurz gehalten, da nur die Rolle bestätigt ist, nicht
- * ein ausführlicher Werdegang — bitte bei Gelegenheit ausbauen. Ejup Bajrami
- * und Yakup Uslu (beide Projektleiter) fehlen noch, bis ihre Fotos vorliegen.
+ * Namen und Rollen vom Büro bestätigt (Stand Juli 2026). Bei allen ausser
+ * Aljili Aljisami ist nur die Rolle bestätigt, kein ausführlicher Werdegang —
+ * bitte bei Gelegenheit ausbauen.
  *
- * Reihenfolge in der Datei = Reihenfolge auf der Seite.
+ * Reihenfolge in der Datei = Reihenfolge auf der Seite: die ersten zwei
+ * (Aljili Aljisami, Fatime Aljili) stehen in der ersten Zeile, die
+ * restlichen drei darunter — siehe `ueber-uns/page.tsx`.
  */
 export const team: TeamMember[] = [
   {
@@ -39,6 +40,30 @@ export const team: TeamMember[] = [
     schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [
       'Fatime Aljili ist im Büro für Personalfragen verantwortlich. Sie sorgt dafür, dass organisatorische Abläufe im Hintergrund reibungslos funktionieren.',
+    ],
+    email: null,
+  },
+  {
+    slug: 'ejup-bajrami',
+    name: 'Ejup Bajrami',
+    rolle: 'Projektleiter',
+    bild: '/images/team/ejup-bajrami.jpg',
+    kurz: 'Leitet Projekte in der Planung.',
+    schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
+    absaetze: [
+      'Ejup Bajrami leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden.',
+    ],
+    email: null,
+  },
+  {
+    slug: 'yakup-uslu',
+    name: 'Yakup Uslu',
+    rolle: 'Projektleiter',
+    bild: '/images/team/yakup-uslu.jpg',
+    kurz: 'Leitet Projekte in der Planung.',
+    schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
+    absaetze: [
+      'Yakup Uslu leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden.',
     ],
     email: null,
   },
