@@ -18,6 +18,13 @@ interface Slide {
 // alten Website; Reihenfolge und Bildzuordnung aus wp_nextend2_..._slides.
 const slides: Slide[] = [
   {
+    image: '/images/hero/slide-jonen.jpg',
+    projekt: 'EFH Jonen',
+    ort: 'Jonen',
+    kanton: 'AG',
+    href: '/referenzen/efh-jonen',
+  },
+  {
     image: '/images/hero/slide-hochwarting.png',
     projekt: 'MFH Hochwarting',
     ort: 'Glashütten',
@@ -81,10 +88,7 @@ export default function HeroSlider() {
         <div className="mx-auto w-full max-w-content px-6 md:px-10 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <Link href={slides[current].href} className="text-white group">
-              <p className="text-xs uppercase tracking-widest mb-3 opacity-80">
-                Aktuelles Projekt
-              </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium">
                 {slides[current].projekt}
                 {/* Ort mit Kantonskürzel, uppercase und gesperrt wie
                     `.referenzen__ort` im alten Theme. */}

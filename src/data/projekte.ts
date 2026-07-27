@@ -16,6 +16,80 @@ import type { Projekt } from '@/types';
  */
 export const projekte: Projekt[] = [
   {
+    slug: 'efh-jonen',
+    title: 'EFH Jonen',
+    ort: 'Jonen',
+    kanton: 'AG',
+    kunde: null,
+    jahr: '2026',
+    typ: 'Einfamilienhaus',
+    leistungen: [
+      'Machbarkeitsstudie',
+      'Projektierung',
+      'Ausschreibungsplanung',
+      'Ausführungsplanung',
+      'Bauleitung',
+    ],
+    beschreibung:
+      'Neubau eines Einfamilienhauses in Jonen im Kanton Aargau mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss. Die Bauherrschaft war zugleich der Inhaber von Atelier AA Architekten — ein Neubau mit besonderem architektonischem Anspruch.',
+    abschnitte: [
+      {
+        titel: 'Ein Neubau mit besonderem Anspruch',
+        absaetze: [
+          'In Jonen im Kanton Aargau entstand ein Einfamilienhaus mit einer Besonderheit: Die Bauherrschaft war zugleich der Inhaber von Atelier AA Architekten. Ein Neubau für das eigene Büro bedeutet einen anderen Massstab als ein Projekt für Dritte — jede Entscheidung zwischen Wunsch und Budget wird ohne Umweg über eine zweite Partei durchdacht.',
+          'Der Anspruch an die architektonische Qualität war entsprechend hoch. Gleichzeitig musste das Grundstück selbst berücksichtigt werden: Die Lage verlangte von Anfang an eine sorgfältige Planung der Erschliessung und der Anordnung auf der Parzelle.',
+        ],
+      },
+      {
+        titel: 'Vier Ebenen, klar geordnet',
+        absaetze: [
+          'Das Haus umfasst zwei Vollgeschosse, ein Dachgeschoss und ein Untergeschoss. Diese Schichtung schafft klar getrennte Nutzungen: Rückzug und Technik im Untergeschoss, Wohnen und Kochen im Erdgeschoss, private Räume im Ober- und Dachgeschoss.',
+          'Eine offene Treppe mit Glasgeländer verbindet die Ebenen sichtbar miteinander, statt sie durch ein geschlossenes Treppenhaus zu trennen. Grossflächige Verglasungen öffnen die oberen Geschosse zur umgebenden Landschaft.',
+        ],
+      },
+      {
+        titel: 'Materialisierung und Ausblick',
+        absaetze: [
+          'Innen bestimmen helle Oberflächen und wenige, dafür grossformatige Materialwechsel das Bild — eine Zurückhaltung, die den Blick nach aussen betont. Von den oberen Geschossen reicht die Sicht weit über das offene Landschaftsbild rund um Jonen.',
+          'Auch aussen ist die Sprache reduziert: eine helle Putzfassade und dunkel abgesetzte Fensterbänder setzen einen bewussten Kontrast zur giebelständigen Nachbarbebauung, ohne sich von ihr abzuwenden.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Neubau' },
+      { label: 'Geschosse', wert: '2 Vollgeschosse, Dachgeschoss, Untergeschoss' },
+      { label: 'Besonderheit', wert: 'Eigenprojekt des Büros' },
+      { label: 'Status', wert: 'Realisiert' },
+    ],
+    fragen: [
+      {
+        frage: 'Was bedeutet es, wenn ein Architekturbüro für sich selbst baut?',
+        antwort:
+          'Es bedeutet vor allem, dass zwischen architektonischem Anspruch und Bauherrenwunsch keine zweite Partei vermitteln muss — beide Rollen liegen in einer Person. Am Bewilligungsverfahren und der Bauleitung ändert das nichts: Baugesuch, Ausschreibung und Ausführung laufen wie bei jedem anderen Projekt.',
+      },
+      {
+        frage: 'Worauf muss man bei einem schwierig erschlossenen Grundstück achten?',
+        antwort:
+          'Zufahrt, Werkleitungen und Grenzabstände müssen früh geprüft werden, oft schon vor dem Landkauf. Eine ungünstige Erschliessung lässt sich planerisch meist lösen, verursacht aber zusätzliche Kosten, die in der Kostenschätzung von Anfang an eingerechnet werden sollten.',
+      },
+      {
+        frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
+        antwort:
+          'Im Kanton Aargau liegen Einfamilienhäuser in mittlerem bis gehobenem Standard aktuell bei rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen. Ein vollwertiges Untergeschoss erhöht diesen Wert, da Aushub und Abdichtung ins Gewicht fallen — eine belastbare Zahl liefert erst der Kostenrahmen im Vorprojekt.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
+    heroImage: '/images/projekte/efh-jonen/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-jonen/01.jpg',
+      '/images/projekte/efh-jonen/02.jpg',
+      '/images/projekte/efh-jonen/03.jpg',
+      '/images/projekte/efh-jonen/04.jpg',
+    ],
+    plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-jonen/01-kataster.pdf' }],
+    featured: true,
+  },
+  {
     slug: 'mfh-untersiggenthal',
     title: 'MFH Untersiggenthal',
     ort: 'Untersiggenthal',
@@ -90,7 +164,17 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-untersiggenthal/01.jpg',
       '/images/projekte/mfh-untersiggenthal/02.jpg',
       '/images/projekte/mfh-untersiggenthal/03.jpg',
-      '/images/projekte/mfh-untersiggenthal/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Kataster', datei: '/dokumente/projekte/mfh-untersiggenthal/01-kataster.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/mfh-untersiggenthal/02-untergeschoss.pdf' },
+      { titel: 'Erdgeschoss / Umgebung', datei: '/dokumente/projekte/mfh-untersiggenthal/03-erdgeschoss-umgebung.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/mfh-untersiggenthal/04-obergeschoss.pdf' },
+      { titel: 'Dachgeschoss', datei: '/dokumente/projekte/mfh-untersiggenthal/05-dachgeschoss.pdf' },
+      { titel: 'Nordansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/06-nordansicht.pdf' },
+      { titel: 'Ostansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/07-ostansicht.pdf' },
+      { titel: 'Südansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/08-suedansicht.pdf' },
+      { titel: 'Westansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/09-westansicht.pdf' },
     ],
     featured: true,
   },
@@ -152,8 +236,8 @@ export const projekte: Projekt[] = [
           'Wir stimmen Wohnungsmix und Ausbaustandard auf das lokale Mietzinsniveau ab, statt maximal zu bauen. Dazu kommt Nutzungsoffenheit: nicht tragende Trennwände erlauben es, Wohnungsgrössen später anzupassen, ohne ins Tragwerk einzugreifen.',
       },
     ],
-    thumbnail: '/images/projekte/mfh-sihlaurain/thumb.png',
-    heroImage: '/images/projekte/mfh-sihlaurain/hero.png',
+    thumbnail: '/images/projekte/mfh-sihlaurain/thumb.jpg',
+    heroImage: '/images/projekte/mfh-sihlaurain/hero.jpg',
     galerie: [
       '/images/projekte/mfh-sihlaurain/01.jpg',
       '/images/projekte/mfh-sihlaurain/02.jpg',
@@ -221,6 +305,16 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-kuenten/02.jpg',
       '/images/projekte/mfh-kuenten/03.jpg',
       '/images/projekte/mfh-kuenten/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Kataster', datei: '/dokumente/projekte/mfh-kuenten/01-kataster.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/mfh-kuenten/02-untergeschoss.pdf' },
+      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/mfh-kuenten/03-erdgeschoss.pdf' },
+      { titel: 'Attikageschoss', datei: '/dokumente/projekte/mfh-kuenten/04-attikageschoss.pdf' },
+      { titel: 'Fassade Ost', datei: '/dokumente/projekte/mfh-kuenten/05-fassade-ost.pdf' },
+      { titel: 'Fassade Nord', datei: '/dokumente/projekte/mfh-kuenten/06-fassade-nord.pdf' },
+      { titel: 'Fassade Süd', datei: '/dokumente/projekte/mfh-kuenten/07-fassade-sued.pdf' },
+      { titel: 'Schnitt AA', datei: '/dokumente/projekte/mfh-kuenten/08-schnitt-aa.pdf' },
     ],
     featured: true,
   },
@@ -305,6 +399,80 @@ export const projekte: Projekt[] = [
     featured: true,
   },
   {
+    slug: 'efh-huenenberg',
+    title: 'EFH Hünenberg',
+    ort: 'Hünenberg',
+    kanton: 'ZG',
+    kunde: null,
+    jahr: '2023',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
+    beschreibung:
+      'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg im Kanton Zug. Eine rahmenlose Verglasung öffnet das Erdgeschoss zum Garten, ein neuer Balkon im Obergeschoss bietet Sicht auf den Zugersee.',
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: [
+          'Das bestehende Einfamilienhaus in Hünenberg im Kanton Zug wurde im Erdgeschoss umfassend saniert und durch einen gezielten Anbau erweitert. Ziel der Bauherrschaft war es, den Wohnraum grosszügig zu öffnen und trotz der Erweiterung eine maximale natürliche Belichtung sicherzustellen.',
+          'Gleichzeitig sollte die neue Struktur ohne störende statische Eingriffe in den Bestand auskommen — eine Vorgabe, die die Wahl der Konstruktion und der Verglasung von Anfang an mitbestimmt hat.',
+        ],
+      },
+      {
+        titel: 'Rahmenlose Verglasung',
+        absaetze: [
+          'Für die Öffnung zum Garten kam eine durchgängige, grossflächige Verglasung mit einem rahmenlosen Schiebesystem zum Einsatz. Sie schafft eine nahezu nahtlose Verbindung zwischen Innen- und Aussenraum; die raumhohen Fenster führen das Licht tief in den Wohnbereich.',
+          'Trotz der kompakten Grundstruktur des Hauses entsteht dadurch eine räumliche Grosszügigkeit, wie sie ein reiner Anbau ohne diese Öffnung nicht erreicht hätte.',
+        ],
+      },
+      {
+        titel: 'Die Beschattung als Detail',
+        absaetze: [
+          'Eine besondere planerische Herausforderung war die Beschattung: Die Bauherrschaft wünschte ausschliesslich seitliche Führungsschienen an der Fassade, keine sichtbare Technik im Blickfeld. Die Lösung wurde deshalb vollständig im Sturzbereich integriert und über die Gebäudeecke geführt.',
+          'Die erforderliche Stabilität stellt ein ergänzendes, sorgfältig verstecktes Stahlrohr sicher. Das Ergebnis ist ein Sonnenschutz, der funktioniert, ohne die reduzierte Fassade zu stören.',
+        ],
+      },
+      {
+        titel: 'Balkon mit Weitblick',
+        absaetze: [
+          'Durch die Erweiterung entstand im Obergeschoss ein grosszügiger Balkon mit hoher Aufenthaltsqualität. Von hier reicht der Blick über die Dächer der Nachbarschaft bis zum Zugersee.',
+          'Das Projekt verbindet damit technische Präzision in der Umsetzung mit einer klaren Ausrichtung auf Wohnqualität und Aussicht.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Sanierung und Erweiterung' },
+      { label: 'Besonderheit', wert: 'Rahmenlose Verglasung, integrierte Beschattung' },
+      { label: 'Ausblick', wert: 'Balkon mit Sicht auf den Zugersee' },
+      { label: 'Status', wert: 'Realisiert' },
+    ],
+    fragen: [
+      {
+        frage: 'Wie lässt sich ein Erdgeschoss ohne sichtbare Statik öffnen?',
+        antwort:
+          'Meist über rahmenlose Schiebeverglasungen in Kombination mit verstärkten Sturzkonstruktionen, die die Lasten unauffällig abtragen. Wie weit sich eine Fassade öffnen lässt, hängt von der bestehenden Tragstruktur ab und muss früh mit dem Tragwerksplaner geklärt werden.',
+      },
+      {
+        frage: 'Wie funktioniert eine Beschattung ohne sichtbare Führungsschienen an der Fassade?',
+        antwort:
+          'Die Führung lässt sich in den Sturzbereich integrieren und über die Gebäudeecke führen, statt sie aussen an der Fassade zu montieren. Die zusätzlich nötige Stabilität übernimmt ein ergänzendes, verdecktes Stahlrohr — sichtbar bleibt nur der Behang selbst.',
+      },
+      {
+        frage: 'Lohnt sich eine Erweiterung gegenüber einem Neubau?',
+        antwort:
+          'Oft ja, wenn die bestehende Struktur und Lage stimmen. Eine Erweiterung nutzt vorhandene Erschliessung und Bausubstanz weiter und kommt meist günstiger als ein vollständiger Neubau — vorausgesetzt, die Anschlüsse an den Bestand werden sorgfältig geplant.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-huenenberg/thumb.jpg',
+    heroImage: '/images/projekte/efh-huenenberg/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-huenenberg/01.jpg',
+      '/images/projekte/efh-huenenberg/02.jpg',
+      '/images/projekte/efh-huenenberg/03.jpg',
+      '/images/projekte/efh-huenenberg/04.jpg',
+    ],
+    featured: true,
+  },
+  {
     slug: 'mfh-hochwarting',
     title: 'Mehrfamilienhaus Hochwarting',
     ort: 'Glashütten',
@@ -363,6 +531,16 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-hochwarting/02.jpg',
       '/images/projekte/mfh-hochwarting/03.jpg',
       '/images/projekte/mfh-hochwarting/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Umgebungsplan', datei: '/dokumente/projekte/mfh-hochwarting/01-umgebungsplan.pdf' },
+      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/mfh-hochwarting/02-erdgeschoss.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/mfh-hochwarting/03-obergeschoss.pdf' },
+      { titel: 'Attika', datei: '/dokumente/projekte/mfh-hochwarting/04-attika.pdf' },
+      { titel: 'Schnitt', datei: '/dokumente/projekte/mfh-hochwarting/05-schnitt.pdf' },
+      { titel: 'Haus A, Nordwestfassade', datei: '/dokumente/projekte/mfh-hochwarting/06-haus-a-nordwestfassade.pdf' },
+      { titel: 'Haus B, Nordostfassade', datei: '/dokumente/projekte/mfh-hochwarting/07-haus-b-nordostfassade.pdf' },
+      { titel: 'Haus B, Nordwestfassade', datei: '/dokumente/projekte/mfh-hochwarting/08-haus-b-nordwestfassade.pdf' },
     ],
     featured: false,
   },

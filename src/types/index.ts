@@ -16,6 +16,12 @@ export interface ProjektDaten {
   wert: string;
 }
 
+/** Ein herunterladbarer Planausschnitt (Kataster, Grundriss, Fassade …). */
+export interface ProjektPlan {
+  titel: string;
+  datei: string;
+}
+
 export interface Projekt {
   slug: string;
   title: string;
@@ -44,6 +50,8 @@ export interface Projekt {
   thumbnail: string;
   heroImage: string;
   galerie: string[];
+  /** Downloadbare Pläne als PDF. Nur gesetzt, wenn Originalpläne vorliegen. */
+  plaene?: ProjektPlan[];
   featured: boolean;
 }
 

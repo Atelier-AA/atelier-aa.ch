@@ -4,6 +4,7 @@ import Container from '@/components/ui/Container';
 import ProjektHero from '@/components/projekte/ProjektHero';
 import ProjektMeta from '@/components/projekte/ProjektMeta';
 import ProjektGalerie from '@/components/projekte/ProjektGalerie';
+import ProjektPlaene from '@/components/projekte/ProjektPlaene';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
@@ -138,6 +139,8 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           </div>
 
           <ProjektGalerie bilder={projekt.galerie} projektTitel={projekt.title} />
+
+          {projekt.plaene && <ProjektPlaene plaene={projekt.plaene} />}
 
           {/* Eckdaten und Leistungsumfang */}
           <div className="mt-20 grid max-w-4xl grid-cols-1 gap-12 border-t border-mist pt-12 md:grid-cols-2">
