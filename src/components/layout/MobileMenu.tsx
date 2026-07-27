@@ -48,9 +48,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     >
       <div className="flex h-full flex-col justify-center">
         <div className="mx-auto w-full max-w-content px-6 md:px-10 text-ink">
-          {/* Dieselbe Navigation wie im Desktop-Header, nur in der grossen
-              Variante — so gilt der Unterstreichungs-Effekt auch mobil. */}
-          <Navigation variant="mobile" onNavigate={onClose} />
+          <Navigation onNavigate={onClose} />
 
           <ul className="mt-14 flex flex-col gap-3">
             {footerLegal.map((item) => (

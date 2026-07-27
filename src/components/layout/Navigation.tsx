@@ -1,29 +1,14 @@
 import Link from 'next/link';
 import { navigation } from '@/data/navigation';
-import { cn } from '@/lib/utils';
 
 interface NavigationProps {
-  className?: string;
-  linkClassName?: string;
   onNavigate?: () => void;
-  /** Schriftgrösse der Einträge; im Mobilmenü deutlich grösser. */
-  variant?: 'desktop' | 'mobile';
 }
 
-export default function Navigation({
-  className,
-  linkClassName,
-  onNavigate,
-  variant = 'desktop',
-}: NavigationProps) {
+export default function Navigation({ onNavigate }: NavigationProps) {
   return (
-    <nav className={className} aria-label="Hauptnavigation">
-      <ul
-        className={cn(
-          'flex',
-          variant === 'mobile' ? 'flex-col gap-4' : 'flex-row gap-10'
-        )}
-      >
+    <nav aria-label="Hauptnavigation">
+      <ul className="flex flex-col gap-4">
         {navigation.map((item) => (
           <li key={item.href}>
             <Link
@@ -33,13 +18,7 @@ export default function Navigation({
               // Header), damit sie über dem dunklen Hero umgeschaltet werden
               // kann, ohne dass sich zwei gleich spezifische Tailwind-Klassen
               // überlagern.
-              className={cn(
-                'group inline-block text-current transition-opacity',
-                variant === 'mobile'
-                  ? 'text-[1.5rem] md:text-[2.25rem] font-light leading-tight'
-                  : 'text-sm uppercase tracking-widest',
-                linkClassName
-              )}
+              className="group inline-block text-current transition-opacity text-[1.5rem] md:text-[2.25rem] font-light leading-tight"
             >
               {item.label}
               {/* Unterstreichung, die beim Hover von 0 auf volle Breite wächst —
