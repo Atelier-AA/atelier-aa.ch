@@ -544,6 +544,544 @@ export const projekte: Projekt[] = [
     ],
     featured: false,
   },
+  {
+    slug: 'defh-safenwil',
+    title: 'DEFH Safenwil',
+    ort: 'Safenwil',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Doppeleinfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Doppeleinfamilienhaus in Safenwil im Kanton Aargau für einen Investor, der das Grundstück erworben hatte. Kubische Bauform, heller Putzfassade und begrüntem Attikageschoss.',
+    abschnitte: [
+      {
+        titel: 'Kompakte Bauform',
+        absaetze: [
+          'Für einen Investor, der das Grundstück in Safenwil im Kanton Aargau erworben hatte, haben wir ein Doppeleinfamilienhaus mit klar kubischer Form entwickelt. Erdgeschoss und Obergeschoss bilden den kompakten Baukörper, ein zurückversetztes Attikageschoss mit Dachterrasse schliesst das Haus nach oben ab.',
+          'Die beiden Hauseinheiten teilen sich die gemeinsame Aussenwand, treten nach aussen aber als ein zusammenhängender Baukörper auf. Je eine Garage und ein separater Hauseingang erschliessen die Einheiten getrennt.',
+        ],
+      },
+      {
+        titel: 'Aussenraum und Materialisierung',
+        absaetze: [
+          'Die Fassade ist hell verputzt, Fenster und Türen sind dunkel abgesetzt und gliedern die Aussenhaut in ruhige, stehende Formate. Auf der Gartenseite öffnet eine grosse Verglasung den Wohnbereich zu einem gedeckten Sitzplatz mit Umgebungsmauer.',
+          'Im Innern verbindet eine offene Treppe mit Glasgeländer die Geschosse. Die Wohn-, Ess- und Kochbereiche sind offen zueinander angeordnet, mit hellem Holzboden und einer Kücheninsel mit Steinoberfläche.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus' },
+      { label: 'Bauherrschaft', wert: 'Investor' },
+      { label: 'Bauleitung', wert: 'Durch einen externen Bauleiter' },
+    ],
+    fragen: [
+      {
+        frage: 'Was unterscheidet ein Doppeleinfamilienhaus von zwei freistehenden Einfamilienhäusern?',
+        antwort:
+          'Beim Doppeleinfamilienhaus teilen sich zwei Wohneinheiten eine gemeinsame Wand, was Erstellungskosten und Landbedarf gegenüber zwei freistehenden Häusern reduziert. Grundriss und Erschliessung werden so geplant, dass beide Einheiten trotz der gemeinsamen Wand unabhängig genutzt werden können, etwa mit getrennten Zugängen und Aussenräumen.',
+      },
+      {
+        frage: 'Welche Vorteile bietet ein Attikageschoss mit Dachterrasse?',
+        antwort:
+          'Ein Attikageschoss schafft zusätzlichen Wohn- oder Freiraum, ohne die Gebäudehöhe der übrigen Geschosse zu erhöhen, da es gegenüber der Fassade zurückversetzt ist. Die Dachterrasse bietet einen privaten Aussenraum ohne Einblick von der Strasse und lässt sich begrünen.',
+      },
+    ],
+    thumbnail: '/images/projekte/defh-safenwil/thumb.jpg',
+    heroImage: '/images/projekte/defh-safenwil/hero.jpg',
+    galerie: ['/images/projekte/defh-safenwil/01.jpg', '/images/projekte/defh-safenwil/02.jpg'],
+    plaene: [
+      { titel: 'Kataster', datei: '/dokumente/projekte/defh-safenwil/01-kataster.pdf' },
+      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/defh-safenwil/02-erdgeschoss.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/defh-safenwil/03-obergeschoss.pdf' },
+      { titel: 'Attika', datei: '/dokumente/projekte/defh-safenwil/04-attika.pdf' },
+      { titel: 'Westfassade', datei: '/dokumente/projekte/defh-safenwil/05-westfassade.pdf' },
+      { titel: 'Nordfassade', datei: '/dokumente/projekte/defh-safenwil/06-nordfassade.pdf' },
+      { titel: 'Schnitt', datei: '/dokumente/projekte/defh-safenwil/07-schnitt.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'refh-hochfelden',
+    title: 'Reiheneinfamilienhäuser Hochfelden',
+    ort: 'Hochfelden',
+    kanton: 'ZH',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Reiheneinfamilienhäuser',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Reiheneinfamilienhäuser in Hochfelden im Kanton Zürich für einen Investor, der das Grundstück erworben hatte. Giebelständige Baukörper mit vorgelagerten Balkonen und Gartenterrassen.',
+    abschnitte: [
+      {
+        titel: 'Aussenbild',
+        absaetze: [
+          'Für einen Investor, der das Grundstück in Hochfelden im Kanton Zürich erworben hatte, haben wir Reiheneinfamilienhäuser mit giebelständigem, steilem und dunkel gedecktem Satteldach entwickelt. Liegende Dachflächenfenster und mehrere hochrechteckige Dacheinschnitte belichten das Geschoss unter dem Dach, die helle Putzfassade bleibt bewusst zurückhaltend.',
+          'Zum Garten hin öffnen sich Balkone mit schlanken Metallgeländern, darunter liegt eine gedeckte Terrasse mit direktem Austritt aus dem Wohnbereich. Ein gepflasterter Weg und eine Rampe mit Geländer erschliessen die Häuser von der Gartenseite, die Umgebung ist mit Stauden, Gräsern und Hecken bepflanzt.',
+        ],
+      },
+      {
+        titel: 'Wohnräume',
+        absaetze: [
+          'Im Innern zeigen die Aufnahmen einen offenen Wohn- und Essbereich mit Parkettboden, der über eine gewendelte Treppe mit den oberen Geschossen verbunden ist. Eine grosse Schiebeverglasung stellt den direkten Bezug zwischen Wohnraum und Garten her.',
+          'Die Küche schliesst als offener Bereich an den Essplatz an, ein zweiter Wohnraum mit bodentiefen Fenstertüren und vorgelagerter Terrasse ergänzt das Bild. Die Materialisierung ist hell und zurückhaltend gehalten.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Reiheneinfamilienhäuser' },
+      { label: 'Bauherrschaft', wert: 'Investor' },
+      { label: 'Bauleitung', wert: 'Durch die Bauherrschaft mit dem Unternehmer' },
+    ],
+    fragen: [
+      {
+        frage: 'Was zeichnet die Planung von Reiheneinfamilienhäusern aus?',
+        antwort:
+          'Neben dem Entwurf der einzelnen Häuser spielen Erschliessung, Aussenraum und die Einordnung ins Quartier eine zentrale Rolle. Balkone, Gartenanteile und die Zugänge der einzelnen Einheiten werden so geplant, dass private und gemeinsam genutzte Bereiche klar getrennt bleiben.',
+      },
+      {
+        frage: 'Welche Unterlagen braucht ein Baugesuch für Reiheneinfamilienhäuser?',
+        antwort:
+          'Dazu gehören in der Regel ein Situationsplan, ein Umgebungsplan sowie Grundriss- und Fassadenpläne aller betroffenen Geschosse. Der genaue Umfang richtet sich nach den Vorgaben der zuständigen Gemeinde und wird im Baugesuchsverfahren zusammengestellt.',
+      },
+    ],
+    thumbnail: '/images/projekte/refh-hochfelden/thumb.jpg',
+    heroImage: '/images/projekte/refh-hochfelden/hero.jpg',
+    galerie: ['/images/projekte/refh-hochfelden/01.jpg', '/images/projekte/refh-hochfelden/02.jpg'],
+    plaene: [
+      { titel: 'Situationsplan', datei: '/dokumente/projekte/refh-hochfelden/01-situation.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/refh-hochfelden/02-untergeschoss.pdf' },
+      { titel: 'Umgebungsplan', datei: '/dokumente/projekte/refh-hochfelden/03-umgebungsplan.pdf' },
+      { titel: 'Fassade A', datei: '/dokumente/projekte/refh-hochfelden/04-fassade-a.pdf' },
+      { titel: 'Fassade B', datei: '/dokumente/projekte/refh-hochfelden/05-fassade-b.pdf' },
+      { titel: 'Fassade C', datei: '/dokumente/projekte/refh-hochfelden/06-fassade-c.pdf' },
+      { titel: 'Fassade D', datei: '/dokumente/projekte/refh-hochfelden/07-fassade-d.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'efh-buchs',
+    title: 'EFH Buchs',
+    ort: 'Buchs',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'nicht realisiert',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch'],
+    beschreibung:
+      'Studie für ein zusätzliches Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs im Kanton Aargau. Bis zur Baubewilligung geführt, aber nicht realisiert.',
+    abschnitte: [
+      {
+        titel: 'Ungenutzte Ausnützungsreserve',
+        absaetze: [
+          'Das Grundstück in Buchs im Kanton Aargau trägt bereits ein Wohnhaus, liess aber noch zusätzliche Ausnützung zu. Für einen privaten Bauherrn haben wir deshalb ein weiteres, freistehendes Einfamilienhaus auf derselben Parzelle geplant.',
+          'Das Projekt wurde bis zur Baubewilligung geführt und bewilligt. Realisiert wurde es bislang nicht — die Visualisierungen zeigen den geplanten Zustand, nicht ein bestehendes Gebäude.',
+        ],
+      },
+      {
+        titel: 'Entwurf',
+        absaetze: [
+          'Die Visualisierungen zeigen eine helle, warmtonige Putzfassade und ein geneigtes Dach mit Dachflächenfenstern für zusätzliches Licht in den oberen Räumen. Auf der Gartenseite ergänzt ein gedeckter Sitzplatz den Aussenraum.',
+          'Im Erdgeschoss ist ein offener Wohn-, Ess- und Kochbereich mit Kücheninsel vorgesehen, im Obergeschoss ein Zimmer mit Zugang zu Balkon oder Terrasse.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Erweiterungsbau' },
+      { label: 'Bauherrschaft', wert: 'Privater Bauherr' },
+      { label: 'Status', wert: 'Baubewilligung erteilt, nicht realisiert' },
+    ],
+    fragen: [
+      {
+        frage: 'Kann ich auf meinem Grundstück ein weiteres Haus bauen, obwohl schon eines steht?',
+        antwort:
+          'Das hängt von der Ausnützungsreserve, den Grenzabständen und der Erschliessung Ihrer Parzelle ab. Eine Machbarkeitsstudie zeigt, ob und in welcher Form eine zusätzliche Baute möglich ist, bevor Sie in die Planung investieren.',
+      },
+      {
+        frage: 'Was passiert mit einer erteilten Baubewilligung, wenn nicht gebaut wird?',
+        antwort:
+          'Eine Baubewilligung ist befristet gültig, meist zwei bis drei Jahre je nach Kanton, danach verfällt sie. Sie kann in dieser Zeit auch mit dem Grundstück verkauft oder bei geänderten Plänen neu beantragt werden.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-buchs/thumb.jpg',
+    heroImage: '/images/projekte/efh-buchs/hero.jpg',
+    galerie: ['/images/projekte/efh-buchs/01.jpg', '/images/projekte/efh-buchs/02.jpg'],
+    plaene: [
+      { titel: 'Kataster', datei: '/dokumente/projekte/efh-buchs/01-kataster.pdf' },
+      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/efh-buchs/02-erdgeschoss.pdf' },
+      { titel: 'Nordfassade', datei: '/dokumente/projekte/efh-buchs/03-nordfassade.pdf' },
+      { titel: 'Ostfassade', datei: '/dokumente/projekte/efh-buchs/04-ostfassade.pdf' },
+      { titel: 'Südfassade', datei: '/dokumente/projekte/efh-buchs/05-suedfassade.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'efh-dietikon',
+    title: 'EFH Dietikon',
+    ort: 'Dietikon',
+    kanton: 'ZH',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon im Kanton Zürich, aktuell in der Bauphase. Die Aufnahmen zeigen den Rückbau bis auf das Mauerwerk.',
+    abschnitte: [
+      {
+        titel: 'Kernsanierung bis auf das Mauerwerk',
+        absaetze: [
+          'Das bestehende Einfamilienhaus in Dietikon im Kanton Zürich wird für einen privaten Bauherrn kernsaniert. Wir haben ihn bereits vor dem Kauf beraten und seither durch alle Phasen begleitet — von der Machbarkeitsstudie über das Baugesuch bis zur Ausführungsplanung.',
+          'Die Aufnahmen entstanden während der Bauphase und zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet. Bessere Aufnahmen des fertigen Zustands liegen noch nicht vor.',
+        ],
+      },
+      {
+        titel: 'Lage an der Strassenkreuzung',
+        absaetze: [
+          'Das Grundstück liegt an der Ecke zweier Strassen und ist auf allen Seiten von Nachbarbebauung mit geneigten Dächern umgeben. Hecken entlang der Parzellengrenze schirmen die Baustelle zur Strasse hin ab.',
+          'Die Ausführungspläne dokumentieren das Gebäude von allen vier Seiten. Die Bauleitung vor Ort begleiten wir beratend, ohne ein eigenes Bauleitungsmandat zu führen.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
+      { label: 'Bauherrschaft', wert: 'Privater Bauherr, bei Kauf beraten' },
+      { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
+    ],
+    fragen: [
+      {
+        frage: 'Was bedeutet Kernsanierung bis auf das Mauerwerk?',
+        antwort:
+          'Dabei wird ein Gebäude bis auf die tragende Struktur zurückgebaut — Innenwände, Böden, Fenster und Haustechnik werden komplett erneuert. Das erlaubt eine Sanierung nach heutigem Standard, während der Rohbau und damit die Bauzonen-Konformität des Bestands erhalten bleiben.',
+      },
+      {
+        frage: 'Wie können Sie mich schon vor dem Grundstückskauf unterstützen?',
+        antwort:
+          'Wir prüfen mit einer Machbarkeitsstudie, was auf dem Grundstück oder im Bestand möglich ist, bevor Sie sich vertraglich binden. So lassen sich Überraschungen bei Bauzone, Ausnützung oder Sanierungsaufwand vermeiden.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-dietikon/thumb.jpg',
+    heroImage: '/images/projekte/efh-dietikon/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-dietikon/01.jpg',
+      '/images/projekte/efh-dietikon/02.jpg',
+      '/images/projekte/efh-dietikon/03.jpg',
+      '/images/projekte/efh-dietikon/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Situationsplan', datei: '/dokumente/projekte/efh-dietikon/00-situationsplan.pdf' },
+      { titel: 'Dachgeschoss', datei: '/dokumente/projekte/efh-dietikon/01-dachgeschoss.pdf' },
+      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/efh-dietikon/02-erdgeschoss.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-dietikon/03-untergeschoss.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/efh-dietikon/04-obergeschoss.pdf' },
+      { titel: 'Nordansicht', datei: '/dokumente/projekte/efh-dietikon/05-nordansicht.pdf' },
+      { titel: 'Ostansicht', datei: '/dokumente/projekte/efh-dietikon/06-ostansicht.pdf' },
+      { titel: 'Südansicht', datei: '/dokumente/projekte/efh-dietikon/07-suedansicht.pdf' },
+      { titel: 'Westansicht', datei: '/dokumente/projekte/efh-dietikon/08-westansicht.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'efh-wuerenlos',
+    title: 'EFH Würenlos',
+    ort: 'Würenlos',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos im Kanton Aargau für einen privaten Investor. Sandfarbene Putzfassade, Lamellenstoren und ein Balkon über der Gartenterrasse.',
+    abschnitte: [
+      {
+        titel: 'Ein Satteldachhaus mit klarer Linie',
+        absaetze: [
+          'Für einen privaten Investor haben wir ein bestehendes Einfamilienhaus in Würenlos im Kanton Aargau kernsaniert. Die Giebelseiten sind zur Zufahrt und zum Garten hin ausgerichtet, die Putzfassade ist in einem warmen Sandton gehalten, das Ziegeldach in dunklem Braun.',
+          'Vor den Fenstern liegen aussenliegende Lamellenstoren, die dem Haus ein ruhiges, gleichmässiges Fassadenbild geben. Der Hauseingang liegt unter einem kleinen, flach gedeckten Vordach zurückversetzt und ist mit einer anthrazitfarbenen Tür gefasst.',
+        ],
+      },
+      {
+        titel: 'Terrasse, Balkon und Umgebung',
+        absaetze: [
+          'Auf der Gartenseite liegt über der gedeckten Terrasse im Erdgeschoss ein Balkon mit schwarzem Metallgeländer, der zusätzlichen Aussenraum im Obergeschoss schafft. Die Terrasse ist mit hellen Bodenplatten belegt.',
+          'Das Grundstück ist mit einem Metallzaun eingefasst und durch eine Hecke von der Nachbarschaft abgeschirmt. Bei der Bauleitung haben wir die Investorenseite beratend begleitet, ohne ein eigenes Mandat zu führen.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
+      { label: 'Bauherrschaft', wert: 'Privater Investor' },
+      { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
+    ],
+    fragen: [
+      {
+        frage: 'Lohnt sich eine Kernsanierung für einen privaten Investor?',
+        antwort:
+          'Meist ja, wenn Lage und Bausubstanz stimmen: Der Wiederverkaufs- oder Vermietungswert steigt oft deutlicher als bei einer reinen Auffrischung. Entscheidend ist eine frühe Kostenschätzung, die Sanierungsaufwand und erzielbaren Wert gegenüberstellt.',
+      },
+      {
+        frage: 'Was bedeutet eine beratende Baubegleitung ohne Bauleitungsmandat?',
+        antwort:
+          'Wir stehen der Bauherrschaft und der ausführenden Bauleitung fachlich zur Seite, tragen aber nicht die volle Verantwortung für die Bauausführung. Das eignet sich für Bauherrschaften, die selbst oder mit einem eigenen Bauleiter koordinieren möchten, aber unsere Planungssicht einbeziehen wollen.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-wuerenlos/thumb.jpg',
+    heroImage: '/images/projekte/efh-wuerenlos/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-wuerenlos/01.jpg',
+      '/images/projekte/efh-wuerenlos/02.jpg',
+      '/images/projekte/efh-wuerenlos/03.jpg',
+      '/images/projekte/efh-wuerenlos/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Kataster 1:500', datei: '/dokumente/projekte/efh-wuerenlos/01-kataster-500.pdf' },
+      { titel: 'Kataster 1:1000', datei: '/dokumente/projekte/efh-wuerenlos/02-kataster-1000.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-wuerenlos/03-untergeschoss.pdf' },
+      { titel: 'Erdgeschoss / Umgebung', datei: '/dokumente/projekte/efh-wuerenlos/04-erdgeschoss-umgebung.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/efh-wuerenlos/05-obergeschoss.pdf' },
+      { titel: 'Schnitt AA', datei: '/dokumente/projekte/efh-wuerenlos/06-schnitt-aa.pdf' },
+      { titel: 'Schnitt BB', datei: '/dokumente/projekte/efh-wuerenlos/07-schnitt-bb.pdf' },
+      { titel: 'Ostfassade', datei: '/dokumente/projekte/efh-wuerenlos/08-ostfassade.pdf' },
+      { titel: 'Westfassade', datei: '/dokumente/projekte/efh-wuerenlos/09-westfassade.pdf' },
+      { titel: 'Nordfassade', datei: '/dokumente/projekte/efh-wuerenlos/10-nordfassade.pdf' },
+      { titel: 'Südfassade', datei: '/dokumente/projekte/efh-wuerenlos/11-suedfassade.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'efh-rupperswil',
+    title: 'EFH Rupperswil',
+    ort: 'Rupperswil',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Kernsanierung und Erweiterung eines bestehenden Einfamilienhauses in Rupperswil im Kanton Aargau. Weiss verputzter Giebelbau mit flachdachigem Nebenbaukörper.',
+    abschnitte: [
+      {
+        titel: 'Giebelbau mit flachdachigem Nebenbau',
+        absaetze: [
+          'Ein bestehendes Einfamilienhaus in Rupperswil im Kanton Aargau haben wir kernsaniert und erweitert. Die weiss verputzte Fassade verbindet einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbaukörper — eingebettet zwischen Nachbarbauten mit traditionellen Ziegeldächern.',
+          'Ein Holzlattenzaun fasst das Grundstück zur Strasse hin, ein gepflasterter Vorplatz führt zum Eingang. Rückseitig öffnet sich ein Sitzplatz zu einem eingezäunten Gartenbereich mit Rasen.',
+        ],
+      },
+      {
+        titel: 'Offener Wohnbereich über mehrere Geschosse',
+        absaetze: [
+          'Im Innern sind Küche, Ess- und Wohnbereich als ein durchgehender, heller Raum mit Holzboden gestaltet. Eine offene Treppe mit Glasgeländer verbindet die Geschosse, eine grossflächige Verglasung stellt den Bezug zum Sitzplatz im Garten her.',
+          'Die Bauleitung hat die Bauherrschaft nach Abschluss unserer Planung selbst übernommen.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung und Erweiterung' },
+      { label: 'Bauleitung', wert: 'Durch die Bauherrschaft selbst' },
+    ],
+    fragen: [
+      {
+        frage: 'Was zeichnet die Aussengestaltung dieses Einfamilienhauses aus?',
+        antwort:
+          'Die Fassade ist hell verputzt und kombiniert einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbaukörper. Diese Kombination erlaubt unterschiedliche Raumhöhen und Nutzungen unter einem gemeinsamen architektonischen Ausdruck.',
+      },
+      {
+        frage: 'Können wir die Bauleitung bei einer Sanierung selbst übernehmen?',
+        antwort:
+          'Das ist möglich, wenn die Bauherrschaft über die nötige Zeit und Erfahrung verfügt, Handwerker zu koordinieren und Termine zu überwachen. Wir übergeben dafür eine ausführungsreife Planung, auf die sich die Bauherrschaft und die Unternehmer vor Ort stützen können.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-rupperswil/thumb.jpg',
+    heroImage: '/images/projekte/efh-rupperswil/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-rupperswil/01.jpg',
+      '/images/projekte/efh-rupperswil/02.jpg',
+      '/images/projekte/efh-rupperswil/03.jpg',
+      '/images/projekte/efh-rupperswil/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Situationsplan 1:500', datei: '/dokumente/projekte/efh-rupperswil/01-situation-500.pdf' },
+      { titel: 'Situationsplan 1:1000', datei: '/dokumente/projekte/efh-rupperswil/02-situation-1000.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'mfh-untersiggenthal-2',
+    title: 'Wohnüberbauung Untersiggenthal',
+    ort: 'Untersiggenthal',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Mehrfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Neubau eines Mehrfamilienhauses in Untersiggenthal im Kanton Aargau, aktuell in der Ausführung. Steiles Giebeldach und vertikal verbretterte Holzfassade.',
+    abschnitte: [
+      {
+        titel: 'Ein giebelständiger Neubau im Bestand',
+        absaetze: [
+          'Das Mehrfamilienhaus fügt sich in eine gewachsene Nachbarschaft aus Einzel- und Mehrfamilienhäusern ein. Der Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern nimmt die giebelständige Bauweise der Umgebung auf und übersetzt sie in eine zeitgemässe Kubatur mit drei Wohngeschossen über einem Untergeschoss.',
+          'Die Fassade ist über alle Geschosse mit vertikalen Holzlatten verkleidet, die Fenster und Balkone liegen in klaren, senkrechten Bahnen.',
+        ],
+      },
+      {
+        titel: 'Von der Planung zur Ausführung durch einen Generalunternehmer',
+        absaetze: [
+          'Wir haben das Projekt von der Machbarkeitsstudie bis zur Ausführungsplanung vollständig begleitet. Im Erdgeschoss gruppieren sich die Wohnungen symmetrisch um ein zentrales Treppenhaus mit Lift, jede Einheit verfügt über einen eigenen Balkon oder eine Terrasse.',
+          'Nach Abschluss der Planung wurde das Projekt an einen Generalunternehmer verkauft, der den Neubau nun ausführt.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
+      { label: 'Geschosse', wert: '2 Vollgeschosse, Dachgeschoss, Untergeschoss' },
+      { label: 'Realisierung', wert: 'Durch einen Generalunternehmer nach Verkauf' },
+    ],
+    fragen: [
+      {
+        frage: 'Was bedeutet es, wenn ein Projekt nach der Planung an einen Generalunternehmer verkauft wird?',
+        antwort:
+          'Die Bauherrschaft überträgt die Realisierung an einen Generalunternehmer, der Ausführung und Bauleitung übernimmt, während die von uns erarbeitete Planung als Grundlage bestehen bleibt. Das kann sich lohnen, wenn die ursprüngliche Bauherrschaft die Bauphase nicht selbst begleiten will oder das Projekt weiterveräussert.',
+      },
+      {
+        frage: 'Welche Vorteile bietet eine Holzfassade bei einem Mehrfamilienhaus?',
+        antwort:
+          'Eine vertikale Holzverkleidung ist leicht, lässt sich gut vorfertigen und passt sich mit der Zeit farblich der Umgebung an. Sie verlangt eine durchdachte Detailplanung bei Anschlüssen und Entwässerung, bietet dafür aber ein warmes, alterungsfähiges Erscheinungsbild.',
+      },
+    ],
+    thumbnail: '/images/projekte/mfh-untersiggenthal-2/thumb.jpg',
+    heroImage: '/images/projekte/mfh-untersiggenthal-2/hero.jpg',
+    galerie: [
+      '/images/projekte/mfh-untersiggenthal-2/01.jpg',
+      '/images/projekte/mfh-untersiggenthal-2/02.jpg',
+      '/images/projekte/mfh-untersiggenthal-2/03.jpg',
+      '/images/projekte/mfh-untersiggenthal-2/04.jpg',
+    ],
+    plaene: [
+      { titel: 'Kataster', datei: '/dokumente/projekte/mfh-untersiggenthal-2/01-kataster.pdf' },
+      { titel: 'Untergeschoss', datei: '/dokumente/projekte/mfh-untersiggenthal-2/02-untergeschoss.pdf' },
+      { titel: 'Erdgeschoss / Umgebung', datei: '/dokumente/projekte/mfh-untersiggenthal-2/03-erdgeschoss-umgebung.pdf' },
+      { titel: 'Obergeschoss', datei: '/dokumente/projekte/mfh-untersiggenthal-2/04-obergeschoss.pdf' },
+      { titel: 'Nordansicht', datei: '/dokumente/projekte/mfh-untersiggenthal-2/05-nordansicht.pdf' },
+      { titel: 'Ostansicht', datei: '/dokumente/projekte/mfh-untersiggenthal-2/06-ostansicht.pdf' },
+      { titel: 'Südansicht', datei: '/dokumente/projekte/mfh-untersiggenthal-2/07-suedansicht.pdf' },
+      { titel: 'Westansicht', datei: '/dokumente/projekte/mfh-untersiggenthal-2/08-westansicht.pdf' },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'efh-merenschwand',
+    title: 'EFH Merenschwand',
+    ort: 'Merenschwand',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Einfamilienhaus',
+    leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausführungsplanung'],
+    beschreibung:
+      'Totalsanierung eines bestehenden Einfamilienhauses in Merenschwand im Kanton Aargau. Kubischer Baukörper mit Flachdach und heller Putzfassade.',
+    abschnitte: [
+      {
+        titel: 'Totalsanierung eines kubischen Baukörpers',
+        absaetze: [
+          'Ein bestehendes Einfamilienhaus in Merenschwand im Kanton Aargau haben wir für die Bauherrschaft von der Machbarkeitsstudie bis zur Ausführungsplanung totalsaniert. Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dabei dunkel gerahmte Fenster und aussenliegende Lamellenstoren.',
+          'Das Grundstück liegt in einem gewachsenen Quartier mit giebelständigen Nachbarhäusern. Der reduzierte, kantige Baukörper hebt sich davon ab, ohne die Nachbarschaft zu ignorieren.',
+        ],
+      },
+      {
+        titel: 'Aussenraum und Details',
+        absaetze: [
+          'Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Zugang auf der einen Seite, ein Balkon mit dunklem Glasgeländer im Obergeschoss öffnet sich zur anderen. Die Terrasse mit grossformatigen Platten schliesst direkt an den Garten an.',
+          'Bei der Bauleitung haben wir die Bauherrschaft beratend begleitet, ohne ein eigenes Mandat zu führen. An der Fassade ist die Aussenaufstellung einer Wärmepumpe sichtbar.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Totalsanierung' },
+      { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
+    ],
+    fragen: [
+      {
+        frage: 'Was ist der Unterschied zwischen einer Totalsanierung und einer Kernsanierung?',
+        antwort:
+          'Bei einer Totalsanierung wird das gesamte Gebäude einschliesslich Haustechnik, Innenausbau und meist der Gebäudehülle erneuert, während die tragende Struktur erhalten bleibt. Eine Kernsanierung geht oft noch weiter und legt zusätzlich Teile des Rohbaus offen, etwa wenn auch Wände oder Decken verändert werden.',
+      },
+      {
+        frage: 'Was zeichnet einen kubischen Baukörper mit Flachdach aus?',
+        antwort:
+          'Ein Flachdach erlaubt eine ruhige, kantige Gebäudeform ohne Dachschräge und schafft im Innern nutzbare Raumhöhen bis unter die Decke. Nach aussen wirkt der Baukörper reduziert und lässt sich über Fassadenfarbe und Fensteraufteilung gezielt gestalten.',
+      },
+    ],
+    thumbnail: '/images/projekte/efh-merenschwand/thumb.jpg',
+    heroImage: '/images/projekte/efh-merenschwand/hero.jpg',
+    galerie: [
+      '/images/projekte/efh-merenschwand/01.jpg',
+      '/images/projekte/efh-merenschwand/02.jpg',
+      '/images/projekte/efh-merenschwand/03.jpg',
+      '/images/projekte/efh-merenschwand/04.jpg',
+    ],
+    plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-merenschwand/01-kataster.pdf' }],
+    featured: false,
+  },
+  {
+    slug: 'mfh-wuerenlingen',
+    title: 'MFH Würenlingen',
+    ort: 'Würenlingen',
+    kanton: 'AG',
+    kunde: null,
+    jahr: 'in Realisierung',
+    typ: 'Mehrfamilienhaus',
+    leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
+    beschreibung:
+      'Neubau eines Mehrfamilienhauses in Würenlingen im Kanton Aargau für einen Investor, aktuell in Ausführung. Ausgebautes Dachgeschoss und auf schlanken Stützen vorgelagerte Balkone.',
+    abschnitte: [
+      {
+        titel: 'Von der Kaufberatung bis zur Ausführungsplanung',
+        absaetze: [
+          'Einen Investor, der ein Grundstück in Würenlingen im Kanton Aargau erwerben wollte, haben wir bereits vor dem Kauf beraten und seither durch alle Phasen begleitet: Machbarkeitsstudie, Baugesuch, Ausschreibungsplanung und Ausführungsplanung. Das Mehrfamilienhaus wird aktuell ausgeführt und gebaut.',
+          'Das Gebäude ist als Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss angelegt. Das Dach ist mit dunklen Ziegeln gedeckt und über die gesamte Gebäudelänge durchgezogen, mit einzelnen Dachflächenfenstern für die Räume im obersten Geschoss.',
+        ],
+      },
+      {
+        titel: 'Balkone und Umgebung',
+        absaetze: [
+          'Über alle Geschosse hinweg sind Balkone auf schlanken, dunklen Stützen vorgelagert, mit Balkongeländern aus vertikalen Metallstäben. Im Erdgeschoss setzen sich die Aussenräume in gedeckten Sitzplätzen mit Bepflanzung fort.',
+          'Die Umgebungsgestaltung zeigt einen Kiesweg entlang der Fassade, Rasenflächen und durchgehende Pflanzbeete mit Gräsern und Sträuchern vor den Terrassen.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
+      { label: 'Geschosse', wert: '3 Vollgeschosse, ausgebautes Dachgeschoss' },
+      { label: 'Bauherrschaft', wert: 'Investor, ab Grundstückskauf begleitet' },
+    ],
+    fragen: [
+      {
+        frage: 'Wann sollten wir einen Architekten in den Grundstückskauf einbeziehen?',
+        antwort:
+          'Am besten vor der Kaufzusage: Wir prüfen dann anhand von Bauzone, Ausnützung und Erschliessung, was auf dem Grundstück realistisch möglich ist. Das verhindert, dass ein Kaufpreis auf Basis falscher Annahmen zur Bebaubarkeit bezahlt wird.',
+      },
+      {
+        frage: 'Was ist bei der Planung eines Mehrfamilienhauses mit Satteldach zu beachten?',
+        antwort:
+          'Ein ausgebautes Dachgeschoss verlangt eine sorgfältige Abstimmung von Dachneigung, Belichtung über Dachflächenfenster und lichter Raumhöhe unter der Schräge. Zusammen mit den Anforderungen der Bauzone bestimmt das den Spielraum für die Grundrissgestaltung im obersten Geschoss.',
+      },
+    ],
+    thumbnail: '/images/projekte/mfh-wuerenlingen/thumb.jpg',
+    heroImage: '/images/projekte/mfh-wuerenlingen/hero.jpg',
+    galerie: ['/images/projekte/mfh-wuerenlingen/01.jpg'],
+    plaene: [
+      { titel: 'Kataster 1:500', datei: '/dokumente/projekte/mfh-wuerenlingen/01-kataster-500.pdf' },
+      { titel: 'Kataster 1:1000', datei: '/dokumente/projekte/mfh-wuerenlingen/02-kataster-1000.pdf' },
+      { titel: 'Erdgeschoss und Umgebung', datei: '/dokumente/projekte/mfh-wuerenlingen/03-erdgeschoss-umgebung.pdf' },
+      { titel: 'Obergeschoss und Dachgeschoss', datei: '/dokumente/projekte/mfh-wuerenlingen/04-obergeschoss-dachgeschoss.pdf' },
+      { titel: 'Nordfassade', datei: '/dokumente/projekte/mfh-wuerenlingen/05-nordfassade.pdf' },
+      { titel: 'Ansicht Nordost', datei: '/dokumente/projekte/mfh-wuerenlingen/06-nordost.pdf' },
+      { titel: 'Ansicht Südwest', datei: '/dokumente/projekte/mfh-wuerenlingen/07-suedwest.pdf' },
+      { titel: 'Ansicht Südost', datei: '/dokumente/projekte/mfh-wuerenlingen/08-suedost.pdf' },
+    ],
+    featured: false,
+  },
 ];
 
 export function getProjekt(slug: string): Projekt | undefined {
