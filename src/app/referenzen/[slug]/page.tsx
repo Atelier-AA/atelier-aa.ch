@@ -117,10 +117,10 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         </div>
 
         <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:py-28">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-stone">
             {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
-          <h1 className="mb-8 text-3xl font-light leading-tight text-ink md:text-4xl">
+          <h1 className="mb-8 text-3xl font-medium leading-tight text-ink md:text-4xl">
             {projekt.title}
           </h1>
           <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
@@ -129,10 +129,12 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
           {/* Ausführliche Beschreibung in Abschnitten. Gibt der Seite den Text,
               den eine Bildergalerie allein nicht liefert — für Leser wie für
-              KI-Systeme. */}
+              KI-Systeme. Grösse und Gewicht der Überschriften an
+              stage.atelier-aa.ch angeglichen: h1 und h2 in derselben Grösse,
+              beide font-medium (500) statt font-light. */}
           {projekt.abschnitte.map((a) => (
             <section key={a.titel} className="mb-14 last:mb-0">
-              <h2 className="mb-5 text-xl font-light leading-snug text-ink md:text-2xl">
+              <h2 className="mb-5 text-3xl font-medium leading-tight text-ink md:text-4xl">
                 {a.titel}
               </h2>
               <div className="space-y-5 leading-relaxed text-graphite">
@@ -146,7 +148,9 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           {/* Eckdaten und Leistungsumfang */}
           <div className="mt-20 grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">Eckdaten</h2>
+              <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
+                Eckdaten
+              </h2>
               <dl className="space-y-3">
                 {projekt.daten.map((d) => (
                   <div key={d.label} className="flex gap-4">
@@ -157,7 +161,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               </dl>
             </div>
             <div>
-              <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">
+              <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
                 Unsere Leistungen
               </h2>
               <ul className="space-y-2 text-ink">
@@ -178,7 +182,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
       <section className="border-t border-mist py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="mb-6 text-3xl font-light leading-tight text-ink md:text-4xl">
+            <h2 className="mb-6 text-3xl font-medium leading-tight text-ink md:text-4xl">
               Planen Sie ein ähnliches Projekt?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

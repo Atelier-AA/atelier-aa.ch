@@ -109,29 +109,25 @@ export const projekte: Projekt[] = [
       {
         titel: 'Die Aufgabe',
         absaetze: [
-          'Das Grundstück liegt in einer gewachsenen Wohnzone von Untersiggenthal, umgeben von Einfamilienhäusern aus verschiedenen Jahrzehnten. Gefordert war eine Verdichtung, die die zulässige Ausnutzung nutzt, ohne die Nachbarschaft zu überfahren.',
-          'Die zweite Vorgabe kam vom Gelände: Das Grundstück fällt nach Süden ab. Ein Sockelgeschoss war unvermeidlich — die Frage war, wie es sich einfügt statt aufzudrängen.',
+          'Das Grundstück liegt in einer gewachsenen Wohnzone von Untersiggenthal und fällt nach Süden ab. Gefordert war eine Verdichtung, die die zulässige Ausnutzung nutzt, ohne die Nachbarschaft zu überfahren.',
         ],
       },
       {
         titel: 'Volumen und Einordnung',
         absaetze: [
-          'Wir haben das Volumen als Satteldachhaus entwickelt und damit die Dachlandschaft der Umgebung aufgenommen. Die Firsthöhe bleibt unter der der Nachbarbauten, obwohl das Gebäude mehr Wohnfläche aufnimmt.',
-          'Die vertikale Fassadengliederung streckt das Haus optisch und lässt es schlanker wirken, als es ist. Die Balkone sind vorgelagert und nicht ins Volumen eingeschnitten — so bleibt die Grundfläche der Wohnungen ungeschmälert.',
+          'Ein Satteldachhaus, das die Dachlandschaft der Umgebung aufnimmt und trotzdem mehr Wohnfläche bietet. Die vertikale Fassadengliederung streckt das Haus optisch, vorgelagerte Balkone lassen die Grundfläche der Wohnungen ungeschmälert.',
         ],
       },
       {
         titel: 'Grundrisse',
         absaetze: [
-          'Jede Wohnung ist zweiseitig orientiert und erhält damit Morgen- und Abendlicht. Die Küche liegt zum Wohnraum offen, ist aber durch eine Schiebetür abtrennbar — eine Anforderung, die Mietinteressenten regelmässig stellen.',
-          'Die Wohnungsgrössen sind gemischt: kleinere Einheiten für Einzelpersonen und Paare, grössere für Familien. Diese Mischung stabilisiert die Vermietung über Marktzyklen hinweg.',
+          'Jede Wohnung ist zweiseitig orientiert, mit Morgen- und Abendlicht und einer zum Wohnraum offenen, aber abtrennbaren Küche. Die Wohnungsgrössen sind gemischt — für Einzelpersonen, Paare und Familien.',
         ],
       },
       {
         titel: 'Konstruktion und Nachhaltigkeit',
         absaetze: [
-          'Massivbau mit hinterlüfteter Fassade. Die Trennung von Tragwerk und Hülle erlaubt es, die Fassade in Jahrzehnten zu erneuern, ohne die Struktur anzutasten.',
-          'Die Wärmeerzeugung erfolgt über eine Erdsonden-Wärmepumpe, das Dach ist für Photovoltaik vorbereitet. Der Betrieb ist damit fossilfrei.',
+          'Massivbau mit hinterlüfteter Fassade, sodass sich die Fassade in Jahrzehnten erneuern lässt, ohne die Struktur anzutasten. Die Wärmeerzeugung erfolgt über eine Erdsonden-Wärmepumpe, das Dach ist für Photovoltaik vorbereitet — der Betrieb ist fossilfrei.',
         ],
       },
     ],
