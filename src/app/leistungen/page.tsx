@@ -2,13 +2,8 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektCard from '@/components/projekte/ProjektCard';
-import FragenAntworten from '@/components/insights/FragenAntworten';
 import { getFeaturedProjekte } from '@/data/projekte';
-import {
-  leistungsbereiche,
-  bauaufgaben,
-  expertiseFragen,
-} from '@/data/expertise';
+import { leistungsbereiche, bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -20,25 +15,8 @@ export const metadata: Metadata = {
 export default function LeistungenPage() {
   const referenzen = getFeaturedProjekte().slice(0, 3);
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': 'https://www.atelier-aa.ch/leistungen#faq',
-    inLanguage: 'de-CH',
-    mainEntity: expertiseFragen.map((f) => ({
-      '@type': 'Question',
-      name: f.frage,
-      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-    })),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <div className="pt-32 md:pt-40">
         <Container>
           <div className="mb-16 max-w-3xl md:mb-24">
@@ -125,11 +103,7 @@ export default function LeistungenPage() {
         </section>
 
         <Container>
-          <div className="max-w-3xl">
-            <FragenAntworten fragen={expertiseFragen} titel="Häufige Fragen" />
-          </div>
-
-          <div className="mt-20 max-w-3xl border-t border-mist pt-16">
+          <div className="max-w-3xl border-t border-mist pt-16">
             <h2 className="mb-6 text-2xl font-light text-ink md:text-3xl">
               Sie möchten bauen?
             </h2>
