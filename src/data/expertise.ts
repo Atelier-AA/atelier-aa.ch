@@ -18,31 +18,31 @@ import type { InsightFrage } from '@/types';
 export const leistungsangebot = [
   {
     titel: 'Beratung',
-    text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen.',
+    text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen. Wir sagen Ihnen offen, wenn ein Vorhaben nicht trägt — bevor Planungskosten entstehen.',
   },
   {
     titel: 'Projektentwicklung',
-    text: 'Machbarkeitsstudien, Kostenrahmen, Ertragsrechnung und Wohnungsmix — die Grundlagen, auf denen sich Investitionsentscheide treffen lassen.',
+    text: 'Machbarkeitsstudien, Kostenrahmen, Ertragsrechnung und Wohnungsmix — die Grundlagen, auf denen sich Investitionsentscheide treffen lassen. So lässt sich vor der ersten Skizze abschätzen, ob sich ein Vorhaben wirtschaftlich trägt.',
   },
   {
     titel: 'Planung und Entwurf',
-    text: 'Neubau, Umbau, Verdichtung, Innenarchitektur und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen.',
+    text: 'Neubau, Umbau, Verdichtung, Innenarchitektur und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen. Jedes Projekt beginnt mit der Analyse von Ort, Nutzung und Bauordnung, bevor der Entwurf entsteht.',
   },
   {
     titel: 'Baugesuch und Bewilligung',
-    text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen.',
+    text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen. Wir kennen die Praxis der Bewilligungsbehörden in allen drei Kantonen und planen Fristen entsprechend ein.',
   },
   {
     titel: 'Bauleitung und Kostenkontrolle',
-    text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle.',
+    text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle und gleichen den Kostenvoranschlag laufend mit dem effektiven Baufortschritt ab.',
   },
   {
     titel: 'Generalplanung',
-    text: 'Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen.',
+    text: 'Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen. Damit übernehmen wir die Verantwortung, die sonst zwischen mehreren Vertragspartnern verloren gehen kann.',
   },
   {
     titel: 'Wettbewerbe und Studien',
-    text: 'Beteiligung an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung.',
+    text: 'Beteiligung an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung. Der Wettbewerb bleibt für uns ein wichtiges Verfahren, um neue Lösungsansätze zu erproben.',
   },
 ];
 

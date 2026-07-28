@@ -4,7 +4,7 @@ interface PlanArtProps {
 }
 
 const KURVE =
-  'transition-[stroke-dashoffset] duration-[1400ms] ease-[cubic-bezier(0.4,0,0.2,1)]';
+  'transition-[stroke-dashoffset] duration-[650ms] ease-[cubic-bezier(0.4,0,0.2,1)]';
 
 /** Gemeinsame Eigenschaften jeder Linie, die sich beim Einblenden "zeichnet". */
 function zeichnung(laenge: number, revealed: boolean) {
@@ -26,7 +26,7 @@ export function BeratungArt({ revealed }: PlanArtProps) {
         height="160"
         strokeDasharray="6 6"
         opacity={revealed ? 1 : 0}
-        className="transition-opacity duration-[1400ms] delay-300"
+        className="transition-opacity duration-[500ms] delay-150"
       />
       <circle cx="150" cy="150" r="26" {...zeichnung(300, revealed)} />
       <path d="M150 132 L150 124 M158 128 L150 124 L142 128" {...zeichnung(60, revealed)} />
@@ -98,7 +98,7 @@ export function BauleitungArt({ revealed }: PlanArtProps) {
       <line x1="40" y1="180" x2="260" y2="180" {...zeichnung(220, revealed)} />
       <line x1="40" y1="240" x2="260" y2="240" {...zeichnung(220, revealed)} />
       <line x1="60" y1="60" x2="60" y2="240" {...zeichnung(180, revealed)} />
-      <g strokeDasharray="3 5" opacity={revealed ? 1 : 0} className="transition-opacity duration-[1400ms] delay-500">
+      <g strokeDasharray="3 5" opacity={revealed ? 1 : 0} className="transition-opacity duration-[500ms] delay-200">
         <line x1="80" y1="60" x2="100" y2="120" />
         <line x1="100" y1="60" x2="120" y2="120" />
         <line x1="120" y1="60" x2="140" y2="120" />
@@ -154,13 +154,13 @@ export function WettbewerbeArt({ revealed }: PlanArtProps) {
         d="M170 230 L170 120 L240 80 L240 190 Z"
         strokeDasharray="5 5"
         opacity={revealed ? 1 : 0}
-        className="transition-opacity duration-[1400ms] delay-300"
+        className="transition-opacity duration-[500ms] delay-150"
       />
       <path
         d="M170 120 L240 80 M170 230 L240 190"
         strokeDasharray="5 5"
         opacity={revealed ? 1 : 0}
-        className="transition-opacity duration-[1400ms] delay-300"
+        className="transition-opacity duration-[500ms] delay-150"
       />
       <text x="80" y="255" fontSize="9" fill="currentColor" stroke="none" fontFamily="ui-monospace, monospace">VARIANTE A</text>
       <text x="190" y="255" fontSize="9" fill="currentColor" stroke="none" fontFamily="ui-monospace, monospace">VARIANTE B</text>

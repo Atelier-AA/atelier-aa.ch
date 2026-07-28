@@ -83,7 +83,7 @@ function Plate({ index, titel, text }: PlateProps) {
         <h3 className="mb-5 max-w-[14ch] text-2xl font-medium leading-tight text-ink md:text-3xl">
           {titel}
         </h3>
-        <p className="max-w-[40ch] leading-relaxed text-graphite">{text}</p>
+        <p className="max-w-[48ch] leading-relaxed text-graphite">{text}</p>
       </div>
     </div>
   );
