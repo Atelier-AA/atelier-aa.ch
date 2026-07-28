@@ -9,43 +9,32 @@ import type { InsightFrage } from '@/types';
  * einzeln.
  */
 
-/** Leistungen mit Kurzbeschreibung, tabellarisch. */
-export const leistungsbereiche = [
+/**
+ * Leistungsangebot: echte Mandatsarten («wofür können Sie uns beauftragen»),
+ * statt Bauaufgaben (Neubau, Umbau, Verdichtung …) als gleichrangige Punkte
+ * aufzuführen — die stehen als Beispiele innerhalb von "Planung und Entwurf"
+ * sowie separat, sr-only, im Abschnitt Bauaufgaben.
+ */
+export const leistungsangebot = [
   {
-    titel: 'Architektur und Neubau',
-    text: 'Mehrfamilienhäuser, Wohnüberbauungen, Einfamilienhäuser, Gewerbe- und Verwaltungsbauten. Von der Volumenstudie über das Baugesuch bis zur Schlüsselübergabe.',
-  },
-  {
-    titel: 'Umbau und Sanierung',
-    text: 'Energetische Sanierung, Aufstockung, Anbau, Umnutzung. Auch im bewohnten Zustand mit Etappierung, die für die Bewohnenden erträglich bleibt.',
-  },
-  {
-    titel: 'Verdichtung und Innenentwicklung',
-    text: 'Prüfung von Ausnutzungsreserven, Variantenvergleich zwischen Aufstockung und Ersatzneubau, Begleitung durch das Bewilligungsverfahren.',
+    titel: 'Beratung',
+    text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen.',
   },
   {
     titel: 'Projektentwicklung',
     text: 'Machbarkeitsstudien, Kostenrahmen, Ertragsrechnung und Wohnungsmix — die Grundlagen, auf denen sich Investitionsentscheide treffen lassen.',
   },
   {
-    titel: 'Innenarchitektur',
-    text: 'Grundrisse, Materialisierung, Licht- und Farbkonzepte für Wohnungen, Büros und Verkaufsräume.',
+    titel: 'Planung und Entwurf',
+    text: 'Neubau, Umbau, Verdichtung, Innenarchitektur und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen.',
   },
   {
-    titel: 'Hindernisfreies Bauen',
-    text: 'Umbau für das Wohnen im Alter nach den Massen der Norm SIA 500: schwellenlose Zugänge, bodengleiche Duschen, Vorbereitung für einen späteren Lift.',
+    titel: 'Baugesuch und Bewilligung',
+    text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen.',
   },
   {
     titel: 'Bauleitung und Kostenkontrolle',
     text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle.',
-  },
-  {
-    titel: 'Baugesuch und Behördenverfahren',
-    text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Auflagen der Bewilligung.',
-  },
-  {
-    titel: 'Bauherrenberatung',
-    text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen.',
   },
   {
     titel: 'Generalplanung',

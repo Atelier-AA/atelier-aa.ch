@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { leistungsbereiche, bauaufgaben } from '@/data/expertise';
+import { leistungsangebot, bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -39,20 +39,20 @@ export default function LeistungenPage() {
           </div>
         </Container>
 
-        {/* Leistungen im Detail */}
+        {/* Leistungsangebot */}
         <section className="border-t border-mist py-20 md:py-28">
           <Container>
             <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Im Detail
+                Angebot
               </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Konkrete Leistungen
+                Unser Leistungsangebot
               </h2>
             </div>
 
             <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-              {leistungsbereiche.map((l) => (
+              {leistungsangebot.map((l) => (
                 <div key={l.titel}>
                   <h3 className="mb-3 text-xl font-light text-ink">{l.titel}</h3>
                   <p className="leading-relaxed text-graphite">{l.text}</p>
