@@ -5,11 +5,10 @@ import { navigation, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 
 /**
- * Fusszeile, im Aufbau an elindo.ch angeglichen: ein Abschluss-Aufruf über
- * die volle Breite (Wortmarke, Kernsatz, Kontakt-Button), darunter ein
- * schmaleres Verzeichnis mit feinen Linien statt Kacheln, zuletzt eine
- * schmale Rechtlich-Zeile. Ohne die dortigen "Bewertung"- und
- * "Leistungen"-Spalten, da es dafür bei Atelier AA keine Entsprechung gibt.
+ * Fusszeile auf einer Ebene: Wortmarke, Kernsatz und Kontakt-Button stehen
+ * zusammen mit Kontakt und Navigation in einem einzigen Block, statt in
+ * gestapelten, durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile
+ * am Ende ist durch eine feine Linie abgesetzt.
  */
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -19,30 +18,23 @@ export default function Footer() {
 
   return (
     <footer className="mt-24 bg-ink text-white">
-      {/* Abschluss-Aufruf */}
-      <Container className="border-b border-white/10 py-16 md:py-20">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-xl">
+      <Container className="py-16 md:py-20">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
+          <div className="max-w-md">
             <div className="mb-8 h-[35px] md:h-[40px] text-white">
               <Logo />
             </div>
             <p className="text-2xl md:text-3xl font-light leading-tight">
               Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
             </p>
+            <Link
+              href="/kontakt"
+              className="mt-8 inline-flex items-center justify-center border border-white bg-white px-8 py-4 text-sm font-medium uppercase tracking-widest text-ink transition-colors duration-300 hover:bg-transparent hover:text-white"
+            >
+              Kontaktieren Sie uns
+            </Link>
           </div>
 
-          <Link
-            href="/kontakt"
-            className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-8 py-4 text-sm font-medium uppercase tracking-widest text-ink transition-colors duration-300 hover:bg-transparent hover:text-white"
-          >
-            Kontaktieren Sie uns
-          </Link>
-        </div>
-      </Container>
-
-      {/* Verzeichnis */}
-      <Container className="py-16">
-        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2">
           <div>
             <h3 className={spaltenTitel}>Kontakt</h3>
             <address className="not-italic text-sm leading-relaxed space-y-1 text-white/75">
@@ -81,11 +73,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </Container>
 
-      {/* Rechtliches */}
-      <Container className="border-t border-white/10 py-8">
-        <div className="flex flex-col gap-4 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+        {/* Rechtliches */}
+        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
           <p>Atelier AA Architekten © {year}. Alle Rechte vorbehalten.</p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLegal.map((item) => (
