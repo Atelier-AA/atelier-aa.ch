@@ -60,49 +60,44 @@ export default function KontaktPage() {
               neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
               Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
             </p>
+
+            {/* Adresse, Telefon und E-Mail als ein durchlaufender Block statt
+                einzeln beschrifteter Kästen — wie auf stage.atelier-aa.ch/kontakt/. */}
+            <address className="not-italic text-lg text-ink leading-relaxed mt-8">
+              {firma.name}
+              <br />
+              {firma.strasse}
+              <br />
+              {firma.plz} {firma.ort}
+            </address>
+            <p className="mt-6 text-lg">
+              <a
+                href={`tel:${firma.telefonHref}`}
+                className="font-medium text-ink transition-colors hover:text-graphite"
+              >
+                {firma.telefon}
+              </a>
+              <br />
+              <a
+                href={`mailto:${firma.email}`}
+                className="font-medium text-ink transition-colors hover:text-graphite"
+              >
+                {firma.email}
+              </a>
+            </p>
           </div>
 
-          <div className="space-y-10">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-stone mb-3">
-                Adresse
-              </p>
-              <address className="not-italic text-lg text-ink leading-relaxed">
-                {firma.name}
-                <br />
-                {firma.strasse}
-                <br />
-                {firma.plz} {firma.ort}
-              </address>
-            </div>
-
-            <div>
-              <p className="text-xs uppercase tracking-widest text-stone mb-3">
-                Telefon
-              </p>
-              <p className="text-lg text-ink">
-                <a
-                  href={`tel:${firma.telefonHref}`}
-                  className="hover:text-graphite transition-colors"
-                >
-                  {firma.telefon}
-                </a>
-              </p>
-            </div>
-
-            <div>
-              <p className="text-xs uppercase tracking-widest text-stone mb-3">
-                E-Mail
-              </p>
-              <p className="text-lg text-ink">
-                <a
-                  href={`mailto:${firma.email}`}
-                  className="hover:text-graphite transition-colors"
-                >
-                  {firma.email}
-                </a>
-              </p>
-            </div>
+          {/* Google Karte statt der zuvor hier stehenden, nun in die linke
+              Spalte zusammengefassten Kontaktangaben. */}
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full">
+            <iframe
+              src="https://www.google.com/maps?q=Atelier+AA+Architekten+GmbH,+Bachstrasse+39,+8912+Obfelden&output=embed"
+              title="Standort der Atelier AA Architekten GmbH auf Google Maps"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 h-full w-full grayscale"
+              style={{ border: 0 }}
+            />
           </div>
         </div>
 
