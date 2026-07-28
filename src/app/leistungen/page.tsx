@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { leistungsangebot, bauaufgaben } from '@/data/expertise';
+import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
+import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -39,8 +40,9 @@ export default function LeistungenPage() {
           </div>
         </Container>
 
-        {/* Leistungsangebot */}
-        <section className="border-t border-mist py-20 md:py-28">
+        {/* Leistungsangebot — ein vollflächiges Blatt pro Leistung statt
+            eines Kartenrasters, siehe LeistungenPlates. */}
+        <section className="border-t border-mist py-20 md:pt-28">
           <Container>
             <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
@@ -50,16 +52,9 @@ export default function LeistungenPage() {
                 Unser Leistungsangebot
               </h2>
             </div>
-
-            <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-              {leistungsangebot.map((l) => (
-                <div key={l.titel}>
-                  <h3 className="mb-3 text-xl font-light text-ink">{l.titel}</h3>
-                  <p className="leading-relaxed text-graphite">{l.text}</p>
-                </div>
-              ))}
-            </div>
           </Container>
+
+          <LeistungenPlates />
         </section>
 
         {/* Bauaufgaben — bewusst nicht sichtbar dargestellt, aber im HTML
