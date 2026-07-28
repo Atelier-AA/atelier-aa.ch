@@ -15,13 +15,10 @@ interface LogoProps {
  *
  * Übergang beim Kollabieren im Stil von elindo.ch (siehe dortige
  * `Logo.tsx`): Der Kasten schrumpft in der Breite (`aspect-ratio`,
- * `overflow-hidden`). Anders als bei Elindo (wo das Signet ein eigener,
- * aus der Wortmarke ausgesparter Buchstabe an Position 0 ist) zeigt das
- * Signet hier "AA" — ein Ausschnitt aus der Mitte der Wortmarke. Beide
- * Ebenen blenden deshalb gegeneinander (siehe `Logo`-Komponente unten),
- * statt dass eine davon dauerhaft unverändert stehen bleibt. Ersetzt die
- * alte Lösung, bei der stattdessen ein einzelnes Signet-A 12px nach unten
- * wanderte.
+ * `overflow-hidden`), das Signet bleibt dabei vollkommen unbewegt stehen —
+ * animiert wird nur der Rest der Wortmarke, der ausblendet und leicht nach
+ * links wegschiebt. Ersetzt die alte Lösung, bei der das Signet stattdessen
+ * 12px nach unten wanderte.
  *
  * Nicht anfassen: Die Pfaddaten sind das Markenzeichen. Wer sie ändert,
  * verändert das Logo.
@@ -50,18 +47,9 @@ const WORDMARK_PATHS = [
   'M268.229 33.4412H262.908L274.863 0.220093H280.654L292.609 33.4412H287.288L277.896 6.25439H277.637L268.229 33.4412ZM270.643 20.4317H278.277L279.528 25.1568H270.643V20.4317Z',
 ];
 
-/**
- * Die beiden "A" aus "Atelier AA" — dieselben Pfade wie in `WORDMARK_PATHS`
- * (dort an ihrer natürlichen Stelle, x 225,857–292,609), hier per
- * `transform` an den Ursprung verschoben, statt die Koordinaten der Pfade
- * selbst anzufassen.
- */
-const DOPPEL_A_PATHS = [
-  'M231.178 33.4412H225.857L237.812 0.220093H243.603L255.558 33.4412H250.238L240.846 6.25439H240.586L231.178 33.4412ZM233.593 20.4317H241.226L242.478 25.1568H233.593V20.4317Z',
-  'M268.229 33.4412H262.908L274.863 0.220093H280.654L292.609 33.4412H287.288L277.896 6.25439H277.637L268.229 33.4412ZM270.643 20.4317H278.277L279.528 25.1568H270.643V20.4317Z',
-];
-/** Breite des DoppelA-Ausschnitts: 292.609 − 225.857. */
-const DOPPEL_A_WIDTH = 66.752;
+/** Das Signet: der "A"-Umriss, x 0–29.7 im viewBox-Koordinatensystem. */
+const SIGN_PATH =
+  'M5.32056 34.1794H0L11.955 0.958313H17.746L29.7011 34.1794H24.3805L14.9884 6.99261H14.7289L5.32056 34.1794ZM7.73536 21.17H15.3686L16.6203 25.895H7.73536V21.17Z';
 
 /** Die Wortmarke ohne das Signet-A — der Teil, der beim Kollabieren verschwindet. */
 function WortmarkeOhneSignet({ className }: { className?: string }) {
@@ -80,24 +68,21 @@ function WortmarkeOhneSignet({ className }: { className?: string }) {
 }
 
 /**
- * Signet: "AA" allein, aus der Wortmarke herausgelöst und an den Ursprung
- * verschoben. Gleiche Höhe wie die Wortmarke (61), Breite exakt auf die
- * beiden Buchstaben zugeschnitten (66,752) — kein eigens gestaltetes
- * Zeichen, sondern derselbe Schriftzug, nur ausschnitthaft gezeigt.
+ * Signet: das "A" allein, im vollen 294×61-Raster der Wortmarke.
+ *
+ * Derselbe viewBox wie die Wortmarke (nicht ein eigener, kleinerer) — so
+ * sitzt das A zwangsläufig genau dort, wo es auch in "Atelier AA
+ * Architekten" steht, ohne Umrechnung.
  */
-function DoppelA({ className }: { className?: string }) {
+function Signet({ className }: { className?: string }) {
   return (
     <svg
-      viewBox={`0 0 ${DOPPEL_A_WIDTH} 61`}
+      viewBox="0 0 294 61"
       aria-hidden="true"
       focusable="false"
       className={cn('h-full w-auto shrink-0 fill-current', className)}
     >
-      <g transform="translate(-225.857 0)">
-        {DOPPEL_A_PATHS.map((d) => (
-          <path key={d} d={d} />
-        ))}
-      </g>
+      <path d={SIGN_PATH} />
     </svg>
   );
 }
@@ -105,14 +90,12 @@ function DoppelA({ className }: { className?: string }) {
 /**
  * Wortmarke und Signet, weich ineinander übergehend.
  *
- * Anders als beim einzelnen Signet-A (das als eigene, aus der Wortmarke
- * ausgesparte Stelle exakt dort sitzt, wo "Atelier" beginnt, und deshalb
- * unverändert stehen bleiben kann) ist "AA" ein Ausschnitt MITTEN aus der
- * Wortmarke. An den Ursprung verschoben würde es sich mit "TELIER" (das
- * dort im vollen Zustand steht) überlagern. Beide Ebenen blenden deshalb
- * gegeneinander: die Wortmarke aus, DoppelA ein — ohne das Aufhellen einer
- * Überblendung, weil sie sich räumlich nicht überdecken (DoppelA steht bei
- * x 0–66,752, die Wortmarke ab x 31 aufwärts sichtbar).
+ * Das Signet wird nie überblendet — zwei deckungsgleiche A gegeneinander zu
+ * blenden liesse das Zeichen in der Mitte des Übergangs kurz aufhellen und
+ * wieder abdunkeln. Es steht deshalb als eigenes, dauerhaft sichtbares
+ * Element, das sich beim Scrollen überhaupt nicht verändert. Verblendet
+ * wird allein der Rest der Wortmarke — der Teil, der tatsächlich
+ * verschwindet —, zusätzlich mit einem leichten Wegschieben nach links.
  */
 export default function Logo({ collapsed = false, className }: LogoProps) {
   const kurve = 'duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]';
@@ -123,20 +106,18 @@ export default function Logo({ collapsed = false, className }: LogoProps) {
         'relative block h-full text-current',
         // `overflow-hidden` schneidet ab, was über die aktuelle Breite
         // hinausragt. Beide Ebenen zeichnen im vollen 294-Einheiten-Raster;
-        // im zusammengeklappten Zustand ist der Kasten nur 66,752 Einheiten
-        // breit (Breite von "AA"), und alles rechts davon wird abgeschnitten.
+        // im zusammengeklappten Zustand ist der Kasten nur 29,7 Einheiten
+        // breit (Breite des A), und alles rechts davon wird abgeschnitten.
         'overflow-hidden',
         'transition-[aspect-ratio]',
         kurve,
-        // Literaler Klassenname nötig — Tailwind kann keine interpolierten
-        // Werte zur Build-Zeit erkennen (siehe DOPPEL_A_WIDTH oben: 66,752).
-        collapsed ? 'aspect-[66.752/61]' : 'aspect-[294/61]',
+        collapsed ? 'aspect-[29.7/61]' : 'aspect-[294/61]',
         className
       )}
     >
-      {/* Der Rest der Wortmarke — verschwindet beim Kollabieren, zugleich
-          ein Stück nach links geschoben (4% der Breite), um eine Richtung
-          anzudeuten statt als Bewegung aufzufallen. */}
+      {/* Der Rest der Wortmarke — der Teil, der verschwindet. Ausgeblendet
+          und zugleich ein Stück nach links geschoben (4% der Breite), um
+          eine Richtung anzudeuten statt als Bewegung aufzufallen. */}
       <span
         className={cn(
           'absolute inset-y-0 left-0 block h-full origin-left transition-[opacity,transform]',
@@ -147,16 +128,9 @@ export default function Logo({ collapsed = false, className }: LogoProps) {
         <WortmarkeOhneSignet />
       </span>
 
-      {/* DoppelA — erscheint beim Kollabieren, mit leichtem Einschieben von
-          rechts, spiegelbildlich zur wegschiebenden Wortmarke. */}
-      <span
-        className={cn(
-          'absolute inset-y-0 left-0 block h-full origin-left transition-[opacity,transform]',
-          kurve,
-          collapsed ? 'translate-x-0 opacity-100' : 'translate-x-[4%] opacity-0'
-        )}
-      >
-        <DoppelA />
+      {/* Das Signet — unverändert in beiden Zuständen, ohne jede Animation. */}
+      <span className="absolute inset-y-0 left-0 block h-full">
+        <Signet />
       </span>
     </span>
   );
