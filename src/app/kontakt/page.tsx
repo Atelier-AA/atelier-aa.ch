@@ -34,28 +34,31 @@ export default function KontaktPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-mist">
-        <Image
-          src="/images/kontakt/kontakt-hero.jpg"
-          alt="Atelier AA Architekten Büro"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-      </div>
-
       <Container className="mt-16 md:mt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-          <div>
+        {/* Links Bild, rechts Text — wie auf stage.atelier-aa.ch/kontakt/.
+            Das Bürofoto Bachstrasse ist bereits im Projekt vorhanden
+            (bisher als volle Breite oben); der Text ist wörtlich von der
+            alten Kontaktseite (Post 88) übernommen. */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16">
+          <div className="relative aspect-square w-full bg-mist">
+            <Image
+              src="/images/kontakt/kontakt-hero.jpg"
+              alt="Atelier AA Architekten Büro an der Bachstrasse"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+
+          <div className="mt-10 lg:mt-0 lg:pl-8">
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Kontakt
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10 max-w-lg">
               Der erste Schritt ist ein Gespräch.
             </h1>
-            {/* Text wörtlich von der alten Kontaktseite (Post 88). */}
-            <p className="text-lg text-graphite leading-relaxed">
+            <p className="text-lg text-graphite leading-relaxed max-w-md">
               Wir stehen für einen offenen, direkten Austausch und freuen uns über
               neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
               Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
@@ -63,7 +66,7 @@ export default function KontaktPage() {
 
             {/* Adresse, Telefon und E-Mail als ein durchlaufender Block statt
                 einzeln beschrifteter Kästen — wie auf stage.atelier-aa.ch/kontakt/. */}
-            <address className="not-italic text-lg text-ink leading-relaxed mt-8">
+            <address className="not-italic text-lg text-ink leading-relaxed mt-8 max-w-md">
               {firma.name}
               <br />
               {firma.strasse}
@@ -86,19 +89,18 @@ export default function KontaktPage() {
               </a>
             </p>
           </div>
+        </div>
 
-          {/* Google Karte statt der zuvor hier stehenden, nun in die linke
-              Spalte zusammengefassten Kontaktangaben. */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full">
-            <iframe
-              src="https://www.google.com/maps?q=Atelier+AA+Architekten+GmbH,+Bachstrasse+39,+8912+Obfelden&output=embed"
-              title="Standort der Atelier AA Architekten GmbH auf Google Maps"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full grayscale"
-              style={{ border: 0 }}
-            />
-          </div>
+        {/* Google Karte zum Bürostandort. */}
+        <div className="relative mt-16 aspect-[16/9] w-full bg-mist md:mt-20 md:aspect-[21/9]">
+          <iframe
+            src="https://www.google.com/maps?q=Atelier+AA+Architekten+GmbH,+Bachstrasse+39,+8912+Obfelden&output=embed"
+            title="Standort der Atelier AA Architekten GmbH auf Google Maps"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 h-full w-full grayscale"
+            style={{ border: 0 }}
+          />
         </div>
 
         <section className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
