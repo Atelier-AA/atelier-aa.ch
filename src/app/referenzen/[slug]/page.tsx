@@ -140,7 +140,9 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
           <ProjektGalerie bilder={projekt.galerie} projektTitel={projekt.title} />
 
-          {projekt.plaene && <ProjektPlaene plaene={projekt.plaene} />}
+          {projekt.plaene && (
+            <ProjektPlaene plaene={projekt.plaene} projektTitel={projekt.title} />
+          )}
 
           {/* Eckdaten und Leistungsumfang */}
           <div className="mt-20 grid max-w-4xl grid-cols-1 gap-12 border-t border-mist pt-12 md:grid-cols-2">
