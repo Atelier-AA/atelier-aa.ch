@@ -26,6 +26,13 @@ export default function UeberUnsPage() {
             </h1>
             <div className="space-y-6 text-graphite leading-relaxed">
               <p className="text-lg">
+                Atelier AA ist ein Architekturbüro in Obfelden, das Verantwortung ernst
+                nimmt: gegenüber der Bauherrschaft, den künftigen Nutzerinnen und Nutzern
+                und dem Ort, den ein Gebäude über Jahrzehnte prägt. Wir glauben an
+                Architektur, die dieser Verantwortung standhält — heute wie in fünfzig
+                Jahren.
+              </p>
+              <p>
                 Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der
                 Aufgabe, dem Charakter des Ortes und den Bedürfnissen der Nutzer
                 entwickeln wir individuelle Lösungen mit klarer Haltung und präziser

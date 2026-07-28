@@ -69,6 +69,10 @@ export const leistungsbereiche = [
     text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle.',
   },
   {
+    titel: 'Generalplanung',
+    text: 'Auf Wunsch übernehmen wir als Generalplaner die Verantwortung für die gesamte Projektierung — ein Vertrags- und Ansprechpartner für alle Fachplaner und die Bauherrschaft.',
+  },
+  {
     titel: 'Baugesuch und Behördenverfahren',
     text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Auflagen der Bewilligung.',
   },
@@ -90,6 +94,10 @@ export const gebaeudetypen = [
   'Verwaltungsbau',
   'Verkaufsraum und Ladenbau',
   'Wohnen im Alter',
+  'Bürobau',
+  'Öffentliches Gebäude',
+  'Schul- und Bildungsbau',
+  'Gesundheits- und Pflegebau',
 ];
 
 /** Häufige Fragen zu Leistungen und Zusammenarbeit. */

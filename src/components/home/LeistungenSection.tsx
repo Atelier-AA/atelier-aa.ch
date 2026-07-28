@@ -29,9 +29,9 @@ export default function LeistungenSection() {
             Sämtliche Planungsleistungen aus einer Hand
           </h2>
           <p className="text-lg text-graphite leading-relaxed">
-            Von der ersten Volumenstudie bis zur Bauleitung vor Ort begleiten wir Neubau,
-            Umbau und Verdichtung im Wohn- und Gewerbebau — in den Kantonen Zürich, Aargau
-            und Zug.
+            Wir planen und realisieren Neubauten und Sanierungen für das Wohnen und die
+            Arbeitswelt — von der Machbarkeitsstudie bis zur Bauleitung vor Ort, auf
+            Wunsch auch im Generalplaner-Mandat.
           </p>
         </div>
 
