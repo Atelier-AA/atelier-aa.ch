@@ -1,21 +1,28 @@
 import { cn } from '@/lib/utils';
 
-/**
- * Atelier-AA-Logo als Inline-SVG.
- *
- * Übernommen 1:1 aus dem alten WordPress-Theme
- * (wp-content/themes/aaelindo/template-parts/header/site-branding.php, Zeile 43-67).
- * Das Logo lag dort nicht als Datei, sondern inline im PHP-Template.
- *
- * `collapsed` fährt die Wortmarke aus und lässt nur das Signet ("A") stehen —
- * der Scroll-Effekt der alten Seite (dort via `.site-header.scrolled`).
- */
-
-type LogoProps = {
-  /** Wortmarke ausblenden, nur Signet zeigen. */
+interface LogoProps {
+  /** Beim Scrollen wird nur noch das Signet gezeigt. */
   collapsed?: boolean;
   className?: string;
-};
+}
+
+/**
+ * Wortmarke und Signet.
+ *
+ * Pfade übernommen 1:1 aus dem alten WordPress-Theme
+ * (wp-content/themes/aaelindo/template-parts/header/site-branding.php,
+ * Zeile 43-67).
+ *
+ * Übergang beim Kollabieren im Stil von elindo.ch (siehe dortige
+ * `Logo.tsx`): Der Kasten schrumpft in der Breite (`aspect-ratio`,
+ * `overflow-hidden`), das Signet bleibt dabei vollkommen unbewegt stehen —
+ * animiert wird nur der Rest der Wortmarke, der ausblendet und leicht nach
+ * links wegschiebt. Ersetzt die alte Lösung, bei der das Signet stattdessen
+ * 12px nach unten wanderte.
+ *
+ * Nicht anfassen: Die Pfaddaten sind das Markenzeichen. Wer sie ändert,
+ * verändert das Logo.
+ */
 
 /** Pfade der Wortmarke "telier AA Architekten" (ohne das Signet-A). */
 const WORDMARK_PATHS = [
@@ -44,37 +51,87 @@ const WORDMARK_PATHS = [
 const SIGN_PATH =
   'M5.32056 34.1794H0L11.955 0.958313H17.746L29.7011 34.1794H24.3805L14.9884 6.99261H14.7289L5.32056 34.1794ZM7.73536 21.17H15.3686L16.6203 25.895H7.73536V21.17Z';
 
-export default function Logo({ collapsed = false, className }: LogoProps) {
+/** Die Wortmarke ohne das Signet-A — der Teil, der beim Kollabieren verschwindet. */
+function WortmarkeOhneSignet({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 294 61"
-      role="img"
-      aria-label="Atelier AA Architekten"
-      // Die viewBox bleibt konstant — wie im alten Theme schrumpft das SVG beim
-      // Kollabieren nicht, die Wortmarke wird nur unsichtbar. Der Header regelt
-      // die Höhe, das Signet behält so seine Position.
-      className={cn('h-full w-auto fill-current', className)}
+      aria-hidden="true"
+      focusable="false"
+      className={cn('h-full w-auto shrink-0 fill-current', className)}
     >
       {WORDMARK_PATHS.map((d) => (
-        <path
-          key={d}
-          d={d}
-          style={{
-            opacity: collapsed ? 0 : 1,
-            transition: 'opacity 300ms ease',
-          }}
-        />
+        <path key={d} d={d} />
       ))}
-      <path
-        d={SIGN_PATH}
-        style={{
-          // translateY(12px) exakt wie `.site-header.scrolled .logo-big.atelier .sign path`.
-          // Als inline style, weil CSS-Transforms auf SVG-Kindelementen sonst am
-          // fehlenden transform-box-Bezug scheitern.
-          transform: collapsed ? 'translateY(12px)' : 'translateY(0)',
-          transition: 'transform 300ms ease',
-        }}
-      />
     </svg>
+  );
+}
+
+/**
+ * Signet: das "A" allein, im vollen 294×61-Raster der Wortmarke.
+ *
+ * Derselbe viewBox wie die Wortmarke (nicht ein eigener, kleinerer) — so
+ * sitzt das A zwangsläufig genau dort, wo es auch in "Atelier AA
+ * Architekten" steht, ohne Umrechnung.
+ */
+function Signet({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 294 61"
+      aria-hidden="true"
+      focusable="false"
+      className={cn('h-full w-auto shrink-0 fill-current', className)}
+    >
+      <path d={SIGN_PATH} />
+    </svg>
+  );
+}
+
+/**
+ * Wortmarke und Signet, weich ineinander übergehend.
+ *
+ * Das Signet wird nie überblendet — zwei deckungsgleiche A gegeneinander zu
+ * blenden liesse das Zeichen in der Mitte des Übergangs kurz aufhellen und
+ * wieder abdunkeln. Es steht deshalb als eigenes, dauerhaft sichtbares
+ * Element, das sich beim Scrollen überhaupt nicht verändert. Verblendet
+ * wird allein der Rest der Wortmarke — der Teil, der tatsächlich
+ * verschwindet —, zusätzlich mit einem leichten Wegschieben nach links.
+ */
+export default function Logo({ collapsed = false, className }: LogoProps) {
+  const kurve = 'duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]';
+
+  return (
+    <span
+      className={cn(
+        'relative block h-full text-current',
+        // `overflow-hidden` schneidet ab, was über die aktuelle Breite
+        // hinausragt. Beide Ebenen zeichnen im vollen 294-Einheiten-Raster;
+        // im zusammengeklappten Zustand ist der Kasten nur 29,7 Einheiten
+        // breit (Breite des A), und alles rechts davon wird abgeschnitten.
+        'overflow-hidden',
+        'transition-[aspect-ratio]',
+        kurve,
+        collapsed ? 'aspect-[29.7/61]' : 'aspect-[294/61]',
+        className
+      )}
+    >
+      {/* Der Rest der Wortmarke — der Teil, der verschwindet. Ausgeblendet
+          und zugleich ein Stück nach links geschoben (4% der Breite), um
+          eine Richtung anzudeuten statt als Bewegung aufzufallen. */}
+      <span
+        className={cn(
+          'absolute inset-y-0 left-0 block h-full origin-left transition-[opacity,transform]',
+          kurve,
+          collapsed ? '-translate-x-[4%] opacity-0' : 'translate-x-0 opacity-100'
+        )}
+      >
+        <WortmarkeOhneSignet />
+      </span>
+
+      {/* Das Signet — unverändert in beiden Zuständen, ohne jede Animation. */}
+      <span className="absolute inset-y-0 left-0 block h-full">
+        <Signet />
+      </span>
+    </span>
   );
 }
