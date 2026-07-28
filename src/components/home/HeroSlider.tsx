@@ -14,36 +14,50 @@ interface Slide {
   href: string;
 }
 
-// Slides und Bilder wie im Smart-Slider "Slider Startseite" (slider 2) der
-// alten Website; Reihenfolge und Bildzuordnung aus wp_nextend2_..._slides.
+// Ausschliesslich Mehrfamilienhaus-Projekte, vom Nutzer aus einer Vorschau
+// mit allen verfügbaren Projektfotos ausgewählt.
 const slides: Slide[] = [
   {
-    image: '/images/hero/slide-jonen.jpg',
-    projekt: 'EFH Jonen',
-    ort: 'Jonen',
-    kanton: 'AG',
-    href: '/referenzen/efh-jonen',
-  },
-  {
-    image: '/images/hero/slide-hochwarting.png',
-    projekt: 'MFH Hochwarting',
-    ort: 'Glashütten',
-    kanton: 'AG',
-    href: '/referenzen/mfh-hochwarting',
-  },
-  {
-    image: '/images/hero/slide-untersiggenthal.jpg',
+    image: '/images/hero/slide-untersiggenthal-1.jpg',
     projekt: 'MFH Untersiggenthal',
     ort: 'Untersiggenthal',
     kanton: 'AG',
     href: '/referenzen/mfh-untersiggenthal',
   },
   {
-    image: '/images/hero/slide-kuenten.jpg',
+    image: '/images/hero/slide-untersiggenthal2-1.jpg',
+    projekt: 'Wohnüberbauung Untersiggenthal',
+    ort: 'Untersiggenthal',
+    kanton: 'AG',
+    href: '/referenzen/mfh-untersiggenthal-2',
+  },
+  {
+    image: '/images/hero/slide-kuenten-1.jpg',
     projekt: 'Mehrfamilienhaus Künten',
     ort: 'Künten',
     kanton: 'AG',
     href: '/referenzen/mfh-kuenten',
+  },
+  {
+    image: '/images/hero/slide-hochwarting-1.jpg',
+    projekt: 'Mehrfamilienhaus Hochwarting',
+    ort: 'Glashütten',
+    kanton: 'AG',
+    href: '/referenzen/mfh-hochwarting',
+  },
+  {
+    image: '/images/hero/slide-hochwarting-2.jpg',
+    projekt: 'Mehrfamilienhaus Hochwarting',
+    ort: 'Glashütten',
+    kanton: 'AG',
+    href: '/referenzen/mfh-hochwarting',
+  },
+  {
+    image: '/images/hero/slide-wuerenlingen-1.jpg',
+    projekt: 'MFH Würenlingen',
+    ort: 'Würenlingen',
+    kanton: 'AG',
+    href: '/referenzen/mfh-wuerenlingen',
   },
 ];
 
