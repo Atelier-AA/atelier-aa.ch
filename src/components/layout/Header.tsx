@@ -28,9 +28,10 @@ export default function Header() {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Richtet sich allein nach Scroll-Position — unabhängig vom Menü, damit
-  // das Logo beim Öffnen/Schliessen nicht zwischen den Zuständen springt.
-  const collapsed = scrolled;
+  // Bei offenem Menü immer die volle Wortmarke zeigen, unabhängig vom
+  // Scroll-Zustand — kein Sprung mehr, weil die Höhe des Logo-Bereichs
+  // konstant ist (nur die Breite ändert sich innerhalb von Logo.tsx).
+  const collapsed = scrolled && !mobileOpen;
 
   // Nur die Startseite hat den dunklen Hero hinter dem transparenten Header.
   // Bei offenem Menü liegt die dunkle Fläche des Overlays darunter — dort
