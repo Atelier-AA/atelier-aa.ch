@@ -1,250 +1,211 @@
 /**
- * Architekturskizzen im Stil einer Handzeichnung — lose Linienführung,
- * Schraffuren, kleine Staffage (Menschen, Bäume) statt technischer
- * Diagramme mit Massketten und Symbolen. Jede Skizze ist inhaltlich auf
- * den Text der zugehörigen Leistung in `leistungsangebot` abgestimmt.
+ * Gestische Architekturskizzen — inspiriert vom Prinzip berühmter
+ * Handzeichnungen (etwa Frank Gehrys übereinanderliegende Suchlinien):
+ * jede Form wird zwei- oder dreifach mit leicht versetzten Kurven
+ * nachgezogen, statt einmal sauber gezeichnet. Das erzeugt Energie und
+ * Bewegung statt technischer Präzision. Jede Skizze bleibt inhaltlich auf
+ * den Text der zugehörigen Leistung in `leistungsangebot` bezogen.
  */
 
 const BESCHRIFTUNG = { fontFamily: 'ui-monospace, monospace', stroke: 'none', fill: 'currentColor' };
 
-/** Kleine stehende Figur, für den Massstab in der Skizze. */
-function Figur({ x, y }: { x: number; y: number }) {
-  return (
-    <g strokeLinecap="round">
-      <circle cx={x} cy={y - 22} r="4.5" />
-      <path d={`M${x} ${y - 17.5} L${x} ${y - 2} M${x} ${y - 12} L${x - 7} ${y - 6} M${x} ${y - 12} L${x + 6} ${y - 5} M${x} ${y - 2} L${x - 6} ${y + 12} M${x} ${y - 2} L${x + 6} ${y + 12}`} />
-    </g>
-  );
-}
-
-/** Baum als lockere Kritzel-Krone auf einem Stamm. */
-function Baum({ x, y }: { x: number; y: number }) {
-  return (
-    <g>
-      <path d={`M${x} ${y} L${x} ${y - 20}`} />
-      <path
-        d={`M${x - 16} ${y - 22} C ${x - 20} ${y - 40}, ${x - 6} ${y - 46}, ${x} ${y - 34} C ${x + 8} ${y - 48}, ${x + 22} ${y - 38}, ${x + 15} ${y - 20} C ${x + 20} ${y - 10}, ${x - 4} ${y - 6}, ${x - 10} ${y - 16} C ${x - 22} ${y - 12}, ${x - 22} ${y - 26}, ${x - 16} ${y - 22} Z`}
-      />
-    </g>
-  );
-}
-
-/** Schräge Schraffur-Linien, für Schatten und Dachflächen. */
-function Schraffur({
-  x,
-  y,
-  breite,
-  hoehe,
-  anzahl = 6,
-}: {
-  x: number;
-  y: number;
-  breite: number;
-  hoehe: number;
-  anzahl?: number;
-}) {
-  const linien = Array.from({ length: anzahl }, (_, i) => {
-    const versatz = (i / (anzahl - 1)) * (breite + hoehe);
-    const x1 = Math.max(x, x + versatz - hoehe);
-    const y1 = y + Math.min(versatz, hoehe);
-    const x2 = Math.min(x + breite, x + versatz);
-    const y2 = y + Math.max(0, versatz - breite);
-    return { x1, y1, x2, y2 };
-  });
-  return (
-    <g strokeWidth="0.7" opacity="0.7">
-      {linien.map((l, i) => (
-        <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} />
-      ))}
-    </g>
-  );
-}
-
 /**
- * 01 Beratung — eine Person begutachtet ein Grundstück mit Baumbestand,
- * bevor eine Entscheidung fällt.
+ * Zeichnet dieselbe Form mehrfach mit leicht unterschiedlichen Pfaden —
+ * das "Suchen" der Linie, das gestische Skizzen lebendig macht.
  */
+function Geste({ pfade, breite = 1.1 }: { pfade: string[]; breite?: number }) {
+  return (
+    <>
+      {pfade.map((d, i) => (
+        <path
+          key={i}
+          d={d}
+          strokeWidth={breite - i * 0.15}
+          opacity={1 - i * 0.22}
+        />
+      ))}
+    </>
+  );
+}
+
+const svgProps = {
+  viewBox: '0 0 300 220',
+  className: 'h-auto w-full',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.1,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+};
+
+/** 01 Beratung — ein Grundstück, mehrfach umkreist, wie beim Abwägen einer Entscheidung. */
 export function BeratungArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M35 245 Q150 251 265 245" />
-      <path d="M70 245 L70 165 L140 120 L140 245" />
-      <path d="M70 165 L108 143 L140 165" />
-      <line x1="90" y1="190" x2="90" y2="215" />
-      <line x1="118" y1="190" x2="118" y2="215" />
-      <Baum x={200} y={245} />
-      <Figur x={175} y={248} />
-      <path d="M181 224 L192 220 L192 232 Z" opacity="0.8" />
-      <text x="35" y="272" fontSize="9" {...BESCHRIFTUNG}>GRUNDSTÜCKSBEURTEILUNG</text>
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M45 175 C 40 120, 55 65, 110 55 C 160 46, 220 55, 245 95 C 262 122, 250 165, 205 180 C 160 194, 85 192, 45 175 Z',
+          'M50 170 C 44 118, 62 70, 115 58 C 158 50, 215 58, 240 92 C 258 118, 246 158, 202 176 C 162 190, 90 188, 50 170 Z',
+          'M55 165 C 50 122, 68 76, 118 64 C 155 57, 208 63, 232 90',
+        ]}
+        breite={1.2}
+      />
+      <Geste
+        pfade={[
+          'M120 150 C 132 130, 150 128, 158 145 C 165 130, 182 132, 185 150',
+          'M122 154 C 133 135, 149 132, 157 148',
+        ]}
+        breite={1}
+      />
+      <text x="45" y="205" fontSize="9" {...BESCHRIFTUNG}>BERATUNG — GRUNDSTÜCK</text>
     </svg>
   );
 }
 
-/**
- * 02 Projektentwicklung — lose Massstudie: mehrere Volumen in loser
- * Perspektive, mit einem handgezeichneten Pfeil für das Ertragspotenzial.
- */
+/** 02 Projektentwicklung — gestapelte Volumen mit einer suchenden Ertragslinie. */
 export function ProjektentwicklungArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M30 245 Q150 251 270 245" />
-
-      <path d="M50 245 L50 205 L85 190 L85 245" />
-      <path d="M50 205 L70 197 L85 190" />
-
-      <path d="M100 245 L100 175 L145 155 L145 245" />
-      <path d="M100 175 L128 163 L145 155" />
-      <Schraffur x={100} y={175} breite={45} hoehe={0} anzahl={5} />
-
-      <path d="M160 245 L160 130 L215 105 L215 245" />
-      <path d="M160 130 L192 116 L215 105" />
-      <Schraffur x={160} y={130} breite={55} hoehe={0} anzahl={6} />
-
-      <path
-        d="M235 230 C 245 190, 250 150, 258 108"
-        strokeDasharray="1 5"
-        strokeLinecap="round"
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M40 185 L40 150 C 62 142, 78 145, 82 152 L82 185 Z',
+          'M43 183 L44 152 C 63 144, 76 147, 80 153',
+        ]}
       />
-      <path d="M251 118 L258 105 L263 121" strokeLinecap="round" />
-      <text x="230" y="98" fontSize="9" {...BESCHRIFTUNG}>ERTRAGSPOTENZIAL</text>
+      <Geste
+        pfade={[
+          'M95 185 L95 110 C 118 98, 145 102, 150 115 L150 185 Z',
+          'M98 183 L99 113 C 119 101, 142 105, 147 116',
+        ]}
+      />
+      <Geste
+        pfade={[
+          'M163 185 L163 70 C 188 54, 220 60, 226 78 L226 185 Z',
+          'M167 182 L168 74 C 190 59, 216 64, 222 80',
+        ]}
+      />
+      <Geste
+        pfade={[
+          'M60 168 C 100 140, 150 100, 190 90 C 215 84, 235 75, 250 55',
+        ]}
+        breite={1}
+      />
+      <path d="M242 50 L252 54 L246 63" strokeWidth="1" />
+      <text x="40" y="205" fontSize="9" {...BESCHRIFTUNG}>PROJEKTENTWICKLUNG</text>
     </svg>
   );
 }
 
-/**
- * 03 Planung und Entwurf — Handskizze eines Wohnhauses in Perspektive,
- * mit Bleistift als Werkzeug des Entwurfs.
- */
+/** 03 Planung und Entwurf — ein Haus, zweimal überzeichnet, wie beim ersten Konzeptentwurf. */
 export function PlanungArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M30 250 Q150 256 270 250" />
-
-      <path d="M60 250 L60 155 L150 105 L240 155 L240 250" />
-      <path d="M60 155 L150 105 L240 155" />
-      <path d="M150 105 L150 250" strokeDasharray="2 4" opacity="0.6" />
-      <Schraffur x={150} y={130} breite={90} hoehe={25} anzahl={7} />
-
-      <rect x="82" y="190" width="30" height="60" />
-      <rect x="135" y="170" width="28" height="34" />
-      <rect x="190" y="170" width="28" height="34" />
-      <line x1="149" y1="187" x2="149" y2="204" />
-      <line x1="204" y1="187" x2="204" y2="204" />
-
-      <Baum x={255} y={250} />
-
-      <g strokeLinecap="round">
-        <path d="M45 275 L85 245" />
-        <path d="M82 246 L88 240 L92 246 L86 252 Z" fill="currentColor" fillOpacity="0.15" />
-      </g>
-      <text x="35" y="290" fontSize="9" {...BESCHRIFTUNG}>ENTWURF</text>
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M55 185 L55 100 L148 55 L240 100 L240 185 Z',
+          'M60 182 L58 103 L150 60 L236 103 L235 182',
+          'M55 100 L148 55 L240 100',
+        ]}
+        breite={1.2}
+      />
+      <Geste pfade={['M92 185 L92 135 C 100 128, 112 128, 118 135 L118 185']} breite={1} />
+      <Geste pfade={['M150 150 C 156 143, 168 143, 172 150 C 168 157, 156 157, 150 150 Z']} breite={0.9} />
+      <path d="M35 205 L75 178" strokeWidth="1" />
+      <path d="M73 180 L80 172 L84 179 Z" fill="currentColor" fillOpacity="0.2" />
+      <text x="35" y="212" fontSize="9" {...BESCHRIFTUNG}>ENTWURF</text>
     </svg>
   );
 }
 
-/**
- * 04 Baugesuch und Bewilligung — Fassadenskizze mit handgezeichnetem
- * Bewilligungsstempel und den drei Kantonen.
- */
+/** 04 Baugesuch und Bewilligung — Fassade mit einem locker gekreiselten Bewilligungsstempel. */
 export function BaugesuchArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M40 250 Q150 256 260 250" />
-      <path d="M65 250 L65 130 L150 78 L235 130 L235 250" />
-      <path d="M65 130 L150 78 L235 130" />
-      <Schraffur x={65} y={100} breite={170} hoehe={30} anzahl={8} />
-
-      <rect x="90" y="160" width="32" height="32" />
-      <rect x="134" y="160" width="32" height="32" />
-      <rect x="178" y="160" width="32" height="32" />
-      <rect x="128" y="205" width="44" height="45" />
-
-      <g strokeDasharray="3 3">
-        <circle cx="222" cy="95" r="30" />
-      </g>
-      <path d="M208 96 L219 106 L238 80" strokeWidth="1.8" />
-      <path d="M198 108 L246 82" opacity="0.5" strokeDasharray="1 3" />
-
-      <text x="150" y="272" textAnchor="middle" fontSize="9" {...BESCHRIFTUNG}>ZH · AG · ZG</text>
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M60 185 L60 90 L150 48 L240 90 L240 185 Z',
+          'M64 182 L63 93 L150 53 L236 93 L235 182',
+        ]}
+        breite={1.2}
+      />
+      <path d="M95 130 L95 160 L120 160 L120 130 Z" />
+      <path d="M145 130 L145 160 L170 160 L170 130 Z" />
+      <Geste
+        pfade={[
+          'M210 60 C 232 52, 250 66, 246 88 C 242 108, 218 114, 202 100 C 188 88, 190 66, 210 60 Z',
+          'M214 58 C 234 52, 248 68, 244 86 C 240 104, 220 112, 206 98',
+        ]}
+        breite={0.9}
+      />
+      <path d="M198 82 L210 92 L232 66" strokeWidth="1.4" />
+      <text x="150" y="207" textAnchor="middle" fontSize="9" {...BESCHRIFTUNG}>ZH · AG · ZG</text>
     </svg>
   );
 }
 
-/**
- * 05 Bauleitung und Kostenkontrolle — Baustellenskizze mit Gerüst, Kran
- * und einer Person auf der Baustelle.
- */
+/** 05 Bauleitung und Kostenkontrolle — Baustelle mit Kran, in Bewegung skizziert. */
 export function BauleitungArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M25 250 Q150 256 275 250" />
-
-      <path d="M70 250 L70 110 L170 110 L170 250" />
-      <g strokeDasharray="2 3" opacity="0.8">
-        <line x1="70" y1="150" x2="170" y2="150" />
-        <line x1="70" y1="190" x2="170" y2="190" />
-      </g>
-
-      <g opacity="0.85">
-        <line x1="55" y1="250" x2="55" y2="95" />
-        <line x1="185" y1="250" x2="185" y2="95" />
-        <line x1="55" y1="95" x2="185" y2="95" />
-        <line x1="55" y1="130" x2="185" y2="130" />
-        <line x1="55" y1="165" x2="185" y2="165" />
-        <line x1="55" y1="200" x2="185" y2="200" />
-        <line x1="55" y1="130" x2="185" y2="95" strokeDasharray="2 3" />
-        <line x1="55" y1="165" x2="185" y2="130" strokeDasharray="2 3" />
-        <line x1="55" y1="200" x2="185" y2="165" strokeDasharray="2 3" />
-      </g>
-
-      {/* Kran */}
-      <path d="M225 250 L225 80 L268 80" strokeLinecap="round" />
-      <path d="M245 80 L245 60 L225 80" strokeLinecap="round" />
-      <path d="M255 80 L262 100" strokeDasharray="2 2" />
-
-      <Figur x={205} y={252} />
-      <text x="25" y="272" fontSize="9" {...BESCHRIFTUNG}>BAUSTELLE — KOSTENKONTROLLE</text>
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M55 185 L55 85 L145 85 L145 185',
+          'M58 183 L59 88 L142 88 L142 183',
+        ]}
+      />
+      <path d="M55 120 L145 120 M55 152 L145 152" opacity="0.6" strokeDasharray="2 4" />
+      <Geste
+        pfade={[
+          'M195 185 L195 55 L245 55',
+          'M198 183 L199 58 L242 58',
+        ]}
+        breite={1}
+      />
+      <path d="M218 55 L212 40 L195 55" strokeWidth="1" />
+      <path d="M228 55 L236 78" strokeDasharray="2 3" />
+      <Geste pfade={['M275 185 C 268 165, 270 145, 278 130']} breite={0.9} />
+      <circle cx="279" cy="122" r="4.5" />
+      <text x="35" y="207" fontSize="9" {...BESCHRIFTUNG}>BAUSTELLE — KOSTENKONTROLLE</text>
     </svg>
   );
 }
 
-/**
- * 06 Generalplanung — ein Gebäude, um das sich die Fachplaner-Rollen
- * anordnen, mit dem Atelier AA als koordinierender Mittelpunkt.
- */
+/** 06 Generalplanung — ein Haus, umkreist von locker skizzierten Fachplaner-Punkten. */
 export function GeneralplanungArt() {
   const rollen: { x: number; y: number; label: string }[] = [
-    { x: 150, y: 40, label: 'ARCH' },
-    { x: 245, y: 90, label: 'ING' },
-    { x: 260, y: 190, label: 'HT' },
-    { x: 190, y: 258, label: 'ELEKTRO' },
-    { x: 95, y: 258, label: 'BAULEITUNG' },
-    { x: 40, y: 190, label: 'GEOLOGIE' },
-    { x: 55, y: 90, label: 'LANDSCHAFT' },
+    { x: 150, y: 20, label: 'ARCH' },
+    { x: 255, y: 65, label: 'ING' },
+    { x: 268, y: 150, label: 'HT' },
+    { x: 150, y: 200, label: 'BAULEITUNG' },
+    { x: 35, y: 150, label: 'ELEKTRO' },
+    { x: 48, y: 65, label: 'LANDSCHAFT' },
   ];
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <path d="M108 190 L108 130 L150 108 L192 130 L192 190 L108 190" />
-      <path d="M108 130 L150 108 L192 130" />
-      <Schraffur x={108} y={112} breite={84} hoehe={18} anzahl={5} />
-
+    <svg {...svgProps}>
+      <Geste
+        pfade={[
+          'M115 148 L115 108 L150 92 L185 108 L185 148 L115 148 Z',
+          'M118 145 L117 111 L150 96 L182 111 L181 145',
+        ]}
+        breite={1.15}
+      />
       {rollen.map((r) => (
-        <line
+        <path
           key={`l-${r.label}`}
-          x1="150"
-          y1="150"
-          x2={r.x}
-          y2={r.y}
-          strokeDasharray="1 4"
-          opacity="0.7"
+          d={`M150 120 Q ${(150 + r.x) / 2 + (r.y - 120) * 0.15} ${(120 + r.y) / 2 - (150 - r.x) * 0.1}, ${r.x} ${r.y}`}
+          opacity="0.55"
+          strokeWidth="0.9"
         />
       ))}
       {rollen.map((r) => (
         <g key={`n-${r.label}`}>
-          <circle cx={r.x} cy={r.y} r="4" />
+          <path
+            d={`M${r.x - 6} ${r.y} C ${r.x - 6} ${r.y - 6}, ${r.x + 6} ${r.y - 6}, ${r.x + 6} ${r.y} C ${r.x + 6} ${r.y + 6}, ${r.x - 6} ${r.y + 6}, ${r.x - 6} ${r.y} Z`}
+            strokeWidth="1"
+          />
           <text
             x={r.x}
-            y={r.y > 150 ? r.y + 14 : r.y - 8}
+            y={r.y > 120 ? r.y + 15 : r.y - 10}
             textAnchor="middle"
             fontSize="7.5"
             {...BESCHRIFTUNG}
@@ -257,28 +218,30 @@ export function GeneralplanungArt() {
   );
 }
 
-/**
- * 07 Wettbewerbe und Studien — eine Skizzenblatt-Seite mit drei
- * Studienvarianten, eine davon eingekreist als gewählter Ansatz.
- */
+/** 07 Wettbewerbe und Studien — drei rasch skizzierte Varianten, eine eingekreist. */
 export function WettbewerbeArt() {
   return (
-    <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-      <rect x="20" y="20" width="260" height="260" strokeDasharray="1 3" opacity="0.4" />
+    <svg {...svgProps}>
+      <Geste pfade={['M40 175 L40 130 L78 112 L78 157 Z', 'M43 172 L42 133 L76 116 L76 155']} breite={1} />
+      <text x="42" y="192" fontSize="8" {...BESCHRIFTUNG}>A</text>
 
-      <path d="M45 210 L45 160 L85 138 L85 188 Z" />
-      <path d="M45 160 L85 138" />
-      <text x="48" y="228" fontSize="8" {...BESCHRIFTUNG}>STUDIE A</text>
+      <Geste
+        pfade={[
+          'M110 185 L110 118 L165 92 L165 158 Z',
+          'M113 182 L112 121 L163 96 L162 156',
+        ]}
+        breite={1.15}
+      />
+      <Geste
+        pfade={[
+          'M100 148 C 100 118, 175 118, 175 148 C 175 178, 100 178, 100 148 Z',
+        ]}
+        breite={0.9}
+      />
+      <text x="112" y="202" fontSize="8" {...BESCHRIFTUNG}>B — WEITER VERFOLGT</text>
 
-      <path d="M118 225 L118 145 L168 118 L168 198 Z" />
-      <path d="M118 145 L168 118" />
-      <Schraffur x={118} y={145} breite={50} hoehe={0} anzahl={4} />
-      <circle cx="143" cy="170" r="42" strokeDasharray="2 3" opacity="0.8" />
-      <text x="112" y="243" fontSize="8" {...BESCHRIFTUNG}>STUDIE B — WEITER VERFOLGT</text>
-
-      <path d="M205 205 L205 165 L245 145 L245 185 Z" strokeDasharray="1 3" opacity="0.7" />
-      <path d="M205 165 L245 145" strokeDasharray="1 3" opacity="0.7" />
-      <text x="208" y="222" fontSize="8" {...BESCHRIFTUNG}>STUDIE C</text>
+      <Geste pfade={['M205 178 L205 140 L245 122 L245 160 Z', 'M208 175 L207 143 L243 126 L243 158']} breite={0.95} />
+      <text x="207" y="195" fontSize="8" {...BESCHRIFTUNG}>C</text>
     </svg>
   );
 }
