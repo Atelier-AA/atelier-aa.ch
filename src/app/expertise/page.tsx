@@ -7,7 +7,6 @@ import { getFeaturedProjekte } from '@/data/projekte';
 import {
   leistungsbereiche,
   bauaufgaben,
-  planungsphasen,
   expertiseFragen,
 } from '@/data/expertise';
 
@@ -103,35 +102,6 @@ export default function ExpertisePage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Planungsphasen */}
-        <section className="border-t border-mist bg-mist py-20 md:py-28">
-          <Container>
-            <div className="mb-14 max-w-3xl">
-              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Planungsphasen
-              </p>
-              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Von der ersten Frage zum fertigen Haus
-              </h2>
-              <p className="mt-6 leading-relaxed text-graphite">
-                Wir begleiten Ihr Projekt durch alle Phasen — einzeln oder als
-                durchgehendes Mandat.
-              </p>
-            </div>
-            <ol className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
-              {planungsphasen.map((phase) => (
-                <li key={phase.nummer}>
-                  <p className="mb-4 text-sm tracking-[0.1em] text-stone">
-                    {phase.nummer}
-                  </p>
-                  <h3 className="mb-3 text-lg font-light text-ink">{phase.titel}</h3>
-                  <p className="leading-relaxed text-graphite">{phase.text}</p>
-                </li>
-              ))}
-            </ol>
-          </Container>
         </section>
 
         {/* Referenzen */}
