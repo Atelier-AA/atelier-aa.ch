@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
 
@@ -13,60 +12,43 @@ export default function KontaktPage() {
   return (
     <div className="pt-24 md:pt-28 pb-20 md:pb-28">
       <Container className="mt-16 md:mt-24">
-        {/* Links Bild, rechts Text — wie auf stage.atelier-aa.ch/kontakt/.
-            Das Bürofoto Bachstrasse ist bereits im Projekt vorhanden
-            (bisher als volle Breite oben); der Text ist wörtlich von der
-            alten Kontaktseite (Post 88) übernommen. */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-square w-full bg-mist">
-            <Image
-              src="/images/kontakt/kontakt-hero.jpg"
-              alt="Atelier AA Architekten Büro an der Bachstrasse"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+        <div>
+          <p className="text-xs uppercase tracking-widest text-stone mb-4">
+            Kontakt
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10 max-w-lg">
+            Der erste Schritt ist ein Gespräch.
+          </h1>
+          <p className="text-lg text-graphite leading-relaxed max-w-md">
+            Wir stehen für einen offenen, direkten Austausch und freuen uns über
+            neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
+            Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
+          </p>
 
-          <div className="mt-10 lg:mt-0 lg:pl-8">
-            <p className="text-xs uppercase tracking-widest text-stone mb-4">
-              Kontakt
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10 max-w-lg">
-              Der erste Schritt ist ein Gespräch.
-            </h1>
-            <p className="text-lg text-graphite leading-relaxed max-w-md">
-              Wir stehen für einen offenen, direkten Austausch und freuen uns über
-              neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
-              Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
-            </p>
-
-            {/* Adresse, Telefon und E-Mail als ein durchlaufender Block statt
-                einzeln beschrifteter Kästen — wie auf stage.atelier-aa.ch/kontakt/. */}
-            <address className="not-italic text-lg text-ink leading-relaxed mt-8 max-w-md">
-              {firma.name}
-              <br />
-              {firma.strasse}
-              <br />
-              {firma.plz} {firma.ort}
-            </address>
-            <p className="mt-6 text-lg">
-              <a
-                href={`tel:${firma.telefonHref}`}
-                className="font-medium text-ink transition-colors hover:text-graphite"
-              >
-                {firma.telefon}
-              </a>
-              <br />
-              <a
-                href={`mailto:${firma.email}`}
-                className="font-medium text-ink transition-colors hover:text-graphite"
-              >
-                {firma.email}
-              </a>
-            </p>
-          </div>
+          {/* Adresse, Telefon und E-Mail als ein durchlaufender Block statt
+              einzeln beschrifteter Kästen — wie auf stage.atelier-aa.ch/kontakt/. */}
+          <address className="not-italic text-lg text-ink leading-relaxed mt-8 max-w-md">
+            {firma.name}
+            <br />
+            {firma.strasse}
+            <br />
+            {firma.plz} {firma.ort}
+          </address>
+          <p className="mt-6 text-lg">
+            <a
+              href={`tel:${firma.telefonHref}`}
+              className="font-medium text-ink transition-colors hover:text-graphite"
+            >
+              {firma.telefon}
+            </a>
+            <br />
+            <a
+              href={`mailto:${firma.email}`}
+              className="font-medium text-ink transition-colors hover:text-graphite"
+            >
+              {firma.email}
+            </a>
+          </p>
         </div>
 
         {/* Google Karte zum Bürostandort. */}
