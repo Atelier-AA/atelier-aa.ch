@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import ProjektCard from '@/components/projekte/ProjektCard';
-import { getFeaturedProjekte } from '@/data/projekte';
 import { leistungsbereiche, bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
@@ -13,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function LeistungenPage() {
-  const referenzen = getFeaturedProjekte().slice(0, 3);
-
   return (
     <>
       <div className="pt-32 md:pt-40">
@@ -81,22 +77,6 @@ export default function LeistungenPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Referenzen */}
-        <section className="border-t border-mist py-20 md:py-28">
-          <Container>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {referenzen.map((projekt) => (
-                <ProjektCard key={projekt.slug} projekt={projekt} />
-              ))}
-            </div>
-            <div className="mt-16">
-              <Button href="/projekte" variant="text">
-                alle Projekte ansehen
-              </Button>
-            </div>
-          </Container>
         </section>
 
         <Container>
