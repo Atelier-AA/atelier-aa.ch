@@ -20,9 +20,8 @@ function planBild(datei: string): string {
 
 /**
  * Die Original-Pläne (Kataster, Grundrisse, Fassaden …) als Bildkacheln —
- * optisch identisch zur Fotogalerie, damit kein Unterschied sichtbar ist,
- * ob eine Kachel ein Foto oder ein aus PDF konvertierter Plan ist. Ein
- * Klick öffnet weiterhin das Original-PDF in Druckqualität.
+ * gleiches Raster wie die Fotogalerie, ohne Beschriftung und ohne
+ * Klickverhalten, exakt wie die Fotos: nur zum Anschauen.
  */
 export default function ProjektPlaene({ plaene, projektTitel }: ProjektPlaeneProps) {
   if (!plaene.length) return null;
@@ -32,24 +31,15 @@ export default function ProjektPlaene({ plaene, projektTitel }: ProjektPlaenePro
       <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">Pläne</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         {plaene.map((plan) => (
-          <a
-            key={plan.datei}
-            href={plan.datei}
-            target="_blank"
-            rel="noopener"
-            className="group block"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-              <Image
-                src={planBild(plan.datei)}
-                alt={`${projektTitel} – ${plan.titel}`}
-                fill
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <p className="mt-2 text-xs uppercase tracking-widest text-stone">{plan.titel}</p>
-          </a>
+          <div key={plan.datei} className="relative aspect-[4/3] overflow-hidden bg-mist">
+            <Image
+              src={planBild(plan.datei)}
+              alt={`${projektTitel} – ${plan.titel}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         ))}
       </div>
     </div>
