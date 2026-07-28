@@ -9,34 +9,6 @@ import type { InsightFrage } from '@/types';
  * ausgeschriebenen Ortsnamen und Leistungsbegriffen.
  */
 
-/** Leistungen mit Kurzbeschreibung, für den Abschnitt "Leistungen". */
-export const leistungen = [
-  {
-    titel: 'Neubau',
-    text: 'Mehrfamilienhäuser, Wohnüberbauungen und Einfamilienhäuser — vom ersten Volumen bis zur Schlüsselübergabe.',
-  },
-  {
-    titel: 'Umbau und Sanierung',
-    text: 'Aufstockung, Anbau, energetische Sanierung und hindernisfreier Umbau, auch im bewohnten Zustand.',
-  },
-  {
-    titel: 'Verdichtung',
-    text: 'Ausnutzungsreserven auf bestehenden Parzellen erkennen und nutzen — der wichtigste Hebel gegen die Baulandknappheit.',
-  },
-  {
-    titel: 'Projektentwicklung',
-    text: 'Machbarkeitsstudien, Kostenrahmen und Ertragsrechnung, bevor gestalterische Entscheide fallen.',
-  },
-  {
-    titel: 'Innenarchitektur',
-    text: 'Grundrisse, Materialisierung und Ausbau für Wohnungen und Gewerberäume.',
-  },
-  {
-    titel: 'Bauleitung',
-    text: 'Koordination der Unternehmer, Kosten- und Terminkontrolle, Vertretung Ihrer Interessen auf der Baustelle.',
-  },
-];
-
 /** Ablauf eines Projekts in vier Phasen, für den Abschnitt "So arbeiten wir". */
 export const ablauf = [
   {

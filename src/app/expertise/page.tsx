@@ -15,7 +15,7 @@ import { elindo } from '@/data/partner';
 import { ablauf } from '@/data/startseite';
 
 export const metadata: Metadata = {
-  title: 'Expertise',
+  title: 'Leistungen',
   description:
     'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, hindernisfreies Bauen, Bauleitung und Baugesuche in den Kantonen Zürich, Aargau und Zug.',
 };
@@ -45,7 +45,7 @@ export default function ExpertisePage() {
       <div className="pt-32 md:pt-40">
         <Container>
           <div className="mb-16 max-w-3xl md:mb-24">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Expertise</p>
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Leistungen</p>
             <h1 className="text-4xl font-light leading-tight text-ink md:text-5xl lg:text-6xl">
               Architektur mit Klarheit
               <br />
@@ -100,7 +100,7 @@ export default function ExpertisePage() {
           <Container>
             <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Leistungen
+                Im Detail
               </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
                 Was wir übernehmen
@@ -203,7 +203,7 @@ export default function ExpertisePage() {
         <section className="border-t border-mist py-20 md:py-28">
           <Container>
             <h2 className="mb-12 text-2xl font-light text-ink md:text-3xl">
-              Unsere Expertise zeigt sich in unseren Projekten.
+              Unsere Leistungen zeigen sich in unseren Projekten.
             </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {referenzen.map((projekt) => (

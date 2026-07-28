@@ -1,49 +1,78 @@
+'use client';
+
+import { useState } from 'react';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { leistungen } from '@/data/startseite';
+import { leistungsbereiche } from '@/data/expertise';
+import { cn } from '@/lib/utils';
 
 /**
  * Leistungsübersicht auf der Startseite.
  *
- * Statt eines gleichförmigen Kartenrasters eine nummerierte Liste, wie ein
- * Inhaltsverzeichnis — jede Leistung eine Zeile, die grosse Ziffer davor gibt
- * der Aufzählung Rhythmus und macht sofort klar, wie viele es sind.
+ * Bewusst knapp: ein einleitender Fliesstext statt Aufzählung, darunter eine
+ * Liste, die geschlossen bleibt, bis man eine Zeile antippt. So nimmt der
+ * Abschnitt kaum Platz ein, ohne dass etwas fehlt — wer mehr wissen will,
+ * klappt auf oder geht über den Link zur Seite «Leistungen».
  *
- * Beantwortet die Frage «was macht dieses Büro» mit ausgeschriebenen
- * Leistungsbegriffen — die Grundlage dafür, in der Suche zu den einzelnen
- * Leistungen gefunden zu werden.
+ * Dieselbe Liste (`leistungsbereiche`) wie auf der Leistungen-Seite, damit
+ * Titel und Wortlaut nirgends auseinanderlaufen.
  */
 export default function LeistungenSection() {
+  const [offen, setOffen] = useState<number | null>(null);
+
   return (
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
-        <div className="max-w-3xl mb-10 md:mb-16">
+        <div className="max-w-2xl mb-8">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Leistungen</p>
-          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
-            Von der Machbarkeitsstudie bis zur Schlüsselübergabe
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight mb-4">
+            Sämtliche Planungsleistungen aus einer Hand
           </h2>
+          <p className="text-lg text-graphite leading-relaxed">
+            Von der ersten Volumenstudie bis zur Bauleitung vor Ort begleiten wir Neubau,
+            Umbau und Verdichtung im Wohn- und Gewerbebau — in den Kantonen Zürich, Aargau
+            und Zug.
+          </p>
         </div>
 
-        <div className="border-t border-mist">
-          {leistungen.map((l, idx) => (
-            <div
-              key={l.titel}
-              className="group grid grid-cols-1 gap-3 border-b border-mist py-8 transition-colors md:grid-cols-[3.5rem_1fr_2fr] md:items-baseline md:gap-10 md:py-10"
-            >
-              <span className="text-sm tabular-nums text-stone md:text-base">
-                {String(idx + 1).padStart(2, '0')}
-              </span>
-              <h3 className="text-2xl font-medium text-ink transition-colors group-hover:text-graphite md:text-3xl">
-                {l.titel}
-              </h3>
-              <p className="text-graphite leading-relaxed">{l.text}</p>
-            </div>
-          ))}
+        <div className="max-w-2xl border-y border-mist">
+          {leistungsbereiche.map((l, idx) => {
+            const istOffen = offen === idx;
+            return (
+              <div key={l.titel} className="border-b border-mist last:border-b-0">
+                <button
+                  type="button"
+                  onClick={() => setOffen(istOffen ? null : idx)}
+                  aria-expanded={istOffen}
+                  className="flex w-full items-center justify-between gap-4 py-4 text-left"
+                >
+                  <span className="text-base font-medium text-ink">{l.titel}</span>
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      'shrink-0 text-xl leading-none text-stone transition-transform duration-300',
+                      istOffen && 'rotate-45'
+                    )}
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className={cn(
+                    'overflow-hidden transition-[max-height] duration-300 ease-out',
+                    istOffen ? 'max-h-32' : 'max-h-0'
+                  )}
+                >
+                  <p className="pb-4 text-graphite leading-relaxed">{l.text}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <Button href="/expertise" variant="text">
-            Unsere Expertise
+            Alle Leistungen im Detail
           </Button>
         </div>
       </Container>

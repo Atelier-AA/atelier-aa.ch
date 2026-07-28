@@ -41,6 +41,11 @@ export default function UeberUnsPage() {
                 Gebäude und Räume, die sich selbstverständlich in ihren Kontext
                 einfügen und zugleich eine eigene Identität schaffen.
               </p>
+              <p>
+                Als kleines Büro arbeiten wir mit kurzen Wegen: Von der ersten
+                Volumenstudie bis zur Bauleitung vor Ort begleiten wir unsere Projekte
+                selbst — ohne dass Verantwortung zwischen vielen Stellen verloren geht.
+              </p>
               <p className="text-lg text-ink">
                 Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
               </p>
