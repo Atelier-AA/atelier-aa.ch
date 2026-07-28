@@ -97,9 +97,11 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
       {/*
         Zweispaltig: links eine lückenlose Bilderstrecke (Fotos und Pläne
-        gleichbehandelt), die normal durchscrollt; rechts der gesamte
-        Projekttext in einer Spalte, die stehen bleibt (position: sticky),
-        bis ihr eigener Inhalt zu Ende ist oder die Bilder links auslaufen.
+        gleichbehandelt), rechts der gesamte Projekttext. Beide beginnen auf
+        gleicher Höhe und scrollen zunächst gemeinsam; sobald die Textspalte
+        oben ankommt, bleibt sie dort stehen (position: sticky, ohne eigene
+        Maximalhöhe), während die Bilder weiterlaufen — bis der Bildbereich
+        endet und der Text den Rest seines Inhalts fertig scrollt.
         Auf schmalen Bildschirmen steht der Text zuerst, darunter die Bilder,
         einspaltig ohne Sticky-Verhalten.
       */}
@@ -113,7 +115,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-1/2 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:px-16 lg:py-28">
+        <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-1/2 lg:px-16 lg:py-28">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
