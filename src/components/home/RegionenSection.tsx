@@ -17,7 +17,7 @@ export default function RegionenSection() {
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Einsatzgebiet
           </p>
-          <h2 className="text-3xl md:text-4xl font-light text-ink leading-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
             Architektur in Zürich, Aargau und Zug
           </h2>
           <p className="mt-8 text-lg text-graphite leading-relaxed">
@@ -31,7 +31,7 @@ export default function RegionenSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {regionen.map((r) => (
             <div key={r.kuerzel}>
-              <h3 className="text-xl font-light text-ink mb-4">{r.kanton}</h3>
+              <h3 className="text-xl font-medium text-ink mb-4">{r.kanton}</h3>
               <p className="text-graphite leading-relaxed">{r.orte}</p>
             </div>
           ))}
@@ -42,7 +42,7 @@ export default function RegionenSection() {
             <div key={z.label}>
               <dt className="sr-only">{z.label}</dt>
               <dd>
-                <span className="block text-3xl md:text-4xl font-light text-ink">
+                <span className="block text-3xl md:text-4xl font-medium text-ink">
                   {z.wert}
                 </span>
                 <span className="mt-2 block text-sm text-stone leading-snug">

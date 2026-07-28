@@ -15,7 +15,7 @@ export default function AblaufSection() {
       <Container>
         <div className="max-w-3xl mb-14">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Ablauf</p>
-          <h2 className="text-3xl md:text-4xl font-light text-ink leading-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
             So arbeiten wir
           </h2>
         </div>
@@ -24,7 +24,7 @@ export default function AblaufSection() {
           {ablauf.map((phase) => (
             <li key={phase.nummer}>
               <p className="text-sm tracking-[0.1em] text-stone mb-4">{phase.nummer}</p>
-              <h3 className="text-xl font-light text-ink mb-3">{phase.titel}</h3>
+              <h3 className="text-xl font-medium text-ink mb-3">{phase.titel}</h3>
               <p className="text-graphite leading-relaxed">{phase.text}</p>
             </li>
           ))}

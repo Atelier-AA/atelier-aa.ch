@@ -11,7 +11,7 @@ export default function OffeneStellen() {
           </p>
           {/* Titel und Text wörtlich von der alten Seite (Post 2, Abschnitt
               "offene Stellen"). */}
-          <h2 className="text-3xl md:text-4xl font-light text-ink mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-ink mb-8 leading-tight">
             offene Stellen
           </h2>
           <p className="text-lg text-graphite leading-relaxed mb-10">

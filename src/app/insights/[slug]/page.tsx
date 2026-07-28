@@ -100,7 +100,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <p className="text-xs uppercase tracking-[0.1em] text-stone mb-4">
               {insight.kategorie} · {formatDatum(insight.datum)} · {insight.lesezeit} Min.
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-ink leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-ink leading-tight">
               {insight.titel}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-graphite leading-relaxed">
@@ -124,7 +124,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
           <div className="max-w-3xl">
             {insight.abschnitte.map((a) => (
               <section key={a.titel} className="mb-14 last:mb-0">
-                <h2 className="text-xl md:text-2xl font-light text-ink leading-snug mb-5">
+                <h2 className="text-xl md:text-2xl font-medium text-ink leading-snug mb-5">
                   {a.titel}
                 </h2>
                 <div className="space-y-5 text-graphite leading-relaxed">
@@ -138,7 +138,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <FragenAntworten fragen={insight.fragen} />
 
             <div className="mt-20 md:mt-28 border-t border-mist pt-16">
-              <h2 className="text-2xl md:text-3xl font-light text-ink mb-6">
+              <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
                 Sprechen wir über Ihr Projekt.
               </h2>
               <p className="text-graphite leading-relaxed mb-8">

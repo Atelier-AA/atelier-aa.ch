@@ -34,7 +34,7 @@ export default function TeamMember({ member }: TeamMemberProps) {
           <Arrow className="h-[15px] w-[50px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
         </div>
       </div>
-      <h3 className="text-lg font-light text-ink transition-colors group-hover:text-graphite">
+      <h3 className="text-lg font-medium text-ink transition-colors group-hover:text-graphite">
         {member.name}
       </h3>
       <p className="mt-1 text-sm text-stone">{member.rolle}</p>

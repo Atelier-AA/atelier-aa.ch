@@ -23,7 +23,7 @@ export default function PartnerSection() {
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Immobilienpartner
             </p>
-            <h2 className="text-3xl md:text-4xl font-light text-ink leading-tight">
+            <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
               Bauen und Vermarkten zusammen denken
             </h2>
             <p className="mt-8 text-lg text-graphite leading-relaxed">

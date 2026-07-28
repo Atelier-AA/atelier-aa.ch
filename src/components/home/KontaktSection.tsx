@@ -9,7 +9,7 @@ export default function KontaktSection() {
       <Container>
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Kontakt</p>
-          <h2 className="text-3xl md:text-4xl font-light text-ink leading-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
             Der erste Schritt ist ein Gespräch.
           </h2>
           <p className="mt-8 text-lg text-graphite leading-relaxed">

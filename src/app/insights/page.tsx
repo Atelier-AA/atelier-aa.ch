@@ -16,7 +16,7 @@ export default function InsightsPage() {
       <Container>
         <div className="max-w-3xl mb-16 md:mb-24">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-ink leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
             Gedanken zu Architektur
             <br />
             und Planung
@@ -35,7 +35,7 @@ export default function InsightsPage() {
         </div>
 
         <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
-          <h2 className="text-2xl md:text-3xl font-light text-ink mb-6">
+          <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
             Sie haben ein Vorhaben?
           </h2>
           <p className="text-graphite leading-relaxed mb-8">

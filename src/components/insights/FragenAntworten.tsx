@@ -34,7 +34,7 @@ export default function FragenAntworten({
       aria-labelledby="faq-titel"
       className="mt-20 md:mt-28 border-t border-mist pt-16"
     >
-      <h2 id="faq-titel" className="text-2xl md:text-3xl font-light text-ink mb-10">
+      <h2 id="faq-titel" className="text-2xl md:text-3xl font-medium text-ink mb-10">
         {titel}
       </h2>
 
@@ -42,7 +42,7 @@ export default function FragenAntworten({
         {fragen.map((f) => (
           <details key={f.frage} className="group border-b border-mist">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left [&::-webkit-details-marker]:hidden">
-              <h3 className="text-lg md:text-xl font-light leading-snug text-ink transition-colors group-hover:text-graphite">
+              <h3 className="text-lg md:text-xl font-medium leading-snug text-ink transition-colors group-hover:text-graphite">
                 {f.frage}
               </h3>
               {/* Plus-Zeichen, das beim Öffnen zum Minus wird: die vertikale

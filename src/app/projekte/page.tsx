@@ -18,7 +18,7 @@ export default function ProjektePage() {
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Referenzen
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-ink leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
             Projekte
           </h1>
         </div>
@@ -27,7 +27,7 @@ export default function ProjektePage() {
 
         <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
           {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}
-          <h2 className="text-2xl md:text-3xl font-light text-ink mb-6">
+          <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
             Architektur mit Verantwortung
           </h2>
           <p className="text-graphite leading-relaxed mb-8">

@@ -18,7 +18,7 @@ export default function LeistungenPage() {
         <Container>
           <div className="mb-16 max-w-3xl md:mb-24">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Leistungen</p>
-            <h1 className="text-4xl font-light leading-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium leading-tight text-ink md:text-5xl lg:text-6xl">
               Architektur mit Klarheit
               <br />
               und Verantwortung
@@ -48,7 +48,7 @@ export default function LeistungenPage() {
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
                 Angebot
               </p>
-              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
+              <h2 className="text-3xl font-medium leading-tight text-ink md:text-4xl">
                 Unser Leistungsangebot
               </h2>
             </div>
@@ -76,7 +76,7 @@ export default function LeistungenPage() {
 
         <Container>
           <div className="max-w-3xl border-t border-mist pt-16">
-            <h2 className="mb-6 text-2xl font-light text-ink md:text-3xl">
+            <h2 className="mb-6 text-2xl font-medium text-ink md:text-3xl">
               Sie möchten bauen?
             </h2>
             <p className="mb-8 leading-relaxed text-graphite">

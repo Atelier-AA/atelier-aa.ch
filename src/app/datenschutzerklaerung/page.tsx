@@ -33,7 +33,7 @@ export default function DatenschutzPage() {
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Rechtliches
           </p>
-          <h1 className="mb-6 text-4xl font-light text-ink md:text-5xl">
+          <h1 className="mb-6 text-4xl font-medium text-ink md:text-5xl">
             Datenschutzerklärung
           </h1>
           <p className="mb-16 text-sm text-stone">Stand: {stand}</p>
@@ -51,7 +51,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 1. Verantwortliche Stelle
               </h2>
               <address className="not-italic">
@@ -80,7 +80,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 2. Bearbeitung bei Besuch der Website
               </h2>
               <p>
@@ -98,7 +98,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 3. Hosting und Server-Logfiles
               </h2>
               <p>
@@ -117,7 +117,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 4. Kontaktaufnahme und Kontaktformular
               </h2>
               <p>
@@ -136,7 +136,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 5. Bearbeitung im Rahmen von Planungsmandaten
               </h2>
               <p>
@@ -153,7 +153,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 6. Bekanntgabe an Dritte
               </h2>
               <p>
@@ -170,7 +170,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">7. Cookies</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">7. Cookies</h2>
               <p>
                 Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken. Es
                 werden ausschliesslich technisch notwendige Angaben verarbeitet, die für
@@ -181,7 +181,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">
+              <h2 className="mb-4 text-xl font-medium text-ink">
                 8. Schriften und externe Dienste
               </h2>
               <p>
@@ -200,7 +200,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">9. Datensicherheit</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">9. Datensicherheit</h2>
               <p>
                 Wir treffen angemessene technische und organisatorische Massnahmen, um
                 Ihre Daten gegen unbefugten Zugriff, Verlust und Missbrauch zu schützen.
@@ -211,7 +211,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">10. Ihre Rechte</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">10. Ihre Rechte</h2>
               <p>Sie haben im Rahmen des anwendbaren Rechts das Recht,</p>
               <ul className="mt-4 space-y-2 pl-5">
                 <li className="list-disc">
@@ -244,7 +244,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">11. Beschwerderecht</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">11. Beschwerderecht</h2>
               <p>
                 Sie haben das Recht, sich bei der Aufsichtsbehörde zu beschweren. In der
                 Schweiz ist dies der Eidgenössische Datenschutz- und
@@ -255,7 +255,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-light text-ink">12. Änderungen</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">12. Änderungen</h2>
               <p>
                 Wir können diese Datenschutzerklärung anpassen, wenn sich unsere
                 Bearbeitung oder die rechtlichen Vorgaben ändern. Es gilt jeweils die auf

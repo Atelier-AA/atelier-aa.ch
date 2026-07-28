@@ -37,7 +37,7 @@ export default function InsightCard({ insight, priority = false }: InsightCardPr
       <p className="mt-5 text-xs uppercase tracking-[0.1em] text-stone">
         {insight.kategorie} · {formatDatum(insight.datum)}
       </p>
-      <h3 className="mt-2 text-[1.5rem] md:text-[1.85rem] font-light leading-tight text-ink transition-colors group-hover:text-graphite">
+      <h3 className="mt-2 text-[1.5rem] md:text-[1.85rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite">
         {insight.titel}
       </h3>
       <p className="mt-3 text-graphite leading-relaxed">{insight.lead}</p>

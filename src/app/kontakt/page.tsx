@@ -51,7 +51,7 @@ export default function KontaktPage() {
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Kontakt
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-ink leading-tight mb-10">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-ink leading-tight mb-10">
               Der erste Schritt ist ein Gespräch.
             </h1>
             {/* Text wörtlich von der alten Kontaktseite (Post 88). */}
@@ -107,7 +107,7 @@ export default function KontaktPage() {
         </div>
 
         <section className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
-          <h2 className="mb-4 text-2xl md:text-3xl font-light text-ink">
+          <h2 className="mb-4 text-2xl md:text-3xl font-medium text-ink">
             Schreiben Sie uns
           </h2>
           <p className="mb-10 text-graphite leading-relaxed">
