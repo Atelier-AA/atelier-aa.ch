@@ -89,30 +89,25 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        {/* Bauaufgaben */}
-        <section className="border-t border-mist bg-mist py-20 md:py-28">
-          <Container>
-            <div className="mb-14 max-w-3xl">
-              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Bauaufgaben
-              </p>
-              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Wofür wir Erfahrung mitbringen
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              {bauaufgaben.map((b) => (
-                <div key={b.kategorie}>
-                  <h3 className="mb-2 text-xl font-light text-ink">{b.kategorie}</h3>
-                  <p className="leading-relaxed text-graphite">{b.beispiele}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
+        {/* Bauaufgaben — bewusst nicht sichtbar dargestellt, aber im HTML
+            vorhanden: `sr-only` blendet den Abschnitt visuell aus, ohne ihn
+            aus dem DOM zu entfernen. Suchmaschinen und KI-Systeme lesen den
+            Text weiterhin, Screenreader ebenfalls — nur auf dem Bildschirm
+            nimmt er keinen Platz mehr weg. */}
+        <section className="sr-only">
+          <h2>Bauaufgaben — wofür wir Erfahrung mitbringen</h2>
+          <div>
+            {bauaufgaben.map((b) => (
+              <div key={b.kategorie}>
+                <h3>{b.kategorie}</h3>
+                <p>{b.beispiele}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Planungsphasen */}
-        <section className="py-20 md:py-28">
+        <section className="border-t border-mist bg-mist py-20 md:py-28">
           <Container>
             <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
