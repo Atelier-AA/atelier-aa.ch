@@ -10,7 +10,6 @@ import {
   planungsphasen,
   expertiseFragen,
 } from '@/data/expertise';
-import { elindo } from '@/data/partner';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -132,40 +131,6 @@ export default function ExpertisePage() {
                 </li>
               ))}
             </ol>
-          </Container>
-        </section>
-
-        {/* Immobilienpartner */}
-        <section className="border-t border-mist py-20 md:py-28">
-          <Container>
-            <div className="max-w-3xl">
-              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Immobilienpartner
-              </p>
-              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Bewertung und Vermarktung
-              </h2>
-              <p className="mt-8 leading-relaxed text-graphite">
-                Für Marktbeurteilung, Bewertung und Vermarktung arbeiten wir mit{' '}
-                <a
-                  href={elindo.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-ink underline decoration-stone underline-offset-4 transition-colors hover:decoration-ink"
-                >
-                  {elindo.kurzname}
-                </a>{' '}
-                in {elindo.ort} zusammen — besonders bei Renditeobjekten, wo der
-                Wohnungsmix über die Rendite entscheidet, und bei Neubauprojekten zum
-                Verkauf. Beide Unternehmen sind eigenständig und werden getrennt
-                beauftragt.
-              </p>
-              <div className="mt-8">
-                <Button href="/insights/zusammenschluss-elindo-immobilien" variant="text">
-                  Mehr zur Partnerschaft
-                </Button>
-              </div>
-            </div>
           </Container>
         </section>
 
