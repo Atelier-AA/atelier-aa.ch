@@ -107,7 +107,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         einspaltig ohne Sticky-Verhalten.
       */}
       <div className="flex flex-col pt-24 md:pt-28 lg:flex-row lg:items-start">
-        <div className="order-2 w-full lg:order-1 lg:w-1/2">
+        <div className="order-2 w-full lg:order-1 lg:w-3/5">
           <ProjektBilder
             heroImage={projekt.heroImage}
             galerie={projekt.galerie}
@@ -116,7 +116,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-1/2 lg:px-16 lg:py-28">
+        <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:py-28">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
