@@ -1,6 +1,17 @@
+import Image from 'next/image';
 import { leistungsangebot } from '@/data/expertise';
-import { planArtReihenfolge } from './PlanArt';
 import { cn } from '@/lib/utils';
+
+/** Bilddateien in derselben Reihenfolge wie `leistungsangebot`. */
+const bilder = [
+  '/images/leistungen/beratung.jpg',
+  '/images/leistungen/projektentwicklung.jpg',
+  '/images/leistungen/planung-entwurf.jpg',
+  '/images/leistungen/baugesuch-bewilligung.jpg',
+  '/images/leistungen/bauleitung-kostenkontrolle.jpg',
+  '/images/leistungen/generalplanung.jpg',
+  '/images/leistungen/wettbewerbe-studien.jpg',
+];
 
 /** Registrierungsmarke, wie die Passermarken auf einer Planvorlage. */
 function Registermarke({ className }: { className: string }) {
@@ -27,7 +38,6 @@ interface PlateProps {
  */
 function Plate({ index, titel, text }: PlateProps) {
   const gerade = index % 2 === 0;
-  const Art = planArtReihenfolge[index];
 
   return (
     <div
@@ -39,15 +49,14 @@ function Plate({ index, titel, text }: PlateProps) {
       <Registermarke className="left-4 top-4" />
       <Registermarke className="bottom-4 right-4" />
 
-      <div
-        className={cn(
-          'flex items-center justify-center overflow-hidden p-12',
-          gerade ? 'bg-mist md:order-2' : 'bg-white md:order-1'
-        )}
-      >
-        <div className="w-full max-w-[400px] text-ink">
-          <Art />
-        </div>
+      <div className={cn('relative aspect-[4/3] overflow-hidden md:aspect-auto', gerade ? 'md:order-2' : 'md:order-1')}>
+        <Image
+          src={bilder[index]}
+          alt={`Skizze zur Leistung ${titel}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
 
       <div
