@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
 import { leistungsangebot } from '@/data/expertise';
 import { planArtReihenfolge } from './PlanArt';
 import { cn } from '@/lib/utils';
@@ -25,33 +22,15 @@ interface PlateProps {
 }
 
 /**
- * Eine Leistung als vollflächiges 50/50-Blatt: Liniengrafik links oder
- * rechts, Text auf der anderen Seite, im Wechsel weiss/nebel. Die Grafik
- * "zeichnet" sich, sobald das Blatt in den Bildschirm scrollt.
+ * Eine Leistung als vollflächiges 50/50-Blatt: Skizze links oder rechts,
+ * Text auf der anderen Seite, im Wechsel weiss/nebel.
  */
 function Plate({ index, titel, text }: PlateProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [revealed, setRevealed] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const beobachter = new IntersectionObserver(
-      ([eintrag]) => {
-        if (eintrag.isIntersecting) setRevealed(true);
-      },
-      { threshold: 0.3 }
-    );
-    beobachter.observe(el);
-    return () => beobachter.disconnect();
-  }, []);
-
   const gerade = index % 2 === 0;
   const Art = planArtReihenfolge[index];
 
   return (
     <div
-      ref={ref}
       className={cn(
         'relative grid grid-cols-1 border-b border-mist md:grid-cols-2',
         gerade ? 'bg-white' : 'bg-mist'
@@ -67,7 +46,7 @@ function Plate({ index, titel, text }: PlateProps) {
         )}
       >
         <div className="w-full max-w-[400px] text-ink">
-          <Art revealed={revealed} />
+          <Art />
         </div>
       </div>
 
@@ -91,9 +70,8 @@ function Plate({ index, titel, text }: PlateProps) {
 
 /**
  * Das Leistungsangebot als Folge vollflächiger Blätter statt eines
- * Karten­rasters — je eine Leistung pro Blatt, Liniengrafik und Text
- * flächig nebeneinander, ohne Container-Rand. Ersetzt das frühere
- * Raster aus Titel + Kurztext.
+ * Kartenrasters — je eine Leistung pro Blatt, Skizze und Text flächig
+ * nebeneinander, ohne Container-Rand.
  */
 export default function LeistungenPlates() {
   return (
