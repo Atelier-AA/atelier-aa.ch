@@ -28,9 +28,9 @@ export default function Header() {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Bei offenem Mobilmenü bleibt die Wortmarke stehen — sonst kollabiert das
-  // Logo mitten im Menü, ohne dass gescrollt wurde.
-  const collapsed = scrolled && !mobileOpen;
+  // Richtet sich allein nach Scroll-Position — unabhängig vom Menü, damit
+  // das Logo beim Öffnen/Schliessen nicht zwischen den Zuständen springt.
+  const collapsed = scrolled;
 
   // Nur die Startseite hat den dunklen Hero hinter dem transparenten Header.
   // Bei offenem Menü liegt die dunkle Fläche des Overlays darunter — dort
@@ -64,14 +64,14 @@ export default function Header() {
         )}
       >
         <Container className="flex items-center justify-between">
+          {/* Höhe bleibt beim Scrollen und beim Öffnen des Menüs konstant —
+              wie bei elindo.ch. Nur die Breite ändert sich innerhalb von
+              Logo (Wortmarke blendet aus), das Signet bleibt dadurch exakt
+              gleich groß und an derselben Stelle, egal in welchem Zustand. */}
           <Link
             href="/"
             aria-label="Atelier AA Architekten – Startseite"
-            className={cn(
-              'block transition-all duration-300',
-              // Höhe wie im alten Theme: 61px Logo, beim Scrollen auf 35px.
-              collapsed ? 'h-[35px]' : 'h-[44px] md:h-[52px]'
-            )}
+            className="block h-[44px] md:h-[52px]"
           >
             <Logo collapsed={collapsed} />
           </Link>
