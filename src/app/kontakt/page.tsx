@@ -17,7 +17,7 @@ export default function KontaktPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16">
           <div className="relative aspect-square w-full bg-mist">
             <Image
-              src="/images/kontakt/kontakt-hero.jpg"
+              src="/images/kontakt/kontakt-buero.jpg"
               alt="Atelier AA Architekten Büro an der Bachstrasse"
               fill
               priority
