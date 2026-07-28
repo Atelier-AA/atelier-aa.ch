@@ -120,7 +120,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-stone">
             {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
-          <h1 className="mb-8 text-3xl font-medium leading-tight text-ink md:text-4xl">
+          <h1 className="mb-8 text-4xl font-medium leading-tight text-ink md:text-5xl">
             {projekt.title}
           </h1>
           <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
@@ -134,7 +134,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               beide font-medium (500) statt font-light. */}
           {projekt.abschnitte.map((a) => (
             <section key={a.titel} className="mb-14 last:mb-0">
-              <h2 className="mb-5 text-3xl font-medium leading-tight text-ink md:text-4xl">
+              <h2 className="mb-5 text-4xl font-medium leading-tight text-ink md:text-5xl">
                 {a.titel}
               </h2>
               <div className="space-y-5 leading-relaxed text-graphite">
@@ -182,7 +182,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
       <section className="border-t border-mist py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="mb-6 text-3xl font-medium leading-tight text-ink md:text-4xl">
+            <h2 className="mb-6 text-4xl font-medium leading-tight text-ink md:text-5xl">
               Planen Sie ein ähnliches Projekt?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

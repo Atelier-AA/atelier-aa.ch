@@ -20,7 +20,7 @@ export default function UeberUnsPage() {
               Über uns
             </p>
             {/* Überschrift und Absätze wörtlich von der alten Seite (Post 2). */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-ink leading-tight mb-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10">
               Wir gestalten Architektur mit Verantwortung – für Menschen, Orte und
               Zukunft.
             </h1>

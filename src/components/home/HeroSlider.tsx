@@ -88,7 +88,7 @@ export default function HeroSlider() {
         <div className="mx-auto w-full max-w-content px-6 md:px-10 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <Link href={slides[current].href} className="text-white group">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium">
                 {slides[current].projekt}
                 {/* Ort mit Kantonskürzel, uppercase und gesperrt wie
                     `.referenzen__ort` im alten Theme. */}

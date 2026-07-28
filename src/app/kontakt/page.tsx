@@ -51,7 +51,7 @@ export default function KontaktPage() {
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Kontakt
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-ink leading-tight mb-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10">
               Der erste Schritt ist ein Gespräch.
             </h1>
             {/* Text wörtlich von der alten Kontaktseite (Post 88). */}
