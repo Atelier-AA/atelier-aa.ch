@@ -8,11 +8,12 @@ import { getFeaturedProjekte } from '@/data/projekte';
 import {
   schwerpunkte,
   leistungsbereiche,
-  gebaeudetypen,
+  bauaufgaben,
+  planungsphasen,
+  zusatzleistungen,
   expertiseFragen,
 } from '@/data/expertise';
 import { elindo } from '@/data/partner';
-import { ablauf } from '@/data/startseite';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -103,20 +104,14 @@ export default function ExpertisePage() {
                 Im Detail
               </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Was wir übernehmen
+                Sämtliche Planungsleistungen aus einer Hand
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-graphite">
-                Wir bieten sämtliche Planungsleistungen von der Machbarkeitsstudie bis zur
-                Ausführung an, falls gewünscht auch im Generalplaner-Mandat. Dabei
-                bearbeiten wir gleichermassen engagiert Sanierungen und Neubauten für das
-                Wohnen, die Arbeitswelt, öffentliche Institutionen sowie für das
-                Bildungs- und Gesundheitswesen.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-graphite">
-                Ob Sie mit einer ersten Idee kommen oder ein Grundstück schon kennen: Wir
-                übernehmen so viel oder so wenig, wie Sie brauchen. Direkte
-                Entscheidungswege und ein Ansprechpartner über alle Phasen sorgen dafür,
-                dass nichts zwischen den Zuständigkeiten verloren geht.
+                Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten
+                Idee bis zur hochwertigen Ausführung. Auf Wunsch übernehmen wir auch die
+                Gesamtverantwortung im Generalplaner-Mandat. So garantieren wir volle
+                Kosten- und Terminsicherheit, vom massgeschneiderten Entwurf bis zum
+                fertigen Bau.
               </p>
             </div>
 
@@ -131,22 +126,50 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        {/* Ablauf */}
+        {/* Bauaufgaben */}
         <section className="border-t border-mist bg-mist py-20 md:py-28">
           <Container>
             <div className="mb-14 max-w-3xl">
-              <p className="mb-4 text-xs uppercase tracking-widest text-stone">Ablauf</p>
+              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+                Bauaufgaben
+              </p>
+              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
+                Wofür wir Erfahrung mitbringen
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {bauaufgaben.map((b) => (
+                <div key={b.kategorie}>
+                  <h3 className="mb-2 text-xl font-light text-ink">{b.kategorie}</h3>
+                  <p className="leading-relaxed text-graphite">{b.beispiele}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Planungsphasen */}
+        <section className="py-20 md:py-28">
+          <Container>
+            <div className="mb-14 max-w-3xl">
+              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+                Planungsphasen
+              </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
                 Von der ersten Frage zum fertigen Haus
               </h2>
+              <p className="mt-6 leading-relaxed text-graphite">
+                Wir begleiten Ihr Projekt durch alle Phasen — einzeln oder als
+                durchgehendes Mandat.
+              </p>
             </div>
-            <ol className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
-              {ablauf.map((phase) => (
+            <ol className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
+              {planungsphasen.map((phase) => (
                 <li key={phase.nummer}>
                   <p className="mb-4 text-sm tracking-[0.1em] text-stone">
                     {phase.nummer}
                   </p>
-                  <h3 className="mb-3 text-xl font-light text-ink">{phase.titel}</h3>
+                  <h3 className="mb-3 text-lg font-light text-ink">{phase.titel}</h3>
                   <p className="leading-relaxed text-graphite">{phase.text}</p>
                 </li>
               ))}
@@ -154,27 +177,25 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        {/* Gebäudetypen */}
-        <section className="py-20 md:py-28">
+        {/* Zusätzliche Leistungen */}
+        <section className="border-t border-mist bg-mist py-20 md:py-28">
           <Container>
-            <div className="mb-10 max-w-3xl">
+            <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Gebäudetypen
+                Darüber hinaus
               </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Wofür wir Erfahrung mitbringen
+                Wie wir zusätzlich unterstützen
               </h2>
             </div>
-            <ul className="flex flex-wrap gap-x-3 gap-y-3">
-              {gebaeudetypen.map((t) => (
-                <li
-                  key={t}
-                  className="border border-mist px-4 py-2 text-sm text-graphite"
-                >
-                  {t}
-                </li>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
+              {zusatzleistungen.map((z) => (
+                <div key={z.titel}>
+                  <h3 className="mb-3 text-xl font-light text-ink">{z.titel}</h3>
+                  <p className="leading-relaxed text-graphite">{z.text}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </Container>
         </section>
 

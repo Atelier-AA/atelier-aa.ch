@@ -26,32 +26,23 @@ export default function UeberUnsPage() {
             </h1>
             <div className="space-y-6 text-graphite leading-relaxed">
               <p className="text-lg">
-                Atelier AA ist ein Architekturbüro in Obfelden, das Verantwortung ernst
-                nimmt: gegenüber der Bauherrschaft, den künftigen Nutzerinnen und Nutzern
-                und dem Ort, den ein Gebäude über Jahrzehnte prägt. Wir glauben an
-                Architektur, die dieser Verantwortung standhält — heute wie in fünfzig
-                Jahren.
+                Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
+                dem Charakter des Ortes und den Bedürfnissen der Nutzenden entwickeln wir
+                individuelle Lösungen mit klarer Haltung und präziser Gestaltung.
               </p>
               <p>
-                Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der
-                Aufgabe, dem Charakter des Ortes und den Bedürfnissen der Nutzer
-                entwickeln wir individuelle Lösungen mit klarer Haltung und präziser
-                Gestaltung.
+                Wir führen das Atelier AA mit dieser Haltung — mit einem engagierten,
+                fachlich qualifizierten Team und zeitgemässen Werkzeugen wie der
+                3D-Planung, die unsere Prozesse unterstützen, ohne unsere Grundhaltung zu
+                ersetzen.
               </p>
               <p>
                 Wir verbinden Architektur, Funktion und Wirtschaftlichkeit zu
                 nachhaltigen Konzepten mit langfristigem Mehrwert. Dabei denken wir
-                Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit.
-              </p>
-              <p>
-                Im engen Dialog mit Bauherrschaften und Planungspartnern entstehen
-                Gebäude und Räume, die sich selbstverständlich in ihren Kontext
-                einfügen und zugleich eine eigene Identität schaffen.
-              </p>
-              <p>
-                Als kleines Büro arbeiten wir mit kurzen Wegen: Von der ersten
-                Volumenstudie bis zur Bauleitung vor Ort begleiten wir unsere Projekte
-                selbst — ohne dass Verantwortung zwischen vielen Stellen verloren geht.
+                Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Im engen
+                Dialog mit Bauherrschaften und Planungspartnern entstehen Gebäude und
+                Räume, die sich selbstverständlich in ihren Kontext einfügen und
+                zugleich eine eigene Identität schaffen.
               </p>
               <p className="text-lg text-ink">
                 Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.

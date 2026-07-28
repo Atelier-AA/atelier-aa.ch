@@ -69,10 +69,6 @@ export const leistungsbereiche = [
     text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle.',
   },
   {
-    titel: 'Generalplanung',
-    text: 'Auf Wunsch übernehmen wir als Generalplaner die Verantwortung für die gesamte Projektierung — ein Vertrags- und Ansprechpartner für alle Fachplaner und die Bauherrschaft.',
-  },
-  {
     titel: 'Baugesuch und Behördenverfahren',
     text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Auflagen der Bewilligung.',
   },
@@ -82,22 +78,92 @@ export const leistungsbereiche = [
   },
 ];
 
-/** Gebäudetypen, für die wir Erfahrung mitbringen. */
-export const gebaeudetypen = [
-  'Mehrfamilienhaus',
-  'Wohnüberbauung',
-  'Einfamilienhaus',
-  'Aufstockung',
-  'Ersatzneubau',
-  'Umbau und Sanierung',
-  'Gewerbebau',
-  'Verwaltungsbau',
-  'Verkaufsraum und Ladenbau',
-  'Wohnen im Alter',
-  'Bürobau',
-  'Öffentliches Gebäude',
-  'Schul- und Bildungsbau',
-  'Gesundheits- und Pflegebau',
+/** Bauaufgaben, gruppiert nach Nutzung, für die wir Erfahrung mitbringen. */
+export const bauaufgaben = [
+  {
+    kategorie: 'Wohnen',
+    beispiele: 'Einfamilienhäuser, Mehrfamilienhäuser, Wohnüberbauungen',
+  },
+  {
+    kategorie: 'Arbeitswelt',
+    beispiele: 'Büro- und Gewerbebauten, Industrie- und Verwaltungsbauten',
+  },
+  {
+    kategorie: 'Öffentliche Institutionen',
+    beispiele: 'Verwaltungsgebäude, Gemeindebauten, öffentliche Anlagen',
+  },
+  {
+    kategorie: 'Bildungswesen',
+    beispiele: 'Schulhäuser, Kindergärten, Bildungs- und Betreuungseinrichtungen',
+  },
+  {
+    kategorie: 'Gesundheitswesen',
+    beispiele: 'Alters- und Pflegeheime, medizinische Einrichtungen',
+  },
+];
+
+/** Planungsphasen nach SIA 102, für den Abschnitt "Planungsphasen". */
+export const planungsphasen = [
+  {
+    nummer: '01',
+    titel: 'Machbarkeitsstudie',
+    text: 'Klärung von Potenzial, Rahmenbedingungen und ersten Varianten.',
+  },
+  {
+    nummer: '02',
+    titel: 'Vorprojekt',
+    text: 'Entwicklung des architektonischen Konzepts, erste Kostenschätzung.',
+  },
+  {
+    nummer: '03',
+    titel: 'Bauprojekt',
+    text: 'Detaillierung von Gestaltung, Konstruktion und Kosten.',
+  },
+  {
+    nummer: '04',
+    titel: 'Baubewilligungsverfahren',
+    text: 'Aufbereitung und Begleitung des Bewilligungsverfahrens.',
+  },
+  {
+    nummer: '05',
+    titel: 'Ausschreibung',
+    text: 'Ausschreibung, Offertvergleich und Vergabe an Unternehmer.',
+  },
+  {
+    nummer: '06',
+    titel: 'Ausführungsplanung',
+    text: 'Detailpläne für die Realisierung.',
+  },
+  {
+    nummer: '07',
+    titel: 'Realisierung und Bauleitung',
+    text: 'Bauüberwachung, Qualitäts-, Kosten- und Terminkontrolle.',
+  },
+  {
+    nummer: '08',
+    titel: 'Inbetriebnahme und Abschluss',
+    text: 'Übergabe, Mängelbehebung, Dokumentation.',
+  },
+];
+
+/** Ergänzende Leistungen, als gleichwertige Textblöcke statt eigener Abschnitte. */
+export const zusatzleistungen = [
+  {
+    titel: 'Generalplanung',
+    text: 'Auf Wunsch übernimmt das Atelier AA die Rolle des Generalplaners und koordiniert sämtliche Fachplaner — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen.',
+  },
+  {
+    titel: 'Wettbewerbe und Studien',
+    text: 'Wir beteiligen uns an Architekturwettbewerben und erarbeiten Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung.',
+  },
+  {
+    titel: 'Nachhaltigkeit und Konzeptentwicklung',
+    text: 'Zusammen mit unseren Partnern und Fachplanern entwickeln wir Konzepte, die Gestaltung, Wirtschaftlichkeit und Ökologie ausbalancieren — mit Blick auf den ganzen Lebenszyklus eines Gebäudes, nicht nur auf die Erstellungskosten.',
+  },
+  {
+    titel: 'Digitale Planungswerkzeuge',
+    text: 'Zeitgemässe 3D-Werkzeuge unterstützen unsere Planungsprozesse — als Hilfsmittel für mehr Präzision und Transparenz, nicht als Ersatz für persönliche Beratung und direkten Austausch.',
+  },
 ];
 
 /** Häufige Fragen zu Leistungen und Zusammenarbeit. */
