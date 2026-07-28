@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import TeamVideo from '@/components/ueber-uns/TeamVideo';
 import TeamGrid from '@/components/ueber-uns/TeamGrid';
 import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
 import { team } from '@/data/team';
@@ -15,8 +14,6 @@ export default function UeberUnsPage() {
   return (
     <>
       <div className="pt-24 md:pt-28">
-        <TeamVideo />
-
         <Container className="mt-16 md:mt-24">
           <div className="max-w-3xl">
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
@@ -56,9 +53,10 @@ export default function UeberUnsPage() {
             Team
           </p>
           {/* Geschäftsleitung (2) in der ersten Zeile, das übrige Team (3)
-              darunter — bewusste Gliederung statt eines durchgehenden
-              4er-Rasters. */}
-          <TeamGrid members={team.slice(0, 2)} lgCols={2} />
+              darunter. Beide Reihen mit lgCols=3, damit die Porträts gleich
+              gross bleiben — die erste Reihe lässt den dritten Platz frei,
+              statt die Bilder auf 2 Spalten zu vergrössern. */}
+          <TeamGrid members={team.slice(0, 2)} lgCols={3} />
           <div className="mt-8 md:mt-10">
             <TeamGrid members={team.slice(2)} lgCols={3} />
           </div>
