@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Container from '@/components/ui/Container';
-import ProjektHero from '@/components/projekte/ProjektHero';
+import ProjektBilder from '@/components/projekte/ProjektBilder';
 import ProjektMeta from '@/components/projekte/ProjektMeta';
-import ProjektGalerie from '@/components/projekte/ProjektGalerie';
-import ProjektPlaene from '@/components/projekte/ProjektPlaene';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
@@ -98,62 +95,59 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <div className="pt-24 md:pt-28">
-        <ProjektHero image={projekt.heroImage} alt={`${projekt.title}, ${ortMitKanton(projekt)}`} />
-
-        <Container className="mt-16 md:mt-20">
-          <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-widest text-stone mb-4">
-              {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-ink leading-tight mb-8">
-              {projekt.title}
-            </h1>
-            <p className="text-lg text-graphite leading-relaxed">
-              {projekt.beschreibung}
-            </p>
-          </div>
-
-          <ProjektMeta
-            kunde={projekt.kunde}
-            ort={ortMitKanton(projekt)}
-            jahr={projekt.jahr}
+      {/*
+        Zweispaltig: links eine lückenlose Bilderstrecke (Fotos und Pläne
+        gleichbehandelt), die normal durchscrollt; rechts der gesamte
+        Projekttext in einer Spalte, die stehen bleibt (position: sticky),
+        bis ihr eigener Inhalt zu Ende ist oder die Bilder links auslaufen.
+        Auf schmalen Bildschirmen steht der Text zuerst, darunter die Bilder,
+        einspaltig ohne Sticky-Verhalten.
+      */}
+      <div className="flex flex-col pt-24 md:pt-28 lg:flex-row lg:items-start">
+        <div className="order-2 w-full lg:order-1 lg:w-1/2">
+          <ProjektBilder
+            heroImage={projekt.heroImage}
+            galerie={projekt.galerie}
+            plaene={projekt.plaene}
+            projektTitel={projekt.title}
           />
+        </div>
+
+        <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-1/2 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:px-16 lg:py-28">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+            {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
+          </p>
+          <h1 className="mb-8 text-3xl font-light leading-tight text-ink md:text-4xl">
+            {projekt.title}
+          </h1>
+          <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
+
+          <ProjektMeta kunde={projekt.kunde} ort={ortMitKanton(projekt)} jahr={projekt.jahr} />
 
           {/* Ausführliche Beschreibung in Abschnitten. Gibt der Seite den Text,
               den eine Bildergalerie allein nicht liefert — für Leser wie für
               KI-Systeme. */}
-          <div className="max-w-3xl">
-            {projekt.abschnitte.map((a) => (
-              <section key={a.titel} className="mb-14 last:mb-0">
-                <h2 className="mb-5 text-xl md:text-2xl font-light leading-snug text-ink">
-                  {a.titel}
-                </h2>
-                <div className="space-y-5 text-graphite leading-relaxed">
-                  {a.absaetze.map((p) => (
-                    <p key={p.slice(0, 40)}>{p}</p>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-
-          <ProjektGalerie bilder={projekt.galerie} projektTitel={projekt.title} />
-
-          {projekt.plaene && (
-            <ProjektPlaene plaene={projekt.plaene} projektTitel={projekt.title} />
-          )}
+          {projekt.abschnitte.map((a) => (
+            <section key={a.titel} className="mb-14 last:mb-0">
+              <h2 className="mb-5 text-xl font-light leading-snug text-ink md:text-2xl">
+                {a.titel}
+              </h2>
+              <div className="space-y-5 leading-relaxed text-graphite">
+                {a.absaetze.map((p) => (
+                  <p key={p.slice(0, 40)}>{p}</p>
+                ))}
+              </div>
+            </section>
+          ))}
 
           {/* Eckdaten und Leistungsumfang */}
-          <div className="mt-20 grid max-w-4xl grid-cols-1 gap-12 border-t border-mist pt-12 md:grid-cols-2">
+          <div className="mt-20 grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">
-                Eckdaten
-              </h2>
+              <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">Eckdaten</h2>
               <dl className="space-y-3">
                 {projekt.daten.map((d) => (
                   <div key={d.label} className="flex gap-4">
-                    <dt className="w-40 shrink-0 text-stone">{d.label}</dt>
+                    <dt className="w-32 shrink-0 text-stone">{d.label}</dt>
                     <dd className="text-ink">{d.wert}</dd>
                   </div>
                 ))}
@@ -171,18 +165,13 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="max-w-3xl">
-            <FragenAntworten
-              fragen={projekt.fragen}
-              titel="Fragen zu diesem Projekttyp"
-            />
-          </div>
+          <FragenAntworten fragen={projekt.fragen} titel="Fragen zu diesem Projekttyp" />
 
-          <div className="mt-20 max-w-3xl border-t border-mist pt-16">
-            <h2 className="mb-6 text-2xl md:text-3xl font-light text-ink">
+          <div className="mt-20 border-t border-mist pt-16">
+            <h2 className="mb-6 text-2xl font-light text-ink">
               Planen Sie ein ähnliches Projekt?
             </h2>
-            <p className="mb-8 text-graphite leading-relaxed">
+            <p className="mb-8 leading-relaxed text-graphite">
               Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück
               möglich ist — mit Volumenstudie und Kostenrahmen.
             </p>
@@ -190,7 +179,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               Kontaktieren Sie uns
             </Button>
           </div>
-        </Container>
+        </div>
       </div>
 
       <WeitereProjekte projekte={weitere} />
