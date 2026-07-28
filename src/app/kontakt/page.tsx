@@ -2,9 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
-import { kontaktFragen } from '@/data/insights';
-import FragenAntworten from '@/components/insights/FragenAntworten';
-import KontaktFormular from '@/components/kontakt/KontaktFormular';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -13,27 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function KontaktPage() {
-  // FAQPage-Markup zu den sichtbaren Fragen weiter unten. Ergänzt die
-  // Organisationsdaten im Layout um konkrete Antworten zu Region, Leistungen
-  // und Ablauf — die Fragen, mit denen Interessenten tatsächlich suchen.
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': 'https://www.atelier-aa.ch/kontakt#faq',
-    inLanguage: 'de-CH',
-    mainEntity: kontaktFragen.map((f) => ({
-      '@type': 'Question',
-      name: f.frage,
-      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-    })),
-  };
-
   return (
-    <div className="pt-24 md:pt-28">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+    <div className="pt-24 md:pt-28 pb-20 md:pb-28">
       <Container className="mt-16 md:mt-24">
         {/* Links Bild, rechts Text — wie auf stage.atelier-aa.ch/kontakt/.
             Das Bürofoto Bachstrasse ist bereits im Projekt vorhanden
@@ -101,21 +79,6 @@ export default function KontaktPage() {
             className="absolute inset-0 h-full w-full grayscale"
             style={{ border: 0 }}
           />
-        </div>
-
-        <section className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
-          <h2 className="mb-4 text-2xl md:text-3xl font-medium text-ink">
-            Schreiben Sie uns
-          </h2>
-          <p className="mb-10 text-graphite leading-relaxed">
-            Je konkreter Ihre Angaben, desto genauer können wir antworten. Ort, Art
-            des Vorhabens und Zeithorizont helfen uns am meisten.
-          </p>
-          <KontaktFormular />
-        </section>
-
-        <div className="max-w-3xl">
-          <FragenAntworten fragen={kontaktFragen} titel="Häufige Fragen" />
         </div>
       </Container>
     </div>
