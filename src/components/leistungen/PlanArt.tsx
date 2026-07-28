@@ -1,28 +1,21 @@
 /**
- * Gestische Architekturskizzen — inspiriert vom Prinzip berühmter
- * Handzeichnungen (etwa Frank Gehrys übereinanderliegende Suchlinien):
- * jede Form wird zwei- oder dreifach mit leicht versetzten Kurven
- * nachgezogen, statt einmal sauber gezeichnet. Das erzeugt Energie und
- * Bewegung statt technischer Präzision. Jede Skizze bleibt inhaltlich auf
- * den Text der zugehörigen Leistung in `leistungsangebot` bezogen.
+ * Architektonische Skizzen mit gestischer Linienführung: jede Zeichnung
+ * folgt echten Konventionen (Grundriss, Schnitt, Fassade, Axonometrie),
+ * die Kanten werden aber zwei- bis dreifach mit leicht versetzten Linien
+ * nachgezogen — die "Suchlinie" gestischer Handzeichnungen, ohne dass die
+ * Form ihre architektonische Lesbarkeit verliert. Jede Skizze bleibt
+ * inhaltlich auf den Text der zugehörigen Leistung in `leistungsangebot`
+ * bezogen.
  */
 
 const BESCHRIFTUNG = { fontFamily: 'ui-monospace, monospace', stroke: 'none', fill: 'currentColor' };
 
-/**
- * Zeichnet dieselbe Form mehrfach mit leicht unterschiedlichen Pfaden —
- * das "Suchen" der Linie, das gestische Skizzen lebendig macht.
- */
-function Geste({ pfade, breite = 1.1 }: { pfade: string[]; breite?: number }) {
+/** Zeichnet dieselbe Kante zwei- bis dreifach mit leichtem Versatz nach. */
+function Geste({ pfade, breite = 1.15 }: { pfade: string[]; breite?: number }) {
   return (
     <>
       {pfade.map((d, i) => (
-        <path
-          key={i}
-          d={d}
-          strokeWidth={breite - i * 0.15}
-          opacity={1 - i * 0.22}
-        />
+        <path key={i} d={d} strokeWidth={breite - i * 0.15} opacity={1 - i * 0.2} />
       ))}
     </>
   );
@@ -38,178 +31,188 @@ const svgProps = {
   strokeLinejoin: 'round' as const,
 };
 
-/** 01 Beratung — ein Grundstück, mehrfach umkreist, wie beim Abwägen einer Entscheidung. */
+/** 01 Beratung — Hauselevation mit Grundstücksgrenze und Nordpfeil. */
 export function BeratungArt() {
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M45 175 C 40 120, 55 65, 110 55 C 160 46, 220 55, 245 95 C 262 122, 250 165, 205 180 C 160 194, 85 192, 45 175 Z',
-          'M50 170 C 44 118, 62 70, 115 58 C 158 50, 215 58, 240 92 C 258 118, 246 158, 202 176 C 162 190, 90 188, 50 170 Z',
-          'M55 165 C 50 122, 68 76, 118 64 C 155 57, 208 63, 232 90',
+          'M60 175 L60 110 L110 78 L160 110 L160 175 Z',
+          'M63 172 L62 113 L110 82 L157 113 L156 172',
         ]}
-        breite={1.2}
       />
-      <Geste
-        pfade={[
-          'M120 150 C 132 130, 150 128, 158 145 C 165 130, 182 132, 185 150',
-          'M122 154 C 133 135, 149 132, 157 148',
-        ]}
-        breite={1}
-      />
-      <text x="45" y="205" fontSize="9" {...BESCHRIFTUNG}>BERATUNG — GRUNDSTÜCK</text>
+      <path d="M60 110 L110 78 L160 110" opacity="0.7" />
+      <rect x="78" y="130" width="20" height="24" />
+      <rect x="122" y="130" width="20" height="20" />
+      <line x1="10" y1="185" x2="290" y2="185" />
+      <line x1="10" y1="181" x2="10" y2="189" />
+
+      {/* Kompass — Orientierung der Parzelle */}
+      <circle cx="235" cy="95" r="22" />
+      <path d="M235 79 L235 71 M241 76 L235 71 L229 76" />
+      <text x="235" y="126" textAnchor="middle" fontSize="8" {...BESCHRIFTUNG}>N</text>
+
+      {/* Prüfvermerk */}
+      <path d="M200 170 L208 178 L224 158" strokeWidth="1.6" />
+      <text x="10" y="207" fontSize="9" {...BESCHRIFTUNG}>GRUNDSTÜCKSBEURTEILUNG</text>
     </svg>
   );
 }
 
-/** 02 Projektentwicklung — gestapelte Volumen mit einer suchenden Ertragslinie. */
+/** 02 Projektentwicklung — axonometrische Massstudie mit Ertragslinie. */
 export function ProjektentwicklungArt() {
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M40 185 L40 150 C 62 142, 78 145, 82 152 L82 185 Z',
-          'M43 183 L44 152 C 63 144, 76 147, 80 153',
+          'M40 185 L40 155 L65 143 L90 155 L90 185 L65 197 Z',
+          'M43 182 L44 157 L66 146 L88 157 L87 182',
         ]}
       />
+      <path d="M40 155 L65 143 L90 155 M65 143 L65 197" opacity="0.6" />
+
       <Geste
         pfade={[
-          'M95 185 L95 110 C 118 98, 145 102, 150 115 L150 185 Z',
-          'M98 183 L99 113 C 119 101, 142 105, 147 116',
+          'M105 185 L105 130 L140 113 L175 130 L175 185 L140 202 Z',
+          'M108 182 L109 133 L141 118 L172 133 L171 182',
         ]}
       />
+      <path d="M105 130 L140 113 L175 130 M140 113 L140 202" opacity="0.6" />
+
       <Geste
         pfade={[
-          'M163 185 L163 70 C 188 54, 220 60, 226 78 L226 185 Z',
-          'M167 182 L168 74 C 190 59, 216 64, 222 80',
+          'M190 185 L190 95 L225 78 L260 95 L260 185 L225 202 Z',
+          'M193 182 L194 98 L226 83 L257 98 L256 182',
         ]}
       />
-      <Geste
-        pfade={[
-          'M60 168 C 100 140, 150 100, 190 90 C 215 84, 235 75, 250 55',
-        ]}
-        breite={1}
-      />
-      <path d="M242 50 L252 54 L246 63" strokeWidth="1" />
-      <text x="40" y="205" fontSize="9" {...BESCHRIFTUNG}>PROJEKTENTWICKLUNG</text>
+      <path d="M190 95 L225 78 L260 95 M225 78 L225 202" opacity="0.6" />
+
+      <Geste pfade={['M45 138 C 90 110, 170 85, 220 62']} breite={1} />
+      <path d="M212 58 L222 60 L218 70" strokeWidth="1" />
+      <text x="10" y="207" fontSize="9" {...BESCHRIFTUNG}>PROJEKTENTWICKLUNG</text>
     </svg>
   );
 }
 
-/** 03 Planung und Entwurf — ein Haus, zweimal überzeichnet, wie beim ersten Konzeptentwurf. */
+/** 03 Planung und Entwurf — Grundriss mit Wandstärke, Türanschlägen und Fenstern. */
 export function PlanungArt() {
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M55 185 L55 100 L148 55 L240 100 L240 185 Z',
-          'M60 182 L58 103 L150 60 L236 103 L235 182',
-          'M55 100 L148 55 L240 100',
+          'M45 185 L45 55 L255 55 L255 185 Z',
+          'M48 182 L47 58 L252 58 L251 182',
         ]}
         breite={1.2}
       />
-      <Geste pfade={['M92 185 L92 135 C 100 128, 112 128, 118 135 L118 185']} breite={1} />
-      <Geste pfade={['M150 150 C 156 143, 168 143, 172 150 C 168 157, 156 157, 150 150 Z']} breite={0.9} />
-      <path d="M35 205 L75 178" strokeWidth="1" />
-      <path d="M73 180 L80 172 L84 179 Z" fill="currentColor" fillOpacity="0.2" />
-      <text x="35" y="212" fontSize="9" {...BESCHRIFTUNG}>ENTWURF</text>
+      <path d="M150 55 L150 185" opacity="0.7" />
+      <path d="M45 120 L150 120" opacity="0.7" />
+
+      {/* Türanschläge */}
+      <path d="M115 120 A 35 35 0 0 1 150 85" opacity="0.85" />
+      <path d="M150 152 A 32 32 0 0 1 182 120" opacity="0.85" />
+
+      {/* Fenster in der Aussenwand */}
+      <line x1="65" y1="55" x2="95" y2="55" strokeWidth="2.6" />
+      <line x1="175" y1="55" x2="205" y2="55" strokeWidth="2.6" />
+      <line x1="45" y1="90" x2="45" y2="112" strokeWidth="2.6" />
+
+      {/* Treppe */}
+      <path d="M225 185 L225 130 M225 130 L200 130 M204 178 L225 178 M208 168 L225 168 M212 158 L225 158 M216 148 L225 148 M220 138 L225 138" opacity="0.8" />
+
+      <text x="10" y="207" fontSize="9" {...BESCHRIFTUNG}>GRUNDRISS — ENTWURF</text>
     </svg>
   );
 }
 
-/** 04 Baugesuch und Bewilligung — Fassade mit einem locker gekreiselten Bewilligungsstempel. */
+/** 04 Baugesuch und Bewilligung — Fassade mit Fensterraster und Bewilligungsstempel. */
 export function BaugesuchArt() {
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M60 185 L60 90 L150 48 L240 90 L240 185 Z',
-          'M64 182 L63 93 L150 53 L236 93 L235 182',
+          'M55 185 L55 90 L150 50 L245 90 L245 185 Z',
+          'M58 182 L57 93 L150 55 L242 93 L241 182',
         ]}
         breite={1.2}
       />
-      <path d="M95 130 L95 160 L120 160 L120 130 Z" />
-      <path d="M145 130 L145 160 L170 160 L170 130 Z" />
-      <Geste
-        pfade={[
-          'M210 60 C 232 52, 250 66, 246 88 C 242 108, 218 114, 202 100 C 188 88, 190 66, 210 60 Z',
-          'M214 58 C 234 52, 248 68, 244 86 C 240 104, 220 112, 206 98',
-        ]}
-        breite={0.9}
-      />
-      <path d="M198 82 L210 92 L232 66" strokeWidth="1.4" />
+      <path d="M55 90 L150 50 L245 90" opacity="0.7" />
+
+      <rect x="80" y="112" width="28" height="30" />
+      <rect x="136" y="112" width="28" height="30" />
+      <rect x="192" y="112" width="28" height="30" />
+      <rect x="130" y="152" width="40" height="33" />
+      <line x1="150" y1="152" x2="150" y2="185" opacity="0.5" />
+
+      {/* Bewilligungsstempel */}
+      <circle cx="222" cy="130" r="28" strokeDasharray="3 3" />
+      <path d="M209 130 L219 140 L237 116" strokeWidth="1.6" />
+
       <text x="150" y="207" textAnchor="middle" fontSize="9" {...BESCHRIFTUNG}>ZH · AG · ZG</text>
     </svg>
   );
 }
 
-/** 05 Bauleitung und Kostenkontrolle — Baustelle mit Kran, in Bewegung skizziert. */
+/** 05 Bauleitung und Kostenkontrolle — Gebäudeschnitt mit Geschossdecken und Kran. */
 export function BauleitungArt() {
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M55 185 L55 85 L145 85 L145 185',
-          'M58 183 L59 88 L142 88 L142 183',
+          'M45 185 L45 55 L155 55 L155 185',
+          'M47 182 L48 58 L153 58 L152 182',
         ]}
       />
-      <path d="M55 120 L145 120 M55 152 L145 152" opacity="0.6" strokeDasharray="2 4" />
-      <Geste
-        pfade={[
-          'M195 185 L195 55 L245 55',
-          'M198 183 L199 58 L242 58',
-        ]}
-        breite={1}
-      />
-      <path d="M218 55 L212 40 L195 55" strokeWidth="1" />
-      <path d="M228 55 L236 78" strokeDasharray="2 3" />
-      <Geste pfade={['M275 185 C 268 165, 270 145, 278 130']} breite={0.9} />
-      <circle cx="279" cy="122" r="4.5" />
-      <text x="35" y="207" fontSize="9" {...BESCHRIFTUNG}>BAUSTELLE — KOSTENKONTROLLE</text>
+      {/* Geschossdecken, im Schnitt schraffiert */}
+      {[185, 140, 95, 55].map((y) => (
+        <g key={y}>
+          <rect x="45" y={y - 8} width="110" height="8" opacity="0.9" />
+          <line x1="48" y1={y - 6} x2="56" y2={y - 2} strokeWidth="0.7" opacity="0.6" />
+          <line x1="58" y1={y - 6} x2="66" y2={y - 2} strokeWidth="0.7" opacity="0.6" />
+          <line x1="68" y1={y - 6} x2="76" y2={y - 2} strokeWidth="0.7" opacity="0.6" />
+        </g>
+      ))}
+      <path d="M180 108 L188 116 L204 92" strokeWidth="1.6" />
+      <path d="M180 153 L188 161 L204 137" strokeWidth="1.6" />
+
+      {/* Kran */}
+      <path d="M225 185 L225 62 L268 62" strokeWidth="1" />
+      <path d="M246 62 L246 45 L225 62" strokeWidth="1" />
+      <path d="M256 62 L262 82" strokeDasharray="2 3" strokeWidth="1" />
+
+      <text x="10" y="207" fontSize="9" {...BESCHRIFTUNG}>SCHNITT — BAULEITUNG</text>
     </svg>
   );
 }
 
-/** 06 Generalplanung — ein Haus, umkreist von locker skizzierten Fachplaner-Punkten. */
+/** 06 Generalplanung — axonometrisches Gebäude, umgeben von Fachplaner-Rollen. */
 export function GeneralplanungArt() {
   const rollen: { x: number; y: number; label: string }[] = [
-    { x: 150, y: 20, label: 'ARCH' },
-    { x: 255, y: 65, label: 'ING' },
-    { x: 268, y: 150, label: 'HT' },
-    { x: 150, y: 200, label: 'BAULEITUNG' },
-    { x: 35, y: 150, label: 'ELEKTRO' },
-    { x: 48, y: 65, label: 'LANDSCHAFT' },
+    { x: 150, y: 18, label: 'ARCH' },
+    { x: 258, y: 60, label: 'ING' },
+    { x: 272, y: 150, label: 'HT' },
+    { x: 150, y: 202, label: 'BAULEITUNG' },
+    { x: 28, y: 150, label: 'ELEKTRO' },
+    { x: 42, y: 60, label: 'LANDSCHAFT' },
   ];
   return (
     <svg {...svgProps}>
       <Geste
         pfade={[
-          'M115 148 L115 108 L150 92 L185 108 L185 148 L115 148 Z',
-          'M118 145 L117 111 L150 96 L182 111 L181 145',
+          'M115 148 L115 100 L150 84 L185 100 L185 148 L150 164 Z',
+          'M118 145 L117 103 L150 89 L182 103 L181 145',
         ]}
-        breite={1.15}
+        breite={1.2}
       />
+      <path d="M115 100 L150 84 L185 100 M150 84 L150 164" opacity="0.6" />
+
       {rollen.map((r) => (
-        <path
-          key={`l-${r.label}`}
-          d={`M150 120 Q ${(150 + r.x) / 2 + (r.y - 120) * 0.15} ${(120 + r.y) / 2 - (150 - r.x) * 0.1}, ${r.x} ${r.y}`}
-          opacity="0.55"
-          strokeWidth="0.9"
-        />
+        <line key={`l-${r.label}`} x1="150" y1="120" x2={r.x} y2={r.y} opacity="0.5" strokeWidth="0.9" strokeDasharray="1 4" />
       ))}
       {rollen.map((r) => (
         <g key={`n-${r.label}`}>
-          <path
-            d={`M${r.x - 6} ${r.y} C ${r.x - 6} ${r.y - 6}, ${r.x + 6} ${r.y - 6}, ${r.x + 6} ${r.y} C ${r.x + 6} ${r.y + 6}, ${r.x - 6} ${r.y + 6}, ${r.x - 6} ${r.y} Z`}
-            strokeWidth="1"
-          />
-          <text
-            x={r.x}
-            y={r.y > 120 ? r.y + 15 : r.y - 10}
-            textAnchor="middle"
-            fontSize="7.5"
-            {...BESCHRIFTUNG}
-          >
+          <rect x={r.x - 7} y={r.y - 7} width="14" height="14" />
+          <text x={r.x} y={r.y > 120 ? r.y + 16 : r.y - 10} textAnchor="middle" fontSize="7.5" {...BESCHRIFTUNG}>
             {r.label}
           </text>
         </g>
@@ -218,30 +221,28 @@ export function GeneralplanungArt() {
   );
 }
 
-/** 07 Wettbewerbe und Studien — drei rasch skizzierte Varianten, eine eingekreist. */
+/** 07 Wettbewerbe und Studien — drei axonometrische Volumenvarianten, eine gewählt. */
 export function WettbewerbeArt() {
   return (
     <svg {...svgProps}>
-      <Geste pfade={['M40 175 L40 130 L78 112 L78 157 Z', 'M43 172 L42 133 L76 116 L76 155']} breite={1} />
-      <text x="42" y="192" fontSize="8" {...BESCHRIFTUNG}>A</text>
+      <Geste pfade={['M35 185 L35 150 L65 138 L95 150 L95 185 L65 197 Z', 'M38 182 L39 152 L66 141 L92 152 L91 182']} breite={1} />
+      <path d="M35 150 L65 138 L95 150 M65 138 L65 197" opacity="0.55" />
+      <text x="38" y="205" fontSize="8" {...BESCHRIFTUNG}>A</text>
 
       <Geste
         pfade={[
-          'M110 185 L110 118 L165 92 L165 158 Z',
-          'M113 182 L112 121 L163 96 L162 156',
+          'M118 190 L118 130 L155 113 L192 130 L192 190 L155 207 Z',
+          'M121 187 L122 133 L156 118 L189 133 L188 187',
         ]}
-        breite={1.15}
+        breite={1.2}
       />
-      <Geste
-        pfade={[
-          'M100 148 C 100 118, 175 118, 175 148 C 175 178, 100 178, 100 148 Z',
-        ]}
-        breite={0.9}
-      />
-      <text x="112" y="202" fontSize="8" {...BESCHRIFTUNG}>B — WEITER VERFOLGT</text>
+      <path d="M118 130 L155 113 L192 130 M155 113 L155 207" opacity="0.55" />
+      <circle cx="155" cy="160" r="46" strokeDasharray="2 3" opacity="0.8" />
+      <text x="120" y="216" fontSize="8" {...BESCHRIFTUNG}>B — WEITER VERFOLGT</text>
 
-      <Geste pfade={['M205 178 L205 140 L245 122 L245 160 Z', 'M208 175 L207 143 L243 126 L243 158']} breite={0.95} />
-      <text x="207" y="195" fontSize="8" {...BESCHRIFTUNG}>C</text>
+      <Geste pfade={['M215 178 L215 148 L245 134 L275 148 L275 178 L245 192 Z', 'M218 175 L219 150 L246 137 L272 150 L271 175']} breite={0.95} />
+      <path d="M215 148 L245 134 L275 148 M245 134 L245 192" opacity="0.5" strokeDasharray="2 3" />
+      <text x="218" y="205" fontSize="8" {...BESCHRIFTUNG}>C</text>
     </svg>
   );
 }
