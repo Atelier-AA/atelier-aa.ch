@@ -86,9 +86,6 @@ export default function LeistungenPage() {
         {/* Referenzen */}
         <section className="border-t border-mist py-20 md:py-28">
           <Container>
-            <h2 className="mb-12 text-2xl font-light text-ink md:text-3xl">
-              Unsere Leistungen zeigen sich in unseren Projekten.
-            </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {referenzen.map((projekt) => (
                 <ProjektCard key={projekt.slug} projekt={projekt} />
