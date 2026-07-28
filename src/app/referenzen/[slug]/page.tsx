@@ -7,6 +7,7 @@ import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import Button from '@/components/ui/Button';
+import Container from '@/components/ui/Container';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -168,12 +169,19 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           </div>
 
           <FragenAntworten fragen={projekt.fragen} titel="Fragen zu diesem Projekttyp" />
+        </div>
+      </div>
 
-          <div className="mt-20 border-t border-mist pt-16">
-            <h2 className="mb-6 text-2xl font-light text-ink">
+      {/* Abschluss-CTA bewusst ausserhalb der zweispaltigen Ansicht, auf
+          voller Breite — anders als der übrige Text, der in der schmalen
+          Sticky-Spalte steht. */}
+      <section className="border-t border-mist py-20 md:py-28">
+        <Container>
+          <div className="max-w-2xl">
+            <h2 className="mb-6 text-3xl font-light leading-tight text-ink md:text-4xl">
               Planen Sie ein ähnliches Projekt?
             </h2>
-            <p className="mb-8 leading-relaxed text-graphite">
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
               Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück
               möglich ist — mit Volumenstudie und Kostenrahmen.
             </p>
@@ -181,8 +189,8 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               Kontaktieren Sie uns
             </Button>
           </div>
-        </div>
-      </div>
+        </Container>
+      </section>
 
       <WeitereProjekte projekte={weitere} />
     </>
