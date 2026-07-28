@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { footerLegal } from '@/data/navigation';
-import Navigation from './Navigation';
+import { navigation, footerLegal } from '@/data/navigation';
+import { firma } from '@/data/firma';
+import { cn } from '@/lib/utils';
 
 interface MobileMenuProps {
   open: boolean;
@@ -11,13 +12,41 @@ interface MobileMenuProps {
 }
 
 /**
- * Vollbild-Menü für alle Bildschirmgrössen (kein separates Desktop-Menü mehr).
+ * Vollbild-Menü, für alle Bildschirmbreiten — im Stil von elindo.ch.
  *
- * Nachbau von `.primary-navigation-open .primary-menu-container` im alten
- * Theme: weisses Overlay über die volle Höhe, Menü vertikal zentriert und
- * linksbündig, Einträge in 2.25rem (`--global--font-size-xl`).
+ * Eine dunkle Fläche fährt von der Kopfzeile nach unten über die Seite, wie
+ * ein Rollo; danach steigen die Menüpunkte gestaffelt ein. Kontakt links,
+ * Navigation rechts, damit sie auf derselben Seite steht wie der Burger, der
+ * sie geöffnet hat.
+ *
+ * Schriftgrössen der Navigationspunkte an die Überschriften der alten Website
+ * angeglichen (stage.atelier-aa.ch, Theme-Variable --global--font-size-xxl:
+ * 3.125rem Desktop, 1.875rem Mobil, Schriftgewicht 500).
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+  /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
+   *  Schliessen noch nach oben fahren kann, bevor sie verschwindet. */
+  const [imDom, setImDom] = useState(open);
+  /** Ob die Fläche unten steht — steuert die Verschiebung. */
+  const [ausgefahren, setAusgefahren] = useState(false);
+
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const vorherFokussiert = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (open) {
+      setImDom(true);
+      const id = requestAnimationFrame(() =>
+        requestAnimationFrame(() => setAusgefahren(true))
+      );
+      return () => cancelAnimationFrame(id);
+    }
+
+    setAusgefahren(false);
+    const id = window.setTimeout(() => setImDom(false), 500);
+    return () => window.clearTimeout(id);
+  }, [open]);
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -25,44 +54,156 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     };
   }, [open]);
 
-  // Escape schliesst das Menü — im Original nicht vorhanden, aber für ein
-  // modales Overlay erwartet.
+  // Fokus im Menü halten und danach an den Burger zurückgeben.
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      vorherFokussiert.current?.focus();
+      vorherFokussiert.current = null;
+      return;
+    }
+
+    if (!imDom) return;
+
+    vorherFokussiert.current = document.activeElement as HTMLElement | null;
+
+    const fokussierbare = () =>
+      Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        ) ?? []
+      ).filter((el) => el.offsetParent !== null);
+
+    fokussierbare()[0]?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+
+      const elemente = fokussierbare();
+      if (elemente.length === 0) return;
+
+      const erstes = elemente[0];
+      const letztes = elemente[elemente.length - 1];
+
+      if (e.shiftKey && document.activeElement === erstes) {
+        e.preventDefault();
+        letztes.focus();
+      } else if (!e.shiftKey && document.activeElement === letztes) {
+        e.preventDefault();
+        erstes.focus();
+      }
     };
+
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [open, onClose]);
+  }, [open, imDom, onClose]);
 
-  if (!open) return null;
+  if (!imDom) return null;
+
+  /** Gestaffelter Einstieg: 220ms Vorlauf für die Fläche, danach je 45ms Versatz. */
+  const einstieg = (index: number) =>
+    ({
+      transitionDelay: ausgefahren ? `${220 + index * 45}ms` : '0ms',
+    }) satisfies React.CSSProperties;
+
+  const einstiegKlassen = cn(
+    'transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
+    ausgefahren ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+  );
 
   return (
     <div
       id="mobile-menu"
-      className="fixed inset-0 z-40 bg-white"
+      ref={dialogRef}
+      className="fixed inset-0 z-40 overflow-hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      <div className="flex h-full flex-col justify-center">
-        <div className="mx-auto w-full max-w-content px-6 md:px-10 text-ink">
-          <Navigation onNavigate={onClose} />
+      {/* Die Fläche: steht bereits in voller Höhe da, nach oben aus dem Bild
+          geschoben, und fährt beim Öffnen an ihren Platz. */}
+      <div
+        aria-hidden="true"
+        className={cn(
+          'absolute inset-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
+          ausgefahren ? 'translate-y-0' : '-translate-y-full'
+        )}
+      />
 
-          <ul className="mt-14 flex flex-col gap-3">
-            {footerLegal.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={onClose}
-                  className="text-xs uppercase tracking-[0.1em] text-stone transition-colors hover:text-ink"
+      <div className="relative flex h-full flex-col overflow-y-auto py-28">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-20 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:px-16">
+          {/* Erste Spalte: Kontakt und Rechtliches. */}
+          <div className="order-2 lg:order-1 lg:pt-2">
+            <div style={einstieg(navigation.length)} className={einstiegKlassen}>
+              <div className="border-t border-white/15 pt-8">
+                <p className="text-xs uppercase tracking-widest text-white/60">
+                  Kontakt
+                </p>
+                <p className="mt-4 text-lg">
+                  <a
+                    href={`tel:${firma.telefonHref}`}
+                    onClick={onClose}
+                    className="transition-colors hover:text-white/70"
+                  >
+                    {firma.telefon}
+                  </a>
+                </p>
+                <p className="text-lg">
+                  <a
+                    href={`mailto:${firma.email}`}
+                    onClick={onClose}
+                    className="transition-colors hover:text-white/70"
+                  >
+                    {firma.email}
+                  </a>
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-white/60">
+                  {firma.strasse}
+                  <br />
+                  {firma.plz} {firma.ort}
+                </p>
+              </div>
+
+              <ul className="mt-10 flex flex-col">
+                {footerLegal.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={onClose}
+                      className="inline-flex min-h-[40px] items-center text-xs uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Zweite Spalte: die Navigation. Schriftgrösse wie h1/h2 der alten
+              Website (--global--font-size-xxl), Schriftgewicht 500. */}
+          <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
+            <ul className="flex flex-col lg:text-right">
+              {navigation.map((item, idx) => (
+                <li
+                  key={item.href}
+                  style={einstieg(idx)}
+                  className={cn('border-b border-white/10', einstiegKlassen)}
                 >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className="block py-5 text-[1.875rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[3.125rem]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

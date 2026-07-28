@@ -11,7 +11,8 @@ import { cn } from '@/lib/utils';
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isHome = usePathname() === '/';
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     // Schwelle 50px wie im alten Theme (header.php: `window.scrollY > 50`).
@@ -21,13 +22,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Beim Seitenwechsel das Menü schliessen — sonst bleibt das Overlay über
+  // der neuen Seite stehen.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
   // Bei offenem Mobilmenü bleibt die Wortmarke stehen — sonst kollabiert das
   // Logo mitten im Menü, ohne dass gescrollt wurde.
   const collapsed = scrolled && !mobileOpen;
 
   // Nur die Startseite hat den dunklen Hero hinter dem transparenten Header.
-  // Sobald der Header weiss wird (scrolled/Menü offen), gilt wieder Schwarz.
-  const onDark = isHome && !scrolled && !mobileOpen;
+  // Bei offenem Menü liegt die dunkle Fläche des Overlays darunter — dort
+  // gilt also ebenfalls Weiss statt Schwarz.
+  const onDark = mobileOpen || (isHome && !scrolled);
 
   return (
     <>
@@ -43,9 +51,14 @@ export default function Header() {
           // Bei offenem Menü über das Overlay (z-40) heben, damit Logo und
           // Burger sichtbar und bedienbar bleiben; sonst darunter.
           mobileOpen ? 'z-50' : 'z-30',
-          scrolled || mobileOpen
-            ? 'bg-white/95 backdrop-blur border-b border-mist py-4'
-            : 'bg-transparent py-6',
+          // Bei offenem Menü bleibt die Kopfzeile durchsichtig: Die dunkle
+          // Fläche des Menüs liegt ohnehin dahinter, ein weisser Streifen
+          // mit Trennlinie darüber würde sie zerschneiden.
+          mobileOpen
+            ? 'bg-transparent py-4'
+            : scrolled
+              ? 'bg-white/95 backdrop-blur border-b border-mist py-4'
+              : 'bg-transparent py-6',
           // Logo und Navigation erben diese Farbe via `text-current`.
           onDark ? 'text-white' : 'text-ink'
         )}
