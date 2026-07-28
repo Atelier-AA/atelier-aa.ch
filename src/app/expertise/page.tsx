@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektCard from '@/components/projekte/ProjektCard';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import { getFeaturedProjekte } from '@/data/projekte';
 import {
-  schwerpunkte,
   leistungsbereiche,
   bauaufgaben,
   planungsphasen,
-  zusatzleistungen,
   expertiseFragen,
 } from '@/data/expertise';
 import { elindo } from '@/data/partner';
@@ -53,66 +50,32 @@ export default function ExpertisePage() {
               und Verantwortung
             </h1>
             <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
-              Neue Lebensstile, Arbeitsformen und der Klimawandel verlangen, die gebaute
-              Welt neu zu denken. Wir übersetzen diese Anforderungen in Architektur und
-              Innenräume, die funktional, nachhaltig und auf die Bedürfnisse der
-              Menschen zugeschnitten sind — in den Kantonen Zürich, Aargau und Zug.
+              Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten Idee
+              bis zur hochwertigen Ausführung, auf Wunsch auch im Generalplaner-Mandat.
+              Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
+              Architektur, die funktional, nachhaltig und wirtschaftlich trägt – in den
+              Kantonen Zürich, Aargau und Zug.
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-graphite md:text-xl">
+              Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
+              Lebenszykluskosten neben den Erstellungskosten und legen offen, welche
+              Massnahmen sich über die Nutzungsdauer tragen. Wo Bauland knapp ist, prüfen
+              wir zuerst, welcher Weg trägt – Aufstockung, Anbau oder Ersatzneubau – bevor
+              gestaltet wird.
             </p>
           </div>
         </Container>
 
-        {/* Themenblöcke mit Bild, abwechselnd angeordnet */}
-        <div className="border-t border-mist">
-          {schwerpunkte.map((s, idx) => (
-            <section key={s.titel} className="border-b border-mist py-16 md:py-20">
-              <Container>
-                <div
-                  className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20 ${
-                    idx % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''
-                  }`}
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                    <Image
-                      src={s.bild}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1100px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div>
-                    <h2 className="mb-6 text-2xl font-light leading-snug text-ink md:text-3xl">
-                      {s.titel}
-                    </h2>
-                    <div className="space-y-5 leading-relaxed text-graphite">
-                      {s.absaetze.map((p) => (
-                        <p key={p.slice(0, 40)}>{p}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Container>
-            </section>
-          ))}
-        </div>
-
         {/* Leistungen im Detail */}
-        <section className="py-20 md:py-28">
+        <section className="border-t border-mist py-20 md:py-28">
           <Container>
             <div className="mb-14 max-w-3xl">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
                 Im Detail
               </p>
               <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Sämtliche Planungsleistungen aus einer Hand
+                Konkrete Leistungen
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-graphite">
-                Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten
-                Idee bis zur hochwertigen Ausführung. Auf Wunsch übernehmen wir auch die
-                Gesamtverantwortung im Generalplaner-Mandat. So garantieren wir volle
-                Kosten- und Terminsicherheit, vom massgeschneiderten Entwurf bis zum
-                fertigen Bau.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
@@ -177,28 +140,6 @@ export default function ExpertisePage() {
           </Container>
         </section>
 
-        {/* Zusätzliche Leistungen */}
-        <section className="border-t border-mist bg-mist py-20 md:py-28">
-          <Container>
-            <div className="mb-14 max-w-3xl">
-              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-                Darüber hinaus
-              </p>
-              <h2 className="text-3xl font-light leading-tight text-ink md:text-4xl">
-                Wie wir zusätzlich unterstützen
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
-              {zusatzleistungen.map((z) => (
-                <div key={z.titel}>
-                  <h3 className="mb-3 text-xl font-light text-ink">{z.titel}</h3>
-                  <p className="leading-relaxed text-graphite">{z.text}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
         {/* Immobilienpartner */}
         <section className="border-t border-mist py-20 md:py-28">
           <Container>
@@ -259,14 +200,16 @@ export default function ExpertisePage() {
 
           <div className="mt-20 max-w-3xl border-t border-mist pt-16">
             <h2 className="mb-6 text-2xl font-light text-ink md:text-3xl">
-              Sprechen wir über Ihr Vorhaben.
+              Sie möchten bauen?
             </h2>
             <p className="mb-8 leading-relaxed text-graphite">
-              Das Erstgespräch ist kostenlos. Wir sagen Ihnen offen, was wir für machbar
-              und sinnvoll halten.
+              Ob Neubau, Sanierung oder Verdichtung – sprechen Sie mit uns über Ihr
+              Projekt. In einem ersten Gespräch klären wir Potenzial, Rahmenbedingungen
+              und die nächsten Schritte, unverbindlich und auf Ihre Situation
+              zugeschnitten.
             </p>
             <Button href="/kontakt" variant="text">
-              Kontaktieren Sie uns
+              Kontakt aufnehmen
             </Button>
           </div>
         </Container>

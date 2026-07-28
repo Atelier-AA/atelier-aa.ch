@@ -3,40 +3,11 @@ import type { InsightFrage } from '@/types';
 /**
  * Inhalte der Expertise-Seite.
  *
- * Die beiden ersten Schwerpunkte stammen wörtlich von der alten Website
- * (Post 162), die weiteren sind ergänzt. Ziel ist, das Leistungsspektrum so
- * auszuweisen, dass Atelier AA für die gesamte Bandbreite gefunden wird — nicht
- * nur für «Architekt», sondern für Verdichtung, Bauleitung, Machbarkeitsstudie
- * und hindernisfreies Bauen einzeln.
+ * Ziel ist, das Leistungsspektrum so auszuweisen, dass Atelier AA für die
+ * gesamte Bandbreite gefunden wird — nicht nur für «Architekt», sondern für
+ * Verdichtung, Bauleitung, Machbarkeitsstudie und hindernisfreies Bauen
+ * einzeln.
  */
-
-/** Grosse Themenblöcke mit Bild. */
-export const schwerpunkte = [
-  {
-    titel: 'Funktion, Gestaltung und Nachhaltigkeit im Einklang',
-    bild: '/images/expertise/neubau.webp',
-    absaetze: [
-      'Ob Architektur oder Innenarchitektur – wir verbinden ökologische, ökonomische und soziokulturelle Anforderungen zu einem nachhaltigen Ganzen. Räume werden zu Orten, die heutige Bedürfnisse erfüllen, inspirieren und begeistern. Bestehende Gebäude revitalisieren wir nach den Prinzipien des zirkulären Bauens und machen sie zukunftsfähig.',
-      'Konkret heisst das: Wir rechnen Lebenszykluskosten neben den Erstellungskosten, legen die Annahmen offen und zeigen, welche Massnahmen sich über die Nutzungsdauer tragen. Nachhaltigkeit ist bei uns eine Rechenaufgabe, keine Absichtserklärung.',
-    ],
-  },
-  {
-    titel: 'Für Menschen gedacht und gebaut',
-    bild: '/images/expertise/innenarchitektur.png',
-    absaetze: [
-      'Als Strategie- und Planungsbüro gestalten wir kommerzielle Räume mit klarem Konzept. Zu Projektbeginn analysieren wir die Bedürfnisse der Menschen, die Nutzung des Raums und die Anforderungen des Marktes. Die gewonnenen Erkenntnisse fliessen in die Customer Journey, den Designprozess und die Architektur ein.',
-      'Im Wohnbau bedeutet dieselbe Haltung: Grundrisse, die in zwanzig Jahren noch brauchbar sind. Nutzungsoffenheit ist kein Zusatz, sondern die Voraussetzung dafür, dass ein Gebäude nicht abgerissen wird, wenn sich die Anforderungen ändern.',
-    ],
-  },
-  {
-    titel: 'Verdichtung als Antwort auf knappes Bauland',
-    bild: '/images/expertise/umbau.jpg',
-    absaetze: [
-      'In den Kantonen Zürich, Aargau und Zug ist Bauland knapp und teuer. Die Reserve liegt im Bestand: Parzellen aus den Sechziger- und Siebzigerjahren nutzen ihre zulässige Ausnutzung häufig nur zur Hälfte.',
-      'Wir prüfen, welcher Weg trägt — Aufstockung, Anbau oder Ersatzneubau — und rechnen die Varianten mit Kostenrahmen und Ertragsschätzung durch. Erst danach wird gestaltet.',
-    ],
-  },
-];
 
 /** Leistungen mit Kurzbeschreibung, tabellarisch. */
 export const leistungsbereiche = [
@@ -75,6 +46,14 @@ export const leistungsbereiche = [
   {
     titel: 'Bauherrenberatung',
     text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen.',
+  },
+  {
+    titel: 'Generalplanung',
+    text: 'Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen.',
+  },
+  {
+    titel: 'Wettbewerbe und Studien',
+    text: 'Beteiligung an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung.',
   },
 ];
 
@@ -143,26 +122,6 @@ export const planungsphasen = [
     nummer: '08',
     titel: 'Inbetriebnahme und Abschluss',
     text: 'Übergabe, Mängelbehebung, Dokumentation.',
-  },
-];
-
-/** Ergänzende Leistungen, als gleichwertige Textblöcke statt eigener Abschnitte. */
-export const zusatzleistungen = [
-  {
-    titel: 'Generalplanung',
-    text: 'Auf Wunsch übernimmt das Atelier AA die Rolle des Generalplaners und koordiniert sämtliche Fachplaner — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen.',
-  },
-  {
-    titel: 'Wettbewerbe und Studien',
-    text: 'Wir beteiligen uns an Architekturwettbewerben und erarbeiten Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung.',
-  },
-  {
-    titel: 'Nachhaltigkeit und Konzeptentwicklung',
-    text: 'Zusammen mit unseren Partnern und Fachplanern entwickeln wir Konzepte, die Gestaltung, Wirtschaftlichkeit und Ökologie ausbalancieren — mit Blick auf den ganzen Lebenszyklus eines Gebäudes, nicht nur auf die Erstellungskosten.',
-  },
-  {
-    titel: 'Digitale Planungswerkzeuge',
-    text: 'Zeitgemässe 3D-Werkzeuge unterstützen unsere Planungsprozesse — als Hilfsmittel für mehr Präzision und Transparenz, nicht als Ersatz für persönliche Beratung und direkten Austausch.',
   },
 ];
 
