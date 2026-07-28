@@ -14,15 +14,16 @@ export const metadata: Metadata = {
   title: 'Leistungen',
   description:
     'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, Bauleitung und Generalplanung für Wohnen, Arbeitswelt, öffentliche, Bildungs- und Gesundheitsbauten in den Kantonen Zürich, Aargau und Zug.',
+  alternates: { canonical: '/leistungen' },
 };
 
-export default function ExpertisePage() {
+export default function LeistungenPage() {
   const referenzen = getFeaturedProjekte().slice(0, 3);
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    '@id': 'https://www.atelier-aa.ch/expertise#faq',
+    '@id': 'https://www.atelier-aa.ch/leistungen#faq',
     inLanguage: 'de-CH',
     mainEntity: expertiseFragen.map((f) => ({
       '@type': 'Question',

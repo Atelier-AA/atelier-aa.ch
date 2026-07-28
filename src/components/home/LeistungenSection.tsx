@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
  *
  * Bewusst knapp gehalten — ein Absatz, ein Link zur Leistungen-Seite —, damit
  * die Startseite nicht überladen wirkt. Die ausführliche Fassung mit allen
- * Leistungsbereichen, Bauaufgaben und Planungsphasen steht auf /expertise.
+ * Leistungsbereichen und Bauaufgaben steht auf /leistungen.
  */
 export default function LeistungenSection() {
   return (
@@ -24,7 +24,7 @@ export default function LeistungenSection() {
             öffentliche Institution: Wir bringen Gestaltung, Funktion und
             Wirtschaftlichkeit in Einklang.
           </p>
-          <Button href="/expertise" variant="text">
+          <Button href="/leistungen" variant="text">
             Alle Leistungen im Überblick
           </Button>
         </div>

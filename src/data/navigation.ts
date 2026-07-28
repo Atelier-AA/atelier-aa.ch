@@ -5,7 +5,7 @@ import type { NavLink } from '@/types';
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
   { href: '/ueber-uns', label: 'Über uns' },
-  { href: '/expertise', label: 'Leistungen' },
+  { href: '/leistungen', label: 'Leistungen' },
   { href: '/insights', label: 'Insights' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
