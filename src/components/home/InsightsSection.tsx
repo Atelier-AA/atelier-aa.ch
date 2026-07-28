@@ -14,26 +14,26 @@ export default function InsightsSection() {
   const neueste = insights.slice(0, 3);
 
   return (
-    <section className="py-20 md:py-28 border-t border-mist">
+    <section className="py-16 md:py-20 border-t border-mist">
       <Container>
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
-          <h2 className="text-3xl md:text-4xl font-light text-ink leading-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
             Fachbeiträge aus unserer Arbeit
           </h2>
-          <p className="mt-6 text-graphite leading-relaxed">
+          <p className="mt-4 text-lg text-graphite leading-relaxed">
             Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf — wir
             schreiben über die Fragen, die uns Bauherrschaften stellen.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {neueste.map((i) => (
             <InsightCard key={i.slug} insight={i} />
           ))}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-10">
           <Button href="/insights" variant="text">
             alle Beiträge lesen
           </Button>
