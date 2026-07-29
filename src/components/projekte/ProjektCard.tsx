@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Arrow from '@/components/ui/Arrow';
 import { ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
 
@@ -22,17 +21,9 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
           alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
           fill
           priority={priority}
-          // scale(1.02) über 0.5s wie `.referenzen__image a:hover … img` im alten Theme.
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
         />
-
-        {/* Dunkles Overlay + weisser Pfeil beim Hover — 1:1 aus dem alten Theme
-            (`.referenzen-item .referenzen__image a:before/:after`): Overlay
-            rgba(0,0,0,0.5), Pfeil von translateX(-10px) auf 0, beides 0.4s. */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-          <Arrow className="w-[76px] h-[30px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
-        </div>
       </div>
 
       {/* Titel unter dem Bild, darunter der Ort mit Kantonskürzel —
