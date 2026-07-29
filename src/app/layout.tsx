@@ -92,11 +92,7 @@ const organisationSchema = {
     addressRegion: 'ZH',
     addressCountry: 'CH',
   },
-  areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Kanton Zürich' },
-    { '@type': 'AdministrativeArea', name: 'Kanton Aargau' },
-    { '@type': 'Country', name: 'Schweiz' },
-  ],
+  areaServed: { '@type': 'Country', name: 'Schweiz' },
   knowsLanguage: ['de-CH'],
   founder: { '@type': 'Person', name: firma.vertretungsberechtigt },
   description:

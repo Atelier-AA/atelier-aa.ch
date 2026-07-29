@@ -7,7 +7,8 @@ import { regionen, zahlen } from '@/data/startseite';
  * Der wichtigste Abschnitt für die regionale Suche: Wer «Architekt Affoltern am
  * Albis» oder «Architekturbüro Baar» sucht — sei es bei Google oder über eine
  * KI —, findet nur, was diese Ortsnamen ausgeschrieben enthält. Die Liste ist
- * kein Keyword-Teppich, sondern die tatsächliche Aufzählung des Arbeitsgebiets.
+ * kein Keyword-Teppich, sondern die tatsächliche Aufzählung der
+ * Schwerpunktregion — wir arbeiten aber schweizweit, nicht nur dort.
  */
 export default function RegionenSection() {
   return (
@@ -18,13 +19,14 @@ export default function RegionenSection() {
             Einsatzgebiet
           </p>
           <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
-            Architektur in Zürich, Aargau und Zug
+            Architektur in der ganzen Schweiz
           </h2>
           <p className="mt-8 text-lg text-graphite leading-relaxed">
-            Unser Büro liegt in Obfelden, im Knonauer Amt an der Grenze der drei
-            Kantone. Von dort erreichen wir unsere Projekte in kurzer Zeit — das ist
-            keine Nebensache, sondern die Voraussetzung für eine Bauleitung, die
-            regelmässig vor Ort ist.
+            Unser Büro liegt in Obfelden, im Knonauer Amt an der Grenze der Kantone
+            Zürich, Aargau und Zug — unser Schwerpunkt liegt entsprechend in dieser
+            Region, weil kurze Wege eine Bauleitung ermöglichen, die regelmässig vor
+            Ort ist. Für passende Aufgaben planen und realisieren wir aber in der
+            ganzen Schweiz.
           </p>
         </div>
 

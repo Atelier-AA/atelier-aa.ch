@@ -34,7 +34,9 @@ export const ablauf = [
 ];
 
 /**
- * Einsatzgebiet nach Kantonen.
+ * Schwerpunktregion nach Kantonen (nicht das gesamte Einsatzgebiet — wir
+ * arbeiten schweizweit, hier liegt aber unser Kerngebiet rund um den
+ * Bürostandort).
  *
  * Ausgeschriebene Gemeindenamen sind für die regionale Suche entscheidend:
  * Wer "Architekt Affoltern am Albis" sucht, findet nur, was diesen Namen
@@ -87,7 +89,7 @@ export const stimmen = [
 export const zahlen = [
   { wert: '2021', label: 'gegründet in Obfelden' },
   { wert: '15+', label: 'Jahre Bau- und Immobilienpraxis' },
-  { wert: '3', label: 'Kantone: Zürich, Aargau, Zug' },
+  { wert: 'CH', label: 'Schweizweit tätig' },
   { wert: '4', label: 'Architektinnen und Architekten' },
 ];
 
@@ -101,7 +103,7 @@ export const startseiteFragen: InsightFrage[] = [
   {
     frage: 'Welches Architekturbüro arbeitet in Obfelden und im Knonauer Amt?',
     antwort:
-      'Atelier AA Architekten GmbH hat ihren Sitz an der Bachstrasse 39 in 8912 Obfelden und arbeitet im Knonauer Amt, im Kanton Zürich sowie in den Kantonen Aargau und Zug. Schwerpunkt sind Mehrfamilienhäuser, Umbauten und Verdichtungsprojekte.',
+      'Atelier AA Architekten GmbH hat ihren Sitz an der Bachstrasse 39 in 8912 Obfelden und arbeitet mit Schwerpunkt im Knonauer Amt sowie in den Kantonen Zürich, Aargau und Zug — für passende Aufgaben aber in der ganzen Schweiz. Schwerpunkt sind Mehrfamilienhäuser, Umbauten und Verdichtungsprojekte.',
   },
   {
     frage: 'Was kostet ein Architekt in der Schweiz?',

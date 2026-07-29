@@ -66,7 +66,7 @@ export const insights: Insight[] = [
       {
         frage: 'In welchen Regionen arbeiten Sie zusammen?',
         antwort:
-          'Unsere Schwerpunkte überlappen sich in den Kantonen Zürich und Zug. Atelier AA arbeitet zusätzlich im Kanton Aargau, Elindo in der weiteren Deutschschweiz.',
+          'Unsere Schwerpunkte überlappen sich in den Kantonen Zürich und Zug. Atelier AA realisiert Projekte in der ganzen Schweiz, Elindo ist schwerpunktmässig im Grossraum Zug und Zürich sowie der übrigen Deutschschweiz tätig.',
       },
     ],
   },
@@ -175,7 +175,7 @@ export const insights: Insight[] = [
         titel: 'Unterschiede zwischen den Kantonen',
         absaetze: [
           'Der Kanton Zürich arbeitet mit der Baumassenziffer, der Aargau meist mit der Ausnutzungsziffer, der Kanton Zug kennt beide je nach Gemeinde. Die Zahlen sind nicht direkt vergleichbar — wer aus einem Kanton Erfahrungswerte mitbringt, verschätzt sich.',
-          'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich. Wir kennen die Praxis in allen drei Kantonen und richten das Dossier auf die jeweilige Behörde aus.',
+          'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich von Kanton zu Kanton. Wir kennen diese Unterschiede aus der Praxis in der ganzen Schweiz und richten das Dossier auf die jeweilige Behörde aus.',
         ],
       },
     ],
@@ -462,7 +462,7 @@ export const kontaktFragen: InsightFrage[] = [
   {
     frage: 'In welchen Regionen arbeitet Atelier AA Architekten?',
     antwort:
-      'Unser Büro ist in Obfelden im Kanton Zürich. Wir planen und realisieren vor allem in den Kantonen Zürich und Aargau, im Knonauer Amt, im Freiamt und in der Region Baden. Für passende Aufgaben arbeiten wir auch in der übrigen Deutschschweiz.',
+      'Unser Büro ist in Obfelden im Kanton Zürich. Wir planen und realisieren Projekte in der ganzen Schweiz, mit einem Schwerpunkt im Knonauer Amt sowie in den Kantonen Zürich, Aargau und Zug.',
   },
   {
     frage: 'Welche Leistungen bieten Sie an?',

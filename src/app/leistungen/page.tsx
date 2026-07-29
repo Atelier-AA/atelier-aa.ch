@@ -7,7 +7,7 @@ import { bauaufgaben } from '@/data/expertise';
 export const metadata: Metadata = {
   title: 'Leistungen',
   description:
-    'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, Bauleitung und Generalplanung für Wohnen, Arbeitswelt, öffentliche, Bildungs- und Gesundheitsbauten in den Kantonen Zürich, Aargau und Zug.',
+    'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, Bauleitung und Generalplanung für Wohnen, Arbeitswelt, öffentliche, Bildungs- und Gesundheitsbauten in der ganzen Schweiz.',
   alternates: { canonical: '/leistungen' },
 };
 
@@ -27,8 +27,8 @@ export default function LeistungenPage() {
               Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten Idee
               bis zur hochwertigen Ausführung, auf Wunsch auch im Generalplaner-Mandat.
               Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
-              Architektur, die funktional, nachhaltig und wirtschaftlich trägt – in den
-              Kantonen Zürich, Aargau und Zug.
+              Architektur, die funktional, nachhaltig und wirtschaftlich trägt – in der
+              ganzen Schweiz.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-graphite md:text-xl">
               Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen

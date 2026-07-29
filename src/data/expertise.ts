@@ -30,7 +30,7 @@ export const leistungsangebot = [
   },
   {
     titel: 'Baugesuch und Bewilligung',
-    text: 'Vollständige Dossiers für die Kantone Zürich, Aargau und Zug, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen. Wir kennen die Praxis der Bewilligungsbehörden in allen drei Kantonen und planen Fristen entsprechend ein.',
+    text: 'Vollständige Baugesuchsdossiers in der ganzen Schweiz, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen. Die Praxis der Bewilligungsbehörden kennen wir besonders gut in den Kantonen Zürich, Aargau und Zug und planen Fristen entsprechend ein.',
   },
   {
     titel: 'Bauleitung und Kostenkontrolle',

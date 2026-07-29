@@ -26,7 +26,7 @@ export const team: TeamMember[] = [
     ],
     absaetze: [
       'Aljili Aljisami hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über fünfzehn Jahren in der Bau- und Immobilienpraxis. Diese doppelte Herkunft prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
-      'Sein Schwerpunkt liegt im Wohnbau — vom Mehrfamilienhaus über die Wohnüberbauung bis zur Verdichtung bestehender Parzellen in den Kantonen Zürich, Aargau und Zug. Besonders interessieren ihn Aufgaben, bei denen Ausnutzung, Ortsbild und Nachbarschaft in Konflikt stehen und eine Lösung erst gefunden werden muss.',
+      'Sein Schwerpunkt liegt im Wohnbau — vom Mehrfamilienhaus über die Wohnüberbauung bis zur Verdichtung bestehender Parzellen, realisiert in der ganzen Schweiz. Besonders interessieren ihn Aufgaben, bei denen Ausnutzung, Ortsbild und Nachbarschaft in Konflikt stehen und eine Lösung erst gefunden werden muss.',
       '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieser Satz steht nicht zufällig auf der Startseite — er beschreibt, woran er ein Projekt messen lässt.',
     ],
     email: 'info@atelier-aa.ch',
