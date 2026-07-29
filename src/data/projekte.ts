@@ -1346,6 +1346,84 @@ export const projekte: Projekt[] = [
     ],
     featured: false,
   },
+  /**
+   * Frühestes Projektstadium ohne verwertbare Unterlagen: weder Fotos noch
+   * Pläne liegen vor, nur der Ordnername als Adresse. Platzhalterbild
+   * (neutrale Haus-Grafik) statt Fassaden- oder Grundrisszeichnung, da auch
+   * kein Plansatz existiert.
+   */
+  {
+    slug: 'defh-weiningen',
+    title: 'Doppeleinfamilienhaus',
+    ort: 'Weiningen',
+    kanton: 'ZH',
+    kunde: null,
+    jahr: 'in Planung',
+    typ: 'Doppeleinfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
+    leistungen: ['Projektierung'],
+    beschreibung:
+      'Doppeleinfamilienhaus in Weiningen im Kanton Zürich. Das Projekt befindet sich in einem frühen Planungsstadium, Fotos und Pläne folgen im weiteren Verlauf.',
+    abschnitte: [
+      {
+        titel: 'Stand des Projekts',
+        absaetze: [
+          'Für dieses Doppeleinfamilienhaus in Weiningen stehen wir am Anfang der Planung. Sobald Grundrisse und Fassaden ausgearbeitet sind, ergänzen wir diese Seite.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus, Neubau' },
+      { label: 'Status', wert: 'In Planung' },
+    ],
+    fragen: [
+      {
+        frage: 'Warum sind hier keine Fotos oder Pläne zu sehen?',
+        antwort:
+          'Dieses Projekt befindet sich noch in einem frühen Planungsstadium. Wir ergänzen die Seite, sobald Pläne und später Fotos vorliegen.',
+      },
+    ],
+    thumbnail: '/images/projekte/defh-weiningen/thumb.jpg',
+    heroImage: '/images/projekte/defh-weiningen/hero.jpg',
+    galerie: [],
+    featured: false,
+  },
+  {
+    slug: 'mfh-niederweningen',
+    title: 'Mehrfamilienhaus Murzelnstrasse',
+    ort: 'Niederweningen',
+    kanton: 'ZH',
+    kunde: null,
+    jahr: 'in Planung',
+    typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
+    leistungen: ['Projektierung'],
+    beschreibung:
+      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen im Kanton Zürich. Das Projekt befindet sich in einem frühen Planungsstadium, Fotos und Pläne folgen im weiteren Verlauf.',
+    abschnitte: [
+      {
+        titel: 'Stand des Projekts',
+        absaetze: [
+          'Für dieses Mehrfamilienhaus an der Murzelnstrasse in Niederweningen stehen wir am Anfang der Planung. Sobald Grundrisse und Fassaden ausgearbeitet sind, ergänzen wir diese Seite.',
+        ],
+      },
+    ],
+    daten: [
+      { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
+      { label: 'Status', wert: 'In Planung' },
+    ],
+    fragen: [
+      {
+        frage: 'Warum sind hier keine Fotos oder Pläne zu sehen?',
+        antwort:
+          'Dieses Projekt befindet sich noch in einem frühen Planungsstadium. Wir ergänzen die Seite, sobald Pläne und später Fotos vorliegen.',
+      },
+    ],
+    thumbnail: '/images/projekte/mfh-niederweningen/thumb.jpg',
+    heroImage: '/images/projekte/mfh-niederweningen/hero.jpg',
+    galerie: [],
+    featured: false,
+  },
 ];
 
 export function getProjekt(slug: string): Projekt | undefined {
