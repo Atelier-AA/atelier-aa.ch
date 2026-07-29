@@ -16,7 +16,9 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
       className="group block"
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+      {/* Quadratisches Bildformat 1:1 aus dem alten Theme
+          (`.referenzen-item:not(.referenzen-item--big) .referenzen__immage-inner`). */}
+      <div className="relative aspect-square overflow-hidden bg-mist">
         <Image
           src={projekt.thumbnail}
           alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
@@ -24,7 +26,7 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
           priority={priority}
           // scale(1.02) über 0.5s wie `.referenzen__image a:hover … img` im alten Theme.
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+          sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />
 
         {/* Dunkles Overlay + weisser Pfeil beim Hover — 1:1 aus dem alten Theme

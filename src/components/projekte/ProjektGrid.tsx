@@ -8,9 +8,15 @@ interface ProjektGridProps {
 
 export default function ProjektGrid({ projekte }: ProjektGridProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-24">
+    // Spaltenbreiten und Abstand 1:1 aus stage.atelier-aa.ch/projekte/
+    // (.referenzen-list / .referenzen-item): eine Spalte mobil, zwei ab
+    // 600px, drei ab 1280px, 1.25rem Abstand.
+    <div className="flex flex-wrap gap-x-5 gap-y-8 xl:gap-y-16">
       {projekte.map((projekt, idx) => (
-        <Eingeblendet key={projekt.slug}>
+        <Eingeblendet
+          key={projekt.slug}
+          className="w-full sm:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.834rem)]"
+        >
           <ProjektCard projekt={projekt} priority={idx < 2} />
         </Eingeblendet>
       ))}
