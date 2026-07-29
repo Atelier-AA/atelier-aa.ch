@@ -74,10 +74,28 @@ function WortmarkeOhneSignet({ className }: { className?: string }) {
  * sitzt das A zwangsläufig genau dort, wo es auch in "Atelier AA
  * Architekten" steht, ohne Umrechnung.
  */
-function Signet({ className }: { className?: string }) {
+export function Signet({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 294 61"
+      aria-hidden="true"
+      focusable="false"
+      className={cn('h-full w-auto shrink-0 fill-current', className)}
+    >
+      <path d={SIGN_PATH} />
+    </svg>
+  );
+}
+
+/**
+ * Das Signet allein, auf seine eigene Bounding-Box zugeschnitten (statt im
+ * vollen 294×61-Raster der Wortmarke) — für Verwendungen als eigenständiges
+ * Icon, z. B. anstelle eines Pfeils.
+ */
+export function SignetIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 29.7 61"
       aria-hidden="true"
       focusable="false"
       className={cn('h-full w-auto shrink-0 fill-current', className)}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import Arrow from '@/components/ui/Arrow';
+import { SignetIcon } from '@/components/layout/Logo';
 import ProjektCard from '@/components/projekte/ProjektCard';
 import { getFeaturedProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
@@ -49,7 +49,7 @@ export default function ReferenzenSection() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-                  <Arrow className="w-[76px] h-[30px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
+                  <SignetIcon className="h-12 translate-y-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-y-0" />
                 </div>
               </div>
               <h3 className="mt-5 text-[1.75rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-[2.25rem]">
