@@ -48,7 +48,7 @@ export default function ReferenzenSection() {
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
+                <div className="absolute inset-0 z-10 flex items-end justify-start bg-black/50 p-6 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
                   <SignetIcon className="h-[88px] translate-y-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-y-0 md:h-[104px]" />
                 </div>
               </div>
