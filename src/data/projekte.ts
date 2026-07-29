@@ -326,7 +326,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2023',
     typ: 'Mehrfamilienhaus',
-    kategorien: ['Umbau', 'Wohnen'],
+    kategorien: ['Mieterausbau', 'Umbau', 'Wohnen'],
     leistungen: [
       'Machbarkeitsstudie',
       'Projektierung',
@@ -407,7 +407,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2023',
     typ: 'Einfamilienhaus',
-    kategorien: ['Umbau', 'Wohnen', 'Mieterausbau'],
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
       'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg im Kanton Zug. Eine rahmenlose Verglasung öffnet das Erdgeschoss zum Garten, ein neuer Balkon im Obergeschoss bietet Sicht auf den Zugersee.',
