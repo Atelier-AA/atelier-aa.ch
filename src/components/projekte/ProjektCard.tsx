@@ -13,7 +13,7 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
   return (
     <Link
       href={`/referenzen/${projekt.slug}`}
-      className="group block"
+      className="group block min-w-0"
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
       {/* Quadratisches Bildformat 1:1 aus dem alten Theme
@@ -40,7 +40,7 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
       {/* Titel unter dem Bild, darunter der Ort mit Kantonskürzel —
           `.referenzen__titel` (2.25rem, margin-top 1.25rem) und
           `.referenzen__ort` (uppercase, 0.1em Laufweite). */}
-      <h3 className="mt-5 text-[1.5rem] md:text-[1.85rem] lg:text-[2rem] xl:text-[2.25rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite">
+      <h3 className="mt-5 break-words text-[1.5rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-[1.85rem] lg:text-[2rem] xl:text-[2.25rem]">
         {projekt.title}
       </h3>
       <p className="mt-1 uppercase tracking-[0.1em] text-stone">
