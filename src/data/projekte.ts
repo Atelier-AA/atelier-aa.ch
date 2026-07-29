@@ -190,13 +190,13 @@ export const projekte: Projekt[] = [
       { titel: 'Südansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/08-suedansicht.pdf' },
       { titel: 'Westansicht', datei: '/dokumente/projekte/mfh-untersiggenthal/09-westansicht.pdf' },
     ],
-    featured: true,
+    featured: false,
   },
   {
     slug: 'mfh-sihlaurain',
     title: 'Mehrfamilienhäuser Sihlaurain',
-    ort: 'Murgenthal',
-    kanton: 'AG',
+    ort: 'Adliswil',
+    kanton: 'ZH',
     kunde: 'Lagos AG',
     jahr: '2025',
     typ: 'Wohnüberbauung',
@@ -209,7 +209,7 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Zwei Mehrfamilienhäuser als Ensemble in Murgenthal, Kanton Aargau. Die Baukörper fassen einen gemeinsamen Aussenraum und stehen in einem klaren Verhältnis zueinander.',
+      'Zwei Mehrfamilienhäuser als Ensemble in Adliswil, Kanton Zürich. Die Baukörper fassen einen gemeinsamen Aussenraum und stehen in einem klaren Verhältnis zueinander.',
     abschnitte: [
       {
         titel: 'Zwei Häuser, ein Ensemble',
@@ -228,7 +228,7 @@ export const projekte: Projekt[] = [
       {
         titel: 'Wirtschaftlichkeit',
         absaetze: [
-          'Das Projekt war von Beginn an als Renditeobjekt gedacht. Wir haben Grundrisse und Ausbaustandard so abgestimmt, dass die Mietzinse im Marktband von Murgenthal liegen und die Wohnungen langfristig vermietbar bleiben.',
+          'Das Projekt war von Beginn an als Renditeobjekt gedacht. Wir haben Grundrisse und Ausbaustandard so abgestimmt, dass die Mietzinse im Marktband von Adliswil liegen und die Wohnungen langfristig vermietbar bleiben.',
           'Nutzungsoffenheit war Teil der Kalkulation: Die Wohnungstrennwände sind nicht tragend und lassen sich versetzen, wenn sich die Nachfrage nach Wohnungsgrössen verschiebt.',
         ],
       },
@@ -347,7 +347,7 @@ export const projekte: Projekt[] = [
       { titel: 'Fassade Süd', datei: '/dokumente/projekte/mfh-kuenten/07-fassade-sued.pdf' },
       { titel: 'Schnitt AA', datei: '/dokumente/projekte/mfh-kuenten/08-schnitt-aa.pdf' },
     ],
-    featured: true,
+    featured: false,
   },
   {
     slug: 'mfh-letten',
@@ -542,7 +542,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-huenenberg/32.jpg',
       '/images/projekte/efh-huenenberg/33.jpg',
     ],
-    featured: true,
+    featured: false,
   },
   {
     slug: 'mfh-hochwarting',
@@ -674,7 +674,7 @@ export const projekte: Projekt[] = [
       { titel: 'Nordfassade', datei: '/dokumente/projekte/defh-safenwil/06-nordfassade.pdf' },
       { titel: 'Schnitt', datei: '/dokumente/projekte/defh-safenwil/07-schnitt.pdf' },
     ],
-    featured: false,
+    featured: true,
   },
   {
     slug: 'refh-hochfelden',

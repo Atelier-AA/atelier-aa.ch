@@ -47,13 +47,13 @@ export const regionen = [
     kanton: 'Kanton Zürich',
     kuerzel: 'ZH',
     orte:
-      'Obfelden, Affoltern am Albis, Ottenbach, Mettmenstetten, Knonau, Bonstetten, Wettswil, Birmensdorf, Urdorf, Dietikon, Zürich und Umgebung',
+      'Obfelden, Affoltern am Albis, Ottenbach, Mettmenstetten, Knonau, Bonstetten, Wettswil, Birmensdorf, Urdorf, Dietikon, Adliswil, Zürich und Umgebung',
   },
   {
     kanton: 'Kanton Aargau',
     kuerzel: 'AG',
     orte:
-      'Untersiggenthal, Künten, Murgenthal, Bremgarten, Wohlen, Muri, Baden, Wettingen, Mellingen, Lenzburg und Umgebung',
+      'Untersiggenthal, Künten, Bremgarten, Wohlen, Muri, Baden, Wettingen, Mellingen, Lenzburg und Umgebung',
   },
   {
     kanton: 'Kanton Zug',

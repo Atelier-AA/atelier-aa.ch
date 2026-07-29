@@ -1,21 +1,17 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import Arrow from '@/components/ui/Arrow';
 import ProjektCard from '@/components/projekte/ProjektCard';
-import { getFeaturedProjekte } from '@/data/projekte';
-import { ortMitKanton } from '@/lib/utils';
+import { getProjekt } from '@/data/projekte';
 
 /**
- * Drei ausgewählte Referenzprojekte auf der Startseite.
- *
- * Statt drei gleich grosser Kacheln ein grosses Leitprojekt links, die
- * beiden anderen kleiner gestapelt rechts daneben — setzt eine Rangfolge,
- * statt alle drei gleich zu behandeln.
+ * Vier ausgewählte Referenzprojekte auf der Startseite, alle gleich gross
+ * in einer Reihe — bewusst festgelegte Auswahl und Reihenfolge statt der
+ * ersten vier `featured`-Projekte in Datenreihenfolge.
  */
+const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
+
 export default function ReferenzenSection() {
-  const [featured, ...weitere] = getFeaturedProjekte().slice(0, 3);
+  const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
@@ -32,40 +28,10 @@ export default function ReferenzenSection() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {featured && (
-            <Link
-              href={`/referenzen/${featured.slug}`}
-              className="group flex flex-col lg:h-full"
-              aria-label={`Zum Projekt ${featured.title} in ${ortMitKanton(featured)}`}
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-mist lg:aspect-auto lg:flex-1">
-                <Image
-                  src={featured.thumbnail}
-                  alt={`${featured.title}, ${ortMitKanton(featured)}`}
-                  fill
-                  priority
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-                  <Arrow className="w-[76px] h-[30px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
-                </div>
-              </div>
-              <h3 className="mt-5 text-[1.75rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-[2.25rem]">
-                {featured.title}
-              </h3>
-              <p className="mt-1 uppercase tracking-[0.1em] text-stone">
-                {ortMitKanton(featured)}
-              </p>
-            </Link>
-          )}
-
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1">
-            {weitere.map((p) => (
-              <ProjektCard key={p.slug} projekt={p} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {projekte.map((p, idx) => (
+            <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
+          ))}
         </div>
       </Container>
     </section>
