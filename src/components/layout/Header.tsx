@@ -72,7 +72,7 @@ export default function Header() {
           <Link
             href="/"
             aria-label="Atelier AA Architekten – Startseite"
-            className="block h-[44px] md:h-[52px]"
+            className="block h-[44px] transition-opacity duration-300 hover:opacity-60 md:h-[52px]"
           >
             <Logo collapsed={collapsed} />
           </Link>
