@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { SignetIcon } from '@/components/layout/Logo';
+import Arrow from '@/components/ui/Arrow';
 import { ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
 
@@ -27,12 +27,11 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
         />
 
-        {/* Dunkles Overlay + Signet (das "A") beim Hover — Weiterentwicklung
-            des alten Theme-Effekts (`.referenzen-item .referenzen__image
-            a:before/:after`): Overlay rgba(0,0,0,0.5), Zeichen von
-            translateY(10px) auf 0, beides 0.4s. */}
-        <div className="absolute inset-0 z-10 flex items-end justify-start bg-black/50 p-6 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-          <SignetIcon className="h-[88px] translate-y-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-y-0 md:h-[104px]" />
+        {/* Dunkles Overlay + weisser Pfeil beim Hover — 1:1 aus dem alten Theme
+            (`.referenzen-item .referenzen__image a:before/:after`): Overlay
+            rgba(0,0,0,0.5), Pfeil von translateX(-10px) auf 0, beides 0.4s. */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
+          <Arrow className="w-[76px] h-[30px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
         </div>
       </div>
 

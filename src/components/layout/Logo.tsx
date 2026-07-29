@@ -92,26 +92,6 @@ export function Signet({ className }: { className?: string }) {
 }
 
 /**
- * Das Signet allein, auf seine eigene Bounding-Box zugeschnitten (statt im
- * vollen 294×61-Raster der Wortmarke) — für Verwendungen als eigenständiges
- * Icon, z. B. anstelle eines Pfeils.
- */
-export function SignetIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 29.7 61"
-      aria-hidden="true"
-      focusable="false"
-      // Keine eigene Höhenklasse — muss immer über `className` mitgegeben
-      // werden (siehe Kommentar bei `Signet`).
-      className={cn('w-auto shrink-0 fill-current', className)}
-    >
-      <path d={SIGN_PATH} />
-    </svg>
-  );
-}
-
-/**
  * Wortmarke und Signet, weich ineinander übergehend.
  *
  * Das Signet wird nie überblendet — zwei deckungsgleiche A gegeneinander zu
