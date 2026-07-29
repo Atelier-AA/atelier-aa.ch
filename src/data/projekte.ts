@@ -17,7 +17,7 @@ import type { Projekt } from '@/types';
 export const projekte: Projekt[] = [
   {
     slug: 'efh-jonen',
-    title: 'EFH Jonen',
+    title: 'Einfamilienhaus',
     ort: 'Jonen',
     kanton: 'AG',
     kunde: null,
@@ -91,7 +91,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'mfh-untersiggenthal',
-    title: 'MFH Untersiggenthal',
+    title: 'Mehrfamilienhaus',
     ort: 'Untersiggenthal',
     kanton: 'AG',
     kunde: null,
@@ -176,7 +176,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'mfh-sihlaurain',
-    title: 'MFH Sihlaurain 2 und 4',
+    title: 'Mehrfamilienhäuser Sihlaurain',
     ort: 'Murgenthal',
     kanton: 'AG',
     kunde: 'Lagos AG',
@@ -244,7 +244,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'mfh-kuenten',
-    title: 'Mehrfamilienhaus Künten',
+    title: 'Mehrfamilienhaus',
     ort: 'Künten',
     kanton: 'AG',
     kunde: null,
@@ -396,7 +396,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-huenenberg',
-    title: 'EFH Hünenberg',
+    title: 'Einfamilienhaus',
     ort: 'Hünenberg',
     kanton: 'ZG',
     kunde: null,
@@ -542,7 +542,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'defh-safenwil',
-    title: 'DEFH Safenwil',
+    title: 'Doppeleinfamilienhaus',
     ort: 'Safenwil',
     kanton: 'AG',
     kunde: null,
@@ -600,7 +600,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'refh-hochfelden',
-    title: 'Reiheneinfamilienhäuser Hochfelden',
+    title: 'Reiheneinfamilienhäuser',
     ort: 'Hochfelden',
     kanton: 'ZH',
     kunde: null,
@@ -658,7 +658,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-buchs',
-    title: 'EFH Buchs',
+    title: 'Einfamilienhaus',
     ort: 'Buchs',
     kanton: 'AG',
     kunde: null,
@@ -714,7 +714,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-dietikon',
-    title: 'EFH Dietikon',
+    title: 'Einfamilienhaus',
     ort: 'Dietikon',
     kanton: 'ZH',
     kunde: null,
@@ -779,7 +779,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-wuerenlos',
-    title: 'EFH Würenlos',
+    title: 'Einfamilienhaus',
     ort: 'Würenlos',
     kanton: 'AG',
     kunde: null,
@@ -846,7 +846,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-rupperswil',
-    title: 'EFH Rupperswil',
+    title: 'Einfamilienhaus',
     ort: 'Rupperswil',
     kanton: 'AG',
     kunde: null,
@@ -967,7 +967,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'efh-merenschwand',
-    title: 'EFH Merenschwand',
+    title: 'Einfamilienhaus',
     ort: 'Merenschwand',
     kanton: 'AG',
     kunde: null,
@@ -1021,7 +1021,7 @@ export const projekte: Projekt[] = [
   },
   {
     slug: 'mfh-wuerenlingen',
-    title: 'MFH Würenlingen',
+    title: 'Mehrfamilienhaus',
     ort: 'Würenlingen',
     kanton: 'AG',
     kunde: null,

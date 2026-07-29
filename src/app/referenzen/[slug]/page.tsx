@@ -118,7 +118,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
         <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-stone">
-            {projekt.typ} · {ortMitKanton(projekt)} · {projekt.jahr}
+            {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
           <h1 className="mb-8 text-4xl font-medium leading-tight text-ink md:text-5xl">
             {projekt.title}
