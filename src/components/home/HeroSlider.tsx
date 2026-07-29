@@ -15,21 +15,15 @@ interface Slide {
 }
 
 // Ausschliesslich Mehrfamilienhaus-Projekte, vom Nutzer aus einer Vorschau
-// mit allen verfügbaren Projektfotos ausgewählt.
+// mit allen verfügbaren Projektfotos ausgewählt und in dieser Reihenfolge
+// festgelegt.
 const slides: Slide[] = [
   {
-    image: '/images/hero/slide-untersiggenthal-1.jpg',
-    projekt: 'MFH Untersiggenthal',
-    ort: 'Untersiggenthal',
+    image: '/images/hero/slide-hochwarting-2.jpg',
+    projekt: 'Mehrfamilienhaus Hochwarting',
+    ort: 'Glashütten',
     kanton: 'AG',
-    href: '/referenzen/mfh-untersiggenthal',
-  },
-  {
-    image: '/images/hero/slide-untersiggenthal2-1.jpg',
-    projekt: 'Wohnüberbauung Untersiggenthal',
-    ort: 'Untersiggenthal',
-    kanton: 'AG',
-    href: '/referenzen/mfh-untersiggenthal-2',
+    href: '/referenzen/mfh-hochwarting',
   },
   {
     image: '/images/hero/slide-kuenten-1.jpg',
@@ -39,25 +33,25 @@ const slides: Slide[] = [
     href: '/referenzen/mfh-kuenten',
   },
   {
-    image: '/images/hero/slide-hochwarting-1.jpg',
-    projekt: 'Mehrfamilienhaus Hochwarting',
-    ort: 'Glashütten',
-    kanton: 'AG',
-    href: '/referenzen/mfh-hochwarting',
-  },
-  {
-    image: '/images/hero/slide-hochwarting-2.jpg',
-    projekt: 'Mehrfamilienhaus Hochwarting',
-    ort: 'Glashütten',
-    kanton: 'AG',
-    href: '/referenzen/mfh-hochwarting',
-  },
-  {
     image: '/images/hero/slide-wuerenlingen-1.jpg',
     projekt: 'MFH Würenlingen',
     ort: 'Würenlingen',
     kanton: 'AG',
     href: '/referenzen/mfh-wuerenlingen',
+  },
+  {
+    image: '/images/hero/slide-untersiggenthal-1.jpg',
+    projekt: 'MFH Untersiggenthal',
+    ort: 'Untersiggenthal',
+    kanton: 'AG',
+    href: '/referenzen/mfh-untersiggenthal',
+  },
+  {
+    image: '/images/hero/slide-hochwarting-1.jpg',
+    projekt: 'Mehrfamilienhaus Hochwarting',
+    ort: 'Glashütten',
+    kanton: 'AG',
+    href: '/referenzen/mfh-hochwarting',
   },
 ];
 
