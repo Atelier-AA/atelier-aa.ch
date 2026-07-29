@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import ProjektGrid from '@/components/projekte/ProjektGrid';
+import ProjekteFilter from '@/components/projekte/ProjekteFilter';
 import { projekte } from '@/data/projekte';
 import Button from '@/components/ui/Button';
 
@@ -14,7 +14,7 @@ export default function ProjektePage() {
   return (
     <div className="pt-32 md:pt-40">
       <Container>
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <div className="max-w-3xl mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Referenzen
           </p>
@@ -23,7 +23,7 @@ export default function ProjektePage() {
           </h1>
         </div>
 
-        <ProjektGrid projekte={projekte} />
+        <ProjekteFilter projekte={projekte} />
 
         <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
           {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}

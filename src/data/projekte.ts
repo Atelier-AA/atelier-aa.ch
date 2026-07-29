@@ -23,6 +23,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2026',
     typ: 'Einfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: [
       'Machbarkeitsstudie',
       'Projektierung',
@@ -97,6 +98,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2026',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: [
       'Entwurf',
       'Baugesuch',
@@ -182,6 +184,7 @@ export const projekte: Projekt[] = [
     kunde: 'Lagos AG',
     jahr: '2025',
     typ: 'Wohnüberbauung',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: [
       'Projektentwicklung',
       'Entwurf',
@@ -250,6 +253,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2024',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Mehrfamilienhaus am Hang in Künten, Kanton Aargau. Gestaffelte Baukörper reagieren auf das Gelände und geben jeder Wohnung einen eigenen Aussenraum mit Aussicht.',
@@ -322,6 +326,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2023',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: [
       'Machbarkeitsstudie',
       'Projektierung',
@@ -402,6 +407,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2023',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
       'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg im Kanton Zug. Eine rahmenlose Verglasung öffnet das Erdgeschoss zum Garten, ein neuer Balkon im Obergeschoss bietet Sicht auf den Zugersee.',
@@ -476,6 +482,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: '2021',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
       'Wohnbau mit klarer Ordnung in Glashütten, Kanton Aargau. Sorgfältig proportionierte Fassade, reduzierte Materialwahl, Grundrisse für Gemeinschaft und Rückzug.',
@@ -548,6 +555,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Doppeleinfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Doppeleinfamilienhaus in Safenwil im Kanton Aargau für einen Investor, der das Grundstück erworben hatte. Kubische Bauform, heller Putzfassade und begrüntem Attikageschoss.',
@@ -606,6 +614,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Reiheneinfamilienhäuser',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Reiheneinfamilienhäuser in Hochfelden im Kanton Zürich für einen Investor, der das Grundstück erworben hatte. Giebelständige Baukörper mit vorgelagerten Balkonen und Gartenterrassen.',
@@ -664,6 +673,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'nicht realisiert',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch'],
     beschreibung:
       'Studie für ein zusätzliches Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs im Kanton Aargau. Bis zur Baubewilligung geführt, aber nicht realisiert.',
@@ -720,6 +730,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon im Kanton Zürich, aktuell in der Bauphase. Die Aufnahmen zeigen den Rückbau bis auf das Mauerwerk.',
@@ -785,6 +796,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos im Kanton Aargau für einen privaten Investor. Sandfarbene Putzfassade, Lamellenstoren und ein Balkon über der Gartenterrasse.',
@@ -852,6 +864,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung und Erweiterung eines bestehenden Einfamilienhauses in Rupperswil im Kanton Aargau. Weiss verputzter Giebelbau mit flachdachigem Nebenbaukörper.',
@@ -909,6 +922,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Neubau eines Mehrfamilienhauses in Untersiggenthal im Kanton Aargau, aktuell in der Ausführung. Steiles Giebeldach und vertikal verbretterte Holzfassade.',
@@ -973,6 +987,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Einfamilienhaus',
+    kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Totalsanierung eines bestehenden Einfamilienhauses in Merenschwand im Kanton Aargau. Kubischer Baukörper mit Flachdach und heller Putzfassade.',
@@ -1027,6 +1042,7 @@ export const projekte: Projekt[] = [
     kunde: null,
     jahr: 'in Realisierung',
     typ: 'Mehrfamilienhaus',
+    kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Neubau eines Mehrfamilienhauses in Würenlingen im Kanton Aargau für einen Investor, aktuell in Ausführung. Ausgebautes Dachgeschoss und auf schlanken Stützen vorgelagerte Balkone.',

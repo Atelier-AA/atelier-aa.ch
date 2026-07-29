@@ -35,6 +35,8 @@ export interface Projekt {
   beschreibung: string;
   /** Gebäudekategorie, z. B. 'Mehrfamilienhaus'. Für Filter und Suchbegriffe. */
   typ: string;
+  /** Kategorien für das Filter-Menü auf der Projekte-Seite, z. B. 'Neubau', 'Wohnen'. */
+  kategorien: string[];
   /** Leistungsumfang, den wir in diesem Projekt erbracht haben. */
   leistungen: string[];
   /**
