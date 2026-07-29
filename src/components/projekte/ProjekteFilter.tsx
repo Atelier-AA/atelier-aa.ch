@@ -15,7 +15,6 @@ const KATEGORIEN = [
   'Neubau',
   'Mieterausbau',
   'Wohnen',
-  'Arbeiten',
   'Büro',
   'Gewerbe',
 ];
