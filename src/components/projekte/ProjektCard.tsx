@@ -32,7 +32,7 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
             a:before/:after`): Overlay rgba(0,0,0,0.5), Zeichen von
             translateY(10px) auf 0, beides 0.4s. */}
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-          <SignetIcon className="h-[110px] translate-y-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-y-0 md:h-[130px]" />
+          <SignetIcon className="h-[88px] translate-y-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-y-0 md:h-[104px]" />
         </div>
       </div>
 
