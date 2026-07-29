@@ -80,7 +80,11 @@ export function Signet({ className }: { className?: string }) {
       viewBox="0 0 294 61"
       aria-hidden="true"
       focusable="false"
-      className={cn('h-full w-auto shrink-0 fill-current', className)}
+      // Keine eigene Höhenklasse hier — die ruft immer eine überschreibende
+      // Höhe über `className` mit (sonst konkurrieren zwei h-*-Klassen
+      // miteinander, und welche gewinnt, ist vom CSS-Output abhängig statt
+      // von der Reihenfolge im className-String).
+      className={cn('w-auto shrink-0 fill-current', className)}
     >
       <path d={SIGN_PATH} />
     </svg>
@@ -98,7 +102,9 @@ export function SignetIcon({ className }: { className?: string }) {
       viewBox="0 0 29.7 61"
       aria-hidden="true"
       focusable="false"
-      className={cn('h-full w-auto shrink-0 fill-current', className)}
+      // Keine eigene Höhenklasse — muss immer über `className` mitgegeben
+      // werden (siehe Kommentar bei `Signet`).
+      className={cn('w-auto shrink-0 fill-current', className)}
     >
       <path d={SIGN_PATH} />
     </svg>
@@ -148,7 +154,7 @@ export default function Logo({ collapsed = false, className }: LogoProps) {
 
       {/* Das Signet — unverändert in beiden Zuständen, ohne jede Animation. */}
       <span className="absolute inset-y-0 left-0 block h-full">
-        <Signet />
+        <Signet className="h-full" />
       </span>
     </span>
   );
