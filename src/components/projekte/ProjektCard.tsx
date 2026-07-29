@@ -37,10 +37,12 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
         </div>
       </div>
 
-      {/* Titel unter dem Bild, darunter der Ort mit Kantonskürzel —
-          `.referenzen__titel` (2.25rem, margin-top 1.25rem) und
-          `.referenzen__ort` (uppercase, 0.1em Laufweite). */}
-      <h3 className="mt-5 break-words text-[1.5rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-[1.85rem] lg:text-[2rem] xl:text-[2.25rem]">
+      {/* Titel unter dem Bild, darunter der Ort mit Kantonskürzel. Immer
+          einzeilig — kleinere, feste Schriftgrösse statt der früheren
+          Eskalation bis 2.25rem, die lange, ungetrennte Wörter wie
+          "Doppeleinfamilienhaus" zum Umbrechen oder Überlaufen brachte.
+          truncate als Sicherheitsnetz für extreme Einzelfälle. */}
+      <h3 className="mt-4 truncate text-lg font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-xl">
         {projekt.title}
       </h3>
       <p className="mt-1 uppercase tracking-[0.1em] text-stone">
