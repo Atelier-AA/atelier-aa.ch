@@ -56,10 +56,10 @@ export default function Header() {
           // Fläche des Menüs liegt ohnehin dahinter, ein weisser Streifen
           // mit Trennlinie darüber würde sie zerschneiden.
           mobileOpen
-            ? 'bg-transparent py-2 lg:py-4'
+            ? 'bg-transparent py-1 lg:py-4'
             : scrolled
-              ? 'bg-white/95 backdrop-blur border-b border-mist py-2 lg:py-4'
-              : 'bg-transparent py-2 lg:py-6',
+              ? 'bg-white/95 backdrop-blur border-b border-mist py-1 lg:py-4'
+              : 'bg-transparent py-1 lg:py-6',
           // Logo und Navigation erben diese Farbe via `text-current`.
           onDark ? 'text-white' : 'text-ink'
         )}
@@ -72,7 +72,7 @@ export default function Header() {
           <Link
             href="/"
             aria-label="Atelier AA Architekten – Startseite"
-            className="block h-11 transition-opacity duration-300 hover:opacity-60 lg:h-[52px]"
+            className="block h-8 transition-opacity duration-300 hover:opacity-60 lg:h-[52px]"
           >
             <Logo collapsed={collapsed} />
           </Link>
@@ -96,32 +96,32 @@ export default function Header() {
                 über dem Menü-Overlay (z-40) und ist damit auch im offenen Zustand
                 bedienbar — deshalb braucht das Overlay kein eigenes X. Die
                 äusseren Linien wandern um genau ihren Abstand zur Mitte (Gap +
-                Linienhöhe) und kreuzen sich dort exakt. Auf dem Handy 20%
-                grösser als auf dem Desktop. */}
+                Linienhöhe) und kreuzen sich dort exakt. Auf dem Handy bewusst
+                kleiner als auf dem Desktop, damit der Header niedrig bleibt. */}
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative z-50 -mr-2 flex h-[53px] w-[53px] flex-col items-center justify-center gap-[7px] lg:h-11 lg:w-11 lg:gap-1.5"
+              className="relative z-50 -mr-2 flex h-9 w-9 flex-col items-center justify-center gap-1 lg:h-11 lg:w-11 lg:gap-1.5"
               aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
             >
               <span
                 className={cn(
-                  'block h-px w-[29px] bg-current transition-transform duration-300 ease-out lg:w-6',
-                  mobileOpen && 'translate-y-[8px] rotate-45 lg:translate-y-[7px]'
+                  'block h-px w-5 bg-current transition-transform duration-300 ease-out lg:w-6',
+                  mobileOpen && 'translate-y-[5px] rotate-45 lg:translate-y-[7px]'
                 )}
               />
               <span
                 className={cn(
-                  'block h-px w-[29px] bg-current transition-opacity duration-300 ease-out lg:w-6',
+                  'block h-px w-5 bg-current transition-opacity duration-300 ease-out lg:w-6',
                   mobileOpen && 'opacity-0'
                 )}
               />
               <span
                 className={cn(
-                  'block h-px w-[29px] bg-current transition-transform duration-300 ease-out lg:w-6',
-                  mobileOpen && '-translate-y-[8px] -rotate-45 lg:-translate-y-[7px]'
+                  'block h-px w-5 bg-current transition-transform duration-300 ease-out lg:w-6',
+                  mobileOpen && '-translate-y-[5px] -rotate-45 lg:-translate-y-[7px]'
                 )}
               />
             </button>
