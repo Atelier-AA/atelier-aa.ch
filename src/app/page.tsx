@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import HeroSlider from '@/components/home/HeroSlider';
 import IntroSection from '@/components/home/IntroSection';
-import LeistungenSection from '@/components/home/LeistungenSection';
-import ReferenzenSection from '@/components/home/ReferenzenSection';
+import KompetenzenReferenzenSection from '@/components/home/KompetenzenReferenzenSection';
 import UeberUnsSection from '@/components/home/UeberUnsSection';
 import InsightsSection from '@/components/home/InsightsSection';
 import WeiterLink from '@/components/ui/WeiterLink';
@@ -27,9 +26,8 @@ export default function HomePage() {
     <>
       <HeroSlider />
       <IntroSection />
-      <LeistungenSection />
+      <KompetenzenReferenzenSection />
       <UeberUnsSection />
-      <ReferenzenSection />
       <InsightsSection />
       <WeiterLink
         text="Neubau, Umbau oder Verdichtung — sehen Sie, was wir dafür leisten."
