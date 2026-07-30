@@ -27,12 +27,13 @@ export default function KompetenzenReferenzenSection() {
   return (
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
+        <p className="mb-3 text-xs uppercase tracking-widest text-stone">
+          Kompetenzen &amp; Projekte
+        </p>
+
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
           {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
           <div className="lg:col-start-1 lg:row-start-1">
-            <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-              Kompetenzen &amp; Projekte
-            </p>
             <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
               Sieben <span className="font-semibold">Kompetenzen</span>, sichtbar in
               echten <span className="font-semibold">Projekten.</span>
