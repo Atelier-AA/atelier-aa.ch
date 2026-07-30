@@ -3,7 +3,9 @@ import HeroSlider from '@/components/home/HeroSlider';
 import IntroSection from '@/components/home/IntroSection';
 import LeistungenSection from '@/components/home/LeistungenSection';
 import ReferenzenSection from '@/components/home/ReferenzenSection';
+import UeberUnsSection from '@/components/home/UeberUnsSection';
 import InsightsSection from '@/components/home/InsightsSection';
+import KontaktSection from '@/components/home/KontaktSection';
 
 export const metadata: Metadata = {
   description:
@@ -14,8 +16,10 @@ export const metadata: Metadata = {
 /**
  * Startseite.
  *
- * Ablauf, Einsatzgebiet, Partner, häufige Fragen und Kontakt stehen bereits
- * auf eigenen Unterseiten und wiederholen sich hier nicht mehr.
+ * Ablauf, Einsatzgebiet und Partner haben eigene Unterseiten und wiederholen
+ * sich hier nicht. Über uns und Kontakt sind mit knappen, eigens gestalteten
+ * Abschnitten vertreten — jede Hauptseite hat damit eine Entsprechung auf
+ * der Startseite.
  */
 export default function HomePage() {
   return (
@@ -24,7 +28,9 @@ export default function HomePage() {
       <IntroSection />
       <LeistungenSection />
       <ReferenzenSection />
+      <UeberUnsSection />
       <InsightsSection />
+      <KontaktSection />
     </>
   );
 }
