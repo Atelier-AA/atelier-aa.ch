@@ -85,15 +85,15 @@ export default function HeroSlider() {
             alt={`${slide.projekt}, ${ortMitKanton(slide)}`}
             fill
             priority={idx === 0}
-            className="object-cover opacity-[0.62]"
+            className="object-cover"
             sizes="100vw"
           />
         </div>
       ))}
-      {/* Gradient über allen Slides statt pro Slide dupliziert — von leicht
-          oben bis kräftig unten, damit Kopf- und Fusszeile immer lesbar
-          bleiben, unabhängig vom jeweiligen Bild. */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/15 to-ink/75" />
+      {/* Gradient über allen Slides statt pro Slide dupliziert — nur unten,
+          wo Titel und Bildunterschrift lesbar bleiben müssen; der Rest des
+          Bilds bleibt in Originalhelligkeit statt gleichmässig abgedunkelt. */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-end px-8 py-8 md:px-14 md:py-12 lg:px-20 lg:py-14">
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
@@ -103,7 +103,7 @@ export default function HeroSlider() {
             Architektur mit Bestand
           </h1>
 
-          <div className="flex items-end justify-between gap-6 md:flex-col md:items-end md:gap-4">
+          <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
             <Link href={slides[current].href} className="group text-white">
               <p className="text-xl font-medium">{slides[current].projekt}</p>
               <p className="mt-1 text-sm uppercase tracking-[0.15em] text-white/60">
