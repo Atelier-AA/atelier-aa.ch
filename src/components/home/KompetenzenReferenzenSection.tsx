@@ -18,8 +18,10 @@ const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
  * Überschrift und Referenzen-Raster stehen in derselben Grid-Zeile, damit
  * die Bilder oben mit der Überschrift abschliessen statt tiefer zu wirken;
  * die beiden "alle ansehen"-Links stehen in einer eigenen Zeile darunter,
- * auf gleicher Höhe. Das Referenzen-Raster bleibt auf `max-w-md` begrenzt,
- * damit die Bilder nicht grösser wirken als die Kompetenzen-Liste daneben.
+ * auf gleicher Höhe. Das Referenzen-Raster ist auf `max-w-lg` begrenzt —
+ * etwas breiter als zuvor, um den freien Raum neben der Kompetenzen-Liste
+ * besser zu nutzen, aber bewusst nicht auf volle Spaltenbreite, damit die
+ * Bilder nicht grösser wirken als die Liste daneben.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -77,7 +79,7 @@ export default function KompetenzenReferenzenSection() {
               in einer vollen Reihe, damit sie neben der Kompetenzen-Liste
               nicht dominieren. */}
           <div className="lg:col-start-3 lg:row-start-1">
-            <div className="grid max-w-md grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid max-w-lg grid-cols-2 gap-4 sm:gap-6">
               {projekte.map((p, idx) => (
                 <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
               ))}
