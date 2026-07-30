@@ -39,10 +39,13 @@ export default function ProjektePage() {
             Nächster Schritt
           </p>
           <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-            Von der ersten <span className="font-semibold">Idee</span> bis
-            zur <span className="font-semibold">Ausführung.</span>
+            <span className="font-semibold">Architektur</span> mit{' '}
+            <span className="font-semibold">Verantwortung</span>
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-graphite">
+            Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
+            Architektur, die Funktion, Gestaltung und Nachhaltigkeit
+            verbindet – mit klarer Haltung und langfristigem Mehrwert.
             Erfahren Sie, welche Leistungen wir dafür anbieten – vom
             Vorprojekt bis zum Generalplaner-Mandat.
           </p>
