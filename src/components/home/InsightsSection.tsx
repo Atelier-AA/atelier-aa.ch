@@ -8,8 +8,8 @@ import { formatDatum } from '@/lib/utils';
 /**
  * Vier Fachbeiträge auf der Startseite, im selben quadratischen Bildstil wie
  * die Referenzprojekte (inkl. Zoom beim Hover). Der Titel blendet erst beim
- * Hover über dem Bild ein (dunkler Verlauf, weisser Text); fest sichtbar
- * bleiben nur das Datum und ein kurzer Textauszug darunter.
+ * Hover über dem Bild ein (dunkler Verlauf, weisser Text, bis zu zwei
+ * Zeilen); fest sichtbar bleibt nur das Datum darunter.
  */
 export default function InsightsSection() {
   const neueste = insights.slice(0, 4);
@@ -22,6 +22,10 @@ export default function InsightsSection() {
           <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
             Fachbeiträge aus unserer Arbeit
           </h2>
+          <p className="mt-4 text-lg text-graphite leading-relaxed">
+            Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf — wir
+            schreiben über die Fragen, die uns Bauherrschaften stellen.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +47,7 @@ export default function InsightsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <p className="truncate text-lg font-medium leading-tight text-white">
+                  <p className="line-clamp-2 text-lg font-medium leading-tight text-white">
                     {i.titel}
                   </p>
                 </div>
@@ -51,7 +55,6 @@ export default function InsightsSection() {
               <p className="mt-4 text-xs uppercase tracking-[0.1em] text-stone">
                 {formatDatum(i.datum)}
               </p>
-              <p className="mt-2 text-graphite leading-relaxed">{i.lead}</p>
             </Link>
           ))}
         </div>
