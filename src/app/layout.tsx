@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { firma } from '@/data/firma';
+import { team } from '@/data/team';
 import './globals.css';
 
 // Inter als Variable Font — wie im alten WordPress-Theme, das
@@ -92,9 +93,20 @@ const organisationSchema = {
     addressRegion: 'ZH',
     addressCountry: 'CH',
   },
+  // Gemeinde-Koordinaten von Obfelden, nicht vermessen — für die Genauigkeit,
+  // die dieses Markup braucht, reicht das; eine Adress-genaue Vermessung
+  // würde keinen echten Zusatznutzen bringen.
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 47.2775,
+    longitude: 8.4372,
+  },
   areaServed: { '@type': 'Country', name: 'Schweiz' },
   knowsLanguage: ['de-CH'],
   founder: { '@type': 'Person', name: firma.vertretungsberechtigt },
+  employee: team.map((m) => ({
+    '@id': `https://www.atelier-aa.ch/ueber-uns/${m.slug}#person`,
+  })),
   description:
     'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Innenarchitektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',
   makesOffer: [

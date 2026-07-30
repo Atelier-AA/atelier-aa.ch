@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
+import Werkliste from '@/components/projekte/Werkliste';
 import { projekte } from '@/data/projekte';
 import Button from '@/components/ui/Button';
 
@@ -25,7 +26,11 @@ export default function ProjektePage() {
 
         <ProjekteFilter projekte={projekte} />
 
-        <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
+        <div className="mt-32 md:mt-40">
+          <Werkliste projekte={projekte} />
+        </div>
+
+        <div className="max-w-3xl mt-24 md:mt-32 py-16 border-t border-mist">
           {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}
           <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
             Architektur mit Verantwortung

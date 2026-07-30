@@ -44,6 +44,11 @@ export default function UeberUnsPage() {
                 Räume, die sich selbstverständlich in ihren Kontext einfügen und
                 zugleich eine eigene Identität schaffen.
               </p>
+              <p>
+                Wir waren über mehrere Jahre Mitglied im Gewerbeverein Obfelden und im
+                Gewerbeverein Affoltern am Albis — die Verbundenheit mit der Region, in
+                der wir arbeiten, war und ist uns wichtig.
+              </p>
               <p className="text-lg text-ink">
                 Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
               </p>

@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
-import { bauaufgaben } from '@/data/expertise';
+import FragenAntworten from '@/components/insights/FragenAntworten';
+import { bauaufgaben, expertiseFragen } from '@/data/expertise';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -12,8 +13,25 @@ export const metadata: Metadata = {
 };
 
 export default function LeistungenPage() {
+  // FAQPage-Markup zu den sichtbaren Fragen weiter unten.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://www.atelier-aa.ch/leistungen#faq',
+    inLanguage: 'de-CH',
+    mainEntity: expertiseFragen.map((f) => ({
+      '@type': 'Question',
+      name: f.frage,
+      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="pt-32 md:pt-40">
         <Container>
           <div className="mb-16 max-w-3xl md:mb-24">
@@ -73,6 +91,12 @@ export default function LeistungenPage() {
             ))}
           </div>
         </section>
+
+        <Container>
+          <div className="max-w-3xl border-t border-mist pt-16">
+            <FragenAntworten fragen={expertiseFragen} titel="Häufige Fragen zu unseren Leistungen" />
+          </div>
+        </Container>
 
         <Container>
           <div className="max-w-3xl border-t border-mist pt-16">
