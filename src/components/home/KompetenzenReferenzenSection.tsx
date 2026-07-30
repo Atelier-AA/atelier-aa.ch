@@ -1,14 +1,53 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import ProjektCard from '@/components/projekte/ProjektCard';
 import { leistungsangebot } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
+import { ortMitKanton } from '@/lib/utils';
+import type { Projekt } from '@/types';
 
 /**
  * Bewusst festgelegte Auswahl und Reihenfolge statt der ersten vier
  * `featured`-Projekte in Datenreihenfolge.
  */
 const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
+
+/**
+ * Referenzbild in fester Höhe statt der quadratischen Aspect-Ratio von
+ * `ProjektCard` — nur hier, damit das Raster bis zum rechten Rand der
+ * Spalte (bündig mit Kontakt/Burger im Header) reichen kann, ohne dass die
+ * Bilder dadurch höher werden.
+ */
+function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boolean }) {
+  return (
+    <Link
+      href={`/referenzen/${projekt.slug}`}
+      className="group block min-w-0"
+      aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
+    >
+      <div className="relative h-60 overflow-hidden bg-mist">
+        <Image
+          src={projekt.thumbnail}
+          alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
+          fill
+          priority={priority}
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+          sizes="(max-width: 1100px) 50vw, 25vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <p className="truncate text-lg font-medium leading-tight text-white">
+            {projekt.title}
+          </p>
+          <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
+            {ortMitKanton(projekt)}
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 /**
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
@@ -18,10 +57,8 @@ const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
  * Überschrift und Referenzen-Raster stehen in derselben Grid-Zeile, damit
  * die Bilder oben mit der Überschrift abschliessen statt tiefer zu wirken;
  * die beiden "alle ansehen"-Links stehen in einer eigenen Zeile darunter,
- * auf gleicher Höhe. Das Referenzen-Raster ist auf `max-w-lg` begrenzt —
- * etwas breiter als zuvor, um den freien Raum neben der Kompetenzen-Liste
- * besser zu nutzen, aber bewusst nicht auf volle Spaltenbreite, damit die
- * Bilder nicht grösser wirken als die Liste daneben.
+ * auf gleicher Höhe. Das Referenzen-Raster füllt die volle Spaltenbreite
+ * (bündig mit dem rechten Rand des Headers), die Bildhöhe bleibt dabei fest.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -75,13 +112,12 @@ export default function KompetenzenReferenzenSection() {
             aria-hidden="true"
           />
 
-          {/* Referenzen: als kleineres 2×2-Raster statt vier grossen Karten
-              in einer vollen Reihe, damit sie neben der Kompetenzen-Liste
-              nicht dominieren. */}
+          {/* Referenzen: 2×2-Raster über die volle Spaltenbreite, mit fester
+              Bildhöhe statt der quadratischen Karten sonst auf der Seite. */}
           <div className="lg:col-start-3 lg:row-start-1">
-            <div className="grid max-w-lg grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {projekte.map((p, idx) => (
-                <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
+                <ReferenzBild key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
           </div>
