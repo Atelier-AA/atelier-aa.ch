@@ -15,12 +15,22 @@ export default function Header() {
   const isHome = pathname === '/';
 
   useEffect(() => {
-    // Schwelle 50px wie im alten Theme (header.php: `window.scrollY > 50`).
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    // Auf der Startseite wechselt das Logo erst, wenn der Hero-Slider
+    // (volle Bildschirmhöhe) durchgescrollt ist, statt schon nach wenigen
+    // Pixeln — auf den übrigen Seiten ohne Vollbild-Hero bleibt die
+    // ursprüngliche Schwelle von 50px wie im alten Theme.
+    const onScroll = () => {
+      const schwelle = isHome ? window.innerHeight : 50;
+      setScrolled(window.scrollY > schwelle);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isHome]);
 
   // Beim Seitenwechsel das Menü schliessen — sonst bleibt das Overlay über
   // der neuen Seite stehen.
@@ -59,7 +69,12 @@ export default function Header() {
             ? 'bg-transparent pt-6 pb-4 lg:py-4'
             : scrolled
               ? 'bg-white/95 backdrop-blur border-b border-mist pt-6 pb-4 lg:py-4'
-              : 'bg-transparent pt-10 pb-4 lg:py-6',
+              : // Der grössere obere Abstand gilt nur auf der Startseite
+                // (vor dem Hero-Slider) — auf den übrigen Seiten der
+                // ursprüngliche, symmetrische Abstand.
+                isHome
+                ? 'bg-transparent pt-10 pb-4 lg:py-6'
+                : 'bg-transparent py-4 lg:py-6',
           // Logo und Navigation erben diese Farbe via `text-current`.
           onDark ? 'text-white' : 'text-ink'
         )}
