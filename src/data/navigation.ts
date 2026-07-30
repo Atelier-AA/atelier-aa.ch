@@ -1,11 +1,13 @@
 import type { NavLink } from '@/types';
 
-// Reihenfolge wie im Hauptmenü der alten Website (wp_terms "main",
-// menu_order 1-4), erweitert um Insights.
+// Reihenfolge und Beschriftung nach Kundenwunsch: Projekte, dann Expertise
+// (vormals "Leistungen"), dann Atelier (vormals "Über uns"). Die Ziel-URLs
+// bleiben unverändert (/leistungen, /ueber-uns) — nur Label und Reihenfolge
+// im Menü ändern sich.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
-  { href: '/ueber-uns', label: 'Über uns' },
-  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/leistungen', label: 'Expertise' },
+  { href: '/ueber-uns', label: 'Atelier' },
   { href: '/insights', label: 'Insights' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
