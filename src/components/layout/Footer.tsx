@@ -21,7 +21,7 @@ export default function Footer() {
       <Container className="py-10 md:py-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
           <div className="max-w-md">
-            <div className="mb-6 h-[35px] md:h-[40px] text-white">
+            <div className="mb-6 h-[44px] text-white md:h-[52px]">
               <Logo />
             </div>
             <p className="text-2xl md:text-3xl font-light leading-tight">
