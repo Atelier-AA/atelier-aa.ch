@@ -79,7 +79,7 @@ export const projekte: Projekt[] = [
           'Im Kanton Aargau liegen Einfamilienhäuser in mittlerem bis gehobenem Standard aktuell bei rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen. Ein vollwertiges Untergeschoss erhöht diesen Wert, da Aushub und Abdichtung ins Gewicht fallen — eine belastbare Zahl liefert erst der Kostenrahmen im Vorprojekt.',
       },
     ],
-    thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
+    thumbnail: '/images/projekte/efh-jonen/14.jpg',
     heroImage: '/images/projekte/efh-jonen/hero.jpg',
     galerie: [
       '/images/projekte/efh-jonen/01.jpg',
