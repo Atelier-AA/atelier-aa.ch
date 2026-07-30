@@ -67,21 +67,18 @@ export default function KontaktPage() {
               <br />
               {firma.plz} {firma.ort}
             </address>
-            <p className="mt-6 text-lg">
-              <a
-                href={`tel:${firma.telefonHref}`}
-                className="font-medium text-ink transition-colors hover:text-graphite"
-              >
-                {firma.telefon}
-              </a>
-              <br />
-              <a
-                href={`mailto:${firma.email}`}
-                className="font-medium text-ink transition-colors hover:text-graphite"
-              >
-                {firma.email}
-              </a>
-            </p>
+            <a
+              href={`tel:${firma.telefonHref}`}
+              className="mt-8 block text-4xl font-semibold leading-none tracking-tight text-ink transition-opacity hover:opacity-70 md:text-5xl"
+            >
+              {firma.telefon}
+            </a>
+            <a
+              href={`mailto:${firma.email}`}
+              className="mt-4 inline-block text-lg font-medium text-ink transition-colors hover:text-graphite"
+            >
+              {firma.email}
+            </a>
           </div>
         </div>
 

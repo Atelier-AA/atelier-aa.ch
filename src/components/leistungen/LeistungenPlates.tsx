@@ -56,10 +56,13 @@ function Plate({ index, titel, text }: PlateProps) {
           gerade ? 'md:order-1' : 'md:order-2'
         )}
       >
-        <p className="mb-5 font-mono text-xs uppercase tracking-widest text-stone">
-          {String(index + 1).padStart(2, '0')} / {String(leistungsangebot.length).padStart(2, '0')}
+        <p className="mb-3 font-mono text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          {String(index + 1).padStart(2, '0')}
+          <span className="text-lg font-normal text-stone md:text-xl">
+            /{String(leistungsangebot.length).padStart(2, '0')}
+          </span>
         </p>
-        <h3 className="mb-5 max-w-[14ch] text-2xl font-medium leading-tight text-ink md:text-3xl">
+        <h3 className="mb-5 max-w-[14ch] text-3xl font-medium leading-tight text-ink md:text-4xl">
           {titel}
         </h3>
         <p className="max-w-[48ch] leading-relaxed text-graphite">{text}</p>
