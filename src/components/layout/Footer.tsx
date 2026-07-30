@@ -18,10 +18,10 @@ export default function Footer() {
 
   return (
     <footer className="mt-24 bg-ink text-white">
-      <Container className="py-14 md:py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
+      <Container className="py-10 md:py-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
           <div className="max-w-md">
-            <div className="mb-8 h-[35px] md:h-[40px] text-white">
+            <div className="mb-6 h-[35px] md:h-[40px] text-white">
               <Logo />
             </div>
             <p className="text-2xl md:text-3xl font-light leading-tight">
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Rechtliches */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
           <p>Atelier AA Architekten © {year}. Alle Rechte vorbehalten.</p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLegal.map((item) => (
