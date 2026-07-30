@@ -19,9 +19,9 @@ interface MobileMenuProps {
  * Navigation rechts, damit sie auf derselben Seite steht wie der Burger, der
  * sie geöffnet hat.
  *
- * Schriftgrössen der Navigationspunkte an die Überschriften der alten Website
- * angeglichen (stage.atelier-aa.ch, Theme-Variable --global--font-size-xxl:
- * 3.125rem Desktop, 1.875rem Mobil, Schriftgewicht 500).
+ * Bewusst kompakt gehalten: kleinere Schrift und engere Abstände als in
+ * einer ersten Fassung, damit das Menü auf kleinen Bildschirmen ohne
+ * Scrollen Platz hat.
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
@@ -133,8 +133,8 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         )}
       />
 
-      <div className="relative flex h-full flex-col overflow-y-auto py-28">
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-20 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:items-end lg:px-16">
+      <div className="relative flex h-full flex-col overflow-y-auto py-20">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-16 gap-y-8 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-end lg:px-16">
           {/* Erste Spalte: Kontakt und Rechtliches. Sobald sie ab lg neben
               die Navigation springt, unten bündig mit ihr statt oben. */}
           <div className="order-2 text-right lg:order-1">
@@ -142,11 +142,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               {/* Kein eigener oberer Strich mehr — auf dem Handy steht direkt
                   darüber schon der untere Strich des letzten Navigationspunkts,
                   zwei Linien so kurz hintereinander sahen doppelt aus. */}
-              <div className="pt-8">
+              <div className="pt-6">
                 <p className="text-xs uppercase tracking-widest text-white/60">
                   Kontakt
                 </p>
-                <p className="mt-4 text-lg">
+                <p className="mt-3 text-base">
                   <a
                     href={`tel:${firma.telefonHref}`}
                     onClick={onClose}
@@ -155,7 +155,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     {firma.telefon}
                   </a>
                 </p>
-                <p className="text-lg">
+                <p className="text-base">
                   <a
                     href={`mailto:${firma.email}`}
                     onClick={onClose}
@@ -164,20 +164,20 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     {firma.email}
                   </a>
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-white/60">
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
                   {firma.strasse}
                   <br />
                   {firma.plz} {firma.ort}
                 </p>
               </div>
 
-              <ul className="mt-10 flex flex-col">
+              <ul className="mt-6 flex flex-col">
                 {footerLegal.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className="inline-flex min-h-[40px] items-center text-xs uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
+                      className="inline-flex min-h-[32px] items-center text-xs uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
                     >
                       {item.label}
                     </Link>
@@ -200,7 +200,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block py-5 text-[1.875rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[3.125rem]"
+                    className="block py-3 text-[1.5rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2.5rem]"
                   >
                     {item.label}
                   </Link>
