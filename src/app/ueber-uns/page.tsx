@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import TeamGrid from '@/components/ueber-uns/TeamGrid';
 import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
-import WeiterLink from '@/components/ui/WeiterLink';
 import { team } from '@/data/team';
 
 export const metadata: Metadata = {
@@ -75,12 +74,6 @@ export default function UeberUnsPage() {
       </div>
 
       <OffeneStellen />
-
-      <WeiterLink
-        text="Wie wir arbeiten: von der Machbarkeitsstudie bis zur Bauleitung."
-        href="/leistungen"
-        linkText="Leistungen"
-      />
     </>
   );
 }
