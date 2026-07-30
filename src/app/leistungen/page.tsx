@@ -18,7 +18,7 @@ export default function LeistungenPage() {
         <div className="mb-16 max-w-3xl md:mb-24">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Disziplinen</p>
           {/* Tragende Begriffe fett, der Rest der Zeile normal. */}
-          <h1 className="border-l-[3px] border-ink pl-6 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:pl-8 md:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
             <span className="font-semibold">Architektur</span> mit Klarheit
             <br />
             und <span className="font-semibold">Verantwortung.</span>
