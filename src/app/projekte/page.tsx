@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
-import WeiterLink from '@/components/ui/WeiterLink';
 import { projekte } from '@/data/projekte';
 
 export const metadata: Metadata = {
@@ -31,13 +31,26 @@ export default function ProjektePage() {
         </div>
 
         <ProjekteFilter projekte={projekte} />
-      </Container>
 
-      <WeiterLink
-        text="Von der ersten Idee bis zur Ausführung. Erfahren Sie, welche Leistungen wir dafür anbieten – vom Vorprojekt bis zum Generalplaner-Mandat."
-        href="/leistungen"
-        linkText="Leistungen"
-      />
+        {/* Abschluss im gleichen Stil wie der Einstieg oben: grosser,
+            fett/normal gesetzter Titel, darunter normaler Fliesstext. */}
+        <div className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+            Nächster Schritt
+          </p>
+          <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+            Von der ersten <span className="font-semibold">Idee</span> bis
+            zur <span className="font-semibold">Ausführung.</span>
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-graphite">
+            Erfahren Sie, welche Leistungen wir dafür anbieten – vom
+            Vorprojekt bis zum Generalplaner-Mandat.
+          </p>
+          <Button href="/leistungen" variant="text">
+            Leistungen ansehen
+          </Button>
+        </div>
+      </Container>
     </div>
   );
 }
