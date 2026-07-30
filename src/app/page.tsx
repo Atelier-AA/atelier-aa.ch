@@ -4,7 +4,7 @@ import IntroSection from '@/components/home/IntroSection';
 import KompetenzenReferenzenSection from '@/components/home/KompetenzenReferenzenSection';
 import UeberUnsSection from '@/components/home/UeberUnsSection';
 import InsightsSection from '@/components/home/InsightsSection';
-import WeiterLink from '@/components/ui/WeiterLink';
+import AbschlussSection from '@/components/home/AbschlussSection';
 
 export const metadata: Metadata = {
   description:
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
  *
  * Ablauf, Einsatzgebiet und Partner haben eigene Unterseiten und wiederholen
  * sich hier nicht. Über uns ist mit einem knappen, eigens gestalteten
- * Abschnitt vertreten. Statt eines eigenen, dunkel hinterlegten
- * Kontaktabschnitts führt die Seite am Ende dezent zu den Leistungen weiter
- * — Kontakt ist bereits direkt im Header erreichbar.
+ * Abschnitt vertreten. Am Ende steht ein eigens gestalteter Kontakt-Aufruf
+ * (Statement-Satz, Kontakt-Button und ein dezenter Weg zurück zu den
+ * Projekten) statt eines dunkel hinterlegten Blocks.
  */
 export default function HomePage() {
   return (
@@ -29,11 +29,7 @@ export default function HomePage() {
       <KompetenzenReferenzenSection />
       <UeberUnsSection />
       <InsightsSection />
-      <WeiterLink
-        text="Neubau, Umbau oder Verdichtung — sehen Sie, was wir dafür leisten."
-        href="/leistungen"
-        linkText="Leistungen ansehen"
-      />
+      <AbschlussSection />
     </>
   );
 }
