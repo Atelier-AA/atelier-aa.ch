@@ -1,9 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import ProjektCard from '@/components/projekte/ProjektCard';
+import { leistungsangebot } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
-import { ortMitKanton, cn } from '@/lib/utils';
 
 /**
  * Bewusst festgelegte Auswahl und Reihenfolge statt der ersten vier
@@ -12,11 +11,11 @@ import { ortMitKanton, cn } from '@/lib/utils';
 const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
 
 /**
- * Kompetenzen und Referenzen in einem Abschnitt verschmolzen: statt einer
- * Liste von Leistungstiteln neben einem Bilder-Raster zeigt jede Zeile ein
- * Projekt zusammen mit den echten Leistungen, die dafür erbracht wurden
- * (aus den Projektdaten, nicht neu erfunden) — Bild, Text, Bild, Text im
- * Wechsel, damit keine Seite grösser wirkt als die andere.
+ * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
+ * getrennten Sektionen: links knapp, was wir leisten, rechts, was daraus
+ * entsteht — beides unter einer gemeinsamen Überschrift, die beide Seiten
+ * verbindet. Das Referenzen-Raster ist bewusst auf `max-w-md` begrenzt,
+ * damit die Bilder nicht grösser wirken als die Kompetenzen-Liste daneben.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -24,70 +23,61 @@ export default function KompetenzenReferenzenSection() {
   return (
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
-        <div className="mb-14 max-w-2xl md:mb-20">
+        <div className="mb-12 max-w-2xl md:mb-16">
           <p className="mb-3 text-xs uppercase tracking-widest text-stone">
             Kompetenzen &amp; Projekte
           </p>
           <h2 className="text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-            Unsere <span className="font-semibold">Kompetenzen</span>, sichtbar in
+            Sieben <span className="font-semibold">Kompetenzen</span>, sichtbar in
             echten <span className="font-semibold">Projekten.</span>
           </h2>
         </div>
 
-        <div className="space-y-14 md:space-y-20">
-          {projekte.map((p, idx) => {
-            const gerade = idx % 2 === 0;
-            return (
-              <Link
-                key={p.slug}
-                href={`/referenzen/${p.slug}`}
-                className="group grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16"
-              >
-                <div
-                  className={cn(
-                    'relative aspect-[4/3] w-full overflow-hidden bg-mist',
-                    gerade ? 'md:order-1' : 'md:order-2'
-                  )}
-                >
-                  <Image
-                    src={p.thumbnail}
-                    alt={`${p.title}, ${ortMitKanton(p)}`}
-                    fill
-                    priority={idx < 2}
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[minmax(0,20rem)_1fr]">
+          {/* Kompetenzen: kompakt, jeder Punkt per Klick aufklappbar,
+              standardmässig zugeklappt. */}
+          <div>
+            <div>
+              {leistungsangebot.map((l) => (
+                <details key={l.titel} className="group border-b border-mist py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-base font-medium text-ink transition-colors group-hover:text-graphite">
+                      {l.titel}
+                    </h3>
+                    <span
+                      aria-hidden="true"
+                      className="relative block h-3 w-3 shrink-0 text-stone"
+                    >
+                      <span className="absolute top-1/2 left-0 block h-px w-3 bg-current" />
+                      <span className="absolute top-1/2 left-0 block h-px w-3 rotate-90 bg-current transition-transform duration-300 ease-out group-open:rotate-0" />
+                    </span>
+                  </summary>
+                  <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{l.text}</p>
+                </details>
+              ))}
+            </div>
+            <div className="mt-8 text-right">
+              <Button href="/leistungen" variant="text">
+                alle Leistungen ansehen
+              </Button>
+            </div>
+          </div>
 
-                <div className={gerade ? 'md:order-2' : 'md:order-1'}>
-                  <p className="text-xs uppercase tracking-widest text-stone">
-                    {ortMitKanton(p)} · {p.jahr}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-medium leading-tight text-ink transition-colors group-hover:text-graphite md:text-3xl">
-                    {p.title}
-                  </h3>
-                  <p className="mt-4 max-w-[42ch] text-graphite leading-relaxed">
-                    {p.beschreibung}
-                  </p>
-                  <div className="mt-6">
-                    <p className="text-xs uppercase tracking-widest text-stone">
-                      Leistungen
-                    </p>
-                    <p className="mt-2 text-ink">{p.leistungen.join(' · ')}</p>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-
-        <div className="mt-16 flex flex-wrap justify-end gap-x-10 gap-y-4 md:mt-20">
-          <Button href="/leistungen" variant="text">
-            alle Leistungen ansehen
-          </Button>
-          <Button href="/projekte" variant="text">
-            alle Projekte ansehen
-          </Button>
+          {/* Referenzen: als kleineres 2×2-Raster statt vier grossen Karten
+              in einer vollen Reihe, damit sie neben der Kompetenzen-Liste
+              nicht dominieren. */}
+          <div>
+            <div className="grid max-w-md grid-cols-2 gap-4 sm:gap-6">
+              {projekte.map((p, idx) => (
+                <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
+              ))}
+            </div>
+            <div className="mt-8 text-right">
+              <Button href="/projekte" variant="text">
+                alle Projekte ansehen
+              </Button>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
