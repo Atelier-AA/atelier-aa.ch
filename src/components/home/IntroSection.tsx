@@ -33,7 +33,7 @@ export default function IntroSection() {
           </div>
           <div className="relative aspect-[4/3] w-full bg-mist">
             <Image
-              src="/images/projekte/efh-jonen/12.jpg"
+              src="/images/projekte/efh-jonen/17.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen"
               fill
               className="object-cover"
