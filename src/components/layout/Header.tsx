@@ -48,7 +48,7 @@ export default function Header() {
       </a>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 transition-all duration-300',
+          'fixed top-0 left-0 right-0 transition-all duration-500',
           // Bei offenem Menü über das Overlay (z-40) heben, damit Logo und
           // Burger sichtbar und bedienbar bleiben; sonst darunter.
           mobileOpen ? 'z-50' : 'z-30',
