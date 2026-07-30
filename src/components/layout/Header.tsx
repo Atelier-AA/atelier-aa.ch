@@ -56,10 +56,10 @@ export default function Header() {
           // Fläche des Menüs liegt ohnehin dahinter, ein weisser Streifen
           // mit Trennlinie darüber würde sie zerschneiden.
           mobileOpen
-            ? 'bg-transparent py-4'
+            ? 'bg-transparent py-3 md:py-4'
             : scrolled
-              ? 'bg-white/95 backdrop-blur border-b border-mist py-4'
-              : 'bg-transparent py-6',
+              ? 'bg-white/95 backdrop-blur border-b border-mist py-3 md:py-4'
+              : 'bg-transparent py-4 md:py-6',
           // Logo und Navigation erben diese Farbe via `text-current`.
           onDark ? 'text-white' : 'text-ink'
         )}
@@ -72,7 +72,7 @@ export default function Header() {
           <Link
             href="/"
             aria-label="Atelier AA Architekten – Startseite"
-            className="block h-[44px] transition-opacity duration-300 hover:opacity-60 md:h-[52px]"
+            className="block h-9 transition-opacity duration-300 hover:opacity-60 md:h-[52px]"
           >
             <Logo collapsed={collapsed} />
           </Link>
