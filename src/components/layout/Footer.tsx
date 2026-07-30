@@ -5,10 +5,10 @@ import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 
 /**
- * Fusszeile auf einer Ebene: Wortmarke, Kernsatz und Kontakt-Button stehen
- * zusammen mit Kontakt und Navigation in einem einzigen Block, statt in
- * gestapelten, durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile
- * am Ende ist durch eine feine Linie abgesetzt.
+ * Fusszeile auf einer Ebene: Wortmarke und Kernsatz stehen zusammen mit
+ * Kontakt und Navigation in einem einzigen Block, statt in gestapelten,
+ * durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile am Ende ist
+ * durch eine feine Linie abgesetzt.
  */
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-24 bg-ink text-white">
-      <Container className="py-16 md:py-20">
+      <Container className="py-14 md:py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
           <div className="max-w-md">
             <div className="mb-8 h-[35px] md:h-[40px] text-white">
@@ -27,12 +27,6 @@ export default function Footer() {
             <p className="text-2xl md:text-3xl font-light leading-tight">
               Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
             </p>
-            <Link
-              href="/kontakt"
-              className="mt-8 inline-flex items-center justify-center border border-white bg-white px-8 py-4 text-sm font-medium uppercase tracking-widest text-ink transition-colors duration-300 hover:bg-transparent hover:text-white"
-            >
-              Kontaktieren Sie uns
-            </Link>
           </div>
 
           <div>
