@@ -136,9 +136,12 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       <div className="relative flex h-full flex-col overflow-y-auto py-28">
         <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-20 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:px-16">
           {/* Erste Spalte: Kontakt und Rechtliches. */}
-          <div className="order-2 lg:order-1 lg:pt-2">
+          <div className="order-2 text-right lg:order-1 lg:pt-2">
             <div style={einstieg(navigation.length)} className={einstiegKlassen}>
-              <div className="border-t border-white/15 pt-8">
+              {/* Kein eigener oberer Strich mehr — auf dem Handy steht direkt
+                  darüber schon der untere Strich des letzten Navigationspunkts,
+                  zwei Linien so kurz hintereinander sahen doppelt aus. */}
+              <div className="pt-8">
                 <p className="text-xs uppercase tracking-widest text-white/60">
                   Kontakt
                 </p>
