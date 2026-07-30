@@ -186,7 +186,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           {/* Zweite Spalte: die Navigation. Schriftgrösse wie h1/h2 der alten
               Website (--global--font-size-xxl), Schriftgewicht 500. */}
           <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
-            <ul className="flex flex-col lg:text-right">
+            <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
                 <li
                   key={item.href}
