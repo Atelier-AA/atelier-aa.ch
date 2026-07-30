@@ -19,12 +19,14 @@ export default function ProjektePage() {
             Referenzen
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
-            Orte mit <span className="font-semibold">Bestand.</span>
+            <span className="font-semibold">Projekte</span>, die{' '}
+            <span className="font-semibold">Bestand</span> haben.
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
-            {projekte.length} realisierte Projekte — Neubau, Umbau und
-            Verdichtung, in der ganzen Schweiz. Jedes davon beginnt mit dem
-            Zuhören und endet mit einem Ort, der Bestand hat.
+            Von der ersten Skizze bis zur präzisen Umsetzung – jedes Projekt
+            ist Ausdruck seines Ortes und seiner Nutzenden. Die folgende
+            Auswahl zeigt einen Ausschnitt unserer Arbeit für Bauherrschaften
+            in der ganzen Schweiz.
           </p>
         </div>
 
