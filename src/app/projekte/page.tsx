@@ -34,9 +34,9 @@ export default function ProjektePage() {
       </Container>
 
       <WeiterLink
-        text="Hinter jedem Projekt steht unser Team."
-        href="/ueber-uns"
-        linkText="Über uns"
+        text="Von der ersten Idee bis zur Ausführung. Erfahren Sie, welche Leistungen wir dafür anbieten – vom Vorprojekt bis zum Generalplaner-Mandat."
+        href="/leistungen"
+        linkText="Leistungen"
       />
     </div>
   );
