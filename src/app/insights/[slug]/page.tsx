@@ -138,10 +138,13 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <FragenAntworten fragen={insight.fragen} />
 
             <div className="mt-20 md:mt-28 border-t border-mist pt-16">
-              <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
+              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+                Nächster Schritt
+              </p>
+              <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
                 Sprechen wir über Ihr Projekt.
               </h2>
-              <p className="text-graphite leading-relaxed mb-8">
+              <p className="text-lg text-graphite leading-relaxed mb-8">
                 Wir beraten Sie gerne — offen, konkret und ohne Verpflichtung.
               </p>
               <Button href="/kontakt" variant="text">

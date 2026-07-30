@@ -32,10 +32,10 @@ export default function ProjektePage() {
 
         <div className="max-w-3xl mt-24 md:mt-32 py-16 border-t border-mist">
           {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}
-          <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
+          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
             Architektur mit Verantwortung
           </h2>
-          <p className="text-graphite leading-relaxed mb-8">
+          <p className="text-lg text-graphite leading-relaxed mb-8">
             Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir Architektur,
             die Funktion, Gestaltung und Nachhaltigkeit verbindet – mit klarer Haltung
             und langfristigem Mehrwert.

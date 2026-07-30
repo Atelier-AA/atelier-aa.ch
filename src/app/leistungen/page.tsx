@@ -36,10 +36,10 @@ export default function LeistungenPage() {
         <Container>
           <div className="mb-16 max-w-3xl md:mb-24">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Leistungen</p>
-            <h1 className="text-4xl font-medium leading-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="border-l-[3px] border-ink pl-6 text-4xl font-medium leading-[1.1] tracking-tight text-ink md:pl-8 md:text-5xl lg:text-6xl">
               Architektur mit Klarheit
               <br />
-              und Verantwortung
+              und Verantwortung.
             </h1>
             <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
               Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten Idee
@@ -100,10 +100,13 @@ export default function LeistungenPage() {
 
         <Container>
           <div className="max-w-3xl border-t border-mist pt-16">
-            <h2 className="mb-6 text-2xl font-medium text-ink md:text-3xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Nächster Schritt
+            </p>
+            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
               Sie möchten bauen?
             </h2>
-            <p className="mb-8 leading-relaxed text-graphite">
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
               Ob Neubau, Sanierung oder Verdichtung – sprechen Sie mit uns über Ihr
               Projekt. In einem ersten Gespräch klären wir Potenzial, Rahmenbedingungen
               und die nächsten Schritte, unverbindlich und auf Ihre Situation

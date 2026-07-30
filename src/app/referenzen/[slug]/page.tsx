@@ -182,7 +182,10 @@ export default async function ProjektDetailPage({ params }: PageProps) {
       <section className="border-t border-mist py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="mb-6 text-4xl font-medium leading-tight text-ink md:text-5xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Nächster Schritt
+            </p>
+            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl">
               Planen Sie ein ähnliches Projekt?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">
