@@ -95,16 +95,7 @@ export default function HeroSlider() {
           bleiben, unabhängig vom jeweiligen Bild. */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/15 to-ink/75" />
 
-      <div className="relative z-10 flex h-full flex-col justify-between px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
-        <div className="flex items-start justify-between">
-          <p className="text-xs uppercase tracking-[0.22em] text-white/65">
-            Atelier AA Architekten
-          </p>
-          <p className="text-xs uppercase tracking-[0.22em] text-white/65">
-            Obfelden · Schweiz
-          </p>
-        </div>
-
+      <div className="relative z-10 flex h-full flex-col justify-end px-8 py-8 md:px-14 md:py-12 lg:px-20 lg:py-14">
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
           {/* Einheitliche Schriftstärke, bewusst ohne den fett/normal-Kontrast
               der Statement-Sätze weiter unten auf der Seite. */}
@@ -114,9 +105,9 @@ export default function HeroSlider() {
 
           <div className="flex items-end justify-between gap-6 md:flex-col md:items-end md:gap-4">
             <Link href={slides[current].href} className="group text-white">
-              <p className="text-lg font-medium">{slides[current].projekt}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.15em] text-white/60">
-                {ortMitKanton(slides[current])}
+              <p className="text-xl font-medium">{slides[current].projekt}</p>
+              <p className="mt-1 text-sm uppercase tracking-[0.15em] text-white/60">
+                {slides[current].ort}
               </p>
             </Link>
             <div className="flex gap-3">

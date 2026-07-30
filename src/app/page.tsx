@@ -28,8 +28,8 @@ export default function HomePage() {
       <HeroSlider />
       <IntroSection />
       <LeistungenSection />
-      <ReferenzenSection />
       <UeberUnsSection />
+      <ReferenzenSection />
       <InsightsSection />
       <WeiterLink
         text="Neubau, Umbau oder Verdichtung — sehen Sie, was wir dafür leisten."

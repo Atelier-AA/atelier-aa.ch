@@ -18,28 +18,28 @@ export default function IntroSection() {
           bleibendem <span className="font-semibold">Wert.</span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 items-end gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
-          <p className="max-w-[42ch] text-lg leading-relaxed text-graphite">
-            Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
-            sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
-            Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
-            Lebensqualität, Orientierung und Zugehörigkeit.
-          </p>
+        <div className="mt-14 grid grid-cols-1 items-start gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
-            <div className="relative aspect-[4/3] w-full bg-mist">
-              <Image
-                src="/images/projekte/mfh-sihlaurain/hero.jpg"
-                alt="Mehrfamilienhäuser Sihlaurain, Adliswil ZH"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1100px) 100vw, 40vw"
-              />
-            </div>
-            <div className="mt-6 text-right">
+            <p className="max-w-[42ch] text-lg leading-relaxed text-graphite">
+              Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
+              sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
+              Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
+              Lebensqualität, Orientierung und Zugehörigkeit.
+            </p>
+            <div className="mt-6">
               <Button href="/projekte" variant="text">
                 alle Projekte ansehen
               </Button>
             </div>
+          </div>
+          <div className="relative aspect-[4/3] w-full bg-mist">
+            <Image
+              src="/images/projekte/mfh-sihlaurain/hero.jpg"
+              alt="Mehrfamilienhäuser Sihlaurain, Adliswil ZH"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1100px) 100vw, 40vw"
+            />
           </div>
         </div>
       </Container>

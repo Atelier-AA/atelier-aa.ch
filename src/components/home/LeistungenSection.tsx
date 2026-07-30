@@ -2,15 +2,11 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { leistungsangebot } from '@/data/expertise';
 
-/** Nur der erste Satz eines Leistungstexts — als kurzer Teaser auf der Startseite. */
-function ersterSatz(text: string) {
-  const ende = text.indexOf('. ');
-  return ende === -1 ? text : text.slice(0, ende + 1);
-}
-
 /**
  * Kompetenzen als knappe, zweispaltige Übersicht statt der ausführlichen,
- * nummerierten Liste — Details und vollständige Texte stehen auf /leistungen.
+ * nummerierten Liste — jeder Punkt lässt sich per Klick aufklappen, steht
+ * aber standardmässig zugeklappt da. Details und vollständige Texte stehen
+ * zusätzlich auf /leistungen.
  */
 export default function LeistungenSection() {
   return (
@@ -23,12 +19,24 @@ export default function LeistungenSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
           {leistungsangebot.map((l) => (
-            <div key={l.titel}>
-              <h3 className="text-lg font-medium text-ink md:text-xl">{l.titel}</h3>
-              <p className="mt-2 text-graphite leading-relaxed">{ersterSatz(l.text)}</p>
-            </div>
+            <details key={l.titel} className="group border-b border-mist py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                <h3 className="text-lg font-medium text-ink transition-colors group-hover:text-graphite md:text-xl">
+                  {l.titel}
+                </h3>
+                {/* Plus-Zeichen, das beim Öffnen zum Minus wird. */}
+                <span
+                  aria-hidden="true"
+                  className="relative block h-3 w-3 shrink-0 text-stone"
+                >
+                  <span className="absolute top-1/2 left-0 block h-px w-3 bg-current" />
+                  <span className="absolute top-1/2 left-0 block h-px w-3 rotate-90 bg-current transition-transform duration-300 ease-out group-open:rotate-0" />
+                </span>
+              </summary>
+              <p className="mt-3 pr-8 text-graphite leading-relaxed">{l.text}</p>
+            </details>
           ))}
         </div>
 

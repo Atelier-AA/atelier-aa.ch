@@ -5,17 +5,11 @@ import Button from '@/components/ui/Button';
 import { insights } from '@/data/insights';
 import { formatDatum } from '@/lib/utils';
 
-/** Nur der erste Satz eines Insight-Leads — als kurzer Teaser auf der Startseite. */
-function ersterSatz(text: string) {
-  const ende = text.indexOf('. ');
-  return ende === -1 ? text : text.slice(0, ende + 1);
-}
-
 /**
- * Vier Fachbeiträge auf der Startseite, in derselben Bilddarstellung wie die
- * Referenzprojekte: quadratisches Bild, Titel und Kategorie blenden erst
- * beim Hover über einem dunklen Verlauf ein — statt des vorherigen
- * horizontal überlaufenden Streifens mit fest sichtbarem Text.
+ * Vier Fachbeiträge auf der Startseite, im selben quadratischen Bildstil wie
+ * die Referenzprojekte (inkl. Zoom beim Hover) — Titel und Datum stehen aber
+ * fest unter dem Bild statt erst beim Hover eingeblendet zu werden; auf
+ * Kategorie und Lead-Text wird hier bewusst verzichtet.
  */
 export default function InsightsSection() {
   const neueste = insights.slice(0, 4);
@@ -47,17 +41,13 @@ export default function InsightsSection() {
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                   sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <p className="truncate text-lg font-medium leading-tight text-white">
-                    {i.titel}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
-                    {i.kategorie} · {formatDatum(i.datum)}
-                  </p>
-                </div>
               </div>
-              <p className="mt-4 text-graphite leading-relaxed">{ersterSatz(i.lead)}</p>
+              <p className="mt-4 truncate text-lg font-medium leading-tight text-ink transition-colors group-hover:text-graphite">
+                {i.titel}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.1em] text-stone">
+                {formatDatum(i.datum)}
+              </p>
             </Link>
           ))}
         </div>

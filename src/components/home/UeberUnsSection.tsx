@@ -14,7 +14,7 @@ export default function UeberUnsSection() {
       <Container>
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Über uns</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
-          <div className="border-l-[3px] border-ink pl-6 md:pl-8">
+          <div>
             {/* Wörtlich von der Über-uns-Seite; tragende Begriffe fett,
                 der Rest der Zeile normal. */}
             <h2 className="max-w-[20ch] text-4xl font-normal leading-[1.15] tracking-tight text-ink md:text-5xl lg:text-6xl">
