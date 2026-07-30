@@ -7,14 +7,19 @@ import Button from '@/components/ui/Button';
  * tragenden Schlüsselwörter fett, der Rest der Zeile normal — nicht
  * umgekehrt. Daneben ein Bild eines Referenzprojekts statt einer Kennzahl
  * (Gründungsjahr): für Besucher ist das der relevantere Einstiegspunkt.
+ *
+ * Der Button steht bewusst in einer eigenen Grid-Zeile unterhalb von
+ * Überschrift und Fliesstext (nur in der Textspalte) — so richtet sich das
+ * Bild rechts nur an der Höhe von Überschrift und Text aus, nicht zusätzlich
+ * an der Höhe des Buttons.
  */
 export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
-          <div>
-            {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
+        <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
+          {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
+          <div className="lg:col-start-1 lg:row-start-1">
             <h2 className="max-w-[18ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
               Wir glauben an <span className="font-semibold">Architektur</span> mit
               bleibendem <span className="font-semibold">Wert.</span>
@@ -25,20 +30,22 @@ export default function IntroSection() {
               Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
               Lebensqualität, Orientierung und Zugehörigkeit.
             </p>
-            <div className="mt-6">
-              <Button href="/projekte" variant="text">
-                alle Projekte ansehen
-              </Button>
-            </div>
           </div>
-          <div className="relative min-h-[16rem] w-full bg-mist lg:min-h-0">
+
+          <div className="relative min-h-[16rem] w-full bg-mist lg:col-start-2 lg:row-start-1 lg:min-h-0">
             <Image
               src="/images/projekte/efh-jonen/17.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen"
               fill
               className="object-cover"
-              sizes="(max-width: 1100px) 100vw, 40vw"
+              sizes="(max-width: 1100px) 100vw, 50vw"
             />
+          </div>
+
+          <div className="lg:col-start-1 lg:row-start-2">
+            <Button href="/projekte" variant="text">
+              alle Projekte ansehen
+            </Button>
           </div>
         </div>
       </Container>
