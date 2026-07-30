@@ -1,53 +1,71 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import InsightCard from '@/components/insights/InsightCard';
 import { insights } from '@/data/insights';
+import { formatDatum } from '@/lib/utils';
+
+/** Nur der erste Satz eines Insight-Leads — als kurzer Teaser auf der Startseite. */
+function ersterSatz(text: string) {
+  const ende = text.indexOf('. ');
+  return ende === -1 ? text : text.slice(0, ende + 1);
+}
 
 /**
- * Die drei neuesten Fachbeiträge auf der Startseite.
- *
- * Als horizontal überlaufender Streifen statt eines starren Rasters — auf
- * dem Mobiltelefon liest sich das wie ein Magazin-Vorschau-Band, das man
- * durchwischt, statt drei Kacheln untereinander abzuscrollen.
- *
- * Zwei Gründe für den Abschnitt selbst: Besucher sehen, dass hier fachlich
- * gearbeitet wird, und die Beiträge werden von der Startseite aus verlinkt —
- * was ihre Auffindbarkeit deutlich verbessert, weil die Startseite die
- * stärkste Seite der Domain ist.
+ * Vier Fachbeiträge auf der Startseite, in derselben Bilddarstellung wie die
+ * Referenzprojekte: quadratisches Bild, Titel und Kategorie blenden erst
+ * beim Hover über einem dunklen Verlauf ein — statt des vorherigen
+ * horizontal überlaufenden Streifens mit fest sichtbarem Text.
  */
 export default function InsightsSection() {
-  const neueste = insights.slice(0, 3);
+  const neueste = insights.slice(0, 4);
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
-        <div className="mb-10 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
-            <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
-              Fachbeiträge aus unserer Arbeit
-            </h2>
-            <p className="mt-4 text-lg text-graphite leading-relaxed">
-              Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf — wir
-              schreiben über die Fragen, die uns Bauherrschaften stellen.
-            </p>
-          </div>
-          <Button href="/insights" variant="text" className="shrink-0">
-            alle Beiträge lesen
-          </Button>
+        <div className="mb-10 max-w-2xl md:mb-16">
+          <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
+          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
+            Fachbeiträge aus unserer Arbeit
+          </h2>
         </div>
 
-        {/* Negative Rand hebt den Container-Innenabstand auf, damit der
-            Streifen bis an dieselbe Kante reicht wie der Rest der Seite,
-            aber innerhalb der Inhaltsbreite bleibt (kein Vollbild-Bleed). */}
-        <div className="-mx-6 overflow-x-auto md:-mx-10 lg:-mx-16">
-          <div className="flex gap-8 px-6 pb-2 md:px-10 lg:px-16">
-            {neueste.map((i) => (
-              <div key={i.slug} className="w-[80%] shrink-0 sm:w-[55%] lg:w-[calc((100%-4rem)/3)]">
-                <InsightCard insight={i} />
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {neueste.map((i, idx) => (
+            <Link
+              key={i.slug}
+              href={`/insights/${i.slug}`}
+              className="group block min-w-0"
+              aria-label={`Beitrag lesen: ${i.titel}`}
+            >
+              <div className="relative aspect-square overflow-hidden bg-mist">
+                <Image
+                  src={i.bild}
+                  alt=""
+                  fill
+                  priority={idx < 2}
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                  sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="truncate text-lg font-medium leading-tight text-white">
+                    {i.titel}
+                  </p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
+                    {i.kategorie} · {formatDatum(i.datum)}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+              <p className="mt-4 text-graphite leading-relaxed">{ersterSatz(i.lead)}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-12 text-right md:mt-16">
+          <Button href="/insights" variant="text">
+            alle Beiträge lesen
+          </Button>
         </div>
       </Container>
     </section>

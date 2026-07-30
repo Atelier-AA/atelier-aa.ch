@@ -10,6 +10,11 @@ export const navigation: NavLink[] = [
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
+// Nicht im Hauptmenü, nur im Footer verlinkt.
+export const footerZusatz: NavLink[] = [
+  { href: '/haeufige-fragen', label: 'Häufige Fragen' },
+];
+
 export const footerLegal: NavLink[] = [
   { href: '/impressum', label: 'Impressum' },
   { href: '/datenschutzerklaerung', label: 'Datenschutzerklärung' },

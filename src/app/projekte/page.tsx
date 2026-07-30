@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
-import Werkliste from '@/components/projekte/Werkliste';
+import WeiterLink from '@/components/ui/WeiterLink';
 import { projekte } from '@/data/projekte';
-import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Projekte',
@@ -22,29 +21,21 @@ export default function ProjektePage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
             Projekte
           </h1>
+          {/* Erster Satz des alten Schlussabschnitts (Post 45), als Intro-Zeile
+              vorgezogen — derselbe Ton wie der Hero-Satz der Startseite. */}
+          <p className="mt-6 text-lg text-graphite leading-relaxed">
+            Jedes Projekt beginnt mit dem Zuhören.
+          </p>
         </div>
 
         <ProjekteFilter projekte={projekte} />
-
-        <div className="mt-32 md:mt-40">
-          <Werkliste projekte={projekte} />
-        </div>
-
-        <div className="max-w-3xl mt-24 md:mt-32 py-16 border-t border-mist">
-          {/* Abschnitt wörtlich von der alten Projektseite (Post 45). */}
-          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-            Architektur mit Verantwortung
-          </h2>
-          <p className="text-lg text-graphite leading-relaxed mb-8">
-            Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir Architektur,
-            die Funktion, Gestaltung und Nachhaltigkeit verbindet – mit klarer Haltung
-            und langfristigem Mehrwert.
-          </p>
-          <Button href="/ueber-uns" variant="text">
-            Mehr über uns
-          </Button>
-        </div>
       </Container>
+
+      <WeiterLink
+        text="Wer hat diese Projekte realisiert?"
+        href="/ueber-uns"
+        linkText="Über uns"
+      />
     </div>
   );
 }

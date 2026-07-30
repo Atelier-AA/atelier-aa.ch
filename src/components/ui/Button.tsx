@@ -32,13 +32,14 @@ export default function Button({
 }: ButtonProps) {
   const classes = cn(base, variants[variant], className);
 
-  // `translateX(0.2em)` beim Hover, 0.3s — exakt wie
-  // `.wp-block-button .wp-block-button__link:hover:before` im alten Theme.
+  // Einheitlicher Aufbau für jeden "Alle ansehen"/Weiter-Verweis auf der
+  // Webseite: zuerst der Text, danach der Pfeil, der beim Hover nach rechts
+  // wegrutscht.
   const content =
     variant === 'text' ? (
       <>
-        <Arrow className="w-[50px] h-[15px] transition-transform duration-300 ease-out group-hover:translate-x-[0.2em]" />
         {children}
+        <Arrow className="w-[50px] h-[15px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em]" />
       </>
     ) : (
       children

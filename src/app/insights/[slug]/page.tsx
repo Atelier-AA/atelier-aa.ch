@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -166,13 +165,10 @@ export default async function InsightDetailPage({ params }: PageProps) {
                 <InsightCard key={i.slug} insight={i} />
               ))}
             </div>
-            <div className="mt-16">
-              <Link
-                href="/insights"
-                className="text-sm uppercase tracking-[0.1em] text-ink hover:text-stone transition-colors"
-              >
-                Alle Beiträge
-              </Link>
+            <div className="mt-16 text-right">
+              <Button href="/insights" variant="text">
+                alle Beiträge lesen
+              </Button>
             </div>
           </Container>
         </section>

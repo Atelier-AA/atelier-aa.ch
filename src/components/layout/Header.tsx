@@ -77,40 +77,54 @@ export default function Header() {
             <Logo collapsed={collapsed} />
           </Link>
 
-          {/* Burger, der beim Öffnen zum Schliessen-Kreuz wird. Liegt mit z-50
-              über dem Menü-Overlay (z-40) und ist damit auch im offenen Zustand
-              bedienbar — deshalb braucht das Overlay kein eigenes X.
-              Die äusseren Linien wandern um genau ihren Abstand zur Mitte
-              (gap 6px + 1px Linie = 7px) und kreuzen sich dort exakt.
-              Auf allen Breiten sichtbar — es gibt keine horizontale
-              Desktop-Navigation mehr, nur noch das Burger-Menü. */}
-          <button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
-            aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-          >
-            <span
-              className={cn(
-                'block h-px w-6 bg-current transition-transform duration-300 ease-out',
-                mobileOpen && 'translate-y-[7px] rotate-45'
-              )}
-            />
-            <span
-              className={cn(
-                'block h-px w-6 bg-current transition-opacity duration-300 ease-out',
-                mobileOpen && 'opacity-0'
-              )}
-            />
-            <span
-              className={cn(
-                'block h-px w-6 bg-current transition-transform duration-300 ease-out',
-                mobileOpen && '-translate-y-[7px] -rotate-45'
-              )}
-            />
-          </button>
+          <div className="flex items-center gap-8">
+            {/* Die zwei meistgesuchten Ziele direkt erreichbar, ohne Umweg
+                über das Burger-Menü — alle übrigen Menüpunkte bleiben dort. */}
+            <nav
+              aria-label="Kurznavigation"
+              className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
+            >
+              <Link href="/projekte" className="transition-opacity hover:opacity-60">
+                Projekte
+              </Link>
+              <Link href="/kontakt" className="transition-opacity hover:opacity-60">
+                Kontakt
+              </Link>
+            </nav>
+
+            {/* Burger, der beim Öffnen zum Schliessen-Kreuz wird. Liegt mit z-50
+                über dem Menü-Overlay (z-40) und ist damit auch im offenen Zustand
+                bedienbar — deshalb braucht das Overlay kein eigenes X. Die
+                äusseren Linien wandern um genau ihren Abstand zur Mitte
+                (gap 6px + 1px Linie = 7px) und kreuzen sich dort exakt. */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
+              aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+            >
+              <span
+                className={cn(
+                  'block h-px w-6 bg-current transition-transform duration-300 ease-out',
+                  mobileOpen && 'translate-y-[7px] rotate-45'
+                )}
+              />
+              <span
+                className={cn(
+                  'block h-px w-6 bg-current transition-opacity duration-300 ease-out',
+                  mobileOpen && 'opacity-0'
+                )}
+              />
+              <span
+                className={cn(
+                  'block h-px w-6 bg-current transition-transform duration-300 ease-out',
+                  mobileOpen && '-translate-y-[7px] -rotate-45'
+                )}
+              />
+            </button>
+          </div>
         </Container>
       </header>
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />

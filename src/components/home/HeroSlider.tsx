@@ -106,10 +106,10 @@ export default function HeroSlider() {
         </div>
 
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
-          {/* Wörtlich aus dem Schlusssatz der Über-uns-Seite — kein neuer
-              Text, nur gross und vorgezogen. */}
+          {/* Einheitliche Schriftstärke, bewusst ohne den fett/normal-Kontrast
+              der Statement-Sätze weiter unten auf der Seite. */}
           <h1 className="max-w-[16ch] text-[2.75rem] font-semibold leading-[0.94] tracking-tight text-white sm:text-[4rem] lg:text-[6rem]">
-            Orte mit <span className="font-extralight">Bestand.</span>
+            Architektur mit Bestand
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:flex-col md:items-end md:gap-4">

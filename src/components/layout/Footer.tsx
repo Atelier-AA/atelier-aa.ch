@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Logo from './Logo';
-import { navigation, footerLegal } from '@/data/navigation';
+import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 
 /**
@@ -64,6 +64,13 @@ export default function Footer() {
             <h3 className={spaltenTitel}>Navigation</h3>
             <ul>
               {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className={verweis}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              {footerZusatz.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={verweis}>
                     {item.label}

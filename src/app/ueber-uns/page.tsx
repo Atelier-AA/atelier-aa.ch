@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import TeamGrid from '@/components/ueber-uns/TeamGrid';
 import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
+import WeiterLink from '@/components/ui/WeiterLink';
 import { team } from '@/data/team';
 
 export const metadata: Metadata = {
@@ -19,10 +20,12 @@ export default function UeberUnsPage() {
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Über uns
             </p>
-            {/* Überschrift und Absätze wörtlich von der alten Seite (Post 2). */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-[1.1] tracking-tight mb-10 border-l-[3px] border-ink pl-6 md:pl-8">
-              Wir gestalten Architektur mit Verantwortung – für Menschen, Orte und
-              Zukunft.
+            {/* Überschrift und Absätze wörtlich von der alten Seite (Post 2);
+                tragende Begriffe fett, der Rest der Zeile normal. */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-10 border-l-[3px] border-ink pl-6 md:pl-8">
+              Wir gestalten <span className="font-semibold">Architektur</span> mit
+              Verantwortung – für Menschen, Orte und{' '}
+              <span className="font-semibold">Zukunft.</span>
             </h1>
             <div className="space-y-6 text-graphite leading-relaxed">
               <p className="text-lg">
@@ -72,6 +75,12 @@ export default function UeberUnsPage() {
       </div>
 
       <OffeneStellen />
+
+      <WeiterLink
+        text="Wie wir arbeiten: von der Machbarkeitsstudie bis zur Bauleitung."
+        href="/leistungen"
+        linkText="Leistungen"
+      />
     </>
   );
 }

@@ -1,50 +1,41 @@
-import Link from 'next/link';
 import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
 import { leistungsangebot } from '@/data/expertise';
 
+/** Nur der erste Satz eines Leistungstexts — als kurzer Teaser auf der Startseite. */
+function ersterSatz(text: string) {
+  const ende = text.indexOf('. ');
+  return ende === -1 ? text : text.slice(0, ende + 1);
+}
+
 /**
- * Leistungsübersicht auf der Startseite als nummerierte Liste statt reinem
- * Fliesstext — jede Zeile verschiebt sich beim Hover leicht nach rechts,
- * der Pfeil blendet ein. Alle sieben Leistungen sind die echten Titel aus
- * den Leistungsdaten, nicht neu erfunden.
+ * Kompetenzen als knappe, zweispaltige Übersicht statt der ausführlichen,
+ * nummerierten Liste — Details und vollständige Texte stehen auf /leistungen.
  */
 export default function LeistungenSection() {
   return (
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-widest text-stone">Leistungen</p>
-            <h2 className="text-2xl font-medium leading-tight text-ink md:text-3xl">
-              Was wir tun
-            </h2>
-          </div>
-          <Link
-            href="/leistungen"
-            className="text-sm uppercase tracking-widest text-stone transition-colors hover:text-ink"
-          >
-            alle Leistungen →
-          </Link>
+        <div className="mb-10 max-w-2xl md:mb-14">
+          <p className="mb-3 text-xs uppercase tracking-widest text-stone">Kompetenzen</p>
+          <h2 className="text-2xl font-medium leading-tight text-ink md:text-3xl">
+            Wofür Sie uns beauftragen können
+          </h2>
         </div>
 
-        <div className="border-t border-mist">
-          {leistungsangebot.map((l, idx) => (
-            <Link
-              key={l.titel}
-              href="/leistungen"
-              className="group flex items-center gap-6 border-b border-mist py-5 transition-[padding] duration-300 hover:pl-3 md:py-6"
-            >
-              <span className="w-8 shrink-0 text-sm text-stone">
-                {String(idx + 1).padStart(2, '0')}
-              </span>
-              <span className="flex-1 text-xl font-medium text-ink transition-colors group-hover:text-graphite md:text-2xl lg:text-3xl">
-                {l.titel}
-              </span>
-              <span className="translate-x-[-8px] text-xl text-ink opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-                →
-              </span>
-            </Link>
+        <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+          {leistungsangebot.map((l) => (
+            <div key={l.titel}>
+              <h3 className="text-lg font-medium text-ink md:text-xl">{l.titel}</h3>
+              <p className="mt-2 text-graphite leading-relaxed">{ersterSatz(l.text)}</p>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-right md:mt-16">
+          <Button href="/leistungen" variant="text">
+            alle Leistungen ansehen
+          </Button>
         </div>
       </Container>
     </section>
