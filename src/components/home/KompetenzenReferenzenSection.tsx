@@ -14,10 +14,12 @@ const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
  * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
  * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
- * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen,
- * statt dass sie nur mit Abstand nebeneinanderstehen. Das Referenzen-Raster
- * bleibt bewusst auf `max-w-md` begrenzt, damit die Bilder nicht grösser
- * wirken als die Kompetenzen-Liste daneben.
+ * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
+ * Überschrift und Referenzen-Raster stehen in derselben Grid-Zeile, damit
+ * die Bilder oben mit der Überschrift abschliessen statt tiefer zu wirken;
+ * die beiden "alle ansehen"-Links stehen in einer eigenen Zeile darunter,
+ * auf gleicher Höhe. Das Referenzen-Raster bleibt auf `max-w-md` begrenzt,
+ * damit die Bilder nicht grösser wirken als die Kompetenzen-Liste daneben.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -25,20 +27,16 @@ export default function KompetenzenReferenzenSection() {
   return (
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
-        <div className="mb-12 max-w-2xl md:mb-16">
-          <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-            Kompetenzen &amp; Projekte
-          </p>
-          <h2 className="text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-            Sieben <span className="font-semibold">Kompetenzen</span>, sichtbar in
-            echten <span className="font-semibold">Projekten.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-x-14 gap-y-16 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: zweispaltig, jeder Punkt per Klick aufklappbar,
-              standardmässig zugeklappt. */}
-          <div>
+        <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
+          {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
+          <div className="lg:col-start-1 lg:row-start-1">
+            <p className="mb-3 text-xs uppercase tracking-widest text-stone">
+              Kompetenzen &amp; Projekte
+            </p>
+            <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
+              Sieben <span className="font-semibold">Kompetenzen</span>, sichtbar in
+              echten <span className="font-semibold">Projekten.</span>
+            </h2>
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {leistungsangebot.map((l) => (
                 <details key={l.titel} className="group border-b border-mist py-4">
@@ -58,32 +56,37 @@ export default function KompetenzenReferenzenSection() {
                 </details>
               ))}
             </div>
-            <div className="mt-8">
-              <Button href="/leistungen" variant="text">
-                alle Leistungen ansehen
-              </Button>
-            </div>
+          </div>
+
+          <div className="lg:col-start-1 lg:row-start-2">
+            <Button href="/leistungen" variant="text">
+              alle Leistungen ansehen
+            </Button>
           </div>
 
           {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
               Komposition — nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
-          <div className="hidden bg-mist lg:block" aria-hidden="true" />
+          <div
+            className="hidden bg-mist lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:block"
+            aria-hidden="true"
+          />
 
           {/* Referenzen: als kleineres 2×2-Raster statt vier grossen Karten
               in einer vollen Reihe, damit sie neben der Kompetenzen-Liste
               nicht dominieren. */}
-          <div>
+          <div className="lg:col-start-3 lg:row-start-1">
             <div className="grid max-w-md grid-cols-2 gap-4 sm:gap-6">
               {projekte.map((p, idx) => (
                 <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
-            <div className="mt-8">
-              <Button href="/projekte" variant="text">
-                alle Projekte ansehen
-              </Button>
-            </div>
+          </div>
+
+          <div className="lg:col-start-3 lg:row-start-2">
+            <Button href="/projekte" variant="text">
+              alle Projekte ansehen
+            </Button>
           </div>
         </div>
       </Container>
