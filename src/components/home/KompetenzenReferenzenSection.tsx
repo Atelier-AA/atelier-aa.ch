@@ -12,10 +12,12 @@ const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
 
 /**
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
- * getrennten Sektionen: links knapp, was wir leisten, rechts, was daraus
- * entsteht — beides unter einer gemeinsamen Überschrift, die beide Seiten
- * verbindet. Das Referenzen-Raster ist bewusst auf `max-w-md` begrenzt,
- * damit die Bilder nicht grösser wirken als die Kompetenzen-Liste daneben.
+ * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
+ * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
+ * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen,
+ * statt dass sie nur mit Abstand nebeneinanderstehen. Das Referenzen-Raster
+ * bleibt bewusst auf `max-w-md` begrenzt, damit die Bilder nicht grösser
+ * wirken als die Kompetenzen-Liste daneben.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -33,11 +35,11 @@ export default function KompetenzenReferenzenSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[minmax(0,20rem)_1fr]">
-          {/* Kompetenzen: kompakt, jeder Punkt per Klick aufklappbar,
+        <div className="grid grid-cols-1 gap-x-14 gap-y-16 lg:grid-cols-[1fr_1px_1fr]">
+          {/* Kompetenzen: zweispaltig, jeder Punkt per Klick aufklappbar,
               standardmässig zugeklappt. */}
           <div>
-            <div>
+            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {leistungsangebot.map((l) => (
                 <details key={l.titel} className="group border-b border-mist py-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
@@ -56,12 +58,17 @@ export default function KompetenzenReferenzenSection() {
                 </details>
               ))}
             </div>
-            <div className="mt-8 text-right">
+            <div className="mt-8">
               <Button href="/leistungen" variant="text">
                 alle Leistungen ansehen
               </Button>
             </div>
           </div>
+
+          {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
+              Komposition — nur ab Desktop-Breite, wo beide Seiten
+              nebeneinander stehen. */}
+          <div className="hidden bg-mist lg:block" aria-hidden="true" />
 
           {/* Referenzen: als kleineres 2×2-Raster statt vier grossen Karten
               in einer vollen Reihe, damit sie neben der Kompetenzen-Liste
@@ -72,7 +79,7 @@ export default function KompetenzenReferenzenSection() {
                 <ProjektCard key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
-            <div className="mt-8 text-right">
+            <div className="mt-8">
               <Button href="/projekte" variant="text">
                 alle Projekte ansehen
               </Button>
