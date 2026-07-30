@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Arrow from '@/components/ui/Arrow';
 import { formatDatum } from '@/lib/utils';
 import type { Insight } from '@/types';
 
@@ -10,37 +9,38 @@ interface InsightCardProps {
 }
 
 /**
- * Beitragskarte in der Insights-Übersicht. Hover-Verhalten wie bei den
- * Projektkarten: Overlay mit weissem Pfeil, Bild leicht vergrössert.
+ * Gleiches Karten-Muster wie ProjektCard auf der Projektseite: quadratisches
+ * Bild, Titel und Metadaten als Verlauf-Overlay beim Hover statt permanent
+ * darunter.
  */
 export default function InsightCard({ insight, priority = false }: InsightCardProps) {
   return (
     <Link
       href={`/insights/${insight.slug}`}
-      className="group block"
+      className="group block min-w-0"
       aria-label={`Beitrag lesen: ${insight.titel}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+      <div className="relative aspect-square overflow-hidden bg-mist">
         <Image
           src={insight.bild}
           alt=""
           fill
           priority={priority}
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+          sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">
-          <Arrow className="w-[76px] h-[30px] -translate-x-[10px] text-white transition-transform duration-[400ms] ease-out group-hover:translate-x-0" />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <p className="truncate text-lg font-medium leading-tight text-white">
+            {insight.titel}
+          </p>
+          <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
+            {insight.kategorie} · {formatDatum(insight.datum)}
+          </p>
         </div>
       </div>
-
-      <p className="mt-5 text-xs uppercase tracking-[0.1em] text-stone">
-        {insight.kategorie} · {formatDatum(insight.datum)}
-      </p>
-      <h3 className="mt-2 text-[1.5rem] md:text-[1.85rem] font-medium leading-tight text-ink transition-colors group-hover:text-graphite">
-        {insight.titel}
-      </h3>
-      <p className="mt-3 text-graphite leading-relaxed">{insight.lead}</p>
     </Link>
   );
 }

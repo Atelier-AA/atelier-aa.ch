@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import InsightCard from '@/components/insights/InsightCard';
+import Eingeblendet from '@/components/ui/Eingeblendet';
 import Button from '@/components/ui/Button';
 import { insights } from '@/data/insights';
 
@@ -28,9 +29,14 @@ export default function InsightsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-24">
+        <div className="flex flex-wrap gap-x-5 gap-y-8 xl:gap-y-16">
           {insights.map((insight, idx) => (
-            <InsightCard key={insight.slug} insight={insight} priority={idx < 2} />
+            <Eingeblendet
+              key={insight.slug}
+              className="w-full sm:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.834rem)]"
+            >
+              <InsightCard insight={insight} priority={idx < 2} />
+            </Eingeblendet>
           ))}
         </div>
 
