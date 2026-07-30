@@ -49,8 +49,9 @@ export default function KontaktPage() {
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Kontakt
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-10 max-w-lg">
-              Der erste Schritt ist ein Gespräch.
+            <h1 className="text-4xl font-normal leading-tight text-ink mb-10 max-w-lg md:text-5xl lg:text-6xl">
+              Der erste <span className="font-semibold">Schritt</span> ist ein{' '}
+              <span className="font-semibold">Gespräch.</span>
             </h1>
             <p className="text-lg text-graphite leading-relaxed max-w-md">
               Wir stehen für einen offenen, direkten Austausch und freuen uns über

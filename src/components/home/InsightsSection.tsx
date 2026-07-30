@@ -19,8 +19,9 @@ export default function InsightsSection() {
       <Container>
         <div className="mb-10 max-w-2xl md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
-          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
-            Fachbeiträge aus unserer Arbeit
+          <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">
+            <span className="font-semibold">Fachbeiträge</span> aus unserer{' '}
+            <span className="font-semibold">Arbeit</span>
           </h2>
           <p className="mt-4 text-lg text-graphite leading-relaxed">
             Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf — wir

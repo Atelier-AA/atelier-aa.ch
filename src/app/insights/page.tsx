@@ -16,10 +16,10 @@ export default function InsightsPage() {
       <Container>
         <div className="max-w-3xl mb-16 md:mb-24">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
-            Gedanken zu Architektur
+          <h1 className="text-4xl font-normal leading-tight text-ink md:text-5xl lg:text-6xl">
+            Gedanken zu <span className="font-semibold">Architektur</span>
             <br />
-            und Planung
+            und <span className="font-semibold">Planung</span>
           </h1>
           <p className="mt-10 text-lg md:text-xl text-graphite leading-relaxed">
             Wie verändert sich unser Beruf, wenn Werkzeuge mehr können? Was heisst
