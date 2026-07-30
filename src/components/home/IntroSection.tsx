@@ -12,7 +12,7 @@ export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
             {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
             <h2 className="max-w-[18ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
@@ -31,7 +31,7 @@ export default function IntroSection() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[4/3] w-full bg-mist">
+          <div className="relative min-h-[16rem] w-full bg-mist lg:min-h-0">
             <Image
               src="/images/projekte/efh-jonen/17.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen"
