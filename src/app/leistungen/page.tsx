@@ -5,7 +5,7 @@ import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
 import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
-  title: 'Leistungen',
+  title: 'Disziplinen',
   description:
     'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, Bauleitung und Generalplanung für Wohnen, Arbeitswelt, öffentliche, Bildungs- und Gesundheitsbauten in der ganzen Schweiz.',
   alternates: { canonical: '/leistungen' },
@@ -16,7 +16,7 @@ export default function LeistungenPage() {
     <div className="pt-32 md:pt-40">
       <Container>
         <div className="mb-16 max-w-3xl md:mb-24">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Leistungen</p>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Disziplinen</p>
           {/* Tragende Begriffe fett, der Rest der Zeile normal. */}
           <h1 className="border-l-[3px] border-ink pl-6 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:pl-8 md:text-5xl lg:text-6xl">
             <span className="font-semibold">Architektur</span> mit Klarheit
@@ -49,7 +49,7 @@ export default function LeistungenPage() {
               Angebot
             </p>
             <h2 className="text-3xl font-medium leading-tight text-ink md:text-4xl">
-              Expertise
+              Disziplinen
             </h2>
           </div>
           <LeistungenPlates />

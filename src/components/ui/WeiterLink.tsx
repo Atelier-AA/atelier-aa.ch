@@ -11,7 +11,7 @@ interface WeiterLinkProps {
  * Dezenter Verweis am Seitenende zur nächsten thematisch sinnvollen Seite —
  * ein kurzer Satz plus Pfeil-Link, statt eines schweren, dunkel hinterlegten
  * Blocks. Führt Besucher konsequent durch die Seite: Startseite → Projekte,
- * Projekte → Über uns, Über uns → Leistungen.
+ * Projekte → Disziplinen (/leistungen), Atelier (/ueber-uns) → Disziplinen.
  */
 export default function WeiterLink({ text, href, linkText }: WeiterLinkProps) {
   return (

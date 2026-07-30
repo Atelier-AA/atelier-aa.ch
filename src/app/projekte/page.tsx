@@ -46,11 +46,11 @@ export default function ProjektePage() {
             Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
             Architektur, die Funktion, Gestaltung und Nachhaltigkeit
             verbindet – mit klarer Haltung und langfristigem Mehrwert.
-            Erfahren Sie, welche Leistungen wir dafür anbieten – vom
+            Erfahren Sie, welche Disziplinen wir dafür anbieten – vom
             Vorprojekt bis zum Generalplaner-Mandat.
           </p>
           <Button href="/leistungen" variant="text">
-            Leistungen ansehen
+            Disziplinen ansehen
           </Button>
         </div>
       </Container>

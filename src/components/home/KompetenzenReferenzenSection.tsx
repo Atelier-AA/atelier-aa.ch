@@ -50,7 +50,7 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
 }
 
 /**
- * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
+ * Disziplinen und Referenzen in einem gemeinsamen Abschnitt statt zwei
  * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
  * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
  * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
@@ -67,14 +67,14 @@ export default function KompetenzenReferenzenSection() {
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-          Kompetenzen &amp; Projekte
+          Disziplinen &amp; Projekte
         </p>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
+          {/* Disziplinen: Überschrift plus zweispaltige, aufklappbare Liste. */}
           <div className="lg:col-start-1 lg:row-start-1">
             <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-              Sieben <span className="font-semibold">Kompetenzen</span>, sichtbar in
+              Sieben <span className="font-semibold">Disziplinen</span>, sichtbar in
               echten <span className="font-semibold">Projekten.</span>
             </h2>
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
@@ -100,11 +100,11 @@ export default function KompetenzenReferenzenSection() {
 
           <div className="lg:col-start-1 lg:row-start-2">
             <Button href="/leistungen" variant="text">
-              alle Leistungen ansehen
+              alle Disziplinen ansehen
             </Button>
           </div>
 
-          {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
+          {/* Trennlinie: bindet Disziplinen und Referenzen visuell zu einer
               Komposition — nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
           <div
