@@ -21,10 +21,9 @@ export default function ProjektePage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
             Projekte
           </h1>
-          {/* Erster Satz des alten Schlussabschnitts (Post 45), als Intro-Zeile
-              vorgezogen — derselbe Ton wie der Hero-Satz der Startseite. */}
           <p className="mt-6 text-lg text-graphite leading-relaxed">
-            Jedes Projekt beginnt mit dem Zuhören.
+            {projekte.length} realisierte Projekte — Neubau, Umbau und
+            Verdichtung, in der ganzen Schweiz.
           </p>
         </div>
 
@@ -32,7 +31,7 @@ export default function ProjektePage() {
       </Container>
 
       <WeiterLink
-        text="Wer hat diese Projekte realisiert?"
+        text="Hinter jedem Projekt steht unser Team."
         href="/ueber-uns"
         linkText="Über uns"
       />
