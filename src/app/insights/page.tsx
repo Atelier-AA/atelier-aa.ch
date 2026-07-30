@@ -35,10 +35,13 @@ export default function InsightsPage() {
         </div>
 
         <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+            Nächster Schritt
+          </p>
+          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
             Sie haben ein Vorhaben?
           </h2>
-          <p className="text-graphite leading-relaxed mb-8">
+          <p className="mb-8 text-lg text-graphite leading-relaxed">
             Ob Neubau, Umbau oder eine erste Machbarkeitsfrage – wir hören zu und sagen
             Ihnen offen, was wir für sinnvoll halten.
           </p>
