@@ -85,27 +85,40 @@ export default function HeroSlider() {
             alt={`${slide.projekt}, ${ortMitKanton(slide)}`}
             fill
             priority={idx === 0}
-            className="object-cover"
+            className="object-cover opacity-[0.62]"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
         </div>
       ))}
+      {/* Gradient über allen Slides statt pro Slide dupliziert — von leicht
+          oben bis kräftig unten, damit Kopf- und Fusszeile immer lesbar
+          bleiben, unabhängig vom jeweiligen Bild. */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/15 to-ink/75" />
 
-      <div className="absolute bottom-10 md:bottom-16 left-0 right-0 z-10">
-        <div className="mx-auto w-full max-w-content px-6 md:px-10 lg:px-16">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-            <Link href={slides[current].href} className="text-white group">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-                {slides[current].projekt}
-                {/* Ort mit Kantonskürzel, uppercase und gesperrt wie
-                    `.referenzen__ort` im alten Theme. */}
-                <span className="block text-base md:text-lg mt-2 uppercase tracking-[0.1em] opacity-80">
-                  {ortMitKanton(slides[current])}
-                </span>
-              </h1>
+      <div className="relative z-10 flex h-full flex-col justify-between px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
+        <div className="flex items-start justify-between">
+          <p className="text-xs uppercase tracking-[0.22em] text-white/65">
+            Atelier AA Architekten
+          </p>
+          <p className="text-xs uppercase tracking-[0.22em] text-white/65">
+            Obfelden · Schweiz
+          </p>
+        </div>
+
+        <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
+          {/* Wörtlich aus dem Schlusssatz der Über-uns-Seite — kein neuer
+              Text, nur gross und vorgezogen. */}
+          <h1 className="max-w-[16ch] text-[2.75rem] font-semibold leading-[0.94] tracking-tight text-white sm:text-[4rem] lg:text-[6rem]">
+            Orte mit <span className="font-extralight">Bestand.</span>
+          </h1>
+
+          <div className="flex items-end justify-between gap-6 md:flex-col md:items-end md:gap-4">
+            <Link href={slides[current].href} className="group text-white">
+              <p className="text-lg font-medium">{slides[current].projekt}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.15em] text-white/60">
+                {ortMitKanton(slides[current])}
+              </p>
             </Link>
-
             <div className="flex gap-3">
               {slides.map((_, idx) => (
                 <button

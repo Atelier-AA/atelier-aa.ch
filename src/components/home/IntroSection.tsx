@@ -2,39 +2,38 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 
 /**
- * Asymmetrischer Split statt einer zentrierten Textspalte: die Haltung
- * grossformatig links, die erklärenden Sätze schmaler rechts, durch eine
- * feine Linie getrennt — wie ein Manifest, nicht wie ein Absatz.
+ * Manifest-Satz mit Gewichts-Kontrast innerhalb derselben Zeile (fett/dünn
+ * gemischt, gleiche Schriftfamilie) statt eines gleichmässig gesetzten
+ * Titels — dazu eine echte Kennzahl (Gründungsjahr) als grosses Gegenstück
+ * zum Fliesstext, um die Fläche nicht nur mit Text zu füllen.
  */
 export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[7fr_5fr] lg:gap-16">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-stone mb-6">
-              Atelier AA Architekten
-            </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-[1.05] tracking-tight">
-              Wir glauben an Architektur mit bleibendem Wert.
-            </h2>
-          </div>
+        {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
+        <h2 className="max-w-[18ch] text-[2rem] font-medium leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
+          Wir glauben an <span className="font-light text-graphite">Architektur</span> mit
+          bleibendem <span className="font-light text-graphite">Wert.</span>
+        </h2>
 
-          {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
-          <div className="lg:border-l lg:border-mist lg:pl-16 lg:pt-2">
-            <p className="text-lg text-graphite leading-relaxed mb-4">
-              Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität
-              in sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen
-              und Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie
-              schafft Lebensqualität, Orientierung und Zugehörigkeit.
+        <div className="mt-14 grid grid-cols-1 items-end gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
+          <p className="max-w-[42ch] text-lg leading-relaxed text-graphite">
+            Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
+            sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
+            Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
+            Lebensqualität, Orientierung und Zugehörigkeit.
+          </p>
+          <div className="text-left lg:text-right">
+            <p className="text-[3rem] font-semibold leading-none tracking-tight text-ink sm:text-[4rem] lg:text-[5rem]">
+              2021
             </p>
-            <p className="text-lg text-graphite leading-relaxed mb-8">
-              Entdecken Sie Projekte, die aus Haltung entstehen und für die Zukunft
-              gedacht sind.
-            </p>
-            <Button href="/projekte" variant="text">
-              alle Projekte ansehen
-            </Button>
+            <p className="mt-2 text-sm text-stone">gegründet in Obfelden</p>
+            <div className="mt-6">
+              <Button href="/projekte" variant="text">
+                alle Projekte ansehen
+              </Button>
+            </div>
           </div>
         </div>
       </Container>
