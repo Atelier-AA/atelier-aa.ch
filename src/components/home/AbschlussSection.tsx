@@ -2,9 +2,9 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 
 /**
- * Abschliessender Kontakt-Aufruf der Startseite: Statement-Satz und zwei
- * Wege (Kontakt aufnehmen oder weiter zu den Projekten) — bewusst ohne
- * Bild oder Skizze daneben, rein textbasiert.
+ * Abschliessender Kontakt-Aufruf der Startseite: Statement-Satz und ein
+ * einziger, klarer Weg (Kontakt aufnehmen) — bewusst ohne Bild, Skizze oder
+ * zweiten Link daneben, damit die Aussage nicht verwässert wird.
  */
 export default function AbschlussSection() {
   return (
@@ -19,12 +19,9 @@ export default function AbschlussSection() {
             Ob erste Idee oder konkretes Vorhaben — wir hören zu und sagen Ihnen
             offen, was wir für sinnvoll halten.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-4">
+          <div className="mt-8">
             <Button href="/kontakt" variant="primary">
               Kontakt aufnehmen
-            </Button>
-            <Button href="/projekte" variant="text">
-              alle Projekte ansehen
             </Button>
           </div>
         </div>
