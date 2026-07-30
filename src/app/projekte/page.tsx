@@ -23,7 +23,8 @@ export default function ProjektePage() {
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
             {projekte.length} realisierte Projekte — Neubau, Umbau und
-            Verdichtung, in der ganzen Schweiz.
+            Verdichtung, in der ganzen Schweiz. Jedes davon beginnt mit dem
+            Zuhören und endet mit einem Ort, der Bestand hat.
           </p>
         </div>
 
