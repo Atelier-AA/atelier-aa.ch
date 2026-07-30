@@ -18,8 +18,8 @@ export default function ProjektePage() {
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Referenzen
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
-            Projekte
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
+            Orte mit <span className="font-semibold">Bestand.</span>
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
             {projekte.length} realisierte Projekte — Neubau, Umbau und
