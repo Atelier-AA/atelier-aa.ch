@@ -22,7 +22,7 @@ export default function UeberUnsPage() {
             </p>
             {/* Überschrift und Absätze wörtlich von der alten Seite (Post 2);
                 tragende Begriffe fett, der Rest der Zeile normal. */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-10 border-l-[3px] border-ink pl-6 md:pl-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-10">
               Wir gestalten <span className="font-semibold">Architektur</span> mit
               Verantwortung – für Menschen, Orte und{' '}
               <span className="font-semibold">Zukunft.</span>
