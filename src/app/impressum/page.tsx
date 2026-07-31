@@ -113,19 +113,6 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
-                Verweise auf fremde Websites
-              </h2>
-              <p>
-                Diese Website enthält Links zu Websites Dritter, unter anderem zu unserem
-                Immobilienpartner Elindo Immobilien GmbH. Für deren Inhalte sind
-                ausschliesslich die jeweiligen Anbieter verantwortlich. Zum Zeitpunkt der
-                Verlinkung waren keine rechtswidrigen Inhalte erkennbar; eine dauernde
-                inhaltliche Kontrolle ist ohne konkreten Anlass nicht zumutbar.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
                 Urheberrecht
               </h2>
               <p>

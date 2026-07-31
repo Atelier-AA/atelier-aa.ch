@@ -1,5 +1,3 @@
-import type { InsightFrage } from '@/types';
-
 /**
  * Inhalte der Startseiten-Abschnitte.
  *
@@ -88,41 +86,7 @@ export const stimmen = [
 /** Zahlen zum Büro. Nur belegbare Angaben verwenden. */
 export const zahlen = [
   { wert: '2021', label: 'gegründet in Obfelden' },
-  { wert: '15+', label: 'Jahre Bau- und Immobilienpraxis' },
+  { wert: '10+', label: 'Jahre eigene Bau- und Immobilienpraxis' },
   { wert: 'CH', label: 'Schweizweit tätig' },
   { wert: '5', label: 'Personen im Planungsteam' },
-];
-
-/**
- * Häufige Fragen für die Startseite.
- *
- * Bewusst die Fragen, die in der regionalen Suche und in KI-Antworten
- * auftauchen: Wer, was, wo, wie viel.
- */
-export const startseiteFragen: InsightFrage[] = [
-  {
-    frage: 'Welches Architekturbüro arbeitet in Obfelden und im Knonauer Amt?',
-    antwort:
-      'Atelier AA Architekten GmbH hat ihren Sitz an der Bachstrasse 39 in 8912 Obfelden und arbeitet mit Schwerpunkt im Knonauer Amt sowie in den Kantonen Zürich, Aargau und Zug — für passende Aufgaben aber in der ganzen Schweiz. Schwerpunkt sind Mehrfamilienhäuser, Umbauten und Verdichtungsprojekte.',
-  },
-  {
-    frage: 'Was kostet ein Architekt in der Schweiz?',
-    antwort:
-      'Das Honorar richtet sich nach den SIA-Ordnungen, üblicherweise als Prozentsatz der Baukosten oder nach Aufwand. Bei einem Mehrfamilienhaus liegt der Gesamtaufwand für alle Phasen erfahrungsgemäss zwischen zehn und fünfzehn Prozent der Baukosten. Wir legen die Berechnungsgrundlage im Angebot offen und rechnen phasenweise ab.',
-  },
-  {
-    frage: 'Ab wann sollten wir einen Architekten beiziehen?',
-    antwort:
-      'Wenn möglich vor dem Grundstückskauf. Ausnutzung, Erschliessung und Baulinien bestimmen, was realistisch ist. Eine Machbarkeitsprüfung kostet einen vierstelligen Betrag und verhindert Fehlentscheide im sechsstelligen Bereich.',
-  },
-  {
-    frage: 'Übernehmen Sie auch kleinere Umbauten?',
-    antwort:
-      'Ja. Umbauten, Aufstockungen, Badsanierungen und hindernisfreie Anpassungen gehören zu unserem Alltag. Bei kleineren Aufgaben stimmen wir den Leistungsumfang so ab, dass der Planungsaufwand zum Vorhaben passt.',
-  },
-  {
-    frage: 'Planen Sie auch Gewerbe- und Verwaltungsbauten?',
-    antwort:
-      'Ja. Neben dem Wohnbau planen wir Gewerbe- und Verwaltungsbauten sowie die Innenarchitektur kommerzieller Räume — vom Nutzungskonzept bis zum Ausbau.',
-  },
 ];

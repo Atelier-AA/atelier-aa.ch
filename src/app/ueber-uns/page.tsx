@@ -7,7 +7,7 @@ import { team } from '@/data/team';
 export const metadata: Metadata = {
   title: 'Über uns',
   description:
-    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH. Geführt von Aljili Aljisami, Dipl. Architekt. Wir planen Wohn- und Gewerbebauten mit Fokus auf Nachhaltigkeit und langfristigen Wert.',
+    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH. Geführt von Aljili Aljisami. Wir planen Wohn- und Gewerbebauten mit Fokus auf Nachhaltigkeit und langfristigen Wert.',
 };
 
 export default function UeberUnsPage() {
@@ -45,12 +45,8 @@ export default function UeberUnsPage() {
                 Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Im engen
                 Dialog mit Bauherrschaften und Planungspartnern entstehen Gebäude und
                 Räume, die sich selbstverständlich in ihren Kontext einfügen und
-                zugleich eine eigene Identität schaffen.
-              </p>
-              <p>
-                Wir waren über mehrere Jahre Mitglied im Gewerbeverein Obfelden und im
-                Gewerbeverein Affoltern am Albis — die Verbundenheit mit der Region, in
-                der wir arbeiten, war und ist uns wichtig.
+                zugleich eine eigene Identität schaffen. Diese Haltung tragen wir seit
+                der Gründung 2021 in jedes Projekt.
               </p>
               <p className="text-lg text-ink">
                 Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.

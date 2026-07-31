@@ -7,7 +7,7 @@ import { bauaufgaben } from '@/data/expertise';
 export const metadata: Metadata = {
   title: 'Disziplinen',
   description:
-    'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Innenarchitektur, Bauleitung und Generalplanung für Wohnen, Arbeitswelt, öffentliche, Bildungs- und Gesundheitsbauten — Schwerpunkt Zürich, Aargau, Zug, auf Anfrage in der ganzen Schweiz.',
+    'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Bauleitung und Generalplanung für Wohnen und Gewerbe — Schwerpunkt Zürich, Aargau, Zug, auf Anfrage in der ganzen Schweiz.',
   alternates: { canonical: '/leistungen' },
 };
 
@@ -29,7 +29,8 @@ export default function LeistungenPage() {
             Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
             Architektur, die funktional, nachhaltig und wirtschaftlich trägt – mit
             Schwerpunkt in den Kantonen Zürich, Aargau und Zug, für passende Aufgaben
-            auch darüber hinaus.
+            auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden sieben
+            Disziplinen.
           </p>
           <p className="mt-6 text-lg leading-relaxed text-graphite md:text-xl">
             Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen

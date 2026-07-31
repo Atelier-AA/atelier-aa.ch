@@ -108,10 +108,9 @@ const organisationSchema = {
     '@id': `https://www.atelier-aa.ch/ueber-uns/${m.slug}#person`,
   })),
   description:
-    'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Innenarchitektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',
+    'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',
   makesOffer: [
     'Architektur und Entwurf',
-    'Innenarchitektur',
     'Umbau und Sanierung',
     'Projektentwicklung',
     'Bauleitung',

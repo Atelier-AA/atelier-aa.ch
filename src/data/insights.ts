@@ -42,7 +42,7 @@ export const insights: Insight[] = [
       {
         titel: 'Getrennte Unternehmen, gemeinsame Projekte',
         absaetze: [
-          'Atelier AA Architekten GmbH und Elindo Immobilien GmbH sind rechtlich und wirtschaftlich eigenständige Unternehmen. Sie arbeiten projektbezogen zusammen, wo es der Sache dient.',
+          'Atelier AA Architekten GmbH und Elindo Immobilien GmbH sind rechtlich eigenständige Unternehmen, beide unter der Leitung von Aljili Aljisami. Gerade deshalb funktioniert die Zusammenarbeit besonders eng — mit klar getrennten Mandaten und Verantwortlichkeiten.',
           'Sie können also unser Architekturmandat erteilen, ohne die Vermarktung mitzubeauftragen — und umgekehrt. Wo beides zusammenkommt, sprechen wir das transparent ab.',
         ],
       },
@@ -51,7 +51,7 @@ export const insights: Insight[] = [
       {
         frage: 'Müssen wir die Vermarktung über Elindo abwickeln, wenn Sie planen?',
         antwort:
-          'Nein. Beide Unternehmen sind eigenständig und werden getrennt beauftragt. Wir stellen den Kontakt her, wenn es Ihrem Projekt nützt — die Entscheidung liegt bei Ihnen.',
+          'Nein. Beide Unternehmen werden getrennt beauftragt, auch wenn Aljili Aljisami beide leitet. Wir stellen den Kontakt her, wenn es Ihrem Projekt nützt — die Entscheidung liegt bei Ihnen.',
       },
       {
         frage: 'Ab wann sollte die Vermarktung in die Planung einbezogen werden?',
@@ -151,15 +151,15 @@ export const insights: Insight[] = [
         absaetze: [
           'Zuerst die Vorabklärung: Ein Gespräch mit der Bauverwaltung Ihrer Gemeinde, bevor Pläne gezeichnet sind. Es klärt, ob das Vorhaben grundsätzlich im Rahmen liegt und wo die Behörde empfindlich ist. Dieser Termin ist kostenlos und erspart Korrekturrunden.',
           'Dann das Baugesuch selbst: Situationsplan, Grundrisse, Schnitte, Fassaden, Berechnung der Ausnutzung, Nachweise zu Energie, Lärm und Brandschutz, Baueingabeformular. Wir stellen das Dossier zusammen und reichen es ein.',
-          'Nach der formellen Prüfung folgt die öffentliche Auflage — im Kanton Zürich zwanzig Tage, im Aargau dreissig, im Kanton Zug zwanzig. In dieser Zeit können Nachbarn Einsprache erheben.',
-          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Mit Einsprachen folgt ein Aussprachetermin; scheitert er, entscheidet die Baubehörde und danach gegebenenfalls das Baurekursgericht.',
+          'Nach der formellen Prüfung folgt die öffentliche Auflage, in der Nachbarn Einsprache erheben können — die genaue Frist regelt jede Gemeinde beziehungsweise jeder Kanton für sich.',
+          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Mit Einsprachen folgt ein Aussprachetermin; scheitert er, entscheidet die Baubehörde, und der Weg an eine kantonale Beschwerdeinstanz steht offen. Für die rechtliche Vertretung in diesem Verfahren empfehlen wir eine Anwältin oder einen Anwalt — wir kennen den Ablauf aus der Praxis, sind aber keine Rechtsvertretung.',
         ],
       },
       {
         titel: 'Wie lange es dauert',
         absaetze: [
           'Ein unbestrittenes Einfamilienhaus wird in den drei Kantonen typischerweise in zwei bis vier Monaten bewilligt. Ein Mehrfamilienhaus braucht drei bis sechs Monate, weil mehr Fachstellen beteiligt sind.',
-          'Kommt eine Einsprache dazu, verlängert sich das um Monate. Geht der Fall ans Baurekursgericht, sind ein bis zwei Jahre realistisch. Diese Bandbreite ist der Grund, warum wir Einsprachen vorbeugen, statt sie in Kauf zu nehmen.',
+          'Kommt eine Einsprache dazu, verlängert sich das um Monate. Geht der Fall an die kantonale Beschwerdeinstanz, sind ein bis zwei Jahre realistisch. Diese Bandbreite ist der Grund, warum wir Einsprachen vorbeugen, statt sie in Kauf zu nehmen.',
           'Bei Bauten in Ortsbildschutzzonen oder mit Bezug zu einem Inventarobjekt kommt die kantonale Denkmalpflege dazu — planen Sie zwei bis drei Monate zusätzlich ein.',
         ],
       },
@@ -183,7 +183,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wie lange dauert eine Baubewilligung im Kanton Zürich?',
         antwort:
-          'Bei einem unbestrittenen Einfamilienhaus zwei bis vier Monate, bei einem Mehrfamilienhaus drei bis sechs. Die öffentliche Auflage beträgt zwanzig Tage. Mit Einsprachen verlängert sich das Verfahren um Monate, bei einem Gang ans Baurekursgericht auf ein bis zwei Jahre.',
+          'Bei einem unbestrittenen Einfamilienhaus zwei bis vier Monate, bei einem Mehrfamilienhaus drei bis sechs. Mit Einsprachen verlängert sich das Verfahren um Monate, bei einem Gang ans Baurekursgericht auf ein bis zwei Jahre.',
       },
       {
         frage: 'Was kostet ein Baugesuch?',
@@ -198,7 +198,7 @@ export const insights: Insight[] = [
       {
         frage: 'Was passiert bei einer Einsprache?',
         antwort:
-          'Die Gemeinde lädt zu einem Aussprachetermin. Viele Einsprachen lassen sich dort mit einer Anpassung ausräumen. Kommt keine Einigung zustande, entscheidet die Baubehörde; dagegen ist der Weg ans Baurekursgericht offen.',
+          'Die Gemeinde lädt zu einem Aussprachetermin. Viele Einsprachen lassen sich dort mit einer Anpassung ausräumen. Kommt keine Einigung zustande, entscheidet die Baubehörde; dagegen steht der Weg an eine kantonale Beschwerdeinstanz offen.',
       },
       {
         frage: 'Dürfen wir vor der Bewilligung mit dem Bauen beginnen?',
@@ -226,8 +226,7 @@ export const insights: Insight[] = [
       {
         titel: 'Was hindernisfrei wirklich heisst',
         absaetze: [
-          'Entscheidend sind wenige Punkte: ein schwellenloser Zugang von aussen, ein Bad mit bodengleicher Dusche und ausreichend Bewegungsfläche, Türbreiten ab achtzig Zentimetern und ein Wohn- und Schlafbereich auf einer Ebene.',
-          'Die Norm SIA 500 beschreibt das im Detail. Für ein privates Wohnhaus muss man sie nicht vollständig erfüllen — aber die Masse zu kennen hilft, nicht am falschen Zentimeter zu sparen.',
+          'Entscheidend sind wenige Punkte: ein schwellenloser Zugang von aussen, ein Bad mit bodengleicher Dusche und ausreichend Bewegungsfläche, Türbreiten ab achtzig Zentimetern und ein Wohn- und Schlafbereich auf einer Ebene. Diese Masse einzuhalten hilft, nicht am falschen Zentimeter zu sparen.',
           'Was oft vergessen wird: Beleuchtung und Kontraste. Mit dem Alter sinkt die Sehleistung deutlich. Gute, blendfreie Beleuchtung und kontrastreiche Kanten an Stufen sind günstige Massnahmen mit grosser Wirkung.',
         ],
       },
@@ -467,7 +466,7 @@ export const kontaktFragen: InsightFrage[] = [
   {
     frage: 'Welche Leistungen bieten Sie an?',
     antwort:
-      'Architektur und Entwurf, Innenarchitektur, Umbau und Sanierung, Projektentwicklung sowie Bauleitung — von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
+      'Architektur und Entwurf, Umbau und Sanierung, Projektentwicklung sowie Bauleitung — von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
   },
   {
     frage: 'Welche Arten von Gebäuden planen Sie?',

@@ -26,7 +26,7 @@ export const leistungsangebot = [
   },
   {
     titel: 'Planung und Entwurf',
-    text: 'Neubau, Umbau, Verdichtung, Innenarchitektur und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen. Jedes Projekt beginnt mit der Analyse von Ort, Nutzung und Bauordnung, bevor der Entwurf entsteht.',
+    text: 'Neubau, Umbau, Verdichtung und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen. Jedes Projekt beginnt mit der Analyse von Ort, Nutzung und Bauordnung, bevor der Entwurf entsteht.',
   },
   {
     titel: 'Baugesuch und Bewilligung',
@@ -34,15 +34,15 @@ export const leistungsangebot = [
   },
   {
     titel: 'Bauleitung und Kostenkontrolle',
-    text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Wir vertreten Ihre Interessen auf der Baustelle und gleichen den Kostenvoranschlag laufend mit dem effektiven Baufortschritt ab.',
+    text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Auf Wunsch übernehmen wir die Bauleitung auch selbst und vertreten Ihre Interessen auf der Baustelle, meist in Zusammenarbeit mit einer externen Bauleitung vor Ort.',
   },
   {
     titel: 'Generalplanung',
-    text: 'Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen. Damit übernehmen wir die Verantwortung, die sonst zwischen mehreren Vertragspartnern verloren gehen kann.',
+    text: 'Auf Wunsch übernehmen wir die Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen. Wir sind offen für diese Rolle, wo sie dem Projekt dient.',
   },
   {
     titel: 'Wettbewerbe und Studien',
-    text: 'Beteiligung an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung. Der Wettbewerb bleibt für uns ein wichtiges Verfahren, um neue Lösungsansätze zu erproben.',
+    text: 'Wir sind offen für die Teilnahme an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung. Der Wettbewerb ist für uns ein wichtiges Verfahren, um neue Lösungsansätze zu erproben.',
   },
 ];
 
@@ -55,18 +55,6 @@ export const bauaufgaben = [
   {
     kategorie: 'Arbeitswelt',
     beispiele: 'Büro- und Gewerbebauten, Industrie- und Verwaltungsbauten',
-  },
-  {
-    kategorie: 'Öffentliche Institutionen',
-    beispiele: 'Verwaltungsgebäude, Gemeindebauten, öffentliche Anlagen',
-  },
-  {
-    kategorie: 'Bildungswesen',
-    beispiele: 'Schulhäuser, Kindergärten, Bildungs- und Betreuungseinrichtungen',
-  },
-  {
-    kategorie: 'Gesundheitswesen',
-    beispiele: 'Alters- und Pflegeheime, medizinische Einrichtungen',
   },
 ];
 
@@ -119,7 +107,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Welche Leistungen erbringen Sie nach SIA?',
     antwort:
-      'Wir arbeiten nach der Ordnung SIA 102 und deren Leistungsphasen: Strategische Planung, Vorstudien, Projektierung, Ausschreibung, Realisierung und Bewirtschaftung. Sie können alle Phasen beauftragen oder einzelne — üblich ist der Einstieg mit Vorstudie und Vorprojekt.',
+      'Wir arbeiten nach der Ordnung SIA 102 und deren Leistungsphasen: Strategische Planung, Vorstudien, Projektierung, Ausschreibung und Realisierung. Sie können diese Phasen einzeln oder zusammen beauftragen — üblich ist der Einstieg mit Vorstudie und Vorprojekt.',
   },
   {
     frage: 'Können wir nur eine Machbarkeitsstudie beauftragen?',
@@ -149,6 +137,6 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Was unterscheidet Sie von anderen Architekturbüros?',
     antwort:
-      'Der Gründer bringt über fünfzehn Jahre Bau- und Immobilienpraxis mit. Das führt dazu, dass wirtschaftliche Fragen — Mietzinsniveau, Wohnungsmix, Vermietbarkeit — von Anfang an im Entwurf mitgedacht werden, statt erst am Ende geprüft zu werden.',
+      'Der Gründer bringt über zehn Jahre eigene Bau- und Immobilienpraxis mit und ist zugleich Inhaber von Elindo Immobilien GmbH. Das führt dazu, dass wirtschaftliche Fragen — Mietzinsniveau, Wohnungsmix, Vermietbarkeit — von Anfang an im Entwurf mitgedacht werden, statt erst am Ende geprüft zu werden.',
   },
 ];

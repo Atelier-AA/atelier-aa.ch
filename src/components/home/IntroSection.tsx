@@ -28,7 +28,8 @@ export default function IntroSection() {
               Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
               sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
               Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
-              Lebensqualität, Orientierung und Zugehörigkeit.
+              Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
+              zeigen unsere realisierten Projekte.
             </p>
           </div>
 
