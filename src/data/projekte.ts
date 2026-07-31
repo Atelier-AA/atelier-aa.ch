@@ -84,7 +84,7 @@ export const projekte: Projekt[] = [
           'Weil es das aktuellste realisierte Projekt ist und weil wir als Eigenprojekt besonders offen über Entscheidungen sprechen können, die bei Kundenprojekten vertraulich bleiben. Für Referenzen von Bauherrschaften siehe die übrigen Projekte in dieser Übersicht.',
       },
     ],
-    thumbnail: '/images/projekte/efh-jonen/14.jpg',
+    thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
     heroImage: '/images/projekte/efh-jonen/hero.jpg',
     galerie: [
       '/images/projekte/efh-jonen/01.jpg',
@@ -107,6 +107,10 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-jonen/18.jpg',
       '/images/projekte/efh-jonen/19.jpg',
       '/images/projekte/efh-jonen/20.jpg',
+      '/images/projekte/efh-jonen/21.jpg',
+      '/images/projekte/efh-jonen/22.jpg',
+      '/images/projekte/efh-jonen/23.jpg',
+      '/images/projekte/efh-jonen/24.jpg',
     ],
     plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-jonen/01-kataster.pdf' }],
     featured: true,
@@ -279,6 +283,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-sihlaurain/13.jpg',
       '/images/projekte/mfh-sihlaurain/14.jpg',
       '/images/projekte/mfh-sihlaurain/15.jpg',
+      '/images/projekte/mfh-sihlaurain/16.jpg',
     ],
     featured: true,
   },
@@ -346,6 +351,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-kuenten/06.jpg',
       '/images/projekte/mfh-kuenten/07.jpg',
       '/images/projekte/mfh-kuenten/08.jpg',
+      '/images/projekte/mfh-kuenten/09.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-kuenten/01-kataster.pdf' },
@@ -440,6 +446,10 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-letten/05.jpg',
       '/images/projekte/mfh-letten/06.jpg',
       '/images/projekte/mfh-letten/07.jpg',
+      '/images/projekte/mfh-letten/08.jpg',
+      '/images/projekte/mfh-letten/09.jpg',
+      '/images/projekte/mfh-letten/10.jpg',
+      '/images/projekte/mfh-letten/11.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-letten/01-kataster.pdf' },
@@ -614,6 +624,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-hochwarting/02.jpg',
       '/images/projekte/mfh-hochwarting/03.jpg',
       '/images/projekte/mfh-hochwarting/04.jpg',
+      '/images/projekte/mfh-hochwarting/05.jpg',
     ],
     plaene: [
       { titel: 'Umgebungsplan', datei: '/dokumente/projekte/mfh-hochwarting/01-umgebungsplan.pdf' },
@@ -860,6 +871,11 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-dietikon/02.jpg',
       '/images/projekte/efh-dietikon/03.jpg',
       '/images/projekte/efh-dietikon/04.jpg',
+      '/images/projekte/efh-dietikon/05.jpg',
+      '/images/projekte/efh-dietikon/06.jpg',
+      '/images/projekte/efh-dietikon/07.jpg',
+      '/images/projekte/efh-dietikon/08.jpg',
+      '/images/projekte/efh-dietikon/09.jpg',
     ],
     plaene: [
       { titel: 'Situationsplan', datei: '/dokumente/projekte/efh-dietikon/00-situationsplan.pdf' },
@@ -1055,6 +1071,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-untersiggenthal-2/02.jpg',
       '/images/projekte/mfh-untersiggenthal-2/03.jpg',
       '/images/projekte/mfh-untersiggenthal-2/04.jpg',
+      '/images/projekte/mfh-untersiggenthal-2/05.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-untersiggenthal-2/01-kataster.pdf' },
@@ -1136,6 +1153,9 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-merenschwand/19.jpg',
       '/images/projekte/efh-merenschwand/20.jpg',
       '/images/projekte/efh-merenschwand/21.jpg',
+      '/images/projekte/efh-merenschwand/22.jpg',
+      '/images/projekte/efh-merenschwand/23.jpg',
+      '/images/projekte/efh-merenschwand/24.jpg',
     ],
     plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-merenschwand/01-kataster.pdf' }],
     featured: false,
@@ -1187,7 +1207,11 @@ export const projekte: Projekt[] = [
     ],
     thumbnail: '/images/projekte/mfh-wuerenlingen/thumb.jpg',
     heroImage: '/images/projekte/mfh-wuerenlingen/hero.jpg',
-    galerie: ['/images/projekte/mfh-wuerenlingen/01.jpg'],
+    galerie: [
+      '/images/projekte/mfh-wuerenlingen/01.jpg',
+      '/images/projekte/mfh-wuerenlingen/02.jpg',
+      '/images/projekte/mfh-wuerenlingen/03.jpg',
+    ],
     plaene: [
       { titel: 'Kataster 1:500', datei: '/dokumente/projekte/mfh-wuerenlingen/01-kataster-500.pdf' },
       { titel: 'Kataster 1:1000', datei: '/dokumente/projekte/mfh-wuerenlingen/02-kataster-1000.pdf' },
@@ -1373,12 +1397,19 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Doppeleinfamilienhaus in Weiningen im Kanton Zürich. Das Projekt befindet sich in einem frühen Planungsstadium, Fotos und Pläne folgen im weiteren Verlauf.',
+      'Doppeleinfamilienhaus in Weiningen im Kanton Zürich. Erste Visualisierungen aus der Entwurfsplanung zeigen einen giebelständigen Baukörper mit heller Putzfassade und offenem Wohnbereich.',
     abschnitte: [
       {
-        titel: 'Stand des Projekts',
+        titel: 'Zwei Einheiten unter einem Giebeldach',
         absaetze: [
-          'Für dieses Doppeleinfamilienhaus in Weiningen stehen wir am Anfang der Planung. Sobald Grundrisse und Fassaden ausgearbeitet sind, ergänzen wir diese Seite.',
+          'Die Visualisierungen zeigen ein Doppeleinfamilienhaus mit steilem Satteldach und liegenden Dachflächenfenstern, das sich giebelständig ins Quartier einfügt. Die Fassade ist hell verputzt, Balkone mit filigranen Glasgeländern öffnen sich zur Gartenseite.',
+          'Der Aussenraum ist bewusst zurückhaltend gestaltet: Rasenflächen, einzelne Bäume und ein gepflasterter Zugang prägen das Bild, ohne den Blick auf den Baukörper zu verstellen.',
+        ],
+      },
+      {
+        titel: 'Offener Wohnbereich',
+        absaetze: [
+          'Im Erdgeschoss zeigt eine Visualisierung einen durchgehenden Wohn-, Ess- und Kochbereich mit bodentiefen Fenstern und Terrassenzugang. Die Küche ist als offene Kochinsel mit dunkler Steinoberfläche in den Wohnraum integriert, der helle Eichenboden zieht sich durch die ganze Fläche.',
         ],
       },
     ],
@@ -1388,14 +1419,18 @@ export const projekte: Projekt[] = [
     ],
     fragen: [
       {
-        frage: 'Warum sind hier keine Fotos oder Pläne zu sehen?',
+        frage: 'Sind das bereits Fotos vom fertigen Haus?',
         antwort:
-          'Dieses Projekt befindet sich noch in einem frühen Planungsstadium. Wir ergänzen die Seite, sobald Pläne und später Fotos vorliegen.',
+          'Nein, das sind Visualisierungen aus der Entwurfsplanung. Das Projekt befindet sich weiterhin in der Planungsphase, gebaut ist noch nichts. Sobald das Haus realisiert ist, ergänzen wir die Seite mit echten Fotos.',
       },
     ],
     thumbnail: '/images/projekte/defh-weiningen/thumb.jpg',
     heroImage: '/images/projekte/defh-weiningen/hero.jpg',
-    galerie: [],
+    galerie: [
+      '/images/projekte/defh-weiningen/01.jpg',
+      '/images/projekte/defh-weiningen/02.jpg',
+      '/images/projekte/defh-weiningen/03.jpg',
+    ],
     featured: false,
   },
   {

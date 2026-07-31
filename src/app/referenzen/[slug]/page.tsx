@@ -25,10 +25,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   // Projekte ohne Fotos ("in Planung") vorerst von der Indexierung ausnehmen,
   // damit sie nicht als dünner Duplicate-Content-Cluster gewertet werden —
-  // für Website-Besucher:innen bleiben sie unverändert sichtbar.
-  const inPlanung = projekt.daten.some(
-    (d) => d.label === 'Status' && d.wert === 'In Planung'
-  );
+  // für Website-Besucher:innen bleiben sie unverändert sichtbar. Sobald eine
+  // Galerie (z. B. Visualisierungen) vorliegt, ist die Seite kein dünner
+  // Inhalt mehr und wird normal indexiert.
+  const inPlanung =
+    projekt.daten.some((d) => d.label === 'Status' && d.wert === 'In Planung') &&
+    projekt.galerie.length === 0;
 
   return {
     title: projekt.title,
