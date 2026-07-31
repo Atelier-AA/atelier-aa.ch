@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
     absaetze: [
       'Aljili Aljisami hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über fünfzehn Jahren in der Bau- und Immobilienpraxis. Diese doppelte Herkunft prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
       'Sein Schwerpunkt liegt im Wohnbau — vom Mehrfamilienhaus über die Wohnüberbauung bis zur Verdichtung bestehender Parzellen, realisiert in der ganzen Schweiz. Besonders interessieren ihn Aufgaben, bei denen Ausnutzung, Ortsbild und Nachbarschaft in Konflikt stehen und eine Lösung erst gefunden werden muss.',
-      '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieser Satz steht nicht zufällig auf der Startseite — er beschreibt, woran er ein Projekt messen lässt.',
+      '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieser Satz begleitet als Motto jede Seite dieser Website — er beschreibt, woran er ein Projekt messen lässt.',
     ],
     email: 'info@atelier-aa.ch',
   },
@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
     kurz: 'Verantwortlich für Personalfragen im Büro.',
     schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [
-      'Fatime Aljili ist im Büro für Personalfragen verantwortlich. Sie sorgt dafür, dass organisatorische Abläufe im Hintergrund reibungslos funktionieren.',
+      'Fatime Aljili ist im Büro für Personalfragen verantwortlich. [ENTWURF — bitte mit echter Angabe ersetzen: seit wann im Büro, ein konkreter Aspekt der Rolle über die allgemeine Beschreibung hinaus, z. B. Rekrutierung oder Onboarding neuer Mitarbeitender.]',
     ],
     email: null,
   },
@@ -51,7 +51,7 @@ export const team: TeamMember[] = [
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
-      'Ejup Bajrami leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden.',
+      'Ejup Bajrami leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden. [ENTWURF — bitte mit echter Angabe ersetzen: Werdegang/Ausbildung, z. B. Studienort oder frühere Station.] [Ein bis zwei Sätze zu einem Schwerpunkt oder einem konkret von ihm geleiteten Projekt aus `src/data/projekte.ts`.]',
     ],
     email: null,
   },
@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
-      'Yakup Uslu leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden.',
+      'Yakup Uslu leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden. [ENTWURF — bitte mit echter Angabe ersetzen: Werdegang/Ausbildung.] [Anderer Schwerpunkt oder anderes Referenzprojekt als bei Ejup Bajrami wählen, damit sich die beiden Profile klar unterscheiden.]',
     ],
     email: null,
   },
@@ -75,7 +75,7 @@ export const team: TeamMember[] = [
     kurz: 'Unterstützt die Geschäftsleitung in administrativen und organisatorischen Aufgaben.',
     schwerpunkte: ['Administration', 'Büroorganisation', 'Unterstützung der Geschäftsleitung'],
     absaetze: [
-      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen und sorgt für einen reibungslosen Ablauf im Büroalltag.',
+      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen. [ENTWURF — bitte mit echter Angabe ersetzen, die sich klar von Fatime Aljilis Text unterscheidet, z. B. Kundenkontakt, Terminkoordination oder ein anderer konkreter Aufgabenbereich.]',
     ],
     email: null,
   },

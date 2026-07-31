@@ -90,7 +90,7 @@ export const zahlen = [
   { wert: '2021', label: 'gegründet in Obfelden' },
   { wert: '15+', label: 'Jahre Bau- und Immobilienpraxis' },
   { wert: 'CH', label: 'Schweizweit tätig' },
-  { wert: '4', label: 'Architektinnen und Architekten' },
+  { wert: '5', label: 'Personen im Planungsteam' },
 ];
 
 /**

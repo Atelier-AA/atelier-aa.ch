@@ -23,9 +23,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!projekt) return { title: 'Projekt nicht gefunden' };
 
+  // Projekte ohne Fotos ("in Planung") vorerst von der Indexierung ausnehmen,
+  // damit sie nicht als dünner Duplicate-Content-Cluster gewertet werden —
+  // für Website-Besucher:innen bleiben sie unverändert sichtbar.
+  const inPlanung = projekt.daten.some(
+    (d) => d.label === 'Status' && d.wert === 'In Planung'
+  );
+
   return {
     title: projekt.title,
     description: projekt.beschreibung,
+    ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
       title: projekt.title,
       description: projekt.beschreibung,

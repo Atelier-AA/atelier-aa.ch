@@ -78,6 +78,11 @@ export const projekte: Projekt[] = [
         antwort:
           'Im Kanton Aargau liegen Einfamilienhäuser in mittlerem bis gehobenem Standard aktuell bei rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen. Ein vollwertiges Untergeschoss erhöht diesen Wert, da Aushub und Abdichtung ins Gewicht fallen — eine belastbare Zahl liefert erst der Kostenrahmen im Vorprojekt.',
       },
+      {
+        frage: 'Warum wurde ausgerechnet dieses Projekt als erstes Referenzprojekt gezeigt?',
+        antwort:
+          'Weil es das aktuellste realisierte Projekt ist und weil wir als Eigenprojekt besonders offen über Entscheidungen sprechen können, die bei Kundenprojekten vertraulich bleiben. Für Referenzen von Bauherrschaften siehe die übrigen Projekte in dieser Übersicht.',
+      },
     ],
     thumbnail: '/images/projekte/efh-jonen/14.jpg',
     heroImage: '/images/projekte/efh-jonen/hero.jpg',
@@ -249,6 +254,11 @@ export const projekte: Projekt[] = [
         frage: 'Wie planen Sie für eine gute Rendite?',
         antwort:
           'Wir stimmen Wohnungsmix und Ausbaustandard auf das lokale Mietzinsniveau ab, statt maximal zu bauen. Dazu kommt Nutzungsoffenheit: nicht tragende Trennwände erlauben es, Wohnungsgrössen später anzupassen, ohne ins Tragwerk einzugreifen.',
+      },
+      {
+        frage: 'Was passiert, wenn eine der beiden Parzellen einer anderen Eigentümerschaft gehört als die andere?',
+        antwort:
+          'Eine gemeinsame Entwicklung ist dann weiterhin möglich, verlangt aber einen frühen Dienstbarkeits- oder Grunddienstbarkeitsvertrag zwischen den Eigentümerschaften, der Erschliessung, Einstellhalle und Kostenteilung regelt. Wir bringen diesen Vertrag rechtzeitig vor dem Baugesuch auf den Weg.',
       },
     ],
     thumbnail: '/images/projekte/mfh-sihlaurain/thumb.jpg',

@@ -28,9 +28,10 @@ export default function UeberUnsPage() {
             </h1>
             <div className="space-y-6 text-graphite leading-relaxed">
               <p className="text-lg">
-                Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
-                dem Charakter des Ortes und den Bedürfnissen der Nutzenden entwickeln wir
-                individuelle Lösungen mit klarer Haltung und präziser Gestaltung.
+                Zuhören heisst bei uns: ein Gespräch vor Ort, das Grundstück in seiner
+                Umgebung verstehen, und die Fragen stellen, die eine Bauherrschaft oft
+                selbst noch nicht gestellt hat. Erst danach beginnt der Entwurf — nie
+                umgekehrt.
               </p>
               <p>
                 Wir führen das Atelier AA mit dieser Haltung — mit einem engagierten,
