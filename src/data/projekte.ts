@@ -752,7 +752,11 @@ export const projekte: Projekt[] = [
     ],
     thumbnail: '/images/projekte/refh-hochfelden/thumb.jpg',
     heroImage: '/images/projekte/refh-hochfelden/hero.jpg',
-    galerie: ['/images/projekte/refh-hochfelden/01.jpg', '/images/projekte/refh-hochfelden/02.jpg'],
+    galerie: [
+      '/images/projekte/refh-hochfelden/01.jpg',
+      '/images/projekte/refh-hochfelden/02.jpg',
+      '/images/projekte/refh-hochfelden/03.jpg',
+    ],
     plaene: [
       { titel: 'Situationsplan', datei: '/dokumente/projekte/refh-hochfelden/01-situation.pdf' },
       { titel: 'Untergeschoss', datei: '/dokumente/projekte/refh-hochfelden/02-untergeschoss.pdf' },
