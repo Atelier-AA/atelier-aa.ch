@@ -816,6 +816,9 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-buchs/03.jpg',
       '/images/projekte/efh-buchs/04.jpg',
       '/images/projekte/efh-buchs/05.jpg',
+      '/images/projekte/efh-buchs/06.jpg',
+      '/images/projekte/efh-buchs/07.jpg',
+      '/images/projekte/efh-buchs/08.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/efh-buchs/01-kataster.pdf' },
