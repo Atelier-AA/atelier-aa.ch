@@ -187,6 +187,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-untersiggenthal/01.jpg',
       '/images/projekte/mfh-untersiggenthal/02.jpg',
       '/images/projekte/mfh-untersiggenthal/03.jpg',
+      '/images/projekte/mfh-untersiggenthal/04.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-untersiggenthal/01-kataster.pdf' },
