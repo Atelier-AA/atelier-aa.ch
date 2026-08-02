@@ -32,27 +32,12 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Neubau eines Einfamilienhauses in Jonen im Kanton Aargau mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss. Die Bauherrschaft war zugleich der Inhaber von Atelier AA Architekten — ein Neubau mit besonderem architektonischem Anspruch.',
+      'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA.',
     abschnitte: [
       {
-        titel: 'Ein Neubau mit besonderem Anspruch',
+        titel: 'Zum Projekt',
         absaetze: [
-          'In Jonen im Kanton Aargau entstand ein Einfamilienhaus mit einer Besonderheit: Die Bauherrschaft war zugleich der Inhaber von Atelier AA Architekten. Ein Neubau für das eigene Büro bedeutet einen anderen Massstab als ein Projekt für Dritte — jede Entscheidung zwischen Wunsch und Budget wird ohne Umweg über eine zweite Partei durchdacht.',
-          'Der Anspruch an die architektonische Qualität war entsprechend hoch. Gleichzeitig musste das Grundstück selbst berücksichtigt werden: Die Lage verlangte von Anfang an eine sorgfältige Planung der Erschliessung und der Anordnung auf der Parzelle.',
-        ],
-      },
-      {
-        titel: 'Vier Ebenen, klar geordnet',
-        absaetze: [
-          'Das Haus umfasst zwei Vollgeschosse, ein Dachgeschoss und ein Untergeschoss. Diese Schichtung schafft klar getrennte Nutzungen: Rückzug und Technik im Untergeschoss, Wohnen und Kochen im Erdgeschoss, private Räume im Ober- und Dachgeschoss.',
-          'Eine offene Treppe mit Glasgeländer verbindet die Ebenen sichtbar miteinander, statt sie durch ein geschlossenes Treppenhaus zu trennen. Grossflächige Verglasungen öffnen die oberen Geschosse zur umgebenden Landschaft.',
-        ],
-      },
-      {
-        titel: 'Materialisierung und Ausblick',
-        absaetze: [
-          'Innen bestimmen helle Oberflächen und wenige, dafür grossformatige Materialwechsel das Bild — eine Zurückhaltung, die den Blick nach aussen betont. Von den oberen Geschossen reicht die Sicht weit über das offene Landschaftsbild rund um Jonen.',
-          'Auch aussen ist die Sprache reduziert: eine helle Putzfassade und dunkel abgesetzte Fensterbänder setzen einen bewussten Kontrast zur giebelständigen Nachbarbebauung, ohne sich von ihr abzuwenden.',
+          'Als Neubau für das eigene Büro entstand hier ein Haus mit besonders hohem architektonischem Anspruch. Die vier Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber — verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
         ],
       },
     ],
@@ -66,22 +51,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Was bedeutet es, wenn ein Architekturbüro für sich selbst baut?',
         antwort:
-          'Es bedeutet vor allem, dass zwischen architektonischem Anspruch und Bauherrenwunsch keine zweite Partei vermitteln muss — beide Rollen liegen in einer Person. Am Bewilligungsverfahren und der Bauleitung ändert das nichts: Baugesuch, Ausschreibung und Ausführung laufen wie bei jedem anderen Projekt.',
-      },
-      {
-        frage: 'Worauf muss man bei einem schwierig erschlossenen Grundstück achten?',
-        antwort:
-          'Zufahrt, Werkleitungen und Grenzabstände müssen früh geprüft werden, oft schon vor dem Landkauf. Eine ungünstige Erschliessung lässt sich planerisch meist lösen, verursacht aber zusätzliche Kosten, die in der Kostenschätzung von Anfang an eingerechnet werden sollten.',
+          'Zwischen Anspruch und Bauherrenwunsch muss keine zweite Partei vermitteln — am Verfahren selbst ändert das nichts.',
       },
       {
         frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
         antwort:
-          'Im Kanton Aargau liegen Einfamilienhäuser in mittlerem bis gehobenem Standard aktuell bei rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen. Ein vollwertiges Untergeschoss erhöht diesen Wert, da Aushub und Abdichtung ins Gewicht fallen — eine belastbare Zahl liefert erst der Kostenrahmen im Vorprojekt.',
-      },
-      {
-        frage: 'Warum wurde ausgerechnet dieses Projekt als erstes Referenzprojekt gezeigt?',
-        antwort:
-          'Weil es das aktuellste realisierte Projekt ist und weil wir als Eigenprojekt besonders offen über Entscheidungen sprechen können, die bei Kundenprojekten vertraulich bleiben. Für Referenzen von Bauherrschaften siehe die übrigen Projekte in dieser Übersicht.',
+          'Im Aargau aktuell rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen, je nach Standard.',
       },
     ],
     thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
