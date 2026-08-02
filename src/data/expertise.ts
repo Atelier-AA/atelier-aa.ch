@@ -18,15 +18,6 @@ import type { InsightFrage } from '@/types';
  */
 export const kompetenzen = [
   {
-    titel: 'Generalplanung',
-    punkte: [
-      'Vollumfängliche Planung Ihres individuellen Bauvorhabens',
-      'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
-      'Atelier AA als Ihr alleiniger Vertrags- und Ansprechpartner',
-    ],
-    text: 'Als Generalplaner gewährleisten wir Ihnen einen termin- und kostengerechten Projekterfolg mit aussergewöhnlicher architektonischer Qualität.',
-  },
-  {
     titel: 'Beratung',
     punkte: [
       'Beratung vor Projektbeginn',
@@ -65,6 +56,15 @@ export const kompetenzen = [
       'Kosten- und Terminkontrolle',
     ],
     text: 'Von der Ausschreibung bis zur Übergabe begleiten wir die Baustelle und sichern Qualität, Kosten und Termine.',
+  },
+  {
+    titel: 'Generalplanung',
+    punkte: [
+      'Vollumfängliche Planung Ihres individuellen Bauvorhabens',
+      'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
+      'Atelier AA als Ihr alleiniger Vertrags- und Ansprechpartner',
+    ],
+    text: 'Als Generalplaner gewährleisten wir Ihnen einen termin- und kostengerechten Projekterfolg mit aussergewöhnlicher architektonischer Qualität.',
   },
 ];
 

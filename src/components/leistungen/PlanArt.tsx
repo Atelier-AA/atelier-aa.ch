@@ -17,7 +17,7 @@ const svgProps = {
   strokeLinejoin: 'round' as const,
 };
 
-/** 01 Generalplanung — ein Baukörper, koordiniert über wenige Rollen. */
+/** 05 Generalplanung — ein Baukörper, koordiniert über wenige Rollen. */
 export function GeneralplanungArt() {
   const rollen: { x: number; y: number; label: string }[] = [
     { x: 150, y: 25, label: 'ARCH' },
@@ -43,7 +43,7 @@ export function GeneralplanungArt() {
   );
 }
 
-/** 02 Beratung — ein Haus auf seiner Parzelle, mit Prüfvermerk. */
+/** 01 Beratung — ein Haus auf seiner Parzelle, mit Prüfvermerk. */
 export function BeratungArt() {
   return (
     <svg {...svgProps}>
@@ -55,7 +55,7 @@ export function BeratungArt() {
   );
 }
 
-/** 03 Analyse und Konzept — drei gestufte Volumen einer Machbarkeitsstudie. */
+/** 02 Analyse und Konzept — drei gestufte Volumen einer Machbarkeitsstudie. */
 export function AnalyseKonzeptArt() {
   return (
     <svg {...svgProps}>
@@ -70,7 +70,7 @@ export function AnalyseKonzeptArt() {
   );
 }
 
-/** 04 Planung und Koordination — ein einfacher Grundriss. */
+/** 03 Planung und Koordination — ein einfacher Grundriss. */
 export function PlanungKoordinationArt() {
   return (
     <svg {...svgProps}>
@@ -84,7 +84,7 @@ export function PlanungKoordinationArt() {
   );
 }
 
-/** 05 Realisierung — Baukörper mit Kran. */
+/** 04 Realisierung — Baukörper mit Kran. */
 export function RealisierungArt() {
   return (
     <svg {...svgProps}>
@@ -101,9 +101,9 @@ export function RealisierungArt() {
 
 /** Reihenfolge exakt wie `kompetenzen` in `data/expertise.ts`. */
 export const planArtReihenfolge = [
-  GeneralplanungArt,
   BeratungArt,
   AnalyseKonzeptArt,
   PlanungKoordinationArt,
   RealisierungArt,
+  GeneralplanungArt,
 ];
