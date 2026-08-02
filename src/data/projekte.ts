@@ -346,7 +346,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-kuenten/05.jpg',
       '/images/projekte/mfh-kuenten/06.jpg',
       '/images/projekte/mfh-kuenten/07.jpg',
-      '/images/projekte/mfh-kuenten/08.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-kuenten/01-kataster.pdf' },
@@ -539,9 +538,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-huenenberg/20.jpg',
       '/images/projekte/efh-huenenberg/21.jpg',
       '/images/projekte/efh-huenenberg/22.jpg',
-      '/images/projekte/efh-huenenberg/23.jpg',
-      '/images/projekte/efh-huenenberg/24.jpg',
-      '/images/projekte/efh-huenenberg/25.jpg',
     ],
     featured: false,
   },
@@ -667,7 +663,7 @@ export const projekte: Projekt[] = [
     ],
     thumbnail: '/images/projekte/defh-safenwil/thumb.jpg',
     heroImage: '/images/projekte/defh-safenwil/hero.jpg',
-    galerie: ['/images/projekte/defh-safenwil/01.jpg', '/images/projekte/defh-safenwil/02.jpg', '/images/projekte/defh-safenwil/03.jpg'],
+    galerie: ['/images/projekte/defh-safenwil/01.jpg', '/images/projekte/defh-safenwil/02.jpg'],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/defh-safenwil/01-kataster.pdf' },
       { titel: 'Erdgeschoss', datei: '/dokumente/projekte/defh-safenwil/02-erdgeschoss.pdf' },
