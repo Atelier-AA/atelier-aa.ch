@@ -1,12 +1,12 @@
 import type { NavLink } from '@/types';
 
-// Reihenfolge und Beschriftung nach Kundenwunsch: Projekte, dann Disziplinen
-// (vormals "Leistungen"), dann Atelier (vormals "Über uns"). Die Ziel-URLs
-// bleiben unverändert (/leistungen, /ueber-uns) — nur Label und Reihenfolge
-// im Menü ändern sich.
+// Reihenfolge und Beschriftung nach Kundenwunsch: Projekte, dann Kompetenzen
+// (vormals "Leistungen", zwischenzeitlich "Disziplinen"), dann Atelier
+// (vormals "Über uns"). Die Ziel-URLs bleiben unverändert (/leistungen,
+// /ueber-uns) — nur Label und Reihenfolge im Menü ändern sich.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
-  { href: '/leistungen', label: 'Disziplinen' },
+  { href: '/leistungen', label: 'Kompetenzen' },
   { href: '/ueber-uns', label: 'Atelier' },
   { href: '/insights', label: 'Insights' },
   { href: '/kontakt', label: 'Kontakt' },

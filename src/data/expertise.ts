@@ -10,39 +10,61 @@ import type { InsightFrage } from '@/types';
  */
 
 /**
- * Leistungsangebot: echte Mandatsarten («wofür können Sie uns beauftragen»),
- * statt Bauaufgaben (Neubau, Umbau, Verdichtung …) als gleichrangige Punkte
- * aufzuführen — die stehen als Beispiele innerhalb von "Planung und Entwurf"
- * sowie separat, sr-only, im Abschnitt Bauaufgaben.
+ * Kompetenzen: fünf Rollen entlang des Planungsprozesses («wofür können Sie
+ * uns beauftragen»), statt Bauaufgaben (Neubau, Umbau, Verdichtung …) als
+ * gleichrangige Punkte aufzuführen — die stehen als Beispiele innerhalb von
+ * "Planung und Koordination" sowie separat, sr-only, im Abschnitt Bauaufgaben.
+ * `punkte` sind die konkreten Leistungen je Kompetenz, `text` ordnet sie ein.
  */
-export const leistungsangebot = [
-  {
-    titel: 'Beratung',
-    text: 'Beurteilung von Grundstücken vor dem Kauf, Prüfung fremder Projekte, Zweitmeinung zu Kostenschätzungen und Werkverträgen. Wir sagen Ihnen offen, wenn ein Vorhaben nicht trägt — bevor Planungskosten entstehen.',
-  },
-  {
-    titel: 'Projektentwicklung',
-    text: 'Machbarkeitsstudien, Kostenrahmen, Ertragsrechnung und Wohnungsmix — die Grundlagen, auf denen sich Investitionsentscheide treffen lassen. So lässt sich vor der ersten Skizze abschätzen, ob sich ein Vorhaben wirtschaftlich trägt.',
-  },
-  {
-    titel: 'Planung und Entwurf',
-    text: 'Neubau, Umbau, Verdichtung und hindernisfreies Bauen — von der ersten Volumenstudie bis zum ausführungsreifen Projekt, für Wohn- und Gewerbebauten gleichermassen. Jedes Projekt beginnt mit der Analyse von Ort, Nutzung und Bauordnung, bevor der Entwurf entsteht.',
-  },
-  {
-    titel: 'Baugesuch und Bewilligung',
-    text: 'Vollständige Baugesuchsdossiers in der ganzen Schweiz, Begleitung durch Auflage, Einsprachen und Bewilligungsauflagen. Die Praxis der Bewilligungsbehörden kennen wir besonders gut in den Kantonen Zürich, Aargau und Zug und planen Fristen entsprechend ein.',
-  },
-  {
-    titel: 'Bauleitung und Kostenkontrolle',
-    text: 'Ausschreibung, Vergabe, Koordination der Unternehmer, Prüfung von Nachträgen. Auf Wunsch übernehmen wir die Bauleitung auch selbst und vertreten Ihre Interessen auf der Baustelle, meist in Zusammenarbeit mit einer externen Bauleitung vor Ort.',
-  },
+export const kompetenzen = [
   {
     titel: 'Generalplanung',
-    text: 'Auf Wunsch übernehmen wir die Koordination sämtlicher Fachplaner unter einem Mandat — für einen direkten Draht zwischen Bauherrschaft und allen Beteiligten, mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen. Wir sind offen für diese Rolle, wo sie dem Projekt dient.',
+    punkte: [
+      'Vollumfängliche Planung Ihres individuellen Bauvorhabens',
+      'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
+      'Atelier AA als Ihr alleiniger Vertrags- und Ansprechpartner',
+    ],
+    text: 'Als Generalplaner gewährleisten wir Ihnen einen termin- und kostengerechten Projekterfolg mit aussergewöhnlicher architektonischer Qualität.',
   },
   {
-    titel: 'Wettbewerbe und Studien',
-    text: 'Wir sind offen für die Teilnahme an Architekturwettbewerben, Studien und Testplanungen — auch ausserhalb konkreter Bauvorhaben, etwa zur Standort- oder Arealentwicklung. Der Wettbewerb ist für uns ein wichtiges Verfahren, um neue Lösungsansätze zu erproben.',
+    titel: 'Beratung',
+    punkte: [
+      'Beratung vor Projektbeginn',
+      'Branchenspezifische Bedarfsermittlung',
+      'Raum- und Funktionsprogramm: Entwicklung eines Organisationsschemas',
+      'Grundstücksanalyse: Standortfaktoren und der Genius Loci',
+    ],
+    text: 'Bevor die erste Linie gezeichnet ist, klären wir, was Ihr Projekt wirklich braucht — fachlich fundiert und auf Ihr Grundstück zugeschnitten.',
+  },
+  {
+    titel: 'Analyse und Konzept',
+    punkte: [
+      'Leistungsphasen 1–2: Konzept und Machbarkeitsstudien',
+      'Weichenstellung: Projektentwicklung',
+      'Wettbewerbe',
+      'Planungsinstrumente: Simulation und Modell',
+    ],
+    text: 'In dieser Phase entsteht die Grundlage jeder Entscheidung: Wir prüfen Potenzial und Machbarkeit, bevor Ressourcen in die Ausführung fliessen.',
+  },
+  {
+    titel: 'Planung und Koordination',
+    punkte: [
+      'Leistungsphase 3: Nutzerspezifische Entwurfsplanung',
+      'Generalplanung: Das Planungsteam als Mannschaft',
+      'Leistungsphase 4: Genehmigungsplanung',
+      'Leistungsphase 5: Ausführungs- und Detailplanung',
+    ],
+    text: 'Wir führen Entwurf, Bewilligung und Ausführungsplanung so zusammen, dass alle Fachplaner auf denselben Stand hinarbeiten.',
+  },
+  {
+    titel: 'Realisierung',
+    punkte: [
+      'Leistungsphase 6: Erstellung von Leistungsverzeichnissen und Ausschreibung',
+      'Leistungsphase 7: Auswertung der Angebote und Vergabe',
+      'Leistungsphasen 8–9: Bauüberwachung während der Realisierung',
+      'Kosten- und Terminkontrolle',
+    ],
+    text: 'Von der Ausschreibung bis zur Übergabe begleiten wir die Baustelle und sichern Qualität, Kosten und Termine.',
   },
 ];
 

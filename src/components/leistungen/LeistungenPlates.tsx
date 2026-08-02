@@ -1,4 +1,4 @@
-import { leistungsangebot } from '@/data/expertise';
+import { kompetenzen } from '@/data/expertise';
 import { planArtReihenfolge } from './PlanArt';
 import { cn } from '@/lib/utils';
 
@@ -18,14 +18,15 @@ function Registermarke({ className }: { className: string }) {
 interface PlateProps {
   index: number;
   titel: string;
+  punkte: string[];
   text: string;
 }
 
 /**
- * Eine Leistung als vollflächiges 50/50-Blatt: Skizze links oder rechts,
- * Text auf der anderen Seite, im Wechsel weiss/nebel.
+ * Eine Kompetenz als vollflächiges 50/50-Blatt: Skizze links oder rechts,
+ * Punkte und Einordnungstext auf der anderen Seite, im Wechsel weiss/nebel.
  */
-function Plate({ index, titel, text }: PlateProps) {
+function Plate({ index, titel, punkte, text }: PlateProps) {
   const gerade = index % 2 === 0;
   const Art = planArtReihenfolge[index];
 
@@ -59,12 +60,20 @@ function Plate({ index, titel, text }: PlateProps) {
         <p className="mb-3 font-mono text-3xl font-semibold tracking-tight text-ink md:text-4xl">
           {String(index + 1).padStart(2, '0')}
           <span className="text-lg font-normal text-stone md:text-xl">
-            /{String(leistungsangebot.length).padStart(2, '0')}
+            /{String(kompetenzen.length).padStart(2, '0')}
           </span>
         </p>
         <h3 className="mb-5 max-w-[14ch] text-3xl font-medium leading-tight text-ink md:text-4xl">
           {titel}
         </h3>
+        <ul className="mb-6 max-w-[48ch] space-y-2">
+          {punkte.map((punkt) => (
+            <li key={punkt} className="flex gap-3 leading-relaxed text-graphite">
+              <span aria-hidden="true" className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full bg-stone" />
+              {punkt}
+            </li>
+          ))}
+        </ul>
         <p className="max-w-[48ch] leading-relaxed text-graphite">{text}</p>
       </div>
     </div>
@@ -72,15 +81,15 @@ function Plate({ index, titel, text }: PlateProps) {
 }
 
 /**
- * Das Leistungsangebot als Folge vollflächiger Blätter statt eines
- * Kartenrasters — je eine Leistung pro Blatt, Skizze und Text flächig
+ * Die Kompetenzen als Folge vollflächiger Blätter statt eines
+ * Kartenrasters — je eine Kompetenz pro Blatt, Skizze und Text flächig
  * nebeneinander, ohne Container-Rand.
  */
 export default function LeistungenPlates() {
   return (
     <div>
-      {leistungsangebot.map((l, index) => (
-        <Plate key={l.titel} index={index} titel={l.titel} text={l.text} />
+      {kompetenzen.map((k, index) => (
+        <Plate key={k.titel} index={index} titel={k.titel} punkte={k.punkte} text={k.text} />
       ))}
     </div>
   );

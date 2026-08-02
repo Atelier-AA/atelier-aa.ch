@@ -5,7 +5,7 @@ import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
 import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
-  title: 'Disziplinen',
+  title: 'Kompetenzen',
   description:
     'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Bauleitung und Generalplanung für Wohnen und Gewerbe — Schwerpunkt Zürich, Aargau, Zug, auf Anfrage in der ganzen Schweiz.',
   alternates: { canonical: '/leistungen' },
@@ -16,7 +16,7 @@ export default function LeistungenPage() {
     <div className="pt-32 md:pt-40">
       <Container>
         <div className="mb-16 max-w-3xl md:mb-24">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Disziplinen</p>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Kompetenzen</p>
           {/* Tragende Begriffe fett, der Rest der Zeile normal. */}
           <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
             <span className="font-semibold">Architektur</span> mit Klarheit
@@ -29,8 +29,8 @@ export default function LeistungenPage() {
             Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
             Architektur, die funktional, nachhaltig und wirtschaftlich trägt – mit
             Schwerpunkt in den Kantonen Zürich, Aargau und Zug, für passende Aufgaben
-            auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden sieben
-            Disziplinen.
+            auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden fünf
+            Kompetenzen.
           </p>
           <p className="mt-6 text-lg leading-relaxed text-graphite md:text-xl">
             Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
@@ -51,7 +51,7 @@ export default function LeistungenPage() {
               Angebot
             </p>
             <h2 className="text-3xl font-medium leading-tight text-ink md:text-4xl">
-              Disziplinen
+              Kompetenzen
             </h2>
           </div>
           <LeistungenPlates />

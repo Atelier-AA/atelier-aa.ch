@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { leistungsangebot } from '@/data/expertise';
+import { kompetenzen } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
@@ -50,7 +50,7 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
 }
 
 /**
- * Disziplinen und Referenzen in einem gemeinsamen Abschnitt statt zwei
+ * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
  * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
  * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
  * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
@@ -67,22 +67,22 @@ export default function KompetenzenReferenzenSection() {
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-          Disziplinen &amp; Projekte
+          Kompetenzen &amp; Projekte
         </p>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Disziplinen: Überschrift plus zweispaltige, aufklappbare Liste. */}
+          {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
           <div className="lg:col-start-1 lg:row-start-1">
             <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-              Sieben <span className="font-semibold">Disziplinen</span>, sichtbar in
+              Fünf <span className="font-semibold">Kompetenzen</span>, sichtbar in
               echten <span className="font-semibold">Projekten.</span>
             </h2>
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
-              {leistungsangebot.map((l) => (
-                <details key={l.titel} className="group border-b border-mist py-4">
+              {kompetenzen.map((k) => (
+                <details key={k.titel} className="group border-b border-mist py-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
                     <h3 className="text-base font-medium text-ink transition-colors group-hover:text-graphite">
-                      {l.titel}
+                      {k.titel}
                     </h3>
                     <span
                       aria-hidden="true"
@@ -92,7 +92,7 @@ export default function KompetenzenReferenzenSection() {
                       <span className="absolute top-1/2 left-0 block h-px w-3 rotate-90 bg-current transition-transform duration-300 ease-out group-open:rotate-0" />
                     </span>
                   </summary>
-                  <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{l.text}</p>
+                  <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{k.text}</p>
                 </details>
               ))}
             </div>
@@ -100,11 +100,11 @@ export default function KompetenzenReferenzenSection() {
 
           <div className="lg:col-start-1 lg:row-start-2">
             <Button href="/leistungen" variant="text">
-              alle Disziplinen ansehen
+              alle Kompetenzen ansehen
             </Button>
           </div>
 
-          {/* Trennlinie: bindet Disziplinen und Referenzen visuell zu einer
+          {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
               Komposition — nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
           <div
