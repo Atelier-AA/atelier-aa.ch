@@ -106,7 +106,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-jonen/17.jpg',
       '/images/projekte/efh-jonen/18.jpg',
       '/images/projekte/efh-jonen/19.jpg',
-      '/images/projekte/efh-jonen/20.jpg',
     ],
     plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-jonen/01-kataster.pdf' }],
     featured: true,
@@ -183,7 +182,6 @@ export const projekte: Projekt[] = [
     galerie: [
       '/images/projekte/mfh-alte-poststrasse/01.jpg',
       '/images/projekte/mfh-alte-poststrasse/02.jpg',
-      '/images/projekte/mfh-alte-poststrasse/03.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-alte-poststrasse/01-kataster.pdf' },
@@ -345,7 +343,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-kuenten/04.jpg',
       '/images/projekte/mfh-kuenten/05.jpg',
       '/images/projekte/mfh-kuenten/06.jpg',
-      '/images/projekte/mfh-kuenten/07.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-kuenten/01-kataster.pdf' },
@@ -437,7 +434,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-letten/02.jpg',
       '/images/projekte/mfh-letten/03.jpg',
       '/images/projekte/mfh-letten/04.jpg',
-      '/images/projekte/mfh-letten/05.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-letten/01-kataster.pdf' },
@@ -602,7 +598,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-hochwarting/03.jpg',
       '/images/projekte/mfh-hochwarting/04.jpg',
       '/images/projekte/mfh-hochwarting/05.jpg',
-      '/images/projekte/mfh-hochwarting/06.jpg',
     ],
     plaene: [
       { titel: 'Umgebungsplan', datei: '/dokumente/projekte/mfh-hochwarting/01-umgebungsplan.pdf' },
@@ -726,7 +721,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/refh-hochfelden/01.jpg',
       '/images/projekte/refh-hochfelden/02.jpg',
       '/images/projekte/refh-hochfelden/03.jpg',
-      '/images/projekte/refh-hochfelden/04.jpg',
     ],
     plaene: [
       { titel: 'Situationsplan', datei: '/dokumente/projekte/refh-hochfelden/01-situation.pdf' },
@@ -791,7 +785,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-buchs/02.jpg',
       '/images/projekte/efh-buchs/03.jpg',
       '/images/projekte/efh-buchs/04.jpg',
-      '/images/projekte/efh-buchs/05.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/efh-buchs/01-kataster.pdf' },
@@ -993,7 +986,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-rupperswil/04.jpg',
       '/images/projekte/efh-rupperswil/05.jpg',
       '/images/projekte/efh-rupperswil/06.jpg',
-      '/images/projekte/efh-rupperswil/07.jpg',
     ],
     plaene: [
       { titel: 'Situationsplan 1:500', datei: '/dokumente/projekte/efh-rupperswil/01-situation-500.pdf' },
@@ -1179,7 +1171,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-wuerenlingen/01.jpg',
       '/images/projekte/mfh-wuerenlingen/02.jpg',
       '/images/projekte/mfh-wuerenlingen/03.jpg',
-      '/images/projekte/mfh-wuerenlingen/04.jpg',
     ],
     plaene: [
       { titel: 'Kataster 1:500', datei: '/dokumente/projekte/mfh-wuerenlingen/01-kataster-500.pdf' },
@@ -1398,7 +1389,6 @@ export const projekte: Projekt[] = [
     galerie: [
       '/images/projekte/defh-weiningen/01.jpg',
       '/images/projekte/defh-weiningen/02.jpg',
-      '/images/projekte/defh-weiningen/03.jpg',
     ],
     featured: false,
   },
