@@ -35,7 +35,7 @@ export default function IntroSection() {
 
           <div className="relative min-h-[16rem] w-full bg-mist lg:col-start-2 lg:row-start-1 lg:min-h-0">
             <Image
-              src="/images/projekte/efh-jonen/17.jpg"
+              src="/images/projekte/efh-jonen/16.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen"
               fill
               className="object-cover"
