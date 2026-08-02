@@ -54,9 +54,19 @@ export const projekte: Projekt[] = [
           'Zwischen Anspruch und Bauherrenwunsch muss keine zweite Partei vermitteln — am Verfahren selbst ändert das nichts.',
       },
       {
+        frage: 'Worauf muss man bei einem schwierig erschlossenen Grundstück achten?',
+        antwort:
+          'Zufahrt, Werkleitungen und Grenzabstände früh prüfen, am besten schon vor dem Landkauf — das vermeidet Überraschungen bei den Kosten.',
+      },
+      {
         frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
         antwort:
           'Im Aargau aktuell rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen, je nach Standard.',
+      },
+      {
+        frage: 'Warum wurde ausgerechnet dieses Projekt als erstes Referenzprojekt gezeigt?',
+        antwort:
+          'Weil es das aktuellste realisierte Projekt ist und wir als Eigenprojekt besonders offen über Entscheidungen sprechen können.',
       },
     ],
     thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
