@@ -1227,6 +1227,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-wuerenlingen/01.jpg',
       '/images/projekte/mfh-wuerenlingen/02.jpg',
       '/images/projekte/mfh-wuerenlingen/03.jpg',
+      '/images/projekte/mfh-wuerenlingen/04.jpg',
     ],
     plaene: [
       { titel: 'Kataster 1:500', datei: '/dokumente/projekte/mfh-wuerenlingen/01-kataster-500.pdf' },
