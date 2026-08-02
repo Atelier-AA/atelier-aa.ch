@@ -527,7 +527,6 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-huenenberg/13.jpg',
       '/images/projekte/efh-huenenberg/14.jpg',
       '/images/projekte/efh-huenenberg/15.jpg',
-      '/images/projekte/efh-huenenberg/16.jpg',
     ],
     featured: false,
   },
