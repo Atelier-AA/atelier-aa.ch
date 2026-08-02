@@ -44,7 +44,7 @@ const slides: Slide[] = [
     projekt: 'Mehrfamilienhaus',
     ort: 'Untersiggenthal',
     kanton: 'AG',
-    href: '/referenzen/mfh-untersiggenthal',
+    href: '/referenzen/mfh-alte-poststrasse',
   },
   {
     image: '/images/hero/slide-hochwarting-1.jpg',
