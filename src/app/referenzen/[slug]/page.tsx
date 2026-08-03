@@ -156,7 +156,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           ))}
 
           {/* Eckdaten und Leistungsumfang */}
-          <div className="mt-8 grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
+          <div className="mt-[2.2rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
               <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
                 Eckdaten
