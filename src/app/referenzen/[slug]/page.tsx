@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ProjektBilder from '@/components/projekte/ProjektBilder';
+import ProjektTextSpalte from '@/components/projekte/ProjektTextSpalte';
 import ProjektMeta from '@/components/projekte/ProjektMeta';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
@@ -112,7 +113,10 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         gleicher Höhe und scrollen zunächst gemeinsam; sobald die Textspalte
         oben ankommt, bleibt sie dort stehen (position: sticky, ohne eigene
         Maximalhöhe), während die Bilder weiterlaufen — bis der Bildbereich
-        endet und der Text den Rest seines Inhalts fertig scrollt.
+        endet und der Text den Rest seines Inhalts fertig scrollt. Fährt die
+        Maus über den Text, hebt `ProjektTextSpalte` das Sticky-Verhalten
+        temporär auf, sodass der Text unabhängig von seiner aktuellen Position
+        normal mit den Bildern weiterscrollt.
         Auf schmalen Bildschirmen steht der Text zuerst, darunter die Bilder,
         einspaltig ohne Sticky-Verhalten.
       */}
@@ -126,7 +130,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="order-1 w-full px-6 pt-[2.783rem] pb-12 md:px-10 md:pb-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:pb-28">
+        <ProjektTextSpalte>
           <p className="mb-[0.85rem] text-xs font-medium uppercase tracking-widest text-stone">
             {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
@@ -183,7 +187,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           </div>
 
           <FragenAntworten fragen={projekt.fragen} titel="Fragen zu diesem Projekttyp" />
-        </div>
+        </ProjektTextSpalte>
       </div>
 
       {/* Abschluss-CTA bewusst ausserhalb der zweispaltigen Ansicht, auf
