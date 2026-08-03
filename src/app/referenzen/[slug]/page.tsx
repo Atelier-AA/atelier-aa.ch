@@ -116,7 +116,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         Auf schmalen Bildschirmen steht der Text zuerst, darunter die Bilder,
         einspaltig ohne Sticky-Verhalten.
       */}
-      <div className="flex flex-col pt-24 md:pt-28 lg:flex-row lg:items-start">
+      <div className="flex flex-col pt-[5.4rem] md:pt-[6.3rem] lg:flex-row lg:items-start">
         <div className="order-2 w-full lg:order-1 lg:w-3/5">
           <ProjektBilder
             heroImage={projekt.heroImage}
@@ -156,7 +156,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           ))}
 
           {/* Eckdaten und Leistungsumfang */}
-          <div className="mt-[4.25rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
+          <div className="mt-[3.825rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
               <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
                 Eckdaten
