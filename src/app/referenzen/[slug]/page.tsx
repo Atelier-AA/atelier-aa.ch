@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ProjektBilder from '@/components/projekte/ProjektBilder';
+import ProjektZeile from '@/components/projekte/ProjektZeile';
 import ProjektTextSpalte from '@/components/projekte/ProjektTextSpalte';
 import ProjektMeta from '@/components/projekte/ProjektMeta';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
@@ -114,13 +115,16 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         oben ankommt, bleibt sie dort stehen (position: sticky, ohne eigene
         Maximalhöhe), während die Bilder weiterlaufen — bis der Bildbereich
         endet und der Text den Rest seines Inhalts fertig scrollt. Fährt die
-        Maus über den Text, hebt `ProjektTextSpalte` das Sticky-Verhalten
-        temporär auf, sodass der Text unabhängig von seiner aktuellen Position
-        normal mit den Bildern weiterscrollt.
+        Maus über die ganze Zeile (Bilder oder Text), hebt `ProjektZeile` das
+        Sticky-Verhalten der Textspalte temporär auf, sodass der Text normal
+        mit den Bildern weiterscrollt. Der Hover-Zustand gilt für die ganze
+        Zeile statt nur für den Text — sonst würde ein Wechsel von Text zu
+        Bildern das Sticky-Verhalten sofort zurückholen und einen Sprung
+        verursachen.
         Auf schmalen Bildschirmen steht der Text zuerst, darunter die Bilder,
         einspaltig ohne Sticky-Verhalten.
       */}
-      <div className="flex flex-col pt-[5.4rem] md:pt-[6.3rem] lg:flex-row lg:items-start">
+      <ProjektZeile>
         <div className="order-2 w-full lg:order-1 lg:w-3/5">
           <ProjektBilder
             heroImage={projekt.heroImage}
@@ -188,7 +192,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
           <FragenAntworten fragen={projekt.fragen} titel="Fragen zu diesem Projekttyp" />
         </ProjektTextSpalte>
-      </div>
+      </ProjektZeile>
 
       {/* Abschluss-CTA bewusst ausserhalb der zweispaltigen Ansicht, auf
           voller Breite — anders als der übrige Text, der in der schmalen
