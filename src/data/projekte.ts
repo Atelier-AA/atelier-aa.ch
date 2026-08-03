@@ -100,33 +100,8 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal im Kanton Aargau. Die vertikale Gliederung der Fassade nimmt den Rhythmus der Nachbarschaft auf und übersetzt ihn in eine ruhige, zeitgemässe Form.',
-    abschnitte: [
-      {
-        titel: 'Die Aufgabe',
-        absaetze: [
-          'Das Grundstück liegt in einer gewachsenen Wohnzone von Untersiggenthal und fällt nach Süden ab. Gefordert war eine Verdichtung, die die zulässige Ausnutzung nutzt, ohne die Nachbarschaft zu überfahren.',
-        ],
-      },
-      {
-        titel: 'Volumen und Einordnung',
-        absaetze: [
-          'Ein Satteldachhaus, das die Dachlandschaft der Umgebung aufnimmt und trotzdem mehr Wohnfläche bietet. Die vertikale Fassadengliederung streckt das Haus optisch, vorgelagerte Balkone lassen die Grundfläche der Wohnungen ungeschmälert.',
-        ],
-      },
-      {
-        titel: 'Grundrisse',
-        absaetze: [
-          'Jede Wohnung ist zweiseitig orientiert, mit Morgen- und Abendlicht und einer zum Wohnraum offenen, aber abtrennbaren Küche. Die Wohnungsgrössen sind gemischt — für Einzelpersonen, Paare und Familien.',
-        ],
-      },
-      {
-        titel: 'Konstruktion und Nachhaltigkeit',
-        absaetze: [
-          'Massivbau mit hinterlüfteter Fassade, sodass sich die Fassade in Jahrzehnten erneuern lässt, ohne die Struktur anzutasten. Die Wärmeerzeugung erfolgt über eine Erdsonden-Wärmepumpe, das Dach ist für Photovoltaik vorbereitet — der Betrieb ist fossilfrei.',
-        ],
-      },
-    ],
+      'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone. Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach — der Betrieb ist fossilfrei.',
+    abschnitte: [],
     daten: [
       { label: 'Lage', wert: 'Alte Poststrasse, Untersiggenthal' },
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
@@ -138,17 +113,17 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie lange dauert ein Mehrfamilienhaus von der ersten Skizze bis zum Einzug?',
         antwort:
-          'Rechnen Sie mit drei bis vier Jahren. Vorprojekt und Baugesuch brauchen etwa ein Jahr, die Baugenehmigung im Kanton Aargau je nach Gemeinde und Einsprachelage drei bis neun Monate, die Ausführung anschliessend rund achtzehn Monate.',
+          'Meist drei bis vier Jahre: rund ein Jahr für Vorprojekt und Baugesuch, drei bis neun Monate Bewilligung, danach rund achtzehn Monate Ausführung.',
       },
       {
         frage: 'Wie viele Wohnungen sind auf unserem Grundstück möglich?',
         antwort:
-          'Das ergibt sich aus Ausnutzungsziffer, Grenzabständen und Gebäudehöhe der Bau- und Nutzungsordnung Ihrer Gemeinde. Wir prüfen das in einer Machbarkeitsstudie und zeigen Ihnen eine realistische Bandbreite mit Volumenstudie.',
+          'Das hängt von Ausnutzung, Grenzabständen und Gebäudehöhe Ihrer Gemeinde ab — wir zeigen die Bandbreite in einer Machbarkeitsstudie.',
       },
       {
         frage: 'Was kostet ein Mehrfamilienhaus pro Kubikmeter?',
         antwort:
-          'Im Kanton Aargau und Zürich liegen Wohnbauten in mittlerem Standard aktuell bei rund 700 bis 900 Franken pro Kubikmeter Gebäudevolumen. Baugrund, Erschliessung und Ausbaustandard verschieben das erheblich — eine belastbare Zahl gibt erst der Kostenrahmen im Vorprojekt.',
+          'Im Aargau und Zürich aktuell rund 700 bis 900 Franken pro Kubikmeter, je nach Standard und Lage.',
       },
     ],
     thumbnail: '/images/projekte/mfh-alte-poststrasse/thumb.jpg',
@@ -187,30 +162,8 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Zwei Mehrfamilienhäuser als Ensemble in Adliswil, Kanton Zürich. Die Baukörper fassen einen gemeinsamen Aussenraum und stehen in einem klaren Verhältnis zueinander.',
-    abschnitte: [
-      {
-        titel: 'Zwei Häuser, ein Ensemble',
-        absaetze: [
-          'Die Bauherrschaft hatte zwei benachbarte Parzellen und die Absicht, sie getrennt zu bebauen. Wir haben vorgeschlagen, beide Häuser gemeinsam zu entwickeln — nicht als Zwillinge, sondern als aufeinander bezogene Baukörper.',
-          'Der Gewinn liegt im Aussenraum: Statt zweier Restflächen entsteht ein zusammenhängender Hof, der beiden Häusern dient. Auch Erschliessung, Einstellhalle und Werkleitungen liessen sich zusammenlegen, was die Erstellungskosten gesenkt hat.',
-        ],
-      },
-      {
-        titel: 'Materialität',
-        absaetze: [
-          'Die Fassaden sind in grossformatigen Platten ausgeführt, dunkel abgesetzt gegen die helleren Nachbarbauten. Die Fensteröffnungen sind wenige, aber grosse — das ergibt eine ruhige Fassade und innen gut nutzbare Wandflächen.',
-          'Der Sonnenschutz ist als Lamellenstore in die Fassadenebene integriert. Geschlossen bildet er mit der Fassade eine Fläche, statt als Aufbau zu erscheinen.',
-        ],
-      },
-      {
-        titel: 'Wirtschaftlichkeit',
-        absaetze: [
-          'Das Projekt war von Beginn an als Renditeobjekt gedacht. Wir haben Grundrisse und Ausbaustandard so abgestimmt, dass die Mietzinse im Marktband von Adliswil liegen und die Wohnungen langfristig vermietbar bleiben.',
-          'Nutzungsoffenheit war Teil der Kalkulation: Die Wohnungstrennwände sind nicht tragend und lassen sich versetzen, wenn sich die Nachfrage nach Wohnungsgrössen verschiebt.',
-        ],
-      },
-    ],
+      'Zwei Mehrfamilienhäuser als Ensemble in Adliswil (ZH), auf zwei ursprünglich getrennt geplanten Nachbarparzellen. Gemeinsam entwickelt entsteht statt zweier Restflächen ein zusammenhängender Hof; auch Erschliessung, Einstellhalle und Werkleitungen wurden zusammengelegt, was die Erstellungskosten senkte. Die Fassaden sind in dunklen, grossformatigen Platten ausgeführt, mit integriertem Lamellenstore als Sonnenschutz. Als Renditeobjekt geplant, mit marktgerechten Mietzinsen und nicht tragenden, versetzbaren Wohnungstrennwänden.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Zwei Mehrfamilienhäuser' },
       { label: 'Bauweise', wert: 'Massivbau, Plattenfassade' },
@@ -221,17 +174,17 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt es sich, zwei Nachbarparzellen gemeinsam zu entwickeln?',
         antwort:
-          'Meist ja. Gemeinsame Einstellhalle, Erschliessung und Werkleitungen senken die Erstellungskosten deutlich, und der Aussenraum wird nutzbarer. Voraussetzung ist, dass die Eigentumsverhältnisse und die Etappierung sauber geregelt werden.',
+          'Meist ja — gemeinsame Einstellhalle, Erschliessung und Werkleitungen senken die Kosten deutlich und der Aussenraum wird nutzbarer.',
       },
       {
         frage: 'Wie planen Sie für eine gute Rendite?',
         antwort:
-          'Wir stimmen Wohnungsmix und Ausbaustandard auf das lokale Mietzinsniveau ab, statt maximal zu bauen. Dazu kommt Nutzungsoffenheit: nicht tragende Trennwände erlauben es, Wohnungsgrössen später anzupassen, ohne ins Tragwerk einzugreifen.',
+          'Wohnungsmix und Ausbaustandard richten sich nach dem lokalen Mietzinsniveau, mit nicht tragenden Trennwänden für spätere Anpassungen.',
       },
       {
-        frage: 'Was passiert, wenn eine der beiden Parzellen einer anderen Eigentümerschaft gehört als die andere?',
+        frage: 'Was passiert, wenn die beiden Parzellen unterschiedlichen Eigentümerschaften gehören?',
         antwort:
-          'Eine gemeinsame Entwicklung ist dann weiterhin möglich, verlangt aber einen frühen Dienstbarkeits- oder Grunddienstbarkeitsvertrag zwischen den Eigentümerschaften, der Erschliessung, Einstellhalle und Kostenteilung regelt. Wir bringen diesen Vertrag rechtzeitig vor dem Baugesuch auf den Weg.',
+          'Eine gemeinsame Entwicklung bleibt möglich, braucht aber einen frühen Dienstbarkeitsvertrag zu Erschliessung, Einstellhalle und Kostenteilung.',
       },
     ],
     thumbnail: '/images/projekte/mfh-sihlaurain/thumb.jpg',
@@ -266,30 +219,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Mehrfamilienhaus am Hang in Künten, Kanton Aargau. Gestaffelte Baukörper reagieren auf das Gelände und geben jeder Wohnung einen eigenen Aussenraum mit Aussicht.',
-    abschnitte: [
-      {
-        titel: 'Bauen am Hang',
-        absaetze: [
-          'Das Grundstück in Künten fällt deutlich ab. Ein Hang ist kein Nachteil, sondern eine Chance: Er erlaubt es, Wohnungen übereinander zu stapeln, ohne dass eine der anderen die Aussicht nimmt.',
-          'Wir haben das Volumen in drei Stufen gegliedert, die dem Gelände folgen. Jede Stufe trägt die Terrasse der darüberliegenden Wohnung. Aushub und Stützmauern bleiben dadurch minimal.',
-        ],
-      },
-      {
-        titel: 'Licht und Aussicht',
-        absaetze: [
-          'Alle Wohnräume orientieren sich nach Südwesten zur Aussicht. Die Schlafräume liegen bergseitig und bleiben dadurch kühler — im Sommer ein spürbarer Vorteil ohne technische Kühlung.',
-          'Die Fensterflächen sind grosszügig, aber nicht flächig verglast. Feste Brüstungen und der auskragende Terrassenboden darüber verschatten im Hochsommer, lassen die flache Wintersonne aber einfallen.',
-        ],
-      },
-      {
-        titel: 'Zurückhaltung als Haltung',
-        absaetze: [
-          'Künten ist ein Dorf mit kleinteiliger Bebauung. Ein Mehrfamilienhaus ist hier ein Eingriff — er muss begründet und sorgfältig gemacht sein.',
-          'Wir haben deshalb mit wenigen, ortsüblichen Materialien gearbeitet: Putz, Holz an den geschützten Bauteilen, mineralische Farbtöne. Das Haus fällt nicht auf, hält aber jeder genauen Betrachtung stand.',
-        ],
-      },
-    ],
+      'Mehrfamilienhaus am Hang in Künten (AG): Das Volumen ist in drei Stufen gegliedert, die dem abfallenden Gelände folgen und jeder Wohnung Terrasse und Aussicht geben, bei minimalem Aushub. Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet — Putz, Holz, mineralische Farbtöne.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus am Hang' },
       { label: 'Besonderheit', wert: 'Gestaffelte Baukörper, Terrassen' },
@@ -300,12 +231,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Ist Bauen am Hang teurer?',
         antwort:
-          'Aushub, Hangsicherung und Erschliessung kosten mehr als in der Ebene. Bei sorgfältiger Planung kompensiert der Gewinn an Aussicht und Belichtung das im Verkaufs- oder Mietwert meist. Entscheidend ist, das Volumen dem Gelände anzupassen statt es abzugraben.',
+          'Aushub und Hangsicherung kosten mehr, der Gewinn an Aussicht und Belichtung kompensiert das im Verkaufs- oder Mietwert meist.',
       },
       {
         frage: 'Brauchen wir eine Kühlung für die Wohnungen?',
         antwort:
-          'In den meisten Fällen nicht, wenn Ausrichtung, Verschattung und Speichermasse stimmen. Wir prüfen den sommerlichen Wärmeschutz im Entwurf — bauliche Lösungen sind günstiger und wartungsfrei gegenüber technischer Kühlung.',
+          'In den meisten Fällen nicht, wenn Ausrichtung, Verschattung und Speichermasse von Anfang an stimmen.',
       },
     ],
     thumbnail: '/images/projekte/mfh-kuenten/thumb.jpg',
@@ -347,37 +278,8 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Umnutzung eines ehemaligen Bürogebäudes in Ottenbach im Kanton Zürich zu einem Mehrfamilienhaus mit acht Wohnungen. Auskragende Balkone im Dachgeschoss prägen das neue Erscheinungsbild.',
-    abschnitte: [
-      {
-        titel: 'Die Aufgabe',
-        absaetze: [
-          'Das Gebäude in Ottenbach im Kanton Zürich wurde ursprünglich als Bürohaus genutzt und entsprach hinsichtlich Raumstruktur, Technik und Nutzung nicht mehr den heutigen Anforderungen. Im Rahmen einer umfassenden Kernsanierung haben wir die bestehende Bausubstanz bis auf den Rohbau zurückgeführt und vollständig in ein modernes Mehrfamilienhaus transformiert.',
-          'Ziel war die nachhaltige Weiterentwicklung des Bestands und die Schaffung von zeitgemässem Wohnraum, statt das Gebäude abzureissen und neu zu bauen. Eine Umnutzung stellt andere Anforderungen als ein Neubau: Tragstruktur, Geschosshöhen und Erschliessung sind vorgegeben und müssen in die neue Nutzung integriert werden.',
-        ],
-      },
-      {
-        titel: 'Acht Wohnungen aus einem Bürohaus',
-        absaetze: [
-          'Durch die Umnutzung konnten insgesamt acht Wohnungen realisiert werden. Dafür haben wir die bestehende Gebäudestruktur grundlegend neu organisiert und an die Anforderungen modernen Wohnens angepasst.',
-          'Gleichzeitig erfolgte die Erneuerung der technischen Infrastruktur sowie die gezielte Aufwertung der Gebäudehülle. Wärmedämmung, Fenster und Haustechnik entsprechen damit heutigem Standard, ohne dass die Struktur des ehemaligen Bürohauses ersetzt werden musste.',
-        ],
-      },
-      {
-        titel: 'Die auskragenden Balkone',
-        absaetze: [
-          'Eine besondere Herausforderung stellte die Realisierung der auskragenden Balkone im Dachgeschoss dar. Die anspruchsvolle konstruktive Umsetzung erforderte eine präzise Planung und enge Abstimmung aller Beteiligten.',
-          'Die neu geschaffenen Aussenräume prägen das Erscheinungsbild des Gebäudes und schaffen einen wesentlichen Mehrwert für die Bewohnerinnen und Bewohner. Wo vorher ein geschlossenes Bürohaus stand, öffnen sich jetzt grosszügige Balkone zum Umfeld.',
-        ],
-      },
-      {
-        titel: 'Von der Machbarkeitsstudie bis zur Bauleitung',
-        absaetze: [
-          'Das Projekt wurde von der ersten Machbarkeitsstudie über die Projektierung und Ausschreibung bis hin zur Ausführungsplanung und Begleitung der Bauleitung durchgehend von uns betreut.',
-          'Durch die sorgfältige Koordination sämtlicher Projektbeteiligter konnte die Transformation des ehemaligen Bürogebäudes in Ottenbach in ein hochwertiges Mehrfamilienhaus erfolgreich umgesetzt werden.',
-        ],
-      },
-    ],
+      'Umnutzung eines ehemaligen Bürogebäudes in Ottenbach (ZH) zu einem Mehrfamilienhaus mit acht Wohnungen. Die Kernsanierung führte die Bausubstanz bis auf den Rohbau zurück; Grundrisse, Haustechnik und Gebäudehülle wurden vollständig erneuert, während die bestehende Struktur erhalten blieb. Die auskragenden Balkone im Dachgeschoss verlangten eine anspruchsvolle konstruktive Lösung und prägen heute das Erscheinungsbild, wo zuvor ein geschlossenes Bürohaus stand. Wir haben das Projekt von der Machbarkeitsstudie bis zur Bauleitung durchgehend begleitet.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Umnutzung eines Bürogebäudes' },
       { label: 'Wohnungen', wert: 'Acht Wohnungen' },
@@ -388,17 +290,17 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt sich die Umnutzung eines Bürogebäudes zu Wohnraum?',
         antwort:
-          'Oft ja, wenn Tragstruktur und Geschosshöhen mitspielen. Der Rohbau bleibt erhalten, was Aushub und Rückbau spart, während Grundrisse, Haustechnik und Gebäudehülle vollständig erneuert werden. Ob sich das im Einzelfall rechnet, zeigt eine Machbarkeitsstudie zu Beginn.',
+          'Oft ja, wenn Tragstruktur und Geschosshöhen mitspielen — der Rohbau bleibt erhalten, Grundrisse und Technik werden neu.',
       },
       {
         frage: 'Wie werden auskragende Balkone konstruktiv gelöst?',
         antwort:
-          'Auskragende Balkone brauchen eine durchdachte Lastabtragung, meist über verstärkte Deckenplatten oder eingespannte Träger, kombiniert mit einer Wärmedämmung, die die Kältebrücke am Auskragungspunkt unterbricht. Die Details müssen früh mit dem Tragwerksplaner abgestimmt werden, weil sie die Statik des ganzen Geschosses beeinflussen.',
+          'Über verstärkte Deckenplatten oder eingespannte Träger mit wärmebrückenfreier Dämmung — früh mit dem Tragwerksplaner abzustimmen.',
       },
       {
         frage: 'Wie lange dauert eine Kernsanierung mit Umnutzung?',
         antwort:
-          'Von der Machbarkeitsstudie bis zum Einzug rechnen Sie meist mit zwei bis drei Jahren, je nach Bewilligungsverfahren und Umfang der Eingriffe. Weil die bestehende Struktur genutzt wird, entfällt die Rohbauzeit eines Neubaus, dafür verlängert eine sorgfältige Bestandsaufnahme die Planungsphase.',
+          'Meist zwei bis drei Jahre bis zum Einzug, je nach Bewilligungsverfahren und Umfang der Eingriffe.',
       },
     ],
     thumbnail: '/images/projekte/mfh-letten/thumb.jpg',
@@ -429,37 +331,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
-      'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg im Kanton Zug. Eine rahmenlose Verglasung öffnet das Erdgeschoss zum Garten, ein neuer Balkon im Obergeschoss bietet Sicht auf den Zugersee.',
-    abschnitte: [
-      {
-        titel: 'Die Aufgabe',
-        absaetze: [
-          'Das bestehende Einfamilienhaus in Hünenberg im Kanton Zug wurde im Erdgeschoss umfassend saniert und durch einen gezielten Anbau erweitert. Ziel der Bauherrschaft war es, den Wohnraum grosszügig zu öffnen und trotz der Erweiterung eine maximale natürliche Belichtung sicherzustellen.',
-          'Gleichzeitig sollte die neue Struktur ohne störende statische Eingriffe in den Bestand auskommen — eine Vorgabe, die die Wahl der Konstruktion und der Verglasung von Anfang an mitbestimmt hat.',
-        ],
-      },
-      {
-        titel: 'Rahmenlose Verglasung',
-        absaetze: [
-          'Für die Öffnung zum Garten kam eine durchgängige, grossflächige Verglasung mit einem rahmenlosen Schiebesystem zum Einsatz. Sie schafft eine nahezu nahtlose Verbindung zwischen Innen- und Aussenraum; die raumhohen Fenster führen das Licht tief in den Wohnbereich.',
-          'Trotz der kompakten Grundstruktur des Hauses entsteht dadurch eine räumliche Grosszügigkeit, wie sie ein reiner Anbau ohne diese Öffnung nicht erreicht hätte.',
-        ],
-      },
-      {
-        titel: 'Die Beschattung als Detail',
-        absaetze: [
-          'Eine besondere planerische Herausforderung war die Beschattung: Die Bauherrschaft wünschte ausschliesslich seitliche Führungsschienen an der Fassade, keine sichtbare Technik im Blickfeld. Die Lösung wurde deshalb vollständig im Sturzbereich integriert und über die Gebäudeecke geführt.',
-          'Die erforderliche Stabilität stellt ein ergänzendes, sorgfältig verstecktes Stahlrohr sicher. Das Ergebnis ist ein Sonnenschutz, der funktioniert, ohne die reduzierte Fassade zu stören.',
-        ],
-      },
-      {
-        titel: 'Balkon mit Weitblick',
-        absaetze: [
-          'Durch die Erweiterung entstand im Obergeschoss ein grosszügiger Balkon mit hoher Aufenthaltsqualität. Von hier reicht der Blick über die Dächer der Nachbarschaft bis zum Zugersee.',
-          'Das Projekt verbindet damit technische Präzision in der Umsetzung mit einer klaren Ausrichtung auf Wohnqualität und Aussicht.',
-        ],
-      },
-    ],
+      'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand. Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen — die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Sanierung und Erweiterung' },
       { label: 'Besonderheit', wert: 'Rahmenlose Verglasung, integrierte Beschattung' },
@@ -470,17 +343,17 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie lässt sich ein Erdgeschoss ohne sichtbare Statik öffnen?',
         antwort:
-          'Meist über rahmenlose Schiebeverglasungen in Kombination mit verstärkten Sturzkonstruktionen, die die Lasten unauffällig abtragen. Wie weit sich eine Fassade öffnen lässt, hängt von der bestehenden Tragstruktur ab und muss früh mit dem Tragwerksplaner geklärt werden.',
+          'Meist über rahmenlose Schiebeverglasungen mit verstärkten Sturzkonstruktionen — abhängig von der bestehenden Tragstruktur.',
       },
       {
-        frage: 'Wie funktioniert eine Beschattung ohne sichtbare Führungsschienen an der Fassade?',
+        frage: 'Wie funktioniert eine Beschattung ohne sichtbare Führungsschienen?',
         antwort:
-          'Die Führung lässt sich in den Sturzbereich integrieren und über die Gebäudeecke führen, statt sie aussen an der Fassade zu montieren. Die zusätzlich nötige Stabilität übernimmt ein ergänzendes, verdecktes Stahlrohr — sichtbar bleibt nur der Behang selbst.',
+          'Die Führung liegt im Sturzbereich und über der Gebäudeecke, stabilisiert durch ein verdecktes Stahlrohr.',
       },
       {
         frage: 'Lohnt sich eine Erweiterung gegenüber einem Neubau?',
         antwort:
-          'Oft ja, wenn die bestehende Struktur und Lage stimmen. Eine Erweiterung nutzt vorhandene Erschliessung und Bausubstanz weiter und kommt meist günstiger als ein vollständiger Neubau — vorausgesetzt, die Anschlüsse an den Bestand werden sorgfältig geplant.',
+          'Oft ja, wenn Lage und Struktur stimmen — die vorhandene Erschliessung wird weiter genutzt, was meist günstiger ist.',
       },
     ],
     thumbnail: '/images/projekte/efh-huenenberg/thumb.jpg',
@@ -506,30 +379,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
-      'Wohnbau mit klarer Ordnung in Glashütten, Kanton Aargau. Sorgfältig proportionierte Fassade, reduzierte Materialwahl, Grundrisse für Gemeinschaft und Rückzug.',
-    abschnitte: [
-      {
-        titel: 'Ordnung als Entwurfsprinzip',
-        absaetze: [
-          'Der Entwurf folgt einem einfachen Raster, das Fenster, Balkone und Wohnungstrennungen in ein Verhältnis setzt. Diese Ordnung ist nicht Selbstzweck: Sie macht die Konstruktion einfach und die Fassade ruhig.',
-          'Innerhalb des Rasters gibt es Abweichungen, wo sie begründet sind — grössere Öffnungen zum Wohnraum, kleinere zu Nebenräumen. Die Regel bleibt lesbar, die Ausnahme wird zum Akzent.',
-        ],
-      },
-      {
-        titel: 'Gemeinschaft und Rückzug',
-        absaetze: [
-          'Die Grundrisse trennen klar zwischen offenen und geschützten Bereichen. Wohnen, Essen und Kochen bilden eine Zone, die Schlafräume liegen abgesetzt an einem kurzen Gang.',
-          'Im Erdgeschoss gibt es einen gemeinsam nutzbaren Raum für Velos, Kinderwagen und Gerätschaften. Solche Flächen werden oft eingespart und danach vermisst.',
-        ],
-      },
-      {
-        titel: 'Langlebigkeit vor Effekt',
-        absaetze: [
-          'Bei der Materialwahl haben wir Dauerhaftigkeit über Wirkung gestellt: mineralischer Putz statt Verkleidung, robuste Bodenbeläge, Fenster mit langlebigen Beschlägen.',
-          'Das Ergebnis wirkt zurückhaltend. Nach fünf Jahren Nutzung ist es das noch — was der eigentliche Test für Materialentscheide ist.',
-        ],
-      },
-    ],
+      'Wohnbau mit klarer Ordnung in Glashütten (AG): Ein einfaches Raster setzt Fenster, Balkone und Wohnungstrennungen in ein ruhiges Verhältnis, mit begründeten Abweichungen als Akzent. Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund — mineralischer Putz, robuste Böden, langlebige Beschläge.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
       { label: 'Bauweise', wert: 'Massivbau, mineralischer Putz' },
@@ -540,12 +391,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie viel Fläche sollten wir für Nebenräume einplanen?',
         antwort:
-          'Für Velos, Kinderwagen und Gerätschaften rechnen Sie mit etwa zwei bis drei Quadratmetern je Wohnung, zusätzlich zu den Kellerabteilen. Diese Flächen werden oft gestrichen und danach vermisst — sie beeinflussen die Zufriedenheit der Mieterschaft deutlich.',
+          'Rund zwei bis drei Quadratmeter je Wohnung zusätzlich zu den Kellerabteilen — oft gestrichen und danach vermisst.',
       },
       {
         frage: 'Welche Materialien halten am längsten?',
         antwort:
-          'Mineralische Putze, Sichtbeton und keramische Beläge sind über Jahrzehnte robust. Bei Fenstern und Beschlägen zahlt sich Qualität am stärksten aus, weil ein Austausch dort aufwendig ist. Wir legen diese Entscheide im Vorprojekt mit Lebenszykluskosten offen.',
+          'Mineralische Putze, Sichtbeton und keramische Beläge sind über Jahrzehnte robust; bei Fenstern und Beschlägen zahlt sich Qualität am stärksten aus.',
       },
     ],
     thumbnail: '/images/projekte/mfh-hochwarting/thumb.jpg',
@@ -580,23 +431,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Doppeleinfamilienhaus in Safenwil im Kanton Aargau für einen Investor, der das Grundstück erworben hatte. Kubische Bauform, heller Putzfassade und begrüntem Attikageschoss.',
-    abschnitte: [
-      {
-        titel: 'Kompakte Bauform',
-        absaetze: [
-          'Für einen Investor, der das Grundstück in Safenwil im Kanton Aargau erworben hatte, haben wir ein Doppeleinfamilienhaus mit klar kubischer Form entwickelt. Erdgeschoss und Obergeschoss bilden den kompakten Baukörper, ein zurückversetztes Attikageschoss mit Dachterrasse schliesst das Haus nach oben ab.',
-          'Die beiden Hauseinheiten teilen sich die gemeinsame Aussenwand, treten nach aussen aber als ein zusammenhängender Baukörper auf. Je eine Garage und ein separater Hauseingang erschliessen die Einheiten getrennt.',
-        ],
-      },
-      {
-        titel: 'Aussenraum und Materialisierung',
-        absaetze: [
-          'Die Fassade ist hell verputzt, Fenster und Türen sind dunkel abgesetzt und gliedern die Aussenhaut in ruhige, stehende Formate. Auf der Gartenseite öffnet eine grosse Verglasung den Wohnbereich zu einem gedeckten Sitzplatz mit Umgebungsmauer.',
-          'Im Innern verbindet eine offene Treppe mit Glasgeländer die Geschosse. Die Wohn-, Ess- und Kochbereiche sind offen zueinander angeordnet, mit hellem Holzboden und einer Kücheninsel mit Steinoberfläche.',
-        ],
-      },
-    ],
+      'Doppeleinfamilienhaus in Safenwil (AG) für einen Investor: Erd- und Obergeschoss bilden einen kompakten, kubischen Baukörper, ein zurückversetztes Attikageschoss mit Dachterrasse schliesst ihn nach oben ab. Die beiden Einheiten teilen sich eine Wand, treten aber als ein zusammenhängender Baukörper auf, mit je eigener Garage und Hauseingang. Die helle Putzfassade mit dunkel abgesetzten Fenstern öffnet sich gartenseitig zu einem gedeckten Sitzplatz; innen verbindet eine offene Treppe die hellen, offenen Wohnbereiche.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus' },
       { label: 'Bauherrschaft', wert: 'Investor' },
@@ -604,14 +440,14 @@ export const projekte: Projekt[] = [
     ],
     fragen: [
       {
-        frage: 'Was unterscheidet ein Doppeleinfamilienhaus von zwei freistehenden Einfamilienhäusern?',
+        frage: 'Was unterscheidet ein Doppeleinfamilienhaus von zwei freistehenden Häusern?',
         antwort:
-          'Beim Doppeleinfamilienhaus teilen sich zwei Wohneinheiten eine gemeinsame Wand, was Erstellungskosten und Landbedarf gegenüber zwei freistehenden Häusern reduziert. Grundriss und Erschliessung werden so geplant, dass beide Einheiten trotz der gemeinsamen Wand unabhängig genutzt werden können, etwa mit getrennten Zugängen und Aussenräumen.',
+          'Die gemeinsame Wand senkt Erstellungskosten und Landbedarf, während beide Einheiten unabhängig nutzbar bleiben.',
       },
       {
         frage: 'Welche Vorteile bietet ein Attikageschoss mit Dachterrasse?',
         antwort:
-          'Ein Attikageschoss schafft zusätzlichen Wohn- oder Freiraum, ohne die Gebäudehöhe der übrigen Geschosse zu erhöhen, da es gegenüber der Fassade zurückversetzt ist. Die Dachterrasse bietet einen privaten Aussenraum ohne Einblick von der Strasse und lässt sich begrünen.',
+          'Zusätzlicher Wohnraum ohne höhere Gebäudehöhe, plus ein privater, begrünbarer Aussenraum ohne Einblick von der Strasse.',
       },
     ],
     thumbnail: '/images/projekte/defh-safenwil/thumb.jpg',
@@ -639,23 +475,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Reiheneinfamilienhäuser in Hochfelden im Kanton Zürich für einen Investor, der das Grundstück erworben hatte. Giebelständige Baukörper mit vorgelagerten Balkonen und Gartenterrassen.',
-    abschnitte: [
-      {
-        titel: 'Aussenbild',
-        absaetze: [
-          'Für einen Investor, der das Grundstück in Hochfelden im Kanton Zürich erworben hatte, haben wir Reiheneinfamilienhäuser mit giebelständigem, steilem und dunkel gedecktem Satteldach entwickelt. Liegende Dachflächenfenster und mehrere hochrechteckige Dacheinschnitte belichten das Geschoss unter dem Dach, die helle Putzfassade bleibt bewusst zurückhaltend.',
-          'Zum Garten hin öffnen sich Balkone mit schlanken Metallgeländern, darunter liegt eine gedeckte Terrasse mit direktem Austritt aus dem Wohnbereich. Ein gepflasterter Weg und eine Rampe mit Geländer erschliessen die Häuser von der Gartenseite, die Umgebung ist mit Stauden, Gräsern und Hecken bepflanzt.',
-        ],
-      },
-      {
-        titel: 'Wohnräume',
-        absaetze: [
-          'Im Innern zeigen die Aufnahmen einen offenen Wohn- und Essbereich mit Parkettboden, der über eine gewendelte Treppe mit den oberen Geschossen verbunden ist. Eine grosse Schiebeverglasung stellt den direkten Bezug zwischen Wohnraum und Garten her.',
-          'Die Küche schliesst als offener Bereich an den Essplatz an, ein zweiter Wohnraum mit bodentiefen Fenstertüren und vorgelagerter Terrasse ergänzt das Bild. Die Materialisierung ist hell und zurückhaltend gehalten.',
-        ],
-      },
-    ],
+      'Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade. Zum Garten öffnen sich Balkone mit schlanken Metallgeländern über gedeckten Terrassen. Innen verbindet eine gewendelte Treppe den offenen, hell gehaltenen Wohn- und Essbereich mit den oberen Geschossen; eine grosse Schiebeverglasung stellt den Bezug zum Garten her.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Reiheneinfamilienhäuser' },
       { label: 'Bauherrschaft', wert: 'Investor' },
@@ -665,12 +486,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Was zeichnet die Planung von Reiheneinfamilienhäusern aus?',
         antwort:
-          'Neben dem Entwurf der einzelnen Häuser spielen Erschliessung, Aussenraum und die Einordnung ins Quartier eine zentrale Rolle. Balkone, Gartenanteile und die Zugänge der einzelnen Einheiten werden so geplant, dass private und gemeinsam genutzte Bereiche klar getrennt bleiben.',
+          'Neben dem Hausentwurf entscheiden Erschliessung, Aussenraum und die klare Trennung privater und gemeinsamer Bereiche.',
       },
       {
-        frage: 'Welche Unterlagen braucht ein Baugesuch für Reiheneinfamilienhäuser?',
+        frage: 'Welche Unterlagen braucht ein Baugesuch dafür?',
         antwort:
-          'Dazu gehören in der Regel ein Situationsplan, ein Umgebungsplan sowie Grundriss- und Fassadenpläne aller betroffenen Geschosse. Der genaue Umfang richtet sich nach den Vorgaben der zuständigen Gemeinde und wird im Baugesuchsverfahren zusammengestellt.',
+          'In der Regel Situations-, Umgebungs-, Grundriss- und Fassadenpläne aller betroffenen Geschosse, je nach Gemeinde.',
       },
     ],
     thumbnail: '/images/projekte/refh-hochfelden/thumb.jpg',
@@ -702,23 +523,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch'],
     beschreibung:
-      'Studie für ein zusätzliches Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs im Kanton Aargau. Bis zur Baubewilligung geführt, aber nicht realisiert.',
-    abschnitte: [
-      {
-        titel: 'Ungenutzte Ausnützungsreserve',
-        absaetze: [
-          'Das Grundstück in Buchs im Kanton Aargau trägt bereits ein Wohnhaus, liess aber noch zusätzliche Ausnützung zu. Für einen privaten Bauherrn haben wir deshalb ein weiteres, freistehendes Einfamilienhaus auf derselben Parzelle geplant.',
-          'Das Projekt wurde bis zur Baubewilligung geführt und bewilligt. Realisiert wurde es bislang nicht — die Visualisierungen zeigen den geplanten Zustand, nicht ein bestehendes Gebäude.',
-        ],
-      },
-      {
-        titel: 'Entwurf',
-        absaetze: [
-          'Die Visualisierungen zeigen eine helle, warmtonige Putzfassade und ein geneigtes Dach mit Dachflächenfenstern für zusätzliches Licht in den oberen Räumen. Auf der Gartenseite ergänzt ein gedeckter Sitzplatz den Aussenraum.',
-          'Im Erdgeschoss ist ein offener Wohn-, Ess- und Kochbereich mit Kücheninsel vorgesehen, im Obergeschoss ein Zimmer mit Zugang zu Balkon oder Terrasse.',
-        ],
-      },
-    ],
+      'Studie für ein zusätzliches, freistehendes Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess. Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert — die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Erweiterungsbau' },
       { label: 'Bauherrschaft', wert: 'Privater Bauherr' },
@@ -728,12 +534,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Kann ich auf meinem Grundstück ein weiteres Haus bauen, obwohl schon eines steht?',
         antwort:
-          'Das hängt von der Ausnützungsreserve, den Grenzabständen und der Erschliessung Ihrer Parzelle ab. Eine Machbarkeitsstudie zeigt, ob und in welcher Form eine zusätzliche Baute möglich ist, bevor Sie in die Planung investieren.',
+          'Das hängt von Ausnützungsreserve, Grenzabständen und Erschliessung ab — eine Machbarkeitsstudie zeigt, was möglich ist.',
       },
       {
         frage: 'Was passiert mit einer erteilten Baubewilligung, wenn nicht gebaut wird?',
         antwort:
-          'Eine Baubewilligung ist befristet gültig, meist zwei bis drei Jahre je nach Kanton, danach verfällt sie. Sie kann in dieser Zeit auch mit dem Grundstück verkauft oder bei geänderten Plänen neu beantragt werden.',
+          'Sie ist befristet, meist zwei bis drei Jahre, und verfällt danach — sie kann aber mit dem Grundstück verkauft werden.',
       },
     ],
     thumbnail: '/images/projekte/efh-buchs/thumb.jpg',
@@ -764,23 +570,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon im Kanton Zürich, aktuell in der Bauphase. Die Aufnahmen zeigen den Rückbau bis auf das Mauerwerk.',
-    abschnitte: [
-      {
-        titel: 'Kernsanierung bis auf das Mauerwerk',
-        absaetze: [
-          'Das bestehende Einfamilienhaus in Dietikon im Kanton Zürich wird für einen privaten Bauherrn kernsaniert. Wir haben ihn bereits vor dem Kauf beraten und seither durch alle Phasen begleitet — von der Machbarkeitsstudie über das Baugesuch bis zur Ausführungsplanung.',
-          'Die Aufnahmen entstanden während der Bauphase und zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet. Bessere Aufnahmen des fertigen Zustands liegen noch nicht vor.',
-        ],
-      },
-      {
-        titel: 'Lage an der Strassenkreuzung',
-        absaetze: [
-          'Das Grundstück liegt an der Ecke zweier Strassen und ist auf allen Seiten von Nachbarbebauung mit geneigten Dächern umgeben. Hecken entlang der Parzellengrenze schirmen die Baustelle zur Strasse hin ab.',
-          'Die Ausführungspläne dokumentieren das Gebäude von allen vier Seiten. Die Bauleitung vor Ort begleiten wir beratend, ohne ein eigenes Bauleitungsmandat zu führen.',
-        ],
-      },
-    ],
+      'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase — wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet. Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
       { label: 'Bauherrschaft', wert: 'Privater Bauherr, bei Kauf beraten' },
@@ -790,12 +581,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Was bedeutet Kernsanierung bis auf das Mauerwerk?',
         antwort:
-          'Dabei wird ein Gebäude bis auf die tragende Struktur zurückgebaut — Innenwände, Böden, Fenster und Haustechnik werden komplett erneuert. Das erlaubt eine Sanierung nach heutigem Standard, während der Rohbau und damit die Bauzonen-Konformität des Bestands erhalten bleiben.',
+          'Das Gebäude wird bis auf die tragende Struktur zurückgebaut — Innenwände, Böden, Fenster und Haustechnik werden komplett erneuert.',
       },
       {
         frage: 'Wie können Sie mich schon vor dem Grundstückskauf unterstützen?',
         antwort:
-          'Wir prüfen mit einer Machbarkeitsstudie, was auf dem Grundstück oder im Bestand möglich ist, bevor Sie sich vertraglich binden. So lassen sich Überraschungen bei Bauzone, Ausnützung oder Sanierungsaufwand vermeiden.',
+          'Mit einer Machbarkeitsstudie, die zeigt, was möglich ist, bevor Sie sich vertraglich binden.',
       },
     ],
     thumbnail: '/images/projekte/efh-dietikon/thumb.jpg',
@@ -832,23 +623,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos im Kanton Aargau für einen privaten Investor. Sandfarbene Putzfassade, Lamellenstoren und ein Balkon über der Gartenterrasse.',
-    abschnitte: [
-      {
-        titel: 'Ein Satteldachhaus mit klarer Linie',
-        absaetze: [
-          'Für einen privaten Investor haben wir ein bestehendes Einfamilienhaus in Würenlos im Kanton Aargau kernsaniert. Die Giebelseiten sind zur Zufahrt und zum Garten hin ausgerichtet, die Putzfassade ist in einem warmen Sandton gehalten, das Ziegeldach in dunklem Braun.',
-          'Vor den Fenstern liegen aussenliegende Lamellenstoren, die dem Haus ein ruhiges, gleichmässiges Fassadenbild geben. Der Hauseingang liegt unter einem kleinen, flach gedeckten Vordach zurückversetzt und ist mit einer anthrazitfarbenen Tür gefasst.',
-        ],
-      },
-      {
-        titel: 'Terrasse, Balkon und Umgebung',
-        absaetze: [
-          'Auf der Gartenseite liegt über der gedeckten Terrasse im Erdgeschoss ein Balkon mit schwarzem Metallgeländer, der zusätzlichen Aussenraum im Obergeschoss schafft. Die Terrasse ist mit hellen Bodenplatten belegt.',
-          'Das Grundstück ist mit einem Metallzaun eingefasst und durch eine Hecke von der Nachbarschaft abgeschirmt. Bei der Bauleitung haben wir die Investorenseite beratend begleitet, ohne ein eigenes Mandat zu führen.',
-        ],
-      },
-    ],
+      'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos (AG) für einen privaten Investor: Die Giebelseiten sind zu Zufahrt und Garten ausgerichtet, die Putzfassade in warmem Sandton, das Ziegeldach dunkelbraun, mit aussenliegenden Lamellenstoren für ein ruhiges Fassadenbild. Über der gedeckten Terrasse im Erdgeschoss schafft ein neuer Balkon zusätzlichen Aussenraum im Obergeschoss. Bei der Bauleitung haben wir die Investorenseite beratend begleitet.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
       { label: 'Bauherrschaft', wert: 'Privater Investor' },
@@ -858,12 +634,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt sich eine Kernsanierung für einen privaten Investor?',
         antwort:
-          'Meist ja, wenn Lage und Bausubstanz stimmen: Der Wiederverkaufs- oder Vermietungswert steigt oft deutlicher als bei einer reinen Auffrischung. Entscheidend ist eine frühe Kostenschätzung, die Sanierungsaufwand und erzielbaren Wert gegenüberstellt.',
+          'Meist ja, wenn Lage und Bausubstanz stimmen — der Wiederverkaufswert steigt oft deutlicher als bei einer reinen Auffrischung.',
       },
       {
         frage: 'Was bedeutet eine beratende Baubegleitung ohne Bauleitungsmandat?',
         antwort:
-          'Wir stehen der Bauherrschaft und der ausführenden Bauleitung fachlich zur Seite, tragen aber nicht die volle Verantwortung für die Bauausführung. Das eignet sich für Bauherrschaften, die selbst oder mit einem eigenen Bauleiter koordinieren möchten, aber unsere Planungssicht einbeziehen wollen.',
+          'Wir stehen fachlich zur Seite, tragen aber nicht die volle Verantwortung für die Bauausführung.',
       },
     ],
     thumbnail: '/images/projekte/efh-wuerenlos/thumb.jpg',
@@ -902,37 +678,22 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Kernsanierung und Erweiterung eines bestehenden Einfamilienhauses in Rupperswil im Kanton Aargau. Weiss verputzter Giebelbau mit flachdachigem Nebenbaukörper.',
-    abschnitte: [
-      {
-        titel: 'Giebelbau mit flachdachigem Nebenbau',
-        absaetze: [
-          'Ein bestehendes Einfamilienhaus in Rupperswil im Kanton Aargau haben wir kernsaniert und erweitert. Die weiss verputzte Fassade verbindet einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbaukörper — eingebettet zwischen Nachbarbauten mit traditionellen Ziegeldächern.',
-          'Ein Holzlattenzaun fasst das Grundstück zur Strasse hin, ein gepflasterter Vorplatz führt zum Eingang. Rückseitig öffnet sich ein Sitzplatz zu einem eingezäunten Gartenbereich mit Rasen.',
-        ],
-      },
-      {
-        titel: 'Offener Wohnbereich über mehrere Geschosse',
-        absaetze: [
-          'Im Innern sind Küche, Ess- und Wohnbereich als ein durchgehender, heller Raum mit Holzboden gestaltet. Eine offene Treppe mit Glasgeländer verbindet die Geschosse, eine grossflächige Verglasung stellt den Bezug zum Sitzplatz im Garten her.',
-          'Die Bauleitung hat die Bauherrschaft nach Abschluss unserer Planung selbst übernommen.',
-        ],
-      },
-    ],
+      'Kernsanierung und Erweiterung eines Einfamilienhauses in Rupperswil (AG): Die weiss verputzte Fassade verbindet einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbau, eingebettet zwischen traditionell gedeckten Nachbarhäusern. Innen bilden Küche, Ess- und Wohnbereich einen durchgehenden, hellen Raum mit Holzboden; eine offene Treppe verbindet die Geschosse, eine grosse Verglasung öffnet zum Sitzplatz im Garten. Die Bauleitung hat die Bauherrschaft nach Planungsabschluss selbst übernommen.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung und Erweiterung' },
       { label: 'Bauleitung', wert: 'Durch die Bauherrschaft selbst' },
     ],
     fragen: [
       {
-        frage: 'Was zeichnet die Aussengestaltung dieses Einfamilienhauses aus?',
+        frage: 'Was zeichnet die Aussengestaltung dieses Hauses aus?',
         antwort:
-          'Die Fassade ist hell verputzt und kombiniert einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbaukörper. Diese Kombination erlaubt unterschiedliche Raumhöhen und Nutzungen unter einem gemeinsamen architektonischen Ausdruck.',
+          'Die Kombination aus giebelständigem Hauptbau und niedrigerem Flachdach-Nebenbau erlaubt unterschiedliche Raumhöhen unter einem Ausdruck.',
       },
       {
         frage: 'Können wir die Bauleitung bei einer Sanierung selbst übernehmen?',
         antwort:
-          'Das ist möglich, wenn die Bauherrschaft über die nötige Zeit und Erfahrung verfügt, Handwerker zu koordinieren und Termine zu überwachen. Wir übergeben dafür eine ausführungsreife Planung, auf die sich die Bauherrschaft und die Unternehmer vor Ort stützen können.',
+          'Ja, wenn Zeit und Erfahrung für die Koordination der Handwerker vorhanden sind — wir übergeben eine ausführungsreife Planung.',
       },
     ],
     thumbnail: '/images/projekte/efh-rupperswil/thumb.jpg',
@@ -962,23 +723,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal im Kanton Aargau, aktuell in der Ausführung. Steiles Giebeldach und vertikal verbretterte Holzfassade.',
-    abschnitte: [
-      {
-        titel: 'Ein giebelständiger Neubau im Bestand',
-        absaetze: [
-          'Das Mehrfamilienhaus fügt sich in eine gewachsene Nachbarschaft aus Einzel- und Mehrfamilienhäusern ein. Der Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern nimmt die giebelständige Bauweise der Umgebung auf und übersetzt sie in eine zeitgemässe Kubatur mit drei Wohngeschossen über einem Untergeschoss.',
-          'Die Fassade ist über alle Geschosse mit vertikalen Holzlatten verkleidet, die Fenster und Balkone liegen in klaren, senkrechten Bahnen.',
-        ],
-      },
-      {
-        titel: 'Von der Planung zur Ausführung durch einen Generalunternehmer',
-        absaetze: [
-          'Wir haben das Projekt von der Machbarkeitsstudie bis zur Ausführungsplanung vollständig begleitet. Im Erdgeschoss gruppieren sich die Wohnungen symmetrisch um ein zentrales Treppenhaus mit Lift, jede Einheit verfügt über einen eigenen Balkon oder eine Terrasse.',
-          'Nach Abschluss der Planung wurde das Projekt an einen Generalunternehmer verkauft, der den Neubau nun ausführt.',
-        ],
-      },
-    ],
+      'Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal (AG), aktuell in Ausführung. Der Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern nimmt die giebelständige Umgebung auf und übersetzt sie in drei Wohngeschosse über einem Untergeschoss, mit vertikaler Holzlattenfassade. Die Wohnungen gruppieren sich symmetrisch um ein zentrales Treppenhaus mit Lift, jede mit eigenem Balkon oder Terrasse. Wir haben das Projekt von der Machbarkeitsstudie bis zur Ausführungsplanung begleitet; realisiert wird es nun durch einen Generalunternehmer.',
+    abschnitte: [],
     daten: [
       { label: 'Lage', wert: 'Zelgi, Untersiggenthal' },
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
@@ -987,14 +733,14 @@ export const projekte: Projekt[] = [
     ],
     fragen: [
       {
-        frage: 'Was bedeutet es, wenn ein Projekt nach der Planung an einen Generalunternehmer verkauft wird?',
+        frage: 'Was bedeutet es, wenn ein Projekt an einen Generalunternehmer verkauft wird?',
         antwort:
-          'Die Bauherrschaft überträgt die Realisierung an einen Generalunternehmer, der Ausführung und Bauleitung übernimmt, während die von uns erarbeitete Planung als Grundlage bestehen bleibt. Das kann sich lohnen, wenn die ursprüngliche Bauherrschaft die Bauphase nicht selbst begleiten will oder das Projekt weiterveräussert.',
+          'Die Realisierung geht an den GU über, während unsere Planung als Grundlage bestehen bleibt — üblich, wenn die Bauherrschaft weiterveräussert.',
       },
       {
         frage: 'Welche Vorteile bietet eine Holzfassade bei einem Mehrfamilienhaus?',
         antwort:
-          'Eine vertikale Holzverkleidung ist leicht, lässt sich gut vorfertigen und passt sich mit der Zeit farblich der Umgebung an. Sie verlangt eine durchdachte Detailplanung bei Anschlüssen und Entwässerung, bietet dafür aber ein warmes, alterungsfähiges Erscheinungsbild.',
+          'Leicht, gut vorfertigbar, alterungsfähig im Erscheinungsbild — verlangt aber sorgfältige Detailplanung bei Anschlüssen.',
       },
     ],
     thumbnail: '/images/projekte/wohnueberbauung-zelgi/thumb.jpg',
@@ -1029,37 +775,22 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Totalsanierung eines bestehenden Einfamilienhauses in Merenschwand im Kanton Aargau. Kubischer Baukörper mit Flachdach und heller Putzfassade.',
-    abschnitte: [
-      {
-        titel: 'Totalsanierung eines kubischen Baukörpers',
-        absaetze: [
-          'Ein bestehendes Einfamilienhaus in Merenschwand im Kanton Aargau haben wir für die Bauherrschaft von der Machbarkeitsstudie bis zur Ausführungsplanung totalsaniert. Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dabei dunkel gerahmte Fenster und aussenliegende Lamellenstoren.',
-          'Das Grundstück liegt in einem gewachsenen Quartier mit giebelständigen Nachbarhäusern. Der reduzierte, kantige Baukörper hebt sich davon ab, ohne die Nachbarschaft zu ignorieren.',
-        ],
-      },
-      {
-        titel: 'Aussenraum und Details',
-        absaetze: [
-          'Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Zugang auf der einen Seite, ein Balkon mit dunklem Glasgeländer im Obergeschoss öffnet sich zur anderen. Die Terrasse mit grossformatigen Platten schliesst direkt an den Garten an.',
-          'Bei der Bauleitung haben wir die Bauherrschaft beratend begleitet, ohne ein eigenes Mandat zu führen. An der Fassade ist die Aussenaufstellung einer Wärmepumpe sichtbar.',
-        ],
-      },
-    ],
+      'Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren — reduziert und kantig im gewachsenen, giebelständig geprägten Quartier. Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Eingang, ein Balkon mit dunklem Glasgeländer öffnet sich zur Gartenseite mit grossformatig gepflasterter Terrasse. Die Bauleitung haben wir beratend begleitet.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Totalsanierung' },
       { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
     ],
     fragen: [
       {
-        frage: 'Was ist der Unterschied zwischen einer Totalsanierung und einer Kernsanierung?',
+        frage: 'Was ist der Unterschied zwischen Total- und Kernsanierung?',
         antwort:
-          'Bei einer Totalsanierung wird das gesamte Gebäude einschliesslich Haustechnik, Innenausbau und meist der Gebäudehülle erneuert, während die tragende Struktur erhalten bleibt. Eine Kernsanierung geht oft noch weiter und legt zusätzlich Teile des Rohbaus offen, etwa wenn auch Wände oder Decken verändert werden.',
+          'Bei der Totalsanierung bleibt die tragende Struktur erhalten, bei der Kernsanierung wird zusätzlich Teile des Rohbaus offengelegt.',
       },
       {
         frage: 'Was zeichnet einen kubischen Baukörper mit Flachdach aus?',
         antwort:
-          'Ein Flachdach erlaubt eine ruhige, kantige Gebäudeform ohne Dachschräge und schafft im Innern nutzbare Raumhöhen bis unter die Decke. Nach aussen wirkt der Baukörper reduziert und lässt sich über Fassadenfarbe und Fensteraufteilung gezielt gestalten.',
+          'Eine ruhige, kantige Form ohne Dachschräge mit nutzbaren Raumhöhen bis unter die Decke.',
       },
     ],
     thumbnail: '/images/projekte/efh-merenschwand/thumb.jpg',
@@ -1089,23 +820,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Neubau eines Mehrfamilienhauses in Würenlingen im Kanton Aargau für einen Investor, aktuell in Ausführung. Ausgebautes Dachgeschoss und auf schlanken Stützen vorgelagerte Balkone.',
-    abschnitte: [
-      {
-        titel: 'Von der Kaufberatung bis zur Ausführungsplanung',
-        absaetze: [
-          'Einen Investor, der ein Grundstück in Würenlingen im Kanton Aargau erwerben wollte, haben wir bereits vor dem Kauf beraten und seither durch alle Phasen begleitet: Machbarkeitsstudie, Baugesuch, Ausschreibungsplanung und Ausführungsplanung. Das Mehrfamilienhaus wird aktuell ausgeführt und gebaut.',
-          'Das Gebäude ist als Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss angelegt. Das Dach ist mit dunklen Ziegeln gedeckt und über die gesamte Gebäudelänge durchgezogen, mit einzelnen Dachflächenfenstern für die Räume im obersten Geschoss.',
-        ],
-      },
-      {
-        titel: 'Balkone und Umgebung',
-        absaetze: [
-          'Über alle Geschosse hinweg sind Balkone auf schlanken, dunklen Stützen vorgelagert, mit Balkongeländern aus vertikalen Metallstäben. Im Erdgeschoss setzen sich die Aussenräume in gedeckten Sitzplätzen mit Bepflanzung fort.',
-          'Die Umgebungsgestaltung zeigt einen Kiesweg entlang der Fassade, Rasenflächen und durchgehende Pflanzbeete mit Gräsern und Sträuchern vor den Terrassen.',
-        ],
-      },
-    ],
+      'Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben — aktuell in Ausführung. Der Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss trägt ein durchgehendes, dunkles Ziegeldach mit einzelnen Dachflächenfenstern. Balkone auf schlanken, dunklen Stützen ziehen sich über alle Geschosse; im Erdgeschoss setzen sich die Aussenräume in gedeckten, bepflanzten Sitzplätzen fort.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
       { label: 'Geschosse', wert: '3 Vollgeschosse, ausgebautes Dachgeschoss' },
@@ -1115,12 +831,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wann sollten wir einen Architekten in den Grundstückskauf einbeziehen?',
         antwort:
-          'Am besten vor der Kaufzusage: Wir prüfen dann anhand von Bauzone, Ausnützung und Erschliessung, was auf dem Grundstück realistisch möglich ist. Das verhindert, dass ein Kaufpreis auf Basis falscher Annahmen zur Bebaubarkeit bezahlt wird.',
+          'Am besten vor der Kaufzusage — wir prüfen anhand von Bauzone und Ausnützung, was realistisch möglich ist.',
       },
       {
-        frage: 'Was ist bei der Planung eines Mehrfamilienhauses mit Satteldach zu beachten?',
+        frage: 'Was ist bei einem Mehrfamilienhaus mit Satteldach zu beachten?',
         antwort:
-          'Ein ausgebautes Dachgeschoss verlangt eine sorgfältige Abstimmung von Dachneigung, Belichtung über Dachflächenfenster und lichter Raumhöhe unter der Schräge. Zusammen mit den Anforderungen der Bauzone bestimmt das den Spielraum für die Grundrissgestaltung im obersten Geschoss.',
+          'Ein ausgebautes Dachgeschoss verlangt eine sorgfältige Abstimmung von Dachneigung, Belichtung und lichter Raumhöhe.',
       },
     ],
     thumbnail: '/images/projekte/mfh-wuerenlingen/thumb.jpg',
@@ -1160,15 +876,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung', 'Baugesuch'],
     beschreibung:
-      'Einfamilienhaus an der Hohmatt in Neerach im Kanton Zürich. Der vollständige Plansatz von Situation bis Fassaden liegt vor, Fotos folgen nach der Realisierung.',
-    abschnitte: [
-      {
-        titel: 'Stand des Projekts',
-        absaetze: [
-          'Für dieses Einfamilienhaus an der Hohmatt in Neerach haben wir Situationsplan, Untergeschoss, Erdgeschoss, Dachgeschoss, Schnitte und Fassaden bis zur Baueingabe ausgearbeitet.',
-        ],
-      },
-    ],
+      'Einfamilienhaus an der Hohmatt in Neerach (ZH): Der vollständige Plansatz von Situation über alle Geschosse bis zu Schnitten und Fassaden liegt bis zur Baueingabe ausgearbeitet vor. Fotos folgen nach der Realisierung.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Neubau' },
       { label: 'Status', wert: 'In Planung' },
@@ -1213,15 +922,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Baugesuch'],
     beschreibung:
-      'Umbau und Erweiterung eines Einfamilienhauses in Othmarsingen im Kanton Aargau. Der vollständige Plansatz liegt vor, Fotos folgen nach der Realisierung.',
-    abschnitte: [
-      {
-        titel: 'Stand des Projekts',
-        absaetze: [
-          'Für dieses Einfamilienhaus in Othmarsingen haben wir Situationsplan, Untergeschoss, Ober- und Erdgeschoss, Schnitte und Fassade bis zur Baueingabe ausgearbeitet.',
-        ],
-      },
-    ],
+      'Umbau und Erweiterung eines Einfamilienhauses in Othmarsingen (AG): Situationsplan, Geschosse, Schnitte und Fassade liegen bis zur Baueingabe ausgearbeitet vor. Fotos folgen nach der Realisierung.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Umbau und Erweiterung' },
       { label: 'Status', wert: 'In Planung' },
@@ -1265,15 +967,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Gewerbe', 'Büro'],
     leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Umbau eines Gebäudes in Obfelden im Kanton Zürich zu einer Kleintierpraxis für den Verein Mërgimi, mit Erweiterung der Parkplätze. Der Plansatz liegt vor, Fotos folgen nach der Realisierung.',
-    abschnitte: [
-      {
-        titel: 'Stand des Projekts',
-        absaetze: [
-          'Für den Verein Mërgimi haben wir den Umbau eines bestehenden Gebäudes in Obfelden zu einer Kleintierpraxis geplant, dazu die Erweiterung der Parkplätze mit eigener Ausführungsplanung für das Untergeschoss.',
-        ],
-      },
-    ],
+      'Umbau eines Gebäudes in Obfelden (ZH) zu einer Kleintierpraxis für den Verein Mërgimi, mit Erweiterung der Parkplätze und eigener Ausführungsplanung für das Untergeschoss. Fotos folgen nach der Realisierung.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Gewerbebau, Umbau zu Kleintierpraxis' },
       { label: 'Bauherrschaft', wert: 'Verein Mërgimi' },
@@ -1315,22 +1010,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Doppeleinfamilienhaus in Weiningen im Kanton Zürich. Erste Visualisierungen aus der Entwurfsplanung zeigen einen giebelständigen Baukörper mit heller Putzfassade und offenem Wohnbereich.',
-    abschnitte: [
-      {
-        titel: 'Zwei Einheiten unter einem Giebeldach',
-        absaetze: [
-          'Die Visualisierungen zeigen ein Doppeleinfamilienhaus mit steilem Satteldach und liegenden Dachflächenfenstern, das sich giebelständig ins Quartier einfügt. Die Fassade ist hell verputzt, Balkone mit filigranen Glasgeländern öffnen sich zur Gartenseite.',
-          'Der Aussenraum ist bewusst zurückhaltend gestaltet: Rasenflächen, einzelne Bäume und ein gepflasterter Zugang prägen das Bild, ohne den Blick auf den Baukörper zu verstellen.',
-        ],
-      },
-      {
-        titel: 'Offener Wohnbereich',
-        absaetze: [
-          'Im Erdgeschoss zeigt eine Visualisierung einen durchgehenden Wohn-, Ess- und Kochbereich mit bodentiefen Fenstern und Terrassenzugang. Die Küche ist als offene Kochinsel mit dunkler Steinoberfläche in den Wohnraum integriert, der helle Eichenboden zieht sich durch die ganze Fläche.',
-        ],
-      },
-    ],
+      'Doppeleinfamilienhaus in Weiningen (ZH): Erste Visualisierungen zeigen einen giebelständigen Baukörper mit steilem Satteldach, heller Putzfassade und filigranen Glasgeländern an den Balkonen. Im Erdgeschoss ein durchgehender Wohn-, Ess- und Kochbereich mit offener Kochinsel und hellem Eichenboden, mit Terrassenzugang über bodentiefe Fenster.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus, Neubau' },
       { label: 'Status', wert: 'In Planung' },
@@ -1361,15 +1042,8 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen im Kanton Zürich. Das Projekt befindet sich in einem frühen Planungsstadium, Fotos und Pläne folgen im weiteren Verlauf.',
-    abschnitte: [
-      {
-        titel: 'Stand des Projekts',
-        absaetze: [
-          'Für dieses Mehrfamilienhaus an der Murzelnstrasse in Niederweningen stehen wir am Anfang der Planung. Sobald Grundrisse und Fassaden ausgearbeitet sind, ergänzen wir diese Seite.',
-        ],
-      },
-    ],
+      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH). Das Projekt steht am Anfang der Planung — Grundrisse, Fassaden und Fotos folgen im weiteren Verlauf.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
       { label: 'Status', wert: 'In Planung' },
