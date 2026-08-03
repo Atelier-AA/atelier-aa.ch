@@ -32,15 +32,8 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA.',
-    abschnitte: [
-      {
-        titel: 'Zum Projekt',
-        absaetze: [
-          'Als Neubau für das eigene Büro entstand hier ein Haus mit besonders hohem architektonischem Anspruch. Die vier Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber — verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
-        ],
-      },
-    ],
+      'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA. Die Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber, verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
+    abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Neubau' },
       { label: 'Geschosse', wert: '2 Vollgeschosse, Dachgeschoss, Untergeschoss' },
@@ -50,23 +43,19 @@ export const projekte: Projekt[] = [
     fragen: [
       {
         frage: 'Was bedeutet es, wenn ein Architekturbüro für sich selbst baut?',
-        antwort:
-          'Zwischen Anspruch und Bauherrenwunsch muss keine zweite Partei vermitteln — am Verfahren selbst ändert das nichts.',
+        antwort: 'Anspruch und Bauherrenwunsch liegen in einer Person — am Verfahren ändert das nichts.',
       },
       {
         frage: 'Worauf muss man bei einem schwierig erschlossenen Grundstück achten?',
-        antwort:
-          'Zufahrt, Werkleitungen und Grenzabstände früh prüfen, am besten schon vor dem Landkauf — das vermeidet Überraschungen bei den Kosten.',
+        antwort: 'Zufahrt, Werkleitungen und Grenzabstände früh prüfen, am besten vor dem Landkauf.',
       },
       {
         frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
-        antwort:
-          'Im Aargau aktuell rund 900 bis 1200 Franken pro Kubikmeter Gebäudevolumen, je nach Standard.',
+        antwort: 'Im Aargau rund 900 bis 1200 Franken pro Kubikmeter, je nach Standard.',
       },
       {
         frage: 'Warum wurde ausgerechnet dieses Projekt als erstes Referenzprojekt gezeigt?',
-        antwort:
-          'Weil es das aktuellste realisierte Projekt ist und wir als Eigenprojekt besonders offen über Entscheidungen sprechen können.',
+        antwort: 'Weil es das aktuellste realisierte Projekt ist.',
       },
     ],
     thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
