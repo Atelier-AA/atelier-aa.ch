@@ -126,7 +126,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="order-1 w-full px-6 pt-[0.45rem] pb-12 md:px-10 md:pt-[0.6rem] md:pb-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:pt-[1.05rem] lg:pb-28">
+        <div className="order-1 w-full px-6 pt-[2.783rem] pb-12 md:px-10 md:pb-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:pb-28">
           <p className="mb-[0.85rem] text-xs font-medium uppercase tracking-widest text-stone">
             {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
@@ -156,7 +156,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           ))}
 
           {/* Eckdaten und Leistungsumfang */}
-          <div className="mt-[2.42rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
+          <div className="mt-[2.783rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
               <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
                 Eckdaten
