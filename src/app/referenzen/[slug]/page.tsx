@@ -127,7 +127,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         </div>
 
         <div className="order-1 w-full px-6 py-12 md:px-10 md:py-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-stone">
+          <p className="mb-[0.85rem] text-xs font-medium uppercase tracking-widest text-stone">
             {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
           <h1 className="mb-8 text-4xl font-medium leading-tight text-ink md:text-5xl">
@@ -156,7 +156,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           ))}
 
           {/* Eckdaten und Leistungsumfang */}
-          <div className="mt-20 grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
+          <div className="mt-[4.25rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
               <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
                 Eckdaten
