@@ -42,7 +42,7 @@ export default function FragenAntworten({
         {fragen.map((f) => (
           <details key={f.frage} className="group border-b border-mist">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left [&::-webkit-details-marker]:hidden">
-              <h3 className="text-lg md:text-xl font-medium leading-snug text-ink transition-colors group-hover:text-graphite">
+              <h3 className="text-lg font-medium leading-snug text-ink transition-colors group-hover:text-graphite">
                 {f.frage}
               </h3>
               {/* Plus-Zeichen, das beim Öffnen zum Minus wird: die vertikale
@@ -56,7 +56,7 @@ export default function FragenAntworten({
               </span>
             </summary>
             <div className="pb-8 pr-10">
-              <p className="text-graphite leading-relaxed">{f.antwort}</p>
+              <p className="text-lg text-graphite leading-relaxed">{f.antwort}</p>
             </div>
           </details>
         ))}
