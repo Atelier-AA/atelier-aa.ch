@@ -1,27 +1,16 @@
 interface ProjektMetaProps {
-  /** Bauherrschaft; `null` blendet die Spalte aus. */
+  /** Bauherrschaft; `null` blendet den ganzen Block aus, da Ort und Jahr
+      bereits in der Titelzeile darüber stehen. */
   kunde: string | null;
-  ort: string;
-  jahr: string;
 }
 
-export default function ProjektMeta({ kunde, ort, jahr }: ProjektMetaProps) {
-  const items = [
-    ...(kunde ? [{ label: 'Bauherrschaft', value: kunde }] : []),
-    { label: 'Ort', value: ort },
-    { label: 'Jahr', value: jahr },
-  ];
+export default function ProjektMeta({ kunde }: ProjektMetaProps) {
+  if (!kunde) return null;
 
   return (
-    <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 border-y border-mist py-8 my-10">
-      {items.map((item) => (
-        <div key={item.label}>
-          <dt className="text-xs uppercase tracking-widest text-stone mb-2">
-            {item.label}
-          </dt>
-          <dd className="text-base md:text-lg text-ink">{item.value}</dd>
-        </div>
-      ))}
+    <dl className="border-y border-mist py-8 my-10">
+      <dt className="text-xs uppercase tracking-widest text-stone mb-2">Bauherrschaft</dt>
+      <dd className="text-base md:text-lg text-ink">{kunde}</dd>
     </dl>
   );
 }

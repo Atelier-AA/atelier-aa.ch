@@ -135,7 +135,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           </h1>
           <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
 
-          <ProjektMeta kunde={projekt.kunde} ort={ortMitKanton(projekt)} jahr={projekt.jahr} />
+          <ProjektMeta kunde={projekt.kunde} />
 
           {/* Ausführliche Beschreibung in Abschnitten. Gibt der Seite den Text,
               den eine Bildergalerie allein nicht liefert — für Leser wie für
