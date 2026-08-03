@@ -130,7 +130,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           <p className="mb-[0.85rem] text-xs font-medium uppercase tracking-widest text-stone">
             {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
-          <h1 className="mb-8 text-4xl font-medium leading-tight text-ink md:text-5xl">
+          <h1 className="mb-8 text-[2rem] font-medium leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
             {projekt.title}
           </h1>
           <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
