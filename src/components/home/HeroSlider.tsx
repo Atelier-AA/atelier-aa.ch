@@ -90,46 +90,39 @@ export default function HeroSlider() {
           />
         </div>
       ))}
-      {/* Dezenter Verlauf am Bild-/Panel-Übergang statt einer flächigen
-          Abdunkelung — das Panel selbst liefert den nötigen Kontrast für
-          den Text, das Bild bleibt grösstenteils in Originalhelligkeit. */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent md:bg-gradient-to-r md:from-ink/35 md:via-transparent md:to-transparent" />
+      {/* Gradient über allen Slides statt pro Slide dupliziert — nur unten,
+          wo Titel und Bildunterschrift lesbar bleiben müssen; der Rest des
+          Bilds bleibt in Originalhelligkeit statt gleichmässig abgedunkelt. */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
 
-      {/* Split-Panel: auf Desktop eine feste, dunkle Spalte links neben dem
-          Bild; auf Mobile unten angedockt (volle Breite), wie zuvor der
-          Text-Block. */}
-      <div className="relative z-10 flex h-full flex-col md:flex-row">
-        <div className="mt-auto w-full bg-ink/90 px-8 py-10 backdrop-blur-[2px] md:mt-0 md:flex md:w-[44%] md:max-w-[560px] md:flex-col md:justify-center md:px-14 md:py-14 lg:px-20">
-          <p className="mb-4 text-xs uppercase tracking-[0.16em] text-white/60">
-            {slides[current].projekt} · {ortMitKanton(slides[current])}
-          </p>
+      <div className="relative z-10 flex h-full flex-col justify-end px-8 py-8 md:px-14 md:py-12 lg:px-20 lg:py-14">
+        <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
           {/* Einheitliche Schriftstärke, bewusst ohne den fett/normal-Kontrast
               der Statement-Sätze weiter unten auf der Seite. */}
-          <h1 className="mb-6 max-w-[16ch] text-[2.25rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.75rem] lg:text-[3.25rem]">
+          <h1 className="max-w-[16ch] text-[2.75rem] font-semibold leading-[0.94] tracking-tight text-white sm:text-[4rem] lg:text-[6rem]">
             Architektur mit Bestand
           </h1>
-          <p className="mb-8 max-w-[38ch] leading-relaxed text-white/75">
-            Architektur, Umbau und Verdichtung mit Schwerpunkt Zürich, Aargau und Zug.
-          </p>
-          <Link
-            href={slides[current].href}
-            className="w-fit border-b border-white/40 pb-1 text-sm uppercase tracking-[0.08em] text-white transition-colors hover:border-white hover:text-white"
-          >
-            Projekt ansehen →
-          </Link>
 
-          <div className="mt-10 flex gap-3">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrent(idx)}
-                aria-label={`Slide ${idx + 1} anzeigen`}
-                className={cn(
-                  'h-px transition-all duration-300',
-                  idx === current ? 'w-16 bg-white' : 'w-8 bg-white/40'
-                )}
-              />
-            ))}
+          <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
+            <Link href={slides[current].href} className="group text-white">
+              <p className="text-xl font-medium">{slides[current].projekt}</p>
+              <p className="mt-1 text-sm uppercase tracking-[0.15em] text-white/60">
+                {slides[current].ort}
+              </p>
+            </Link>
+            <div className="flex gap-3">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrent(idx)}
+                  aria-label={`Slide ${idx + 1} anzeigen`}
+                  className={cn(
+                    'h-px transition-all duration-300',
+                    idx === current ? 'w-16 bg-white' : 'w-8 bg-white/40'
+                  )}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
