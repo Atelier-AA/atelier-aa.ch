@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import CookieHinweis from '@/components/layout/CookieHinweis';
 import { firma } from '@/data/firma';
 import { team } from '@/data/team';
 import './globals.css';
@@ -137,6 +138,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieHinweis />
       </body>
     </html>
   );

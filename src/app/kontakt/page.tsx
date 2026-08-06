@@ -4,6 +4,8 @@ import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
 import { kontaktFragen } from '@/data/insights';
 import FragenAntworten from '@/components/insights/FragenAntworten';
+import KontaktKarte from '@/components/kontakt/KontaktKarte';
+import KontaktFormular from '@/components/kontakt/KontaktFormular';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -83,16 +85,12 @@ export default function KontaktPage() {
           </div>
         </div>
 
-        {/* Google Karte zum Bürostandort. */}
-        <div className="relative mt-16 aspect-[16/9] w-full bg-mist md:mt-20 md:aspect-[21/9]">
-          <iframe
-            src="https://www.google.com/maps?q=Atelier+AA+Architekten+GmbH,+Bachstrasse+39,+8912+Obfelden&output=embed"
-            title="Standort der Atelier AA Architekten GmbH auf Google Maps"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="absolute inset-0 h-full w-full grayscale"
-            style={{ border: 0 }}
-          />
+        {/* Karte und Kontaktformular nebeneinander statt einer vollflächigen
+            Karte — die Karte lädt erst nach Zustimmung zur Google-Maps-
+            Einbettung (siehe KontaktKarte). */}
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 md:mt-20">
+          <KontaktKarte />
+          <KontaktFormular />
         </div>
 
         <div className="mt-16 max-w-3xl border-t border-mist pt-16 md:mt-20">

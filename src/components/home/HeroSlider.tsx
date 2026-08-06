@@ -14,6 +14,15 @@ interface Slide {
   href: string;
 }
 
+// Ersetzt den früheren Einzelsatz "Architektur mit Bestand": drei kurze,
+// gestapelte Sprüche statt einer einzigen grossen Zeile — passt zum
+// Wort-Stapel-Muster, das seither auch in UeberUnsSection auftaucht.
+const sprueche = [
+  'Architektur mit Bestand',
+  'Verantwortung, die bleibt',
+  'Ehrlich bei Kosten und Zeit',
+];
+
 // Ausschliesslich Mehrfamilienhaus-Projekte, vom Nutzer aus einer Vorschau
 // mit allen verfügbaren Projektfotos ausgewählt und in dieser Reihenfolge
 // festgelegt.
@@ -97,10 +106,18 @@ export default function HeroSlider() {
 
       <div className="relative z-10 flex h-full flex-col justify-end px-8 py-8 md:px-14 md:py-12 lg:px-20 lg:py-14">
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
-          {/* Einheitliche Schriftstärke, bewusst ohne den fett/normal-Kontrast
-              der Statement-Sätze weiter unten auf der Seite. */}
-          <h1 className="max-w-[16ch] text-[2.75rem] font-semibold leading-[0.94] tracking-tight text-white sm:text-[4rem] lg:text-[6rem]">
-            Architektur mit Bestand
+          <h1 className="max-w-[20ch]">
+            {sprueche.map((spruch, idx) => (
+              <span
+                key={spruch}
+                className={cn(
+                  'block border-white/25 py-2 text-[1.75rem] font-semibold leading-tight tracking-tight text-white sm:py-3 sm:text-[2.5rem] lg:text-[3.25rem]',
+                  idx !== 0 && 'border-t'
+                )}
+              >
+                {spruch}
+              </span>
+            ))}
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
