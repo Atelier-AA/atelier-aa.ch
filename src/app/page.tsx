@@ -4,6 +4,7 @@ import IntroSection from '@/components/home/IntroSection';
 import AblaufSection from '@/components/home/AblaufSection';
 import KompetenzenReferenzenSection from '@/components/home/KompetenzenReferenzenSection';
 import UeberUnsSection from '@/components/home/UeberUnsSection';
+import CharakterSection from '@/components/home/CharakterSection';
 import InsightsSection from '@/components/home/InsightsSection';
 import AbschlussSection from '@/components/home/AbschlussSection';
 
@@ -32,6 +33,7 @@ export default function HomePage() {
       <AblaufSection />
       <KompetenzenReferenzenSection />
       <UeberUnsSection />
+      <CharakterSection />
       <InsightsSection />
       <AbschlussSection />
     </>

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
+import WarumSection from '@/components/leistungen/WarumSection';
+import MachbarkeitsFrageSection from '@/components/leistungen/MachbarkeitsFrageSection';
 import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
@@ -57,6 +59,10 @@ export default function LeistungenPage() {
           <LeistungenPlates />
         </Container>
       </section>
+
+      <WarumSection />
+
+      <MachbarkeitsFrageSection />
 
       {/* Bauaufgaben — bewusst nicht sichtbar dargestellt, aber im HTML
           vorhanden: `sr-only` blendet den Abschnitt visuell aus, ohne ihn
