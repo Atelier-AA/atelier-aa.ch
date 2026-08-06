@@ -134,7 +134,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
               </section>
             ))}
 
-            <FragenAntworten fragen={insight.fragen} />
+            <FragenAntworten fragen={insight.fragen} titel="Fragen und Antworten" />
 
             <div className="mt-20 md:mt-28 border-t border-mist pt-16">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">

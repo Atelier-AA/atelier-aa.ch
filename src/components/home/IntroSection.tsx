@@ -28,8 +28,9 @@ export default function IntroSection() {
               Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
               sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
               Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
-              Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
-              zeigen unsere realisierten Projekte.
+              Lebensqualität, Orientierung und Zugehörigkeit. Dabei führen wir jedes Projekt
+              durch die SIA-Leistungsphasen und legen Kosten so früh wie möglich offen. Wie
+              das konkret aussieht, zeigen unsere realisierten Projekte.
             </p>
           </div>
 

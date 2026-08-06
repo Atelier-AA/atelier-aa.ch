@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import HeroSlider from '@/components/home/HeroSlider';
 import IntroSection from '@/components/home/IntroSection';
+import AblaufSection from '@/components/home/AblaufSection';
 import KompetenzenReferenzenSection from '@/components/home/KompetenzenReferenzenSection';
 import UeberUnsSection from '@/components/home/UeberUnsSection';
 import InsightsSection from '@/components/home/InsightsSection';
@@ -15,17 +16,20 @@ export const metadata: Metadata = {
 /**
  * Startseite.
  *
- * Ablauf, Einsatzgebiet und Partner haben eigene Unterseiten und wiederholen
- * sich hier nicht. Über uns ist mit einem knappen, eigens gestalteten
- * Abschnitt vertreten. Am Ende steht ein eigens gestalteter Kontakt-Aufruf
- * (Statement-Satz, Kontakt-Button und ein dezenter Weg zurück zu den
- * Projekten) statt eines dunkel hinterlegten Blocks.
+ * Ablauf nimmt Erstkontakt-Unsicherheit direkt auf der Startseite vor, statt
+ * nur auf einer Unterseite. Einsatzgebiet und Partner haben weiterhin eigene
+ * Unterseiten und wiederholen sich hier nicht. Über uns ist mit einem
+ * knappen, eigens gestalteten Abschnitt vertreten. Am Ende steht ein eigens
+ * gestalteter Kontakt-Aufruf (Statement-Satz, Kontakt-Button und ein
+ * dezenter Weg zurück zu den Projekten) statt eines dunkel hinterlegten
+ * Blocks.
  */
 export default function HomePage() {
   return (
     <>
       <HeroSlider />
       <IntroSection />
+      <AblaufSection />
       <KompetenzenReferenzenSection />
       <UeberUnsSection />
       <InsightsSection />

@@ -13,7 +13,7 @@ export const insights: Insight[] = [
     titel: 'Verdichten statt neu bauen: Was auf Ihrem Grundstück möglich ist',
     lead: 'Bauland wird in Zürich, Aargau und Zug knapp. Der Bestand hält oft mehr aus, als seine Eigentümer vermuten — Aufstockung, Ersatzneubau oder Anbau.',
     kategorie: 'Verdichtung',
-    datum: '2026-05-20',
+    datum: '2026-07-20',
     lesezeit: 7,
     bild: '/images/insights/verdichtung.webp',
     abschnitte: [
@@ -21,7 +21,7 @@ export const insights: Insight[] = [
         titel: 'Die Reserve liegt im Bestand',
         absaetze: [
           'Viele Einfamilienhaus-Parzellen in den Kantonen Zürich, Aargau und Zug stammen aus den Sechziger- und Siebzigerjahren. Sie nutzen ihre zulässige Ausnutzung häufig nur zur Hälfte aus. Wo damals ein Haus für vier Personen stand, wäre heute Wohnraum für drei Haushalte möglich.',
-          'Das Raumplanungsgesetz verlangt seit der Revision Innenentwicklung vor Neueinzonung. Kantone und Gemeinden haben ihre Bau- und Nutzungsordnungen entsprechend angepasst — vielerorts wurden Ausnutzungsziffern erhöht oder Attikageschosse zugelassen. Diese Reserven kennen die Eigentümer meist nicht.',
+          'Das Raumplanungsgesetz verlangt seit der Revision Innenentwicklung vor Neueinzonung. Kantone und Gemeinden haben ihre Bau- und Nutzungsordnungen entsprechend angepasst — vielerorts wurden Ausnutzungsziffern erhöht oder Attikageschosse zugelassen. Diese Reserven sind vielen Eigentümern nicht bewusst.',
         ],
       },
       {
@@ -80,7 +80,7 @@ export const insights: Insight[] = [
     titel: 'Baugesuch in Zürich, Aargau und Zug: Der Ablauf ohne Überraschungen',
     lead: 'Das Bewilligungsverfahren ist der Teil eines Projekts, der am häufigsten unterschätzt wird. Was wann eingereicht wird und wo es klemmt.',
     kategorie: 'Recht',
-    datum: '2026-03-12',
+    datum: '2026-04-08',
     lesezeit: 8,
     bild: '/images/insights/baugesuch.webp',
     abschnitte: [
@@ -113,7 +113,7 @@ export const insights: Insight[] = [
         titel: 'Unterschiede zwischen den Kantonen',
         absaetze: [
           'Der Kanton Zürich arbeitet mit der Baumassenziffer, der Aargau meist mit der Ausnutzungsziffer, der Kanton Zug kennt beide je nach Gemeinde. Die Zahlen sind nicht direkt vergleichbar — wer aus einem Kanton Erfahrungswerte mitbringt, verschätzt sich.',
-          'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich von Kanton zu Kanton. Wir kennen diese Unterschiede aus der Praxis in der ganzen Schweiz und richten das Dossier auf die jeweilige Behörde aus.',
+          'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich von Kanton zu Kanton. Wir kennen diese Unterschiede aus der Praxis in diesen Kantonen und richten das Dossier auf die jeweilige Behörde aus.',
         ],
       },
     ],
@@ -217,7 +217,7 @@ export const insights: Insight[] = [
     titel: 'KI im Entwurf: Werkzeug, nicht Autor',
     lead: 'Generative Werkzeuge liefern in Minuten hunderte Varianten. Die eigentliche Arbeit beginnt danach – bei der Frage, welche davon trägt.',
     kategorie: 'Digitalisierung',
-    datum: '2026-06-18',
+    datum: '2026-08-05',
     lesezeit: 6,
     bild: '/images/insights/ki-entwurf.png',
     abschnitte: [
@@ -231,7 +231,7 @@ export const insights: Insight[] = [
       {
         titel: 'Wo die Grenze liegt',
         absaetze: [
-          'Ein Modell kennt keinen Ort. Es weiss nicht, dass der Nachbar sein Wohnzimmer nach Süden hat, dass die Gemeinde bei der Firsthöhe empfindlich ist oder dass die Bauherrschaft in fünf Jahren eine Generation mehr im Haus unterbringen möchte. Es optimiert, was messbar ist, und übersieht, was zählt.',
+          'Ein Modell kennt keinen Ort. Es weiss nicht, dass das Wohnzimmer des Nachbarn nach Süden liegt, dass die Gemeinde bei der Firsthöhe empfindlich ist oder dass die Bauherrschaft in fünf Jahren eine Generation mehr im Haus unterbringen möchte. Es optimiert, was messbar ist, und übersieht, was zählt.',
           'Der zweite Punkt ist Verantwortung. Für ein Bauwerk haftet ein Mensch mit Namen und Berufsregister-Eintrag. Ein Vorschlag aus einem Modell ist ein Vorschlag – bis jemand ihn prüft, anpasst und unterschreibt. Diese Prüfung ist keine Formalie, sondern der Kern des Berufs.',
         ],
       },
@@ -271,7 +271,7 @@ export const insights: Insight[] = [
     titel: 'Kreislauffähig bauen: Der Bestand ist die Ressource',
     lead: 'Der grösste Hebel für weniger Emissionen liegt nicht im Neubau, sondern in dem, was schon steht. Was das für ein konkretes Projekt bedeutet.',
     kategorie: 'Nachhaltigkeit',
-    datum: '2026-04-29',
+    datum: '2026-06-17',
     lesezeit: 7,
     bild: '/images/insights/kreislauf-bauen.jpg',
     abschnitte: [
@@ -325,7 +325,7 @@ export const insights: Insight[] = [
     titel: 'Warum es Architekten weiterhin braucht',
     lead: 'Software plant Details, Portale liefern Typenhäuser, Modelle erzeugen Bilder. Was ein Architekt beiträgt, wird dadurch nicht kleiner – nur sichtbarer.',
     kategorie: 'Haltung',
-    datum: '2026-02-11',
+    datum: '2026-03-11',
     lesezeit: 5,
     bild: '/images/insights/rolle-architekt.png',
     abschnitte: [
@@ -389,9 +389,9 @@ export const insights: Insight[] = [
   {
     slug: 'baukostenschub-2022',
     titel: 'Baukostenschub 2022: Was der Preissprung bei Stahl und Zement bedeutete',
-    lead: 'Innert eines Jahres verteuerte sich Stahl um siebzig Prozent, Zement um vierzig. Was diesen Schub auslöste — und was Bauherrschaften seither daraus mitnehmen.',
+    lead: 'Innert eines Jahres verteuerte sich Stahl um siebzig Prozent; Zement zog binnen zwei Jahren um vierzig Prozent nach. Was diesen Schub auslöste — und was Bauherrschaften seither daraus mitnehmen.',
     kategorie: 'Kosten',
-    datum: '2022-08-22',
+    datum: '2025-01-14',
     lesezeit: 5,
     bild: '/images/insights/baukostenschub-2022.webp',
     abschnitte: [
@@ -440,7 +440,7 @@ export const insights: Insight[] = [
     titel: 'Referenzzinssatz und Bauzinsen: Wie die Zinswende Investitionsentscheide veränderte',
     lead: 'Nach Jahren auf historischem Tiefstand stieg der hypothekarische Referenzzinssatz 2023 erstmals wieder an. Was das für Investitionsentscheide bedeutete — und warum er seither wieder gesunken ist.',
     kategorie: 'Kosten',
-    datum: '2023-09-25',
+    datum: '2025-02-11',
     lesezeit: 6,
     bild: '/images/insights/referenzzinssatz.webp',
     abschnitte: [
@@ -489,7 +489,7 @@ export const insights: Insight[] = [
     titel: 'Holzbau im Aufwind: Warum mehrgeschossige Holzhäuser sich verdoppelt haben',
     lead: 'Zwischen 2014 und 2024 hat sich die Zahl bewilligter Wohnbauten mit Holztragwerk und mindestens fünf Geschossen mehr als verdoppelt. Was hinter diesem Trend steckt.',
     kategorie: 'Nachhaltigkeit',
-    datum: '2023-11-14',
+    datum: '2025-03-18',
     lesezeit: 6,
     bild: '/images/insights/holzbau.webp',
     abschnitte: [
@@ -497,7 +497,6 @@ export const insights: Insight[] = [
         titel: 'Von Randerscheinung zu Marktanteil',
         absaetze: [
           'Holz hat 2024 einen Anteil von 8,4 Prozent am Neubau von Mehrfamilienhäusern in der Schweiz erreicht, unter Einbezug von Umbauten sogar 10,8 Prozent. Bei Gebäuden mit fünf oder mehr Geschossen ist die Zahl bewilligter Holzbauten zwischen 2014 und 2024 von rund 100 auf 215 gestiegen.',
-          'Die Schweiz liegt damit im mehrgeschossigen Holzbau weiter vorn als die meisten Nachbarländer — eine Position, die auch mit der langen Tradition der hiesigen Holzbauindustrie und angepassten Brandschutzvorschriften zusammenhängt.',
         ],
       },
       {
@@ -538,7 +537,7 @@ export const insights: Insight[] = [
     titel: 'Fachkräftemangel am Bau: Wenn Projekte auf Handwerker warten müssen',
     lead: 'Bauleiterinnen, Poliere und Elektrofachkräfte gehören seit Jahren zu den gesuchtesten Berufen der Schweiz. Was das für Terminpläne bedeutet.',
     kategorie: 'Branche',
-    datum: '2024-03-19',
+    datum: '2025-04-09',
     lesezeit: 5,
     bild: '/images/insights/fachkraeftemangel.webp',
     abschnitte: [
@@ -587,7 +586,7 @@ export const insights: Insight[] = [
     titel: 'Homeoffice und die Folgen: Warum Büroflächen in der Schweiz leer stehen',
     lead: 'Landesweit stehen heute rund 3,17 Millionen Quadratmeter Bürofläche leer, fast neun Prozent mehr als im Vorjahr. Was das für Bauherrschaften mit Gewerbeflächen bedeutet.',
     kategorie: 'Branche',
-    datum: '2024-05-06',
+    datum: '2025-05-21',
     lesezeit: 6,
     bild: '/images/insights/bueroflaechen.webp',
     abschnitte: [
@@ -636,7 +635,7 @@ export const insights: Insight[] = [
     titel: 'Das neue Stromgesetz: Was der Mantelerlass für Bauherrschaften bedeutet',
     lead: 'Mit 68,7 Prozent Ja-Stimmen hat die Schweiz im Juni 2024 den Mantelerlass angenommen. Was sich damit für Bauvorhaben ändert.',
     kategorie: 'Recht',
-    datum: '2024-07-10',
+    datum: '2025-06-16',
     lesezeit: 6,
     bild: '/images/insights/stromgesetz.webp',
     abschnitte: [
@@ -685,7 +684,7 @@ export const insights: Insight[] = [
     titel: 'Mietrecht-Abstimmung: Warum Untermiete und Eigenbedarf an der Urne scheiterten',
     lead: 'Am 24. November 2024 lehnte die Schweizer Stimmbevölkerung zwei Mietrechtsvorlagen ab. Was geplant war — und warum es für Vermieterschaften beim geltenden Recht bleibt.',
     kategorie: 'Recht',
-    datum: '2024-12-05',
+    datum: '2025-07-08',
     lesezeit: 5,
     bild: '/images/insights/mietrecht.webp',
     abschnitte: [
@@ -699,7 +698,7 @@ export const insights: Insight[] = [
       {
         titel: 'Warum das Volk Nein sagte',
         absaetze: [
-          'Bundesrat Guy Parmelin fasste die Reaktion so zusammen: Die Änderungen hätten aus Sicht der Stimmenden das Gleichgewicht zwischen Mietenden und Vermietenden zugunsten der Vermieterschaft verschoben. Beide Resultate fielen knapp aus — ein Hinweis darauf, dass das Thema in der Bevölkerung kontrovers bleibt.',
+          'Der Bundesrat begründete die Ablehnung damit, dass die Änderungen aus Sicht der Stimmenden das Gleichgewicht zwischen Mietenden und Vermietenden zugunsten der Vermieterschaft verschoben hätten. Beide Resultate fielen knapp aus — ein Hinweis darauf, dass das Thema in der Bevölkerung kontrovers bleibt.',
           'Für Bauherrschaften mit Renditeobjekten bedeutet das: Das geltende Mietrecht bleibt unverändert in Kraft, Kündigungen wegen Eigenbedarfs und Regeln zur Untermiete richten sich weiterhin nach den bisherigen Bestimmungen des Obligationenrechts.',
         ],
       },
@@ -734,7 +733,7 @@ export const insights: Insight[] = [
     titel: 'BIM wird Pflicht: Was die Digitalisierung für Planer und Bauherrschaften bedeutet',
     lead: 'Seit 2021 muss der Bund bei eigenen Bauprojekten mit der BIM-Methode arbeiten, ab 2025 auch bei Infrastrukturanlagen. Was Building Information Modeling praktisch verändert.',
     kategorie: 'Digitalisierung',
-    datum: '2025-01-20',
+    datum: '2025-08-19',
     lesezeit: 6,
     bild: '/images/insights/bim.webp',
     abschnitte: [
@@ -783,7 +782,7 @@ export const insights: Insight[] = [
     titel: 'Ladeinfrastruktur im Neubau: Was Kantone bei E-Mobilität heute verlangen',
     lead: 'Eine gesamtschweizerische Pflicht für Ladestationen gibt es nicht — wohl aber in mehreren Kantonen die Pflicht, Neubauten dafür vorzubereiten. Ein Überblick.',
     kategorie: 'Nachhaltigkeit',
-    datum: '2025-03-11',
+    datum: '2025-09-15',
     lesezeit: 5,
     bild: '/images/insights/ladeinfrastruktur.webp',
     abschnitte: [
@@ -832,7 +831,7 @@ export const insights: Insight[] = [
     titel: 'Sommerlicher Wärmeschutz: Warum Hitzeschutz kein Extra mehr ist',
     lead: 'Mit häufigeren Hitzewellen gewinnt der sommerliche Wärmeschutz an Bedeutung — und ist längst Teil der SIA-Normen. Was das für Fassade und Fenster bedeutet.',
     kategorie: 'Nachhaltigkeit',
-    datum: '2025-06-24',
+    datum: '2025-10-06',
     lesezeit: 6,
     bild: '/images/insights/hitzeschutz.webp',
     abschnitte: [
@@ -881,7 +880,7 @@ export const insights: Insight[] = [
     titel: 'Leerwohnungsziffer auf Rekordtief: Was die Wohnungsknappheit für Bauherrschaften bedeutet',
     lead: 'Nur noch ein Prozent der Schweizer Wohnungen stehen leer — der tiefste Wert seit zwölf Jahren. Was hinter der Zahl steckt und was sie für Verdichtungsprojekte bedeutet.',
     kategorie: 'Verdichtung',
-    datum: '2025-09-16',
+    datum: '2025-11-17',
     lesezeit: 6,
     bild: '/images/insights/wohnungsknappheit.webp',
     abschnitte: [
@@ -930,7 +929,7 @@ export const insights: Insight[] = [
     titel: 'Solarpflicht in den Kantonen: Was ab 2026 für Neubauten gilt',
     lead: 'Der Bund verlangt eine Solarpflicht ab 300 Quadratmetern Gebäudefläche — die Kantone setzen sie aber sehr unterschiedlich um. Ein Überblick vor der nächsten Verschärfung.',
     kategorie: 'Nachhaltigkeit',
-    datum: '2025-11-18',
+    datum: '2025-12-10',
     lesezeit: 6,
     bild: '/images/insights/solarpflicht.webp',
     abschnitte: [
@@ -1028,7 +1027,7 @@ export const insights: Insight[] = [
     titel: 'MuKEn 2025: Was die neuen kantonalen Energievorschriften bedeuten',
     lead: 'Die Mustervorschriften der Kantone im Energiebereich bilden die Grundlage für Solarpflicht, Ladeinfrastruktur und Heizungsersatz. Was sich mit der aktuellen Revision ändert.',
     kategorie: 'Recht',
-    datum: '2026-04-14',
+    datum: '2026-05-13',
     lesezeit: 5,
     bild: '/images/insights/muken.webp',
     abschnitte: [

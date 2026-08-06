@@ -28,10 +28,10 @@ export default function UeberUnsPage() {
             </h1>
             <div className="space-y-6 text-graphite leading-relaxed">
               <p className="text-lg">
-                Zuhören heisst bei uns: ein Gespräch vor Ort, das Grundstück in seiner
-                Umgebung verstehen, und die Fragen stellen, die eine Bauherrschaft oft
-                selbst noch nicht gestellt hat. Erst danach beginnt der Entwurf — nie
-                umgekehrt.
+                Zuhören heisst bei uns: ein Gespräch vor Ort führen, das Grundstück in
+                seiner Umgebung verstehen, und die Fragen stellen, die sich im
+                Projektverlauf sonst erst später ergeben. Erst danach beginnt der
+                Entwurf — nie umgekehrt.
               </p>
               <p>
                 Wir führen das Atelier AA mit dieser Haltung — mit einem engagierten,

@@ -24,19 +24,19 @@ interface FragenAntwortenProps {
  */
 export default function FragenAntworten({
   fragen,
-  titel = 'Fragen und Antworten',
+  titel,
 }: FragenAntwortenProps) {
   if (fragen.length === 0) return null;
 
   return (
     <section
       id="faq"
-      aria-labelledby="faq-titel"
+      aria-label={titel ?? 'Fragen und Antworten'}
       className="mt-20 md:mt-28 border-t border-mist pt-16"
     >
-      <h2 id="faq-titel" className="text-2xl md:text-3xl font-medium text-ink mb-10">
-        {titel}
-      </h2>
+      {titel && (
+        <h2 className="text-2xl md:text-3xl font-medium text-ink mb-10">{titel}</h2>
+      )}
 
       <div className="border-t border-mist">
         {fragen.map((f) => (

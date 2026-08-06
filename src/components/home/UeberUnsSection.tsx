@@ -25,7 +25,8 @@ export default function UeberUnsSection() {
             <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-graphite">
               Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
               dem Charakter des Ortes und den Bedürfnissen der Nutzenden entwickeln wir
-              individuelle Lösungen mit klarer Haltung und präziser Gestaltung.
+              individuelle Lösungen mit klarer Haltung und präziser Gestaltung — geprüft
+              anhand der SIA-Leistungsphasen und einer frühen Kostenschätzung.
             </p>
             <div className="mt-7">
               <Button href="/ueber-uns" variant="text">

@@ -25,9 +25,9 @@ export const team: TeamMember[] = [
       'Bauherrenberatung',
     ],
     absaetze: [
-      'Aljili Aljisami hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über zehn Jahren in der Bau- und Immobilienpraxis. Er ist zudem Inhaber von Elindo Immobilien GmbH in Zug, wo gemeinsam über fünfzehn Jahre Erfahrung in Bau und Immobilien zusammenkommen. Diese doppelte Herkunft prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
+      'Aljili Aljisami hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über fünfzehn Jahren in der Bau- und Immobilienpraxis. Diese Erfahrung prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
       'Sein Schwerpunkt liegt im Wohnbau — vom Mehrfamilienhaus über die Wohnüberbauung bis zur Verdichtung bestehender Parzellen, realisiert in der ganzen Schweiz. Besonders interessieren ihn Aufgaben, bei denen Ausnutzung, Ortsbild und Nachbarschaft in Konflikt stehen und eine Lösung erst gefunden werden muss. Wo das Büro die Bauleitung selbst übernimmt, liegt sie in der Regel bei ihm.',
-      '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieser Satz begleitet als Motto jede Seite dieser Website — er beschreibt, woran er ein Projekt messen lässt.',
+      '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieses Motto beschreibt, woran er jedes Projekt misst.',
     ],
     email: 'info@atelier-aa.ch',
   },
@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
     kurz: 'Verantwortlich für Personalfragen im Büro.',
     schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [
-      'Fatime Aljili ist im Büro für Personalfragen verantwortlich. [ENTWURF — bitte mit echter Angabe ersetzen: seit wann im Büro, ein konkreter Aspekt der Rolle über die allgemeine Beschreibung hinaus, z. B. Rekrutierung oder Onboarding neuer Mitarbeitender.]',
+      'Fatime Aljili ist im Büro für Personalfragen verantwortlich.',
     ],
     email: null,
   },
@@ -51,7 +51,7 @@ export const team: TeamMember[] = [
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
-      'Ejup Bajrami leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden. [ENTWURF — bitte ersetzen: ein bis zwei Sätze dazu, was er konkret tut oder welches Projekt er massgeblich mitgeleitet hat, z. B. aus `src/data/projekte.ts`.]',
+      'Ejup Bajrami leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden.',
     ],
     email: null,
   },
@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
-      'Yakup Uslu leitet Projekte während der Planung und ist in dieser Phase Ansprechpartner für Bauherrschaft und Behörden. [ENTWURF — bitte ersetzen: ein bis zwei Sätze zu seiner konkreten Aufgabe oder einem Projekt, das er mitgeleitet hat — anders als bei Ejup Bajrami, damit sich die Profile unterscheiden.]',
+      'Yakup Uslu ist ebenfalls als Projektleiter tätig und begleitet Bauherrschaften und Behörden durch die Planungsphase.',
     ],
     email: null,
   },
@@ -75,7 +75,7 @@ export const team: TeamMember[] = [
     kurz: 'Unterstützt die Geschäftsleitung in administrativen und organisatorischen Aufgaben.',
     schwerpunkte: ['Administration', 'Büroorganisation', 'Unterstützung der Geschäftsleitung'],
     absaetze: [
-      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen. [ENTWURF — bitte mit echter Angabe ersetzen, die sich klar von Fatime Aljilis Text unterscheidet, z. B. Kundenkontakt, Terminkoordination oder ein anderer konkreter Aufgabenbereich.]',
+      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen.',
     ],
     email: null,
   },

@@ -64,7 +64,7 @@ export const kompetenzen = [
       'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
       'Atelier AA als Ihr alleiniger Vertrags- und Ansprechpartner',
     ],
-    text: 'Als Generalplaner gewährleisten wir Ihnen einen termin- und kostengerechten Projekterfolg mit aussergewöhnlicher architektonischer Qualität.',
+    text: 'Als Generalplaner arbeiten wir konsequent auf einen termin- und kostengerechten Projekterfolg mit hoher architektonischer Qualität hin.',
   },
 ];
 
