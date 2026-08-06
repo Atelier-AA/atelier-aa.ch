@@ -224,7 +224,7 @@ export default function DatenschutzPage() {
                   die Löschung oder Einschränkung der Bearbeitung zu verlangen,
                 </li>
                 <li className="list-disc">
-                  Ihre Daten in einem gängigen Format herausverlangen oder an einen
+                  Ihre Daten in einem gängigen Format herauszuverlangen oder an einen
                   anderen Verantwortlichen übertragen zu lassen,
                 </li>
                 <li className="list-disc">
