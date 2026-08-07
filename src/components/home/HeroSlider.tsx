@@ -99,9 +99,9 @@ export default function HeroSlider() {
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
           {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
               px-6/md:px-10/lg:px-16), Grossbuchstaben, Grösse halbiert. */}
-          <h1 className="text-left text-[1.65rem] font-semibold uppercase leading-[1.05] tracking-tight text-white sm:text-[2.4rem] lg:text-[3.6rem]">
-            <span className="block whitespace-nowrap">Verantwortungsvoll</span>
-            <span className="block whitespace-nowrap">geplant, gemeinsam gebaut.</span>
+          <h1 className="max-w-[26ch] text-left text-[1.375rem] font-semibold uppercase leading-[1.15] tracking-tight text-white sm:text-[1.85rem] lg:text-[2.5rem]">
+            <span className="block">Wir entwerfen nicht für den Moment.</span>
+            <span className="block">Wir schaffen Orte mit Bestand.</span>
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
