@@ -20,7 +20,7 @@ export default function InsightCard({ insight, priority = false }: InsightCardPr
       className="group block min-w-0"
       aria-label={`Beitrag lesen: ${insight.titel}`}
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+      <div className="relative aspect-square overflow-hidden bg-mist">
         <Image
           src={insight.bild}
           alt=""
