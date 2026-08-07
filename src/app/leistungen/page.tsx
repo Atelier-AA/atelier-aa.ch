@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
+import AblaufSection from '@/components/home/AblaufSection';
 import WarumSection from '@/components/leistungen/WarumSection';
 import MachbarkeitsFrageSection from '@/components/leistungen/MachbarkeitsFrageSection';
 import { bauaufgaben } from '@/data/expertise';
@@ -43,6 +44,8 @@ export default function LeistungenPage() {
           </p>
         </div>
       </Container>
+
+      <AblaufSection />
 
       {/* Leistungsangebot auf der regulären Inhaltsbreite statt vollflächig
           über den Bildschirm — fügt sich damit ins übrige Seitenbild ein. */}

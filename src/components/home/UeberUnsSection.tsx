@@ -2,11 +2,17 @@ import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 
+const eigenschaften = ['Ortskundig', 'Direkt', 'Ehrlich', 'Erfahren', 'Verbindlich'];
+
 /**
  * Über uns als Zitat-Block mit Akzentlinie statt einer normalen Überschrift
  * — hebt den Satz optisch heraus. Bg-mist grenzt den Abschnitt weiterhin von
  * den weissen Nachbarn ab; ein Porträt des Gründers füllt die Fläche neben
  * dem Text.
+ *
+ * Die fünf Eigenschaften standen zunächst in einer eigenen Sektion
+ * (`CharakterSection`), wirkten dort zusammen mit Ablauf und Kompetenzen
+ * überladen. Jetzt eine kompakte Zeile hier statt eines eigenen Screens.
  */
 export default function UeberUnsSection() {
   return (
@@ -32,6 +38,16 @@ export default function UeberUnsSection() {
               <Button href="/ueber-uns" variant="text">
                 Mehr über uns
               </Button>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-stone/20 pt-6">
+              {eigenschaften.map((wort) => (
+                <span
+                  key={wort}
+                  className="text-sm font-semibold uppercase tracking-wide text-ink"
+                >
+                  {wort}
+                </span>
+              ))}
             </div>
           </div>
           <div className="relative aspect-[3/4] w-full max-w-sm bg-stone/10 lg:max-w-none">
