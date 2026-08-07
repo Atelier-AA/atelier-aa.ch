@@ -100,7 +100,7 @@ export default function HeroSlider() {
           {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
               px-6/md:px-10/lg:px-16), Grossbuchstaben, Grösse halbiert. */}
           <h1 className="text-left text-[1.375rem] font-semibold uppercase leading-[1.05] tracking-tight text-white sm:text-[2rem] lg:text-[3rem]">
-            <span className="block whitespace-nowrap">Mit Verantwortung geplant,</span>
+            <span className="block whitespace-nowrap">Verantwortungsvoll geplant,</span>
             <span className="block whitespace-nowrap">gemeinsam gebaut.</span>
           </h1>
 
