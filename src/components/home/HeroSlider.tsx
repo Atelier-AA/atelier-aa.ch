@@ -98,7 +98,9 @@ export default function HeroSlider() {
       <div className="relative z-10 flex h-full flex-col justify-end px-8 py-8 md:px-14 md:py-12 lg:px-20 lg:py-14">
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
           <h1 className="max-w-[16ch] text-[2.75rem] font-semibold leading-[0.94] tracking-tight text-white sm:text-[4rem] lg:text-[6rem]">
-            Ihr Bauvorhaben, gut begleitet.
+            Mit Verantwortung geplant,
+            <br />
+            gemeinsam gebaut.
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
