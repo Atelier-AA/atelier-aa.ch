@@ -29,11 +29,13 @@ export default function InsightsPage() {
           </p>
         </div>
 
+        {/* Gleiche Kartengrösse wie auf der Startseite: vier statt drei
+            Spalten, damit die Bilder identisch klein erscheinen. */}
         <div className="flex flex-wrap gap-x-5 gap-y-8 xl:gap-y-16">
           {insights.map((insight, idx) => (
             <Eingeblendet
               key={insight.slug}
-              className="w-full sm:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.834rem)]"
+              className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]"
             >
               <InsightCard insight={insight} priority={idx < 2} />
             </Eingeblendet>
