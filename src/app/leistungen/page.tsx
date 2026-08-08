@@ -3,6 +3,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
 import AblaufSection from '@/components/home/AblaufSection';
+import EinblickSection from '@/components/leistungen/EinblickSection';
 import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
@@ -60,6 +61,8 @@ export default function LeistungenPage() {
           <LeistungenPlates />
         </Container>
       </section>
+
+      <EinblickSection />
 
       {/* Bauaufgaben — bewusst nicht sichtbar dargestellt, aber im HTML
           vorhanden: `sr-only` blendet den Abschnitt visuell aus, ohne ihn
