@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { projekte } from '@/data/projekte';
 import { insights } from '@/data/insights';
 import { team } from '@/data/team';
+import { alleKantone, orteInKanton } from '@/lib/regionen';
 
 const BASIS = 'https://www.atelier-aa.ch';
 
@@ -51,5 +52,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
+    ...alleKantone().flatMap((k) => [
+      {
+        url: `${BASIS}/regionen/${k.slug}`,
+        lastModified: heute,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      },
+      ...orteInKanton(k.kuerzel).map((o) => ({
+        url: `${BASIS}/regionen/${k.slug}/${o.slug}`,
+        lastModified: heute,
+        changeFrequency: 'yearly' as const,
+        priority: 0.6,
+      })),
+    ]),
   ];
 }

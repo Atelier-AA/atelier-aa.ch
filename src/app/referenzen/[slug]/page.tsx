@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProjektBilder from '@/components/projekte/ProjektBilder';
 import ProjektMeta from '@/components/projekte/ProjektMeta';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
+import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
@@ -51,6 +53,8 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   if (!projekt) notFound();
 
   const weitere = getWeitereProjekte(slug, 3);
+  const kanton = alleKantone().find((k) => k.kuerzel === projekt.kanton);
+  const ortSlug = slugify(projekt.ort);
   const BASIS = 'https://www.atelier-aa.ch';
   const url = `${BASIS}/referenzen/${projekt.slug}`;
 
@@ -181,6 +185,28 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               </ul>
             </div>
           </div>
+
+          {/* Interne Verlinkung zu den Kanton-/Ortschafts-Seiten — für die
+              lokale Suche ("Architekt Jonen"), nicht im Hauptmenü verlinkt. */}
+          {kanton && (
+            <p className="mt-8 text-sm text-stone">
+              Weitere Projekte in{' '}
+              <Link
+                href={`/regionen/${kanton.slug}/${ortSlug}`}
+                className="text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+              >
+                {projekt.ort}
+              </Link>{' '}
+              oder im{' '}
+              <Link
+                href={`/regionen/${kanton.slug}`}
+                className="text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+              >
+                Kanton {kanton.name}
+              </Link>
+              .
+            </p>
+          )}
 
           <FragenAntworten fragen={projekt.fragen} titel="Fragen zu diesem Projekttyp" />
         </div>
