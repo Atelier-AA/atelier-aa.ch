@@ -40,13 +40,6 @@ const slides: Slide[] = [
     href: '/referenzen/mfh-wuerenlingen',
   },
   {
-    image: '/images/hero/slide-untersiggenthal-1.jpg',
-    projekt: 'Mehrfamilienhaus',
-    ort: 'Untersiggenthal',
-    kanton: 'AG',
-    href: '/referenzen/mfh-alte-poststrasse',
-  },
-  {
     image: '/images/hero/slide-treppenhaus-1.jpg',
     projekt: 'Einfamilienhaus',
     ort: 'Jonen',
