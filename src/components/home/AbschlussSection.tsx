@@ -14,7 +14,8 @@ export default function AbschlussSection() {
         <div className="max-w-2xl">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Machbarkeit</p>
           <h2 className="max-w-[20ch] text-[2rem] font-normal leading-[1.15] tracking-tight text-ink sm:text-[2.5rem]">
-            Fragen Sie sich, ob auf Ihrem Grundstück heute schon mehr möglich wäre, als darauf steht?
+            Fragen Sie sich, ob auf Ihrem Grundstück heute schon{' '}
+            <span className="font-semibold">mehr möglich wäre,</span> als darauf steht?
           </h2>
           <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-graphite">
             Viele Parzellen aus den Sechziger- und Siebzigerjahren nutzen ihre
