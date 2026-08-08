@@ -40,7 +40,7 @@ export default function InsightsSection() {
               <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                 <Image
                   src={i.bild}
-                  alt=""
+                  alt={i.titel}
                   fill
                   priority={idx < 2}
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

@@ -111,7 +111,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
         <div className="relative mt-16 md:mt-20 aspect-[16/9] w-full bg-mist">
           <Image
             src={insight.bild}
-            alt=""
+            alt={insight.titel}
             fill
             priority
             className="object-cover"

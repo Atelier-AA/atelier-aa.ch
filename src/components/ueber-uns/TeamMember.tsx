@@ -25,7 +25,7 @@ export default function TeamMember({ member }: TeamMemberProps) {
       <div className="relative mb-5 aspect-[3/4] overflow-hidden bg-mist">
         <Image
           src={member.bild}
-          alt={`Porträt von ${member.name}`}
+          alt={`Porträt von ${member.name}, ${member.rolle} bei Atelier AA Architekten`}
           fill
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw"

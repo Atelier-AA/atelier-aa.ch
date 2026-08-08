@@ -127,6 +127,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             galerie={projekt.galerie}
             plaene={projekt.plaene}
             projektTitel={projekt.title}
+            ort={projekt.ort}
           />
         </div>
 

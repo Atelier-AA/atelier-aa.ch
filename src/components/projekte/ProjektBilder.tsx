@@ -9,6 +9,8 @@ interface ProjektBilderProps {
   galerie: string[];
   plaene?: ProjektPlan[];
   projektTitel: string;
+  /** Für aussagekräftige Alt-Texte (Ort in der lokalen Suche relevant). */
+  ort?: string;
 }
 
 /**
@@ -76,8 +78,10 @@ export default function ProjektBilder({
   galerie,
   plaene,
   projektTitel,
+  ort,
 }: ProjektBilderProps) {
   const bilder = [heroImage, ...galerie, ...(plaene ?? []).map((p) => planBild(p.datei))];
+  const bezeichnung = ort ? `${projektTitel}, ${ort}` : projektTitel;
 
   return (
     <div className="space-y-4 md:space-y-6">
@@ -85,7 +89,7 @@ export default function ProjektBilder({
         <EingeblendetesBild
           key={bild}
           src={bild}
-          alt={`${projektTitel} – Ansicht ${idx + 1}`}
+          alt={`${bezeichnung} – Ansicht ${idx + 1}, Atelier AA Architekten`}
           eager={idx === 0}
         />
       ))}
