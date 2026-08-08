@@ -6,10 +6,10 @@ import { insights } from '@/data/insights';
 import { formatDatum } from '@/lib/utils';
 
 /**
- * Vier Fachbeiträge auf der Startseite, im selben quadratischen Bildstil wie
- * die Referenzprojekte (inkl. Zoom beim Hover). Der Titel blendet erst beim
- * Hover über dem Bild ein (dunkler Verlauf, weisser Text, bis zu zwei
- * Zeilen); fest sichtbar bleibt nur das Datum darunter.
+ * Vier Fachbeiträge auf der Startseite, im selben hochformatigen Bildstil
+ * (3:4) wie die Übersicht auf /insights (inkl. Zoom beim Hover). Der Titel
+ * blendet erst beim Hover über dem Bild ein (dunkler Verlauf, weisser Text,
+ * bis zu zwei Zeilen); fest sichtbar bleibt nur das Datum darunter.
  */
 export default function InsightsSection() {
   const neueste = insights.slice(0, 4);
@@ -37,7 +37,7 @@ export default function InsightsSection() {
               className="group block min-w-0"
               aria-label={`Beitrag lesen: ${i.titel}`}
             >
-              <div className="relative aspect-square overflow-hidden bg-mist">
+              <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                 <Image
                   src={i.bild}
                   alt=""
