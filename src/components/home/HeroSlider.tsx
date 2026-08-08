@@ -53,6 +53,43 @@ const slides: Slide[] = [
     kanton: 'AG',
     href: '/referenzen/mfh-hochwarting',
   },
+  // Vorschau-Vergleich, neu hinzugefügte Bilder — Projekt/Ort noch platzhalter,
+  // da nicht bekannt, zu welchem Referenzprojekt sie gehören.
+  {
+    image: '/images/hero/slide-treppenhaus-1.jpg',
+    projekt: 'Vorschau',
+    ort: 'Projekt noch zuordnen',
+    kanton: '',
+    href: '/projekte',
+  },
+  {
+    image: '/images/hero/slide-fassade-1.jpg',
+    projekt: 'Vorschau',
+    ort: 'Projekt noch zuordnen',
+    kanton: '',
+    href: '/projekte',
+  },
+  {
+    image: '/images/hero/slide-wohnzimmer-1.jpg',
+    projekt: 'Vorschau (Visualisierung)',
+    ort: 'Projekt noch zuordnen',
+    kanton: '',
+    href: '/projekte',
+  },
+  {
+    image: '/images/hero/slide-modell-1.jpg',
+    projekt: 'Vorschau (Modellfoto)',
+    ort: 'Projekt noch zuordnen',
+    kanton: '',
+    href: '/projekte',
+  },
+  {
+    image: '/images/hero/slide-skizze-1.jpg',
+    projekt: 'Vorschau (Skizze)',
+    ort: 'Projekt noch zuordnen',
+    kanton: '',
+    href: '/projekte',
+  },
 ];
 
 export default function HeroSlider() {
