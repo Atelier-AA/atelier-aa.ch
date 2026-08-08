@@ -59,8 +59,6 @@ export default function LeistungenPage() {
         </div>
       </Container>
 
-      <AblaufSection />
-
       {/* Leistungsangebot auf der regulären Inhaltsbreite statt vollflächig
           über den Bildschirm — fügt sich damit ins übrige Seitenbild ein. */}
       <section className="border-t border-mist py-20 md:pt-28">
@@ -76,6 +74,8 @@ export default function LeistungenPage() {
           <LeistungenPlates />
         </Container>
       </section>
+
+      <AblaufSection />
 
       {/* Bauaufgaben — bewusst nicht sichtbar dargestellt, aber im HTML
           vorhanden: `sr-only` blendet den Abschnitt visuell aus, ohne ihn
