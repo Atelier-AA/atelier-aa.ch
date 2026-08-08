@@ -98,8 +98,9 @@ export default function HeroSlider() {
       <div className="relative z-10 flex h-full flex-col justify-end px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
         <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
           {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
-              px-6/md:px-10/lg:px-16), Grossbuchstaben, Grösse halbiert. */}
-          <h1 className="text-left text-[1.65rem] font-semibold uppercase leading-[1.05] tracking-tight text-white sm:text-[2.4rem] lg:text-[3.6rem]">
+              px-6/md:px-10/lg:px-16). Vorschau: normale Gross-/Kleinschreibung
+              statt Versalien. */}
+          <h1 className="text-left text-[1.65rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.4rem] lg:text-[3.6rem]">
             <span className="block whitespace-nowrap">Verantwortungsvoll</span>
             <span className="block whitespace-nowrap">geplant, gemeinsam gebaut.</span>
           </h1>
