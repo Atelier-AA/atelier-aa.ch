@@ -1,17 +1,21 @@
 import { projekte } from '@/data/projekte';
-import type { Projekt } from '@/types';
+import { studien } from '@/data/studien';
+import type { Projekt, Studie } from '@/types';
 
 /**
  * Kanton- und Ortschafts-Seiten für die lokale Suche ("Architekt Jonen",
  * "Architekt Kanton Aargau") — nur für Kantone/Orte, in denen wirklich ein
- * Projekt realisiert oder projektiert wurde. Keine generischen Seiten ohne
- * echten Inhalt, um kein Duplicate-Content-/Doorway-Page-Muster zu erzeugen.
+ * Projekt realisiert, projektiert oder eine Machbarkeitsstudie durchgeführt
+ * wurde. Keine generischen Seiten ohne echten Inhalt, um kein
+ * Duplicate-Content-/Doorway-Page-Muster zu erzeugen.
  */
 
 const KANTON_NAMEN: Record<string, string> = {
   AG: 'Aargau',
   ZH: 'Zürich',
   ZG: 'Zug',
+  LU: 'Luzern',
+  SZ: 'Schwyz',
 };
 
 export function slugify(text: string): string {
@@ -30,15 +34,20 @@ export interface KantonMitProjekten {
   name: string;
   slug: string;
   projekte: Projekt[];
+  studien: Studie[];
+}
+
+function alleKuerzel(): string[] {
+  return Array.from(new Set([...projekte.map((p) => p.kanton), ...studien.map((s) => s.kanton)]));
 }
 
 export function alleKantone(): KantonMitProjekten[] {
-  const kuerzel = Array.from(new Set(projekte.map((p) => p.kanton)));
-  return kuerzel.map((k) => ({
+  return alleKuerzel().map((k) => ({
     kuerzel: k,
     name: KANTON_NAMEN[k] ?? k,
     slug: slugify(KANTON_NAMEN[k] ?? k),
     projekte: projekte.filter((p) => p.kanton === k),
+    studien: studien.filter((s) => s.kanton === k),
   }));
 }
 
@@ -50,15 +59,20 @@ export interface OrtMitProjekten {
   ort: string;
   slug: string;
   projekte: Projekt[];
+  studien: Studie[];
 }
 
 export function orteInKanton(kantonKuerzel: string): OrtMitProjekten[] {
   const projekteInKanton = projekte.filter((p) => p.kanton === kantonKuerzel);
-  const orte = Array.from(new Set(projekteInKanton.map((p) => p.ort)));
+  const studienInKanton = studien.filter((s) => s.kanton === kantonKuerzel);
+  const orte = Array.from(
+    new Set([...projekteInKanton.map((p) => p.ort), ...studienInKanton.map((s) => s.ort)])
+  );
   return orte.map((ort) => ({
     ort,
     slug: slugify(ort),
     projekte: projekteInKanton.filter((p) => p.ort === ort),
+    studien: studienInKanton.filter((s) => s.ort === ort),
   }));
 }
 

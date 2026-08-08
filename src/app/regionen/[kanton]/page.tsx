@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
+import StudienSection from '@/components/regionen/StudienSection';
 import { alleKantone, getKantonBySlug, orteInKanton } from '@/lib/regionen';
 
 interface PageProps {
@@ -44,16 +45,34 @@ export default async function KantonPage({ params }: PageProps) {
             <span className="font-semibold">Kanton {kanton.name}</span>
           </h1>
           <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
-            Im Kanton {kanton.name} haben wir bisher {kanton.projekte.length} Bauvorhaben
-            realisiert oder projektiert — in{' '}
-            {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
-            {orte.map((o) => o.ort).join(', ')}.
+            {kanton.projekte.length > 0 ? (
+              <>
+                Im Kanton {kanton.name} haben wir bisher {kanton.projekte.length} Bauvorhaben
+                realisiert oder projektiert — in{' '}
+                {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
+                {orte.map((o) => o.ort).join(', ')}.
+              </>
+            ) : (
+              <>
+                Im Kanton {kanton.name} haben wir Machbarkeitsstudien durchgeführt — in{' '}
+                {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
+                {orte.map((o) => o.ort).join(', ')}.
+              </>
+            )}
           </p>
         </div>
 
-        <div className="mb-16 md:mb-24">
-          <ProjektGrid projekte={kanton.projekte} />
-        </div>
+        {kanton.projekte.length > 0 && (
+          <div className="mb-16 md:mb-24">
+            <ProjektGrid projekte={kanton.projekte} />
+          </div>
+        )}
+
+        {kanton.studien.length > 0 && (
+          <div className="mb-16 md:mb-24">
+            <StudienSection ort={`Kanton ${kanton.name}`} studien={kanton.studien} />
+          </div>
+        )}
 
         <div className="max-w-3xl border-t border-mist pt-12">
           <h2 className="mb-6 text-xs uppercase tracking-widest text-stone">

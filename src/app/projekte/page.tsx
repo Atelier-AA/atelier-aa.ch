@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
 import { projekte } from '@/data/projekte';
-import { alleKantone } from '@/lib/regionen';
 
 export const metadata: Metadata = {
   title: 'Projekte',
@@ -33,26 +31,6 @@ export default function ProjektePage() {
         </div>
 
         <ProjekteFilter projekte={projekte} />
-
-        {/* Verlinkung zu den Kanton-Seiten — nicht im Hauptmenü, aber von
-            hier aus auffindbar (für Google und Besuchende gleichermassen). */}
-        <div className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
-          <p className="mb-6 text-xs uppercase tracking-widest text-stone">
-            Projekte nach Kanton
-          </p>
-          <ul className="flex flex-wrap gap-3">
-            {alleKantone().map((k) => (
-              <li key={k.slug}>
-                <Link
-                  href={`/regionen/${k.slug}`}
-                  className="inline-block rounded-full border border-mist px-4 py-2 text-sm text-ink transition-colors hover:border-ink"
-                >
-                  Kanton {k.name} ({k.projekte.length})
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* Abschluss im gleichen Stil wie der Einstieg oben: grosser,
             fett/normal gesetzter Titel, darunter normaler Fliesstext. */}

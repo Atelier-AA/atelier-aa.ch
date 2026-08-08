@@ -57,6 +57,30 @@ export interface Projekt {
   featured: boolean;
 }
 
+/**
+ * Frühphasige, nicht gebaute Vorabklärung — Machbarkeitsstudie,
+ * Konzeptstudie, Bauherrenvertretung oder Wettbewerbsbeitrag. Bewusst
+ * getrennt von `Projekt` (realisierte/projektierte Bauvorhaben) und nicht
+ * unter /projekte gelistet — zeigt Ortskenntnis, ohne unfertige Vorhaben als
+ * Referenzen auszugeben.
+ */
+export interface Studie {
+  slug: string;
+  ort: string;
+  kanton: string;
+  kategorie: 'Machbarkeitsstudie' | 'Konzeptstudie' | 'Wettbewerbsbeitrag';
+  strasse: string | null;
+  parzelle: string | null;
+  datum: string | null;
+  kennzahlen: ProjektDaten[];
+  /** Kurzer, aus den Kennzahlen abgeleiteter Fliesstext (1 Absatz). */
+  analyse: string;
+  luftbild: string | null;
+  katasterplan: string | null;
+  /** Für Wettbewerb/Konzeptstudie: echtes Projektbild statt Lageplan. */
+  projektbild: string | null;
+}
+
 export interface TeamMember {
   /** Kleingeschriebener Bezeichner für die Detailseite, z. B. 'aljili-aljisami'. */
   slug: string;

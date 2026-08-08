@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
+import StudienSection from '@/components/regionen/StudienSection';
 import { alleKantone, getOrtBySlug, orteInKanton } from '@/lib/regionen';
 
 interface PageProps {
@@ -23,11 +24,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const { kanton, ort } = treffer;
   const erstesProjekt = ort.projekte[0];
+  const beschreibung = erstesProjekt
+    ? `Atelier AA Architekten GmbH in ${ort.ort} (Kanton ${kanton.name}): ${erstesProjekt.typ}${
+        ort.projekte.length > 1 ? ` und ${ort.projekte.length - 1} weitere Bauvorhaben` : ''
+      }.`
+    : `Atelier AA Architekten GmbH in ${ort.ort} (Kanton ${kanton.name}): Machbarkeitsstudie${
+        ort.studien.length > 1 ? 'n' : ''
+      } für ein Bauvorhaben.`;
   return {
     title: `Architekt in ${ort.ort}`,
-    description: `Atelier AA Architekten GmbH in ${ort.ort} (Kanton ${kanton.name}): ${erstesProjekt.typ}${
-      ort.projekte.length > 1 ? ` und ${ort.projekte.length - 1} weitere Bauvorhaben` : ''
-    }.`,
+    description: beschreibung,
     alternates: { canonical: `/regionen/${kanton.slug}/${ort.slug}` },
   };
 }
@@ -39,6 +45,7 @@ export default async function OrtPage({ params }: PageProps) {
 
   const { kanton, ort } = treffer;
   const mehrere = ort.projekte.length > 1;
+  const hatProjekte = ort.projekte.length > 0;
 
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
@@ -54,26 +61,49 @@ export default async function OrtPage({ params }: PageProps) {
             Architekt in <span className="font-semibold">{ort.ort}</span>
           </h1>
           <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
-            {mehrere ? (
+            {hatProjekte ? (
+              mehrere ? (
+                <>
+                  In {ort.ort} ({kanton.name}) haben wir {ort.projekte.length} Bauvorhaben
+                  realisiert oder projektiert:{' '}
+                  {ort.projekte.map((p) => p.typ.toLowerCase()).join(', ')}.
+                </>
+              ) : (
+                <>
+                  In {ort.ort} ({kanton.name}) haben wir ein {ort.projekte[0].typ.toLowerCase()}{' '}
+                  {ort.projekte[0].jahr === 'in Realisierung' ||
+                  ort.projekte[0].jahr === 'in Planung'
+                    ? 'projektiert'
+                    : `realisiert (${ort.projekte[0].jahr})`}
+                  .
+                </>
+              )
+            ) : ort.studien.length > 1 ? (
               <>
-                In {ort.ort} ({kanton.name}) haben wir {ort.projekte.length} Bauvorhaben
-                realisiert oder projektiert:{' '}
-                {ort.projekte.map((p) => p.typ.toLowerCase()).join(', ')}.
+                In {ort.ort} ({kanton.name}) haben wir {ort.studien.length} Machbarkeitsstudien
+                durchgeführt — die Grundlage, bevor aus einem Grundstück ein konkretes Bauprojekt
+                wird.
               </>
             ) : (
               <>
-                In {ort.ort} ({kanton.name}) haben wir ein {ort.projekte[0].typ.toLowerCase()}{' '}
-                {ort.projekte[0].jahr === 'in Realisierung' ||
-                ort.projekte[0].jahr === 'in Planung'
-                  ? 'projektiert'
-                  : `realisiert (${ort.projekte[0].jahr})`}
-                .
+                In {ort.ort} ({kanton.name}) haben wir eine Machbarkeitsstudie durchgeführt — die
+                Grundlage, bevor aus einem Grundstück ein konkretes Bauprojekt wird.
               </>
             )}
           </p>
         </div>
 
-        <ProjektGrid projekte={ort.projekte} />
+        {hatProjekte && (
+          <div className="mb-16 md:mb-24">
+            <ProjektGrid projekte={ort.projekte} />
+          </div>
+        )}
+
+        {ort.studien.length > 0 && (
+          <div className="mb-16 md:mb-24">
+            <StudienSection ort={ort.ort} studien={ort.studien} />
+          </div>
+        )}
 
         <div className="mt-16 max-w-3xl border-t border-mist pt-16 md:mt-20">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
