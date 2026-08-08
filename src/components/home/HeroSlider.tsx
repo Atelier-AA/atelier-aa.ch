@@ -33,13 +33,6 @@ const slides: Slide[] = [
     href: '/referenzen/mfh-kuenten',
   },
   {
-    image: '/images/hero/slide-wuerenlingen-1.jpg',
-    projekt: 'Mehrfamilienhaus',
-    ort: 'Würenlingen',
-    kanton: 'AG',
-    href: '/referenzen/mfh-wuerenlingen',
-  },
-  {
     image: '/images/hero/slide-treppenhaus-1.jpg',
     projekt: 'Einfamilienhaus',
     ort: 'Jonen',
@@ -59,6 +52,13 @@ const slides: Slide[] = [
     ort: 'Untersiggenthal',
     kanton: 'AG',
     href: '/referenzen/wohnueberbauung-zelgi',
+  },
+  {
+    image: '/images/hero/slide-wuerenlingen-1.jpg',
+    projekt: 'Mehrfamilienhaus',
+    ort: 'Würenlingen',
+    kanton: 'AG',
+    href: '/referenzen/mfh-wuerenlingen',
   },
   {
     image: '/images/hero/slide-wohnzimmer-1.jpg',
@@ -119,10 +119,12 @@ export default function HeroSlider() {
             <span className="block whitespace-nowrap">geplant, gemeinsam gebaut.</span>
           </h1>
 
-          <div className="flex items-end justify-between gap-6 md:w-60 md:flex-col md:items-start md:gap-4">
-            <Link href={slides[current].href} className="group text-white">
-              <p className="text-xl font-medium">{slides[current].projekt}</p>
-              <p className="mt-1 text-sm uppercase tracking-[0.15em] text-white/60">
+          <div className="flex items-end justify-between gap-6 md:w-72 md:flex-col md:items-start md:gap-4">
+            {/* Projekt-Bezeichnung immer auf genau einer Zeile (truncate),
+                zusammen mit dem Ort darunter also fest auf zwei Zeilen. */}
+            <Link href={slides[current].href} className="group block w-full min-w-0 text-white">
+              <p className="truncate text-xl font-medium">{slides[current].projekt}</p>
+              <p className="mt-1 truncate text-sm uppercase tracking-[0.15em] text-white/60">
                 {slides[current].ort}
               </p>
             </Link>
