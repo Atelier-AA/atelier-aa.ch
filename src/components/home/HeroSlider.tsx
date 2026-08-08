@@ -76,13 +76,6 @@ const slides: Slide[] = [
     kanton: '',
     href: '/projekte',
   },
-  {
-    image: '/images/hero/slide-skizze-1.jpg',
-    projekt: 'Vorschau (Skizze)',
-    ort: 'Projekt noch zuordnen',
-    kanton: '',
-    href: '/projekte',
-  },
 ];
 
 export default function HeroSlider() {
