@@ -67,14 +67,12 @@ const slides: Slide[] = [
     kanton: 'AG',
     href: '/referenzen/wohnueberbauung-zelgi',
   },
-  // Noch offen: zu welchem Projekt gehört das Wohnzimmer-Rendering? Bis
-  // geklärt bleibt es mit Platzhalter-Angabe.
   {
     image: '/images/hero/slide-wohnzimmer-1.jpg',
-    projekt: 'Vorschau (Visualisierung)',
-    ort: 'Projekt noch zuordnen',
-    kanton: '',
-    href: '/projekte',
+    projekt: 'Mehrfamilienhaus',
+    ort: 'Künten',
+    kanton: 'AG',
+    href: '/referenzen/mfh-kuenten',
   },
 ];
 
