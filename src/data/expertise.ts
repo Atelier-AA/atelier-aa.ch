@@ -124,39 +124,6 @@ export const planungsphasen = [
   },
 ];
 
-/**
- * Konkrete Gründe für die Zusammenarbeit, für den Abschnitt "Warum Atelier AA"
- * auf der Leistungen-Seite. Bewusst mit denselben Fakten unterlegt, die auch
- * in `expertiseFragen` stehen — keine neuen, unbelegten Behauptungen.
- */
-export const warum = [
-  {
-    nummer: '01',
-    titel: 'Ein Ansprechpartner',
-    text: 'Als Generalplaner sind wir Ihr einziger Vertrags- und Ansprechpartner — von der Machbarkeitsstudie bis zur Bauabnahme.',
-  },
-  {
-    nummer: '02',
-    titel: 'Kostensicherheit in drei Stufen',
-    text: 'Kostenrahmen im Vorprojekt (±20 %), Kostenschätzung im Bauprojekt (±10 %), Kostenvoranschlag nach der Vergabe (±5 %) — Nachträge prüfen wir einzeln auf Berechtigung.',
-  },
-  {
-    nummer: '03',
-    titel: 'Bauleitung durch den Gründer',
-    text: 'Wo wir die Bauleitung selbst übernehmen, liegt sie in der Regel direkt beim Gründer — kurze Wege, eine verantwortliche Person.',
-  },
-  {
-    nummer: '04',
-    titel: 'Offene Zertifizierungsberatung',
-    text: 'Minergie, Minergie-P und SNBS sind uns vertraut — wir zeigen aber auch, wo ein Zertifikat sich über die Nutzungsdauer nicht rechnet.',
-  },
-  {
-    nummer: '05',
-    titel: 'Fünfzehn Jahre Baupraxis',
-    text: 'Der Gründer kennt aus eigener Bau- und Immobilienpraxis die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
-  },
-];
-
 /** Häufige Fragen zu Leistungen und Zusammenarbeit. */
 export const expertiseFragen: InsightFrage[] = [
   {
