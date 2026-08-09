@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
-import StudienSection from '@/components/regionen/StudienSection';
+import StudienGrid from '@/components/studien/StudienGrid';
 import { alleKantone, getKantonBySlug, orteInKanton } from '@/lib/regionen';
 
 interface PageProps {
@@ -70,7 +70,10 @@ export default async function KantonPage({ params }: PageProps) {
 
         {kanton.studien.length > 0 && (
           <div className="mb-16 md:mb-24">
-            <StudienSection ort={`Kanton ${kanton.name}`} studien={kanton.studien} />
+            <h2 className="mb-8 text-xs uppercase tracking-widest text-stone">
+              Machbarkeitsstudien im Kanton {kanton.name}
+            </h2>
+            <StudienGrid studien={kanton.studien} />
           </div>
         )}
 

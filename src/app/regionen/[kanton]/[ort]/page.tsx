@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
-import StudienSection from '@/components/regionen/StudienSection';
+import StudienGrid from '@/components/studien/StudienGrid';
 import { alleKantone, getOrtBySlug, orteInKanton } from '@/lib/regionen';
 
 interface PageProps {
@@ -101,7 +101,10 @@ export default async function OrtPage({ params }: PageProps) {
 
         {ort.studien.length > 0 && (
           <div className="mb-16 md:mb-24">
-            <StudienSection ort={ort.ort} studien={ort.studien} />
+            <h2 className="mb-8 text-xs uppercase tracking-widest text-stone">
+              Machbarkeitsstudien in {ort.ort}
+            </h2>
+            <StudienGrid studien={ort.studien} />
           </div>
         )}
 

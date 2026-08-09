@@ -1,5 +1,9 @@
 import type { Studie } from '@/types';
 
+export function getStudie(slug: string): Studie | undefined {
+  return studien.find((s) => s.slug === slug);
+}
+
 /**
  * Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge — frühe
  * Vorabklärungen, die nicht (oder noch nicht) gebaut wurden. Bewusst nicht

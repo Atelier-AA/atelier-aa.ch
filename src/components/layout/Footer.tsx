@@ -3,6 +3,7 @@ import Container from '@/components/ui/Container';
 import Logo from './Logo';
 import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
+import { alleKantone } from '@/lib/regionen';
 
 /**
  * Fusszeile auf einer Ebene: Wortmarke und Kernsatz stehen zusammen mit
@@ -12,6 +13,7 @@ import { firma } from '@/data/firma';
  */
 export default function Footer() {
   const year = new Date().getFullYear();
+  const kantone = alleKantone();
   const spaltenTitel = 'mb-6 text-xs uppercase tracking-widest text-white/50';
   const verweis =
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white';
@@ -19,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 bg-ink text-white">
       <Container className="py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto] lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16">
           <div className="max-w-md">
             <div className="mb-6 h-[35px] text-white md:h-[40px]">
               <Logo />
@@ -68,6 +70,22 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link href={item.href} className={verweis}>
                     {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={spaltenTitel}>Projekte nach Kanton</h3>
+            <ul className="flex flex-wrap gap-2 lg:max-w-[220px]">
+              {kantone.map((k) => (
+                <li key={k.slug}>
+                  <Link
+                    href={`/regionen/${k.slug}`}
+                    className="inline-block rounded-full border border-white/20 px-4 py-2 text-sm text-white/75 transition-colors duration-300 hover:border-white hover:text-white"
+                  >
+                    Kanton {k.name}
                   </Link>
                 </li>
               ))}
