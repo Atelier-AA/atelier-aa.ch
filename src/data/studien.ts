@@ -188,8 +188,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Dorfzone in Fisibach begrenzt die Bebauung auf zwei Vollgeschosse — auf der 1\'405 m² grossen Parzelle liess sich das Bauvolumen trotzdem auf zwei eigenständige Mehrfamilienhäuser mit gemeinsamer Tiefgarage aufteilen, mit total rund 1\'336 m² Wohnfläche.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/fisibach-studie/luftbild.jpg',
+    katasterplan: '/images/studien/fisibach-studie/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -649,8 +649,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'In Mettmenstetten hat Atelier AA die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten — vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/mettmenstetten/luftbild.jpg',
+    katasterplan: '/images/studien/mettmenstetten/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -671,8 +671,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Vier benachbarte Parzellen an der Rötlerstrasse in Wohlenschwil ergeben zusammen 2\'132 m² — die Dorfkernzone mit 45 % Ausnützung und bis zu drei Vollgeschossen plus zwei Dachgeschossen erlaubt darauf ein Mehrfamilienhaus mit rund 959 m² Wohnfläche.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/wohlenschwil-roetlerstrasse/luftbild.jpg',
+    katasterplan: '/images/studien/wohlenschwil-roetlerstrasse/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -988,8 +988,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Kernzone an der Dorfstrasse in Windisch orientiert sich an der Grösse des bestehenden Hauses und erlaubt so 71.5 % Ausnützung — auf 1\'036 m² ergibt das ein Mehrfamilienhaus mit rund 1\'111 m² Wohnfläche.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/windisch/luftbild.jpg',
+    katasterplan: '/images/studien/windisch/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -1010,8 +1010,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Dorfkernzone an der Alten Poststrasse in Tägerig erlaubt mit 80 % eine der höchsten Ausnützungen im ganzen Bestand — auf 1\'156 m² ergibt das ein Mehrfamilienhaus mit rund 1\'387 m² Wohnfläche.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/taegerig/luftbild.jpg',
+    katasterplan: '/images/studien/taegerig/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -1053,8 +1053,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Wohn- und Gewerbezone 4 an der Oelbergstrasse in Menziken erlaubt mit 90 % eine sehr hohe Ausnützung — auf 783 m² ergibt das ein Mehrfamilienhaus mit rund 811 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/menziken/luftbild.jpg',
+    katasterplan: '/images/studien/menziken/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -1075,8 +1075,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Am Rebmoosweg in Brugg erlaubt die Wohnzone 2 mit 50 % Ausnützung auf 587 m² ein Mehrfamilienhaus mit rund 293 m² Wohnfläche über zwei Vollgeschosse.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/brugg/luftbild.jpg',
+    katasterplan: '/images/studien/brugg/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -1140,8 +1140,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'An der Flühstrasse in Rieden erlaubt die Zone W2 mit 40 % Ausnützung auf 964 m² drei Terrassenwohnungen mit total rund 386 m² Wohnfläche, in die Hanglage gestaffelt.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/rieden/luftbild.jpg',
+    katasterplan: '/images/studien/rieden/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -1161,8 +1161,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Das 4\'140 m² grosse Grundstück am Chlobächer in Oberwil-Lieli reicht in der Dorfzone D1 für gleich drei Mehrfamilienhäuser mit total rund 2\'268 m² Wohnfläche — eines der grössten Grundstücke in diesem Bestand.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/oberwil-lieli/luftbild.jpg',
+    katasterplan: '/images/studien/oberwil-lieli/katasterplan.jpg',
     projektbild: null,
   },
   {
