@@ -187,8 +187,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation. Schriftgrösse wie h1/h2 der alten
-              Website (--global--font-size-xxl), Schriftgewicht 500. */}
+          {/* Zweite Spalte: die Navigation. Drei Grössenstufen statt
+              einheitlicher Zeilen: Projekte (stufe 1) am grössten, Atelier
+              (stufe 2) mittel, der Rest (stufe 3) kleiner — gibt dem Menü
+              eine klare Rangfolge statt einer Liste gleich wichtiger Punkte. */}
           <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
             <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
@@ -200,7 +202,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block py-3 text-[1.5rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2.5rem]"
+                    className={cn(
+                      'block font-medium leading-tight transition-colors hover:text-white/70',
+                      item.stufe === 1 && 'py-3 text-[2.25rem] md:text-[4rem]',
+                      item.stufe === 2 && 'py-3 text-[1.75rem] md:text-[3rem]',
+                      (!item.stufe || item.stufe === 3) &&
+                        'py-2 text-[1.125rem] md:text-[1.5rem]'
+                    )}
                   >
                     {item.label}
                   </Link>
