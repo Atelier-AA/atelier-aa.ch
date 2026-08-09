@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ortMitKanton } from '@/lib/utils';
 import type { Studie } from '@/types';
 
@@ -9,22 +8,22 @@ interface StudieCardProps {
 }
 
 /**
- * Gleiche Behandlung wie `ProjektCard`: quadratisches Bild, Titel/Ort
- * erscheinen erst als Verlauf-Overlay beim Hover — hier zusätzlich mit der
- * Kategorie (Machbarkeitsstudie/Konzeptstudie/Wettbewerbsbeitrag/
- * Bauherrenvertretung), damit auf der Karte selbst sichtbar bleibt, dass es
- * sich nicht um ein gebautes Projekt handelt.
+ * Gleiche Optik wie `ProjektCard`: quadratisches Bild, Titel/Ort erscheinen
+ * erst als Verlauf-Overlay beim Hover — hier zusätzlich mit der Kategorie
+ * (Machbarkeitsstudie/Konzeptstudie/Wettbewerbsbeitrag/Bauherrenvertretung).
+ *
+ * Bewusst KEIN Link zur Detailseite: Die einzelnen Studien-Seiten bleiben
+ * über Google/Sitemap auffindbar (z. B. für eine betroffene Person, die
+ * gezielt danach sucht), sollen aber nicht von der eigenen Übersichtsseite
+ * aus anklickbar sein — sonst liessen sich alle Studien bequem nebeneinander
+ * durchklicken und vergleichen.
  */
 export default function StudieCard({ studie, priority = false }: StudieCardProps) {
   const bild = studie.luftbild ?? studie.katasterplan ?? studie.projektbild;
   const titel = studie.strasse ? `${studie.ort}, ${studie.strasse}` : studie.ort;
 
   return (
-    <Link
-      href={`/studien/${studie.slug}`}
-      className="group block min-w-0"
-      aria-label={`Zur Studie ${titel}, Atelier AA Architekten`}
-    >
+    <div className="group block min-w-0" aria-label={`${titel}, Atelier AA Architekten`}>
       <div className="relative aspect-square overflow-hidden bg-mist">
         {bild && (
           <Image
@@ -49,6 +48,6 @@ export default function StudieCard({ studie, priority = false }: StudieCardProps
           </p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

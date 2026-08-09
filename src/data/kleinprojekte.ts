@@ -4,8 +4,7 @@ import type { Kleinprojekt } from '@/types';
  * Real gebaute, kleinere Projekte — bewusst nicht auf /projekte gelistet
  * (zu klein/repetitiv für die kuratierte Hauptübersicht: Umbauten,
  * Sanierungen, Kleinaufträge), aber über eine eigene Seite auffindbar.
- * Anders als bei den Studien dürfen hier Bauherrennamen stehen — die
- * Projekte sind real gebaut, wie bei den Referenzprojekten auf /projekte.
+ * Keine Bauherrennamen — gleiche Regel wie bei den Studien.
  */
 export const kleinprojekte: Kleinprojekt[] = [
   {
@@ -14,7 +13,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Fahrweidstrasse',
     gebaeudetyp: 'Einfamilienhaus, Umbau und Erweiterung',
-    bauherrschaft: 'Durim Bunjaku',
+    bauherrschaft: null,
     jahr: '2020',
     leistungen: ['Umbau- und Erweiterungsplanung', 'Baueingabe'],
     bilder: ['/images/kleinprojekte/efh-bunjaku/bild1.jpg', '/images/kleinprojekte/efh-bunjaku/bild2.jpg'],
@@ -40,7 +39,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Zürichstrasse',
     gebaeudetyp: 'Coiffeursalon, Einbau/Umnutzung',
-    bauherrschaft: 'Urs Räbsamen',
+    bauherrschaft: null,
     jahr: '2021',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
@@ -54,7 +53,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'AG',
     strasse: 'Waldrüti',
     gebaeudetyp: 'Einfamilienhaus, An-/Umbau mit Carport',
-    bauherrschaft: 'Haki und Shaha Alimi',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
@@ -64,11 +63,11 @@ export const kleinprojekte: Kleinprojekt[] = [
   },
   {
     slug: 'pool-hug-florin',
-    ort: 'Obfelden',
-    kanton: 'ZH',
+    ort: 'Zug',
+    kanton: 'ZG',
     strasse: null,
     gebaeudetyp: 'Pool- und Terrassengestaltung',
-    bauherrschaft: 'Florin Hug',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Ausführungsplanung'],
     bilder: ['/images/kleinprojekte/pool-hug-florin/bild1.jpg'],
@@ -79,7 +78,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Fabrikstrasse',
     gebaeudetyp: 'Einfamilienhaus, Balkon- und Pergola-Erneuerung',
-    bauherrschaft: 'Daniel Epstein',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Projektierung', 'Baugesuch'],
     bilder: [
@@ -94,7 +93,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'AG',
     strasse: 'Weizenstrasse',
     gebaeudetyp: 'Umbau Einfamilienhaus zu Dreifamilienhaus',
-    bauherrschaft: 'Alex und Farshideh Einsele-Aazami',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Planung', 'Baueingabe'],
     bilder: ['/images/kleinprojekte/mfh-einsele-wuerenlos/bild1.jpg'],
@@ -105,7 +104,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'GR',
     strasse: 'Mittelweg',
     gebaeudetyp: 'Einfamilienhaus, Sanierung',
-    bauherrschaft: 'Ufuk Raffael Hatiboglu',
+    bauherrschaft: null,
     jahr: '2024',
     leistungen: ['Generalplanung', 'Ausführungsplanung', 'Baubegleitung'],
     bilder: [
@@ -120,7 +119,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Schürweidestrasse',
     gebaeudetyp: 'Einfamilienhaus, Erweiterung um Lift und Keller',
-    bauherrschaft: 'Familie Leemann',
+    bauherrschaft: null,
     jahr: '2023',
     leistungen: ['Generalplanung', 'Vorprojekt', 'Ausführung'],
     bilder: [
@@ -135,7 +134,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Tobelstrasse',
     gebaeudetyp: 'Poolneubau mit Pergola',
-    bauherrschaft: 'D. und G. Nocilla',
+    bauherrschaft: null,
     jahr: '2023',
     leistungen: ['Projektierung', 'Baueingabe', 'Ausführungsplanung'],
     bilder: [
@@ -149,7 +148,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Schneeglöggliweg',
     gebaeudetyp: 'Einfamilienhaus, Umbau und Innenausbau',
-    bauherrschaft: 'Roland Spoetl',
+    bauherrschaft: null,
     jahr: '2023',
     leistungen: ['Generalplanung', 'Bauleitung'],
     bilder: [
@@ -164,10 +163,15 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'AG',
     strasse: 'Höhenweg',
     gebaeudetyp: 'Doppeleinfamilienhaus, Neubau',
-    bauherrschaft: 'Karadza Invest GmbH',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung', 'Bauleitung'],
-    bilder: ['/images/kleinprojekte/defh-safenwil/bild1.jpg', '/images/kleinprojekte/defh-safenwil/bild2.jpg'],
+    bilder: [
+      '/images/kleinprojekte/defh-safenwil/bild1.jpg',
+      '/images/kleinprojekte/defh-safenwil/bild2.jpg',
+      '/images/kleinprojekte/defh-safenwil/bild3.jpg',
+      '/images/kleinprojekte/defh-safenwil/bild4.jpg',
+    ],
   },
   {
     slug: 'efh-daenikon',
@@ -175,10 +179,36 @@ export const kleinprojekte: Kleinprojekt[] = [
     kanton: 'ZH',
     strasse: 'Weiheracherstrasse',
     gebaeudetyp: 'Doppeleinfamilienhaus, Neubau (Haus A)',
-    bauherrschaft: 'Ivana und Kristian Karadza',
+    bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Ausführungsplanung', 'Baueingabe'],
     bilder: ['/images/kleinprojekte/efh-daenikon/bild1.jpg', '/images/kleinprojekte/efh-daenikon/bild2.jpg'],
+  },
+  {
+    slug: 'adliswil-nasszelle',
+    ort: 'Adliswil',
+    kanton: 'ZH',
+    strasse: 'Hofernweg',
+    gebaeudetyp: 'Umnutzung zu Nasszelle (Dachgeschoss)',
+    bauherrschaft: null,
+    jahr: '2022',
+    leistungen: ['Baueingabe', 'Ausführungsplanung'],
+    bilder: ['/images/kleinprojekte/adliswil-nasszelle/bild1.jpg'],
+  },
+  {
+    slug: 'mfh-enetbaden',
+    ort: 'Ennetbaden',
+    kanton: 'AG',
+    strasse: 'Trottenstrasse',
+    gebaeudetyp: 'Mehrfamilienhaus, Sanierung',
+    bauherrschaft: null,
+    jahr: '2021–2022',
+    leistungen: ['Bauleitung'],
+    bilder: [
+      '/images/kleinprojekte/mfh-enetbaden/bild1.jpg',
+      '/images/kleinprojekte/mfh-enetbaden/bild2.jpg',
+      '/images/kleinprojekte/mfh-enetbaden/bild3.jpg',
+    ],
   },
 ];
 

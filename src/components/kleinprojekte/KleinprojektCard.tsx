@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Kleinprojekt } from '@/types';
 
 interface KleinprojektCardProps {
@@ -8,18 +7,16 @@ interface KleinprojektCardProps {
 }
 
 /**
- * Gleiche Behandlung wie `ProjektCard`/`StudieCard`: quadratisches Bild,
- * Titel/Ort erscheinen erst als Verlauf-Overlay beim Hover.
+ * Gleiche Optik wie `ProjektCard`/`StudieCard`: quadratisches Bild, Titel/Ort
+ * erscheinen erst als Verlauf-Overlay beim Hover.
+ *
+ * Bewusst KEIN Link zur Detailseite — siehe StudieCard.tsx für die Begründung.
  */
 export default function KleinprojektCard({ projekt, priority = false }: KleinprojektCardProps) {
   const titel = projekt.strasse ? `${projekt.ort}, ${projekt.strasse}` : projekt.ort;
 
   return (
-    <Link
-      href={`/kleinprojekte/${projekt.slug}`}
-      className="group block min-w-0"
-      aria-label={`Zum Projekt ${titel}, Atelier AA Architekten`}
-    >
+    <div className="group block min-w-0" aria-label={`${titel}, Atelier AA Architekten`}>
       <div className="relative aspect-square overflow-hidden bg-mist">
         <Image
           src={projekt.bilder[0]}
@@ -39,6 +36,6 @@ export default function KleinprojektCard({ projekt, priority = false }: Kleinpro
           </p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
