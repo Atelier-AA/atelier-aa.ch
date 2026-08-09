@@ -1073,41 +1073,6 @@ export const insights: Insight[] = [
   },
 ].sort((a, b) => (a.datum < b.datum ? 1 : -1));
 
-/**
- * Häufige Fragen zur Zusammenarbeit, für die Kontaktseite.
- *
- * Bewusst als sichtbarer Text plus FAQPage-Markup: Wer nach "Architekt
- * Obfelden Kosten" oder "ab wann Architekt einbeziehen" sucht, soll die
- * Antwort direkt finden — auch wenn sie über ein KI-System ausgeliefert wird.
- */
-export const kontaktFragen: InsightFrage[] = [
-  {
-    frage: 'In welchen Regionen arbeitet Atelier AA Architekten?',
-    antwort:
-      'Unser Büro ist in Obfelden im Kanton Zürich. Wir planen und realisieren Projekte in der ganzen Schweiz, mit einem Schwerpunkt im Knonauer Amt sowie in den Kantonen Zürich, Aargau und Zug.',
-  },
-  {
-    frage: 'Welche Leistungen bieten Sie an?',
-    antwort:
-      'Architektur und Entwurf, Umbau und Sanierung, Projektentwicklung sowie Bauleitung — von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
-  },
-  {
-    frage: 'Welche Arten von Gebäuden planen Sie?',
-    antwort:
-      'Schwerpunkt sind Mehrfamilienhäuser und Wohnbauten. Dazu kommen Einfamilienhäuser, Aufstockungen, Gewerbe- und Verwaltungsbauten sowie Sanierungen im Bestand.',
-  },
-  {
-    frage: 'Was kostet ein erstes Gespräch?',
-    antwort:
-      'Das Erstgespräch ist kostenlos und unverbindlich. Wir klären darin Ihr Vorhaben, den Ort und den Rahmen und sagen Ihnen offen, was wir für machbar und sinnvoll halten.',
-  },
-  {
-    frage: 'Wie erreichen wir Sie am besten?',
-    antwort:
-      'Telefonisch unter +41 44 770 05 06 oder per E-Mail an info@atelier-aa.ch. Wir melden uns in der Regel innerhalb eines Arbeitstages zurück.',
-  },
-];
-
 export function getInsight(slug: string): Insight | undefined {
   return insights.find((i) => i.slug === slug);
 }

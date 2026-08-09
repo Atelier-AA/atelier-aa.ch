@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
-import { kontaktFragen } from '@/data/insights';
-import FragenAntworten from '@/components/insights/FragenAntworten';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -12,25 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function KontaktPage() {
-  // FAQPage-Markup zu den sichtbaren Fragen weiter unten.
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': 'https://www.atelier-aa.ch/kontakt#faq',
-    inLanguage: 'de-CH',
-    mainEntity: kontaktFragen.map((f) => ({
-      '@type': 'Question',
-      name: f.frage,
-      acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-    })),
-  };
-
   return (
     <div className="pt-24 md:pt-28 pb-20 md:pb-28">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Container className="mt-16 md:mt-24">
         {/* Links Bild, rechts Text — wie auf stage.atelier-aa.ch/kontakt/. */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16">
@@ -95,9 +77,16 @@ export default function KontaktPage() {
           />
         </div>
 
-        <div className="mt-16 max-w-3xl border-t border-mist pt-16 md:mt-20">
-          <FragenAntworten fragen={kontaktFragen} titel="Häufige Fragen" />
-        </div>
+        <p className="mt-16 text-sm text-stone md:mt-20">
+          Fragen zu Leistungen und Zusammenarbeit beantworten wir auf der Seite{' '}
+          <Link
+            href="/haeufige-fragen"
+            className="text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+          >
+            Häufige Fragen
+          </Link>
+          .
+        </p>
       </Container>
     </div>
   );

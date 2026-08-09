@@ -161,4 +161,29 @@ export const expertiseFragen: InsightFrage[] = [
     antwort:
       'Der Gründer bringt über fünfzehn Jahre eigene Bau- und Immobilienpraxis mit. Das führt dazu, dass wirtschaftliche Fragen — Mietzinsniveau, Wohnungsmix, Vermietbarkeit — von Anfang an im Entwurf mitgedacht werden, statt erst am Ende geprüft zu werden.',
   },
+  {
+    frage: 'Welche Leistungen bieten Sie an?',
+    antwort:
+      'Architektur und Entwurf, Umbau und Sanierung, Projektentwicklung sowie Bauleitung — von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
+  },
+  {
+    frage: 'In welchen Regionen arbeitet Atelier AA Architekten?',
+    antwort:
+      'Unser Büro ist in Obfelden im Kanton Zürich. Wir planen und realisieren Projekte in der ganzen Schweiz, mit einem Schwerpunkt im Knonauer Amt sowie in den Kantonen Zürich, Aargau und Zug.',
+  },
+  {
+    frage: 'Welche Arten von Gebäuden planen Sie?',
+    antwort:
+      'Schwerpunkt sind Mehrfamilienhäuser und Wohnbauten. Dazu kommen Einfamilienhäuser, Aufstockungen, Gewerbe- und Verwaltungsbauten sowie Sanierungen im Bestand.',
+  },
+  {
+    frage: 'Was kostet ein erstes Gespräch?',
+    antwort:
+      'Das Erstgespräch ist kostenlos und unverbindlich. Wir klären darin Ihr Vorhaben, den Ort und den Rahmen und sagen Ihnen offen, was wir für machbar und sinnvoll halten.',
+  },
+  {
+    frage: 'Wie erreichen wir Sie am besten?',
+    antwort:
+      'Telefonisch unter +41 44 770 05 06 oder per E-Mail an info@atelier-aa.ch. Wir melden uns in der Regel innerhalb eines Arbeitstages zurück.',
+  },
 ];
