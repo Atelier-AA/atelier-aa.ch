@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
 
 interface StudienFilterProps {
   studien: Studie[];
+  /** Aus ?kategorie= in der URL, z. B. verlinkt von der Projekte-Seite. */
+  initialKategorie?: string;
 }
 
 const KATEGORIEN = [
@@ -17,8 +19,10 @@ const KATEGORIEN = [
   'Bauherrenvertretung',
 ];
 
-export default function StudienFilter({ studien }: StudienFilterProps) {
-  const [aktiv, setAktiv] = useState('Alle');
+export default function StudienFilter({ studien, initialKategorie }: StudienFilterProps) {
+  const [aktiv, setAktiv] = useState(
+    initialKategorie && KATEGORIEN.includes(initialKategorie) ? initialKategorie : 'Alle'
+  );
 
   const vorhandeneKategorien = useMemo(
     () => KATEGORIEN.filter((k) => k === 'Alle' || studien.some((s) => s.kategorie === k)),

@@ -10,7 +10,13 @@ export const metadata: Metadata = {
     'Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge von Atelier AA Architekten GmbH — Vorabklärungen, bevor aus einem Grundstück ein Bauprojekt wird.',
 };
 
-export default function StudienPage() {
+interface PageProps {
+  searchParams: Promise<{ kategorie?: string }>;
+}
+
+export default async function StudienPage({ searchParams }: PageProps) {
+  const { kategorie } = await searchParams;
+
   return (
     <div className="pt-32 md:pt-40">
       <Container>
@@ -26,7 +32,7 @@ export default function StudienPage() {
           </p>
         </div>
 
-        <StudienFilter studien={studien} />
+        <StudienFilter studien={studien} initialKategorie={kategorie} />
 
         <div className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>

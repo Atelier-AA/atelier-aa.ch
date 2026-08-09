@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import ProjektGrid from './ProjektGrid';
 import type { Projekt } from '@/types';
 import { cn } from '@/lib/utils';
@@ -19,6 +20,14 @@ const KATEGORIEN = [
   'Gewerbe',
 ];
 
+// Führen auf die eigene /studien-Seite statt hier zu filtern — Machbarkeits-
+// studien und Wettbewerbsbeiträge sollen nicht in der Projekte-Übersicht
+// auftauchen, sollen von hier aus aber auffindbar sein.
+const EXTERNE_VERWEISE = [
+  { label: 'Studien', href: '/studien' },
+  { label: 'Wettbewerbe', href: '/studien?kategorie=Wettbewerbsbeitrag' },
+];
+
 export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {
   const [aktiv, setAktiv] = useState('Alle');
 
@@ -26,6 +35,8 @@ export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {
     if (aktiv === 'Alle') return projekte;
     return projekte.filter((p) => p.kategorien.includes(aktiv));
   }, [projekte, aktiv]);
+
+  const verweisKlasse = 'text-sm text-stone underline-offset-4 transition-colors hover:text-ink md:text-base';
 
   return (
     <div>
@@ -48,6 +59,14 @@ export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {
           >
             {kategorie}
           </button>
+        ))}
+        <span aria-hidden="true" className="mx-1 text-mist">
+          |
+        </span>
+        {EXTERNE_VERWEISE.map((verweis) => (
+          <Link key={verweis.href} href={verweis.href} className={verweisKlasse}>
+            {verweis.label}
+          </Link>
         ))}
       </nav>
 

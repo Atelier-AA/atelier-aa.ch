@@ -950,46 +950,100 @@ export const projekte: Projekt[] = [
     featured: false,
   },
   /**
-   * Umbau eines Gebäudes in Obfelden zu einer Kleintierpraxis für den
-   * "Verein Mërgimi", plus separate Parkplatzerweiterung mit eigener
-   * Untergeschoss-Ausführungsplanung. Beide Plansätze tragen dieselbe
-   * Planblatt-Nummerierung (32.3) und gehören erkennbar zum selben Vorhaben.
-   * Noch ohne Fotos.
+   * Gewerbeliegenschaft Bachstrasse 29, Obfelden (Grundeigentümerin: REMNEX
+   * Anlagestiftung, Zug). Zwei getrennte Vorhaben im selben Gebäude mit
+   * unterschiedlicher Bauherrschaft — deshalb zwei eigenständige Projekte
+   * statt eines gemeinsamen: die Nutzungsänderung zur Kleintierpraxis
+   * (Bauherrin: die Praxis selbst) und der übrige Mieterausbau samt
+   * Parkplatzerweiterung (Bauherrin: die Grundeigentümerin). Hero/Thumbnail
+   * aus eigenem Drohnenmaterial der fertiggestellten Liegenschaft (2022);
+   * Planbilder ohne Planköpfe zugeschnitten (keine Adress-/Bauherrendaten
+   * Dritter sichtbar).
    */
   {
-    slug: 'gewerbe-obfelden',
+    slug: 'kleintierpraxis-obfelden',
     title: 'Kleintierpraxis',
     ort: 'Obfelden',
     kanton: 'ZH',
-    kunde: 'Verein Mërgimi',
-    jahr: 'in Planung',
+    kunde: 'Kleintierpraxis Obfelden',
+    jahr: '2022',
     typ: 'Gewerbebau',
-    kategorien: ['Umbau', 'Gewerbe', 'Büro'],
+    kategorien: ['Umbau', 'Gewerbe'],
     leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Umbau eines Gebäudes in Obfelden (ZH) zu einer Kleintierpraxis für den Verein Mërgimi, mit Erweiterung der Parkplätze und eigener Ausführungsplanung für das Untergeschoss. Fotos folgen nach der Realisierung.',
+      'Nutzungsänderung eines Gebäudeteils in Obfelden (ZH) zu einer Kleintierpraxis, mit Umbau und Parkplatznachweis für den neuen Betrieb im Erdgeschoss einer Gewerbeliegenschaft.',
     abschnitte: [],
     daten: [
-      { label: 'Gebäudetyp', wert: 'Gewerbebau, Umbau zu Kleintierpraxis' },
-      { label: 'Bauherrschaft', wert: 'Verein Mërgimi' },
-      { label: 'Status', wert: 'In Planung' },
+      { label: 'Gebäudetyp', wert: 'Gewerbebau, Nutzungsänderung zu Kleintierpraxis' },
+      { label: 'Bauherrschaft', wert: 'Kleintierpraxis Obfelden' },
+      { label: 'Status', wert: 'Realisiert' },
     ],
     fragen: [
       {
-        frage: 'Warum sind hier keine Fotos zu sehen?',
+        frage: 'Ist das ganze Gebäude die Kleintierpraxis?',
         antwort:
-          'Dieses Projekt ist noch nicht realisiert. Sobald der Umbau abgeschlossen ist, ergänzen wir die Seite mit Fotos — bis dahin zeigen wir den Grundriss aus dem Baugesuch.',
+          'Nein, die Praxis befindet sich im Erdgeschoss einer grösseren Gewerbeliegenschaft mit mehreren Mieterinnen und Mietern. Den Mieterausbau der übrigen Geschosse zeigen wir als eigenes Projekt.',
       },
     ],
-    thumbnail: '/images/projekte/gewerbe-obfelden/thumb.jpg',
-    heroImage: '/images/projekte/gewerbe-obfelden/hero.jpg',
+    thumbnail: '/images/projekte/kleintierpraxis-obfelden/thumb.jpg',
+    heroImage: '/images/projekte/kleintierpraxis-obfelden/hero.jpg',
     galerie: [],
     plaene: [
-      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/gewerbe-obfelden/01-erdgeschoss.pdf' },
-      { titel: 'Umgebung', datei: '/dokumente/projekte/gewerbe-obfelden/02-umgebung.pdf' },
-      { titel: 'Untergeschoss', datei: '/dokumente/projekte/gewerbe-obfelden/03-untergeschoss.pdf' },
-      { titel: 'Deckenplan', datei: '/dokumente/projekte/gewerbe-obfelden/04-deckenplan.pdf' },
-      { titel: 'Bodenplan', datei: '/dokumente/projekte/gewerbe-obfelden/05-bodenplan.pdf' },
+      {
+        titel: 'Erdgeschoss',
+        datei: '/dokumente/projekte/kleintierpraxis-obfelden/01-erdgeschoss.pdf',
+      },
+    ],
+    featured: false,
+  },
+  {
+    slug: 'mieterausbau-obfelden',
+    title: 'Mieterausbau',
+    ort: 'Obfelden',
+    kanton: 'ZH',
+    kunde: 'Remnex Zug',
+    jahr: '2022',
+    typ: 'Gewerbebau',
+    kategorien: ['Umbau', 'Gewerbe', 'Mieterausbau'],
+    leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
+    beschreibung:
+      'Mieterausbau von Gemeinschaftsräumen im Untergeschoss sowie Erweiterung der Besucherparkplätze für eine Gewerbeliegenschaft in Obfelden (ZH).',
+    abschnitte: [],
+    daten: [
+      {
+        label: 'Gebäudetyp',
+        wert: 'Gewerbebau, Mieterausbau Untergeschoss und Parkplatzerweiterung',
+      },
+      { label: 'Bauherrschaft', wert: 'Remnex Zug' },
+      { label: 'Status', wert: 'Realisiert' },
+    ],
+    fragen: [
+      {
+        frage: 'Gehört das zum Projekt Kleintierpraxis?',
+        antwort:
+          'Es ist dieselbe Liegenschaft, aber ein eigenständiges Vorhaben mit eigener Bauherrschaft: die Grundeigentümerin hat den Mieterausbau der Gemeinschaftsräume und die Parkplatzerweiterung in Auftrag gegeben, unabhängig von der Kleintierpraxis im Erdgeschoss.',
+      },
+    ],
+    thumbnail: '/images/projekte/mieterausbau-obfelden/thumb.jpg',
+    heroImage: '/images/projekte/mieterausbau-obfelden/hero.jpg',
+    galerie: [],
+    plaene: [
+      {
+        titel: 'Umgebung',
+        datei: '/dokumente/projekte/mieterausbau-obfelden/01-umgebung.pdf',
+      },
+      {
+        titel: 'Untergeschoss',
+        datei: '/dokumente/projekte/mieterausbau-obfelden/02-untergeschoss.pdf',
+      },
+      {
+        titel: 'Deckenplan',
+        datei: '/dokumente/projekte/mieterausbau-obfelden/03-deckenplan.pdf',
+      },
+      {
+        titel: 'Bodenplan',
+        datei: '/dokumente/projekte/mieterausbau-obfelden/04-bodenplan.pdf',
+      },
     ],
     featured: false,
   },
