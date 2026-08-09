@@ -42,8 +42,6 @@ export default function KontaktformularEinfach() {
 
   return (
     <div>
-      <p className="mb-8 text-lg text-graphite">Wir freuen uns über Ihre Kontaktaufnahme.</p>
-
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <input name="vorname" type="text" required placeholder="Vorname" className={feldStil} />
