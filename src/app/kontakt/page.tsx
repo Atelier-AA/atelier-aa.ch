@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
-import Kontaktformular from '@/components/kontakt/Kontaktformular';
 import { firma } from '@/data/firma';
 
 export const metadata: Metadata = {
@@ -64,10 +63,6 @@ export default function KontaktPage() {
               {firma.email}
             </a>
           </div>
-        </div>
-
-        <div className="mt-16 border-t border-mist pt-16 md:mt-20 md:pt-20">
-          <Kontaktformular />
         </div>
 
         {/* Google Karte zum Bürostandort. */}
