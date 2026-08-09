@@ -48,7 +48,7 @@ export default function VorschauD() {
             </a>
           </div>
 
-          <div className="lg:pt-1">
+          <div className="w-full lg:w-4/5 lg:pt-1">
             <KontaktformularEinfach />
           </div>
         </div>
