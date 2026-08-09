@@ -4,6 +4,7 @@ import Logo from './Logo';
 import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 import { alleKantone } from '@/lib/regionen';
+import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
 
 /**
  * Fusszeile auf einer Ebene: Wortmarke und Kernsatz stehen zusammen mit
@@ -104,6 +105,9 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <CookieSettingsLink className="transition-colors duration-300 hover:text-white" />
+            </li>
           </ul>
         </div>
       </Container>

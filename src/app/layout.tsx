@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import CookieBanner from '@/components/cookies/CookieBanner';
+import GoogleAnalytics from '@/components/cookies/GoogleAnalytics';
+import MarketingPixel from '@/components/cookies/MarketingPixel';
 import { firma } from '@/data/firma';
 import { team } from '@/data/team';
 import './globals.css';
@@ -137,6 +140,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics />
+        <MarketingPixel />
+        <CookieBanner />
       </body>
     </html>
   );

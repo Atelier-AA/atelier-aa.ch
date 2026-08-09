@@ -15,16 +15,21 @@ export const metadata: Metadata = {
  * seit 1. September 2023) und, für Besucher aus dem EU-Raum, den
  * Informationspflichten der DSGVO.
  *
- * WICHTIG — vor der Veröffentlichung juristisch prüfen lassen. Zwei Abschnitte
- * müssen an den tatsächlichen Betrieb angepasst werden:
+ * WICHTIG — vor der Veröffentlichung juristisch prüfen lassen. Ein Abschnitt
+ * muss an den tatsächlichen Betrieb angepasst werden:
  * - «Hosting und Server-Logfiles»: Anbieter und Standort eintragen (bei einem
  *   Betrieb auf Vercel liegt eine Auftragsbearbeitung mit US-Bezug vor).
- * - «Schriften und externe Dienste»: Inter wird über next/font lokal
- *   ausgeliefert, es findet also keine Verbindung zu Google statt. Wird das
- *   geändert, muss der Abschnitt angepasst werden.
+ *
+ * Google Analytics und der Meta-Werbepixel (Abschnitt 7) laden erst, sobald in
+ * den Vercel-Umgebungsvariablen NEXT_PUBLIC_GA_MEASUREMENT_ID bzw.
+ * NEXT_PUBLIC_META_PIXEL_ID gesetzt sind UND die Besucherin/der Besucher im
+ * Cookie-Banner zugestimmt hat (siehe CookieBanner.tsx, GoogleAnalytics.tsx,
+ * MarketingPixel.tsx). Vor dem Live-Start sind beide Variablen leer, es
+ * findet also noch keine Datenübermittlung statt — der folgende Text
+ * beschreibt bereits den Zielzustand nach dem Go-Live.
  */
 export default function DatenschutzPage() {
-  const stand = 'Juli 2026';
+  const stand = 'August 2026';
 
   return (
     <div className="pt-32 pb-20 md:pt-40">
@@ -170,13 +175,59 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-xl font-medium text-ink">7. Cookies</h2>
+              <h2 className="mb-4 text-xl font-medium text-ink">
+                7. Cookies, Analyse und Marketing
+              </h2>
               <p>
-                Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken. Es
-                werden ausschliesslich technisch notwendige Angaben verarbeitet, die für
-                den Betrieb der Seite erforderlich sind. Eine Zustimmung ist dafür nach
-                geltendem Recht nicht erforderlich, und es erscheint deshalb auch kein
-                Cookie-Hinweis.
+                Diese Website verwendet Cookies und vergleichbare Technologien. Technisch
+                notwendige Cookies werden immer gesetzt, da ohne sie der Betrieb der
+                Seite nicht möglich ist. Für alle übrigen Kategorien holen wir vor dem
+                Setzen Ihre Einwilligung über den Cookie-Banner ein. Sie können Ihre
+                Auswahl jederzeit über den Link «Cookie-Einstellungen» im Footer ändern
+                oder widerrufen.
+              </p>
+              <p className="mt-4 font-medium text-ink">Notwendige Cookies</p>
+              <p className="mt-2">
+                Speichern insbesondere Ihre Cookie-Einstellung selbst. Rechtsgrundlage ist
+                unser berechtigtes Interesse am technischen Betrieb der Website
+                (Art. 6 Abs. 1 lit. f DSGVO) beziehungsweise Art. 31 DSG.
+              </p>
+              <p className="mt-4 font-medium text-ink">Statistik: Google Analytics</p>
+              <p className="mt-2">
+                Bei erteilter Einwilligung setzen wir Google Analytics (Google Ireland
+                Limited, Gordon House, Barrow Street, Dublin 4, Irland; für die
+                Datenverarbeitung mitverantwortlich: Google LLC, USA) ein, um zu
+                verstehen, wie unsere Website genutzt wird — etwa welche Seiten besucht
+                und über welche Kanäle Besucherinnen und Besucher auf unsere Website
+                gelangen. Dabei werden unter anderem IP-Adresse (gekürzt), Geräte- und
+                Browserangaben, besuchte Seiten und Verweildauer verarbeitet.
+              </p>
+              <p className="mt-4">
+                Die Daten können dabei an Server von Google in die USA übermittelt
+                werden. Google hat sich dem EU-U.S. Data Privacy Framework unterstellt;
+                ergänzend stützen wir die Übermittlung auf die Standardvertragsklauseln
+                der EU-Kommission. Die Daten werden nach 14 Monaten automatisch gelöscht.
+                Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO,
+                Art. 31 Abs. 2 lit. a DSG).
+              </p>
+              <p className="mt-4 font-medium text-ink">Marketing: Werbepixel</p>
+              <p className="mt-2">
+                Bei erteilter Einwilligung setzen wir einen Werbepixel (z. B. Meta Pixel
+                von Meta Platforms Ireland Limited) ein, um die Wirksamkeit unserer
+                Online-Werbung zu messen und Ihnen auf anderen Plattformen für Sie
+                relevantere Inhalte zu unserem Angebot zu zeigen. Dabei werden Angaben zu
+                Ihrem Besuch unserer Website an den jeweiligen Anbieter übermittelt und
+                können dort mit Ihrem dortigen Konto verknüpft werden. Es kann zu einer
+                Übermittlung in die USA kommen; die Anbieter stützen sich dafür auf die
+                Standardvertragsklauseln der EU-Kommission. Rechtsgrundlage ist Ihre
+                Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, Art. 31 Abs. 2 lit. a DSG).
+              </p>
+              <p className="mt-4">
+                Google Analytics und der Werbepixel laden technisch erst, nachdem Sie der
+                jeweiligen Kategorie zugestimmt haben. Ohne Ihre Zustimmung findet keine
+                Übermittlung an diese Anbieter statt. Ihre Einwilligung können Sie
+                jederzeit mit Wirkung für die Zukunft über «Cookie-Einstellungen» im
+                Footer widerrufen.
               </p>
             </section>
 
@@ -191,11 +242,12 @@ export default function DatenschutzPage() {
                 übermittelt.
               </p>
               <p className="mt-4">
-                Wir setzen keine Analysewerkzeuge, keine Social-Media-Plugins und keine
-                eingebetteten Karten oder Videos ein. Links auf externe Websites — etwa zu
-                unserem Immobilienpartner — führen erst nach einem Klick zu einer
-                Verbindung mit dem jeweiligen Anbieter. Für dessen Datenbearbeitung gilt
-                deren eigene Datenschutzerklärung.
+                Analysewerkzeuge und der Werbepixel sind unter Ziffer 7 beschrieben und
+                laden nur mit Ihrer Einwilligung. Wir setzen darüber hinaus keine
+                Social-Media-Plugins und keine eingebetteten Karten oder Videos ein.
+                Links auf externe Websites — etwa zu unserem Immobilienpartner — führen
+                erst nach einem Klick zu einer Verbindung mit dem jeweiligen Anbieter.
+                Für dessen Datenbearbeitung gilt deren eigene Datenschutzerklärung.
               </p>
             </section>
 

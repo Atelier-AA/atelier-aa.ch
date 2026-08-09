@@ -130,6 +130,17 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
+                Hinweis zu KI-unterstützten Inhalten
+              </h2>
+              <p>
+                Bei der Erstellung von Texten auf dieser Website haben wir unterstützend
+                KI-Werkzeuge eingesetzt. Alle Inhalte wurden von der {firma.name} inhaltlich
+                geprüft, freigegeben und verantwortet.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
                 Datenschutz
               </h2>
               <p>
