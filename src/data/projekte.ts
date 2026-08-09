@@ -859,57 +859,9 @@ export const projekte: Projekt[] = [
     featured: false,
   },
   /**
-   * Noch ohne Fotos — nur der vollständige Plansatz liegt vor. Vorschau- und
-   * Titelbild zeigen deshalb bewusst die Fassadenzeichnung statt eines
-   * erfundenen Fotos. Text bewusst knapp gehalten: mehr als Lage,
-   * Gebäudetyp und Planungsstand lässt sich aus dem Plansatz nicht
-   * verlässlich belegen.
-   */
-  {
-    slug: 'efh-neerach',
-    title: 'Einfamilienhaus Hohmatt',
-    ort: 'Neerach',
-    kanton: 'ZH',
-    kunde: null,
-    jahr: 'in Planung',
-    typ: 'Einfamilienhaus',
-    kategorien: ['Neubau', 'Wohnen'],
-    leistungen: ['Projektierung', 'Baugesuch'],
-    beschreibung:
-      'Einfamilienhaus an der Hohmatt in Neerach (ZH): Der vollständige Plansatz von Situation über alle Geschosse bis zu Schnitten und Fassaden liegt bis zur Baueingabe ausgearbeitet vor. Fotos folgen nach der Realisierung.',
-    abschnitte: [],
-    daten: [
-      { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Neubau' },
-      { label: 'Status', wert: 'In Planung' },
-    ],
-    fragen: [
-      {
-        frage: 'Warum sind hier keine Fotos zu sehen?',
-        antwort:
-          'Dieses Projekt ist noch nicht realisiert. Sobald das Haus gebaut ist, ergänzen wir die Seite mit Fotos — bis dahin zeigen wir die Fassadenzeichnung aus dem Baugesuch.',
-      },
-    ],
-    thumbnail: '/images/projekte/efh-neerach/thumb.jpg',
-    heroImage: '/images/projekte/efh-neerach/hero.jpg',
-    galerie: [],
-    plaene: [
-      { titel: 'Situation', datei: '/dokumente/projekte/efh-neerach/01-situation.pdf' },
-      { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-neerach/02-untergeschoss.pdf' },
-      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/efh-neerach/03-erdgeschoss.pdf' },
-      { titel: 'Dachgeschoss', datei: '/dokumente/projekte/efh-neerach/04-dachgeschoss.pdf' },
-      { titel: 'Schnitt 1', datei: '/dokumente/projekte/efh-neerach/05-schnitt-1.pdf' },
-      { titel: 'Schnitt 2', datei: '/dokumente/projekte/efh-neerach/06-schnitt-2.pdf' },
-      { titel: 'Fassade 1', datei: '/dokumente/projekte/efh-neerach/07-fassade-1.pdf' },
-      { titel: 'Fassade 2', datei: '/dokumente/projekte/efh-neerach/08-fassade-2.pdf' },
-      { titel: 'Fassade 3', datei: '/dokumente/projekte/efh-neerach/09-fassade-3.pdf' },
-      { titel: 'Fassade 4', datei: '/dokumente/projekte/efh-neerach/10-fassade-4.pdf' },
-    ],
-    featured: false,
-  },
-  /**
-   * Ebenfalls noch ohne Fotos — siehe Hinweis bei efh-neerach oben. Die
-   * rote/gestrichelte Darstellung im Fassadenplan deutet auf einen Umbau
-   * mit Anbau hin, nicht auf einen Neubau auf freier Parzelle.
+   * Ebenfalls noch ohne Fotos. Die rote/gestrichelte Darstellung im
+   * Fassadenplan deutet auf einen Umbau mit Anbau hin, nicht auf einen
+   * Neubau auf freier Parzelle.
    */
   {
     slug: 'efh-othmarsingen',

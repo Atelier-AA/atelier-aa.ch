@@ -210,6 +210,17 @@ export const kleinprojekte: Kleinprojekt[] = [
       '/images/kleinprojekte/mfh-enetbaden/bild3.jpg',
     ],
   },
+  {
+    slug: 'efh-neerach',
+    ort: 'Neerach',
+    kanton: 'ZH',
+    strasse: 'Hohmatt',
+    gebaeudetyp: 'Einfamilienhaus, Neubau',
+    bauherrschaft: null,
+    jahr: 'in Planung',
+    leistungen: ['Projektierung', 'Baugesuch'],
+    bilder: ['/images/kleinprojekte/efh-neerach/bild1.jpg'],
+  },
 ];
 
 export function getKleinprojekt(slug: string): Kleinprojekt | undefined {
