@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { firma } from '@/data/firma';
 
@@ -76,17 +75,6 @@ export default function KontaktPage() {
             style={{ border: 0 }}
           />
         </div>
-
-        <p className="mt-16 text-sm text-stone md:mt-20">
-          Fragen zu Leistungen und Zusammenarbeit beantworten wir auf der Seite{' '}
-          <Link
-            href="/haeufige-fragen"
-            className="text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
-          >
-            Häufige Fragen
-          </Link>
-          .
-        </p>
       </Container>
     </div>
   );
