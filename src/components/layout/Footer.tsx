@@ -78,13 +78,10 @@ export default function Footer() {
 
           <div>
             <h3 className={spaltenTitel}>Projekte nach Kanton</h3>
-            <ul className="flex flex-wrap gap-2 lg:max-w-[220px]">
+            <ul>
               {kantone.map((k) => (
                 <li key={k.slug}>
-                  <Link
-                    href={`/regionen/${k.slug}`}
-                    className="inline-block rounded-full border border-white/20 px-4 py-2 text-sm text-white/75 transition-colors duration-300 hover:border-white hover:text-white"
-                  >
+                  <Link href={`/regionen/${k.slug}`} className={verweis}>
                     Kanton {k.name}
                   </Link>
                 </li>
