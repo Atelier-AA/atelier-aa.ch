@@ -922,7 +922,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Baugesuch'],
     beschreibung:
-      'Umbau und Erweiterung eines Einfamilienhauses in Othmarsingen (AG): Situationsplan, Geschosse, Schnitte und Fassade liegen bis zur Baueingabe ausgearbeitet vor. Fotos folgen nach der Realisierung.',
+      'Umbau und Erweiterung eines Einfamilienhauses in Othmarsingen (AG): Situationsplan, Geschosse, Schnitte und Fassade liegen bis zur Baueingabe ausgearbeitet vor. Das Foto zeigt das Haus im heutigen Zustand vor dem Umbau.',
     abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Umbau und Erweiterung' },
@@ -930,14 +930,14 @@ export const projekte: Projekt[] = [
     ],
     fragen: [
       {
-        frage: 'Warum sind hier keine Fotos zu sehen?',
+        frage: 'Ist das schon das umgebaute Haus?',
         antwort:
-          'Dieses Projekt ist noch nicht realisiert. Sobald das Haus umgebaut ist, ergänzen wir die Seite mit Fotos — bis dahin zeigen wir die Fassadenzeichnung aus dem Baugesuch.',
+          'Nein, das Foto zeigt das Haus im heutigen Zustand vor dem Umbau. Sobald die Erweiterung realisiert ist, ergänzen wir die Seite mit Fotos des fertigen Umbaus.',
       },
     ],
     thumbnail: '/images/projekte/efh-othmarsingen/thumb.jpg',
     heroImage: '/images/projekte/efh-othmarsingen/hero.jpg',
-    galerie: [],
+    galerie: ['/images/projekte/efh-othmarsingen/01.jpg'],
     plaene: [
       { titel: 'Situation', datei: '/dokumente/projekte/efh-othmarsingen/01-situation.pdf' },
       { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-othmarsingen/02-untergeschoss.pdf' },
