@@ -435,8 +435,8 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Zone W3 in Hunzenschwil erlaubt mit einer Ausnützungsziffer von 0.70 auf 773 m² ein Mehrfamilienhaus über Erd- und zwei Obergeschosse plus Attika, mit Tiefgarage im Untergeschoss und rund 538 m² Wohnfläche.',
-    luftbild: null,
-    katasterplan: null,
+    luftbild: '/images/studien/hunzenschwil/luftbild.jpg',
+    katasterplan: '/images/studien/hunzenschwil/katasterplan.jpg',
     projektbild: null,
   },
   {
@@ -604,7 +604,7 @@ export const studien: Studie[] = [
     ]),
     analyse:
       'Die Wohnzone 2 in Wohlenschwil begrenzt vor allem über die Gebäudehöhe von 7 Metern — mit Arealbonus lässt sich die Ausnützung auf den 1\'744 m² trotzdem auf rund 1\'134 m² steigern, mehr als eine einzelne Standardüberbauung ohne Bonus zulassen würde.',
-    luftbild: null,
+    luftbild: '/images/studien/wohlenschwil/luftbild.jpg',
     katasterplan: '/images/studien/wohlenschwil/katasterplan.jpg',
     projektbild: null,
   },
@@ -628,6 +628,47 @@ export const studien: Studie[] = [
       'In der Zentrumszone von Untersiggenthal sind bis zu vier Vollgeschosse und 18 m Gesamthöhe zulässig — auf der vergleichsweise kleinen Parzelle von 465 m² am Kornfeldweg ergibt das trotzdem ein Mehrfamilienhaus mit Attika und rund 674 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
     luftbild: '/images/studien/untersiggenthal-kornfeldweg/luftbild.jpg',
     katasterplan: '/images/studien/untersiggenthal-kornfeldweg/katasterplan.jpg',
+    projektbild: null,
+  },
+  {
+    slug: 'mettmenstetten',
+    ort: 'Mettmenstetten',
+    kanton: 'ZH',
+    kategorie: 'Bauherrenvertretung',
+    strasse: 'Dachlissen',
+    parzelle: '3605, 1040, 3609',
+    datum: '15.10.2023',
+    kennzahlen: daten([
+      ['Grundstücksfläche', "1'490 m²"],
+      ['Gebäudetyp', '4 Reiheneinfamilienhäuser + Mehrfamilienhaus mit Tiefgarage'],
+      ['Gesamtvolumen', "7'620.54 m³"],
+    ]),
+    analyse:
+      'In Mettmenstetten hat Atelier AA die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten — vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
+    luftbild: null,
+    katasterplan: null,
+    projektbild: null,
+  },
+  {
+    slug: 'wohlenschwil-roetlerstrasse',
+    ort: 'Wohlenschwil',
+    kanton: 'AG',
+    kategorie: 'Machbarkeitsstudie',
+    strasse: 'Rötlerstrasse',
+    parzelle: '123, 124, 961, 972',
+    datum: '08.10.2021',
+    kennzahlen: daten([
+      ['Grundstücksfläche', "2'132 m²"],
+      ['Zone', 'DK, 45 %'],
+      ['Vollgeschosse', 'max. 3 + 2 Dachgeschosse'],
+      ['Gebäudehöhe', 'max. 8 m / Firsthöhe max. 12 m'],
+      ['Gebäudetyp', 'Mehrfamilienhaus'],
+      ['Total Ausnützung', '959 m²'],
+    ]),
+    analyse:
+      'Vier benachbarte Parzellen an der Rötlerstrasse in Wohlenschwil ergeben zusammen 2\'132 m² — die Dorfkernzone mit 45 % Ausnützung und bis zu drei Vollgeschossen plus zwei Dachgeschossen erlaubt darauf ein Mehrfamilienhaus mit rund 959 m² Wohnfläche.',
+    luftbild: null,
+    katasterplan: null,
     projektbild: null,
   },
 ];

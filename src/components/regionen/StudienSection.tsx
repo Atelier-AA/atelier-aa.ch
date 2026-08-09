@@ -10,6 +10,7 @@ const KATEGORIE_TEXT: Record<Studie['kategorie'], string> = {
   Machbarkeitsstudie: 'Machbarkeitsstudie',
   Konzeptstudie: 'Konzeptstudie',
   Wettbewerbsbeitrag: 'Wettbewerbsbeitrag',
+  Bauherrenvertretung: 'Bauherrenvertretung',
 };
 
 function StudieCard({ studie }: { studie: Studie }) {

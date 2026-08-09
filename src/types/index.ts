@@ -68,7 +68,7 @@ export interface Studie {
   slug: string;
   ort: string;
   kanton: string;
-  kategorie: 'Machbarkeitsstudie' | 'Konzeptstudie' | 'Wettbewerbsbeitrag';
+  kategorie: 'Machbarkeitsstudie' | 'Konzeptstudie' | 'Wettbewerbsbeitrag' | 'Bauherrenvertretung';
   strasse: string | null;
   parzelle: string | null;
   datum: string | null;
