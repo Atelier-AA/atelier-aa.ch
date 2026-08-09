@@ -62,11 +62,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
+    // Fotos der Kleinprojekte erscheinen bewusst nicht auf der Website selbst
+    // (siehe KleinprojektCard.tsx), sind aber über die Bilder-Erweiterung der
+    // Sitemap für Google Bilder & KI-Crawler weiterhin auffindbar.
     ...kleinprojekte.map((k) => ({
       url: `${BASIS}/kleinprojekte/${k.slug}`,
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.4,
+      images: k.bilder.map((b) => `${BASIS}${b}`),
     })),
     ...alleKantone().flatMap((k) => [
       {
