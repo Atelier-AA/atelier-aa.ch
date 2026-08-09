@@ -40,6 +40,13 @@ const slides: Slide[] = [
     href: '/referenzen/efh-jonen',
   },
   {
+    image: '/images/hero/slide-fassade-1.jpg',
+    projekt: 'Mehrfamilienhäuser Sihlaurain',
+    ort: 'Adliswil',
+    kanton: 'ZH',
+    href: '/referenzen/mfh-sihlaurain',
+  },
+  {
     image: '/images/hero/slide-modell-1.jpg',
     projekt: 'Mehrfamilienhaus Zelgi',
     ort: 'Untersiggenthal',
