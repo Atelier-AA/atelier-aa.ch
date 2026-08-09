@@ -1096,7 +1096,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH): zwei Neubauten neben einem bestehenden Gebäude, aktuell im Rohbau mit Dachstuhl und Fassade im Bau. Luftaufnahmen von der Baustelle dokumentieren den Baufortschritt.',
+      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH): zwei Neubauten neben einem bestehenden Gebäude. Das Titelbild ist eine KI-bearbeitete Visualisierung auf Basis einer Drohnenaufnahme und zeigt den geplanten Endzustand; die Galerie zeigt den echten Baufortschritt.',
     abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
@@ -1104,9 +1104,9 @@ export const projekte: Projekt[] = [
     ],
     fragen: [
       {
-        frage: 'In welcher Bauphase ist das Projekt?',
+        frage: 'Ist das Titelbild ein echtes Foto vom fertigen Haus?',
         antwort:
-          'Die Rohbauten stehen, Dachstuhl und Fassade sind im Bau. Die Luftaufnahmen zeigen den aktuellen Baufortschritt. Fotos der fertiggestellten Häuser ergänzen wir nach Bezug.',
+          'Nein. Es ist eine KI-bearbeitete Visualisierung auf Basis einer Drohnenaufnahme der Baustelle und zeigt den geplanten Endzustand. Die Bauten sind aktuell im Rohbau, Dachstuhl und Fassade im Bau — echte Fotos vom aktuellen Baufortschritt finden Sie in der Galerie. Fotos der fertiggestellten Häuser ergänzen wir nach Bezug.',
       },
     ],
     thumbnail: '/images/projekte/mfh-niederweningen/thumb.jpg',
