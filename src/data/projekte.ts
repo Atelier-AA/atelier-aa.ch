@@ -1091,27 +1091,31 @@ export const projekte: Projekt[] = [
     ort: 'Niederweningen',
     kanton: 'ZH',
     kunde: null,
-    jahr: 'in Planung',
+    jahr: 'im Bau',
     typ: 'Mehrfamilienhaus',
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH). Das Projekt steht am Anfang der Planung — Grundrisse, Fassaden und Fotos folgen im weiteren Verlauf.',
+      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH): zwei Neubauten neben einem bestehenden Gebäude, aktuell im Rohbau mit Dachstuhl und Fassade im Bau. Luftaufnahmen von der Baustelle dokumentieren den Baufortschritt.',
     abschnitte: [],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
-      { label: 'Status', wert: 'In Planung' },
+      { label: 'Status', wert: 'Im Bau' },
     ],
     fragen: [
       {
-        frage: 'Warum sind hier keine Fotos oder Pläne zu sehen?',
+        frage: 'In welcher Bauphase ist das Projekt?',
         antwort:
-          'Dieses Projekt befindet sich noch in einem frühen Planungsstadium. Wir ergänzen die Seite, sobald Pläne und später Fotos vorliegen.',
+          'Die Rohbauten stehen, Dachstuhl und Fassade sind im Bau. Die Luftaufnahmen zeigen den aktuellen Baufortschritt. Fotos der fertiggestellten Häuser ergänzen wir nach Bezug.',
       },
     ],
     thumbnail: '/images/projekte/mfh-niederweningen/thumb.jpg',
     heroImage: '/images/projekte/mfh-niederweningen/hero.jpg',
-    galerie: [],
+    galerie: [
+      '/images/projekte/mfh-niederweningen/01.jpg',
+      '/images/projekte/mfh-niederweningen/02.jpg',
+      '/images/projekte/mfh-niederweningen/03.jpg',
+    ],
     featured: false,
   },
 ];
