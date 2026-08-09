@@ -81,6 +81,24 @@ export interface Studie {
   projektbild: string | null;
 }
 
+/**
+ * Real gebautes, aber kleineres Projekt (Umbau, Sanierung, Kleinauftrag) —
+ * bewusst nicht auf /projekte gezeigt (zu klein/repetitiv für die kuratierte
+ * Hauptübersicht), aber trotzdem über eine eigene Seite auffindbar.
+ */
+export interface Kleinprojekt {
+  slug: string;
+  ort: string;
+  kanton: string;
+  strasse: string | null;
+  gebaeudetyp: string;
+  bauherrschaft: string | null;
+  jahr: string | null;
+  leistungen: string[];
+  /** Bildpfade, erstes Bild dient als Vorschaubild. */
+  bilder: string[];
+}
+
 export interface TeamMember {
   /** Kleingeschriebener Bezeichner für die Detailseite, z. B. 'aljili-aljisami'. */
   slug: string;

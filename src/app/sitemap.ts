@@ -3,6 +3,7 @@ import { projekte } from '@/data/projekte';
 import { insights } from '@/data/insights';
 import { team } from '@/data/team';
 import { studien } from '@/data/studien';
+import { kleinprojekte } from '@/data/kleinprojekte';
 import { alleKantone, orteInKanton } from '@/lib/regionen';
 
 const BASIS = 'https://www.atelier-aa.ch';
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { pfad: '', prio: 1.0, freq: 'monthly' as const },
     { pfad: '/projekte', prio: 0.9, freq: 'monthly' as const },
     { pfad: '/studien', prio: 0.7, freq: 'monthly' as const },
+    { pfad: '/kleinprojekte', prio: 0.5, freq: 'monthly' as const },
     { pfad: '/leistungen', prio: 0.8, freq: 'monthly' as const },
     { pfad: '/ueber-uns', prio: 0.8, freq: 'monthly' as const },
     { pfad: '/insights', prio: 0.8, freq: 'weekly' as const },
@@ -59,6 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
+    })),
+    ...kleinprojekte.map((k) => ({
+      url: `${BASIS}/kleinprojekte/${k.slug}`,
+      lastModified: heute,
+      changeFrequency: 'yearly' as const,
+      priority: 0.4,
     })),
     ...alleKantone().flatMap((k) => [
       {

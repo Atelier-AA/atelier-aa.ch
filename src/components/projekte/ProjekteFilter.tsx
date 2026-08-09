@@ -20,12 +20,12 @@ const KATEGORIEN = [
   'Gewerbe',
 ];
 
-// Führen auf die eigene /studien-Seite statt hier zu filtern — Machbarkeits-
-// studien und Wettbewerbsbeiträge sollen nicht in der Projekte-Übersicht
-// auftauchen, sollen von hier aus aber auffindbar sein.
+// Führen auf eigene Seiten statt hier zu filtern — Machbarkeitsstudien,
+// Wettbewerbsbeiträge und kleinere Umbauten sollen nicht in der
+// Projekte-Übersicht auftauchen, sollen von hier aus aber auffindbar sein.
 const EXTERNE_VERWEISE = [
   { label: 'Studien', href: '/studien' },
-  { label: 'Wettbewerbe', href: '/studien?kategorie=Wettbewerbsbeitrag' },
+  { label: 'Kleinprojekte', href: '/kleinprojekte' },
 ];
 
 export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {
