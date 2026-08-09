@@ -131,6 +131,15 @@ export default async function InsightDetailPage({ params }: PageProps) {
                     <p key={p.slice(0, 40)}>{p}</p>
                   ))}
                 </div>
+                {a.bilder && a.bilder.length > 0 && (
+                  <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {a.bilder.map((bild) => (
+                      <div key={bild} className="relative aspect-[16/9] w-full bg-mist">
+                        <Image src={bild} alt={a.titel} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
 

@@ -2,6 +2,8 @@
 export interface Abschnitt {
   titel: string;
   absaetze: string[];
+  /** Optionale Bilder innerhalb des Abschnitts, z. B. zur Illustration. */
+  bilder?: string[];
 }
 
 /** Frage-und-Antwort-Paar für Q&A-Bereiche. */

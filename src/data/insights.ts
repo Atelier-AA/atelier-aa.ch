@@ -242,6 +242,17 @@ export const insights: Insight[] = [
           'Was bleibt, ist unsere Handschrift und unsere Verantwortung. Die Werkzeuge verkürzen den Weg zur Auswahl. Die Auswahl selbst treffen wir.',
         ],
       },
+      {
+        titel: 'Ein Beispiel aus der eigenen Werkstatt',
+        absaetze: [
+          'Für eine kleine, freistehende Raumeinheit im Garten haben wir mit einem generativen Werkzeug rasch mehrere Kubaturen durchgespielt — ohne konkrete Parzelle, ohne Bauherrschaft, rein als Formstudie. Die beiden Bilder zeigen zwei solche KI-generierten Varianten: ein eingeschossiger Pavillon und ein zweigeschossiger Kubus, beide in Holzverkleidung.',
+          'Zur Einordnung: Das sind Visualisierungen aus der Werkzeugerprobung, keine Fotos eines realisierten Projekts und keine Machbarkeitsstudie für ein bestehendes Grundstück. Genau das ist der in diesem Beitrag beschriebene Nutzen — und genau dort hört er auch auf: Für ein echtes Grundstück braucht es danach die eigentliche Arbeit.',
+        ],
+        bilder: [
+          '/images/insights/ki-entwurf-beispiel-1.jpg',
+          '/images/insights/ki-entwurf-beispiel-2.jpg',
+        ],
+      },
     ],
     fragen: [
       {
