@@ -204,7 +204,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     onClick={onClose}
                     className={cn(
                       'block font-medium leading-tight transition-colors hover:text-white/70',
-                      item.stufe === 1 && 'py-3 text-[2.25rem] md:text-[4rem]',
+                      item.stufe === 1 && 'py-3 text-[1.6rem] md:text-[2.8rem]',
                       item.stufe === 2 && 'py-3 text-[1.75rem] md:text-[3rem]',
                       (!item.stufe || item.stufe === 3) &&
                         'py-2 text-[1.125rem] md:text-[1.5rem]'
