@@ -8,7 +8,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Team',
   description:
-    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH — geführt von Aljili Aljisami.',
+    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH — geführt von Alisami Aljili.',
   alternates: { canonical: '/ueber-uns/team' },
 };
 

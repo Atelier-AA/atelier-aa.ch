@@ -4,19 +4,19 @@ import type { TeamMember } from '@/types';
  * Team.
  *
  * Namen und Rollen vom Büro bestätigt (Stand Juli 2026). Bei allen ausser
- * Aljili Aljisami ist nur die Rolle bestätigt, kein ausführlicher Werdegang —
+ * Alisami Aljili ist nur die Rolle bestätigt, kein ausführlicher Werdegang —
  * bitte bei Gelegenheit ausbauen.
  *
  * Reihenfolge in der Datei = Reihenfolge auf der Seite: die ersten zwei
- * (Aljili Aljisami, Fatime Aljili) stehen in der ersten Zeile, die
+ * (Alisami Aljili, Fatime Aljili) stehen in der ersten Zeile, die
  * restlichen drei darunter — siehe `ueber-uns/page.tsx`.
  */
 export const team: TeamMember[] = [
   {
-    slug: 'aljili-aljisami',
-    name: 'Aljili Aljisami',
+    slug: 'alisami-aljili',
+    name: 'Alisami Aljili',
     rolle: 'Inhaber, Geschäftsführer',
-    bild: '/images/team/aljili-aljisami.jpg',
+    bild: '/images/team/alisami-aljili.jpg',
     kurz: 'Gründer von Atelier AA Architekten, verantwortlich für Entwurf und Projektleitung.',
     schwerpunkte: [
       'Entwurf und Projektentwicklung',
@@ -25,7 +25,7 @@ export const team: TeamMember[] = [
       'Bauherrenberatung',
     ],
     absaetze: [
-      'Aljili Aljisami hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über fünfzehn Jahren in der Bau- und Immobilienpraxis. Diese Erfahrung prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
+      'Alisami Aljili hat Atelier AA Architekten 2021 in Obfelden gegründet, nach über fünfzehn Jahren in der Bau- und Immobilienpraxis. Diese Erfahrung prägt seine Arbeit: Er entwirft nicht am Markt vorbei, sondern kennt die Zahlen, die über die Realisierbarkeit eines Projekts entscheiden.',
       'Sein Schwerpunkt liegt im Wohnbau — vom Mehrfamilienhaus über die Wohnüberbauung bis zur Verdichtung bestehender Parzellen, realisiert in der ganzen Schweiz. Besonders interessieren ihn Aufgaben, bei denen Ausnutzung, Ortsbild und Nachbarschaft in Konflikt stehen und eine Lösung erst gefunden werden muss. Wo das Büro die Bauleitung selbst übernimmt, liegt sie in der Regel bei ihm.',
       '«Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.» Dieses Motto beschreibt, woran er jedes Projekt misst.',
     ],

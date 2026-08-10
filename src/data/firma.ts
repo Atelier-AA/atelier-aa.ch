@@ -36,11 +36,13 @@ export const firma = {
   handelsregisterKanton: 'Kanton Zürich',
   /**
    * Gesellschafter und Geschäftsführer mit Einzelunterschrift, eingetragen
-   * seit 19.07.2021. Vorname Aljili, Nachname Aljisami — die alte Website
-   * hatte die Reihenfolge im Impressum vertauscht und im Team den Nachnamen
-   * als "Alisami" geschrieben.
+   * seit 19.07.2021. Vorname Alisami, Nachname Aljili — vom Kunden direkt
+   * bestätigt (2026-08-10). Eine frühere Session war hier von "Vorname
+   * Aljili, Nachname Aljisami" ausgegangen (angeblich gegen das
+   * Handelsregister geprüft) — das war falsch; sollte beim nächsten
+   * Handelsregisterauszug zur Sicherheit gegengeprüft werden.
    */
-  vertretungsberechtigt: 'Aljili Aljisami',
+  vertretungsberechtigt: 'Alisami Aljili',
   /** Gründung gemäss Handelsregister. */
   gruendung: '2021',
 } as const;

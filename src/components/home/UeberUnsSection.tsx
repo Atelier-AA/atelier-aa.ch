@@ -36,8 +36,8 @@ export default function UeberUnsSection() {
           </div>
           <div className="relative aspect-[3/4] w-full max-w-sm bg-stone/10 lg:max-w-none">
             <Image
-              src="/images/team/aljili-aljisami.jpg"
-              alt="Aljili Aljisami, Gründer und Geschäftsführer von Atelier AA Architekten"
+              src="/images/team/alisami-aljili.jpg"
+              alt="Alisami Aljili, Gründer und Geschäftsführer von Atelier AA Architekten"
               fill
               className="object-cover"
               sizes="(max-width: 1100px) 100vw, 30vw"

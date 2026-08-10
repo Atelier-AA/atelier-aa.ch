@@ -102,7 +102,7 @@ export interface Kleinprojekt {
 }
 
 export interface TeamMember {
-  /** Kleingeschriebener Bezeichner für die Detailseite, z. B. 'aljili-aljisami'. */
+  /** Kleingeschriebener Bezeichner für die Detailseite, z. B. 'alisami-aljili'. */
   slug: string;
   name: string;
   rolle: string;
