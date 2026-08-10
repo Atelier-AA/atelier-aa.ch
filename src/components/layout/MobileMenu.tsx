@@ -187,10 +187,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation. Drei Grössenstufen statt
-              einheitlicher Zeilen: Projekte (stufe 1) am grössten, Atelier
-              (stufe 2) mittel, der Rest (stufe 3) kleiner — gibt dem Menü
-              eine klare Rangfolge statt einer Liste gleich wichtiger Punkte. */}
+          {/* Zweite Spalte: die Navigation. Alle Punkte bewusst exakt gleich
+              gross (Kundenwunsch) — vorher gab es drei Grössenstufen mit zu
+              grossem Sprung zwischen gross und klein. Die Grösse ist der
+              Mittelwert der früheren grössten und der früheren mittleren
+              Stufe (nicht der winzigen Team-Unterzeile). Das `stufe`-Feld an
+              NavLink bleibt im Datenmodell erhalten, wird hier aber nicht
+              mehr zur Grössensteuerung verwendet. */}
           <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
             <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
@@ -202,13 +205,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={cn(
-                      'block font-medium leading-tight transition-colors hover:text-white/70',
-                      item.stufe === 1 && 'py-3 text-[1.6rem] md:text-[2.8rem]',
-                      item.stufe === 2 && 'py-3 text-[1.75rem] md:text-[3rem]',
-                      (!item.stufe || item.stufe === 3) &&
-                        'py-2 text-[1.125rem] md:text-[1.5rem]'
-                    )}
+                    className="block py-2.5 text-[1.35rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2.15rem]"
                   >
                     {item.label}
                   </Link>
@@ -216,7 +213,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     <Link
                       href={item.unterlink.href}
                       onClick={onClose}
-                      className="block pb-3 text-sm uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
+                      className="block pb-3 text-base uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
                     >
                       {item.unterlink.label}
                     </Link>
