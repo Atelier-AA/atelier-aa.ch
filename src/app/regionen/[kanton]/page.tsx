@@ -57,10 +57,10 @@ export default async function KantonPage({ params }: PageProps) {
           <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
             {kanton.projekte.length > 0 ? (
               <>
-                Im Kanton {kanton.name} haben wir bisher {kanton.projekte.length} Bauvorhaben
-                realisiert oder projektiert — in{' '}
-                {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
-                {orte.map((o) => o.ort).join(', ')}.
+                Im Kanton {kanton.name} haben wir {kanton.projekte.length} realisierte oder
+                projektierte Bauvorhaben{kanton.studien.length > 0 && ' sowie zahlreiche Machbarkeits- und Konzeptstudien'} in{' '}
+                {orte.length === 1 ? 'dieser Gemeinde' : `insgesamt ${orte.length} Gemeinden`}{' '}
+                bearbeitet: {orte.map((o) => o.ort).join(', ')}.
               </>
             ) : (
               <>

@@ -53,7 +53,7 @@ export default function Footer() {
                 className="block text-white transition-opacity duration-300 hover:opacity-70"
               >
                 {firma.telefon}
-              </a>
+              </a>{' '}
               <a
                 href={`mailto:${firma.email}`}
                 className="block text-white transition-opacity duration-300 hover:opacity-70"

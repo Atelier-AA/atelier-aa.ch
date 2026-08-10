@@ -77,7 +77,7 @@ export default async function OrtPage({ params }: PageProps) {
                 <>
                   In {ort.ort} ({kanton.name}) haben wir {ort.projekte.length} Bauvorhaben
                   realisiert oder projektiert:{' '}
-                  {ort.projekte.map((p) => p.typ.toLowerCase()).join(', ')}.
+                  {ort.projekte.map((p) => p.title).join(', ').replace(/, ([^,]*)$/, ' und $1')}.
                 </>
               ) : (
                 <>

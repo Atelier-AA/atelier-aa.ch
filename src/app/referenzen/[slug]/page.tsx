@@ -35,13 +35,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     projekt.daten.some((d) => d.label === 'Status' && d.wert === 'In Planung') &&
     projekt.galerie.length === 0;
 
+  // Titel mit Ort/Kanton statt nur dem Gebäudetyp — "Einfamilienhaus" allein
+  // ist als <title> für jede der zwölf Einfamilienhaus-Seiten identisch und
+  // damit für Suchmaschinen kaum unterscheidbar.
+  const seoTitel = `${projekt.title} ${ortMitKanton(projekt)}`;
+
   return {
-    title: projekt.title,
+    title: seoTitel,
     description: projekt.beschreibung,
     alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
-      title: projekt.title,
+      title: seoTitel,
       description: projekt.beschreibung,
       images: [projekt.heroImage],
     },

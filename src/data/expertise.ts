@@ -30,7 +30,7 @@ export const kompetenzen = [
   {
     titel: 'Analyse und Konzept',
     punkte: [
-      'Leistungsphasen 1–2: Konzept und Machbarkeitsstudien',
+      'SIA-Phasen 1/2: Strategische Planung und Vorstudien mit Machbarkeitsstudie',
       'Weichenstellung: Projektentwicklung',
       'Wettbewerbe',
       'Planungsinstrumente: Simulation und Modell',
@@ -44,19 +44,19 @@ export const kompetenzen = [
   {
     titel: 'Planung und Koordination',
     punkte: [
-      'Leistungsphase 3: Nutzerspezifische Entwurfsplanung',
+      'SIA-Teilphasen 31/32: Vorprojekt und Bauprojekt',
       'Generalplanung: Das Planungsteam als Mannschaft',
-      'Leistungsphase 4: Genehmigungsplanung',
-      'Leistungsphase 5: Ausführungs- und Detailplanung',
+      'SIA-Teilphase 33: Bewilligungsverfahren',
+      'SIA-Teilphase 51: Ausführungsprojekt',
     ],
     text: 'Wir führen Entwurf, Bewilligung und Ausführungsplanung so zusammen, dass alle Fachplaner auf denselben Stand hinarbeiten.',
   },
   {
     titel: 'Realisierung',
     punkte: [
-      'Leistungsphase 6: Erstellung von Leistungsverzeichnissen und Ausschreibung',
-      'Leistungsphase 7: Auswertung der Angebote und Vergabe',
-      'Leistungsphasen 8–9: Bauüberwachung während der Realisierung',
+      'SIA-Teilphase 41: Ausschreibung und Offertvergleich',
+      'SIA-Teilphase 42: Vergabe',
+      'SIA-Teilphasen 52/53: Ausführung und Abschluss',
       'Kosten- und Terminkontrolle',
     ],
     text: 'Von der Ausschreibung bis zur Übergabe begleiten wir die Baustelle und sichern Qualität, Kosten und Termine.',
@@ -158,7 +158,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Wie stellen Sie Kostensicherheit her?',
     antwort:
-      'In drei Stufen: Kostenrahmen im Vorprojekt (Genauigkeit etwa ±20 Prozent), Kostenschätzung im Bauprojekt (±10 Prozent) und Kostenvoranschlag nach der Vergabe (±5 Prozent). Während der Ausführung prüfen wir Nachträge einzeln auf Berechtigung.',
+      'Die Kostengenauigkeit vereinbaren wir projektspezifisch und verfeinern sie in Stufen: ein grober Kostenrahmen im Vorprojekt (SIA-Richtwert rund ±15 Prozent), eine genauere Kostenschätzung im Bauprojekt (rund ±10 Prozent) und ein verbindlicher Kostenvoranschlag nach der Vergabe. Während der Ausführung prüfen wir Nachträge einzeln auf Berechtigung.',
   },
   {
     frage: 'Was unterscheidet Sie von anderen Architekturbüros?',

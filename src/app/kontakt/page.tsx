@@ -42,7 +42,7 @@ export default function KontaktPage() {
               className="mt-8 block text-4xl font-semibold leading-none tracking-tight text-ink transition-opacity hover:opacity-70 md:text-5xl"
             >
               {firma.telefon}
-            </a>
+            </a>{' '}
             <a
               href={`mailto:${firma.email}`}
               className="mt-4 inline-block text-lg font-medium text-ink transition-colors hover:text-graphite"
