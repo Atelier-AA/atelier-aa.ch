@@ -207,10 +207,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation. Ab lg rechtsbündig, auf
-              kleineren Breiten linksbündig gestapelt — wie bei elindo.ch. */}
+          {/* Zweite Spalte: die Navigation, durchgehend linksbündig. */}
           <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
-            <ul className="flex flex-col lg:text-right">
+            <ul className="flex flex-col">
               {navigation.map((item, idx) => (
                 <li
                   key={item.href}
