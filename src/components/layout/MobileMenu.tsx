@@ -56,7 +56,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     }
 
     setAusgefahren(false);
-    const id = window.setTimeout(() => setImDom(false), 500);
+    const id = window.setTimeout(() => setImDom(false), 220);
     return () => window.clearTimeout(id);
   }, [open]);
 
@@ -142,17 +142,17 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      {/* Die Fläche: steht bereits in voller Höhe da, nach oben aus dem Bild
-          geschoben, und fährt beim Öffnen an ihren Platz. */}
+      {/* Die Fläche trägt Hintergrund UND Inhalt in einem Element, damit beim
+          Schliessen alles gemeinsam nach oben verschwindet — auch die
+          Trennlinie zwischen Kontakt und Navigation, die vorher als Teil
+          eines separaten, nicht mitgleitenden Inhalts-Elements liegen blieb.
+          Schliessen ist deutlich schneller als Öffnen. */}
       <div
-        aria-hidden="true"
         className={cn(
-          'absolute inset-0 bg-[#0d0d0d] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
-          ausgefahren ? 'translate-y-0' : '-translate-y-full'
+          'absolute inset-0 flex flex-col overflow-y-auto bg-[#0d0d0d] transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
+          ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-200'
         )}
-      />
-
-      <div className="relative flex h-full flex-col overflow-y-auto">
+      >
         <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12">
           {/* Kontakt-Karte, vertikal zentriert. */}
           <div className="flex flex-1 items-center lg:order-1">
@@ -189,7 +189,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   </Link>
                 </div>
 
-                <p className="text-[15px] leading-[1.7] text-[#f2f0ed]">
+                <p className="text-[15px] leading-[1.7] text-[#c7c5c0]">
                   {firma.name}
                   <br />
                   {firma.strasse}
