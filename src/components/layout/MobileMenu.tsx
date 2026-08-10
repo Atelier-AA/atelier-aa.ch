@@ -9,45 +9,25 @@ import { cn } from '@/lib/utils';
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
-  /** Verweis auf "Projekte" in der Kopfzeile — das Menü misst dessen linke
-   *  Kante und richtet seine eigene linke Kante exakt daran aus. */
-  ausrichtungRef: React.RefObject<HTMLAnchorElement | null>;
 }
 
 /**
- * Menü-Fläche, für alle Bildschirmbreiten.
+ * Vollbild-Menü, für alle Bildschirmbreiten — im Stil von elindo.ch.
  *
- * Die dunkle Fläche deckt nicht den ganzen Bildschirm ab: Sie ist über die
- * ganze Höhe, aber nur so breit wie der Bereich rechts von "Projekte" in der
- * Kopfzeile — links davon bleibt die eigentliche Seite sichtbar. Die Breite
- * wird per JavaScript aus der tatsächlichen Position von "Projekte" berechnet
- * (nicht per fester Tailwind-Klasse), damit es bei jeder Fensterbreite exakt
- * passt. Ist "Projekte" nicht sichtbar (sehr schmaler Bildschirm, dort ist
- * die Kopfzeilen-Kurznavigation ausgeblendet), deckt das Menü die volle
- * Breite ab.
+ * Eine dunkle Fläche fährt von der Kopfzeile nach unten über die ganze
+ * Seite, wie ein Rollo; danach steigen die Menüpunkte gestaffelt ein.
+ * Kontakt links, Navigation rechts (ab lg), damit sie auf derselben Seite
+ * steht wie der Burger, der sie geöffnet hat.
  */
-export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenuProps) {
+export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
    *  Schliessen noch nach oben fahren kann, bevor sie verschwindet. */
   const [imDom, setImDom] = useState(open);
   /** Ob die Fläche unten steht — steuert die Verschiebung. */
   const [ausgefahren, setAusgefahren] = useState(false);
-  /** Linke Kante der Fläche in Pixeln, gemessen an "Projekte" im Header;
-   *  `null` solange nicht gemessen oder "Projekte" nicht sichtbar. */
-  const [linkeKante, setLinkeKante] = useState<number | null>(null);
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const vorherFokussiert = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const messen = () => {
-      const rect = ausrichtungRef.current?.getBoundingClientRect();
-      setLinkeKante(rect && rect.width > 0 ? rect.left : null);
-    };
-    messen();
-    window.addEventListener('resize', messen);
-    return () => window.removeEventListener('resize', messen);
-  }, [ausrichtungRef]);
 
   useEffect(() => {
     if (open) {
@@ -139,20 +119,21 @@ export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenu
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      {/* Die Fläche: volle Höhe, aber links erst an der exakt gemessenen
-          Position von "Projekte" im Header (siehe `linkeKante` oben). Sie
-          fährt von oben nach unten an ihren Platz. */}
+      {/* Die Fläche: steht bereits in voller Höhe da, nach oben aus dem Bild
+          geschoben, und fährt beim Öffnen an ihren Platz. */}
       <div
-        style={{ left: linkeKante ?? 0 }}
+        aria-hidden="true"
         className={cn(
-          'absolute inset-y-0 right-0 flex flex-col overflow-y-auto bg-ink py-20 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
+          'absolute inset-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
           ausgefahren ? 'translate-y-0' : '-translate-y-full'
         )}
-      >
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
-          {/* Kontakt, Soziale Medien und Rechtliches stehen unter der
-              Navigation, alle rechtsbündig auf derselben Seite. */}
-          <div className="order-2 text-right">
+      />
+
+      <div className="relative flex h-full flex-col overflow-y-auto py-20">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-20 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:px-16">
+          {/* Erste Spalte: Kontakt, Soziale Medien und Rechtliches. Ab lg
+              links neben der Navigation, auf kleineren Breiten darunter. */}
+          <div className="order-2 lg:order-1">
             <div style={einstieg(navigation.length)} className={einstiegKlassen}>
               <div className="pt-6">
                 <p className="text-xs uppercase tracking-widest text-white/60">
@@ -183,7 +164,7 @@ export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenu
                 </p>
               </div>
 
-              <div className="mt-4 flex justify-end gap-4">
+              <div className="mt-4 flex gap-4">
                 <a
                   href={sozialeMedien.linkedin}
                   target="_blank"
@@ -210,7 +191,7 @@ export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenu
                 </a>
               </div>
 
-              <ul className="mt-5 flex flex-col">
+              <ul className="mt-6 flex flex-col">
                 {footerLegal.map((item) => (
                   <li key={item.href}>
                     <Link
@@ -226,17 +207,20 @@ export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenu
             </div>
           </div>
 
-          {/* Alle Hauptpunkte in derselben Grösse und Stärke — der Kunde
-              wollte weder unterschiedliche Grössen noch Trennstriche
-              zwischen den Zeilen. */}
-          <nav aria-label="Hauptnavigation" className="order-1">
-            <ul className="flex flex-col text-right">
+          {/* Zweite Spalte: die Navigation. Ab lg rechtsbündig, auf
+              kleineren Breiten linksbündig gestapelt — wie bei elindo.ch. */}
+          <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
+            <ul className="flex flex-col lg:text-right">
               {navigation.map((item, idx) => (
-                <li key={item.href} style={einstieg(idx)} className={einstiegKlassen}>
+                <li
+                  key={item.href}
+                  style={einstieg(idx)}
+                  className={cn('border-b border-white/10', einstiegKlassen)}
+                >
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block py-1.5 text-[1.4rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2rem]"
+                    className="block py-5 text-[1.75rem] font-light leading-tight transition-colors hover:text-white/70 md:text-[2.25rem]"
                   >
                     {item.label}
                   </Link>
@@ -244,7 +228,7 @@ export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenu
                     <Link
                       href={item.unterlink.href}
                       onClick={onClose}
-                      className="block pb-2 text-sm font-medium leading-tight text-white/60 transition-colors hover:text-white md:text-base"
+                      className="block pb-3 text-base text-white/60 transition-colors hover:text-white"
                     >
                       {item.unterlink.label}
                     </Link>
