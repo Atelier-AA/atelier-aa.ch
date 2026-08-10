@@ -14,7 +14,7 @@ export default function StartseiteTextVorschau() {
   return (
     <div className="pt-24 pb-20 md:pt-28 md:pb-28">
       <div className="mb-10 bg-ink px-6 py-3 text-center text-sm text-white">
-        Vorschau D2 — ergänzter Startseiten-Text (nicht die Live-Seite)
+        Vorschau D2 (überarbeitet) — ausführlicherer Startseiten-Text (nicht die Live-Seite)
       </div>
 
       <section className="py-20 md:py-28">
@@ -26,14 +26,22 @@ export default function StartseiteTextVorschau() {
                 bleibendem <span className="font-semibold">Wert.</span>
               </h2>
 
-              {/* Neu: konkreter Satz direkt nach der Überschrift — beantwortet
-                  "wer seid ihr, was macht ihr, wo" in einem Satz, für
-                  Menschen wie für Suchmaschinen/KI. */}
-              <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-ink">
-                Atelier AA Architekten plant und realisiert Einfamilienhäuser,
-                Mehrfamilienhäuser und Wohnüberbauungen sowie
-                Generalplanungsmandate in Zürich, Aargau und Zug — von der
-                Machbarkeitsstudie bis zur Bauleitung.
+              {/* Zweiter Anlauf nach Kundenfeedback: ausführlicher, mit den
+                  Gebäudetypen und Leistungen als eigene Begriffe statt in
+                  einem Nebensatz — für Menschen lesbar, für Suchmaschinen/KI
+                  eindeutig als Leistungskatalog erkennbar. */}
+              <p className="mt-8 max-w-[48ch] text-lg leading-relaxed text-ink">
+                Atelier AA Architekten ist ein Architekturbüro mit Sitz in Obfelden
+                im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
+                Mehrfamilienhäuser und Wohnüberbauungen ebenso wie Umbauten und
+                Sanierungen im Bestand — als Architekten oder im
+                Generalplaner-Mandat.
+              </p>
+              <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-ink">
+                Von der ersten Machbarkeitsstudie über Baugesuch und
+                Ausführungsplanung bis zur Bauleitung begleiten wir jedes Projekt
+                durch alle SIA-Leistungsphasen, mit Schwerpunkt in den Kantonen
+                Zürich, Aargau und Zug.
               </p>
 
               <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-graphite">
@@ -41,8 +49,7 @@ export default function StartseiteTextVorschau() {
                 Identität in sich. Mit Sorgfalt, Klarheit und einem tiefen
                 Verständnis für Menschen und Räume entwickeln wir Architektur, die
                 mehr ist als ein Gebäude – sie schafft Lebensqualität, Orientierung
-                und Zugehörigkeit. Dabei führen wir jedes Projekt durch die
-                SIA-Leistungsphasen und legen Kosten so früh wie möglich offen.
+                und Zugehörigkeit.
               </p>
             </div>
 

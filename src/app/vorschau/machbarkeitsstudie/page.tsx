@@ -1,11 +1,22 @@
-import type { Metadata } from 'next';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
 
-export const metadata: Metadata = { robots: { index: false, follow: false } };
+export const metadata = { robots: { index: false, follow: false } };
+
+const enthalten = [
+  'Zonenkonformität und Bauordnung',
+  'Ausnützungsziffer und Gebäudevolumen',
+  'Grenz- und Gebäudeabstände',
+  'Erschliessung und Parkierung',
+  'Mögliche Wohn-/Nutzfläche',
+  'Ein bis drei bauliche Varianten',
+  'Grober Kostenrahmen je Variante',
+  'Einschätzung zu Bewilligungsrisiken',
+];
 
 const schritte = [
   {
@@ -53,15 +64,28 @@ const fragen = [
   },
 ];
 
-export default function MachbarkeitsstudieVorschauA() {
+/**
+ * Vorschau (final, nach Feedback): Struktur von Variante A, ergänzt um die
+ * "Was die Studie enthält"-Liste aus Variante B. Als Unterseite von
+ * /leistungen gedacht (nicht im Hauptmenü) — Machbarkeitsstudie ist ein
+ * Teil der Arbeit, aber nicht die Hauptleistung. Der "← Kompetenzen"-Link
+ * oben zeigt, wie die Einordnung ins Untermenü aussehen würde.
+ */
+export default function MachbarkeitsstudieVorschau() {
   return (
     <div className="pt-24 pb-20 md:pt-28 md:pb-28">
       <Container>
         <div className="mb-10 bg-ink px-6 py-3 text-center text-sm text-white">
-          Vorschau A — editorial, mit nummeriertem Ablauf (nicht die Live-Seite)
+          Vorschau (final) — Machbarkeitsstudie als Unterseite von /leistungen (nicht die Live-Seite)
         </div>
 
         <div className="max-w-2xl">
+          <Link
+            href="/leistungen"
+            className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
+          >
+            ← Kompetenzen
+          </Link>
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Machbarkeitsstudie
           </p>
@@ -79,6 +103,20 @@ export default function MachbarkeitsstudieVorschauA() {
               Machbarkeit klären
             </Button>
           </div>
+        </div>
+
+        <div className="mt-20 border-t border-mist pt-16 md:mt-28">
+          <p className="mb-8 text-xs uppercase tracking-widest text-stone">
+            Was die Studie enthält
+          </p>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {enthalten.map((e) => (
+              <li key={e} className="flex items-start gap-3 text-graphite">
+                <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+                {e}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-20 border-t border-mist pt-16 md:mt-28">
