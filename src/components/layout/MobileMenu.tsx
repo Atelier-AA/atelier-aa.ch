@@ -56,7 +56,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     }
 
     setAusgefahren(false);
-    const id = window.setTimeout(() => setImDom(false), 220);
+    const id = window.setTimeout(() => setImDom(false), 300);
     return () => window.clearTimeout(id);
   }, [open]);
 
@@ -149,8 +149,8 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           Schliessen ist deutlich schneller als Öffnen. */}
       <div
         className={cn(
-          'absolute inset-0 flex flex-col overflow-y-auto bg-[#0d0d0d] transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
-          ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-200'
+          'absolute inset-0 flex flex-col overflow-y-auto bg-[#0d0d0d] transition-transform ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none',
+          ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-300'
         )}
       >
         <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12">
@@ -163,9 +163,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               )}
             >
               <div className="flex flex-col gap-7">
-                <p className="text-2xl font-semibold text-[#f2f0ed]">Kontakt</p>
+                <p className="text-2xl font-semibold text-[#c7c5c0]">Kontakt</p>
 
-                <div className="flex flex-col gap-3.5 text-[19px] text-[#f2f0ed]">
+                <div className="flex flex-col gap-3.5 text-[19px] text-[#c7c5c0]">
                   <a
                     href={`tel:${firma.telefonHref}`}
                     onClick={onClose}
@@ -198,7 +198,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                 </p>
 
                 <div className="flex flex-col gap-3.5">
-                  <p className="text-[11px] tracking-[3px] text-[#9a9a9a]">FOLGEN SIE UNS</p>
+                  <p className="text-[11px] tracking-[3px] text-[#c7c5c0]">FOLGEN SIE UNS</p>
                   <div className="flex gap-3.5">
                     <a
                       href={sozialeMedien.linkedin}
@@ -227,13 +227,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2 border-t border-[#2e2e2e] pt-[22px] text-[11px] tracking-[2px] text-[#9a9a9a]">
+                <div className="flex flex-col gap-2 border-t border-[#2e2e2e] pt-[22px] text-[11px] tracking-[2px] text-[#c7c5c0]">
                   {footerLegal.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={onClose}
-                      className="transition-colors duration-300 hover:text-[#f2f0ed]"
+                      className="transition-colors duration-300 hover:text-white"
                     >
                       {item.label.toUpperCase()}
                     </Link>
