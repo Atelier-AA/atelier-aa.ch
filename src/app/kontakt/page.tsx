@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Kontakt',
   description:
     'Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden, Kanton Zürich. Telefon +41 44 770 05 06, info@atelier-aa.ch. Erstgespräch für Neubau, Umbau und Sanierung.',
+  alternates: { canonical: '/kontakt' },
 };
 
 export default function KontaktPage() {

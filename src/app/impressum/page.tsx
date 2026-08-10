@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Impressum',
   description:
     'Impressum von Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden. UID CHE-237.040.294.',
+  alternates: { canonical: '/impressum' },
 };
 
 export default function ImpressumPage() {

@@ -17,7 +17,7 @@ export const team: TeamMember[] = [
     name: 'Aljili Aljisami',
     rolle: 'Inhaber, Geschäftsführer',
     bild: '/images/team/aljili-aljisami.jpg',
-    kurz: 'Gründer von Atelier AA, verantwortlich für Entwurf und Projektleitung.',
+    kurz: 'Gründer von Atelier AA Architekten, verantwortlich für Entwurf und Projektleitung.',
     schwerpunkte: [
       'Entwurf und Projektentwicklung',
       'Wohnbau und Verdichtung',

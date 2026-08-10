@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: projekt.title,
     description: projekt.beschreibung,
+    alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
       title: projekt.title,

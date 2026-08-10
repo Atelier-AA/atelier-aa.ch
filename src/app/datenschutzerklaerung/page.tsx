@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
   description:
     'Datenschutzerklärung von Atelier AA Architekten GmbH, Obfelden: welche Personendaten wir bearbeiten, zu welchem Zweck, wie lange und welche Rechte Sie nach dem Schweizer Datenschutzgesetz haben.',
+  alternates: { canonical: '/datenschutzerklaerung' },
 };
 
 /**

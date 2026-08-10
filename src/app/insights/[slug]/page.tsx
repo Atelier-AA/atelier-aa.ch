@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: insight.titel,
     description: insight.lead,
+    alternates: { canonical: `/insights/${insight.slug}` },
     openGraph: {
       type: 'article',
       title: insight.titel,

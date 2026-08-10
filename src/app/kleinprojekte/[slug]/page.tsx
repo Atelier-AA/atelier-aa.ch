@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: titel,
     description: `${projekt.gebaeudetyp} von Atelier AA Architekten GmbH in ${projekt.ort}.`,
+    alternates: { canonical: `/kleinprojekte/${projekt.slug}` },
   };
 }
 

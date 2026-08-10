@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${person.name} – ${person.rolle}`,
     description: `${person.name}, ${person.rolle} bei Atelier AA Architekten GmbH in Obfelden. Schwerpunkte: ${person.schwerpunkte.join(', ')}.`,
+    alternates: { canonical: `/ueber-uns/${person.slug}` },
     openGraph: {
       type: 'profile',
       title: `${person.name} – ${person.rolle}`,

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Kleinprojekte',
   description:
     'Kleinere realisierte Umbauten und Sanierungen von Atelier AA Architekten GmbH — abseits der grossen Referenzprojekte.',
+  alternates: { canonical: '/kleinprojekte' },
 };
 
 export default function KleinprojektePage() {

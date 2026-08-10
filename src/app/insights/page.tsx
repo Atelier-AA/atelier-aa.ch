@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Insights',
   description:
     'Fachbeiträge von Atelier AA Architekten GmbH zu KI im Entwurf, kreislauffähigem Bauen und der Rolle des Architekten. Mit Antworten auf häufige Fragen zu Honorar, Planungsphasen und Ablauf.',
+  alternates: { canonical: '/insights' },
 };
 
 export default function InsightsPage() {

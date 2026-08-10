@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Studien',
   description:
     'Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge von Atelier AA Architekten GmbH — Vorabklärungen, bevor aus einem Grundstück ein Bauprojekt wird.',
+  alternates: { canonical: '/studien' },
 };
 
 export default function StudienPage() {

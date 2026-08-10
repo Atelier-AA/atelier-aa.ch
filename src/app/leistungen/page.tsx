@@ -26,7 +26,7 @@ export default function LeistungenPage() {
               und <span className="font-semibold">Verantwortung.</span>
             </h1>
             <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
-              Das Atelier AA bietet den gesamten Planungsprozess an – von der ersten Idee
+              Das Atelier AA Architekten bietet den gesamten Planungsprozess an – von der ersten Idee
               bis zur hochwertigen Ausführung, auf Wunsch auch im Generalplaner-Mandat.
               Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
               Architektur, die funktional, nachhaltig und wirtschaftlich trägt – mit

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Karriere',
   description:
     'Offene Position bei Atelier AA Architekten GmbH in Obfelden: Architekt/in für Entwurf, Projektentwicklung und Bauleitung in der ganzen Schweiz.',
+  alternates: { canonical: '/ueber-uns/karriere' },
 };
 
 /**

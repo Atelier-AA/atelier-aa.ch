@@ -205,7 +205,7 @@ export const studien: Studie[] = [
       ['Ergebnis', 'nicht gewonnen, nicht gebaut'],
     ]),
     analyse:
-      'Für die Überbauung «Eichhölzli» in Fisibach hat Atelier AA einen Wettbewerbsbeitrag mit fünf einzelnen Baukörpern und einem gemeinsamen Gemeinschaftsbau eingereicht. Der Beitrag wurde nicht ausgezeichnet und ist nicht realisiert worden — er zeigt trotzdem den städtebaulichen Ansatz für diese Aufgabe.',
+      'Für die Überbauung «Eichhölzli» in Fisibach hat Atelier AA Architekten einen Wettbewerbsbeitrag mit fünf einzelnen Baukörpern und einem gemeinsamen Gemeinschaftsbau eingereicht. Der Beitrag wurde nicht ausgezeichnet und ist nicht realisiert worden — er zeigt trotzdem den städtebaulichen Ansatz für diese Aufgabe.',
     luftbild: null,
     katasterplan: null,
     projektbild: '/images/studien/fisibach-wettbewerb/bild1.jpg',
@@ -223,7 +223,7 @@ export const studien: Studie[] = [
       ['Abmessungen Anbau', 'ca. 12.95 × 25.62 m'],
     ]),
     analyse:
-      'Für ein bestehendes Vereinslokal in Root hat Atelier AA einen Anbau konzipiert, der Saal, Bühne, Vorplatz und Küche zu einem zusammenhängenden Vereinshaus ergänzt — auf einer Grundfläche von rund 13 auf 26 Metern.',
+      'Für ein bestehendes Vereinslokal in Root hat Atelier AA Architekten einen Anbau konzipiert, der Saal, Bühne, Vorplatz und Küche zu einem zusammenhängenden Vereinshaus ergänzt — auf einer Grundfläche von rund 13 auf 26 Metern.',
     luftbild: null,
     katasterplan: null,
     projektbild: '/images/studien/root/bild1.jpg',
@@ -648,7 +648,7 @@ export const studien: Studie[] = [
       ['Gesamtvolumen', "7'620.54 m³"],
     ]),
     analyse:
-      'In Mettmenstetten hat Atelier AA die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten — vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
+      'In Mettmenstetten hat Atelier AA Architekten die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten — vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
     luftbild: '/images/studien/mettmenstetten/luftbild.jpg',
     katasterplan: '/images/studien/mettmenstetten/katasterplan.jpg',
     projektbild: null,
@@ -1473,7 +1473,7 @@ export const studien: Studie[] = [
     datum: '2013',
     kennzahlen: daten([['Gebäudetyp', 'Gastronomie-Umbau (Lounge/Bar)']]),
     analyse:
-      'An der Zwillikerstrasse in Obfelden hat Atelier AA in einer frühen Konzeptstudie die Umnutzung eines Gewerberaums zu einer Lounge/Bar mit Raucher- und Nichtraucherzone untersucht.',
+      'An der Zwillikerstrasse in Obfelden hat Atelier AA Architekten in einer frühen Konzeptstudie die Umnutzung eines Gewerberaums zu einer Lounge/Bar mit Raucher- und Nichtraucherzone untersucht.',
     luftbild: null,
     katasterplan: null,
     projektbild: '/images/studien/chilling-lounge/projektbild.jpg',

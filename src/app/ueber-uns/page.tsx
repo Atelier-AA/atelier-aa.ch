@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Über uns',
   description:
     'Atelier AA Architekten GmbH in Obfelden ZH: Architekturbüro für Neubau, Umbau, Sanierung, Projektentwicklung und Generalplanung in Zürich, Aargau und Zug.',
+  alternates: { canonical: '/ueber-uns' },
 };
 
 /**
@@ -42,7 +43,7 @@ export default function UeberUnsPage() {
                 Entwurf — nie umgekehrt.
               </p>
               <p>
-                Wir führen das Atelier AA mit dieser Haltung — mit einem engagierten,
+                Wir führen das Atelier AA Architekten mit dieser Haltung — mit einem engagierten,
                 fachlich qualifizierten Team und zeitgemässen Werkzeugen wie der
                 3D-Planung, die unsere Prozesse unterstützen, ohne unsere Grundhaltung zu
                 ersetzen.

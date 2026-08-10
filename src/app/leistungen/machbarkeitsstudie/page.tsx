@@ -60,7 +60,7 @@ const fragen = [
       'In der Regel wenige Wochen, abhängig davon, wie schnell die Gemeinde Grundlagenpläne und Auskünfte liefert.',
   },
   {
-    frage: 'Muss ich danach mit Atelier AA weiterbauen?',
+    frage: 'Muss ich danach mit Atelier AA Architekten weiterbauen?',
     antwort:
       'Nein. Die Studie ist ein eigenständiges Ergebnis. Viele Bauherrschaften entscheiden sich danach für die Zusammenarbeit, verpflichtet sind Sie dazu nicht.',
   },

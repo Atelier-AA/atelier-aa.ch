@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'Schweiz',
     'Wohnbau',
     'Mehrfamilienhaus',
-    'Atelier AA',
+    'Atelier AA Architekten',
   ],
   openGraph: {
     type: 'website',

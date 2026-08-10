@@ -66,7 +66,7 @@ export const kompetenzen = [
     punkte: [
       'Vollumfängliche Planung Ihres individuellen Bauvorhabens',
       'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
-      'Atelier AA als Ihr alleiniger Vertrags- und Ansprechpartner',
+      'Atelier AA Architekten als Ihr alleiniger Vertrags- und Ansprechpartner',
     ],
     text: 'Als Generalplaner arbeiten wir konsequent auf einen termin- und kostengerechten Projekterfolg mit hoher architektonischer Qualität hin.',
   },

@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${studie.kategorie}: ${titel}`,
     description: `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`,
+    alternates: { canonical: `/studien/${studie.slug}` },
   };
 }
 
