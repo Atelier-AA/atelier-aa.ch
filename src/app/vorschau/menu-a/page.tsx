@@ -7,16 +7,19 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
- * Vorschau: Menü-Variante A — "sanfterer Grössenverlauf".
- * Kleinere grösste Stufe, grössere kleinste Stufe, der Team-Unterpunkt ist
- * deutlich lesbarer statt fast unsichtbar klein. Statische Kopie des echten
- * Vollbild-Menüs (ohne Animation/Fokus-Logik) nur zum optischen Vergleich.
+ * Vorschau: Menü-Variante C — "Nummerierte Liste".
+ * Zweiter Anlauf nach Kundenfeedback ("keine Variante gefällt mir, zu
+ * grosser Sprung zwischen den Grössenstufen"): komplett einheitliche
+ * Schriftgrösse für alle Hauptpunkte statt gross/klein-Sprung — Rhythmus
+ * kommt von der Nummerierung, nicht von unterschiedlichen Grössen. Team
+ * hängt als eigene, bewusst kleinere Zeile mit Gedankenstrich direkt unter
+ * "Atelier" — liest sich als Kind, nicht als Zufallszusatz.
  */
-export default function MenuVorschauA() {
+export default function MenuVorschauC() {
   return (
     <div className="min-h-screen bg-ink text-white">
       <div className="bg-white px-6 py-3 text-center text-sm text-ink">
-        Vorschau A — sanfterer Grössenverlauf zwischen den Menüstufen
+        Vorschau C — nummerierte Liste, einheitliche Grösse
       </div>
       <div className="flex min-h-[calc(100vh-44px)] items-end py-20">
         <Container>
@@ -40,23 +43,23 @@ export default function MenuVorschauA() {
 
             <nav className="order-1 lg:order-2">
               <ul className="flex flex-col text-right">
-                {navigation.map((item) => (
-                  <li key={item.href} className="border-b border-white/10">
+                {navigation.map((item, idx) => (
+                  <li key={item.href} className="border-b border-white/10 py-4">
                     <Link
                       href={item.href}
-                      className={
-                        item.stufe === 1
-                          ? 'block py-2.5 text-[1.5rem] font-medium leading-tight md:text-[2.4rem]'
-                          : 'block py-2 text-[1.25rem] font-medium leading-tight md:text-[1.75rem]'
-                      }
+                      className="group flex items-baseline justify-end gap-4 text-[1.9rem] font-medium leading-none tracking-tight transition-colors hover:text-white/70 md:text-[3.1rem]"
                     >
+                      <span className="font-mono text-[0.9rem] font-normal tabular-nums text-white/35 md:text-base">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
                       {item.label}
                     </Link>
                     {item.unterlink && (
                       <Link
                         href={item.unterlink.href}
-                        className="block pb-3 text-base uppercase tracking-[0.1em] text-white/70 md:text-lg"
+                        className="mt-2 flex items-baseline justify-end gap-3 text-[1.05rem] text-white/55 transition-colors hover:text-white"
                       >
+                        <span aria-hidden="true">—</span>
                         {item.unterlink.label}
                       </Link>
                     )}

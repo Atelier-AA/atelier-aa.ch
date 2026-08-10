@@ -7,16 +7,18 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
- * Vorschau: Menü-Variante B — "zwei klare Ebenen".
- * Team steht als kleines Inline-Tag direkt neben "Atelier" statt als
- * eigene Zeile darunter — keine dritte Grössenstufe, dafür bewusst nur
- * zwei: gross (Projekte, Atelier) und einheitlich klein (der Rest).
+ * Vorschau: Menü-Variante D — "Ein Gewicht, eine Zeile".
+ * Zweiter Anlauf: statt unterschiedlicher Grössen trägt hier ausschliesslich
+ * die Schriftstärke (kräftig vs. normal) die Rangfolge — alle Zeilen exakt
+ * dieselbe Grösse, kein Sprung mehr, der "nicht stimmig" wirken könnte.
+ * Team ist ein eigener kleiner Menüpunkt mit Punkt-Marker, sauber unter
+ * "Atelier" eingerückt.
  */
-export default function MenuVorschauB() {
+export default function MenuVorschauD() {
   return (
     <div className="min-h-screen bg-ink text-white">
       <div className="bg-white px-6 py-3 text-center text-sm text-ink">
-        Vorschau B — Team als Inline-Tag neben «Atelier», nur zwei Grössenstufen
+        Vorschau D — ein Gewicht, eine Zeile, Rang nur über Schriftstärke
       </div>
       <div className="flex min-h-[calc(100vh-44px)] items-end py-20">
         <Container>
@@ -41,27 +43,26 @@ export default function MenuVorschauB() {
             <nav className="order-1 lg:order-2">
               <ul className="flex flex-col text-right">
                 {navigation.map((item) => (
-                  <li key={item.href} className="border-b border-white/10 py-3">
-                    <div className="flex items-baseline justify-end gap-4">
-                      {item.unterlink && (
-                        <Link
-                          href={item.unterlink.href}
-                          className="rounded-full border border-white/25 px-3 py-1 text-xs uppercase tracking-[0.1em] text-white/70 transition-colors hover:border-white/60 hover:text-white"
-                        >
-                          {item.unterlink.label}
-                        </Link>
-                      )}
+                  <li key={item.href} className="border-b border-white/10 py-3.5">
+                    <Link
+                      href={item.href}
+                      className={
+                        item.stufe === 1
+                          ? 'block text-[2.1rem] font-semibold leading-tight tracking-tight transition-colors hover:text-white/70 md:text-[2.9rem]'
+                          : 'block text-[2.1rem] font-normal leading-tight tracking-tight text-white/85 transition-colors hover:text-white md:text-[2.9rem]'
+                      }
+                    >
+                      {item.label}
+                    </Link>
+                    {item.unterlink && (
                       <Link
-                        href={item.href}
-                        className={
-                          item.stufe === 1
-                            ? 'block text-[1.75rem] font-medium leading-tight md:text-[3rem]'
-                            : 'block text-[1.375rem] font-medium leading-tight md:text-[1.875rem]'
-                        }
+                        href={item.unterlink.href}
+                        className="mt-1.5 flex items-center justify-end gap-2 text-base text-white/50 transition-colors hover:text-white"
                       >
-                        {item.label}
+                        {item.unterlink.label}
+                        <span aria-hidden="true" className="h-1 w-1 rounded-full bg-white/50" />
                       </Link>
-                    </div>
+                    )}
                   </li>
                 ))}
               </ul>
