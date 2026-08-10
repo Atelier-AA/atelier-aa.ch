@@ -32,7 +32,7 @@ export default function DatenschutzPage() {
   const stand = 'August 2026';
 
   return (
-    <div className="pt-32 pb-20 md:pt-40">
+    <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
         <div className="max-w-3xl">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">

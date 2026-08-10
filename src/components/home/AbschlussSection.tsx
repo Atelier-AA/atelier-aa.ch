@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button';
  */
 export default function AbschlussSection() {
   return (
-    <section className="border-t border-mist py-16 md:py-20">
+    <section className="border-t border-mist pt-16 pb-20 md:pb-28">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div>

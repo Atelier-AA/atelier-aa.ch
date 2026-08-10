@@ -93,7 +93,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <article className="pt-32 md:pt-40">
+      <article className={weitere.length > 0 ? 'pt-32 md:pt-40' : 'pt-32 pb-20 md:pb-28 md:pt-40'}>
         <Container>
           <div className="max-w-3xl">
             <p className="text-xs uppercase tracking-[0.1em] text-stone mb-4">

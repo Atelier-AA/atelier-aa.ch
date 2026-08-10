@@ -42,7 +42,7 @@ export default function InsightsPage() {
           ))}
         </div>
 
-        <div className="max-w-3xl mt-32 md:mt-40 py-16 border-t border-mist">
+        <div className="max-w-3xl mt-32 border-t border-mist pt-16 pb-20 md:mt-40 md:pb-28">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Nächster Schritt
           </p>

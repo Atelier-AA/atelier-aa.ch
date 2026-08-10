@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function KleinprojektePage() {
   return (
-    <div className="pt-32 md:pt-40">
+    <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
         <div className="max-w-3xl mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Kleinere Arbeiten</p>

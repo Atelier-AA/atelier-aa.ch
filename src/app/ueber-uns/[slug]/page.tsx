@@ -135,7 +135,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
           </div>
 
-          <section className="mt-28 border-t border-mist pt-16 md:mt-36">
+          <section className="mt-28 border-t border-mist pt-16 pb-20 md:mt-36 md:pb-28">
             <h2 className="text-xs uppercase tracking-widest text-stone mb-12">
               Weitere Teammitglieder
             </h2>

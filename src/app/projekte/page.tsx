@@ -34,7 +34,7 @@ export default function ProjektePage() {
 
         {/* Abschluss im gleichen Stil wie der Einstieg oben: grosser,
             fett/normal gesetzter Titel, darunter normaler Fliesstext. */}
-        <div className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
+        <div className="mt-24 max-w-3xl border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Nächster Schritt
           </p>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="pt-32 md:pt-40 pb-20">
+    <div className="pt-32 md:pt-40 pb-20 md:pb-28">
       <Container>
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
