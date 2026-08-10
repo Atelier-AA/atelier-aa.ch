@@ -134,10 +134,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       />
 
       <div className="relative flex h-full flex-col overflow-y-auto py-20">
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-16 gap-y-8 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-end lg:px-16">
-          {/* Erste Spalte: Kontakt und Rechtliches. Sobald sie ab lg neben
-              die Navigation springt, unten bündig mit ihr statt oben. */}
-          <div className="order-2 text-right lg:order-1">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
+          {/* Kontakt und Rechtliches stehen jetzt unter der Navigation,
+              beide rechtsbündig auf derselben Seite — vorher stand der
+              Kontaktblock links neben der Navigation. */}
+          <div className="order-2 text-right">
             <div style={einstieg(navigation.length)} className={einstiegKlassen}>
               {/* Kein eigener oberer Strich mehr — auf dem Handy steht direkt
                   darüber schon der untere Strich des letzten Navigationspunkts,
@@ -194,7 +195,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               genau dieser Grösse und der Team-Unterzeile (1rem), also
               1.175rem/1.575rem. Das `stufe`-Feld steuert wieder die Grösse,
               aber mit einem viel kleineren Sprung als in der ersten Fassung. */}
-          <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
+          <nav aria-label="Hauptnavigation" className="order-1">
             <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
                 <li
