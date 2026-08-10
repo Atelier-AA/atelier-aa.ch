@@ -1,9 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { navigation, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
  * Vorschau: Menü-Variante B — "zwei klare Ebenen".
@@ -15,7 +16,7 @@ export default function MenuVorschauB() {
   return (
     <div className="min-h-screen bg-ink text-white">
       <div className="bg-white px-6 py-3 text-center text-sm text-ink">
-        Vorschau B — Team als Inline-Tag neben "Atelier", nur zwei Grössenstufen
+        Vorschau B — Team als Inline-Tag neben «Atelier», nur zwei Grössenstufen
       </div>
       <div className="flex min-h-[calc(100vh-44px)] items-end py-20">
         <Container>

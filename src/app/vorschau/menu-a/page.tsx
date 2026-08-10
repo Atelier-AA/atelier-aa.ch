@@ -1,9 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { navigation, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
  * Vorschau: Menü-Variante A — "sanfterer Grössenverlauf".
