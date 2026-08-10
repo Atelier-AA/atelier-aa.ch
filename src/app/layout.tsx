@@ -36,10 +36,28 @@ export const metadata: Metadata = {
     'Mehrfamilienhaus',
     'Atelier AA Architekten',
   ],
+  // Fallback-Vorschaubild für Seiten ohne eigenes openGraph-Bild (z. B.
+  // /leistungen, /projekte, /kontakt) — ohne das bleibt die Linkvorschau in
+  // WhatsApp/LinkedIn/Facebook leer, wenn eine Seite kein eigenes Bild setzt.
   openGraph: {
     type: 'website',
     locale: 'de_CH',
     siteName: 'Atelier AA Architekten',
+    images: [
+      {
+        url: '/images/hero/slide-hochwarting-2.jpg',
+        width: 2400,
+        height: 1340,
+        alt: 'Atelier AA Architekten',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Atelier AA Architekten',
+    description:
+      'Architekturbüro in Obfelden für Neubau, Umbau und Generalplanung in Zürich, Aargau und Zug.',
+    images: ['/images/hero/slide-hochwarting-2.jpg'],
   },
   // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
   icons: {
