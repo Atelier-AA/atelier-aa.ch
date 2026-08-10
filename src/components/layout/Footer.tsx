@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Projekte nach Kanton</h3>
+            <div className="mb-6 h-4" aria-hidden="true" />
             <ul>
               {kantone.map((k) => (
                 <li key={k.slug}>
