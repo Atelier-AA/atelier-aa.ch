@@ -130,10 +130,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       />
 
       <div className="relative flex h-full flex-col overflow-y-auto py-20">
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-20 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:px-16">
-          {/* Erste Spalte: Kontakt, Soziale Medien und Rechtliches. Ab lg
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-16 gap-y-12 px-6 text-white sm:grid-cols-[minmax(0,15rem)_1fr] md:px-10 lg:px-16">
+          {/* Erste Spalte: Kontakt, Soziale Medien und Rechtliches. Ab sm
               links neben der Navigation, auf kleineren Breiten darunter. */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 sm:order-1">
             <div style={einstieg(navigation.length)} className={einstiegKlassen}>
               <div className="pt-6">
                 <p className="text-xs uppercase tracking-widest text-white/60">
@@ -207,8 +207,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation, durchgehend linksbündig. */}
-          <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
+          {/* Zweite Spalte: die Navigation, durchgehend linksbündig, aber
+              ab sm in der rechten Spalte. */}
+          <nav aria-label="Hauptnavigation" className="order-1 sm:order-2">
             <ul className="flex flex-col">
               {navigation.map((item, idx) => (
                 <li
