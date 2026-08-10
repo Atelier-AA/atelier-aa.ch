@@ -187,13 +187,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation. Alle Punkte bewusst exakt gleich
-              gross (Kundenwunsch) — vorher gab es drei Grössenstufen mit zu
-              grossem Sprung zwischen gross und klein. Die Grösse ist der
-              Mittelwert der früheren grössten und der früheren mittleren
-              Stufe (nicht der winzigen Team-Unterzeile). Das `stufe`-Feld an
-              NavLink bleibt im Datenmodell erhalten, wird hier aber nicht
-              mehr zur Grössensteuerung verwendet. */}
+          {/* Zweite Spalte: die Navigation. Zwei Grössen (Kundenwunsch,
+              zweiter Anlauf): Projekte und Büro (stufe 1) bleiben auf der
+              vorherigen einheitlichen Grösse (1.35rem/2.15rem). Die übrigen
+              Punkte bekommen eine neue, kleinere Grösse — den Mittelwert aus
+              genau dieser Grösse und der Team-Unterzeile (1rem), also
+              1.175rem/1.575rem. Das `stufe`-Feld steuert wieder die Grösse,
+              aber mit einem viel kleineren Sprung als in der ersten Fassung. */}
           <nav aria-label="Hauptnavigation" className="order-1 lg:order-2">
             <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
@@ -205,7 +205,12 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block py-2.5 text-[1.35rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2.15rem]"
+                    className={cn(
+                      'block py-2.5 font-medium leading-tight transition-colors hover:text-white/70',
+                      item.stufe === 1
+                        ? 'text-[1.35rem] md:text-[2.15rem]'
+                        : 'text-[1.175rem] md:text-[1.575rem]'
+                    )}
                   >
                     {item.label}
                   </Link>

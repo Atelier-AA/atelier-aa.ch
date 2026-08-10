@@ -1,18 +1,18 @@
 import type { NavLink } from '@/types';
 
 // Reihenfolge und Beschriftung nach Kundenwunsch: Projekte, dann Kompetenzen
-// (vormals "Leistungen", zwischenzeitlich "Disziplinen"), dann Atelier
-// (vormals "Über uns"). Die Ziel-URLs bleiben unverändert (/leistungen,
-// /ueber-uns) — nur Label und Reihenfolge im Menü ändern sich.
+// (vormals "Leistungen", zwischenzeitlich "Disziplinen"), dann Büro (vormals
+// "Über uns", zwischenzeitlich "Atelier"). Die Ziel-URLs bleiben unverändert
+// (/leistungen, /ueber-uns) — nur Label und Reihenfolge im Menü ändern sich.
 //
-// Grössenstufen im Vollbild-Menü (siehe MobileMenu.tsx): Projekte und Atelier
+// Grössenstufen im Vollbild-Menü (siehe MobileMenu.tsx): Projekte und Büro
 // gleich gross als die beiden wichtigsten Punkte; die übrigen kleiner —
 // statt fünf/sechs gleich grosser Zeilen.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte', stufe: 1 },
   {
     href: '/ueber-uns',
-    label: 'Atelier',
+    label: 'Büro',
     stufe: 1,
     unterlink: { href: '/ueber-uns/team', label: 'Team' },
   },
