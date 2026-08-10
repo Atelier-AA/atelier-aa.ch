@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { navigation, footerLegal } from '@/data/navigation';
-import { firma } from '@/data/firma';
+import { firma, sozialeMedien } from '@/data/firma';
 import { cn } from '@/lib/utils';
 
 interface MobileMenuProps {
@@ -12,16 +12,12 @@ interface MobileMenuProps {
 }
 
 /**
- * Vollbild-Menü, für alle Bildschirmbreiten — im Stil von elindo.ch.
+ * Menü-Fläche, für alle Bildschirmbreiten.
  *
- * Eine dunkle Fläche fährt von der Kopfzeile nach unten über die Seite, wie
- * ein Rollo; danach steigen die Menüpunkte gestaffelt ein. Kontakt links,
- * Navigation rechts, damit sie auf derselben Seite steht wie der Burger, der
- * sie geöffnet hat.
- *
- * Bewusst kompakt gehalten: kleinere Schrift und engere Abstände als in
- * einer ersten Fassung, damit das Menü auf kleinen Bildschirmen ohne
- * Scrollen Platz hat.
+ * Die dunkle Fläche ist bewusst nicht bildschirmfüllend: Sie fährt von der
+ * Kopfzeile herunter und ist nur so hoch wie ihr Inhalt (Navigation, Kontakt,
+ * Soziale Medien, Rechtliches) — darunter bleibt die eigentliche Seite
+ * sichtbar, statt komplett schwarz zu werden.
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
@@ -118,31 +114,25 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     <div
       id="mobile-menu"
       ref={dialogRef}
-      className="fixed inset-0 z-40 overflow-hidden"
+      className="fixed inset-0 z-40 overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      {/* Die Fläche: steht bereits in voller Höhe da, nach oben aus dem Bild
-          geschoben, und fährt beim Öffnen an ihren Platz. */}
+      {/* Die Fläche selbst trägt den dunklen Hintergrund und ist nur so hoch
+          wie ihr Inhalt — kein voller Bildschirm mehr. Sie fährt von oben
+          (dort, wo die Kopfzeile sitzt) an ihren Platz. */}
       <div
-        aria-hidden="true"
         className={cn(
-          'absolute inset-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
+          'bg-ink pt-28 pb-12 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none md:pt-32 md:pb-16',
           ausgefahren ? 'translate-y-0' : '-translate-y-full'
         )}
-      />
-
-      <div className="relative flex h-full flex-col overflow-y-auto py-20">
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
-          {/* Kontakt und Rechtliches stehen jetzt unter der Navigation,
-              beide rechtsbündig auf derselben Seite — vorher stand der
-              Kontaktblock links neben der Navigation. */}
+      >
+        <div className="mx-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
+          {/* Kontakt, Soziale Medien und Rechtliches stehen unter der
+              Navigation, alle rechtsbündig auf derselben Seite. */}
           <div className="order-2 text-right">
             <div style={einstieg(navigation.length)} className={einstiegKlassen}>
-              {/* Kein eigener oberer Strich mehr — auf dem Handy steht direkt
-                  darüber schon der untere Strich des letzten Navigationspunkts,
-                  zwei Linien so kurz hintereinander sahen doppelt aus. */}
               <div className="pt-6">
                 <p className="text-xs uppercase tracking-widest text-white/60">
                   Kontakt
@@ -172,7 +162,34 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                 </p>
               </div>
 
-              <ul className="mt-6 flex flex-col">
+              <div className="mt-4 flex justify-end gap-4">
+                <a
+                  href={sozialeMedien.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
+                  aria-label="Atelier AA Architekten auf LinkedIn"
+                  className="text-white/60 transition-colors hover:text-white"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a
+                  href={sozialeMedien.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
+                  aria-label="Atelier AA Architekten auf Instagram"
+                  className="text-white/60 transition-colors hover:text-white"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+
+              <ul className="mt-5 flex flex-col">
                 {footerLegal.map((item) => (
                   <li key={item.href}>
                     <Link
@@ -188,30 +205,17 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Zweite Spalte: die Navigation. Zwei Grössen (Kundenwunsch,
-              zweiter Anlauf): Projekte und Büro (stufe 1) bleiben auf der
-              vorherigen einheitlichen Grösse (1.35rem/2.15rem). Die übrigen
-              Punkte bekommen eine neue, kleinere Grösse — den Mittelwert aus
-              genau dieser Grösse und der Team-Unterzeile (1rem), also
-              1.175rem/1.575rem. Das `stufe`-Feld steuert wieder die Grösse,
-              aber mit einem viel kleineren Sprung als in der ersten Fassung. */}
+          {/* Alle Hauptpunkte in derselben Grösse und Stärke — der Kunde
+              wollte weder unterschiedliche Grössen noch Trennstriche
+              zwischen den Zeilen. */}
           <nav aria-label="Hauptnavigation" className="order-1">
             <ul className="flex flex-col text-right">
               {navigation.map((item, idx) => (
-                <li
-                  key={item.href}
-                  style={einstieg(idx)}
-                  className={cn('border-b border-white/10', einstiegKlassen)}
-                >
+                <li key={item.href} style={einstieg(idx)} className={einstiegKlassen}>
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={cn(
-                      'block py-2.5 font-medium leading-tight transition-colors hover:text-white/70',
-                      item.stufe === 1
-                        ? 'text-[1.35rem] md:text-[2.15rem]'
-                        : 'text-[1.175rem] md:text-[1.575rem]'
-                    )}
+                    className="block py-1.5 text-[1.4rem] font-medium leading-tight transition-colors hover:text-white/70 md:text-[2rem]"
                   >
                     {item.label}
                   </Link>
@@ -219,7 +223,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     <Link
                       href={item.unterlink.href}
                       onClick={onClose}
-                      className="block pb-3 text-[1.175rem] font-medium leading-tight text-white/60 transition-colors hover:text-white md:text-[1.575rem]"
+                      className="block pb-2 text-sm font-medium leading-tight text-white/60 transition-colors hover:text-white md:text-base"
                     >
                       {item.unterlink.label}
                     </Link>

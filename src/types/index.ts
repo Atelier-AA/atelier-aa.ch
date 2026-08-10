@@ -120,8 +120,6 @@ export interface TeamMember {
 export interface NavLink {
   href: string;
   label: string;
-  /** Grössenstufe im Vollbild-Menü: 1 = grösster Punkt, 3 = kleinster. Ohne Angabe: 2. */
-  stufe?: 1 | 2 | 3;
   /** Einzelner Unterpunkt im Vollbild-Menü, kleiner dargestellt direkt unter diesem Eintrag. */
   unterlink?: { href: string; label: string };
 }

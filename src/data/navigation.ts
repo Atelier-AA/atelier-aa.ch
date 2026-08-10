@@ -5,21 +5,19 @@ import type { NavLink } from '@/types';
 // "Über uns", zwischenzeitlich "Atelier"). Die Ziel-URLs bleiben unverändert
 // (/leistungen, /ueber-uns) — nur Label und Reihenfolge im Menü ändern sich.
 //
-// Grössenstufen im Vollbild-Menü (siehe MobileMenu.tsx): Projekte und Büro
-// gleich gross als die beiden wichtigsten Punkte; die übrigen kleiner —
-// statt fünf/sechs gleich grosser Zeilen.
+// Im Vollbild-Menü (siehe MobileMenu.tsx) sind alle Punkte gleich gross —
+// unterschiedliche Grössenstufen wurden vom Kunden ausdrücklich abgelehnt.
 export const navigation: NavLink[] = [
-  { href: '/projekte', label: 'Projekte', stufe: 1 },
+  { href: '/projekte', label: 'Projekte' },
   {
     href: '/ueber-uns',
     label: 'Büro',
-    stufe: 1,
     unterlink: { href: '/ueber-uns/team', label: 'Team' },
   },
-  { href: '/leistungen', label: 'Kompetenzen', stufe: 3 },
-  { href: '/studien', label: 'Studien', stufe: 3 },
-  { href: '/insights', label: 'Insights', stufe: 3 },
-  { href: '/kontakt', label: 'Kontakt', stufe: 3 },
+  { href: '/leistungen', label: 'Kompetenzen' },
+  { href: '/studien', label: 'Studien' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/kontakt', label: 'Kontakt' },
 ];
 
 // Nicht im Hauptmenü, nur im Footer verlinkt.

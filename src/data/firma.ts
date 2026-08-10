@@ -46,3 +46,9 @@ export const firma = {
   /** Gründung gemäss Handelsregister. */
   gruendung: '2021',
 } as const;
+
+/** Vom Kunden direkt bestätigt (2026-08-10). */
+export const sozialeMedien = {
+  linkedin: 'https://www.linkedin.com/company/atelier-aa-arichtekten/',
+  instagram: 'https://www.instagram.com/atelieraa/',
+} as const;
