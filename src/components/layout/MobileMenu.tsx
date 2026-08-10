@@ -9,25 +9,45 @@ import { cn } from '@/lib/utils';
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
+  /** Verweis auf "Projekte" in der Kopfzeile — das Menü misst dessen linke
+   *  Kante und richtet seine eigene linke Kante exakt daran aus. */
+  ausrichtungRef: React.RefObject<HTMLAnchorElement | null>;
 }
 
 /**
  * Menü-Fläche, für alle Bildschirmbreiten.
  *
- * Die dunkle Fläche ist über die ganze Höhe, beginnt links aber erst auf
- * Höhe der Kopfzeilen-Navigation (dieselbe Einrückung wie "Projekte" im
- * Header) statt am echten Bildschirmrand — links davor bleibt ein schmaler
- * Streifen der eigentlichen Seite sichtbar.
+ * Die dunkle Fläche deckt nicht den ganzen Bildschirm ab: Sie ist über die
+ * ganze Höhe, aber nur so breit wie der Bereich rechts von "Projekte" in der
+ * Kopfzeile — links davon bleibt die eigentliche Seite sichtbar. Die Breite
+ * wird per JavaScript aus der tatsächlichen Position von "Projekte" berechnet
+ * (nicht per fester Tailwind-Klasse), damit es bei jeder Fensterbreite exakt
+ * passt. Ist "Projekte" nicht sichtbar (sehr schmaler Bildschirm, dort ist
+ * die Kopfzeilen-Kurznavigation ausgeblendet), deckt das Menü die volle
+ * Breite ab.
  */
-export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
    *  Schliessen noch nach oben fahren kann, bevor sie verschwindet. */
   const [imDom, setImDom] = useState(open);
   /** Ob die Fläche unten steht — steuert die Verschiebung. */
   const [ausgefahren, setAusgefahren] = useState(false);
+  /** Linke Kante der Fläche in Pixeln, gemessen an "Projekte" im Header;
+   *  `null` solange nicht gemessen oder "Projekte" nicht sichtbar. */
+  const [linkeKante, setLinkeKante] = useState<number | null>(null);
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const vorherFokussiert = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const messen = () => {
+      const rect = ausrichtungRef.current?.getBoundingClientRect();
+      setLinkeKante(rect && rect.width > 0 ? rect.left : null);
+    };
+    messen();
+    window.addEventListener('resize', messen);
+    return () => window.removeEventListener('resize', messen);
+  }, [ausrichtungRef]);
 
   useEffect(() => {
     if (open) {
@@ -119,13 +139,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      {/* Die Fläche: volle Höhe, aber links erst ab dem Raster der
-          Kopfzeile — dieselbe Einrückung wie "Projekte" im Header
-          (px-6/md:px-10/lg:px-16, wie bei Container.tsx). Sie fährt von
-          oben nach unten an ihren Platz. */}
+      {/* Die Fläche: volle Höhe, aber links erst an der exakt gemessenen
+          Position von "Projekte" im Header (siehe `linkeKante` oben). Sie
+          fährt von oben nach unten an ihren Platz. */}
       <div
+        style={{ left: linkeKante ?? 0 }}
         className={cn(
-          'absolute inset-y-0 right-0 left-6 flex flex-col overflow-y-auto bg-ink py-20 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none md:left-10 lg:left-16',
+          'absolute inset-y-0 right-0 flex flex-col overflow-y-auto bg-ink py-20 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
           ausgefahren ? 'translate-y-0' : '-translate-y-full'
         )}
       >

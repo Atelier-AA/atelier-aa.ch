@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Container from '@/components/ui/Container';
@@ -13,6 +13,9 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
+  /** Position von "Projekte" in der Kopfzeile — das Menü richtet seine
+   *  linke Kante daran aus, siehe MobileMenu.tsx. */
+  const projekteRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     // Schwelle 50px wie im alten Theme (header.php: `window.scrollY > 50`).
@@ -84,7 +87,11 @@ export default function Header() {
               aria-label="Kurznavigation"
               className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
             >
-              <Link href="/projekte" className="transition-opacity hover:opacity-60">
+              <Link
+                ref={projekteRef}
+                href="/projekte"
+                className="transition-opacity hover:opacity-60"
+              >
                 Projekte
               </Link>
               <Link href="/kontakt" className="transition-opacity hover:opacity-60">
@@ -128,7 +135,11 @@ export default function Header() {
           </div>
         </Container>
       </header>
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileMenu
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        ausrichtungRef={projekteRef}
+      />
     </>
   );
 }
