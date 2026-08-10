@@ -189,7 +189,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   </Link>
                 </div>
 
-                <p className="text-[15px] leading-[1.7] text-[#9a9a9a]">
+                <p className="text-[15px] leading-[1.7] text-[#f2f0ed]">
                   {firma.name}
                   <br />
                   {firma.strasse}
@@ -227,7 +227,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   </div>
                 </div>
 
-                <div className="flex gap-7 border-t border-[#2e2e2e] pt-[22px] text-[11px] tracking-[2px] text-[#9a9a9a]">
+                <div className="flex flex-col gap-2 border-t border-[#2e2e2e] pt-[22px] text-[11px] tracking-[2px] text-[#9a9a9a]">
                   {footerLegal.map((item) => (
                     <Link
                       key={item.href}
