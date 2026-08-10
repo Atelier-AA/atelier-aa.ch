@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function UeberUnsPage() {
   return (
     <>
-      <div className="pt-24 md:pt-28">
+      <div className="pt-24 pb-20 md:pb-28 md:pt-28">
         <Container className="mt-16 md:mt-24">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
             <div>

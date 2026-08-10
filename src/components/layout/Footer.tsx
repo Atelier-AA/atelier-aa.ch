@@ -11,6 +11,12 @@ import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
  * Kontakt und Navigation in einem einzigen Block, statt in gestapelten,
  * durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile am Ende ist
  * durch eine feine Linie abgesetzt.
+ *
+ * Bewusst ohne eigenen oberen Aussenabstand: Jede Seite bringt ihren
+ * Abstand zum Seitenende schon selbst mit (üblich: `pb-20 md:pb-28`).
+ * Ein zusätzlicher Abstand hier war unsichtbar auf weissem Grund, erzeugte
+ * aber eine störende weisse Lücke, sobald der letzte Seitenabschnitt eine
+ * eigene Hintergrundfarbe hatte (z. B. die Karriere-Box auf /ueber-uns).
  */
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,7 +26,7 @@ export default function Footer() {
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white';
 
   return (
-    <footer className="mt-24 bg-ink text-white">
+    <footer className="bg-ink text-white">
       <Container className="py-10 md:py-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16">
           <div className="max-w-md">
