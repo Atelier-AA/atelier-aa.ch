@@ -142,8 +142,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           className="object-cover opacity-40"
           priority={false}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/40" />
-        <div className="absolute inset-0 bg-ink/30" />
+        {/* Bis zur Mitte deckend, danach nach rechts durchscheinender. */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, #111111 50%, rgba(17,17,17,0) 100%)' }}
+        />
       </div>
 
       <div className="relative flex h-full flex-col overflow-y-auto py-20">
@@ -242,7 +245,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="flex items-center justify-between gap-6 py-5 text-[2.25rem] font-light leading-tight transition-colors hover:text-white/70 md:text-[3.25rem]"
+                    className="flex items-center justify-between gap-6 py-5 text-[1.8rem] font-light leading-tight transition-colors hover:text-white/70 md:text-[2.6rem]"
                   >
                     {item.label}
                     <svg
@@ -250,7 +253,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.25"
-                      className="h-6 w-6 shrink-0 opacity-70 md:h-8 md:w-8"
+                      className="h-[1.2rem] w-[1.2rem] shrink-0 opacity-70 md:h-[1.6rem] md:w-[1.6rem]"
                       aria-hidden="true"
                     >
                       <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -260,7 +263,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     <Link
                       href={item.unterlink.href}
                       onClick={onClose}
-                      className="mb-4 block text-base text-white/60 transition-colors hover:text-white"
+                      className="mb-4 block text-[1.8rem] font-light leading-tight text-white/60 transition-colors hover:text-white md:text-[2.6rem]"
                     >
                       {item.unterlink.label}
                     </Link>
