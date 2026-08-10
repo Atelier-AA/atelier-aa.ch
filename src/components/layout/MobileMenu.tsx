@@ -158,10 +158,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               Navigation, ab lg davor. */}
           <div className="order-2 flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-1 lg:border-t-0 lg:pt-0">
             <div
-              className={cn(
-                'w-full max-w-[400px] rounded-[24px] bg-[#161616] px-8 py-8 lg:px-12 lg:py-11',
-                karteKlassen
-              )}
+              className={cn('w-full max-w-[400px] px-8 py-8 lg:px-12 lg:py-11', karteKlassen)}
             >
               <div className="flex flex-col gap-7">
                 <p className="text-2xl font-semibold text-[#c7c5c0]">Kontakt</p>
