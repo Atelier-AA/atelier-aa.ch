@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <Container className="py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto_auto] lg:gap-12">
           <div className="max-w-md">
             <div className="mb-6 h-[35px] text-white md:h-[40px]">
               <Logo />
@@ -73,6 +73,12 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={spaltenTitel}>Weitere Seiten</h3>
+            <ul>
               {footerZusatz.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={verweis}>
