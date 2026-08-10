@@ -154,8 +154,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         )}
       >
         <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12">
-          {/* Kontakt-Karte, vertikal zentriert. */}
-          <div className="flex flex-1 items-center lg:order-1">
+          {/* Kontakt-Karte, vertikal zentriert. Auf dem Handy nach der
+              Navigation, ab lg davor. */}
+          <div className="order-2 flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-1 lg:border-t-0 lg:pt-0">
             <div
               className={cn(
                 'w-full max-w-[400px] rounded-[24px] bg-[#161616] px-8 py-8 lg:px-12 lg:py-11',
@@ -243,10 +244,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </div>
           </div>
 
-          {/* Navigationsliste, vertikal zentriert, mit Trennlinie zur Karte. */}
+          {/* Navigationsliste, vertikal zentriert. Auf dem Handy zuerst,
+              Trennlinie zur Kontakt-Karte sitzt dort an deren Oberkante. */}
           <nav
             aria-label="Hauptnavigation"
-            className="flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-2 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-20"
+            className="order-1 flex flex-1 items-center lg:order-2 lg:border-l lg:border-[#262626] lg:pl-20"
           >
             <ul className="flex w-full flex-col">
               {navigationsZeilen.map((item, idx) => (
