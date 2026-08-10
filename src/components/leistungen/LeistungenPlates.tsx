@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { kompetenzen } from '@/data/expertise';
 import { planArtReihenfolge } from './PlanArt';
 import { cn } from '@/lib/utils';
@@ -20,13 +21,14 @@ interface PlateProps {
   titel: string;
   punkte: string[];
   text: string;
+  links?: { label: string; href: string }[];
 }
 
 /**
  * Eine Kompetenz als vollflächiges 50/50-Blatt: Skizze links oder rechts,
  * Punkte und Einordnungstext auf der anderen Seite, im Wechsel weiss/nebel.
  */
-function Plate({ index, titel, punkte, text }: PlateProps) {
+function Plate({ index, titel, punkte, text, links }: PlateProps) {
   const gerade = index % 2 === 0;
   const Art = planArtReihenfolge[index];
 
@@ -69,6 +71,20 @@ function Plate({ index, titel, punkte, text }: PlateProps) {
           ))}
         </ul>
         <p className="max-w-[48ch] leading-relaxed text-graphite">{text}</p>
+        {links && links.length > 0 && (
+          <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-sm text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+                >
+                  {l.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
@@ -83,7 +99,14 @@ export default function LeistungenPlates() {
   return (
     <div>
       {kompetenzen.map((k, index) => (
-        <Plate key={k.titel} index={index} titel={k.titel} punkte={k.punkte} text={k.text} />
+        <Plate
+          key={k.titel}
+          index={index}
+          titel={k.titel}
+          punkte={k.punkte}
+          text={k.text}
+          links={k.links}
+        />
       ))}
     </div>
   );

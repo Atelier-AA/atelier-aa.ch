@@ -1,24 +1,39 @@
+import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import TeamGrid from '@/components/ueber-uns/TeamGrid';
 import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
 import { team } from '@/data/team';
+import { breadcrumbSchema } from '@/lib/schema';
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: 'Team',
+  description:
+    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH — geführt von Aljili Aljisami.',
+  alternates: { canonical: '/ueber-uns/team' },
+};
 
 /**
- * Vorschau D3, Teil 2: reine Team-Seite, losgelöst von der Firmenphilosophie
- * auf /vorschau/ueber-uns-firma.
+ * Reine Team-Seite, losgelöst von der Firmenphilosophie auf /ueber-uns.
+ * Die Karriere-CTA (OffeneStellen) steht hier statt auf der Firmenseite,
+ * weil sie sich an Menschen richtet, die zum Team dazustossen möchten.
  */
-export default function UeberUnsTeamVorschau() {
+export default function TeamPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: 'Über uns', pfad: '/ueber-uns' },
+    { name: 'Team', pfad: '/ueber-uns/team' },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <div className="pt-24 md:pt-28">
-        <Container>
-          <div className="mb-10 bg-ink px-6 py-3 text-center text-sm text-white">
-            Vorschau D3 (2/2, überarbeitet) — Team-Seite mit kurzem Einleitungstext (nicht die Live-Seite)
-          </div>
+        <Container className="mt-16 md:mt-24">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Team</p>
-          <h1 className="mb-6 max-w-2xl text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl">
+          <h1 className="mb-6 max-w-2xl text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
             Die Menschen hinter <span className="font-semibold">Atelier AA.</span>
           </h1>
           <p className="mb-14 max-w-xl text-lg leading-relaxed text-graphite">
@@ -32,6 +47,7 @@ export default function UeberUnsTeamVorschau() {
           </div>
         </Container>
       </div>
+
       <div className="mt-16 md:mt-20">
         <OffeneStellen />
       </div>

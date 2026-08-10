@@ -1,11 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
+import { breadcrumbSchema } from '@/lib/schema';
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: 'Machbarkeitsstudie',
+  description:
+    'Machbarkeitsstudie von Atelier AA Architekten GmbH: Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen — die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
+  alternates: { canonical: '/leistungen/machbarkeitsstudie' },
+};
 
 const enthalten = [
   'Zonenkonformität und Bauordnung',
@@ -64,21 +71,44 @@ const fragen = [
   },
 ];
 
-/**
- * Vorschau (final, nach Feedback): Struktur von Variante A, ergänzt um die
- * "Was die Studie enthält"-Liste aus Variante B. Als Unterseite von
- * /leistungen gedacht (nicht im Hauptmenü) — Machbarkeitsstudie ist ein
- * Teil der Arbeit, aber nicht die Hauptleistung. Der "← Kompetenzen"-Link
- * oben zeigt, wie die Einordnung ins Untermenü aussehen würde.
- */
-export default function MachbarkeitsstudieVorschau() {
-  return (
-    <div className="pt-24 pb-20 md:pt-28 md:pb-28">
-      <Container>
-        <div className="mb-10 bg-ink px-6 py-3 text-center text-sm text-white">
-          Vorschau (final) — Machbarkeitsstudie als Unterseite von /leistungen (nicht die Live-Seite)
-        </div>
+export default function MachbarkeitsstudiePage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': 'https://www.atelier-aa.ch/leistungen/machbarkeitsstudie#service',
+        name: 'Machbarkeitsstudie',
+        provider: { '@id': 'https://www.atelier-aa.ch/#organisation' },
+        areaServed: ['Zürich', 'Aargau', 'Zug'],
+        description:
+          'Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen — die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://www.atelier-aa.ch/leistungen/machbarkeitsstudie#faq',
+        inLanguage: 'de-CH',
+        mainEntity: fragen.map((f) => ({
+          '@type': 'Question',
+          name: f.frage,
+          acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+        })),
+      },
+      breadcrumbSchema([
+        { name: 'Startseite', pfad: '/' },
+        { name: 'Kompetenzen', pfad: '/leistungen' },
+        { name: 'Machbarkeitsstudie', pfad: '/leistungen/machbarkeitsstudie' },
+      ]),
+    ],
+  };
 
+  return (
+    <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <Container>
         <div className="max-w-2xl">
           <Link
             href="/leistungen"
@@ -120,9 +150,7 @@ export default function MachbarkeitsstudieVorschau() {
         </div>
 
         <div className="mt-20 border-t border-mist pt-16 md:mt-28">
-          <p className="mb-10 text-xs uppercase tracking-widest text-stone">
-            Ablauf
-          </p>
+          <p className="mb-10 text-xs uppercase tracking-widest text-stone">Ablauf</p>
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
             {schritte.map((s) => (
               <div key={s.nummer}>
@@ -135,9 +163,7 @@ export default function MachbarkeitsstudieVorschau() {
         </div>
 
         <div className="mt-20 border-t border-mist pt-16 md:mt-28">
-          <p className="mb-10 text-xs uppercase tracking-widest text-stone">
-            Beispiele
-          </p>
+          <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
           <StudienGrid studien={studien.slice(0, 3)} />
         </div>
 

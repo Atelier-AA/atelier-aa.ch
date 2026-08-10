@@ -36,6 +36,10 @@ export const kompetenzen = [
       'Planungsinstrumente: Simulation und Modell',
     ],
     text: 'In dieser Phase entsteht die Grundlage jeder Entscheidung: Wir prüfen Potenzial und Machbarkeit, bevor Ressourcen in die Ausführung fliessen.',
+    links: [
+      { label: 'Machbarkeitsstudie im Detail', href: '/leistungen/machbarkeitsstudie' },
+      { label: 'Projektentwicklung im Detail', href: '/leistungen/projektentwicklung' },
+    ],
   },
   {
     titel: 'Planung und Koordination',

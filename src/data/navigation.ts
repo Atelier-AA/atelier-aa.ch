@@ -19,6 +19,8 @@ export const navigation: NavLink[] = [
 
 // Nicht im Hauptmenü, nur im Footer verlinkt.
 export const footerZusatz: NavLink[] = [
+  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
+  { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
 ];
 

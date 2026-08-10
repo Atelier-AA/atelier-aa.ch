@@ -61,6 +61,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
   const breadcrumb = breadcrumbSchema([
     { name: 'Startseite', pfad: '/' },
     { name: 'Über uns', pfad: '/ueber-uns' },
+    { name: 'Team', pfad: '/ueber-uns/team' },
     { name: person.name, pfad: `/ueber-uns/${person.slug}` },
   ]);
 
@@ -78,7 +79,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       <div className="pt-32 md:pt-40">
         <Container>
           <Link
-            href="/ueber-uns"
+            href="/ueber-uns/team"
             className="text-xs uppercase tracking-widest text-stone transition-colors hover:text-ink"
           >
             Team
