@@ -14,10 +14,10 @@ interface MobileMenuProps {
 /**
  * Menü-Fläche, für alle Bildschirmbreiten.
  *
- * Die dunkle Fläche ist bewusst nicht bildschirmfüllend: Sie fährt von der
- * Kopfzeile herunter und ist nur so hoch wie ihr Inhalt (Navigation, Kontakt,
- * Soziale Medien, Rechtliches) — darunter bleibt die eigentliche Seite
- * sichtbar, statt komplett schwarz zu werden.
+ * Die dunkle Fläche ist über die ganze Höhe, beginnt links aber erst auf
+ * Höhe der Kopfzeilen-Navigation (dieselbe Einrückung wie "Projekte" im
+ * Header) statt am echten Bildschirmrand — links davor bleibt ein schmaler
+ * Streifen der eigentlichen Seite sichtbar.
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
@@ -114,21 +114,22 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     <div
       id="mobile-menu"
       ref={dialogRef}
-      className="fixed inset-0 z-40 overflow-y-auto"
+      className="fixed inset-0 z-40 overflow-hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Hauptnavigation"
     >
-      {/* Die Fläche selbst trägt den dunklen Hintergrund und ist nur so hoch
-          wie ihr Inhalt — kein voller Bildschirm mehr. Sie fährt von oben
-          (dort, wo die Kopfzeile sitzt) an ihren Platz. */}
+      {/* Die Fläche: volle Höhe, aber links erst ab dem Raster der
+          Kopfzeile — dieselbe Einrückung wie "Projekte" im Header
+          (px-6/md:px-10/lg:px-16, wie bei Container.tsx). Sie fährt von
+          oben nach unten an ihren Platz. */}
       <div
         className={cn(
-          'bg-ink pt-28 pb-12 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none md:pt-32 md:pb-16',
+          'absolute inset-y-0 right-0 left-6 flex flex-col overflow-y-auto bg-ink py-20 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none md:left-10 lg:left-16',
           ausgefahren ? 'translate-y-0' : '-translate-y-full'
         )}
       >
-        <div className="mx-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-y-8 px-6 text-white md:px-10 lg:px-16">
           {/* Kontakt, Soziale Medien und Rechtliches stehen unter der
               Navigation, alle rechtsbündig auf derselben Seite. */}
           <div className="order-2 text-right">
