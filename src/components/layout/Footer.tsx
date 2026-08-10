@@ -77,7 +77,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Weitere Seiten</h3>
+            {/* Ohne eigenen Titel — die Links sind auch ohne Überschrift
+                verständlich; die leere Zeile hält die Liste auf gleicher
+                Höhe wie die benachbarten Spalten mit Titel. */}
+            <div className="mb-6 h-4" aria-hidden="true" />
             <ul>
               {footerZusatz.map((item) => (
                 <li key={item.href}>
