@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import TeamMember from '@/components/ueber-uns/TeamMember';
 import { team, getTeamMember } from '@/data/team';
 import { firma } from '@/data/firma';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -57,11 +58,21 @@ export default async function TeamMemberPage({ params }: PageProps) {
     ...(person.email ? { email: person.email } : {}),
   };
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: 'Über uns', pfad: '/ueber-uns' },
+    { name: person.name, pfad: `/ueber-uns/${person.slug}` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
       <div className="pt-32 md:pt-40">

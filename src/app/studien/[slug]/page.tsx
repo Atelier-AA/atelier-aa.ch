@@ -5,6 +5,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { studien, getStudie } from '@/data/studien';
 import { ortMitKanton } from '@/lib/utils';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,8 +44,18 @@ export default async function StudieDetailPage({ params }: PageProps) {
       : null,
   ].filter((b): b is { src: string; titel: string } => Boolean(b));
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: 'Studien', pfad: '/studien' },
+    { name: titel, pfad: `/studien/${studie.slug}` },
+  ]);
+
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Container>
         <div className="grid grid-cols-1 gap-10 border-b border-mist pb-16 lg:grid-cols-2 lg:gap-20 lg:pb-20">
           <div>

@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { alleKantone, getOrtBySlug, orteInKanton } from '@/lib/regionen';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ kanton: string; ort: string }>;
@@ -47,8 +48,18 @@ export default async function OrtPage({ params }: PageProps) {
   const mehrere = ort.projekte.length > 1;
   const hatProjekte = ort.projekte.length > 0;
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: `Kanton ${kanton.name}`, pfad: `/regionen/${kanton.slug}` },
+    { name: ort.ort, pfad: `/regionen/${kanton.slug}/${ort.slug}` },
+  ]);
+
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Container>
         <div className="mb-16 max-w-3xl md:mb-24">
           <Link

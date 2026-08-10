@@ -7,6 +7,7 @@ import FragenAntworten from '@/components/insights/FragenAntworten';
 import InsightCard from '@/components/insights/InsightCard';
 import { insights, getInsight, getWeitereInsights } from '@/data/insights';
 import { formatDatum } from '@/lib/utils';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -83,6 +84,11 @@ export default async function InsightDetailPage({ params }: PageProps) {
           acceptedAnswer: { '@type': 'Answer', text: f.antwort },
         })),
       },
+      breadcrumbSchema([
+        { name: 'Startseite', pfad: '/' },
+        { name: 'Insights', pfad: '/insights' },
+        { name: insight.titel, pfad: `/insights/${insight.slug}` },
+      ]),
     ],
   };
 

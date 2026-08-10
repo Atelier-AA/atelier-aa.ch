@@ -10,6 +10,7 @@ import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -100,6 +101,11 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           acceptedAnswer: { '@type': 'Answer', text: f.antwort },
         })),
       },
+      breadcrumbSchema([
+        { name: 'Startseite', pfad: '/' },
+        { name: 'Projekte', pfad: '/projekte' },
+        { name: projekt.title, pfad: `/referenzen/${projekt.slug}` },
+      ]),
     ],
   };
 

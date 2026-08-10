@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { alleKantone, getKantonBySlug, orteInKanton } from '@/lib/regionen';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ kanton: string }>;
@@ -35,8 +36,17 @@ export default async function KantonPage({ params }: PageProps) {
 
   const orte = orteInKanton(kanton.kuerzel);
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: `Kanton ${kanton.name}`, pfad: `/regionen/${kanton.slug}` },
+  ]);
+
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Container>
         <div className="mb-16 max-w-3xl md:mb-24">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Einsatzgebiet</p>

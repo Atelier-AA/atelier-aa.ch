@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import { kleinprojekte, getKleinprojekt } from '@/data/kleinprojekte';
+import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -30,8 +31,18 @@ export default async function KleinprojektDetailPage({ params }: PageProps) {
 
   const titel = projekt.strasse ? `${projekt.ort}, ${projekt.strasse}` : projekt.ort;
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Startseite', pfad: '/' },
+    { name: 'Kleinprojekte', pfad: '/kleinprojekte' },
+    { name: titel, pfad: `/kleinprojekte/${projekt.slug}` },
+  ]);
+
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
           <div>

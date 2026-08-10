@@ -114,8 +114,12 @@ export default function HeroSlider() {
           {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
               px-6/md:px-10/lg:px-16). Vorschau: normale Gross-/Kleinschreibung
               statt Versalien. */}
+          {/* Leerzeichen als eigene Textnode zwischen den beiden Blöcken:
+              visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
+              dieses Leerzeichen verschmilzt roher Text (Screenreader,
+              Crawler ohne CSS-Rendering) zu "Verantwortungsvollgeplant". */}
           <h1 className="text-left text-[1.65rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.4rem] lg:text-[3.6rem]">
-            <span className="block whitespace-nowrap">Verantwortungsvoll</span>
+            <span className="block whitespace-nowrap">Verantwortungsvoll</span>{' '}
             <span className="block whitespace-nowrap">geplant, gemeinsam gebaut.</span>
           </h1>
 
