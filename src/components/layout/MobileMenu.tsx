@@ -218,7 +218,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     <Link
                       href={item.unterlink.href}
                       onClick={onClose}
-                      className="block pb-3 text-base uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white"
+                      className="block pb-3 text-[1.175rem] uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-white md:text-[1.575rem]"
                     >
                       {item.unterlink.label}
                     </Link>
