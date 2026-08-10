@@ -33,7 +33,16 @@ export const projekte: Projekt[] = [
     ],
     beschreibung:
       'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten. Die Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber, verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Die Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber, verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Neubau' },
       { label: 'Geschosse', wert: '2 Vollgeschosse, Dachgeschoss, Untergeschoss' },
@@ -101,7 +110,16 @@ export const projekte: Projekt[] = [
     ],
     beschreibung:
       'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone. Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach — der Betrieb ist fossilfrei.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach — der Betrieb ist fossilfrei.'],
+      },
+    ],
     daten: [
       { label: 'Lage', wert: 'Alte Poststrasse, Untersiggenthal' },
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
@@ -163,7 +181,16 @@ export const projekte: Projekt[] = [
     ],
     beschreibung:
       'Zwei Mehrfamilienhäuser als Ensemble in Adliswil (ZH), auf zwei ursprünglich getrennt geplanten Nachbarparzellen. Gemeinsam entwickelt entsteht statt zweier Restflächen ein zusammenhängender Hof; auch Erschliessung, Einstellhalle und Werkleitungen wurden zusammengelegt, was die Erstellungskosten senkte. Die Fassaden sind in dunklen, grossformatigen Platten ausgeführt, mit integriertem Lamellenstore als Sonnenschutz. Als Renditeobjekt geplant, mit marktgerechten Mietzinsen und nicht tragenden, versetzbaren Wohnungstrennwänden.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Zwei Mehrfamilienhäuser als Ensemble in Adliswil (ZH), auf zwei ursprünglich getrennt geplanten Nachbarparzellen.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Gemeinsam entwickelt entsteht statt zweier Restflächen ein zusammenhängender Hof; auch Erschliessung, Einstellhalle und Werkleitungen wurden zusammengelegt, was die Erstellungskosten senkte. Die Fassaden sind in dunklen, grossformatigen Platten ausgeführt, mit integriertem Lamellenstore als Sonnenschutz. Als Renditeobjekt geplant, mit marktgerechten Mietzinsen und nicht tragenden, versetzbaren Wohnungstrennwänden.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Zwei Mehrfamilienhäuser' },
       { label: 'Bauweise', wert: 'Massivbau, Plattenfassade' },
@@ -220,7 +247,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Mehrfamilienhaus am Hang in Künten (AG): Das Volumen ist in drei Stufen gegliedert, die dem abfallenden Gelände folgen und jeder Wohnung Terrasse und Aussicht geben, bei minimalem Aushub. Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet — Putz, Holz, mineralische Farbtöne.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Mehrfamilienhaus am Hang in Künten (AG): Das Volumen ist in drei Stufen gegliedert, die dem abfallenden Gelände folgen und jeder Wohnung Terrasse und Aussicht geben, bei minimalem Aushub.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet — Putz, Holz, mineralische Farbtöne.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus am Hang' },
       { label: 'Besonderheit', wert: 'Gestaffelte Baukörper, Terrassen' },
@@ -279,7 +315,16 @@ export const projekte: Projekt[] = [
     ],
     beschreibung:
       'Umnutzung eines ehemaligen Bürogebäudes in Ottenbach (ZH) zu einem Mehrfamilienhaus mit acht Wohnungen. Die Kernsanierung führte die Bausubstanz bis auf den Rohbau zurück; Grundrisse, Haustechnik und Gebäudehülle wurden vollständig erneuert, während die bestehende Struktur erhalten blieb. Die auskragenden Balkone im Dachgeschoss verlangten eine anspruchsvolle konstruktive Lösung und prägen heute das Erscheinungsbild, wo zuvor ein geschlossenes Bürohaus stand. Wir haben das Projekt von der Machbarkeitsstudie bis zur Bauleitung durchgehend begleitet.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Umnutzung eines ehemaligen Bürogebäudes in Ottenbach (ZH) zu einem Mehrfamilienhaus mit acht Wohnungen.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Die Kernsanierung führte die Bausubstanz bis auf den Rohbau zurück; Grundrisse, Haustechnik und Gebäudehülle wurden vollständig erneuert, während die bestehende Struktur erhalten blieb. Die auskragenden Balkone im Dachgeschoss verlangten eine anspruchsvolle konstruktive Lösung und prägen heute das Erscheinungsbild, wo zuvor ein geschlossenes Bürohaus stand. Wir haben das Projekt von der Machbarkeitsstudie bis zur Bauleitung durchgehend begleitet.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Umnutzung eines Bürogebäudes' },
       { label: 'Wohnungen', wert: 'Acht Wohnungen' },
@@ -332,7 +377,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
       'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand. Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen — die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen — die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Sanierung und Erweiterung' },
       { label: 'Besonderheit', wert: 'Rahmenlose Verglasung, integrierte Beschattung' },
@@ -380,7 +434,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
       'Wohnbau mit klarer Ordnung in Glashütten (AG): Ein einfaches Raster setzt Fenster, Balkone und Wohnungstrennungen in ein ruhiges Verhältnis, mit begründeten Abweichungen als Akzent. Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund — mineralischer Putz, robuste Böden, langlebige Beschläge.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Wohnbau mit klarer Ordnung in Glashütten (AG): Ein einfaches Raster setzt Fenster, Balkone und Wohnungstrennungen in ein ruhiges Verhältnis, mit begründeten Abweichungen als Akzent.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund — mineralischer Putz, robuste Böden, langlebige Beschläge.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
       { label: 'Bauweise', wert: 'Massivbau, mineralischer Putz' },
@@ -432,7 +495,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Doppeleinfamilienhaus in Safenwil (AG) für einen Investor: Erd- und Obergeschoss bilden einen kompakten, kubischen Baukörper, ein zurückversetztes Attikageschoss mit Dachterrasse schliesst ihn nach oben ab. Die beiden Einheiten teilen sich eine Wand, treten aber als ein zusammenhängender Baukörper auf, mit je eigener Garage und Hauseingang. Die helle Putzfassade mit dunkel abgesetzten Fenstern öffnet sich gartenseitig zu einem gedeckten Sitzplatz; innen verbindet eine offene Treppe die hellen, offenen Wohnbereiche.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Doppeleinfamilienhaus in Safenwil (AG) für einen Investor: Erd- und Obergeschoss bilden einen kompakten, kubischen Baukörper, ein zurückversetztes Attikageschoss mit Dachterrasse schliesst ihn nach oben ab.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Die beiden Einheiten teilen sich eine Wand, treten aber als ein zusammenhängender Baukörper auf, mit je eigener Garage und Hauseingang. Die helle Putzfassade mit dunkel abgesetzten Fenstern öffnet sich gartenseitig zu einem gedeckten Sitzplatz; innen verbindet eine offene Treppe die hellen, offenen Wohnbereiche.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus' },
       { label: 'Bauherrschaft', wert: 'Investor' },
@@ -476,7 +548,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade. Zum Garten öffnen sich Balkone mit schlanken Metallgeländern über gedeckten Terrassen. Innen verbindet eine gewendelte Treppe den offenen, hell gehaltenen Wohn- und Essbereich mit den oberen Geschossen; eine grosse Schiebeverglasung stellt den Bezug zum Garten her.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Zum Garten öffnen sich Balkone mit schlanken Metallgeländern über gedeckten Terrassen. Innen verbindet eine gewendelte Treppe den offenen, hell gehaltenen Wohn- und Essbereich mit den oberen Geschossen; eine grosse Schiebeverglasung stellt den Bezug zum Garten her.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Reiheneinfamilienhäuser' },
       { label: 'Bauherrschaft', wert: 'Investor' },
@@ -524,7 +605,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch'],
     beschreibung:
       'Studie für ein zusätzliches, freistehendes Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess. Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert — die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Studie für ein zusätzliches, freistehendes Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert — die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Erweiterungsbau' },
       { label: 'Bauherrschaft', wert: 'Privater Bauherr' },
@@ -571,7 +661,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase — wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet. Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase — wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
       { label: 'Bauherrschaft', wert: 'Privater Bauherr, bei Kauf beraten' },
@@ -624,7 +723,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos (AG) für einen privaten Investor: Die Giebelseiten sind zu Zufahrt und Garten ausgerichtet, die Putzfassade in warmem Sandton, das Ziegeldach dunkelbraun, mit aussenliegenden Lamellenstoren für ein ruhiges Fassadenbild. Über der gedeckten Terrasse im Erdgeschoss schafft ein neuer Balkon zusätzlichen Aussenraum im Obergeschoss. Bei der Bauleitung haben wir die Investorenseite beratend begleitet.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Kernsanierung eines bestehenden Einfamilienhauses in Würenlos (AG) für einen privaten Investor: Die Giebelseiten sind zu Zufahrt und Garten ausgerichtet, die Putzfassade in warmem Sandton, das Ziegeldach dunkelbraun, mit aussenliegenden Lamellenstoren für ein ruhiges Fassadenbild.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Über der gedeckten Terrasse im Erdgeschoss schafft ein neuer Balkon zusätzlichen Aussenraum im Obergeschoss. Bei der Bauleitung haben wir die Investorenseite beratend begleitet.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung' },
       { label: 'Bauherrschaft', wert: 'Privater Investor' },
@@ -679,7 +787,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Kernsanierung und Erweiterung eines Einfamilienhauses in Rupperswil (AG): Die weiss verputzte Fassade verbindet einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbau, eingebettet zwischen traditionell gedeckten Nachbarhäusern. Innen bilden Küche, Ess- und Wohnbereich einen durchgehenden, hellen Raum mit Holzboden; eine offene Treppe verbindet die Geschosse, eine grosse Verglasung öffnet zum Sitzplatz im Garten. Die Bauleitung hat die Bauherrschaft nach Planungsabschluss selbst übernommen.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Kernsanierung und Erweiterung eines Einfamilienhauses in Rupperswil (AG): Die weiss verputzte Fassade verbindet einen giebelständigen Hauptbaukörper mit einem niedrigeren, flachdachigen Nebenbau, eingebettet zwischen traditionell gedeckten Nachbarhäusern.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Innen bilden Küche, Ess- und Wohnbereich einen durchgehenden, hellen Raum mit Holzboden; eine offene Treppe verbindet die Geschosse, eine grosse Verglasung öffnet zum Sitzplatz im Garten. Die Bauleitung hat die Bauherrschaft nach Planungsabschluss selbst übernommen.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung und Erweiterung' },
       { label: 'Bauleitung', wert: 'Durch die Bauherrschaft selbst' },
@@ -724,7 +841,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal (AG), aktuell in Ausführung. Der Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern nimmt die giebelständige Umgebung auf und übersetzt sie in drei Wohngeschosse über einem Untergeschoss, mit vertikaler Holzlattenfassade. Die Wohnungen gruppieren sich symmetrisch um ein zentrales Treppenhaus mit Lift, jede mit eigenem Balkon oder Terrasse. Wir haben das Projekt von der Machbarkeitsstudie bis zur Ausführungsplanung begleitet; realisiert wird es nun durch einen Generalunternehmer.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal (AG), aktuell in Ausführung.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Der Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern nimmt die giebelständige Umgebung auf und übersetzt sie in drei Wohngeschosse über einem Untergeschoss, mit vertikaler Holzlattenfassade. Die Wohnungen gruppieren sich symmetrisch um ein zentrales Treppenhaus mit Lift, jede mit eigenem Balkon oder Terrasse. Wir haben das Projekt von der Machbarkeitsstudie bis zur Ausführungsplanung begleitet; realisiert wird es nun durch einen Generalunternehmer.'],
+      },
+    ],
     daten: [
       { label: 'Lage', wert: 'Zelgi, Untersiggenthal' },
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
@@ -776,7 +902,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren — reduziert und kantig im gewachsenen, giebelständig geprägten Quartier. Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Eingang, ein Balkon mit dunklem Glasgeländer öffnet sich zur Gartenseite mit grossformatig gepflasterter Terrasse. Die Bauleitung haben wir beratend begleitet.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: ['Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren — reduziert und kantig im gewachsenen, giebelständig geprägten Quartier.'],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: ['Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Eingang, ein Balkon mit dunklem Glasgeländer öffnet sich zur Gartenseite mit grossformatig gepflasterter Terrasse. Die Bauleitung haben wir beratend begleitet.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Totalsanierung' },
       { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
@@ -821,7 +956,16 @@ export const projekte: Projekt[] = [
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
       'Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben — aktuell in Ausführung. Der Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss trägt ein durchgehendes, dunkles Ziegeldach mit einzelnen Dachflächenfenstern. Balkone auf schlanken, dunklen Stützen ziehen sich über alle Geschosse; im Erdgeschoss setzen sich die Aussenräume in gedeckten, bepflanzten Sitzplätzen fort.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: ['Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben — aktuell in Ausführung.'],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: ['Der Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss trägt ein durchgehendes, dunkles Ziegeldach mit einzelnen Dachflächenfenstern. Balkone auf schlanken, dunklen Stützen ziehen sich über alle Geschosse; im Erdgeschoss setzen sich die Aussenräume in gedeckten, bepflanzten Sitzplätzen fort.'],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
       { label: 'Geschosse', wert: '3 Vollgeschosse, ausgebautes Dachgeschoss' },

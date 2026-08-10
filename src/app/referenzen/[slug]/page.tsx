@@ -145,7 +145,13 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           <h1 className="mb-8 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
             {projekt.title}
           </h1>
-          <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
+          {/* Wenn Abschnitte vorhanden sind, enthalten sie bereits denselben
+              Text strukturiert mit Zwischenüberschriften — der kurze
+              Absatz hier würde ihn doppelt zeigen. `beschreibung` bleibt in
+              jedem Fall die Grundlage für Meta-Description und Schema.org. */}
+          {projekt.abschnitte.length === 0 && (
+            <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
+          )}
 
           <ProjektMeta kunde={projekt.kunde} />
 
