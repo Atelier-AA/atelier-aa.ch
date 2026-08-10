@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { navigation, footerLegal } from '@/data/navigation';
 import { firma, sozialeMedien } from '@/data/firma';
@@ -14,9 +15,10 @@ interface MobileMenuProps {
 /**
  * Vollbild-Menü, für alle Bildschirmbreiten.
  *
- * Layout nach einem Vorbild des Kunden (webkinder.ch): große Navigation
- * links, eine Kontakt-Karte rechts — übersetzt in die eigenen Farben (dunkle
- * Fläche statt Korallrot) und die eigene Schrift (Inter statt Serif).
+ * Kontakt links (schmale Spalte, durch eine feine Linie von der Navigation
+ * getrennt), Navigation rechts, gross, mit Pfeil und Trennstrich je Punkt.
+ * Ein Projektfoto liegt hinter der Navigation, durch einen dunklen Verlauf
+ * gedämpft — durchscheinend statt vollflächig schwarz.
  *
  * Eine dunkle Fläche fährt von der Kopfzeile nach unten über die ganze
  * Seite, wie ein Rollo; danach steigen die Menüpunkte gestaffelt ein.
@@ -122,54 +124,35 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-label="Hauptnavigation"
     >
       {/* Die Fläche: steht bereits in voller Höhe da, nach oben aus dem Bild
-          geschoben, und fährt beim Öffnen an ihren Platz. */}
+          geschoben, und fährt beim Öffnen an ihren Platz. Ein Projektfoto
+          liegt dahinter, durch einen dunklen Verlauf gedämpft statt
+          vollflächig schwarz. */}
       <div
         aria-hidden="true"
         className={cn(
           'absolute inset-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none',
           ausgefahren ? 'translate-y-0' : '-translate-y-full'
         )}
-      />
+      >
+        <Image
+          src="/images/hero/slide-hochwarting-2.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-40"
+          priority={false}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/40" />
+        <div className="absolute inset-0 bg-ink/30" />
+      </div>
 
       <div className="relative flex h-full flex-col overflow-y-auto py-20">
-        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-16 gap-y-12 px-6 text-white md:px-10 lg:grid-cols-[1fr_minmax(0,22rem)] lg:items-center lg:px-16">
-          {/* Navigation: gross und linksbündig. */}
-          <nav aria-label="Hauptnavigation" className="order-1">
-            <ul className="flex flex-col">
-              {navigation.map((item, idx) => (
-                <li key={item.href} style={einstieg(idx)} className={einstiegKlassen}>
-                  <Link
-                    href={item.href}
-                    onClick={onClose}
-                    className="block py-2 text-[2.25rem] font-light leading-tight transition-colors hover:text-white/70 md:text-[3.25rem]"
-                  >
-                    {item.label}
-                  </Link>
-                  {item.unterlink && (
-                    <Link
-                      href={item.unterlink.href}
-                      onClick={onClose}
-                      className="mb-2 block text-base text-white/60 transition-colors hover:text-white"
-                    >
-                      {item.unterlink.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Kontakt-Karte: übersetzt "Sag Hallo!"-Kachel von webkinder.ch
-              in unsere Farben (weiss auf dunkel statt schwarz auf korall)
-              und unsere Schrift. */}
-          <div className="order-2">
-            <div
-              style={einstieg(navigation.length)}
-              className={cn('rounded-[2rem] bg-white/10 p-8', einstiegKlassen)}
-            >
-              <p className="text-xl font-medium">Kontakt</p>
-
-              <div className="mt-4 flex flex-col gap-1 text-base">
+        <div className="mx-auto my-auto grid w-full max-w-content grid-cols-1 gap-x-0 gap-y-10 px-6 text-white md:px-10 lg:grid-cols-[18rem_1fr] lg:divide-x lg:divide-white/15 lg:px-16">
+          {/* Kontakt: schmale, ruhige Spalte ohne Kachel-Hintergrund. */}
+          <div className="order-2 lg:order-1 lg:pr-10">
+            <div style={einstieg(navigation.length)} className={einstiegKlassen}>
+              <p className="text-xs uppercase tracking-widest text-white/60">Kontakt</p>
+              <div className="mt-3 flex flex-col gap-1 text-base">
                 <a
                   href={`tel:${firma.telefonHref}`}
                   onClick={onClose}
@@ -246,6 +229,46 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               </ul>
             </div>
           </div>
+
+          {/* Navigation: gross, mit Trennstrich und Pfeil je Punkt. */}
+          <nav aria-label="Hauptnavigation" className="order-1 lg:order-2 lg:pl-10">
+            <ul className="flex flex-col">
+              {navigation.map((item, idx) => (
+                <li
+                  key={item.href}
+                  style={einstieg(idx)}
+                  className={cn('border-b border-white/10', einstiegKlassen)}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className="flex items-center justify-between gap-6 py-5 text-[2.25rem] font-light leading-tight transition-colors hover:text-white/70 md:text-[3.25rem]"
+                  >
+                    {item.label}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.25"
+                      className="h-6 w-6 shrink-0 opacity-70 md:h-8 md:w-8"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+                  {item.unterlink && (
+                    <Link
+                      href={item.unterlink.href}
+                      onClick={onClose}
+                      className="mb-4 block text-base text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.unterlink.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
