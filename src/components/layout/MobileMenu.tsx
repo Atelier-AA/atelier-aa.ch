@@ -9,6 +9,9 @@ import { cn } from '@/lib/utils';
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
+  /** Verweis auf "Projekte" in der Kopfzeile — die Menüpunkte richten ihre
+   *  linke Kante exakt daran aus. */
+  ausrichtungRef: React.RefObject<HTMLAnchorElement | null>;
 }
 
 /**
@@ -16,18 +19,46 @@ interface MobileMenuProps {
  *
  * Eine dunkle Fläche fährt von der Kopfzeile nach unten über die ganze
  * Seite, wie ein Rollo; danach steigen die Menüpunkte gestaffelt ein.
- * Kontakt links, Navigation rechts (ab lg), damit sie auf derselben Seite
- * steht wie der Burger, der sie geöffnet hat.
+ * Kontakt links, Navigation rechts (ab sm) — die Navigation wird zusätzlich
+ * per JavaScript so weit nach rechts verschoben, dass ihre linke Kante
+ * exakt unter "Projekte" in der Kopfzeile beginnt (Kundenwunsch), statt
+ * direkt neben der Kontakt-Spalte.
  */
-export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+export default function MobileMenu({ open, onClose, ausrichtungRef }: MobileMenuProps) {
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
    *  Schliessen noch nach oben fahren kann, bevor sie verschwindet. */
   const [imDom, setImDom] = useState(open);
   /** Ob die Fläche unten steht — steuert die Verschiebung. */
   const [ausgefahren, setAusgefahren] = useState(false);
+  /** Zusätzlicher linker Abstand der Navigation in Pixeln, damit ihre linke
+   *  Kante mit "Projekte" im Header übereinstimmt. Selbstkorrigierend: bei
+   *  jeder Messung wird der zuletzt gesetzte Abstand erst wieder abgezogen,
+   *  bevor die tatsächliche (unverschobene) Kante ermittelt wird — so bleibt
+   *  es unabhängig davon, wie die Spaltenbreiten bei welcher Fensterbreite
+   *  berechnet werden. */
+  const [navVersatz, setNavVersatz] = useState(0);
 
   const dialogRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const vorherFokussiert = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const messen = () => {
+      const zielRect = ausrichtungRef.current?.getBoundingClientRect();
+      const navRect = navRef.current?.getBoundingClientRect();
+      if (!zielRect || !navRect || zielRect.width === 0) {
+        setNavVersatz(0);
+        return;
+      }
+      setNavVersatz((bisher) => {
+        const natuerlicheKante = navRect.left - bisher;
+        return Math.max(0, zielRect.left - natuerlicheKante);
+      });
+    };
+    messen();
+    window.addEventListener('resize', messen);
+    return () => window.removeEventListener('resize', messen);
+  }, [ausrichtungRef, open, imDom]);
 
   useEffect(() => {
     if (open) {
@@ -208,8 +239,14 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           </div>
 
           {/* Zweite Spalte: die Navigation, durchgehend linksbündig, aber
-              ab sm in der rechten Spalte. */}
-          <nav aria-label="Hauptnavigation" className="order-1 sm:order-2">
+              ab sm in der rechten Spalte — zusätzlich per `navVersatz` unter
+              "Projekte" im Header ausgerichtet. */}
+          <nav
+            ref={navRef}
+            aria-label="Hauptnavigation"
+            style={{ marginLeft: navVersatz }}
+            className="order-1 sm:order-2"
+          >
             <ul className="flex flex-col">
               {navigation.map((item, idx) => (
                 <li
