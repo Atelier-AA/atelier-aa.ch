@@ -16,8 +16,8 @@ export const metadata: Metadata = {
  */
 export default function UeberUnsPage() {
   return (
-    <div className="pt-24 md:pt-28">
-      <Container className="mt-16 md:mt-24">
+    <div className="pt-32 md:pt-40">
+      <Container>
         {/* "Über uns" steht über beiden Spalten, auch über dem Video, statt
             nur über dem Text. */}
         <p className="text-xs uppercase tracking-widest text-stone mb-8">Über uns</p>

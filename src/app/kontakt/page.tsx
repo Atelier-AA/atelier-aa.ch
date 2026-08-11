@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function KontaktPage() {
   return (
-    <div className="pt-24 md:pt-28 pb-20 md:pb-28">
-      <Container className="mt-16 md:mt-24">
+    <div className="pt-32 pb-20 md:pb-28 md:pt-40">
+      <Container>
         {/* Links Text/Adresse, rechts Formular. */}
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <div>
