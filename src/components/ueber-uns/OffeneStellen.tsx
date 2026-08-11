@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button';
 
 export default function OffeneStellen() {
   return (
-    <section className="py-20 md:py-28 bg-mist">
+    <section className="border-t border-mist bg-mist py-20 md:py-28">
       <Container>
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-widest text-stone mb-6">
