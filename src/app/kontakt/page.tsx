@@ -49,7 +49,7 @@ export default function KontaktPage() {
           </div>
 
           <div className="w-full lg:w-4/5 lg:pt-1">
-            <p className="text-xs uppercase tracking-widest text-stone mb-4">
+            <p className="text-xs uppercase tracking-widest text-stone mb-8">
               Kontakt
             </p>
             <KontaktformularEinfach />
