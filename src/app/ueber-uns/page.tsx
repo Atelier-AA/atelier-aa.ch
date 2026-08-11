@@ -18,7 +18,7 @@ export default function UeberUnsPage() {
   return (
     <div className="pt-24 md:pt-28">
       <Container className="mt-16 md:mt-24">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-xs uppercase tracking-widest text-stone mb-4">
               Über uns
