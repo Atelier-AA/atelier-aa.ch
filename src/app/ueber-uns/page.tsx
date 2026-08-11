@@ -85,21 +85,22 @@ export default function UeberUnsPage() {
             />
           </div>
         </div>
-      </Container>
 
-      <Container className="mt-16 border-t border-mist pb-20 pt-16 md:mt-28 md:pb-28">
-        <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-          Nächster Schritt
-        </p>
-        <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-          Sie haben ein Vorhaben?
-        </h2>
-        <p className="mb-8 max-w-2xl text-lg leading-relaxed text-graphite">
-          Sprechen wir über Ihr Projekt — offen, konkret und unverbindlich.
-        </p>
-        <Button href="/kontakt" variant="text">
-          Kontaktieren Sie uns
-        </Button>
+        {/* Gleiches Muster wie auf /projekte, /studien usw.: max-w-3xl statt
+            volle Container-Breite, damit der Trennstrich überall gleich
+            lang ist. */}
+        <div className="mt-24 max-w-3xl border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
+          <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+            Sie haben ein <span className="font-semibold">Vorhaben?</span>
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-graphite">
+            Sprechen wir über Ihr Projekt, offen, konkret und unverbindlich.
+          </p>
+          <Button href="/kontakt" variant="text">
+            Kontaktieren Sie uns
+          </Button>
+        </div>
       </Container>
     </div>
   );
