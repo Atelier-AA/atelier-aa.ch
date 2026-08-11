@@ -263,10 +263,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   </Link>
                   {/* Pfeil ausserhalb der Trennlinie, damit diese kürzer bleibt
                       als die Zeile, während der Pfeil selbst bis zum äusseren
-                      Rand reicht — bündig mit dem X oben. */}
+                      Rand reicht — bündig mit dem X oben. Auf der Trennlinie
+                      zentriert (nicht in der Zeilenmitte), wie im Original. */}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]"
+                    className="pointer-events-none absolute right-0 bottom-0 translate-y-1/2 text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]"
                   >
                     →
                   </span>
