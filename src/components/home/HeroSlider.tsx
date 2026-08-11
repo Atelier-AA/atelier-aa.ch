@@ -118,9 +118,16 @@ export default function HeroSlider() {
               visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "Verantwortungsvollgeplant". */}
-          <h1 className="text-left text-[2rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.9rem] lg:text-[4.3rem]">
-            <span className="block whitespace-nowrap">Verantwortungsvoll</span>{' '}
-            <span className="block whitespace-nowrap">geplant. Gemeinsam gebaut.</span>
+          <h1 className="text-left font-semibold leading-[1.05] tracking-tight text-white">
+            {/* "Verantwortungsvoll" eigens grösser skaliert, damit die Zeile
+                trotz weniger Zeichen genauso breit wird wie "geplant.
+                Gemeinsam gebaut." darunter, statt schmaler zu wirken. */}
+            <span className="block whitespace-nowrap text-[2.6rem] sm:text-[3.75rem] lg:text-[5.6rem]">
+              Verantwortungsvoll
+            </span>{' '}
+            <span className="block whitespace-nowrap text-[2rem] sm:text-[2.9rem] lg:text-[4.3rem]">
+              geplant. Gemeinsam gebaut.
+            </span>
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:w-72 md:flex-col md:items-start md:gap-4">
