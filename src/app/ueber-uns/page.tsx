@@ -18,20 +18,18 @@ export default function UeberUnsPage() {
   return (
     <div className="pt-24 md:pt-28">
       <Container className="mt-16 md:mt-24">
-        {/* Titel über der ganzen Breite, über Text und Video gemeinsam,
-            statt nur über der Textspalte. */}
-        <p className="text-xs uppercase tracking-widest text-stone mb-4">Über uns</p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-10 max-w-3xl">
-          Wir gestalten <span className="font-semibold">Architektur</span> mit
-          Verantwortung, für Menschen, Orte und{' '}
-          <span className="font-semibold">Zukunft.</span>
-        </h1>
-
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Engere Zeilen- und Absatzabstände, damit der Text unten auf
-              derselben Höhe wie das Video endet, statt einzelne Absätze zu
-              verstecken. */}
-          <div className="space-y-4 text-graphite leading-snug">
+          {/* Der ganze Text, inkl. Titel, in derselben Spalte wie zuvor,
+              zusammen so hoch wie das Video daneben. Engere Zeilen- und
+              Absatzabstände, damit er unten auf derselben Höhe endet. */}
+          <div>
+            <p className="text-xs uppercase tracking-widest text-stone mb-4">Über uns</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-6">
+              Wir gestalten <span className="font-semibold">Architektur</span> mit
+              Verantwortung, für Menschen, Orte und{' '}
+              <span className="font-semibold">Zukunft.</span>
+            </h1>
+            <div className="space-y-4 text-graphite leading-snug">
             <p className="text-lg text-ink">
               Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
               im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
@@ -60,6 +58,7 @@ export default function UeberUnsPage() {
             <p className="text-lg text-ink">
               Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
             </p>
+            </div>
           </div>
 
           <div>
