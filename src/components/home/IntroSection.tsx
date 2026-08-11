@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import MehrLesen from '@/components/ui/MehrLesen';
 
 /**
  * Manifest-Satz mit Gewichts-Kontrast innerhalb derselben Zeile: die
@@ -16,7 +17,7 @@ import Button from '@/components/ui/Button';
 export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
-      <Container>
+      <Container maxWidth="max-w-[1600px]">
         <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
           {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <div className="lg:col-start-1 lg:row-start-1">
@@ -40,13 +41,15 @@ export default function IntroSection() {
               durch alle SIA-Leistungsphasen, mit Schwerpunkt in den Kantonen
               Zürich, Aargau und Zug.
             </p>
-            <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-graphite">
-              Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
-              sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
-              Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
-              Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
-              zeigen unsere realisierten Projekte.
-            </p>
+            <MehrLesen className="mt-6 max-w-[42ch]">
+              <p className="text-lg leading-relaxed text-graphite">
+                Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
+                sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
+                Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
+                Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
+                zeigen unsere realisierten Projekte.
+              </p>
+            </MehrLesen>
           </div>
 
           <div className="relative min-h-[16rem] w-full bg-mist lg:col-start-2 lg:row-start-1 lg:min-h-0">

@@ -11,7 +11,7 @@ import Button from '@/components/ui/Button';
 export default function UeberUnsSection() {
   return (
     <section className="bg-mist py-20 md:py-28">
-      <Container>
+      <Container maxWidth="max-w-[1600px]">
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Über uns</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
