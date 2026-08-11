@@ -18,24 +18,18 @@ export default function UeberUnsPage() {
   return (
     <div className="pt-32 md:pt-40">
       <Container>
-        {/* "Über uns" steht über beiden Spalten, auch über dem Video, statt
-            nur über dem Text. */}
-        <p className="text-xs uppercase tracking-widest text-stone mb-8">Über uns</p>
-
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* H1 und Fliesstext zusammen in der linken Spalte, so hoch wie
-              das Video daneben. Engere Zeilen- und Absatzabstände, damit der
-              Text unten auf derselben Höhe endet. Der Team-Button steht
-              direkt darunter, linksbündig mit dem Text statt unter dem
-              Video. */}
+        {/* Gleiches Raster wie auf /leistungen: 3fr/2fr-Spalten, vertikal
+            zentriert, Eyebrow in der Textspalte statt über beiden Spalten. */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-4">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Über uns</p>
+            <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
               Wir gestalten <span className="font-semibold">Architektur</span> mit
               Verantwortung, für Menschen, Orte und{' '}
               <span className="font-semibold">Zukunft.</span>
             </h1>
-            <div className="space-y-3 text-graphite leading-snug">
-              <p className="text-lg text-ink">
+            <div className="mt-10 space-y-6 text-lg leading-relaxed text-graphite md:text-xl">
+              <p className="text-ink">
                 Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
                 im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
                 Mehrfamilienhäuser und Wohnüberbauungen sowie Generalplanungsmandate in
@@ -72,7 +66,7 @@ export default function UeberUnsPage() {
               laufende Projekte statt eines gestellten Büro-/Teamfotos. Das
               Teamvideo (ueber-uns-team.mp4) steht jetzt auf /ueber-uns/team,
               wo es thematisch besser passt. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-[3/4]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"

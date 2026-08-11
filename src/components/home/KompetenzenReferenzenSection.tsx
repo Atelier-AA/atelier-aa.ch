@@ -23,10 +23,10 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
   return (
     <Link
       href={`/referenzen/${projekt.slug}`}
-      className="group block min-w-0"
+      className="group block h-full min-w-0"
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
-      <div className="relative h-44 overflow-hidden bg-mist sm:h-48">
+      <div className="relative h-44 overflow-hidden bg-mist sm:h-48 lg:h-full">
         <Image
           src={projekt.thumbnail}
           alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
@@ -79,9 +79,15 @@ export default function KompetenzenReferenzenSection() {
         </h2>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: zweispaltige Liste, Text immer sichtbar. */}
-          <div className="flex h-full flex-col justify-between">
-            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+          {/* Kompetenzen: zweispaltige Liste, Text immer sichtbar. Ab lg
+              löst sich dieser Wrapper auf (display: contents), Liste und
+              Button werden zu eigenen Zellen im äusseren Grid — die
+              gemeinsame Zeile bekommt dadurch automatisch genau die Höhe,
+              die der Text braucht, und die Referenzen daneben strecken sich
+              (lg:h-full an den Bildern) exakt auf diese Höhe, statt eine
+              geschätzte Pixelhöhe zu tragen. */}
+          <div className="flex h-full flex-col justify-between lg:contents">
+            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-1">
               {/* Bei 5 Einträgen bliebe in der letzten Zeile sonst eine
                   Spalte leer — der letzte Eintrag füllt die Zeile deshalb
                   ganz aus. */}
@@ -98,7 +104,7 @@ export default function KompetenzenReferenzenSection() {
                 </div>
               ))}
             </div>
-            <div className="pt-8">
+            <div className="pt-8 lg:col-start-1 lg:row-start-2">
               <Button href="/leistungen" variant="text">
                 alle Kompetenzen ansehen
               </Button>
@@ -108,17 +114,20 @@ export default function KompetenzenReferenzenSection() {
           {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
               Komposition, nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
-          <div className="hidden bg-mist lg:block" aria-hidden="true" />
+          <div
+            className="hidden bg-mist lg:col-start-2 lg:row-span-2 lg:block"
+            aria-hidden="true"
+          />
 
-          {/* Referenzen: 2×2-Raster, mit fester Bildhöhe statt der
-              quadratischen Karten sonst auf der Seite. */}
-          <div className="flex h-full flex-col justify-between">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+          {/* Referenzen: 2×2-Raster, mit fester Bildhöhe auf Mobile/Tablet,
+              ab lg stretcht sich das Raster auf die Höhe der Zeile. */}
+          <div className="flex h-full flex-col justify-between lg:contents">
+            <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:col-start-3 lg:row-start-1 lg:h-full">
               {projekte.map((p, idx) => (
                 <ReferenzBild key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
-            <div className="pt-8">
+            <div className="pt-8 lg:col-start-3 lg:row-start-2">
               <Button href="/projekte" variant="text">
                 alle Projekte ansehen
               </Button>
