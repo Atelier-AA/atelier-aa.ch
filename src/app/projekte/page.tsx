@@ -35,24 +35,26 @@ export default function ProjektePage() {
 
         {/* Abschluss im gleichen Stil wie der Einstieg oben: grosser,
             fett/normal gesetzter Titel, darunter normaler Fliesstext. */}
-        <div className="mt-24 max-w-3xl border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-            Nächster Schritt
-          </p>
-          <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-            <span className="font-semibold">Architektur</span> mit{' '}
-            <span className="font-semibold">Verantwortung</span>
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
-            Architektur, die Funktion, Gestaltung und Nachhaltigkeit
-            verbindet – mit klarer Haltung und langfristigem Mehrwert.
-            Erfahren Sie, welche Kompetenzen wir dafür anbieten – vom
-            Vorprojekt bis zum Generalplaner-Mandat.
-          </p>
-          <Button href="/leistungen" variant="text">
-            Kompetenzen ansehen
-          </Button>
+        <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Nächster Schritt
+            </p>
+            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+              <span className="font-semibold">Architektur</span> mit{' '}
+              <span className="font-semibold">Verantwortung</span>
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
+              Architektur, die Funktion, Gestaltung und Nachhaltigkeit
+              verbindet – mit klarer Haltung und langfristigem Mehrwert.
+              Erfahren Sie, welche Kompetenzen wir dafür anbieten – vom
+              Vorprojekt bis zum Generalplaner-Mandat.
+            </p>
+            <Button href="/leistungen" variant="text">
+              Kompetenzen ansehen
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

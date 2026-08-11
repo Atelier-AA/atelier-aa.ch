@@ -98,22 +98,26 @@ export default function LeistungenPage() {
       </section>
 
       <Container>
-        <div className="max-w-3xl border-t border-mist pt-16 pb-20 md:pb-28">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-            Nächster Schritt
-          </p>
-          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-            Sie möchten bauen?
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Ob Neubau, Sanierung oder Verdichtung – sprechen Sie mit uns über Ihr
-            Projekt. In einem ersten Gespräch klären wir Potenzial, Rahmenbedingungen
-            und die nächsten Schritte, unverbindlich und auf Ihre Situation
-            zugeschnitten.
-          </p>
-          <Button href="/kontakt" variant="text">
-            Kontakt aufnehmen
-          </Button>
+        {/* Trennstrich über die volle Container-Breite statt nur max-w-3xl,
+            wie bei allen "Nächster Schritt"-Abschlüssen sitewide. */}
+        <div className="border-t border-mist pt-16 pb-20 md:pb-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Nächster Schritt
+            </p>
+            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+              Sie möchten bauen?
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Ob Neubau, Sanierung oder Verdichtung – sprechen Sie mit uns über Ihr
+              Projekt. In einem ersten Gespräch klären wir Potenzial, Rahmenbedingungen
+              und die nächsten Schritte, unverbindlich und auf Ihre Situation
+              zugeschnitten.
+            </p>
+            <Button href="/kontakt" variant="text">
+              Kontakt aufnehmen
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

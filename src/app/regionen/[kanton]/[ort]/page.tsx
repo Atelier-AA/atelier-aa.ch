@@ -119,20 +119,22 @@ export default async function OrtPage({ params }: PageProps) {
           </div>
         )}
 
-        <div className="mt-16 max-w-3xl border-t border-mist pt-16 md:mt-20">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-            Nächster Schritt
-          </p>
-          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-            Sie bauen in {ort.ort}?
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Sprechen Sie mit uns über Ihr Vorhaben — wir kennen die Bauordnung und die
-            Abläufe vor Ort.
-          </p>
-          <Button href="/kontakt" variant="text">
-            Kontakt aufnehmen
-          </Button>
+        <div className="mt-16 border-t border-mist pt-16 md:mt-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Nächster Schritt
+            </p>
+            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+              Sie bauen in {ort.ort}?
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Sprechen Sie mit uns über Ihr Vorhaben — wir kennen die Bauordnung und die
+              Abläufe vor Ort.
+            </p>
+            <Button href="/kontakt" variant="text">
+              Kontakt aufnehmen
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

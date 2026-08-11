@@ -86,20 +86,21 @@ export default function UeberUnsPage() {
           </div>
         </div>
 
-        {/* Gleiches Muster wie auf /projekte, /studien usw.: max-w-3xl statt
-            volle Container-Breite, damit der Trennstrich überall gleich
-            lang ist. */}
-        <div className="mt-24 max-w-3xl border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-          <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-            Sie haben ein <span className="font-semibold">Vorhaben?</span>
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Sprechen wir über Ihr Projekt, offen, konkret und unverbindlich.
-          </p>
-          <Button href="/kontakt" variant="text">
-            Kontaktieren Sie uns
-          </Button>
+        {/* Trennstrich über die volle Container-Breite statt nur max-w-3xl,
+            wie bei allen "Nächster Schritt"-Abschlüssen sitewide. */}
+        <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
+            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+              Sie haben ein <span className="font-semibold">Vorhaben?</span>
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Sprechen wir über Ihr Projekt, offen, konkret und unverbindlich.
+            </p>
+            <Button href="/kontakt" variant="text">
+              Kontaktieren Sie uns
+            </Button>
+          </div>
         </div>
       </Container>
     </div>
