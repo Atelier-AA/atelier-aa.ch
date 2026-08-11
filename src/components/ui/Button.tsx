@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 interface ButtonProps {
   href?: string;
   children: React.ReactNode;
-  variant?: 'primary' | 'outline' | 'outline-light' | 'text';
+  variant?: 'primary' | 'outline' | 'text';
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit';
@@ -17,9 +17,6 @@ const base =
 const variants = {
   primary: 'bg-ink text-white px-8 py-4 hover:bg-graphite',
   outline: 'border border-ink text-ink px-8 py-4 hover:bg-ink hover:text-white',
-  // Für dunkle Flächen (z. B. die Kontakt-Kachel im Projekte-Raster), sonst
-  // wäre der Rahmen der normalen `outline`-Variante unsichtbar.
-  'outline-light': 'border border-white text-white px-8 py-4 hover:bg-white hover:text-ink',
   // Pfeil-Link wie im alten Theme (`.wp-block-button__link`): kein Rahmen,
   // Pfeil vorangestellt, Schrift 1.125rem/500/uppercase mit 0.1em Laufweite.
   text: 'group text-ink py-3 gap-4 text-[1.125rem] tracking-[0.1em] hover:text-graphite',
