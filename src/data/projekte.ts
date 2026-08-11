@@ -1100,7 +1100,7 @@ export const projekte: Projekt[] = [
     kunde: 'Remnex Zug',
     jahr: '2022',
     typ: 'Gewerbebau',
-    kategorien: ['Umbau', 'Gewerbe', 'Mieterausbau'],
+    kategorien: ['Umbau', 'Gewerbe', 'Mieterausbau', 'Büro'],
     leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Mieterausbau von Gemeinschaftsräumen im Untergeschoss sowie Erweiterung der Besucherparkplätze für eine Gewerbeliegenschaft in Obfelden (ZH).',
