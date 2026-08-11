@@ -4,7 +4,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { kompetenzen } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
-import { ortMitKanton } from '@/lib/utils';
+import { cn, ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
 
 /**
@@ -69,17 +69,30 @@ export default function KompetenzenReferenzenSection() {
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
           Kompetenzen &amp; Projekte
         </p>
-        <h2 className="mb-12 max-w-[40ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-          <span className="font-semibold">Kompetenzen</span>, sichtbar in echten{' '}
-          <span className="font-semibold">Projekten.</span>
+        {/* Fester Zeilenumbruch statt einer Breitenbegrenzung, die je nach
+            Fensterbreite mal reicht, mal nicht — der Titel reichte sonst
+            optisch über den linken Rand der Projektbilder hinaus. */}
+        <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
+          <span className="font-semibold">Kompetenzen,</span>
+          <br />
+          sichtbar in echten <span className="font-semibold">Projekten.</span>
         </h2>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
           {/* Kompetenzen: zweispaltige Liste, Text immer sichtbar. */}
           <div className="flex h-full flex-col justify-between">
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
-              {kompetenzen.map((k) => (
-                <div key={k.titel} className="border-b border-mist py-4">
+              {/* Bei 5 Einträgen bliebe in der letzten Zeile sonst eine
+                  Spalte leer — der letzte Eintrag füllt die Zeile deshalb
+                  ganz aus. */}
+              {kompetenzen.map((k, idx) => (
+                <div
+                  key={k.titel}
+                  className={cn(
+                    'border-b border-mist py-4',
+                    idx === kompetenzen.length - 1 && 'sm:col-span-2'
+                  )}
+                >
                   <h3 className="text-base font-medium text-ink">{k.titel}</h3>
                   <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{k.text}</p>
                 </div>
