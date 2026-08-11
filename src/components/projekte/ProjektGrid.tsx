@@ -34,7 +34,7 @@ export default function ProjektGrid({ projekte }: ProjektGridProps) {
             </Eingeblendet>
             {nachDiesemProjekt && (
               <Eingeblendet className={KACHEL_KLASSE}>
-                <KontaktKachel />
+                <KontaktKachel variante={Math.floor((idx + 1) / KONTAKT_INTERVALL) - 1} />
               </Eingeblendet>
             )}
           </Fragment>
