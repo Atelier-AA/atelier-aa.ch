@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { navigation, footerLegal } from '@/data/navigation';
 import { firma, sozialeMedien } from '@/data/firma';
 import { cn } from '@/lib/utils';
@@ -38,13 +37,6 @@ const navigationsZeilen = navigation.flatMap((item) =>
  * Kontakt-Karte und Menüpunkte gestaffelt ein.
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
-  const pathname = usePathname();
-  /** Gleiche Breite wie der Header (siehe Header.tsx): 1600px auf der
-   *  Startseite, sonst die Standardbreite (1440px) — sonst reichte der
-   *  Menüinhalt auf sehr breiten Bildschirmen weiter als der Burger-Button
-   *  im Header, mit dem er geöffnet wurde. */
-  const inhaltsBreite = pathname === '/' ? 'max-w-[1600px]' : 'max-w-content';
-
   /** Ob das Menü im DOM steht — getrennt von `open`, damit die Fläche beim
    *  Schliessen noch nach oben fahren kann, bevor sie verschwindet. */
   const [imDom, setImDom] = useState(open);
@@ -161,12 +153,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-300'
         )}
       >
-        <div
-          className={cn(
-            'mx-auto flex w-full flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12',
-            inhaltsBreite
-          )}
-        >
+        <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12">
           {/* Kontakt-Karte, vertikal zentriert. Auf dem Handy nach der
               Navigation, ab lg davor. */}
           <div className="order-2 flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-1 lg:border-t-0 lg:pt-0">

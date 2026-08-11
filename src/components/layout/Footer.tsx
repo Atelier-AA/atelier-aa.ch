@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Logo from './Logo';
 import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
@@ -24,20 +21,13 @@ import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
 export default function Footer() {
   const year = new Date().getFullYear();
   const kantone = alleKantone();
-  const pathname = usePathname();
-  /** Auf der Startseite ist der Footer ebenfalls breiter (1600px statt
-   *  1440px), damit er zur breiteren Startseite passt. */
-  const breiterFooter = pathname === '/';
   const spaltenTitel = 'mb-6 text-xs uppercase tracking-widest text-white/50';
   const verweis =
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white';
 
   return (
     <footer className="bg-ink text-white">
-      <Container
-        className="py-10 md:py-12"
-        maxWidth={breiterFooter ? 'max-w-[1600px]' : undefined}
-      >
+      <Container className="py-10 md:py-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto_auto] lg:gap-12">
           <div className="max-w-md">
             <div className="mb-6 h-[35px] text-white md:h-[40px]">

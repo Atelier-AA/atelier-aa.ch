@@ -6,10 +6,10 @@ import Button from '@/components/ui/Button';
  * statt abstraktem Statement-Satz. Zweispaltig statt einer schmalen, linken
  * Spalte — nutzt die volle Breite, damit rechts kein toter Raum entsteht.
  */
-export default function AbschlussSection({ maxWidth }: { maxWidth?: string } = {}) {
+export default function AbschlussSection() {
   return (
     <section className="border-t border-mist pt-16 pb-20 md:pb-28">
-      <Container maxWidth={maxWidth}>
+      <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Machbarkeit</p>

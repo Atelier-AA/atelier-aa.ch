@@ -24,21 +24,15 @@ export const metadata: Metadata = {
  * Ende steht ein eigens gestalteter Kontakt-Aufruf statt eines dunkel
  * hinterlegten Blocks.
  */
-/** Etwas breiter als der Rest der Website (1440px) — Kundenwunsch, nach
- *  Vorschau unter /vorschau/startseite-breit freigegeben. Header und Footer
- *  wechseln auf der Startseite ebenfalls auf diese Breite (siehe
- *  `Header.tsx`/`Footer.tsx`, per `usePathname`). */
-const BREITE = 'max-w-[1600px]';
-
 export default function HomePage() {
   return (
     <>
       <HeroSlider />
-      <IntroSection maxWidth={BREITE} />
-      <KompetenzenReferenzenSection maxWidth={BREITE} />
-      <UeberUnsSection maxWidth={BREITE} />
-      <InsightsSection maxWidth={BREITE} />
-      <AbschlussSection maxWidth={BREITE} />
+      <IntroSection />
+      <KompetenzenReferenzenSection />
+      <UeberUnsSection />
+      <InsightsSection />
+      <AbschlussSection />
     </>
   );
 }

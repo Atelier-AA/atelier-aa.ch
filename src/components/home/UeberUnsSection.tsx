@@ -8,10 +8,10 @@ import Button from '@/components/ui/Button';
  * den weissen Nachbarn ab; ein Porträt des Gründers füllt die Fläche neben
  * dem Text.
  */
-export default function UeberUnsSection({ maxWidth }: { maxWidth?: string } = {}) {
+export default function UeberUnsSection() {
   return (
     <section className="bg-mist py-20 md:py-28">
-      <Container maxWidth={maxWidth}>
+      <Container>
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Über uns</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>

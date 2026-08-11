@@ -13,10 +13,6 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
-  /** Auf der Startseite ist der Header ebenfalls breiter (1600px statt
-   *  1440px), damit er zur breiteren Startseite passt — auch bei offenem
-   *  Menü. Überall sonst unverändert bei der Standardbreite. */
-  const breiterHeader = isHome;
 
   useEffect(() => {
     // Schwelle 50px wie im alten Theme (header.php: `window.scrollY > 50`).
@@ -68,10 +64,7 @@ export default function Header() {
           onDark ? 'text-white' : 'text-ink'
         )}
       >
-        <Container
-          className="flex items-center justify-between"
-          maxWidth={breiterHeader ? 'max-w-[1600px]' : undefined}
-        >
+        <Container className="flex items-center justify-between">
           {/* Höhe bleibt beim Scrollen und beim Öffnen des Menüs konstant —
               wie bei elindo.ch. Nur die Breite ändert sich innerhalb von
               Logo (Wortmarke blendet aus), das Signet bleibt dadurch exakt
@@ -79,7 +72,7 @@ export default function Header() {
           <Link
             href="/"
             aria-label="Atelier AA Architekten – Startseite"
-            className="block h-[50px] transition-opacity duration-300 hover:opacity-60 md:h-[64px]"
+            className="block h-[44px] transition-opacity duration-300 hover:opacity-60 md:h-[52px]"
           >
             <Logo collapsed={collapsed} />
           </Link>

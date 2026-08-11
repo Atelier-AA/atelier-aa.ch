@@ -13,10 +13,10 @@ import Button from '@/components/ui/Button';
  * Bild rechts nur an der Höhe von Überschrift und Text aus, nicht zusätzlich
  * an der Höhe des Buttons.
  */
-export default function IntroSection({ maxWidth }: { maxWidth?: string } = {}) {
+export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
-      <Container maxWidth={maxWidth}>
+      <Container>
         <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
           {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <div className="lg:col-start-1 lg:row-start-1">

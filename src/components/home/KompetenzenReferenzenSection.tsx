@@ -59,12 +59,12 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
  * auf derselben Höhe mit ihrem "alle ansehen"-Link, damit Liste und
  * Bilder oben wie unten bündig zueinander stehen.
  */
-export default function KompetenzenReferenzenSection({ maxWidth }: { maxWidth?: string } = {}) {
+export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
 
   return (
     <section className="border-t border-mist py-16 md:py-20">
-      <Container maxWidth={maxWidth}>
+      <Container>
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
           Kompetenzen &amp; Projekte
         </p>
