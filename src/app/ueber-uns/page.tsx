@@ -60,9 +60,6 @@ export default function UeberUnsPage() {
                 Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Diese
                 Haltung tragen wir seit der Gründung 2021 in jedes Projekt.
               </p>
-              <p className="text-lg text-ink">
-                Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
-              </p>
             </div>
             <div className="mt-6">
               <Button href="/ueber-uns/team" variant="text">
