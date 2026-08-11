@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import MehrLesen from '@/components/ui/MehrLesen';
 
 /**
  * Manifest-Satz mit Gewichts-Kontrast innerhalb derselben Zeile: die
@@ -40,13 +41,15 @@ export default function IntroSection() {
               durch alle SIA-Leistungsphasen, mit Schwerpunkt in den Kantonen
               Zürich, Aargau und Zug.
             </p>
-            <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-graphite">
-              Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
-              sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
-              Räume entwickeln wir Architektur, die mehr ist als ein Gebäude. Sie schafft
-              Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
-              zeigen unsere realisierten Projekte.
-            </p>
+            <MehrLesen className="mt-6 max-w-[42ch]">
+              <p className="text-lg leading-relaxed text-graphite">
+                Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
+                sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
+                Räume entwickeln wir Architektur, die mehr ist als ein Gebäude. Sie schafft
+                Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
+                zeigen unsere realisierten Projekte.
+              </p>
+            </MehrLesen>
           </div>
 
           <div className="relative min-h-[16rem] w-full bg-mist lg:col-start-2 lg:row-start-1 lg:min-h-0">
