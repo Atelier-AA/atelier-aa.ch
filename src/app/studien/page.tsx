@@ -27,7 +27,7 @@ export default function StudienPage() {
           </p>
         </div>
 
-        <StudienGrid studien={studien.slice(0, 21)} />
+        <StudienGrid studien={studien} />
 
         <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
           <div className="max-w-3xl">

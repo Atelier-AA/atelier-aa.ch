@@ -11,9 +11,9 @@ interface StudienGridProps {
   studien: Studie[];
 }
 
-/** Anfangs so viele Studien wie aktuell insgesamt auf /projekte stehen,
- *  statt alle auf einmal (deutlich mehr Studien als Projekte). */
-const ANZAHL_ANFANGS = 22;
+/** Anfangs 21 Studien, der Rest ist über "Mehr zeigen" erreichbar statt
+ *  alle auf einmal (deutlich mehr Studien als Projekte). */
+const ANZAHL_ANFANGS = 21;
 
 /** Kachelbreite, dieselbe wie bei den Studien-Kacheln. */
 const KACHEL_KLASSE = 'w-full sm:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.834rem)]';
