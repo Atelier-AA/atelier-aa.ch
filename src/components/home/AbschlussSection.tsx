@@ -26,7 +26,7 @@ export default function AbschlussSection() {
               mit Volumenstudie und Kostenrahmen im vierstelligen Bereich.
             </p>
             <div className="mt-8">
-              <Button href="/kontakt" variant="text">
+              <Button href="/kontakt" variant="primary">
                 Kontakt aufnehmen
               </Button>
             </div>
