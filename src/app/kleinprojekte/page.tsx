@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import KleinprojekteGrid from '@/components/kleinprojekte/KleinprojekteGrid';
 import { kleinprojekte } from '@/data/kleinprojekte';
 import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Kleinprojekte',
@@ -26,6 +27,20 @@ export default function KleinprojektePage() {
         </div>
 
         <KleinprojekteGrid projekte={kleinprojekte} />
+
+        <div className="mt-24 max-w-3xl border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
+          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+            Auch ein <span className="font-semibold">kleines</span> Vorhaben?
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-graphite">
+            Ob Umbau, Sanierung oder ein einzelner Raum, wir begleiten auch kleinere Aufträge
+            mit derselben Sorgfalt wie unsere grossen Projekte.
+          </p>
+          <Button href="/kontakt" variant="text">
+            Kontakt aufnehmen
+          </Button>
+        </div>
       </Container>
     </div>
   );
