@@ -16,7 +16,9 @@ const base =
 
 const variants = {
   primary: 'bg-ink text-white px-8 py-4 hover:bg-graphite',
-  outline: 'border border-ink text-ink px-8 py-4 hover:bg-ink hover:text-white',
+  // Alle umrahmten Buttons einheitlich schwarz mit weisser Schrift statt
+  // hell mit dunklem Rahmen (Kundenwunsch, wirkte zuvor uneinheitlich).
+  outline: 'border border-ink bg-ink text-white px-8 py-4 hover:bg-graphite',
   // Pfeil-Link wie im alten Theme (`.wp-block-button__link`): kein Rahmen,
   // Pfeil vorangestellt, Schrift 1.125rem/500/uppercase mit 0.1em Laufweite.
   text: 'group text-ink py-3 gap-4 text-[1.125rem] tracking-[0.1em] hover:text-graphite',

@@ -68,10 +68,10 @@ export default function KontaktformularEinfach() {
         <div className="mt-8 flex justify-end">
           <button
             type="submit"
-            className="inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3 text-base text-ink transition-colors duration-300 hover:bg-ink hover:text-white"
+            className="inline-flex items-center gap-3 rounded-full border border-ink bg-ink px-6 py-3 text-base text-white transition-colors duration-300 hover:bg-graphite"
           >
             Absenden
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-ink">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 12h16M14 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
