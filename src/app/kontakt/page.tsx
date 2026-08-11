@@ -15,7 +15,7 @@ export default function KontaktPage() {
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
         {/* Links Formular, rechts Text/Adresse. */}
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-28">
           <div className="w-full lg:pt-1">
             <p className="text-xs uppercase tracking-widest text-stone mb-8">
               Kontakt
