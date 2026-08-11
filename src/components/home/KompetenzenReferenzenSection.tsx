@@ -26,7 +26,7 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
       className="group block min-w-0"
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
-      <div className="relative h-60 overflow-hidden bg-mist">
+      <div className="relative h-44 overflow-hidden bg-mist sm:h-48">
         <Image
           src={projekt.thumbnail}
           alt={`${projekt.title}, ${ortMitKanton(projekt)}`}

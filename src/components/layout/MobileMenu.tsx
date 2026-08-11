@@ -153,7 +153,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-300'
         )}
       >
-        <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-12 lg:pb-12">
+        <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-16 lg:pb-12">
           {/* Kontakt-Karte, vertikal zentriert. Auf dem Handy nach der
               Navigation, ab lg davor. */}
           <div className="order-2 flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-1 lg:border-t-0 lg:pt-0">
@@ -249,24 +249,26 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           >
             <ul className="flex w-full flex-col">
               {navigationsZeilen.map((item, idx) => (
-                <li
-                  key={item.href}
-                  style={zeilenEinstieg(idx)}
-                  className={cn(
-                    idx < navigationsZeilen.length - 1 && 'border-b border-[#1e1e1e]',
-                    zeilenKlassen
-                  )}
-                >
+                <li key={item.href} style={zeilenEinstieg(idx)} className={cn('group relative', zeilenKlassen)}>
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="group flex items-baseline justify-between py-3 text-[32px] font-normal leading-none text-[#f2f0ed] transition-all duration-300 ease-out hover:pl-[22px] hover:text-white lg:text-[50px]"
+                    className={cn(
+                      'block py-3 pr-16 text-[32px] font-normal leading-none text-[#f2f0ed] transition-all duration-300 ease-out hover:pl-[22px] hover:text-white lg:mr-24 lg:pr-0 lg:text-[50px]',
+                      idx < navigationsZeilen.length - 1 && 'border-b border-[#1e1e1e]'
+                    )}
                   >
-                    <span>{item.label}</span>
-                    <span className="text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]">
-                      →
-                    </span>
+                    {item.label}
                   </Link>
+                  {/* Pfeil ausserhalb der Trennlinie, damit diese kürzer bleibt
+                      als die Zeile, während der Pfeil selbst bis zum äusseren
+                      Rand reicht — bündig mit dem X oben. */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]"
+                  >
+                    →
+                  </span>
                 </li>
               ))}
             </ul>
