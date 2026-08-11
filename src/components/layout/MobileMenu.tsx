@@ -153,12 +153,13 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-300'
         )}
       >
-        <div className="flex flex-1 flex-col gap-10 px-6 py-8 md:px-10 lg:flex-row lg:gap-20 lg:px-16 lg:pb-12">
+        <div className="flex flex-1 flex-col gap-10 px-6 pt-24 pb-8 md:px-10 md:pt-28 lg:flex-row lg:gap-20 lg:px-16 lg:pt-8 lg:pb-12">
           {/* Kontakt-Karte, vertikal zentriert. Auf dem Handy nach der
-              Navigation, ab lg davor. */}
+              Navigation, ab lg davor. Kein eigenes Links-Padding mehr, damit
+              der Text links bündig mit dem Logo oben ist. */}
           <div className="order-2 flex flex-1 items-center border-t border-[#262626] pt-8 lg:order-1 lg:border-t-0 lg:pt-0">
             <div
-              className={cn('w-full max-w-[400px] px-8 py-8 lg:px-12 lg:py-11', karteKlassen)}
+              className={cn('w-full max-w-[400px] py-8 pr-8 lg:py-11 lg:pr-12', karteKlassen)}
             >
               <div className="flex flex-col gap-7">
                 <p className="text-2xl font-semibold text-[#c7c5c0]">Kontakt</p>
@@ -245,7 +246,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               Trennlinie zur Kontakt-Karte sitzt dort an deren Oberkante. */}
           <nav
             aria-label="Hauptnavigation"
-            className="order-1 flex flex-1 items-center lg:order-2 lg:border-l lg:border-[#262626] lg:pl-20"
+            className="order-1 flex flex-1 items-start lg:order-2 lg:items-center lg:border-l lg:border-[#262626] lg:pl-20"
           >
             <ul className="flex w-full flex-col">
               {navigationsZeilen.map((item, idx) => (
