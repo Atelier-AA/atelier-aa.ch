@@ -250,27 +250,24 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           >
             <ul className="flex w-full flex-col">
               {navigationsZeilen.map((item, idx) => (
-                <li key={item.href} style={zeilenEinstieg(idx)} className={cn('group relative', zeilenKlassen)}>
+                <li
+                  key={item.href}
+                  style={zeilenEinstieg(idx)}
+                  className={cn(
+                    idx < navigationsZeilen.length - 1 && 'border-b border-[#1e1e1e]',
+                    zeilenKlassen
+                  )}
+                >
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={cn(
-                      'block py-3 pr-16 text-[32px] font-normal leading-none text-[#f2f0ed] transition-all duration-300 ease-out hover:pl-[22px] hover:text-white lg:mr-24 lg:pr-0 lg:text-[50px]',
-                      idx < navigationsZeilen.length - 1 && 'border-b border-[#1e1e1e]'
-                    )}
+                    className="group flex items-baseline justify-between py-3 text-[32px] font-normal leading-none text-[#f2f0ed] transition-all duration-300 ease-out hover:pl-[22px] hover:text-white lg:text-[50px]"
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]">
+                      →
+                    </span>
                   </Link>
-                  {/* Pfeil ausserhalb der Trennlinie, damit diese kürzer bleibt
-                      als die Zeile, während der Pfeil selbst bis zum äusseren
-                      Rand reicht — bündig mit dem X oben. Auf der Trennlinie
-                      zentriert (nicht in der Zeilenmitte), wie im Original. */}
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute right-0 bottom-0 translate-y-1/2 text-[18px] text-[#4a4a4a] transition-colors duration-300 group-hover:text-white lg:text-[26px]"
-                  >
-                    →
-                  </span>
                 </li>
               ))}
             </ul>
