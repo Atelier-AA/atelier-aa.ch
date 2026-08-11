@@ -9,8 +9,9 @@ import { cn } from '@/lib/utils';
  * entfernen, nur per CSS-Klasse ausgeblendet (nicht bedingt gerendert),
  * damit Suchmaschinen und KI-Crawler den vollständigen Text weiterhin sehen.
  *
- * Gleiches Pfeil-Muster wie `Button` (`variant="text"`), nur in der
- * kleineren Textgrösse dieser Stelle statt der grösseren Standardgrösse.
+ * Farbe und Grösse wie die kleinen Eyebrow-Titel ("Über uns",
+ * "Referenzen" usw.: text-xs uppercase tracking-widest text-stone),
+ * plus ein kleiner Pfeil im Stil der übrigen Buttons.
  */
 export default function MehrLesen({
   children,
@@ -27,12 +28,12 @@ export default function MehrLesen({
       <button
         type="button"
         onClick={() => setOffen((v) => !v)}
-        className="group mt-3 inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-ink transition-colors hover:text-graphite"
+        className="group mt-3 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-stone transition-colors hover:text-ink"
       >
         {offen ? 'weniger anzeigen' : 'mehr lesen'}
         <Arrow
           className={cn(
-            'h-[10px] w-[34px] shrink-0 transition-transform duration-300 ease-out',
+            'h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out',
             offen ? 'rotate-180' : 'group-hover:translate-x-[0.2em]'
           )}
         />
