@@ -153,7 +153,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           ausgefahren ? 'translate-y-0 duration-500' : '-translate-y-full duration-300'
         )}
       >
-        <div className="flex flex-1 flex-col gap-10 px-6 pt-24 pb-8 md:px-10 md:pt-28 lg:flex-row lg:gap-20 lg:px-16 lg:pt-8 lg:pb-12">
+        <div className="mx-auto flex w-full max-w-content flex-1 flex-col gap-10 px-6 pt-24 pb-8 md:px-10 md:pt-28 lg:flex-row lg:gap-20 lg:px-16 lg:pt-8 lg:pb-12">
           {/* Kontakt-Karte, vertikal zentriert. Auf dem Handy nach der
               Navigation, ab lg davor. Kein eigenes Links-Padding mehr, damit
               der Text links bündig mit dem Logo oben ist. */}
