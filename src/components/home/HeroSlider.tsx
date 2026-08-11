@@ -120,7 +120,7 @@ export default function HeroSlider() {
               Crawler ohne CSS-Rendering) zu "Verantwortungsvollgeplant". */}
           <h1 className="text-left text-[1.65rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.4rem] lg:text-[3.6rem]">
             <span className="block whitespace-nowrap">Verantwortungsvoll</span>{' '}
-            <span className="block whitespace-nowrap">geplant, gemeinsam gebaut.</span>
+            <span className="block whitespace-nowrap">geplant. Gemeinsam gebaut.</span>
           </h1>
 
           <div className="flex items-end justify-between gap-6 md:w-72 md:flex-col md:items-start md:gap-4">

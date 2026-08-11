@@ -5,6 +5,7 @@ import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
 import { firma } from '@/data/firma';
 import { alleKantone } from '@/lib/regionen';
 import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
+import { cn } from '@/lib/utils';
 
 /**
  * Fusszeile auf einer Ebene: Wortmarke und Kernsatz stehen zusammen mit
@@ -77,10 +78,14 @@ export default function Footer() {
           </div>
 
           <div>
-            {/* Ohne eigenen Titel — die Links sind auch ohne Überschrift
-                verständlich; die leere Zeile hält die Liste auf gleicher
-                Höhe wie die benachbarten Spalten mit Titel. */}
-            <div className="mb-6 h-4" aria-hidden="true" />
+            {/* Ohne eigenen sichtbaren Titel — die Links sind auch ohne
+                Überschrift verständlich. Dasselbe Element wie die echten
+                Spaltentitel (nur unsichtbar statt weglassen), damit die
+                Liste exakt auf derselben Höhe wie Navigation und Kantone
+                beginnt, statt nur ungefähr per fester Pixelhöhe. */}
+            <h3 className={cn(spaltenTitel, 'invisible')} aria-hidden="true">
+              Weitere Seiten
+            </h3>
             <ul>
               {footerZusatz.map((item) => (
                 <li key={item.href}>
@@ -93,7 +98,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="mb-6 h-4" aria-hidden="true" />
+            <h3 className={cn(spaltenTitel, 'invisible')} aria-hidden="true">
+              Kantone
+            </h3>
             <ul>
               {kantone.map((k) => (
                 <li key={k.slug}>

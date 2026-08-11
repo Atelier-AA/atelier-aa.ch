@@ -53,8 +53,9 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
  * getrennten Sektionen. Die Überschrift steht über der ganzen Breite, über
  * Liste und Bildern gemeinsam, statt nur über der Liste. Darunter: links,
- * was wir leisten (zweispaltig, aufklappbar), rechts, was daraus entsteht,
- * eine dünne Trennlinie bindet beide Seiten zu einer Komposition zusammen.
+ * was wir leisten (zweispaltig, Text immer sichtbar statt aufklappbar),
+ * rechts, was daraus entsteht, eine dünne Trennlinie bindet beide Seiten
+ * zu einer Komposition zusammen.
  * Beide Spalten sind gleich hoch (Grid-Standard `stretch`) und enden unten
  * auf derselben Höhe mit ihrem "alle ansehen"-Link, damit Liste und
  * Bilder oben wie unten bündig zueinander stehen.
@@ -74,25 +75,14 @@ export default function KompetenzenReferenzenSection() {
         </h2>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: zweispaltige, aufklappbare Liste. */}
+          {/* Kompetenzen: zweispaltige Liste, Text immer sichtbar. */}
           <div className="flex h-full flex-col justify-between">
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {kompetenzen.map((k) => (
-                <details key={k.titel} className="group border-b border-mist py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-base font-medium text-ink transition-colors group-hover:text-graphite">
-                      {k.titel}
-                    </h3>
-                    <span
-                      aria-hidden="true"
-                      className="relative block h-3 w-3 shrink-0 text-stone"
-                    >
-                      <span className="absolute top-1/2 left-0 block h-px w-3 bg-current" />
-                      <span className="absolute top-1/2 left-0 block h-px w-3 rotate-90 bg-current transition-transform duration-300 ease-out group-open:rotate-0" />
-                    </span>
-                  </summary>
+                <div key={k.titel} className="border-b border-mist py-4">
+                  <h3 className="text-base font-medium text-ink">{k.titel}</h3>
                   <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{k.text}</p>
-                </details>
+                </div>
               ))}
             </div>
             <div className="pt-8">
