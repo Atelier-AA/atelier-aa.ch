@@ -29,12 +29,12 @@ export default function UeberUnsPage() {
               direkt darunter, linksbündig mit dem Text statt unter dem
               Video. */}
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-4">
               Wir gestalten <span className="font-semibold">Architektur</span> mit
               Verantwortung, für Menschen, Orte und{' '}
               <span className="font-semibold">Zukunft.</span>
             </h1>
-            <div className="space-y-4 text-graphite leading-snug">
+            <div className="space-y-3 text-graphite leading-snug">
               <p className="text-lg text-ink">
                 Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
                 im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
@@ -75,7 +75,7 @@ export default function UeberUnsPage() {
               laufende Projekte statt eines gestellten Büro-/Teamfotos. Das
               Teamvideo (ueber-uns-team.mp4) steht jetzt auf /ueber-uns/team,
               wo es thematisch besser passt. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-[3/4]">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"
