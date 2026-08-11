@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import Arrow from '@/components/ui/Arrow';
 import { kompetenzen } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
@@ -15,77 +14,51 @@ import type { Projekt } from '@/types';
 const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
 
 /**
- * Ein Bild im Filmstreifen: Nummer, Titel und Ort stehen fest sichtbar
- * darüber statt als Hover-Einblendung — Layoutvorgabe für diesen Abschnitt.
- * Die Bilder stossen ohne Abstand aneinander, nur eine Haarlinie trennt sie.
+ * Referenzbild in fester Höhe statt der quadratischen Aspect-Ratio von
+ * `ProjektCard` — nur hier, damit das Raster bis zum rechten Rand der
+ * Spalte (bündig mit Kontakt/Burger im Header) reichen kann, ohne dass die
+ * Bilder dadurch höher werden.
  */
-function FilmstreifenBild({
-  projekt,
-  index,
-  priority,
-}: {
-  projekt: Projekt;
-  index: number;
-  priority: boolean;
-}) {
+function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boolean }) {
   return (
     <Link
       href={`/referenzen/${projekt.slug}`}
-      className="group flex min-w-0 flex-col"
+      className="group block min-w-0"
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
-      <div className="px-4 pt-5 pb-4 sm:px-5">
-        <p className="text-xs font-medium tabular-nums text-stone">
-          {String(index + 1).padStart(2, '0')}
-        </p>
-        <p className="mt-2 text-xs font-medium uppercase leading-snug tracking-[0.06em] text-ink transition-colors group-hover:text-graphite">
-          {projekt.title}
-        </p>
-        <p className="mt-1 text-xs uppercase tracking-[0.06em] text-stone">
-          {ortMitKanton(projekt)}
-        </p>
-      </div>
-      <div className="relative aspect-[3/4] min-h-[220px] overflow-hidden bg-mist">
+      <div className="relative h-60 overflow-hidden bg-mist">
         <Image
           src={projekt.thumbnail}
-          alt=""
+          alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
           fill
           priority={priority}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
-          sizes="(max-width: 640px) 50vw, (max-width: 1100px) 25vw, 20vw"
+          sizes="(max-width: 1100px) 50vw, 25vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <p className="truncate text-lg font-medium leading-tight text-white">
+            {projekt.title}
+          </p>
+          <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
+            {ortMitKanton(projekt)}
+          </p>
+        </div>
       </div>
-    </Link>
-  );
-}
-
-/** Zeile in der nummerierten Kompetenzen-Liste: Nummer, Titel, Linie, Pfeil. */
-function KompetenzZeile({ titel, nummer }: { titel: string; nummer: number }) {
-  return (
-    <Link
-      href="/leistungen"
-      className="group flex items-center gap-4 border-b border-mist py-4"
-    >
-      <span className="text-sm font-medium tabular-nums text-stone">
-        {String(nummer).padStart(2, '0')}
-      </span>
-      <span className="text-base font-medium text-ink transition-colors group-hover:text-graphite">
-        {titel}
-      </span>
-      <span aria-hidden="true" className="mx-2 h-px flex-1 bg-mist" />
-      <Arrow
-        className="h-[12px] w-[34px] shrink-0 text-stone transition-all duration-300 ease-out group-hover:translate-x-[0.2em] group-hover:text-ink"
-      />
     </Link>
   );
 }
 
 /**
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
- * getrennten Sektionen: links, was wir leisten, als nummerierte Liste;
- * rechts, was daraus entsteht, als Bild-Filmstreifen — eine dünne
+ * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
+ * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
  * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
- * Jede Spalte schliesst mit dem gewohnten "alle ansehen"-Pfeil-Textlink ab.
+ * Überschrift und Referenzen-Raster stehen in derselben Grid-Zeile, damit
+ * die Bilder oben mit der Überschrift abschliessen statt tiefer zu wirken;
+ * die beiden "alle ansehen"-Links stehen in einer eigenen Zeile darunter,
+ * auf gleicher Höhe. Das Referenzen-Raster füllt die volle Spaltenbreite
+ * (bündig mit dem rechten Rand des Headers), die Bildhöhe bleibt dabei fest.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -98,18 +71,35 @@ export default function KompetenzenReferenzenSection() {
         </p>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: Überschrift plus nummerierte Liste. */}
-          <div>
-            <h2 className="mb-10 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
+          {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
+          <div className="lg:col-start-1 lg:row-start-1">
+            <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
               Fünf <span className="font-semibold">Kompetenzen</span>, sichtbar in
               echten <span className="font-semibold">Projekten.</span>
             </h2>
-            <div>
-              {kompetenzen.map((k, idx) => (
-                <KompetenzZeile key={k.titel} titel={k.titel} nummer={idx + 1} />
+            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+              {kompetenzen.map((k) => (
+                <details key={k.titel} className="group border-b border-mist py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-base font-medium text-ink transition-colors group-hover:text-graphite">
+                      {k.titel}
+                    </h3>
+                    <span
+                      aria-hidden="true"
+                      className="relative block h-3 w-3 shrink-0 text-stone"
+                    >
+                      <span className="absolute top-1/2 left-0 block h-px w-3 bg-current" />
+                      <span className="absolute top-1/2 left-0 block h-px w-3 rotate-90 bg-current transition-transform duration-300 ease-out group-open:rotate-0" />
+                    </span>
+                  </summary>
+                  <p className="mt-3 pr-8 text-sm text-graphite leading-relaxed">{k.text}</p>
+                </details>
               ))}
             </div>
-            <Button href="/leistungen" variant="text" className="mt-4">
+          </div>
+
+          <div className="lg:col-start-1 lg:row-start-2">
+            <Button href="/leistungen" variant="text">
               alle Kompetenzen ansehen
             </Button>
           </div>
@@ -117,17 +107,23 @@ export default function KompetenzenReferenzenSection() {
           {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
               Komposition — nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
-          <div className="hidden bg-mist lg:block" aria-hidden="true" />
+          <div
+            className="hidden bg-mist lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:block"
+            aria-hidden="true"
+          />
 
-          {/* Referenzen: Filmstreifen aus vier Bildern, ohne Zwischenraum,
-              über die volle Spaltenbreite. */}
-          <div>
-            <div className="grid grid-cols-2 divide-x divide-y divide-mist border border-mist sm:grid-cols-4 sm:divide-y-0">
+          {/* Referenzen: 2×2-Raster über die volle Spaltenbreite, mit fester
+              Bildhöhe statt der quadratischen Karten sonst auf der Seite. */}
+          <div className="lg:col-start-3 lg:row-start-1">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {projekte.map((p, idx) => (
-                <FilmstreifenBild key={p.slug} projekt={p} index={idx} priority={idx < 2} />
+                <ReferenzBild key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
-            <Button href="/projekte" variant="text" className="mt-4">
+          </div>
+
+          <div className="lg:col-start-3 lg:row-start-2">
+            <Button href="/projekte" variant="text">
               alle Projekte ansehen
             </Button>
           </div>
