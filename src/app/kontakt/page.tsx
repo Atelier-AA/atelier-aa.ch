@@ -14,8 +14,15 @@ export default function KontaktPage() {
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
-        {/* Links Text/Adresse, rechts Formular. */}
+        {/* Links Formular, rechts Text/Adresse. */}
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+          <div className="w-full lg:pt-1">
+            <p className="text-xs uppercase tracking-widest text-stone mb-8">
+              Kontakt
+            </p>
+            <KontaktformularEinfach />
+          </div>
+
           <div>
             <h1 className="text-4xl font-normal leading-tight text-ink mb-10 max-w-lg md:text-5xl lg:text-6xl">
               Der erste <span className="font-semibold">Schritt</span> ist ein{' '}
@@ -46,13 +53,6 @@ export default function KontaktPage() {
             >
               {firma.email}
             </a>
-          </div>
-
-          <div className="w-full lg:w-4/5 lg:pt-1">
-            <p className="text-xs uppercase tracking-widest text-stone mb-8">
-              Kontakt
-            </p>
-            <KontaktformularEinfach />
           </div>
         </div>
       </Container>
