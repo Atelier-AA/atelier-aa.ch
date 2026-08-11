@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
 import Arrow from '@/components/ui/Arrow';
 import { kompetenzen } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
-import { cn, ortMitKanton } from '@/lib/utils';
+import { ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
 
 /**
@@ -79,18 +80,12 @@ function KompetenzZeile({ titel, nummer }: { titel: string; nummer: number }) {
   );
 }
 
-/** Gemeinsamer Stil der beiden "alle ansehen"-Leisten am Fuss der Spalten. */
-const leisteKlassen =
-  'group items-center justify-between gap-4 px-6 py-4 text-xs font-medium uppercase tracking-widest transition-colors';
-
 /**
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
  * getrennten Sektionen: links, was wir leisten, als nummerierte Liste;
  * rechts, was daraus entsteht, als Bild-Filmstreifen — eine dünne
  * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
- * Jede Spalte schliesst mit einer eigenen "alle ansehen"-Leiste ab, die
- * direkt an ihren Inhalt anschliesst (links hell, rechts dunkel und
- * bündig mit dem Bilderstreifen darüber).
+ * Jede Spalte schliesst mit dem gewohnten "alle ansehen"-Pfeil-Textlink ab.
  */
 export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -114,13 +109,9 @@ export default function KompetenzenReferenzenSection() {
                 <KompetenzZeile key={k.titel} titel={k.titel} nummer={idx + 1} />
               ))}
             </div>
-            <Link
-              href="/leistungen"
-              className={cn(leisteKlassen, 'mt-8 inline-flex w-full bg-mist text-ink hover:bg-mist/70 sm:w-auto')}
-            >
+            <Button href="/leistungen" variant="text" className="mt-4">
               alle Kompetenzen ansehen
-              <Arrow className="h-[12px] w-[34px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em]" />
-            </Link>
+            </Button>
           </div>
 
           {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
@@ -136,13 +127,9 @@ export default function KompetenzenReferenzenSection() {
                 <FilmstreifenBild key={p.slug} projekt={p} index={idx} priority={idx < 2} />
               ))}
             </div>
-            <Link
-              href="/projekte"
-              className={cn(leisteKlassen, 'flex bg-ink text-white hover:bg-graphite')}
-            >
+            <Button href="/projekte" variant="text" className="mt-4">
               alle Projekte ansehen
-              <Arrow className="h-[12px] w-[34px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em]" />
-            </Link>
+            </Button>
           </div>
         </div>
       </Container>
