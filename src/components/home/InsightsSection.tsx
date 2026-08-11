@@ -16,7 +16,7 @@ export default function InsightsSection() {
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
-      <Container maxWidth="max-w-[1600px]">
+      <Container maxWidth="max-w-[1900px]">
         <div className="mb-10 max-w-2xl md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
           <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">

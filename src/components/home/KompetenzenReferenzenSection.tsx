@@ -65,7 +65,7 @@ export default function KompetenzenReferenzenSection() {
 
   return (
     <section className="border-t border-mist py-16 md:py-20">
-      <Container maxWidth="max-w-[1600px]">
+      <Container maxWidth="max-w-[1900px]">
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
           Kompetenzen &amp; Projekte
         </p>
