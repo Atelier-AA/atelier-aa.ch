@@ -8,7 +8,7 @@ import AbschlussSection from '@/components/home/AbschlussSection';
 
 export const metadata: Metadata = {
   description:
-    'Atelier AA Architekten GmbH aus Obfelden: Architektur, Umbau und Verdichtung mit Schwerpunkt Zürich, Aargau und Zug — auf Anfrage in der ganzen Schweiz. Mehrfamilienhäuser, Sanierungen und Projektentwicklung — von der Machbarkeitsstudie bis zur Schlüsselübergabe.',
+    'Atelier AA Architekten GmbH aus Obfelden plant Architektur, Umbau und Verdichtung mit Schwerpunkt Zürich, Aargau und Zug, auf Anfrage in der ganzen Schweiz. Wir realisieren Mehrfamilienhäuser, Sanierungen und Projektentwicklung von der Machbarkeitsstudie bis zur Schlüsselübergabe.',
   alternates: { canonical: '/' },
 };
 
@@ -24,15 +24,21 @@ export const metadata: Metadata = {
  * Ende steht ein eigens gestalteter Kontakt-Aufruf statt eines dunkel
  * hinterlegten Blocks.
  */
+/** Etwas breiter als der Rest der Website (1440px) — Kundenwunsch, nach
+ *  Vorschau unter /vorschau/startseite-breit freigegeben. Header und Footer
+ *  wechseln auf der Startseite ebenfalls auf diese Breite (siehe
+ *  `Header.tsx`/`Footer.tsx`, per `usePathname`). */
+const BREITE = 'max-w-[1600px]';
+
 export default function HomePage() {
   return (
     <>
       <HeroSlider />
-      <IntroSection />
-      <KompetenzenReferenzenSection />
-      <UeberUnsSection />
-      <InsightsSection />
-      <AbschlussSection />
+      <IntroSection maxWidth={BREITE} />
+      <KompetenzenReferenzenSection maxWidth={BREITE} />
+      <UeberUnsSection maxWidth={BREITE} />
+      <InsightsSection maxWidth={BREITE} />
+      <AbschlussSection maxWidth={BREITE} />
     </>
   );
 }

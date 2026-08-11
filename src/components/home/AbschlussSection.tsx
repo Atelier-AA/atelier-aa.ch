@@ -22,7 +22,7 @@ export default function AbschlussSection({ maxWidth }: { maxWidth?: string } = {
             <p className="max-w-[46ch] text-lg leading-relaxed text-graphite">
               Viele Parzellen aus den Sechziger- und Siebzigerjahren nutzen ihre
               zulässige Ausnutzung nur zur Hälfte. Eine Machbarkeitsstudie zeigt in
-              wenigen Wochen, ob sich Aufstockung, Anbau oder Ersatzneubau lohnt —
+              wenigen Wochen, ob sich Aufstockung, Anbau oder Ersatzneubau lohnt,
               mit Volumenstudie und Kostenrahmen im vierstelligen Bereich.
             </p>
             <div className="mt-8">

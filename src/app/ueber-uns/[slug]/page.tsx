@@ -90,7 +90,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             <div className="relative aspect-[3/4] overflow-hidden bg-mist">
               <Image
                 src={person.bild}
-                alt={`Porträt von ${person.name}, ${person.rolle} bei Atelier AA Architekten`}
+                alt={person.bildAlt ?? `Porträt von ${person.name}, ${person.rolle} bei Atelier AA Architekten`}
                 fill
                 priority
                 className="object-cover"

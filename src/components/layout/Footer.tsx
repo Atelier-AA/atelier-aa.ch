@@ -25,9 +25,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const kantone = alleKantone();
   const pathname = usePathname();
-  /** Testroute für die etwas breitere Startseite — nur dort ist der Footer
-   *  ebenfalls breiter, damit Header/Footer optisch dazu passen. */
-  const breiterFooter = pathname === '/vorschau/startseite-breit';
+  /** Auf der Startseite ist der Footer ebenfalls breiter (1600px statt
+   *  1440px), damit er zur breiteren Startseite passt. */
+  const breiterFooter = pathname === '/';
   const spaltenTitel = 'mb-6 text-xs uppercase tracking-widest text-white/50';
   const verweis =
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white';

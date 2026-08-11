@@ -24,7 +24,7 @@ export default function InsightsSection({ maxWidth }: { maxWidth?: string } = {}
             <span className="font-semibold">Arbeit</span>
           </h2>
           <p className="mt-4 text-lg text-graphite leading-relaxed">
-            Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf — wir
+            Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf. Wir
             schreiben über die Fragen, die uns Bauherrschaften stellen.
           </p>
         </div>

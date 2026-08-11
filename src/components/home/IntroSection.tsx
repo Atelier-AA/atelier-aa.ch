@@ -32,7 +32,7 @@ export default function IntroSection({ maxWidth }: { maxWidth?: string } = {}) {
               Atelier AA Architekten ist ein Architekturbüro mit Sitz in Obfelden im
               Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
               Mehrfamilienhäuser und Wohnüberbauungen ebenso wie Umbauten und
-              Sanierungen im Bestand — als Architekten oder im Generalplaner-Mandat.
+              Sanierungen im Bestand, als Architekten oder im Generalplaner-Mandat.
             </p>
             <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-ink">
               Von der ersten Machbarkeitsstudie über Baugesuch und
@@ -43,7 +43,7 @@ export default function IntroSection({ maxWidth }: { maxWidth?: string } = {}) {
             <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-graphite">
               Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
               sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
-              Räume entwickeln wir Architektur, die mehr ist als ein Gebäude – sie schafft
+              Räume entwickeln wir Architektur, die mehr ist als ein Gebäude. Sie schafft
               Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
               zeigen unsere realisierten Projekte.
             </p>

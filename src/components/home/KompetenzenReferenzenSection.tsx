@@ -15,9 +15,9 @@ const AUSWAHL = ['mfh-sihlaurain', 'defh-safenwil', 'efh-jonen', 'mfh-letten'];
 
 /**
  * Referenzbild in fester Höhe statt der quadratischen Aspect-Ratio von
- * `ProjektCard` — nur hier, damit das Raster bis zum rechten Rand der
- * Spalte (bündig mit Kontakt/Burger im Header) reichen kann, ohne dass die
- * Bilder dadurch höher werden.
+ * `ProjektCard`, nur hier, damit das Raster bis zum rechten Rand der Spalte
+ * (bündig mit Kontakt/Burger im Header) reichen kann, ohne dass die Bilder
+ * dadurch höher werden.
  */
 function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boolean }) {
   return (
@@ -51,14 +51,13 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
 
 /**
  * Kompetenzen und Referenzen in einem gemeinsamen Abschnitt statt zwei
- * getrennten Sektionen: links, was wir leisten (zweispaltig, damit die Liste
- * ihre Hälfte ausfüllt), rechts, was daraus entsteht — eine dünne
- * Trennlinie zwischen beiden bindet sie zu einer Komposition zusammen.
- * Überschrift und Referenzen-Raster stehen in derselben Grid-Zeile, damit
- * die Bilder oben mit der Überschrift abschliessen statt tiefer zu wirken;
- * die beiden "alle ansehen"-Links stehen in einer eigenen Zeile darunter,
- * auf gleicher Höhe. Das Referenzen-Raster füllt die volle Spaltenbreite
- * (bündig mit dem rechten Rand des Headers), die Bildhöhe bleibt dabei fest.
+ * getrennten Sektionen. Die Überschrift steht über der ganzen Breite, über
+ * Liste und Bildern gemeinsam, statt nur über der Liste. Darunter: links,
+ * was wir leisten (zweispaltig, aufklappbar), rechts, was daraus entsteht,
+ * eine dünne Trennlinie bindet beide Seiten zu einer Komposition zusammen.
+ * Beide Spalten sind gleich hoch (Grid-Standard `stretch`) und enden unten
+ * auf derselben Höhe mit ihrem "alle ansehen"-Link, damit Liste und
+ * Bilder oben wie unten bündig zueinander stehen.
  */
 export default function KompetenzenReferenzenSection({ maxWidth }: { maxWidth?: string } = {}) {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
@@ -69,14 +68,14 @@ export default function KompetenzenReferenzenSection({ maxWidth }: { maxWidth?: 
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
           Kompetenzen &amp; Projekte
         </p>
+        <h2 className="mb-12 max-w-[40ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
+          <span className="font-semibold">Kompetenzen</span>, sichtbar in echten{' '}
+          <span className="font-semibold">Projekten.</span>
+        </h2>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_1px_1fr]">
-          {/* Kompetenzen: Überschrift plus zweispaltige, aufklappbare Liste. */}
-          <div className="lg:col-start-1 lg:row-start-1">
-            <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-              Fünf <span className="font-semibold">Kompetenzen</span>, sichtbar in
-              echten <span className="font-semibold">Projekten.</span>
-            </h2>
+          {/* Kompetenzen: zweispaltige, aufklappbare Liste. */}
+          <div className="flex h-full flex-col justify-between">
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {kompetenzen.map((k) => (
                 <details key={k.titel} className="group border-b border-mist py-4">
@@ -96,36 +95,31 @@ export default function KompetenzenReferenzenSection({ maxWidth }: { maxWidth?: 
                 </details>
               ))}
             </div>
-          </div>
-
-          <div className="lg:col-start-1 lg:row-start-2">
-            <Button href="/leistungen" variant="text">
-              alle Kompetenzen ansehen
-            </Button>
+            <div className="pt-8">
+              <Button href="/leistungen" variant="text">
+                alle Kompetenzen ansehen
+              </Button>
+            </div>
           </div>
 
           {/* Trennlinie: bindet Kompetenzen und Referenzen visuell zu einer
-              Komposition — nur ab Desktop-Breite, wo beide Seiten
+              Komposition, nur ab Desktop-Breite, wo beide Seiten
               nebeneinander stehen. */}
-          <div
-            className="hidden bg-mist lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:block"
-            aria-hidden="true"
-          />
+          <div className="hidden bg-mist lg:block" aria-hidden="true" />
 
-          {/* Referenzen: 2×2-Raster über die volle Spaltenbreite, mit fester
-              Bildhöhe statt der quadratischen Karten sonst auf der Seite. */}
-          <div className="lg:col-start-3 lg:row-start-1">
+          {/* Referenzen: 2×2-Raster, mit fester Bildhöhe statt der
+              quadratischen Karten sonst auf der Seite. */}
+          <div className="flex h-full flex-col justify-between">
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {projekte.map((p, idx) => (
                 <ReferenzBild key={p.slug} projekt={p} priority={idx < 2} />
               ))}
             </div>
-          </div>
-
-          <div className="lg:col-start-3 lg:row-start-2">
-            <Button href="/projekte" variant="text">
-              alle Projekte ansehen
-            </Button>
+            <div className="pt-8">
+              <Button href="/projekte" variant="text">
+                alle Projekte ansehen
+              </Button>
+            </div>
           </div>
         </div>
       </Container>

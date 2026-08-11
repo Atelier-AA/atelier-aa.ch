@@ -107,6 +107,10 @@ export interface TeamMember {
   name: string;
   rolle: string;
   bild: string;
+  /** Überschreibt den generischen Alt-Text des Porträts, z. B. um bei
+   *  Architekt:innen den Tätigkeitsort für die Bildersuche zu nennen. Ohne
+   *  Angabe: "Porträt von {name}, {rolle} bei Atelier AA Architekten". */
+  bildAlt?: string;
   /** Einzeiler unter dem Namen auf der Detailseite. */
   kurz: string;
   /** Fachliche Schwerpunkte. */

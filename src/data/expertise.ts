@@ -25,7 +25,7 @@ export const kompetenzen = [
       'Raum- und Funktionsprogramm: Entwicklung eines Organisationsschemas',
       'Grundstücksanalyse: Standortfaktoren und der Genius Loci',
     ],
-    text: 'Bevor die erste Linie gezeichnet ist, klären wir, was Ihr Projekt wirklich braucht — fachlich fundiert und auf Ihr Grundstück zugeschnitten.',
+    text: 'Bevor die erste Linie gezeichnet ist, klären wir, was Ihr Projekt wirklich braucht, fachlich fundiert und auf Ihr Grundstück zugeschnitten.',
   },
   {
     titel: 'Analyse und Konzept',
