@@ -13,6 +13,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
+  /** Testroute für die etwas breitere Startseite — nur dort ist der Header
+   *  ebenfalls breiter, damit Header/Footer optisch dazu passen. Überall
+   *  sonst unverändert. */
+  const breiterHeader = pathname === '/vorschau/startseite-breit';
 
   useEffect(() => {
     // Schwelle 50px wie im alten Theme (header.php: `window.scrollY > 50`).
@@ -64,7 +68,10 @@ export default function Header() {
           onDark ? 'text-white' : 'text-ink'
         )}
       >
-        <Container className="flex items-center justify-between">
+        <Container
+          className="flex items-center justify-between"
+          maxWidth={breiterHeader ? 'max-w-[1600px]' : undefined}
+        >
           {/* Höhe bleibt beim Scrollen und beim Öffnen des Menüs konstant —
               wie bei elindo.ch. Nur die Breite ändert sich innerhalb von
               Logo (Wortmarke blendet aus), das Signet bleibt dadurch exakt

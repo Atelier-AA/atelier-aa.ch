@@ -60,12 +60,12 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
  * auf gleicher Höhe. Das Referenzen-Raster füllt die volle Spaltenbreite
  * (bündig mit dem rechten Rand des Headers), die Bildhöhe bleibt dabei fest.
  */
-export default function KompetenzenReferenzenSection() {
+export default function KompetenzenReferenzenSection({ maxWidth }: { maxWidth?: string } = {}) {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
 
   return (
     <section className="border-t border-mist py-16 md:py-20">
-      <Container maxWidth="max-w-[1900px]">
+      <Container maxWidth={maxWidth}>
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
           Kompetenzen &amp; Projekte
         </p>
