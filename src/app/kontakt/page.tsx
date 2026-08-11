@@ -17,9 +17,6 @@ export default function KontaktPage() {
         {/* Links Text/Adresse, rechts Formular. */}
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-widest text-stone mb-4">
-              Kontakt
-            </p>
             <h1 className="text-4xl font-normal leading-tight text-ink mb-10 max-w-lg md:text-5xl lg:text-6xl">
               Der erste <span className="font-semibold">Schritt</span> ist ein{' '}
               <span className="font-semibold">Gespräch.</span>
@@ -52,6 +49,9 @@ export default function KontaktPage() {
           </div>
 
           <div className="w-full lg:w-4/5 lg:pt-1">
+            <p className="text-xs uppercase tracking-widest text-stone mb-4">
+              Kontakt
+            </p>
             <KontaktformularEinfach />
           </div>
         </div>
