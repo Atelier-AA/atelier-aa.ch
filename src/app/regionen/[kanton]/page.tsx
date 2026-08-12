@@ -105,7 +105,12 @@ export default async function KantonPage({ params }: PageProps) {
           </ul>
         </div>
 
-        <div className="mt-16 border-t border-mist pt-16 md:mt-20">
+      </Container>
+
+      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
+          Fensterbreite, wie auf der Startseite. */}
+      <div className="mt-16 border-t border-mist pt-16 md:mt-20">
+        <Container>
           <div className="max-w-3xl">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Nächster Schritt
@@ -121,8 +126,8 @@ export default async function KantonPage({ params }: PageProps) {
               Kontakt aufnehmen
             </Button>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

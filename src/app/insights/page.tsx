@@ -42,8 +42,12 @@ export default function InsightsPage() {
             </Eingeblendet>
           ))}
         </div>
+      </Container>
 
-        <div className="mt-32 border-t border-mist pt-16 pb-20 md:mt-40 md:pb-28">
+      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
+          Fensterbreite, wie auf der Startseite. */}
+      <div className="mt-32 border-t border-mist pt-16 pb-20 md:mt-40 md:pb-28">
+        <Container>
           <div className="max-w-3xl">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Nächster Schritt
@@ -59,8 +63,8 @@ export default function InsightsPage() {
               Kontaktieren Sie uns
             </Button>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }
