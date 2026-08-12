@@ -59,7 +59,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
   if (!projekt) notFound();
 
-  const weitere = getWeitereProjekte(slug, 3);
+  const weitere = getWeitereProjekte(slug, 4);
   const kanton = alleKantone().find((k) => k.kuerzel === projekt.kanton);
   const ortSlug = slugify(projekt.ort);
   const BASIS = 'https://www.atelier-aa.ch';

@@ -1220,7 +1220,7 @@ export function getProjekt(slug: string): Projekt | undefined {
   return projekte.find((p) => p.slug === slug);
 }
 
-export function getWeitereProjekte(currentSlug: string, count = 3): Projekt[] {
+export function getWeitereProjekte(currentSlug: string, count = 4): Projekt[] {
   return projekte.filter((p) => p.slug !== currentSlug).slice(0, count);
 }
 
