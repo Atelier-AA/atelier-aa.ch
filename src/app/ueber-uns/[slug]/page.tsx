@@ -94,6 +94,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 fill
                 priority
                 className="object-cover"
+                style={person.bildPosition ? { objectPosition: person.bildPosition } : undefined}
                 sizes="(max-width: 1100px) 100vw, 380px"
               />
             </div>

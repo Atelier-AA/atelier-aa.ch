@@ -63,6 +63,10 @@ export const team: TeamMember[] = [
     name: 'Fatime Aljili',
     rolle: 'Personal',
     bild: '/images/team/fatime-aljili.jpg',
+    // Im Originalfoto sitzt sie höher im Bild als bei den übrigen Porträts
+    // (mehr Freiraum über dem Kopf) — Ausschnitt nach unten verschoben,
+    // damit die Schulterhöhe zu den anderen Porträts passt.
+    bildPosition: '50% 70%',
     kurz: 'Verantwortlich für Personalfragen im Büro.',
     schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [

@@ -28,6 +28,7 @@ export default function TeamMember({ member }: TeamMemberProps) {
           alt={member.bildAlt ?? `Porträt von ${member.name}, ${member.rolle} bei Atelier AA Architekten`}
           fill
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          style={member.bildPosition ? { objectPosition: member.bildPosition } : undefined}
           sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw"
         />
         <div className="absolute inset-0 z-10 flex items-end justify-start bg-black/35 p-5 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100">

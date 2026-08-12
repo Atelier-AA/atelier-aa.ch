@@ -111,6 +111,10 @@ export interface TeamMember {
    *  Architekt:innen den Tätigkeitsort für die Bildersuche zu nennen. Ohne
    *  Angabe: "Porträt von {name}, {rolle} bei Atelier AA Architekten". */
   bildAlt?: string;
+  /** CSS object-position für den Bildausschnitt (z. B. '50% 70%'), um bei
+   *  abweichender Kopf-/Schulterhöhe im Originalfoto den sichtbaren
+   *  Ausschnitt an die übrigen Porträts anzugleichen. Ohne Angabe: zentriert. */
+  bildPosition?: string;
   /** Einzeiler unter dem Namen auf der Detailseite. */
   kurz: string;
   /** Fachliche Schwerpunkte. */
