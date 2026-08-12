@@ -66,43 +66,50 @@ export default function ProjektentwicklungHeroVorschau() {
       </div>
 
       <Container className="mt-16">
+        {/* Animation stretcht sich (lg:h-full) exakt auf die Höhe des
+            Einleitungstexts links, damit sie unten bündig mit dem
+            Trennstrich vor der "7" abschliesst. */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_600px] lg:gap-16">
-          <div>
-            <Link
-              href="/leistungen"
-              className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
-            >
-              ← Leistungen
-            </Link>
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Projektentwicklung
-            </p>
-            <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
-              Von der Grundstücksidee zum{' '}
-              <span className="font-semibold">bewilligungsfähigen Projekt.</span>
-            </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-graphite md:text-xl">
-              Wir entwickeln Grundstücke und Liegenschaften von der ersten
-              Potenzialanalyse bis zur bewilligungsfähigen Projektidee — für
-              Investoren, Grundstückeigentümer und institutionelle Bauherrschaften.
-            </p>
-            <div className="mt-10 flex items-baseline gap-4 border-t border-mist pt-8">
-              <span className="text-6xl font-semibold leading-none text-ink">7</span>
-              <span className="max-w-[22ch] text-graphite leading-snug">
-                Schritte von der Grundstücksidee bis zur Übergabe.
-              </span>
+          <div className="lg:contents">
+            <div className="lg:col-start-1 lg:row-start-1">
+              <Link
+                href="/leistungen"
+                className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
+              >
+                ← Leistungen
+              </Link>
+              <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+                Projektentwicklung
+              </p>
+              <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+                Von der Grundstücksidee zum{' '}
+                <span className="font-semibold">bewilligungsfähigen Projekt.</span>
+              </h1>
+              <p className="max-w-xl text-lg leading-relaxed text-graphite md:text-xl">
+                Wir entwickeln Grundstücke und Liegenschaften von der ersten
+                Potenzialanalyse bis zur bewilligungsfähigen Projektidee — für
+                Investoren, Grundstückeigentümer und institutionelle Bauherrschaften.
+              </p>
             </div>
-            <div className="mt-8">
-              <Button href="/kontakt" variant="primary">
-                Potenzial besprechen
-              </Button>
+            <div className="lg:col-start-1 lg:row-start-2">
+              <div className="mt-10 flex items-baseline gap-4 border-t border-mist pt-8">
+                <span className="text-6xl font-semibold leading-none text-ink">7</span>
+                <span className="max-w-[22ch] text-graphite leading-snug">
+                  Schritte von der Grundstücksidee bis zur Übergabe.
+                </span>
+              </div>
+              <div className="mt-8">
+                <Button href="/kontakt" variant="primary">
+                  Potenzial besprechen
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Canvas-Animation statt Foto: Parzelle, Grundriss, Gebäude
               (EG + Attika) und zuletzt ein Baum zeichnen sich selbst auf,
               als Endlosschleife — Code vom Kunden bereitgestellt. */}
-          <div className="relative aspect-[3/2] w-full overflow-hidden bg-mist">
+          <div className="relative aspect-[3/2] w-full overflow-hidden bg-mist lg:aspect-auto lg:col-start-2 lg:row-start-1 lg:h-full">
             <ProjektentwicklungAnimation />
           </div>
         </div>
