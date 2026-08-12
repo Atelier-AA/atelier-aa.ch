@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import ProjektentwicklungAnimation from '@/components/leistungen/ProjektentwicklungAnimation';
 import { projekte } from '@/data/projekte';
 import { firma } from '@/data/firma';
 import { ortMitKanton } from '@/lib/utils';
@@ -98,73 +99,11 @@ export default function ProjektentwicklungHeroVorschau() {
             </div>
           </div>
 
-          {/* Gezeichnete Linien statt Foto: erst die Parzelle, dann das
-              Gebäude, dann die Massline — zeichnet den Weg von der
-              Grundstücksidee zum Projekt nach, passend zum Text links. */}
-          <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
-            <svg
-              viewBox="0 0 400 500"
-              className="absolute inset-0 h-full w-full stroke-ink"
-              fill="none"
-            >
-              <path
-                d="M40,460 L40,80 L220,40 L360,120 L360,460 Z"
-                strokeWidth="1.5"
-                pathLength="1"
-                className="pe-linie"
-                style={{ animationDelay: '0.2s' }}
-              />
-              <path
-                d="M100,420 L100,220 L260,180 L300,240 L300,420 Z"
-                strokeWidth="1.5"
-                pathLength="1"
-                className="pe-linie"
-                style={{ animationDelay: '1.3s' }}
-              />
-              <line
-                x1="40"
-                y1="480"
-                x2="360"
-                y2="480"
-                strokeWidth="1"
-                pathLength="1"
-                className="pe-linie"
-                style={{ animationDelay: '2.4s' }}
-              />
-              <line
-                x1="40"
-                y1="470"
-                x2="40"
-                y2="490"
-                strokeWidth="1"
-                pathLength="1"
-                className="pe-linie"
-                style={{ animationDelay: '2.7s' }}
-              />
-              <line
-                x1="360"
-                y1="470"
-                x2="360"
-                y2="490"
-                strokeWidth="1"
-                pathLength="1"
-                className="pe-linie"
-                style={{ animationDelay: '2.7s' }}
-              />
-            </svg>
-            <style>{`
-              .pe-linie {
-                stroke-dasharray: 1;
-                stroke-dashoffset: 1;
-                animation: pe-linie-zeichnen 1.1s ease-out forwards;
-              }
-              @media (prefers-reduced-motion: reduce) {
-                .pe-linie { animation: none; stroke-dashoffset: 0; }
-              }
-              @keyframes pe-linie-zeichnen {
-                to { stroke-dashoffset: 0; }
-              }
-            `}</style>
+          {/* Canvas-Animation statt Foto: Parzelle, Grundriss, Gebäude
+              (EG + Attika) und zuletzt ein Baum zeichnen sich selbst auf,
+              als Endlosschleife — Code vom Kunden bereitgestellt. */}
+          <div className="relative aspect-[3/2] w-full overflow-hidden bg-mist">
+            <ProjektentwicklungAnimation />
           </div>
         </div>
 

@@ -85,7 +85,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
 
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
             <Image
-              src="/images/leistungen/buerogebaeude.jpg"
+              src="/images/leistungen/machbarkeitsstudie-hero.jpg"
               alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
               fill
               priority
