@@ -75,6 +75,65 @@ export default function UeberUnsTextVorschau() {
             />
           </div>
         </div>
+        {/* Haltung als vier eigenständige Grundsätze statt nur im Fliesstext
+            erwähnt — mehr Substanz, ohne Kennzahlen zu erfinden, die es für
+            ein junges Büro nicht gibt (anders als bei grossen Vorbildern mit
+            mehreren Standorten). */}
+        <div className="mt-20 border-t border-mist pt-16 md:mt-28">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Haltung</p>
+          <h2 className="mb-10 max-w-xl text-3xl font-normal leading-tight text-ink md:text-4xl">
+            Vier Grundsätze, die <span className="font-semibold">jedes Projekt</span>{' '}
+            tragen.
+          </h2>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+            <div>
+              <h3 className="text-base font-medium text-ink">Zuhören vor Entwerfen</h3>
+              <p className="mt-3 text-sm text-graphite leading-relaxed">
+                Wir beginnen mit einem Gespräch vor Ort, nicht am Zeichentisch. Erst wenn
+                wir das Grundstück und Ihre Bedürfnisse verstehen, beginnt der Entwurf.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-medium text-ink">Wirtschaftlichkeit von Anfang an</h3>
+              <p className="mt-3 text-sm text-graphite leading-relaxed">
+                Kosten, Mietzinsniveau und Wohnungsmix rechnen wir von der ersten Skizze
+                an mit, nicht erst wenn der Entwurf steht — aus über fünfzehn Jahren
+                eigener Bau- und Immobilienpraxis.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-medium text-ink">Verantwortung für den Bestand</h3>
+              <p className="mt-3 text-sm text-graphite leading-relaxed">
+                Neubau und Umbau sind für uns gleichwertig. Wo ein Gebäude bereits steht,
+                fragen wir zuerst, was davon trägt, bevor wir neu planen.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-medium text-ink">Ein Team, ein Ansprechpartner</h3>
+              <p className="mt-3 text-sm text-graphite leading-relaxed">
+                Von der Machbarkeitsstudie bis zur Bauleitung begleiten Sie dieselben
+                Personen durch Ihr Projekt — auch im Generalplaner-Mandat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Kurze Gründungsgeschichte statt nur ein Nebensatz zum Jahr 2021 —
+            konkret, aber ohne die Grösse des Büros zu übertreiben. */}
+        <div className="mt-20 max-w-2xl border-t border-mist pt-16 md:mt-28">
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Geschichte</p>
+          <h2 className="mb-6 text-3xl font-normal leading-tight text-ink md:text-4xl">
+            Ein junges Büro mit <span className="font-semibold">langer Erfahrung.</span>
+          </h2>
+          <p className="text-lg leading-relaxed text-graphite">
+            Atelier AA Architekten wurde 2021 in Obfelden gegründet — nach über
+            fünfzehn Jahren, die Gründer Alisami Aljili zuvor in der Bau- und
+            Immobilienpraxis gesammelt hatte. Diese Erfahrung prägt bis heute, wie wir
+            arbeiten: Wir entwerfen nicht am Markt vorbei, sondern kennen die Zahlen,
+            die über die Realisierbarkeit eines Projekts entscheiden. Seither ist das
+            Team gewachsen, die Haltung ist gleich geblieben.
+          </p>
+        </div>
       </Container>
 
       <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
