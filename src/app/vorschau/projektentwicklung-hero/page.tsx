@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
 import { projekte } from '@/data/projekte';
+import { firma } from '@/data/firma';
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
@@ -66,7 +67,7 @@ const fragen = [
 ];
 
 const beispiele = projekte.filter((p) =>
-  ['mfh-sihlaurain', 'wohnueberbauung-zelgi'].includes(p.slug)
+  ['mfh-sihlaurain', 'wohnueberbauung-zelgi', 'mfh-letten'].includes(p.slug)
 );
 
 /**
@@ -83,7 +84,7 @@ export default function ProjektentwicklungHeroVorschau() {
       </div>
 
       <Container className="mt-16">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_300px] lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_420px] lg:gap-16">
           <div>
             <Link
               href="/leistungen"
@@ -123,7 +124,7 @@ export default function ProjektentwicklungHeroVorschau() {
               fill
               priority
               className="object-cover"
-              sizes="(max-width: 1100px) 100vw, 300px"
+              sizes="(max-width: 1100px) 100vw, 420px"
             />
           </div>
         </div>
@@ -150,6 +151,26 @@ export default function ProjektentwicklungHeroVorschau() {
 
         <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Projektentwicklung" />
       </Container>
+
+      {/* Abschluss animiert zum Anruf statt die FAQ als letztes Element
+          stehen zu lassen — das eigentliche Ziel der Seite. */}
+      <div className="mt-20 border-t border-mist pt-16 pb-4 md:mt-28">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
+            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+              Haben Sie ein <span className="font-semibold">Grundstück</span> im Blick?
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Rufen Sie uns an und schildern Sie uns Ihr Vorhaben — wir sagen Ihnen
+              offen, ob und wie sich eine Entwicklung lohnt.
+            </p>
+            <Button href={`tel:${firma.telefonHref}`} variant="primary">
+              {firma.telefon} anrufen
+            </Button>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }
