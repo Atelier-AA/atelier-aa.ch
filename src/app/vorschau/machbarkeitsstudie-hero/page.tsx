@@ -85,8 +85,8 @@ export default function MachbarkeitsstudieHeroVorschau() {
 
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
             <Image
-              src="/images/studien/obfelden/luftbild.jpg"
-              alt="Luftbild eines Grundstücks in Obfelden als Grundlage der Machbarkeitsstudie"
+              src="/images/leistungen/buerogebaeude.jpg"
+              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
               fill
               priority
               className="object-cover"
@@ -129,35 +129,39 @@ export default function MachbarkeitsstudieHeroVorschau() {
         <div className="mt-14 border-t border-mist pt-11 md:mt-20">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {studien.slice(0, 4).map((s, idx) => {
-              const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
-              const titel = s.strasse ? `${s.ort}, ${s.strasse}` : s.ort;
-              return (
-                <div key={s.slug} className="group block min-w-0">
-                  <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                    {bild && (
-                      <Image
-                        src={bild}
-                        alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}`}
-                        fill
-                        priority={idx < 2}
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
-                        sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="mb-1 text-xs uppercase tracking-[0.1em] text-white/80">
-                        {s.kategorie}
-                      </p>
-                      <p className="truncate text-lg font-medium leading-tight text-white">
-                        {titel}
-                      </p>
+            {studien
+              .filter((s) =>
+                ['obfelden', 'birmensdorf', 'muemliswil', 'schinznach-bad'].includes(s.slug)
+              )
+              .map((s, idx) => {
+                const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
+                const titel = s.strasse ? `${s.ort}, ${s.strasse}` : s.ort;
+                return (
+                  <div key={s.slug} className="group block min-w-0">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+                      {bild && (
+                        <Image
+                          src={bild}
+                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}`}
+                          fill
+                          priority={idx < 2}
+                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                          sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <p className="mb-1 text-xs uppercase tracking-[0.1em] text-white/80">
+                          {s.kategorie}
+                        </p>
+                        <p className="truncate text-lg font-medium leading-tight text-white">
+                          {titel}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </Container>
