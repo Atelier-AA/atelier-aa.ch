@@ -10,8 +10,6 @@ const nextConfig: NextConfig = {
       // Seite wurde von "Expertise" in "Leistungen" umbenannt — alte Links
       // und bereits indexierte Suchergebnisse sollen nicht ins Leere laufen.
       { source: '/expertise', destination: '/leistungen', permanent: true },
-      // Team-Seite wurde wieder mit der Büro-Seite zusammengelegt.
-      { source: '/ueber-uns/team', destination: '/ueber-uns', permanent: true },
     ];
   },
 };
