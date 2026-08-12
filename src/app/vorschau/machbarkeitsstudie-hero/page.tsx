@@ -3,10 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import FragenAntworten from '@/components/insights/FragenAntworten';
-import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
 import { firma } from '@/data/firma';
+import { ortMitKanton } from '@/lib/utils';
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
@@ -44,35 +43,10 @@ const schritte = [
   },
 ];
 
-const fragen = [
-  {
-    frage: 'Was kostet eine Machbarkeitsstudie?',
-    antwort:
-      'Der Aufwand liegt im vierstelligen Bereich und richtet sich nach Grundstück und Fragestellung. Ein genaues Angebot erhalten Sie nach einem kurzen Erstgespräch.',
-  },
-  {
-    frage: 'Wie lange dauert eine Machbarkeitsstudie?',
-    antwort:
-      'In der Regel wenige Wochen, abhängig davon, wie schnell die Gemeinde Grundlagenpläne und Auskünfte liefert.',
-  },
-  {
-    frage: 'Muss ich danach mit Atelier AA Architekten weiterbauen?',
-    antwort:
-      'Nein. Die Studie ist ein eigenständiges Ergebnis. Viele Bauherrschaften entscheiden sich danach für die Zusammenarbeit, verpflichtet sind Sie dazu nicht.',
-  },
-  {
-    frage: 'Was, wenn sich herausstellt, dass nichts möglich ist?',
-    antwort:
-      'Auch das ist ein Ergebnis — und günstiger, als es ohne Prüfung erst in der Bauplanung zu erfahren.',
-  },
-];
-
 /**
- * Vorschau, Variante "Katasterplan": Text-Hero ohne Bild, dafür ein eigener
- * Abschnitt mit einem echten Katasterplan aus einem Projekt — zeigt konkret,
- * worauf sich die Studie stützt, statt eines generischen Motivbilds.
- * Abschluss animiert zum Anruf statt die FAQ als letztes Element stehen zu
- * lassen.
+ * Vorschau, Variante "Katasterplan im Hero": Text links, echter Katasterplan
+ * rechts oben statt eines eigenen "Grundlage"-Abschnitts weiter unten.
+ * Abschluss animiert zum Anruf statt FAQ (steht jetzt auf /haeufige-fragen).
  */
 export default function MachbarkeitsstudieHeroVorschau() {
   return (
@@ -82,29 +56,42 @@ export default function MachbarkeitsstudieHeroVorschau() {
       </div>
 
       <Container className="mt-16">
-        <div className="max-w-2xl">
-          <Link
-            href="/leistungen"
-            className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
-          >
-            ← Kompetenzen
-          </Link>
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-            Machbarkeitsstudie
-          </p>
-          <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
-            Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
-          </h1>
-          <p className="text-lg leading-relaxed text-graphite md:text-xl">
-            Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
-            sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
-            liefert die Antwort — mit Volumenstudie und Kostenrahmen, bevor Sie
-            investieren.
-          </p>
-          <div className="mt-8">
-            <Button href="/kontakt" variant="primary">
-              Machbarkeit klären
-            </Button>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
+          <div>
+            <Link
+              href="/leistungen"
+              className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
+            >
+              ← Kompetenzen
+            </Link>
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+              Machbarkeitsstudie
+            </p>
+            <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+              Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
+            </h1>
+            <p className="max-w-md text-lg leading-relaxed text-graphite md:text-xl">
+              Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
+              sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
+              liefert die Antwort — mit Volumenstudie und Kostenrahmen, bevor Sie
+              investieren.
+            </p>
+            <div className="mt-8">
+              <Button href="/kontakt" variant="primary">
+                Machbarkeit klären
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
+            <Image
+              src="/images/studien/birmensdorf/katasterplan.jpg"
+              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1100px) 100vw, 320px"
+            />
           </div>
         </div>
 
@@ -135,37 +122,44 @@ export default function MachbarkeitsstudieHeroVorschau() {
           </div>
         </div>
 
-        {/* Katasterplan statt generischem Motivbild — zeigt konkret, worauf
-            sich die Prüfung stützt: reales Beispiel aus einem Projekt. */}
-        <div className="mt-20 grid grid-cols-1 items-center gap-12 border-t border-mist pt-16 md:mt-28 lg:grid-cols-[1fr_320px] lg:gap-16">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Grundlage</p>
-            <h2 className="mb-4 text-2xl font-normal leading-tight text-ink md:text-3xl">
-              Alles beginnt beim <span className="font-semibold">Katasterplan.</span>
-            </h2>
-            <p className="max-w-md text-graphite leading-relaxed">
-              Zone, Grenzabstände, Gebäudeabstände und Parzellenform stehen bereits im
-              amtlichen Kataster — die Grundlage, auf der wir jede Machbarkeitsstudie
-              aufbauen, bevor wir eine einzige Linie zeichnen.
-            </p>
-          </div>
-          <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
-            <Image
-              src="/images/studien/muemliswil/katasterplan.jpg"
-              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1100px) 100vw, 320px"
-            />
-          </div>
-        </div>
-
+        {/* 4 schmale, hohe Kacheln (aspect-[3/4]), gleiches Format wie bei
+            Projektentwicklung und den Insights auf der Startseite. Bewusst
+            ohne Link zur Detailseite (wie StudieCard) — Studien sollen nicht
+            von der Übersicht aus nebeneinander vergleichbar sein. */}
         <div className="mt-20 border-t border-mist pt-16 md:mt-28">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
-          <StudienGrid studien={studien.slice(0, 3)} />
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {studien.slice(0, 4).map((s, idx) => {
+              const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
+              const titel = s.strasse ? `${s.ort}, ${s.strasse}` : s.ort;
+              return (
+                <div key={s.slug} className="group block min-w-0">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+                    {bild && (
+                      <Image
+                        src={bild}
+                        alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}`}
+                        fill
+                        priority={idx < 2}
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="mb-1 text-xs uppercase tracking-[0.1em] text-white/80">
+                        {s.kategorie}
+                      </p>
+                      <p className="truncate text-lg font-medium leading-tight text-white">
+                        {titel}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-
-        <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Machbarkeitsstudie" />
       </Container>
 
       {/* Abschluss animiert zum Anruf statt die FAQ als letztes Element
