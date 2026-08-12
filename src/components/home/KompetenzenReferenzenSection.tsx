@@ -67,13 +67,13 @@ export default function KompetenzenReferenzenSection() {
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
         <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-          Kompetenzen &amp; Projekte
+          Leistungen &amp; Projekte
         </p>
         {/* Fester Zeilenumbruch statt einer Breitenbegrenzung, die je nach
             Fensterbreite mal reicht, mal nicht — der Titel reichte sonst
             optisch über den linken Rand der Projektbilder hinaus. */}
         <h2 className="mb-12 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.5rem]">
-          <span className="font-semibold">Kompetenzen,</span>
+          <span className="font-semibold">Leistungen,</span>
           <br />
           sichtbar in echten <span className="font-semibold">Projekten.</span>
         </h2>
@@ -106,7 +106,7 @@ export default function KompetenzenReferenzenSection() {
             </div>
             <div className="pt-8 lg:col-start-1 lg:row-start-2">
               <Button href="/leistungen" variant="text">
-                alle Kompetenzen ansehen
+                alle Leistungen ansehen
               </Button>
             </div>
           </div>

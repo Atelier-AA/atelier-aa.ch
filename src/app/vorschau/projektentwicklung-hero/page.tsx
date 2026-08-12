@@ -72,7 +72,7 @@ export default function ProjektentwicklungHeroVorschau() {
               href="/leistungen"
               className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
             >
-              ← Kompetenzen
+              ← Leistungen
             </Link>
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Projektentwicklung

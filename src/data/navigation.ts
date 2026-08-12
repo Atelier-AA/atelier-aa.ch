@@ -14,7 +14,7 @@ export const navigation: NavLink[] = [
     label: 'Büro',
     unterlink: { href: '/ueber-uns/team', label: 'Team' },
   },
-  { href: '/leistungen', label: 'Kompetenzen' },
+  { href: '/leistungen', label: 'Leistungen' },
   { href: '/studien', label: 'Studien' },
   { href: '/insights', label: 'Insights' },
   { href: '/kontakt', label: 'Kontakt' },
@@ -22,9 +22,9 @@ export const navigation: NavLink[] = [
 
 // Nicht im Hauptmenü, nur im Footer verlinkt.
 export const footerZusatz: NavLink[] = [
-  { href: '/kleinprojekte', label: 'Kleinprojekte' },
-  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
   { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
+  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
+  { href: '/kleinprojekte', label: 'Kleinprojekte' },
   { href: '/ueber-uns/karriere', label: 'Karriere' },
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
 ];

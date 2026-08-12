@@ -64,7 +64,7 @@ export default function MachbarkeitsstudiePage() {
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
-        { name: 'Kompetenzen', pfad: '/leistungen' },
+        { name: 'Leistungen', pfad: '/leistungen' },
         { name: 'Machbarkeitsstudie', pfad: '/leistungen/machbarkeitsstudie' },
       ]),
     ],
@@ -83,7 +83,7 @@ export default function MachbarkeitsstudiePage() {
               href="/leistungen"
               className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
             >
-              ← Kompetenzen
+              ← Leistungen
             </Link>
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Machbarkeitsstudie

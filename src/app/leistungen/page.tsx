@@ -6,7 +6,7 @@ import AblaufSection from '@/components/home/AblaufSection';
 import { bauaufgaben } from '@/data/expertise';
 
 export const metadata: Metadata = {
-  title: 'Kompetenzen',
+  title: 'Leistungen',
   description:
     'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Bauleitung und Generalplanung für Wohnen und Gewerbe — Schwerpunkt Zürich, Aargau, Zug, auf Anfrage in der ganzen Schweiz.',
   alternates: { canonical: '/leistungen' },
@@ -16,7 +16,7 @@ export default function LeistungenPage() {
   return (
     <div className="pt-32 md:pt-40">
       <Container className="mb-16 md:mb-24">
-        <p className="mb-8 text-xs uppercase tracking-widest text-stone">Kompetenzen</p>
+        <p className="mb-8 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -34,7 +34,7 @@ export default function LeistungenPage() {
                 Architektur, die funktional, nachhaltig und wirtschaftlich trägt – mit
                 Schwerpunkt in den Kantonen Zürich, Aargau und Zug, für passende Aufgaben
                 auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden fünf
-                Kompetenzen.
+                Leistungen.
               </p>
               <p>
                 Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
@@ -71,7 +71,7 @@ export default function LeistungenPage() {
               Angebot
             </p>
             <h2 className="text-3xl font-medium leading-tight text-ink md:text-4xl">
-              Kompetenzen
+              Leistungen
             </h2>
           </div>
           <LeistungenPlates />

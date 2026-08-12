@@ -50,11 +50,11 @@ export default function ProjektePage() {
               Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
               Architektur, die Funktion, Gestaltung und Nachhaltigkeit
               verbindet – mit klarer Haltung und langfristigem Mehrwert.
-              Erfahren Sie, welche Kompetenzen wir dafür anbieten – vom
+              Erfahren Sie, welche Leistungen wir dafür anbieten – vom
               Vorprojekt bis zum Generalplaner-Mandat.
             </p>
             <Button href="/leistungen" variant="text">
-              Kompetenzen ansehen
+              Leistungen ansehen
             </Button>
           </div>
         </Container>

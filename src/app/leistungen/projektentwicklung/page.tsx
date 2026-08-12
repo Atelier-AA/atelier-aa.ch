@@ -73,7 +73,7 @@ export default function ProjektentwicklungPage() {
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
-        { name: 'Kompetenzen', pfad: '/leistungen' },
+        { name: 'Leistungen', pfad: '/leistungen' },
         { name: 'Projektentwicklung', pfad: '/leistungen/projektentwicklung' },
       ]),
     ],
@@ -92,7 +92,7 @@ export default function ProjektentwicklungPage() {
               href="/leistungen"
               className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
             >
-              ← Kompetenzen
+              ← Leistungen
             </Link>
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Projektentwicklung
