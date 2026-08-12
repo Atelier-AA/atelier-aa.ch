@@ -51,7 +51,10 @@ export default function IntroSection() {
             </MehrLesen>
           </div>
 
-          <div className="relative min-h-[16rem] w-full bg-mist lg:col-start-2 lg:row-start-1 lg:min-h-0">
+          {/* Feste Bildhöhe (aspect-video) statt Grid-Stretch auf die
+              Zeilenhöhe — sonst zieht sich das Bild in die Länge, sobald
+              "mehr lesen" den Text daneben verlängert. */}
+          <div className="relative min-h-[16rem] w-full self-start bg-mist lg:col-start-2 lg:row-start-1 lg:aspect-video lg:min-h-0">
             <Image
               src="/images/projekte/efh-jonen/16.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen"
