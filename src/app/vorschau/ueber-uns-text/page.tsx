@@ -45,8 +45,8 @@ export default function UeberUnsTextVorschau() {
               <p>
                 Wir führen das Atelier AA Architekten mit dieser Haltung, mit einem
                 eingespielten Team aus Architekt:innen und Bauleiter:innen. Räumliche
-                Zusammenhänge klären wir früh in 3D, damit Grundrisse und
-                Lichtverhältnisse schon vor dem Baubeginn nachvollziehbar sind.
+                Zusammenhänge klären wir früh in 3D, damit Sie Ihr Projekt erleben
+                können, lange bevor der erste Bagger auffährt.
               </p>
               <p>
                 Wir verbinden Architektur, Funktion und Wirtschaftlichkeit zu

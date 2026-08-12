@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -69,8 +70,10 @@ const beispiele = projekte.filter((p) =>
 );
 
 /**
- * Vorschau: Hero mit Bild statt reinem Text-Einstieg, gleiches Format wie
- * auf /leistungen (Drohnen-Montage). Rest der Seite unverändert.
+ * Vorschau, Variante "Kennzahl + schmales Seitenbild": statt halbbreitem
+ * Medienblock ein schmaler, hoher Bildstreifen und eine grosse Kennzahl
+ * (Anzahl Ablaufschritte) als eigenes visuelles Element — bewusst anderes
+ * Muster als Machbarkeitsstudie (Banner) und der Standard-2-Spalten-Hero.
  */
 export default function ProjektentwicklungHeroVorschau() {
   return (
@@ -80,7 +83,7 @@ export default function ProjektentwicklungHeroVorschau() {
       </div>
 
       <Container className="mt-16">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_300px] lg:gap-16">
           <div>
             <Link
               href="/leistungen"
@@ -95,11 +98,17 @@ export default function ProjektentwicklungHeroVorschau() {
               Von der Grundstücksidee zum{' '}
               <span className="font-semibold">bewilligungsfähigen Projekt.</span>
             </h1>
-            <p className="text-lg leading-relaxed text-graphite md:text-xl">
+            <p className="max-w-xl text-lg leading-relaxed text-graphite md:text-xl">
               Wir entwickeln Grundstücke und Liegenschaften von der ersten
               Potenzialanalyse bis zur bewilligungsfähigen Projektidee — für
               Investoren, Grundstückeigentümer und institutionelle Bauherrschaften.
             </p>
+            <div className="mt-10 flex items-baseline gap-4 border-t border-mist pt-8">
+              <span className="text-6xl font-semibold leading-none text-ink">7</span>
+              <span className="max-w-[22ch] text-graphite leading-snug">
+                Schritte von der Grundstücksidee bis zur Übergabe.
+              </span>
+            </div>
             <div className="mt-8">
               <Button href="/kontakt" variant="primary">
                 Potenzial besprechen
@@ -107,16 +116,14 @@ export default function ProjektentwicklungHeroVorschau() {
             </div>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/leistungen-projekte-montage.mp4"
-              poster="/images/leistungen/montage-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
+            <Image
+              src="/images/projekte/mfh-sihlaurain/02.jpg"
+              alt="Mehrfamilienhäuser Sihlaurain, Adliswil"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1100px) 100vw, 300px"
             />
           </div>
         </div>

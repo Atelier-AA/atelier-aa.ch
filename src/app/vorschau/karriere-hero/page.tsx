@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -7,8 +8,10 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
- * Vorschau: Team-Video oben ergänzt statt reinem Text-Einstieg, gleiches
- * Format wie auf /ueber-uns. Rest der Seite unverändert.
+ * Vorschau, Variante "Zwei Porträts": zwei Team-Fotos nebeneinander statt
+ * eines einzelnen Video-/Bildblocks — persönlicher für eine Recruiting-
+ * Seite, bewusst anderes Muster als Machbarkeitsstudie (Banner) und
+ * Projektentwicklung (Kennzahl + schmales Bild).
  */
 export default function KarriereHeroVorschau() {
   return (
@@ -32,17 +35,27 @@ export default function KarriereHeroVorschau() {
             </p>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/ueber-uns-team.mp4"
-              poster="/images/team/ueber-uns-team-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
+              <Image
+                src="/images/team/ejup-bajrami.jpg"
+                alt="Ejup Bajrami, Projektleiter bei Atelier AA Architekten"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1100px) 50vw, 25vw"
+              />
+            </div>
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
+              <Image
+                src="/images/team/yakup-uslu.jpg"
+                alt="Yakup Uslu, Projektleiter bei Atelier AA Architekten"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1100px) 50vw, 25vw"
+              />
+            </div>
           </div>
         </div>
 

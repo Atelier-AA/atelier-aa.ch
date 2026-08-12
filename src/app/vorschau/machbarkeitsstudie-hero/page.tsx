@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -66,8 +67,10 @@ const fragen = [
 ];
 
 /**
- * Vorschau: Hero mit Bild statt reinem Text-Einstieg, gleiches Format wie
- * auf /leistungen (Drohnen-Montage). Rest der Seite unverändert.
+ * Vorschau, Variante "Banner": Bild (Architekturmodell) als volle Bildbreite
+ * ZWISCHEN Titel und Fliesstext statt seitlich daneben — bewusst anderes
+ * Muster als der Standard-2-Spalten-Hero, damit die Kompetenz-Unterseiten
+ * nicht alle gleich aussehen.
  */
 export default function MachbarkeitsstudieHeroVorschau() {
   return (
@@ -77,44 +80,43 @@ export default function MachbarkeitsstudieHeroVorschau() {
       </div>
 
       <Container className="mt-16">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
-          <div>
-            <Link
-              href="/leistungen"
-              className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
-            >
-              ← Kompetenzen
-            </Link>
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Machbarkeitsstudie
-            </p>
-            <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
-              Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
-            </h1>
-            <p className="text-lg leading-relaxed text-graphite md:text-xl">
-              Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
-              sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
-              liefert die Antwort — mit Volumenstudie und Kostenrahmen, bevor Sie
-              investieren.
-            </p>
-            <div className="mt-8">
-              <Button href="/kontakt" variant="primary">
-                Machbarkeit klären
-              </Button>
-            </div>
-          </div>
+        <div className="max-w-2xl">
+          <Link
+            href="/leistungen"
+            className="mb-4 inline-block text-xs uppercase tracking-widest text-stone hover:text-ink"
+          >
+            ← Kompetenzen
+          </Link>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">
+            Machbarkeitsstudie
+          </p>
+          <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+            Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
+          </h1>
+        </div>
 
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/leistungen-projekte-montage.mp4"
-              poster="/images/leistungen/montage-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-            />
+        <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden bg-mist md:aspect-[21/8]">
+          <Image
+            src="/images/hero/slide-modell-1.jpg"
+            alt="Architekturmodell zur Prüfung eines Bauvolumens"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="mt-10 max-w-2xl">
+          <p className="text-lg leading-relaxed text-graphite md:text-xl">
+            Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
+            sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
+            liefert die Antwort — mit Volumenstudie und Kostenrahmen, bevor Sie
+            investieren.
+          </p>
+          <div className="mt-8">
+            <Button href="/kontakt" variant="primary">
+              Machbarkeit klären
+            </Button>
           </div>
         </div>
 
