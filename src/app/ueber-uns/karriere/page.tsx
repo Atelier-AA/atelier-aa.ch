@@ -45,109 +45,116 @@ const erwartet = [
 ];
 
 /**
- * Ein durchgehender Textblock statt einzelner, durch Trennstriche
- * abgesetzter Abschnitte — soll wie ein zusammenhängendes Stelleninserat
- * wirken, nicht wie mehrere separate Seitenabschnitte.
+ * Zwei Spalten statt einer einzelnen schmalen Textsäule, damit die rechte
+ * Seite nicht leer wirkt: links Einleitung/Haltung, rechts die drei Listen
+ * (Aufgaben, Profil, Erwartungen). Innerhalb jeder Spalte durchgehender
+ * Text ohne Trennstriche, damit es wie ein zusammenhängendes Stelleninserat
+ * wirkt statt wie mehrere separate Seitenabschnitte.
  */
 export default function KarrierePage() {
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
-        <div className="max-w-2xl">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Karriere</p>
-          <h1 className="mb-3 text-3xl font-normal leading-[1.1] tracking-tight text-ink md:text-4xl lg:text-5xl">
-            <span className="font-semibold">Architekt:in</span> FH/ETH oder{' '}
-            <span className="font-semibold">Zeichner:in</span> EFZ Fachrichtung
-            Architektur
-          </h1>
-          <p className="mb-8 text-sm uppercase tracking-widest text-stone">80–100 %</p>
+        <p className="mb-4 text-xs uppercase tracking-widest text-stone">Karriere</p>
+        <h1 className="mb-3 max-w-2xl text-3xl font-normal leading-[1.1] tracking-tight text-ink md:text-4xl lg:text-5xl">
+          <span className="font-semibold">Architekt:in</span> FH/ETH oder{' '}
+          <span className="font-semibold">Zeichner:in</span> EFZ Fachrichtung
+          Architektur
+        </h1>
+        <p className="mb-10 text-sm uppercase tracking-widest text-stone">80–100 %</p>
 
-          <dl className="mb-10 flex flex-wrap gap-x-10 gap-y-3 text-sm">
-            <div>
-              <dt className="text-stone">Arbeitsort</dt>
-              <dd className="mt-1 text-ink">Obfelden ZH</dd>
-            </div>
-            <div>
-              <dt className="text-stone">Stellenantritt</dt>
-              <dd className="mt-1 text-ink">per sofort oder nach Vereinbarung</dd>
-            </div>
-          </dl>
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+          <div>
+            <dl className="mb-10 flex flex-wrap gap-x-10 gap-y-3 text-sm">
+              <div>
+                <dt className="text-stone">Arbeitsort</dt>
+                <dd className="mt-1 text-ink">Obfelden ZH</dd>
+              </div>
+              <div>
+                <dt className="text-stone">Stellenantritt</dt>
+                <dd className="mt-1 text-ink">per sofort oder nach Vereinbarung</dd>
+              </div>
+            </dl>
 
-          <h2 className="mb-4 text-2xl font-normal leading-tight text-ink">
-            Architektur mit <span className="font-semibold">bleibendem Wert.</span>
-          </h2>
-          <div className="space-y-4 text-graphite leading-relaxed">
-            <p>
-              Atelier AA Architekten ist ein engagiertes Architekturbüro mit Sitz in
-              Obfelden im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
-              Mehrfamilienhäuser und Wohnüberbauungen sowie anspruchsvolle Umbauten und
-              Sanierungen im Bestand.
+            <h2 className="mb-4 text-2xl font-normal leading-tight text-ink">
+              Architektur mit <span className="font-semibold">bleibendem Wert.</span>
+            </h2>
+            <div className="space-y-4 text-graphite leading-relaxed">
+              <p>
+                Atelier AA Architekten ist ein engagiertes Architekturbüro mit Sitz in
+                Obfelden im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
+                Mehrfamilienhäuser und Wohnüberbauungen sowie anspruchsvolle Umbauten und
+                Sanierungen im Bestand.
+              </p>
+              <p>
+                Unsere Projekte begleiten wir von der ersten Machbarkeitsstudie über den
+                Entwurf, das Baugesuch und die Ausführungsplanung bis zur Realisierung.
+                Dabei verbinden wir gestalterischen Anspruch mit sorgfältiger Planung und
+                einem verantwortungsvollen Umgang mit dem Bestand.
+              </p>
+              <p className="text-ink">
+                Zur Verstärkung unseres Teams suchen wir eine engagierte Persönlichkeit
+                als{' '}
+                <span className="font-semibold">
+                  Architekt:in FH/ETH oder Zeichner:in EFZ Fachrichtung Architektur
+                </span>
+                .
+              </p>
+            </div>
+
+            <h2 className="mt-14 mb-6 text-3xl font-normal leading-tight text-ink md:text-4xl">
+              Möchtest du mit uns{' '}
+              <span className="font-semibold">Architektur gestalten?</span>
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Dann freuen wir uns auf deine vollständigen Bewerbungsunterlagen mit
+              Lebenslauf, Arbeitszeugnissen und Portfolio.
             </p>
-            <p>
-              Unsere Projekte begleiten wir von der ersten Machbarkeitsstudie über den
-              Entwurf, das Baugesuch und die Ausführungsplanung bis zur Realisierung.
-              Dabei verbinden wir gestalterischen Anspruch mit sorgfältiger Planung und
-              einem verantwortungsvollen Umgang mit dem Bestand.
-            </p>
-            <p className="text-ink">
-              Zur Verstärkung unseres Teams suchen wir eine engagierte Persönlichkeit
-              als{' '}
-              <span className="font-semibold">
-                Architekt:in FH/ETH oder Zeichner:in EFZ Fachrichtung Architektur
-              </span>
-              .
+            <Button href={`mailto:${firma.email}`} variant="primary">
+              Jetzt bewerben
+            </Button>
+            <p className="mt-14 text-xs uppercase tracking-widest text-stone">
+              Verantwortungsvoll geplant. Gemeinsam gebaut.
             </p>
           </div>
 
-          <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
-            Deine Aufgaben
-          </h2>
-          <ul className="space-y-3 text-graphite">
-            {aufgaben.map((a) => (
-              <li key={a} className="flex items-start gap-3">
-                <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
-                {a}
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h2 className="mb-5 text-xs uppercase tracking-widest text-stone">
+              Deine Aufgaben
+            </h2>
+            <ul className="space-y-3 text-graphite">
+              {aufgaben.map((a) => (
+                <li key={a} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+                  {a}
+                </li>
+              ))}
+            </ul>
 
-          <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
-            Dein Profil
-          </h2>
-          <ul className="space-y-3 text-graphite">
-            {profil.map((p) => (
-              <li key={p} className="flex items-start gap-3">
-                <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
-                {p}
-              </li>
-            ))}
-          </ul>
+            <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
+              Dein Profil
+            </h2>
+            <ul className="space-y-3 text-graphite">
+              {profil.map((p) => (
+                <li key={p} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+                  {p}
+                </li>
+              ))}
+            </ul>
 
-          <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
-            Das erwartet dich
-          </h2>
-          <ul className="space-y-3 text-graphite">
-            {erwartet.map((e) => (
-              <li key={e} className="flex items-start gap-3">
-                <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
-                {e}
-              </li>
-            ))}
-          </ul>
-
-          <h2 className="mt-14 mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-            Möchtest du mit uns <span className="font-semibold">Architektur gestalten?</span>
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Dann freuen wir uns auf deine vollständigen Bewerbungsunterlagen mit
-            Lebenslauf, Arbeitszeugnissen und Portfolio.
-          </p>
-          <Button href={`mailto:${firma.email}`} variant="primary">
-            Jetzt bewerben
-          </Button>
-          <p className="mt-14 text-xs uppercase tracking-widest text-stone">
-            Verantwortungsvoll geplant. Gemeinsam gebaut.
-          </p>
+            <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
+              Das erwartet dich
+            </h2>
+            <ul className="space-y-3 text-graphite">
+              {erwartet.map((e) => (
+                <li key={e} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+                  {e}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </div>

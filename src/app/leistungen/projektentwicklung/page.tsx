@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import FragenAntworten from '@/components/insights/FragenAntworten';
 import ProjektGrid from '@/components/projekte/ProjektGrid';
 import { projekte } from '@/data/projekte';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -52,24 +51,6 @@ const schritte = [
   },
 ];
 
-const fragen = [
-  {
-    frage: 'Für wen ist Projektentwicklung gedacht?',
-    antwort:
-      'Für Investoren, Grundstückeigentümer und institutionelle Bauherrschaften, die aus einem Grundstück oder einer Liegenschaft ein wirtschaftlich tragfähiges Bauprojekt entwickeln möchten.',
-  },
-  {
-    frage: 'Was unterscheidet Projektentwicklung von einer Machbarkeitsstudie?',
-    antwort:
-      'Die Machbarkeitsstudie klärt, was grundsätzlich möglich ist. Projektentwicklung geht weiter: Varianten, Wirtschaftlichkeit, Planung und Bewilligung bis zum realisierungsreifen Projekt.',
-  },
-  {
-    frage: 'Übernehmen Sie auch die Rolle als Generalplaner?',
-    antwort:
-      'Ja. Auf Wunsch koordinieren wir alle Fachplaner und sind Ihr alleiniger Vertrags- und Ansprechpartner bis zur Übergabe.',
-  },
-];
-
 const beispiele = projekte.filter((p) =>
   ['mfh-sihlaurain', 'wohnueberbauung-zelgi'].includes(p.slug)
 );
@@ -86,16 +67,6 @@ export default function ProjektentwicklungPage() {
         areaServed: ['Zürich', 'Aargau', 'Zug'],
         description:
           'Von der Grundstücksidee über Potenzialanalyse und Wirtschaftlichkeit bis zum bewilligungsfähigen Projekt.',
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://www.atelier-aa.ch/leistungen/projektentwicklung#faq',
-        inLanguage: 'de-CH',
-        mainEntity: fragen.map((f) => ({
-          '@type': 'Question',
-          name: f.frage,
-          acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-        })),
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
@@ -156,8 +127,6 @@ export default function ProjektentwicklungPage() {
             <ProjektGrid projekte={beispiele} />
           </div>
         )}
-
-        <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Projektentwicklung" />
       </Container>
     </div>
   );

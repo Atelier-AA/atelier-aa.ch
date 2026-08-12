@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import FragenAntworten from '@/components/insights/FragenAntworten';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -48,29 +47,6 @@ const schritte = [
   },
 ];
 
-const fragen = [
-  {
-    frage: 'Was kostet eine Machbarkeitsstudie?',
-    antwort:
-      'Der Aufwand liegt im vierstelligen Bereich und richtet sich nach Grundstück und Fragestellung. Ein genaues Angebot erhalten Sie nach einem kurzen Erstgespräch.',
-  },
-  {
-    frage: 'Wie lange dauert eine Machbarkeitsstudie?',
-    antwort:
-      'In der Regel wenige Wochen, abhängig davon, wie schnell die Gemeinde Grundlagenpläne und Auskünfte liefert.',
-  },
-  {
-    frage: 'Muss ich danach mit Atelier AA Architekten weiterbauen?',
-    antwort:
-      'Nein. Die Studie ist ein eigenständiges Ergebnis. Viele Bauherrschaften entscheiden sich danach für die Zusammenarbeit, verpflichtet sind Sie dazu nicht.',
-  },
-  {
-    frage: 'Was, wenn sich herausstellt, dass nichts möglich ist?',
-    antwort:
-      'Auch das ist ein Ergebnis — und günstiger, als es ohne Prüfung erst in der Bauplanung zu erfahren.',
-  },
-];
-
 export default function MachbarkeitsstudiePage() {
   const schema = {
     '@context': 'https://schema.org',
@@ -83,16 +59,6 @@ export default function MachbarkeitsstudiePage() {
         areaServed: ['Zürich', 'Aargau', 'Zug'],
         description:
           'Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen — die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://www.atelier-aa.ch/leistungen/machbarkeitsstudie#faq',
-        inLanguage: 'de-CH',
-        mainEntity: fragen.map((f) => ({
-          '@type': 'Question',
-          name: f.frage,
-          acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-        })),
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
@@ -166,8 +132,6 @@ export default function MachbarkeitsstudiePage() {
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
           <StudienGrid studien={studien.slice(0, 3)} />
         </div>
-
-        <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Machbarkeitsstudie" />
       </Container>
     </div>
   );

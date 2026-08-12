@@ -190,4 +190,44 @@ export const expertiseFragen: InsightFrage[] = [
     antwort:
       'Telefonisch unter +41 44 770 05 06 oder per E-Mail an info@atelier-aa.ch. Wir melden uns in der Regel innerhalb eines Arbeitstages zurück.',
   },
+  // Vormals auf /leistungen/machbarkeitsstudie, hierher verschoben, damit
+  // Häufige Fragen an einem Ort gesammelt sind statt auf einzelnen
+  // Leistungsseiten zu stehen — anders als bei Projekt-/Studien-/Insights-
+  // Detailseiten, wo eine themenspezifische FAQ direkt passend bleibt.
+  {
+    frage: 'Was kostet eine Machbarkeitsstudie?',
+    antwort:
+      'Der Aufwand liegt im vierstelligen Bereich und richtet sich nach Grundstück und Fragestellung. Ein genaues Angebot erhalten Sie nach einem kurzen Erstgespräch.',
+  },
+  {
+    frage: 'Wie lange dauert eine Machbarkeitsstudie?',
+    antwort:
+      'In der Regel wenige Wochen, abhängig davon, wie schnell die Gemeinde Grundlagenpläne und Auskünfte liefert.',
+  },
+  {
+    frage: 'Muss ich danach mit Atelier AA Architekten weiterbauen?',
+    antwort:
+      'Nein. Die Studie ist ein eigenständiges Ergebnis. Viele Bauherrschaften entscheiden sich danach für die Zusammenarbeit, verpflichtet sind Sie dazu nicht.',
+  },
+  {
+    frage: 'Was, wenn sich herausstellt, dass nichts möglich ist?',
+    antwort:
+      'Auch das ist ein Ergebnis — und günstiger, als es ohne Prüfung erst in der Bauplanung zu erfahren.',
+  },
+  // Vormals auf /leistungen/projektentwicklung.
+  {
+    frage: 'Für wen ist Projektentwicklung gedacht?',
+    antwort:
+      'Für Investoren, Grundstückeigentümer und institutionelle Bauherrschaften, die aus einem Grundstück oder einer Liegenschaft ein wirtschaftlich tragfähiges Bauprojekt entwickeln möchten.',
+  },
+  {
+    frage: 'Was unterscheidet Projektentwicklung von einer Machbarkeitsstudie?',
+    antwort:
+      'Die Machbarkeitsstudie klärt, was grundsätzlich möglich ist. Projektentwicklung geht weiter: Varianten, Wirtschaftlichkeit, Planung und Bewilligung bis zum realisierungsreifen Projekt.',
+  },
+  {
+    frage: 'Übernehmen Sie auch die Rolle als Generalplaner?',
+    antwort:
+      'Ja. Auf Wunsch koordinieren wir alle Fachplaner und sind Ihr alleiniger Vertrags- und Ansprechpartner bis zur Übergabe.',
+  },
 ];
