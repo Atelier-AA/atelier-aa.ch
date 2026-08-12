@@ -103,25 +103,6 @@ export default function UeberUnsPage() {
       <div className="mt-16 md:mt-20">
         <OffeneStellen />
       </div>
-
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-16 border-t border-mist pt-16 pb-20 md:mt-20 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-              Sie haben ein <span className="font-semibold">Vorhaben?</span>
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Sprechen wir über Ihr Projekt, offen, konkret und unverbindlich.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontaktieren Sie uns
-            </Button>
-          </div>
-        </Container>
-      </div>
     </div>
   );
 }
