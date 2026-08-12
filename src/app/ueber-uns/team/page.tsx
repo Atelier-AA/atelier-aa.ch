@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import TeamGrid from '@/components/ueber-uns/TeamGrid';
+import TeamMember from '@/components/ueber-uns/TeamMember';
+import KarriereKachel from '@/components/ueber-uns/KarriereKachel';
 import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
 import { team } from '@/data/team';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -42,9 +44,15 @@ export default function TeamPage() {
             Machbarkeitsstudie bis zur Bauleitung begleiten Sie dieselben
             Ansprechpersonen durch Ihr Projekt.
           </p>
-          <TeamGrid members={team.slice(0, 2)} lgCols={3} />
-          <div className="mt-8 md:mt-10">
-            <TeamGrid members={team.slice(2)} lgCols={3} />
+          <TeamGrid members={team.slice(0, 3)} lgCols={3} />
+          {/* Zweite Zeile mit nur zwei Personen lässt bei lg (3 Spalten)
+              einen Platz frei — dort füllt eine Karriere-Kachel die Lücke,
+              statt sie leer zu lassen. */}
+          <div className="mt-8 grid grid-cols-1 gap-8 md:mt-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+            {team.slice(3).map((member) => (
+              <TeamMember key={member.slug} member={member} />
+            ))}
+            <KarriereKachel />
           </div>
         </Container>
       </div>

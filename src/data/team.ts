@@ -7,9 +7,10 @@ import type { TeamMember } from '@/types';
  * Alisami Aljili ist nur die Rolle bestätigt, kein ausführlicher Werdegang —
  * bitte bei Gelegenheit ausbauen.
  *
- * Reihenfolge in der Datei = Reihenfolge auf der Seite: die ersten zwei
- * (Alisami Aljili, Fatime Aljili) stehen in der ersten Zeile, die
- * restlichen drei darunter — siehe `ueber-uns/page.tsx`.
+ * Reihenfolge in der Datei = Reihenfolge auf der Seite: die ersten drei
+ * (Alisami Aljili, Ejup Bajrami, Yakup Uslu) stehen in der ersten Zeile,
+ * die restlichen zwei darunter, daneben eine Karriere-Kachel — siehe
+ * `ueber-uns/team/page.tsx`.
  */
 export const team: TeamMember[] = [
   {
@@ -34,18 +35,6 @@ export const team: TeamMember[] = [
     email: 'info@atelier-aa.ch',
   },
   {
-    slug: 'fatime-aljili',
-    name: 'Fatime Aljili',
-    rolle: 'Personal',
-    bild: '/images/team/fatime-aljili.jpg',
-    kurz: 'Verantwortlich für Personalfragen im Büro.',
-    schwerpunkte: ['Personalwesen', 'Büroorganisation'],
-    absaetze: [
-      'Fatime Aljili ist im Büro für Personalfragen verantwortlich.',
-    ],
-    email: null,
-  },
-  {
     slug: 'ejup-bajrami',
     name: 'Ejup Bajrami',
     rolle: 'Projektleiter',
@@ -66,6 +55,18 @@ export const team: TeamMember[] = [
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
       'Yakup Uslu ist ebenfalls als Projektleiter tätig und begleitet Bauherrschaften und Behörden durch die Planungsphase.',
+    ],
+    email: null,
+  },
+  {
+    slug: 'fatime-aljili',
+    name: 'Fatime Aljili',
+    rolle: 'Personal',
+    bild: '/images/team/fatime-aljili.jpg',
+    kurz: 'Verantwortlich für Personalfragen im Büro.',
+    schwerpunkte: ['Personalwesen', 'Büroorganisation'],
+    absaetze: [
+      'Fatime Aljili ist im Büro für Personalfragen verantwortlich.',
     ],
     email: null,
   },
