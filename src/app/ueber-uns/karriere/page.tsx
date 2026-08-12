@@ -102,6 +102,18 @@ export default function KarrierePage() {
               </p>
             </div>
 
+            <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
+              Deine Aufgaben
+            </h2>
+            <ul className="space-y-3 text-graphite">
+              {aufgaben.map((a) => (
+                <li key={a} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+                  {a}
+                </li>
+              ))}
+            </ul>
+
             <h2 className="mt-14 mb-6 text-3xl font-normal leading-tight text-ink md:text-4xl">
               Möchtest du mit uns{' '}
               <span className="font-semibold">Architektur gestalten?</span>
@@ -120,18 +132,6 @@ export default function KarrierePage() {
 
           <div>
             <h2 className="mb-5 text-xs uppercase tracking-widest text-stone">
-              Deine Aufgaben
-            </h2>
-            <ul className="space-y-3 text-graphite">
-              {aufgaben.map((a) => (
-                <li key={a} className="flex items-start gap-3">
-                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
-                  {a}
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="mt-14 mb-5 text-xs uppercase tracking-widest text-stone">
               Dein Profil
             </h2>
             <ul className="space-y-3 text-graphite">
