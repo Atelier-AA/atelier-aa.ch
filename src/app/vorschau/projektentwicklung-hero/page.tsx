@@ -3,10 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import FragenAntworten from '@/components/insights/FragenAntworten';
-import ProjektGrid from '@/components/projekte/ProjektGrid';
 import { projekte } from '@/data/projekte';
 import { firma } from '@/data/firma';
+import { ortMitKanton } from '@/lib/utils';
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
@@ -48,26 +47,8 @@ const schritte = [
   },
 ];
 
-const fragen = [
-  {
-    frage: 'Für wen ist Projektentwicklung gedacht?',
-    antwort:
-      'Für Investoren, Grundstückeigentümer und institutionelle Bauherrschaften, die aus einem Grundstück oder einer Liegenschaft ein wirtschaftlich tragfähiges Bauprojekt entwickeln möchten.',
-  },
-  {
-    frage: 'Was unterscheidet Projektentwicklung von einer Machbarkeitsstudie?',
-    antwort:
-      'Die Machbarkeitsstudie klärt, was grundsätzlich möglich ist. Projektentwicklung geht weiter: Varianten, Wirtschaftlichkeit, Planung und Bewilligung bis zum realisierungsreifen Projekt.',
-  },
-  {
-    frage: 'Übernehmen Sie auch die Rolle als Generalplaner?',
-    antwort:
-      'Ja. Auf Wunsch koordinieren wir alle Fachplaner und sind Ihr alleiniger Vertrags- und Ansprechpartner bis zur Übergabe.',
-  },
-];
-
 const beispiele = projekte.filter((p) =>
-  ['mfh-sihlaurain', 'wohnueberbauung-zelgi', 'mfh-letten'].includes(p.slug)
+  ['mfh-sihlaurain', 'wohnueberbauung-zelgi', 'mfh-letten', 'mfh-hochwarting'].includes(p.slug)
 );
 
 /**
@@ -142,14 +123,44 @@ export default function ProjektentwicklungHeroVorschau() {
           </div>
         </div>
 
+        {/* 4 schmale, hohe Kacheln (aspect-[3/4]) statt der quadratischen
+            Standardkarten — gleiches Bildformat wie bei den Insights auf
+            der Startseite. */}
         {beispiele.length > 0 && (
           <div className="mt-20 border-t border-mist pt-16 md:mt-28">
             <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
-            <ProjektGrid projekte={beispiele} />
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {beispiele.map((p, idx) => (
+                <Link
+                  key={p.slug}
+                  href={`/referenzen/${p.slug}`}
+                  className="group block min-w-0"
+                  aria-label={`Zum Projekt ${p.title} in ${ortMitKanton(p)}`}
+                >
+                  <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+                    <Image
+                      src={p.thumbnail}
+                      alt={`${p.title}, ${ortMitKanton(p)}`}
+                      fill
+                      priority={idx < 2}
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                      sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="truncate text-lg font-medium leading-tight text-white">
+                        {p.title}
+                      </p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.1em] text-white/70">
+                        {ortMitKanton(p)}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
-
-        <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Projektentwicklung" />
       </Container>
 
       {/* Abschluss animiert zum Anruf statt die FAQ als letztes Element
