@@ -27,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { pfad: '/leistungen/machbarkeitsstudie', prio: 0.7, freq: 'monthly' as const },
     { pfad: '/leistungen/projektentwicklung', prio: 0.7, freq: 'monthly' as const },
     { pfad: '/ueber-uns', prio: 0.8, freq: 'monthly' as const },
-    { pfad: '/ueber-uns/team', prio: 0.6, freq: 'monthly' as const },
     { pfad: '/insights', prio: 0.8, freq: 'weekly' as const },
     { pfad: '/kontakt', prio: 0.7, freq: 'yearly' as const },
     { pfad: '/impressum', prio: 0.2, freq: 'yearly' as const },

@@ -9,11 +9,9 @@ import type { NavLink } from '@/types';
 // unterschiedliche Grössenstufen wurden vom Kunden ausdrücklich abgelehnt.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
-  {
-    href: '/ueber-uns',
-    label: 'Büro',
-    unterlink: { href: '/ueber-uns/team', label: 'Team' },
-  },
+  // Team ist wieder Teil der Büro-Seite (kein eigener Unterlink mehr) —
+  // eine konsolidierte Seite statt zwei dünner, sich überschneidender.
+  { href: '/ueber-uns', label: 'Büro' },
   { href: '/leistungen', label: 'Kompetenzen' },
   { href: '/studien', label: 'Studien' },
   { href: '/insights', label: 'Insights' },
@@ -25,7 +23,6 @@ export const footerZusatz: NavLink[] = [
   { href: '/kleinprojekte', label: 'Kleinprojekte' },
   { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
   { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
-  { href: '/ueber-uns/team', label: 'Team' },
   { href: '/ueber-uns/karriere', label: 'Karriere' },
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
 ];

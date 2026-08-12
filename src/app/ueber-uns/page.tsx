@@ -1,18 +1,22 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import TeamGrid from '@/components/ueber-uns/TeamGrid';
+import OffeneStellen from '@/components/ueber-uns/OffeneStellen';
+import { team } from '@/data/team';
 
 export const metadata: Metadata = {
   title: 'Über uns',
   description:
-    'Atelier AA Architekten GmbH in Obfelden ZH: Architekturbüro für Neubau, Umbau, Sanierung, Projektentwicklung und Generalplanung in Zürich, Aargau und Zug.',
+    'Atelier AA Architekten GmbH in Obfelden ZH: Architekturbüro für Neubau, Umbau, Sanierung, Projektentwicklung und Generalplanung in Zürich, Aargau und Zug — mit Team.',
   alternates: { canonical: '/ueber-uns' },
 };
 
 /**
- * Reine Firmenseite: Haltung, was konkret gebaut wird, Region. Die
- * Team-Galerie steht auf einer eigenen Seite (/ueber-uns/team), damit diese
- * Seite nicht überladen wirkt, jetzt wo der Text konkreter/länger ist.
+ * Firmenseite mit Team-Galerie in einem Stück statt auf zwei dünnen,
+ * inhaltlich überschneidenden Seiten (Büro/Team waren zuvor getrennt) —
+ * eine konsolidierte Seite ist für Suchmaschinen und KI-Crawler leichter
+ * zu erfassen. /ueber-uns/team leitet per Redirect hierher.
  */
 export default function UeberUnsPage() {
   return (
@@ -62,21 +66,19 @@ export default function UeberUnsPage() {
               </p>
             </div>
             <div className="mt-6">
-              <Button href="/ueber-uns/team" variant="text">
-                Unser Team ansehen
+              <Button href="#team" variant="text">
+                Zum Team
               </Button>
             </div>
           </div>
 
-          {/* Dieselbe Drohnen-Montage wie auf /leistungen — zeigt reale,
-              laufende Projekte statt eines gestellten Büro-/Teamfotos. Das
-              Teamvideo (ueber-uns-team.mp4) steht jetzt auf /ueber-uns/team,
-              wo es thematisch besser passt. */}
+          {/* Team-Video statt der Baustellen-Drohnenmontage — passt inhaltlich
+              besser, jetzt wo Firma und Team wieder auf einer Seite stehen. */}
           <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
             <video
               className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/leistungen-projekte-montage.mp4"
-              poster="/images/leistungen/montage-poster.jpg"
+              src="/videos/ueber-uns-team.mp4"
+              poster="/images/team/ueber-uns-team-poster.jpg"
               autoPlay
               muted
               loop
@@ -87,9 +89,24 @@ export default function UeberUnsPage() {
         </div>
       </Container>
 
+      {/* Team-Galerie: Geschäftsleitung (2) in der ersten Zeile, das übrige
+          Team (3) darunter, beide mit lgCols=3, damit die Porträts gleich
+          gross bleiben. */}
+      <Container id="team" className="mt-20 scroll-mt-32 md:mt-28 md:scroll-mt-40">
+        <p className="mb-10 text-xs uppercase tracking-widest text-stone">Team</p>
+        <TeamGrid members={team.slice(0, 2)} lgCols={3} />
+        <div className="mt-8 md:mt-10">
+          <TeamGrid members={team.slice(2)} lgCols={3} />
+        </div>
+      </Container>
+
+      <div className="mt-16 md:mt-20">
+        <OffeneStellen />
+      </div>
+
       {/* Trennstrich ausserhalb des Container, randvoll über die ganze
           Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
+      <div className="mt-16 border-t border-mist pt-16 pb-20 md:mt-20 md:pb-28">
         <Container>
           <div className="max-w-3xl">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
