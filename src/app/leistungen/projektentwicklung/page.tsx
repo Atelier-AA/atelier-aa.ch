@@ -86,7 +86,7 @@ export default function ProjektentwicklungPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Container>
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_420px] lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_600px] lg:gap-16">
           <div>
             <Link
               href="/leistungen"
