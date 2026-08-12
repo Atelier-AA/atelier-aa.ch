@@ -72,13 +72,13 @@ export const team: TeamMember[] = [
   },
   {
     slug: 'riccarda-tscharner',
-    name: 'Riccarda Tscharner',
+    name: 'Ricarda Tscharner',
     rolle: 'Assistentin der Geschäftsleitung',
     bild: '/images/team/riccarda-tscharner.jpg',
     kurz: 'Unterstützt die Geschäftsleitung in administrativen und organisatorischen Aufgaben.',
     schwerpunkte: ['Administration', 'Büroorganisation', 'Unterstützung der Geschäftsleitung'],
     absaetze: [
-      'Riccarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen.',
+      'Ricarda Tscharner unterstützt die Geschäftsleitung in administrativen und organisatorischen Belangen.',
     ],
     email: null,
   },
