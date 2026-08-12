@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
+import { firma } from '@/data/firma';
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
@@ -67,10 +68,11 @@ const fragen = [
 ];
 
 /**
- * Vorschau, Variante "Banner": Bild (Architekturmodell) als volle Bildbreite
- * ZWISCHEN Titel und Fliesstext statt seitlich daneben — bewusst anderes
- * Muster als der Standard-2-Spalten-Hero, damit die Kompetenz-Unterseiten
- * nicht alle gleich aussehen.
+ * Vorschau, Variante "Katasterplan": Text-Hero ohne Bild, dafür ein eigener
+ * Abschnitt mit einem echten Katasterplan aus einem Projekt — zeigt konkret,
+ * worauf sich die Studie stützt, statt eines generischen Motivbilds.
+ * Abschluss animiert zum Anruf statt die FAQ als letztes Element stehen zu
+ * lassen.
  */
 export default function MachbarkeitsstudieHeroVorschau() {
   return (
@@ -90,23 +92,9 @@ export default function MachbarkeitsstudieHeroVorschau() {
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Machbarkeitsstudie
           </p>
-          <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
             Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
           </h1>
-        </div>
-
-        <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden bg-mist md:aspect-[21/8]">
-          <Image
-            src="/images/hero/slide-modell-1.jpg"
-            alt="Architekturmodell zur Prüfung eines Bauvolumens"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-
-        <div className="mt-10 max-w-2xl">
           <p className="text-lg leading-relaxed text-graphite md:text-xl">
             Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
             sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
@@ -147,6 +135,31 @@ export default function MachbarkeitsstudieHeroVorschau() {
           </div>
         </div>
 
+        {/* Katasterplan statt generischem Motivbild — zeigt konkret, worauf
+            sich die Prüfung stützt: reales Beispiel aus einem Projekt. */}
+        <div className="mt-20 grid grid-cols-1 items-center gap-12 border-t border-mist pt-16 md:mt-28 lg:grid-cols-[1fr_320px] lg:gap-16">
+          <div>
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Grundlage</p>
+            <h2 className="mb-4 text-2xl font-normal leading-tight text-ink md:text-3xl">
+              Alles beginnt beim <span className="font-semibold">Katasterplan.</span>
+            </h2>
+            <p className="max-w-md text-graphite leading-relaxed">
+              Zone, Grenzabstände, Gebäudeabstände und Parzellenform stehen bereits im
+              amtlichen Kataster — die Grundlage, auf der wir jede Machbarkeitsstudie
+              aufbauen, bevor wir eine einzige Linie zeichnen.
+            </p>
+          </div>
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
+            <Image
+              src="/images/studien/muemliswil/katasterplan.jpg"
+              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1100px) 100vw, 320px"
+            />
+          </div>
+        </div>
+
         <div className="mt-20 border-t border-mist pt-16 md:mt-28">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
           <StudienGrid studien={studien.slice(0, 3)} />
@@ -154,6 +167,26 @@ export default function MachbarkeitsstudieHeroVorschau() {
 
         <FragenAntworten fragen={fragen} titel="Häufige Fragen zur Machbarkeitsstudie" />
       </Container>
+
+      {/* Abschluss animiert zum Anruf statt die FAQ als letztes Element
+          stehen zu lassen. */}
+      <div className="mt-20 border-t border-mist pt-16 pb-4 md:mt-28">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
+            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+              Fragen Sie sich, ob mehr <span className="font-semibold">möglich wäre?</span>
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-graphite">
+              Rufen Sie uns an und schildern Sie uns Ihr Grundstück — wir sagen Ihnen
+              im Gespräch offen, was eine Machbarkeitsstudie zeigen könnte.
+            </p>
+            <Button href={`tel:${firma.telefonHref}`} variant="primary">
+              {firma.telefon} anrufen
+            </Button>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }
