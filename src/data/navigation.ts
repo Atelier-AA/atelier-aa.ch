@@ -25,7 +25,6 @@ export const footerZusatz: NavLink[] = [
   { href: '/kleinprojekte', label: 'Kleinprojekte' },
   { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
   { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
-  { href: '/ueber-uns/team', label: 'Team' },
   { href: '/ueber-uns/karriere', label: 'Karriere' },
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
 ];
