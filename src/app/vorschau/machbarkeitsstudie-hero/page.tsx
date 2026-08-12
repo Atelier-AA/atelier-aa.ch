@@ -56,7 +56,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
       </div>
 
       <Container className="mt-16">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_460px] lg:gap-16">
           <div>
             <Link
               href="/leistungen"
@@ -90,12 +90,12 @@ export default function MachbarkeitsstudieHeroVorschau() {
               fill
               priority
               className="object-cover"
-              sizes="(max-width: 1100px) 100vw, 320px"
+              sizes="(max-width: 1100px) 100vw, 460px"
             />
           </div>
         </div>
 
-        <div className="mt-20 border-t border-mist pt-16 md:mt-28">
+        <div className="mt-14 border-t border-mist pt-11 md:mt-20">
           <p className="mb-8 text-xs uppercase tracking-widest text-stone">
             Was die Studie enthält
           </p>
@@ -109,7 +109,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
           </ul>
         </div>
 
-        <div className="mt-20 border-t border-mist pt-16 md:mt-28">
+        <div className="mt-14 border-t border-mist pt-11 md:mt-20">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Ablauf</p>
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
             {schritte.map((s) => (
@@ -126,7 +126,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
             Projektentwicklung und den Insights auf der Startseite. Bewusst
             ohne Link zur Detailseite (wie StudieCard) — Studien sollen nicht
             von der Übersicht aus nebeneinander vergleichbar sein. */}
-        <div className="mt-20 border-t border-mist pt-16 md:mt-28">
+        <div className="mt-14 border-t border-mist pt-11 md:mt-20">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {studien.slice(0, 4).map((s, idx) => {
