@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import AusklappbarerText from '@/components/ui/AusklappbarerText';
 
 export const metadata: Metadata = {
   title: 'Über uns',
@@ -34,7 +35,7 @@ export default function UeberUnsPage() {
               Verantwortung, für Menschen, Orte und{' '}
               <span className="font-semibold">Zukunft.</span>
             </h1>
-            <div className="space-y-3 text-graphite leading-snug">
+            <AusklappbarerText className="space-y-3 text-graphite leading-snug" vorschauKlasse="max-h-36">
               <p className="text-lg text-ink">
                 Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
                 im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
@@ -60,7 +61,7 @@ export default function UeberUnsPage() {
                 Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Diese
                 Haltung tragen wir seit der Gründung 2021 in jedes Projekt.
               </p>
-            </div>
+            </AusklappbarerText>
             <div className="mt-6">
               <Button href="/ueber-uns/team" variant="text">
                 Unser Team ansehen
