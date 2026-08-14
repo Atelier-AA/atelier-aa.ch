@@ -43,7 +43,7 @@ export default function InsightsSection() {
                   alt={i.titel}
                   fill
                   priority={idx < 2}
-                  className="object-cover grayscale transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                  className="object-cover grayscale transition-[transform,filter] duration-500 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
                   sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
