@@ -10,6 +10,7 @@ import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
+import MehrLesen from '@/components/ui/MehrLesen';
 import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
@@ -62,6 +63,10 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   const weitere = getWeitereProjekte(slug, 4);
   const kanton = alleKantone().find((k) => k.kuerzel === projekt.kanton);
   const ortSlug = slugify(projekt.ort);
+  // Erster Abschnitt bleibt immer sichtbar, weitere stehen auf Mobile hinter
+  // "mehr lesen" — sonst steht auf schmalen Bildschirmen der gesamte
+  // Projekttext vor dem ersten Bild.
+  const [ersterAbschnitt, ...weitereAbschnitte] = projekt.abschnitte;
   const BASIS = 'https://www.atelier-aa.ch';
   const url = `${BASIS}/referenzen/${projekt.slug}`;
 
@@ -165,18 +170,35 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               KI-Systeme. Grösse und Gewicht der Überschriften an
               stage.atelier-aa.ch angeglichen: h1 und h2 in derselben Grösse,
               beide font-medium (500) statt font-light. */}
-          {projekt.abschnitte.map((a) => (
-            <section key={a.titel} className="mb-14 last:mb-0">
+          {ersterAbschnitt && (
+            <section className="mb-14 last:mb-0">
               <h2 className="mb-5 text-4xl font-medium leading-tight text-ink md:text-5xl">
-                {a.titel}
+                {ersterAbschnitt.titel}
               </h2>
               <div className="space-y-5 leading-relaxed text-graphite">
-                {a.absaetze.map((p) => (
+                {ersterAbschnitt.absaetze.map((p) => (
                   <p key={p.slice(0, 40)}>{p}</p>
                 ))}
               </div>
             </section>
-          ))}
+          )}
+
+          {weitereAbschnitte.length > 0 && (
+            <MehrLesen nurMobil>
+              {weitereAbschnitte.map((a) => (
+                <section key={a.titel} className="mb-14 last:mb-0">
+                  <h2 className="mb-5 text-4xl font-medium leading-tight text-ink md:text-5xl">
+                    {a.titel}
+                  </h2>
+                  <div className="space-y-5 leading-relaxed text-graphite">
+                    {a.absaetze.map((p) => (
+                      <p key={p.slice(0, 40)}>{p}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </MehrLesen>
+          )}
 
           {/* Eckdaten und Leistungsumfang */}
           <div className="mt-[2.783rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
