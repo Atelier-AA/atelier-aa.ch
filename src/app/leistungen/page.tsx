@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import MehrLesen from '@/components/ui/MehrLesen';
 import LeistungenPlates from '@/components/leistungen/LeistungenPlates';
 import AblaufSection from '@/components/home/AblaufSection';
 import { bauaufgaben } from '@/data/expertise';
@@ -26,7 +27,7 @@ export default function LeistungenPage() {
               <br />
               und <span className="font-semibold">Verantwortung.</span>
             </h1>
-            <div className="space-y-3 text-graphite leading-snug">
+            <div className="text-graphite leading-snug">
               <p>
                 Das Atelier AA Architekten bietet den gesamten Planungsprozess an – von der ersten Idee
                 bis zur hochwertigen Ausführung, auf Wunsch auch im Generalplaner-Mandat.
@@ -36,13 +37,15 @@ export default function LeistungenPage() {
                 auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden fünf
                 Leistungen.
               </p>
-              <p>
-                Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
-                Lebenszykluskosten neben den Erstellungskosten und legen offen, welche
-                Massnahmen sich über die Nutzungsdauer tragen. Wo Bauland knapp ist, prüfen
-                wir zuerst, welcher Weg trägt – Aufstockung, Anbau oder Ersatzneubau – bevor
-                gestaltet wird.
-              </p>
+              <MehrLesen nurMobil className="mt-3">
+                <p>
+                  Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
+                  Lebenszykluskosten neben den Erstellungskosten und legen offen, welche
+                  Massnahmen sich über die Nutzungsdauer tragen. Wo Bauland knapp ist, prüfen
+                  wir zuerst, welcher Weg trägt – Aufstockung, Anbau oder Ersatzneubau – bevor
+                  gestaltet wird.
+                </p>
+              </MehrLesen>
             </div>
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt

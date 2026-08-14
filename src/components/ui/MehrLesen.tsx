@@ -16,19 +16,31 @@ import { cn } from '@/lib/utils';
 export default function MehrLesen({
   children,
   className,
+  nurMobil = false,
 }: {
   children: React.ReactNode;
   className?: string;
+  /**
+   * Ab `lg` immer vollständig sichtbar, ohne Button — für Text, der auf
+   * Desktop bereits neben einem Bild/Video passt (dafür bemessen ist) und
+   * nur auf schmalen Bildschirmen zu lang wird.
+   */
+  nurMobil?: boolean;
 }) {
   const [offen, setOffen] = useState(false);
 
   return (
     <>
-      <div className={cn(!offen && 'hidden', className)}>{children}</div>
+      <div className={cn(!offen && (nurMobil ? 'hidden lg:block' : 'hidden'), className)}>
+        {children}
+      </div>
       <button
         type="button"
         onClick={() => setOffen((v) => !v)}
-        className="group mt-3 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-stone transition-colors hover:text-ink"
+        className={cn(
+          'group mt-3 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-stone transition-colors hover:text-ink',
+          nurMobil && 'lg:hidden'
+        )}
       >
         {offen ? 'weniger anzeigen' : 'mehr lesen'}
         <Arrow

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import AusklappbarerText from '@/components/ui/AusklappbarerText';
+import MehrLesen from '@/components/ui/MehrLesen';
 
 export const metadata: Metadata = {
   title: 'Über uns',
@@ -35,7 +35,7 @@ export default function UeberUnsPage() {
               Verantwortung, für Menschen, Orte und{' '}
               <span className="font-semibold">Zukunft.</span>
             </h1>
-            <AusklappbarerText className="space-y-3 text-graphite leading-snug" vorschauKlasse="max-h-36">
+            <div className="text-graphite leading-snug">
               <p className="text-lg text-ink">
                 Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
                 im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
@@ -43,25 +43,27 @@ export default function UeberUnsPage() {
                 Zürich, Aargau und Zug, von der Machbarkeitsstudie über Baugesuch und
                 Ausführungsplanung bis zur Bauleitung.
               </p>
-              <p>
-                Zuhören heisst bei uns: ein Gespräch vor Ort führen, das Grundstück in
-                seiner Umgebung verstehen, und die Fragen stellen, die sich im
-                Projektverlauf sonst erst später ergeben. Erst danach beginnt der
-                Entwurf, nie umgekehrt.
-              </p>
-              <p>
-                Wir führen das Atelier AA Architekten mit dieser Haltung, mit einem
-                engagierten, fachlich qualifizierten Team und zeitgemässen Werkzeugen wie
-                der 3D-Planung, die unsere Prozesse unterstützen, ohne unsere
-                Grundhaltung zu ersetzen.
-              </p>
-              <p>
-                Wir verbinden Architektur, Funktion und Wirtschaftlichkeit zu
-                nachhaltigen Konzepten mit langfristigem Mehrwert. Dabei denken wir
-                Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Diese
-                Haltung tragen wir seit der Gründung 2021 in jedes Projekt.
-              </p>
-            </AusklappbarerText>
+              <MehrLesen nurMobil className="mt-3 space-y-3">
+                <p>
+                  Zuhören heisst bei uns: ein Gespräch vor Ort führen, das Grundstück in
+                  seiner Umgebung verstehen, und die Fragen stellen, die sich im
+                  Projektverlauf sonst erst später ergeben. Erst danach beginnt der
+                  Entwurf, nie umgekehrt.
+                </p>
+                <p>
+                  Wir führen das Atelier AA Architekten mit dieser Haltung, mit einem
+                  engagierten, fachlich qualifizierten Team und zeitgemässen Werkzeugen wie
+                  der 3D-Planung, die unsere Prozesse unterstützen, ohne unsere
+                  Grundhaltung zu ersetzen.
+                </p>
+                <p>
+                  Wir verbinden Architektur, Funktion und Wirtschaftlichkeit zu
+                  nachhaltigen Konzepten mit langfristigem Mehrwert. Dabei denken wir
+                  Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Diese
+                  Haltung tragen wir seit der Gründung 2021 in jedes Projekt.
+                </p>
+              </MehrLesen>
+            </div>
             <div className="mt-6">
               <Button href="/ueber-uns/team" variant="text">
                 Unser Team ansehen
