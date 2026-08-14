@@ -113,7 +113,7 @@ export default function Footer() {
                 Spaltentitel (nur unsichtbar statt weglassen), damit die
                 Liste exakt auf derselben Höhe wie Navigation und Kantone
                 beginnt, statt nur ungefähr per fester Pixelhöhe. */}
-            <h3 className={cn(spaltenTitel, 'invisible')} aria-hidden="true">
+            <h3 className={cn(spaltenTitel, 'hidden invisible lg:block')} aria-hidden="true">
               Weitere Seiten
             </h3>
             <ul>
@@ -128,7 +128,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={cn(spaltenTitel, 'invisible')} aria-hidden="true">
+            <h3 className={cn(spaltenTitel, 'hidden invisible lg:block')} aria-hidden="true">
               Kantone
             </h3>
             <ul>
