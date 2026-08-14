@@ -1088,6 +1088,6 @@ export function getInsight(slug: string): Insight | undefined {
   return insights.find((i) => i.slug === slug);
 }
 
-export function getWeitereInsights(currentSlug: string, count = 2): Insight[] {
+export function getWeitereInsights(currentSlug: string, count = 4): Insight[] {
   return insights.filter((i) => i.slug !== currentSlug).slice(0, count);
 }

@@ -43,7 +43,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
 
   if (!insight) notFound();
 
-  const weitere = getWeitereInsights(slug, 2);
+  const weitere = getWeitereInsights(slug, 4);
 
   const BASIS = 'https://www.atelier-aa.ch';
   const url = `${BASIS}/insights/${insight.slug}`;
@@ -115,16 +115,18 @@ export default async function InsightDetailPage({ params }: PageProps) {
           </div>
         </Container>
 
-        <div className="relative mt-16 md:mt-20 aspect-[16/9] w-full bg-mist">
-          <Image
-            src={insight.bild}
-            alt={insight.titel}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
+        <Container className="mt-16 md:mt-20">
+          <div className="relative aspect-[16/9] w-full max-w-3xl bg-mist">
+            <Image
+              src={insight.bild}
+              alt={insight.titel}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        </Container>
 
         <Container className="mt-16 md:mt-24">
           <div className="max-w-3xl">
