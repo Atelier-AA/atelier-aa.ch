@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import FragenAntworten from '@/components/insights/FragenAntworten';
 import InsightCard from '@/components/insights/InsightCard';
 import { insights, getInsight, getWeitereInsights } from '@/data/insights';
 import { formatDatum } from '@/lib/utils';
@@ -49,13 +48,10 @@ export default async function InsightDetailPage({ params }: PageProps) {
   const url = `${BASIS}/insights/${insight.slug}`;
 
   /**
-   * Strukturierte Daten in einem Graph: Der Beitrag selbst als `Article`, die
-   * Q&A-Paare als `FAQPage`. Beides zusammen erlaubt KI-Systemen, den Text
-   * einer Quelle, einem Datum und einem Thema zuzuordnen und die Antworten
-   * direkt zu zitieren.
-   *
-   * Die Antworten stehen zusätzlich als sichtbarer Text im HTML — Markup allein
-   * genügt nicht, es muss den Seiteninhalt widerspiegeln.
+   * Strukturierte Daten: Der Beitrag selbst als `Article`. Die Q&A-Paare
+   * (`FAQPage`) stehen nicht mehr hier, sondern gesammelt auf /haeufige-fragen —
+   * Schema-Markup ohne sichtbaren Seiteninhalt widerspricht den
+   * Richtlinien der Suchmaschinen.
    */
   const schema = {
     '@context': 'https://schema.org',
@@ -74,16 +70,6 @@ export default async function InsightDetailPage({ params }: PageProps) {
         publisher: { '@id': `${BASIS}/#organisation` },
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
         about: insight.abschnitte.map((a) => ({ '@type': 'Thing', name: a.titel })),
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': `${url}#faq`,
-        inLanguage: 'de-CH',
-        mainEntity: insight.fragen.map((f) => ({
-          '@type': 'Question',
-          name: f.frage,
-          acceptedAnswer: { '@type': 'Answer', text: f.antwort },
-        })),
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
@@ -151,8 +137,6 @@ export default async function InsightDetailPage({ params }: PageProps) {
                 )}
               </section>
             ))}
-
-            <FragenAntworten fragen={insight.fragen} titel="Fragen und Antworten" />
 
             <div className="mt-20 md:mt-28 border-t border-mist pt-16">
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">

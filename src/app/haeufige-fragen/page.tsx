@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import { expertiseFragen } from '@/data/expertise';
+import { insights } from '@/data/insights';
 
 export const metadata: Metadata = {
   title: 'Häufige Fragen',
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function HaeufigeFragenPage() {
+  // Fragen aus den Insight-Beiträgen: vorher einzeln je Beitragsseite,
+  // jetzt gesammelt hier statt verstreut über 19 Detailseiten.
+  const insightFragen = insights.flatMap((i) => i.fragen);
+
   // FAQPage-Markup zu den sichtbaren Fragen weiter unten — vorher Teil von
   // /leistungen, jetzt als eigenständige Seite ausgelagert.
   const faqSchema = {
@@ -18,7 +23,7 @@ export default function HaeufigeFragenPage() {
     '@type': 'FAQPage',
     '@id': 'https://www.atelier-aa.ch/haeufige-fragen#faq',
     inLanguage: 'de-CH',
-    mainEntity: expertiseFragen.map((f) => ({
+    mainEntity: [...expertiseFragen, ...insightFragen].map((f) => ({
       '@type': 'Question',
       name: f.frage,
       acceptedAnswer: { '@type': 'Answer', text: f.antwort },
@@ -42,6 +47,7 @@ export default function HaeufigeFragenPage() {
               <span className="font-semibold">Zusammenarbeit</span>
             </h1>
             <FragenAntworten fragen={expertiseFragen} />
+            <FragenAntworten fragen={insightFragen} titel="Fragen aus unseren Fachbeiträgen" />
           </div>
         </Container>
       </div>
