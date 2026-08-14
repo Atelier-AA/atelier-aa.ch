@@ -178,9 +178,11 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <h2 className="text-xs uppercase tracking-widest text-stone mb-12">
               Weitere Beiträge
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-wrap gap-x-5 gap-y-8">
               {weitere.map((i) => (
-                <InsightCard key={i.slug} insight={i} />
+                <div key={i.slug} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]">
+                  <InsightCard insight={i} />
+                </div>
               ))}
             </div>
             <div className="mt-16 text-right">
