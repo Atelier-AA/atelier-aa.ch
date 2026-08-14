@@ -14,16 +14,17 @@ export default function KontaktPage() {
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
-        {/* Links Formular, rechts Text/Adresse. */}
+        {/* Eyebrow steht über beiden Spalten, wie auf /ueber-uns. */}
+        <p className="text-xs uppercase tracking-widest text-stone mb-8">Kontakt</p>
+
+        {/* Auf Mobile zuerst Text/Adresse, danach das Formular; ab lg wie
+            gehabt Formular links, Text rechts. */}
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-28">
-          <div className="w-full lg:pt-1">
-            <p className="text-xs uppercase tracking-widest text-stone mb-8">
-              Kontakt
-            </p>
+          <div className="order-2 w-full lg:order-1 lg:pt-1">
             <KontaktformularEinfach />
           </div>
 
-          <div>
+          <div className="order-1 lg:order-2">
             <h1 className="text-4xl font-normal leading-tight text-ink mb-10 max-w-lg md:text-5xl lg:text-6xl">
               Der erste <span className="font-semibold">Schritt</span> ist ein{' '}
               <span className="font-semibold">Gespräch.</span>
