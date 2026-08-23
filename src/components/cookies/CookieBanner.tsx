@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   CONSENT_EVENT,
@@ -9,6 +9,18 @@ import {
 } from '@/lib/consent';
 
 export const COOKIE_SETTINGS_EVENT = 'atelier-aa-cookie-open';
+
+/**
+ * CSS-Variable mit der aktuellen Banner-Höhe, damit bodenbündige Inhalte
+ * (z. B. der Hero-Titel auf der Startseite) ihr nicht ausweichen müssen,
+ * ohne von diesem Banner zu wissen — sie reservieren einfach Platz über
+ * `var(--cookie-banner-h, 0px)`. Ohne das lag der Banner beim ersten
+ * Besuch direkt über dem Hero-Titel, weil beide unabhängig voneinander an
+ * der Fensterunterkante verankert sind.
+ */
+function setzeBannerHoehe(px: number) {
+  document.documentElement.style.setProperty('--cookie-banner-h', `${px}px`);
+}
 
 /**
  * Eigener, schlanker Cookie-Banner statt eines Drittanbieter-CMPs — passend
@@ -21,6 +33,23 @@ export default function CookieBanner() {
   const [einstellungenOffen, setEinstellungenOffen] = useState(false);
   const [statistik, setStatistik] = useState(false);
   const [marketing, setMarketing] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sichtbar) return;
+    const el = bannerRef.current;
+    if (!el) return;
+    // getBoundingClientRect statt contentRect: Letzteres schliesst Padding
+    // und Rand aus, wir brauchen aber die tatsächliche, sichtbare Höhe.
+    const beobachter = new ResizeObserver(() => {
+      setzeBannerHoehe(el.getBoundingClientRect().height);
+    });
+    beobachter.observe(el);
+    return () => {
+      beobachter.disconnect();
+      setzeBannerHoehe(0);
+    };
+  }, [sichtbar]);
 
   useEffect(() => {
     const bestehende = ladeEinwilligung();
@@ -65,6 +94,7 @@ export default function CookieBanner() {
 
   return (
     <div
+      ref={bannerRef}
       role="dialog"
       aria-modal="false"
       aria-label="Cookie-Einstellungen"

@@ -78,12 +78,27 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-8">
-            {/* Die zwei meistgesuchten Ziele direkt erreichbar, ohne Umweg
-                über das Burger-Menü — alle übrigen Menüpunkte bleiben dort. */}
+            {/* Projekte und Kontakt direkt erreichbar, ohne Umweg über das
+                Burger-Menü, schon ab sm — das sind die zwei meistgesuchten
+                Ziele. Ab lg ist genug Platz, um auch Leistungen und Über uns
+                direkt zu zeigen, statt sie auf Desktop-Breite unnötig hinter
+                dem Burger zu verstecken. Alle übrigen Menüpunkte bleiben dort. */}
             <nav
               aria-label="Kurznavigation"
               className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
             >
+              <Link
+                href="/leistungen"
+                className="hidden transition-opacity hover:opacity-60 lg:inline"
+              >
+                Leistungen
+              </Link>
+              <Link
+                href="/ueber-uns"
+                className="hidden transition-opacity hover:opacity-60 lg:inline"
+              >
+                Über uns
+              </Link>
               <Link href="/projekte" className="transition-opacity hover:opacity-60">
                 Projekte
               </Link>

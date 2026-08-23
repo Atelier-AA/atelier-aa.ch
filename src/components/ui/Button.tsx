@@ -9,10 +9,11 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit';
+  disabled?: boolean;
 }
 
 const base =
-  'inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest font-medium transition-colors duration-300';
+  'inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed';
 
 const variants = {
   primary: 'bg-ink text-white px-8 py-4 hover:bg-graphite',
@@ -29,6 +30,7 @@ export default function Button({
   className,
   onClick,
   type = 'button',
+  disabled,
 }: ButtonProps) {
   const classes = cn(base, variants[variant], className);
 
@@ -53,7 +55,7 @@ export default function Button({
     );
   }
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {content}
     </button>
   );

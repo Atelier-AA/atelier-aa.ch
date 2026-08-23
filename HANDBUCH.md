@@ -525,7 +525,7 @@ noch auftaucht, bevor du es löschst.
 | Reihenfolge der Startseiten-Abschnitte | `src/app/page.tsx` |
 | Text „Über uns" | `src/app/ueber-uns/page.tsx` |
 | Text „offene Stellen" | `src/components/ueber-uns/OffeneStellen.tsx` |
-| Kontaktformular | `src/components/kontakt/KontaktFormular.tsx` |
+| Kontaktformular | `src/components/kontakt/KontaktformularEinfach.tsx` (Versand: `src/app/api/kontakt/route.ts`) |
 | Impressum | `src/app/impressum/page.tsx` |
 | Datenschutzerklärung | `src/app/datenschutzerklaerung/page.tsx` |
 
@@ -955,11 +955,11 @@ bereits als letzten Punkt.
 
 ## 16. Offene Punkte
 
-Stand Juli 2026 — Dinge, die bewusst offen sind:
+Stand August 2026 — Dinge, die bewusst offen sind:
 
 | Punkt | Stand | Priorität |
 |---|---|---|
-| **Kontaktformular versendet nicht** | Als Vorschau vorhanden (`src/components/kontakt/KontaktFormular.tsx`) mit deutlichem Hinweis. Es fehlen: API-Route, Versanddienst (z. B. Resend) mit Schlüssel in `.env.local`, Spamschutz und serverseitige Prüfung. Die Anleitung steht als Kommentar in der Datei. | hoch |
+| **Resend-Konto für den Formularversand einrichten** | Der Versand läuft jetzt über eine echte API-Route (`src/app/api/kontakt/route.ts`) mit Resend, Spamschutz (Honeypot) und serverseitiger Prüfung — technisch fertig. Es fehlt nur noch: ein Resend-Konto anlegen, `RESEND_API_KEY` in den Umgebungsvariablen (lokal `.env.local`, auf Vercel die Projekteinstellungen) setzen, und in Resend die Domain `atelier-aa.ch` verifizieren (DNS-Einträge), damit `CONTACT_FROM_EMAIL` von der eigenen Domain senden darf statt vom Resend-Testabsender. Siehe `.env.example`. Solange das nicht eingerichtet ist, öffnet das Formular als Auffangnetz automatisch das E-Mail-Programm der Besucherin/des Besuchers. | hoch |
 | **Rechtstexte juristisch prüfen** | Impressum und Datenschutzerklärung sind vollständig aufgebaut, aber nicht anwaltlich geprüft. Zwei Abschnitte müssen an den Betrieb angepasst werden (siehe Abschnitt 13). | hoch |
 | **Kundenstimmen** | In `startseite.ts` vorbereitet, aber deaktiviert (`zeigeStimmen = false`). Erfundene Bewertungen sind nach UWG unzulässig — echte Rückmeldungen mit schriftlicher Freigabe einholen. | mittel |
 | **Google-Bewertungen** | Noch nicht eingebunden. `AggregateRating`-Markup darf nur echte, überprüfbare Bewertungen abbilden. Zuerst ein Google-Business-Profil pflegen und Bewertungen sammeln. | mittel |
@@ -971,6 +971,7 @@ Stand Juli 2026 — Dinge, die bewusst offen sind:
 | **Galeriebilder** | Die Dateien `01.jpg` bis `04.jpg` sind teils noch aus dem alten Bestand und nicht alle projektspezifisch geprüft. | niedrig |
 | **Verzeichniseinträge** | search.ch und local.ch führen noch Bachstrasse 29 statt 39. | niedrig |
 | **Rückverlinkung von Elindo** | Für den gegenseitigen Nutzen sollte elindo.ch auf atelier-aa.ch verlinken. Muss dort eingerichtet werden. | niedrig |
+| **Next.js-Major-Update wegen `npm audit`** | Zwei verbleibende High-Severity-Meldungen (postcss, sharp) stecken in Abhängigkeiten von Next.js selbst und lassen sich nur über `npm audit fix --force` beheben, was auf Next 16 hochzieht — ein Breaking-Change-Upgrade, das gezielt getestet werden sollte statt automatisch mitgezogen zu werden. Die übrigen vier (brace-expansion, js-yaml, nanoid) sind bereits ohne Breaking Changes behoben. | mittel |
 | **Handelsregisternummer** | Die alte Website nannte „CH-020.4.074.716-1" — eine Nummer der bis 2016 gültigen Systematik, extern nicht bestätigt. Im Impressum steht jetzt die UID, die heute maßgeblich ist. | erledigt |
 
 ---
