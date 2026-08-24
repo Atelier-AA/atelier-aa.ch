@@ -150,7 +150,7 @@ export default function ProjektentwicklungPage() {
         </div>
 
         {/* 4 schmale, hohe Kacheln (aspect-[3/4]) statt der quadratischen
-            Standardkarten — gleiches Bildformat wie bei den Insights auf
+            Standardkarten — gleiches Bildformat wie beim Journal auf
             der Startseite. */}
         {beispiele.length > 0 && (
           <div className="mt-20 border-t border-mist pt-16 md:mt-28">
