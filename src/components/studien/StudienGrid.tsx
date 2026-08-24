@@ -1,9 +1,8 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import StudieCard from './StudieCard';
 import Eingeblendet from '@/components/ui/Eingeblendet';
-import KontaktKachel from '@/components/projekte/KontaktKachel';
 import { cn } from '@/lib/utils';
 import type { Studie } from '@/types';
 
@@ -18,9 +17,6 @@ const ANZAHL_ANFANGS = 21;
 /** Kachelbreite, dieselbe wie bei den Studien-Kacheln. */
 const KACHEL_KLASSE = 'w-full sm:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.834rem)]';
 
-/** Wie im Projekte-Raster: alle 6 Einträge eine Kontakt-Kachel. */
-const KONTAKT_INTERVALL = 6;
-
 export default function StudienGrid({ studien }: StudienGridProps) {
   const [sichtbar, setSichtbar] = useState(ANZAHL_ANFANGS);
   const restlich = studien.length - Math.min(sichtbar, studien.length);
@@ -29,24 +25,20 @@ export default function StudienGrid({ studien }: StudienGridProps) {
     <div>
       {/* Alle Studien stehen immer im HTML (nur per CSS-Klasse `hidden`
           ausgeblendet, nicht bedingt gerendert), damit Suchmaschinen/KI-
-          Crawler alle Studienseiten weiterhin verlinkt finden. */}
+          Crawler alle Studienseiten weiterhin verlinkt finden. Keine
+          periodisch eingestreute Kontakt-Kachel mehr: zu viele
+          Conversion-Unterbrechungen zwischen den Studien. */}
       <div className="flex flex-wrap gap-x-5 gap-y-8 xl:gap-y-16">
         {studien.map((studie, idx) => {
           const ausgeblendet = idx >= sichtbar;
-          const nachDieserStudie =
-            (idx + 1) % KONTAKT_INTERVALL === 0 && idx + 1 < studien.length;
 
           return (
-            <Fragment key={studie.slug}>
-              <Eingeblendet className={cn(KACHEL_KLASSE, ausgeblendet && 'hidden')}>
-                <StudieCard studie={studie} priority={idx < 2} />
-              </Eingeblendet>
-              {nachDieserStudie && (
-                <Eingeblendet className={cn(KACHEL_KLASSE, ausgeblendet && 'hidden')}>
-                  <KontaktKachel variante={Math.floor((idx + 1) / KONTAKT_INTERVALL) - 1} />
-                </Eingeblendet>
-              )}
-            </Fragment>
+            <Eingeblendet
+              key={studie.slug}
+              className={cn(KACHEL_KLASSE, ausgeblendet && 'hidden')}
+            >
+              <StudieCard studie={studie} priority={idx < 2} />
+            </Eingeblendet>
           );
         })}
       </div>
