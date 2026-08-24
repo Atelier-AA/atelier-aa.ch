@@ -121,6 +121,10 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         inLanguage: 'de-CH',
         creator: { '@id': `${BASIS}/#organisation` },
         about: { '@type': 'Thing', name: projekt.typ },
+        ...(() => {
+          const status = projekt.daten.find((d) => d.label === 'Status')?.wert;
+          return status ? { creativeWorkStatus: status } : {};
+        })(),
         locationCreated: {
           '@type': 'Place',
           address: {

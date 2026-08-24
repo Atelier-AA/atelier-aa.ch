@@ -45,17 +45,51 @@ export default async function StudieDetailPage({ params }: PageProps) {
       : null,
   ].filter((b): b is { src: string; titel: string } => Boolean(b));
 
-  const breadcrumb = breadcrumbSchema([
-    { name: 'Startseite', pfad: '/' },
-    { name: 'Studien', pfad: '/studien' },
-    { name: titel, pfad: `/studien/${studie.slug}` },
-  ]);
+  const BASIS = 'https://www.atelier-aa.ch';
+  const url = `${BASIS}/studien/${studie.slug}`;
+
+  /**
+   * Strukturierte Daten fürs GEO/lokale SEO — analog zu den Referenzprojekten:
+   * `CreativeWork` mit echter Ortsangabe macht auch Studien als eigenständige
+   * lokale Relevanzquelle lesbar, ohne erfundene Details (keine SIA-Phasen
+   * o. Ä., die für Studien nicht dokumentiert sind).
+   */
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CreativeWork',
+        '@id': `${url}#studie`,
+        name: `${studie.kategorie}: ${titel}`,
+        description: studie.analyse,
+        inLanguage: 'de-CH',
+        creator: { '@id': `${BASIS}/#organisation` },
+        about: { '@type': 'Thing', name: studie.kategorie },
+        locationCreated: {
+          '@type': 'Place',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: studie.ort,
+            addressRegion: studie.kanton,
+            addressCountry: 'CH',
+          },
+        },
+        keywords: [studie.kategorie, studie.ort, studie.kanton].join(', '),
+        ...(studie.datum && { dateCreated: studie.datum }),
+      },
+      breadcrumbSchema([
+        { name: 'Startseite', pfad: '/' },
+        { name: 'Studien', pfad: '/studien' },
+        { name: titel, pfad: `/studien/${studie.slug}` },
+      ]),
+    ],
+  };
 
   return (
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Container>
         <div className="grid grid-cols-1 gap-10 border-b border-mist pb-16 lg:grid-cols-2 lg:gap-20 lg:pb-20">

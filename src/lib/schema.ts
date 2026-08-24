@@ -1,4 +1,5 @@
 import type { firma as Firma } from '@/data/firma';
+import { sozialeMedien } from '@/data/firma';
 import type { TeamMember } from '@/types';
 
 const BASIS = 'https://www.atelier-aa.ch';
@@ -60,14 +61,38 @@ export function organisationSchema(firma: typeof Firma, team: TeamMember[]) {
       latitude: 47.2775,
       longitude: 8.4372,
     },
-    areaServed: { '@type': 'Country', name: 'Schweiz' },
+    // Google-Maps-Suchlink direkt aus der verifizierten Adresse gebaut, keine
+    // eigens nachgeschlagene Place-ID (unnötige Fehlerquelle bei Umzug o. Ä.).
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${firma.name}, ${firma.strasse}, ${firma.plz} ${firma.ort}`
+    )}`,
+    areaServed: [
+      { '@type': 'AdministrativeArea', name: 'Kanton Zürich' },
+      { '@type': 'AdministrativeArea', name: 'Kanton Aargau' },
+      { '@type': 'AdministrativeArea', name: 'Kanton Zug' },
+      { '@type': 'Country', name: 'Schweiz' },
+    ],
     knowsLanguage: ['de-CH'],
+    // Vom Kunden bestätigte Profile (siehe data/firma.ts) — verknüpft das
+    // Organisations-Schema mit den echten externen Auftritten der Firma.
+    sameAs: [sozialeMedien.linkedin, sozialeMedien.instagram],
     founder: { '@type': 'Person', name: firma.vertretungsberechtigt },
     employee: team.map((m) => ({
       '@id': `${BASIS}/ueber-uns/${m.slug}#person`,
     })),
     description:
       'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',
+    knowsAbout: [
+      'Architektur',
+      'Beratung',
+      'Analyse und Konzept',
+      'Planung und Koordination',
+      'Realisierung',
+      'Generalplanung',
+      'Machbarkeitsstudie',
+      'Projektentwicklung',
+      'Bauleitung',
+    ],
     makesOffer: [
       'Architektur und Entwurf',
       'Umbau und Sanierung',
