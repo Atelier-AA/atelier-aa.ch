@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ortMitKanton } from '@/lib/utils';
+import { studieTitel } from '@/data/studien';
 import type { Studie } from '@/types';
 
 interface StudieCardProps {
@@ -20,7 +21,7 @@ interface StudieCardProps {
  */
 export default function StudieCard({ studie, priority = false }: StudieCardProps) {
   const bild = studie.luftbild ?? studie.katasterplan ?? studie.projektbild;
-  const titel = studie.strasse ? `${studie.ort}, ${studie.strasse}` : studie.ort;
+  const titel = studieTitel(studie);
 
   return (
     <div className="group block min-w-0" aria-label={`${titel}, Atelier AA Architekten`}>

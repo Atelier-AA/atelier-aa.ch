@@ -5,6 +5,22 @@ export function getStudie(slug: string): Studie | undefined {
 }
 
 /**
+ * Titel für Seitentitel, Breadcrumb und Bild-Alt-Texte. Zwei Studien können
+ * denselben Ort und dieselbe Strasse teilen (z. B. zwei benachbarte
+ * Parzellen mit unterschiedlicher Zone) — dann sonst identische
+ * <title>-Tags. Hängt in diesem Fall die Zone aus den Kennzahlen an, sonst
+ * bleibt der Titel unverändert kurz.
+ */
+export function studieTitel(studie: Studie): string {
+  const basis = studie.strasse ? `${studie.ort}, ${studie.strasse}` : studie.ort;
+  const kollision = studien.some((s) => s.slug !== studie.slug && s.ort === studie.ort && s.strasse === studie.strasse);
+  if (!kollision) return basis;
+
+  const zone = studie.kennzahlen.find((k) => k.label === 'Zone')?.wert;
+  return zone ? `${basis} (Zone ${zone})` : `${basis}, Parzelle ${studie.parzelle ?? studie.slug}`;
+}
+
+/**
  * Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge — frühe
  * Vorabklärungen, die nicht (oder noch nicht) gebaut wurden. Bewusst nicht
  * unter /projekte gelistet, aber auf den Regionen-Seiten sichtbar: zeigt

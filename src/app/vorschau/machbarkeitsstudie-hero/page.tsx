@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { studien } from '@/data/studien';
+import { studien, studieTitel } from '@/data/studien';
 import { firma } from '@/data/firma';
 import { ortMitKanton } from '@/lib/utils';
 
@@ -135,7 +135,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
               )
               .map((s, idx) => {
                 const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
-                const titel = s.strasse ? `${s.ort}, ${s.strasse}` : s.ort;
+                const titel = studieTitel(s);
                 return (
                   <div key={s.slug} className="group block min-w-0">
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">

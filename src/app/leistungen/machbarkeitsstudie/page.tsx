@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { studien } from '@/data/studien';
+import { studien, studieTitel } from '@/data/studien';
 import { firma } from '@/data/firma';
 import { breadcrumbSchema } from '@/lib/schema';
 import { ortMitKanton } from '@/lib/utils';
@@ -144,7 +144,7 @@ export default function MachbarkeitsstudiePage() {
         </div>
 
         {/* 4 schmale, hohe Kacheln (aspect-[3/4]), gleiches Format wie bei
-            Projektentwicklung und den Insights auf der Startseite. Bewusst
+            Projektentwicklung und dem Journal auf der Startseite. Bewusst
             ohne Link zur Detailseite (wie StudieCard) — Studien sollen nicht
             von der Übersicht aus nebeneinander vergleichbar sein. */}
         <div className="mt-14 border-t border-mist pt-11 md:mt-20">
@@ -156,7 +156,7 @@ export default function MachbarkeitsstudiePage() {
               )
               .map((s, idx) => {
                 const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
-                const titel = s.strasse ? `${s.ort}, ${s.strasse}` : s.ort;
+                const titel = studieTitel(s);
                 return (
                   <div key={s.slug} className="group block min-w-0">
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">

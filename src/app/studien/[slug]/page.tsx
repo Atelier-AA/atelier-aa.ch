@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { studien, getStudie } from '@/data/studien';
+import { studien, getStudie, studieTitel } from '@/data/studien';
 import { ortMitKanton } from '@/lib/utils';
 import { breadcrumbSchema } from '@/lib/schema';
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const studie = getStudie(slug);
   if (!studie) return { title: 'Seite nicht gefunden' };
 
-  const titel = studie.strasse ? `${studie.ort}, ${studie.strasse}` : studie.ort;
+  const titel = studieTitel(studie);
   return {
     title: `${studie.kategorie}: ${titel}`,
     description: `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`,
@@ -33,7 +33,7 @@ export default async function StudieDetailPage({ params }: PageProps) {
   const studie = getStudie(slug);
   if (!studie) notFound();
 
-  const titel = studie.strasse ? `${studie.ort}, ${studie.strasse}` : studie.ort;
+  const titel = studieTitel(studie);
 
   // Für Wettbewerbsbeiträge/Konzeptstudien mit echtem Projektbild statt
   // Luftbild/Katasterplan: dasselbe Bild nicht doppelt anzeigen.
