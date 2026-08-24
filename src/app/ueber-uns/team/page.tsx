@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   const breadcrumb = breadcrumbSchema([
     { name: 'Startseite', pfad: '/' },
-    { name: 'Über uns', pfad: '/ueber-uns' },
+    { name: 'Büro', pfad: '/ueber-uns' },
     { name: 'Team', pfad: '/ueber-uns/team' },
   ]);
 
@@ -40,7 +40,7 @@ export default function TeamPage() {
             <span className="font-semibold">Atelier AA Architekten.</span>
           </h1>
           <p className="mb-14 max-w-xl text-lg leading-relaxed text-graphite">
-            Ein kleines, eingespieltes Team mit klaren Rollen — von der ersten
+            Ein eingespieltes Team mit klaren Verantwortlichkeiten — von der ersten
             Machbarkeitsstudie bis zur Bauleitung begleiten Sie dieselben
             Ansprechpersonen durch Ihr Projekt.
           </p>

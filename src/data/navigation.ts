@@ -16,7 +16,7 @@ export const navigation: NavLink[] = [
   },
   { href: '/leistungen', label: 'Leistungen' },
   { href: '/studien', label: 'Studien' },
-  { href: '/insights', label: 'Insights' },
+  { href: '/insights', label: 'Journal' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 

@@ -97,7 +97,7 @@ export default function Header() {
                 href="/ueber-uns"
                 className="hidden transition-opacity hover:opacity-60 lg:inline"
               >
-                Über uns
+                Büro
               </Link>
               <Link href="/projekte" className="transition-opacity hover:opacity-60">
                 Projekte
