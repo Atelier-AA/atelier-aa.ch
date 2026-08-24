@@ -5,7 +5,7 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
   description:
-    'Datenschutzerklärung von Atelier AA Architekten GmbH, Obfelden: welche Personendaten wir bearbeiten, zu welchem Zweck, wie lange und welche Rechte Sie nach dem Schweizer Datenschutzgesetz haben.',
+    'Datenschutzerklärung von Atelier AA Architekten, Obfelden: welche Personendaten wir bearbeiten, zu welchem Zweck und welche Rechte Sie haben.',
   alternates: { canonical: '/datenschutzerklaerung' },
 };
 
@@ -128,8 +128,8 @@ export default function DatenschutzPage() {
               </h2>
               <p>
                 Wenn Sie uns per E-Mail, telefonisch oder über das Kontaktformular
-                schreiben, bearbeiten wir die von Ihnen mitgeteilten Angaben — in der
-                Regel Name, E-Mail-Adresse, Telefonnummer und den Inhalt Ihrer Nachricht —
+                schreiben, bearbeiten wir die von Ihnen mitgeteilten Angaben (in der
+                Regel Name, E-Mail-Adresse, Telefonnummer und den Inhalt Ihrer Nachricht)
                 zur Beantwortung Ihrer Anfrage und für allfällige Anschlussfragen.
               </p>
               <p className="mt-4">
@@ -198,7 +198,7 @@ export default function DatenschutzPage() {
                 Bei erteilter Einwilligung setzen wir Google Analytics (Google Ireland
                 Limited, Gordon House, Barrow Street, Dublin 4, Irland; für die
                 Datenverarbeitung mitverantwortlich: Google LLC, USA) ein, um zu
-                verstehen, wie unsere Website genutzt wird — etwa welche Seiten besucht
+                verstehen, wie unsere Website genutzt wird, etwa welche Seiten besucht
                 und über welche Kanäle Besucherinnen und Besucher auf unsere Website
                 gelangen. Dabei werden unter anderem IP-Adresse (gekürzt), Geräte- und
                 Browserangaben, besuchte Seiten und Verweildauer verarbeitet.
@@ -246,7 +246,7 @@ export default function DatenschutzPage() {
                 Analysewerkzeuge und der Werbepixel sind unter Ziffer 7 beschrieben und
                 laden nur mit Ihrer Einwilligung. Wir setzen darüber hinaus keine
                 Social-Media-Plugins und keine eingebetteten Karten oder Videos ein.
-                Links auf externe Websites — etwa zu unserem Immobilienpartner — führen
+                Links auf externe Websites, etwa zu unserem Immobilienpartner, führen
                 erst nach einem Klick zu einer Verbindung mit dem jeweiligen Anbieter.
                 Für dessen Datenbearbeitung gilt deren eigene Datenschutzerklärung.
               </p>

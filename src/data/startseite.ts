@@ -17,7 +17,7 @@ export const ablauf = [
   {
     nummer: '02',
     titel: 'Machbarkeit',
-    text: 'Wir prüfen Bauordnung, Ausnutzung und Erschliessung und zeigen Ihnen in einer Volumenstudie, was möglich ist — mit Kostenrahmen.',
+    text: 'Wir prüfen Bauordnung, Ausnutzung und Erschliessung und zeigen Ihnen in einer Volumenstudie, was möglich ist, samt Kostenrahmen.',
   },
   {
     nummer: '03',
@@ -77,7 +77,7 @@ export const zeigeStimmen = false;
 
 export const stimmen = [
   {
-    text: 'Platzhalter — echte Kundenstimme mit schriftlicher Freigabe einsetzen.',
+    text: 'Platzhalter: echte Kundenstimme mit schriftlicher Freigabe einsetzen.',
     person: 'Name, Ort',
     projekt: 'Projektbezeichnung',
   },

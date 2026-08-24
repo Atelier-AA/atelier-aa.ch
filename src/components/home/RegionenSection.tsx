@@ -23,7 +23,7 @@ export default function RegionenSection() {
           </h2>
           <p className="mt-8 text-lg text-graphite leading-relaxed">
             Unser Büro liegt in Obfelden, im Knonauer Amt an der Grenze der Kantone
-            Zürich, Aargau und Zug — unser Schwerpunkt liegt entsprechend in dieser
+            Zürich, Aargau und Zug. Unser Schwerpunkt liegt entsprechend in dieser
             Region, weil kurze Wege eine Bauleitung ermöglichen, die regelmässig vor
             Ort ist. Für passende Aufgaben planen und realisieren wir aber in der
             ganzen Schweiz.

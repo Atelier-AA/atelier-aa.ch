@@ -7,7 +7,7 @@ import { insights } from '@/data/insights';
 export const metadata: Metadata = {
   title: 'Häufige Fragen',
   description:
-    'Häufige Fragen zu Leistungen, Honorar und Zusammenarbeit mit Atelier AA Architekten GmbH: SIA-Leistungsphasen, Machbarkeitsstudie, Bauleitung, Kostensicherheit und Generalunternehmer.',
+    'Häufige Fragen zu Leistungen, Honorar und Zusammenarbeit mit Atelier AA Architekten: Machbarkeitsstudie, Bauleitung und Kostensicherheit.',
   alternates: { canonical: '/haeufige-fragen' },
 };
 

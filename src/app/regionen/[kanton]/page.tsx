@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const anzahl = kanton.projekte.length;
   return {
     title: `Architekt im Kanton ${kanton.name}`,
-    description: `Atelier AA Architekten GmbH: ${anzahl} realisierte oder projektierte Bauvorhaben im Kanton ${kanton.name} — Neubau, Umbau und Verdichtung.`,
+    description: `Atelier AA Architekten GmbH: ${anzahl} realisierte oder projektierte Bauvorhaben im Kanton ${kanton.name}. Neubau, Umbau und Verdichtung.`,
     alternates: { canonical: `/regionen/${kanton.slug}` },
   };
 }
@@ -64,7 +64,7 @@ export default async function KantonPage({ params }: PageProps) {
               </>
             ) : (
               <>
-                Im Kanton {kanton.name} haben wir Machbarkeitsstudien durchgeführt — in{' '}
+                Im Kanton {kanton.name} haben wir Machbarkeitsstudien durchgeführt, in{' '}
                 {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
                 {orte.map((o) => o.ort).join(', ')}.
               </>
@@ -119,7 +119,7 @@ export default async function KantonPage({ params }: PageProps) {
               Sie bauen im Kanton {kanton.name}?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Sprechen Sie mit uns über Ihr Vorhaben — wir kennen die Bauordnungen und
+              Sprechen Sie mit uns über Ihr Vorhaben: wir kennen die Bauordnungen und
               Abläufe in der Region.
             </p>
             <Button href="/kontakt" variant="text">

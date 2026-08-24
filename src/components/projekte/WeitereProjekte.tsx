@@ -33,7 +33,7 @@ export default function WeitereProjekte({ projekte }: WeitereProjekteProps) {
               <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                 <Image
                   src={projekt.thumbnail}
-                  alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
+                  alt={`${projekt.title}, ${ortMitKanton(projekt)}, Atelier AA Architekten`}
                   fill
                   priority={idx < 2}
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

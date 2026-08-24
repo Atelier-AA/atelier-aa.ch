@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: 'Kleinprojekte',
   description:
-    'Kleinere realisierte Umbauten und Sanierungen von Atelier AA Architekten GmbH — abseits der grossen Referenzprojekte.',
+    'Kleinere realisierte Umbauten und Sanierungen von Atelier AA Architekten GmbH, abseits der grossen Referenzprojekte.',
   alternates: { canonical: '/kleinprojekte' },
 };
 
@@ -21,7 +21,7 @@ export default function KleinprojektePage() {
             Kleinprojekte, <span className="font-semibold">gebaut</span> und bewährt.
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
-            Umbauten, Sanierungen und kleinere Aufträge — realisiert, aber nicht Teil unserer
+            Umbauten, Sanierungen und kleinere Aufträge, realisiert, aber nicht Teil unserer
             kuratierten Hauptprojekte. Genauso Ausdruck unserer Arbeit, nur im kleineren Massstab.
           </p>
         </div>

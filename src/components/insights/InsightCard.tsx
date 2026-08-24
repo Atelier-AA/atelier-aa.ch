@@ -23,7 +23,7 @@ export default function InsightCard({ insight, priority = false }: InsightCardPr
       <div className="relative aspect-[3/4] overflow-hidden bg-mist">
         <Image
           src={insight.bild}
-          alt={insight.titel}
+          alt={`${insight.titel}, Atelier AA Architekten`}
           fill
           priority={priority}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

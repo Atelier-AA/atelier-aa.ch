@@ -6,7 +6,7 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = {
   title: 'Kontakt',
   description:
-    'Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden, Kanton Zürich. Telefon +41 44 770 05 06, info@atelier-aa.ch. Erstgespräch für Neubau, Umbau und Sanierung.',
+    'Atelier AA Architekten GmbH, Bachstrasse 39, 8912 Obfelden. Telefon +41 44 770 05 06, info@atelier-aa.ch. Erstgespräch für Neubau, Umbau und Sanierung.',
   alternates: { canonical: '/kontakt' },
 };
 
@@ -32,7 +32,7 @@ export default function KontaktPage() {
             <p className="text-lg text-graphite leading-relaxed max-w-md">
               Wir stehen für einen offenen, direkten Austausch und freuen uns über
               neue Projekte, spannende Aufgaben und anspruchsvolle Fragestellungen.
-              Schreiben Sie uns oder rufen Sie an – wir melden uns verlässlich zurück.
+              Schreiben Sie uns oder rufen Sie an, wir melden uns verlässlich zurück.
             </p>
 
             <address className="not-italic text-lg text-ink leading-relaxed mt-8 max-w-md">

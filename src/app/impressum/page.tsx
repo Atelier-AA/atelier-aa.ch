@@ -117,8 +117,8 @@ export default function ImpressumPage() {
                 Urheberrecht
               </h2>
               <p>
-                Alle Inhalte dieser Website — Texte, Bilder, Pläne, Visualisierungen und
-                das Logo — sind urheberrechtlich geschützt. Eine Verwendung,
+                Alle Inhalte dieser Website (Texte, Bilder, Pläne, Visualisierungen und
+                das Logo) sind urheberrechtlich geschützt. Eine Verwendung,
                 Vervielfältigung oder Weitergabe bedarf der vorherigen schriftlichen
                 Zustimmung der {firma.name}.
               </p>

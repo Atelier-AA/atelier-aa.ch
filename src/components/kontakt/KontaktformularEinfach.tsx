@@ -114,7 +114,7 @@ export default function KontaktformularEinfach() {
         )}
         {status === 'fehler' && (
           <p className="mt-4 text-sm text-graphite">
-            Der direkte Versand hat nicht geklappt — Ihr E-Mail-Programm sollte sich mit der
+            Der direkte Versand hat nicht geklappt. Ihr E-Mail-Programm sollte sich mit der
             vorausgefüllten Anfrage geöffnet haben. Falls nicht, schreiben Sie uns direkt an{' '}
             {firma.email}.
           </p>

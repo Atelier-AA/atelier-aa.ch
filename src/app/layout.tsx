@@ -23,11 +23,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.atelier-aa.ch'),
   title: {
-    default: 'Atelier AA Architekten | Neubau, Umbau & Generalplanung Zürich, Aargau, Zug',
+    default: 'Atelier AA Architekten | Zürich, Aargau, Zug',
     template: '%s | Atelier AA Architekten',
   },
   description:
-    'Atelier AA Architekten GmbH in Obfelden plant und realisiert Einfamilienhäuser, Mehrfamilienhäuser und Wohnüberbauungen in Zürich, Aargau und Zug — von der Machbarkeitsstudie über Baugesuch und Ausführungsplanung bis zur Bauleitung.',
+    'Atelier AA Architekten GmbH aus Obfelden plant und realisiert Wohnbauten in Zürich, Aargau und Zug, von der Machbarkeitsstudie bis zur Bauleitung.',
   keywords: [
     'Architektur',
     'Architekten',

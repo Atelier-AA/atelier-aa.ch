@@ -27,7 +27,7 @@ export default function PartnerSection() {
               Bauen und Vermarkten zusammen denken
             </h2>
             <p className="mt-8 text-lg text-graphite leading-relaxed">
-              Bei Renditeobjekten entscheidet der Wohnungsmix über die Rendite — und
+              Bei Renditeobjekten entscheidet der Wohnungsmix über die Rendite, und
               zwar bevor gestalterische Fragen beantwortet sind. Für Bewertung,
               Vermarktung und Marktbeurteilung arbeiten wir mit{' '}
               <a

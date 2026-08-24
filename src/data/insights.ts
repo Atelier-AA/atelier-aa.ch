@@ -11,7 +11,7 @@ export const insights: Insight[] = [
   {
     slug: 'design-build-projektabwicklung',
     titel: 'Design-Build: Warum wir neue Formen der Projektabwicklung weiterdenken',
-    lead: 'Gute Architektur entscheidet sich nicht nur im Entwurf, sondern auch darin, wie ein Projekt organisiert wird. Wir beschäftigen uns mit integrierten Abwicklungsmodellen wie Design-Build — und wenden erste Prinzipien bereits in einem aktuellen Projekt an.',
+    lead: 'Gute Architektur entscheidet sich nicht nur im Entwurf, sondern auch darin, wie ein Projekt organisiert wird. Wir beschäftigen uns mit integrierten Abwicklungsmodellen wie Design-Build und wenden erste Prinzipien bereits in einem aktuellen Projekt an.',
     kategorie: 'Prozess',
     datum: '2026-08-20',
     lesezeit: 6,
@@ -20,7 +20,7 @@ export const insights: Insight[] = [
       {
         titel: 'Warum wir uns damit beschäftigen',
         absaetze: [
-          'Klassische Projektabläufe führen häufig dazu, dass relevantes Wissen erst spät zusammenkommt: Der Entwurf steht weitgehend, bevor Fragen der Ausführung, der Kosten oder der Machbarkeit vollständig geklärt sind. Architektonische, technische und wirtschaftliche Entscheidungen beeinflussen sich aber gegenseitig — je später sie gemeinsam betrachtet werden, desto teurer wird jede Korrektur.',
+          'Klassische Projektabläufe führen häufig dazu, dass relevantes Wissen erst spät zusammenkommt: Der Entwurf steht weitgehend, bevor Fragen der Ausführung, der Kosten oder der Machbarkeit vollständig geklärt sind. Architektonische, technische und wirtschaftliche Entscheidungen beeinflussen sich aber gegenseitig: Je später sie gemeinsam betrachtet werden, desto teurer wird jede Korrektur.',
           'Uns interessiert deshalb, wie sich relevantes Wissen früher in einen Projektprozess einbinden lässt, statt es erst dann zu prüfen, wenn der Entwurf längst feststeht.',
         ],
       },
@@ -28,14 +28,14 @@ export const insights: Insight[] = [
         titel: 'Was Design-Build verändert',
         absaetze: [
           'Design-Build ist ein Modell integrierter Projektabwicklung: Planung und Ausführung werden nicht strikt nacheinander, sondern von Beginn an gemeinsam gedacht. Fachwissen aus der Ausführung fliesst früher in Entscheidungen ein, technische und wirtschaftliche Konsequenzen werden früher sichtbar.',
-          'Das verändert, wo Verantwortung liegt und wie Schnittstellen zwischen Planung und Ausführung organisiert sind. Beides lässt sich reduzieren, wenn die Beteiligten früher am selben Tisch sitzen — ohne dass Gestaltung zur Nebensache wird.',
+          'Das verändert, wo Verantwortung liegt und wie Schnittstellen zwischen Planung und Ausführung organisiert sind. Beides lässt sich reduzieren, wenn die Beteiligten früher am selben Tisch sitzen, ohne dass Gestaltung zur Nebensache wird.',
         ],
       },
       {
         titel: 'Was wir bereits tun',
         absaetze: [
           'Atelier AA hat sich intensiv mit Design-Build und integrierter Projektabwicklung auseinandergesetzt und bereits ein aktuelles Projekt gestartet, in dem wir zentrale Prinzipien daraus anwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen früher zusammen und beziehen relevantes Fachwissen gezielter in den Prozess ein.',
-          'Das Projekt wird dadurch nicht vollständig nach Design-Build abgewickelt. Es ist ein Anfang, an dem wir prüfen, welche Prinzipien daraus ein Projekt tatsächlich besser machen — bevor wir daraus einen festen Ablauf für andere Projekte ableiten.',
+          'Das Projekt wird dadurch nicht vollständig nach Design-Build abgewickelt. Es ist ein Anfang, an dem wir prüfen, welche Prinzipien daraus ein Projekt tatsächlich besser machen, bevor wir daraus einen festen Ablauf für andere Projekte ableiten.',
         ],
       },
       {
@@ -48,7 +48,7 @@ export const insights: Insight[] = [
       {
         titel: 'Kein neues Schema',
         absaetze: [
-          'Atelier AA arbeitet nicht nach starren Rezepten — auch Design-Build verstehen wir nicht als neues Schema, das sich unverändert auf jedes Projekt übertragen lässt, sondern als Ansatz, den wir projektbezogen einsetzen und weiterdenken. Auch die Art, wie ein Projekt entsteht, ist für uns Teil der Architektur.',
+          'Atelier AA arbeitet nicht nach starren Rezepten: Auch Design-Build verstehen wir nicht als neues Schema, das sich unverändert auf jedes Projekt übertragen lässt, sondern als Ansatz, den wir projektbezogen einsetzen und weiterdenken. Auch die Art, wie ein Projekt entsteht, ist für uns Teil der Architektur.',
           'Wir entwickeln damit nicht nur Architektur weiter, sondern auch die Prozesse, durch die sie möglich wird.',
         ],
       },
@@ -62,7 +62,7 @@ export const insights: Insight[] = [
       {
         frage: 'Arbeitet Atelier AA bereits vollständig nach Design-Build?',
         antwort:
-          'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an — das Projekt wird aber nicht vollständig nach Design-Build abgewickelt.',
+          'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an, das Projekt wird aber nicht vollständig nach Design-Build abgewickelt.',
       },
       {
         frage: 'Was bedeutet integrierte Projektabwicklung konkret?',
@@ -72,14 +72,14 @@ export const insights: Insight[] = [
       {
         frage: 'Wird Atelier AA Design-Build künftig für alle Projekte anbieten?',
         antwort:
-          'Das entscheidet sich am einzelnen Projekt. Wir setzen Prinzipien der integrierten Projektabwicklung dort ein, wo sie ein Projekt tatsächlich besser machen — nicht als festes Schema für jede Aufgabe.',
+          'Das entscheidet sich am einzelnen Projekt. Wir setzen Prinzipien der integrierten Projektabwicklung dort ein, wo sie ein Projekt tatsächlich besser machen, nicht als festes Schema für jede Aufgabe.',
       },
     ],
   },
   {
     slug: 'verdichtung-innenentwicklung',
     titel: 'Verdichten statt neu bauen: Was auf Ihrem Grundstück möglich ist',
-    lead: 'Bauland wird in Zürich, Aargau und Zug knapp. Der Bestand hält oft mehr aus, als seine Eigentümer vermuten — Aufstockung, Ersatzneubau oder Anbau.',
+    lead: 'Bauland wird in Zürich, Aargau und Zug knapp. Der Bestand hält oft mehr aus, als seine Eigentümer vermuten: Aufstockung, Ersatzneubau oder Anbau.',
     kategorie: 'Verdichtung',
     datum: '2026-07-20',
     lesezeit: 7,
@@ -89,7 +89,7 @@ export const insights: Insight[] = [
         titel: 'Die Reserve liegt im Bestand',
         absaetze: [
           'Viele Einfamilienhaus-Parzellen in den Kantonen Zürich, Aargau und Zug stammen aus den Sechziger- und Siebzigerjahren. Sie nutzen ihre zulässige Ausnutzung häufig nur zur Hälfte aus. Wo damals ein Haus für vier Personen stand, wäre heute Wohnraum für drei Haushalte möglich.',
-          'Das Raumplanungsgesetz verlangt seit der Revision Innenentwicklung vor Neueinzonung. Kantone und Gemeinden haben ihre Bau- und Nutzungsordnungen entsprechend angepasst — vielerorts wurden Ausnutzungsziffern erhöht oder Attikageschosse zugelassen. Diese Reserven sind vielen Eigentümern nicht bewusst.',
+          'Das Raumplanungsgesetz verlangt seit der Revision Innenentwicklung vor Neueinzonung. Kantone und Gemeinden haben ihre Bau- und Nutzungsordnungen entsprechend angepasst: Vielerorts wurden Ausnutzungsziffern erhöht oder Attikageschosse zugelassen. Diese Reserven sind vielen Eigentümern nicht bewusst.',
         ],
       },
       {
@@ -97,13 +97,13 @@ export const insights: Insight[] = [
         absaetze: [
           'Die Aufstockung nutzt die vorhandene Struktur und ist der schnellste Weg. Voraussetzung ist ein Tragwerk, das die zusätzliche Last aufnimmt, und eine Gebäudehöhe, die die Bauordnung noch zulässt. Häufig lohnt sich eine Leichtbaukonstruktion in Holz, weil sie das Fundament weniger belastet.',
           'Der Anbau erweitert horizontal. Er kommt in Frage, wo Grenzabstände und Grundflächenziffer noch Spielraum lassen. Der Eingriff in den Bestand bleibt gering, was bei bewohnten Häusern zählt.',
-          'Der Ersatzneubau nutzt die Ausnutzung voll aus, verliert aber die graue Energie des Bestands. Er ist wirtschaftlich, wenn die bestehende Substanz sanierungsbedürftig ist — bei intakten Bauten ist die Rechnung offen und muss geführt werden.',
+          'Der Ersatzneubau nutzt die Ausnutzung voll aus, verliert aber die graue Energie des Bestands. Er ist wirtschaftlich, wenn die bestehende Substanz sanierungsbedürftig ist. Bei intakten Bauten ist die Rechnung offen und muss geführt werden.',
         ],
       },
       {
         titel: 'Was die Machbarkeit entscheidet',
         absaetze: [
-          'Vier Grössen bestimmen den Rahmen: Ausnutzungs- oder Baumassenziffer, Grenzabstände, Gebäudehöhe und Dachform. Alle vier stehen in der Bau- und Nutzungsordnung Ihrer Gemeinde. Dazu kommen Sonderregeln — Ortsbildschutz, Gewässerabstände, Lärmschutz an Verkehrsachsen.',
+          'Vier Grössen bestimmen den Rahmen: Ausnutzungs- oder Baumassenziffer, Grenzabstände, Gebäudehöhe und Dachform. Alle vier stehen in der Bau- und Nutzungsordnung Ihrer Gemeinde. Dazu kommen Sonderregeln: Ortsbildschutz, Gewässerabstände, Lärmschutz an Verkehrsachsen.',
           'Der zweite Faktor sind die Nachbarn. Eine Verdichtung, die Schatten wirft oder Einblick schafft, zieht Einsprachen an. Wir prüfen diese Wirkungen im Entwurf und suchen das Gespräch, bevor das Baugesuch eingereicht wird. Das kostet Wochen und spart Jahre.',
         ],
       },
@@ -124,7 +124,7 @@ export const insights: Insight[] = [
       {
         frage: 'Können wir während einer Aufstockung im Haus bleiben?',
         antwort:
-          'Häufig ja, mit Einschränkungen. Beim Öffnen des Dachs ist eine Notabdichtung nötig, und Lärm entsteht. Eine Etappierung, die den Wohnbereich schützt, ist planbar — wir stimmen sie vor Baubeginn mit Ihnen ab.',
+          'Häufig ja, mit Einschränkungen. Beim Öffnen des Dachs ist eine Notabdichtung nötig, und Lärm entsteht. Eine Etappierung, die den Wohnbereich schützt, ist planbar. Wir stimmen sie vor Baubeginn mit Ihnen ab.',
       },
       {
         frage: 'Was ist günstiger: Aufstockung oder Ersatzneubau?',
@@ -134,7 +134,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wie hoch ist das Risiko einer Einsprache?',
         antwort:
-          'Es hängt stark von der Wirkung auf die Nachbarschaft ab — Schatten, Einblick, Verkehr. Wir beurteilen das im Entwurf und empfehlen bei kritischen Situationen ein Gespräch mit den Nachbarn vor der Einreichung. Das reduziert das Risiko erheblich.',
+          'Es hängt stark von der Wirkung auf die Nachbarschaft ab: Schatten, Einblick, Verkehr. Wir beurteilen das im Entwurf und empfehlen bei kritischen Situationen ein Gespräch mit den Nachbarn vor der Einreichung. Das reduziert das Risiko erheblich.',
       },
       {
         frage: 'Brauchen wir für eine Aufstockung eine Baubewilligung?',
@@ -157,8 +157,8 @@ export const insights: Insight[] = [
         absaetze: [
           'Zuerst die Vorabklärung: Ein Gespräch mit der Bauverwaltung Ihrer Gemeinde, bevor Pläne gezeichnet sind. Es klärt, ob das Vorhaben grundsätzlich im Rahmen liegt und wo die Behörde empfindlich ist. Dieser Termin ist kostenlos und erspart Korrekturrunden.',
           'Dann das Baugesuch selbst: Situationsplan, Grundrisse, Schnitte, Fassaden, Berechnung der Ausnutzung, Nachweise zu Energie, Lärm und Brandschutz, Baueingabeformular. Wir stellen das Dossier zusammen und reichen es ein.',
-          'Nach der formellen Prüfung folgt die öffentliche Auflage, in der Nachbarn Einsprache erheben können — die genaue Frist regelt jede Gemeinde beziehungsweise jeder Kanton für sich.',
-          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Mit Einsprachen folgt ein Aussprachetermin; scheitert er, entscheidet die Baubehörde, und der Weg an eine kantonale Beschwerdeinstanz steht offen. Für die rechtliche Vertretung in diesem Verfahren empfehlen wir eine Anwältin oder einen Anwalt — wir kennen den Ablauf aus der Praxis, sind aber keine Rechtsvertretung.',
+          'Nach der formellen Prüfung folgt die öffentliche Auflage, in der Nachbarn Einsprache erheben können. Die genaue Frist regelt jede Gemeinde beziehungsweise jeder Kanton für sich.',
+          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Mit Einsprachen folgt ein Aussprachetermin; scheitert er, entscheidet die Baubehörde, und der Weg an eine kantonale Beschwerdeinstanz steht offen. Für die rechtliche Vertretung in diesem Verfahren empfehlen wir eine Anwältin oder einen Anwalt: Wir kennen den Ablauf aus der Praxis, sind aber keine Rechtsvertretung.',
         ],
       },
       {
@@ -166,13 +166,13 @@ export const insights: Insight[] = [
         absaetze: [
           'Ein unbestrittenes Einfamilienhaus wird in den drei Kantonen typischerweise in zwei bis vier Monaten bewilligt. Ein Mehrfamilienhaus braucht drei bis sechs Monate, weil mehr Fachstellen beteiligt sind.',
           'Kommt eine Einsprache dazu, verlängert sich das um Monate. Geht der Fall an die kantonale Beschwerdeinstanz, sind ein bis zwei Jahre realistisch. Diese Bandbreite ist der Grund, warum wir Einsprachen vorbeugen, statt sie in Kauf zu nehmen.',
-          'Bei Bauten in Ortsbildschutzzonen oder mit Bezug zu einem Inventarobjekt kommt die kantonale Denkmalpflege dazu — planen Sie zwei bis drei Monate zusätzlich ein.',
+          'Bei Bauten in Ortsbildschutzzonen oder mit Bezug zu einem Inventarobjekt kommt die kantonale Denkmalpflege dazu: Planen Sie zwei bis drei Monate zusätzlich ein.',
         ],
       },
       {
         titel: 'Wo es typischerweise klemmt',
         absaetze: [
-          'Die Ausnutzungsberechnung ist die häufigste Fehlerquelle. Was zur Bruttogeschossfläche zählt, ist kantonal unterschiedlich geregelt — Untergeschosse, Dachräume und Balkone werden verschieden behandelt. Ein Fehler hier führt zur Rückweisung.',
+          'Die Ausnutzungsberechnung ist die häufigste Fehlerquelle. Was zur Bruttogeschossfläche zählt, ist kantonal unterschiedlich geregelt: Untergeschosse, Dachräume und Balkone werden verschieden behandelt. Ein Fehler hier führt zur Rückweisung.',
           'Der Lärmschutz nach Lärmschutz-Verordnung wird oft zu spät geprüft. An einer Verkehrsachse können Grundrisse angepasst werden müssen, damit Schlafräume auf der lärmabgewandten Seite liegen. Wer das erst nach dem Entwurf prüft, zeichnet zweimal.',
           'Der dritte Punkt sind Parkplätze. Die geforderte Anzahl ergibt sich aus einer kommunalen Wegleitung und lässt sich nicht verhandeln. Eine Einstellhalle, die zu klein geplant ist, macht das ganze Projekt hinfällig.',
         ],
@@ -180,7 +180,7 @@ export const insights: Insight[] = [
       {
         titel: 'Unterschiede zwischen den Kantonen',
         absaetze: [
-          'Der Kanton Zürich arbeitet mit der Baumassenziffer, der Aargau meist mit der Ausnutzungsziffer, der Kanton Zug kennt beide je nach Gemeinde. Die Zahlen sind nicht direkt vergleichbar — wer aus einem Kanton Erfahrungswerte mitbringt, verschätzt sich.',
+          'Der Kanton Zürich arbeitet mit der Baumassenziffer, der Aargau meist mit der Ausnutzungsziffer, der Kanton Zug kennt beide je nach Gemeinde. Die Zahlen sind nicht direkt vergleichbar. Wer aus einem Kanton Erfahrungswerte mitbringt, verschätzt sich.',
           'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich von Kanton zu Kanton. Wir kennen diese Unterschiede aus der Praxis in diesen Kantonen und richten das Dossier auf die jeweilige Behörde aus.',
         ],
       },
@@ -216,7 +216,7 @@ export const insights: Insight[] = [
   {
     slug: 'wohnen-im-alter-umbau',
     titel: 'Wohnen im Alter: Umbauen, statt umziehen',
-    lead: 'Die meisten Menschen wollen im eigenen Haus bleiben. Was ein Umbau dafür leisten muss — und was er kostet.',
+    lead: 'Die meisten Menschen wollen im eigenen Haus bleiben. Was ein Umbau dafür leisten muss und was er kostet.',
     kategorie: 'Umbau',
     datum: '2026-01-22',
     lesezeit: 6,
@@ -225,7 +225,7 @@ export const insights: Insight[] = [
       {
         titel: 'Die Ausgangslage',
         absaetze: [
-          'Ein Haus, das für eine Familie gebaut wurde, passt für zwei Personen im Ruhestand oft nicht mehr: zu viele Treppen, ein Bad im Obergeschoss, ein Garten, der Arbeit macht. Der naheliegende Schluss ist der Umzug in eine Wohnung — er ist aber nicht immer der beste.',
+          'Ein Haus, das für eine Familie gebaut wurde, passt für zwei Personen im Ruhestand oft nicht mehr: zu viele Treppen, ein Bad im Obergeschoss, ein Garten, der Arbeit macht. Der naheliegende Schluss ist der Umzug in eine Wohnung, er ist aber nicht immer der beste.',
           'Ein Umbau kostet in der Regel weniger als der Wechsel in eine gleichwertige Eigentumswohnung, und die gewachsene Umgebung bleibt. Voraussetzung ist, dass die Substanz es zulässt und der Umbau die richtigen Dinge angeht.',
         ],
       },
@@ -239,9 +239,9 @@ export const insights: Insight[] = [
       {
         titel: 'Drei typische Eingriffe',
         absaetze: [
-          'Das Erdgeschoss wird zur vollständigen Wohnung: Wohnen, Kochen, Schlafen und Bad auf einer Ebene. Das Obergeschoss bleibt für Besuch oder wird abgetrennt und vermietet — was zusätzliches Einkommen schafft.',
+          'Das Erdgeschoss wird zur vollständigen Wohnung: Wohnen, Kochen, Schlafen und Bad auf einer Ebene. Das Obergeschoss bleibt für Besuch oder wird abgetrennt und vermietet, was zusätzliches Einkommen schafft.',
           'Das Bad wird umgebaut. Das ist der Eingriff mit dem besten Verhältnis von Aufwand und Nutzen: bodengleiche Dusche, unterfahrbarer Waschtisch, Verstärkungen in der Wand für später nötige Griffe. Rechnen Sie mit 25\'000 bis 50\'000 Franken.',
-          'Ein Aufzug oder Treppenlift wird eingebaut. Ein Homelift braucht etwa 1,5 Quadratmeter Grundfläche und kostet ab rund 60\'000 Franken. Wenn ohnehin umgebaut wird, lohnt es sich, den Schacht vorzusehen — auch wenn der Aufzug erst später kommt.',
+          'Ein Aufzug oder Treppenlift wird eingebaut. Ein Homelift braucht etwa 1,5 Quadratmeter Grundfläche und kostet ab rund 60\'000 Franken. Wenn ohnehin umgebaut wird, lohnt es sich, den Schacht vorzusehen, auch wenn der Aufzug erst später kommt.',
         ],
       },
       {
@@ -283,7 +283,7 @@ export const insights: Insight[] = [
   {
     slug: 'ki-im-entwurf',
     titel: 'KI im Entwurf: Werkzeug, nicht Autor',
-    lead: 'Generative Werkzeuge liefern in Minuten hunderte Varianten. Die eigentliche Arbeit beginnt danach – bei der Frage, welche davon trägt.',
+    lead: 'Generative Werkzeuge liefern in Minuten hunderte Varianten. Die eigentliche Arbeit beginnt danach: bei der Frage, welche davon trägt.',
     kategorie: 'Digitalisierung',
     datum: '2026-08-05',
     lesezeit: 6,
@@ -293,14 +293,14 @@ export const insights: Insight[] = [
         titel: 'Was die Werkzeuge heute leisten',
         absaetze: [
           'Generative Software durchsucht Lösungsräume schneller, als es von Hand möglich wäre. Bei Volumenstudien, Belegungsvarianten oder der Optimierung von Fensterflächen gegen Wärmeeinträge ist das ein echter Gewinn: Wir sehen früher, welche Richtungen sich lohnen und welche nicht.',
-          'Auch in der Ausführungsplanung hilft Automatisierung. Kollisionsprüfungen zwischen Tragwerk und Haustechnik, Mengenauszüge, Varianten von Detailanschlüssen – Aufgaben mit klaren Regeln und prüfbarem Ergebnis. Wir nutzen diese Werkzeuge dort, wo sie Zeit freispielen für die Fragen, die Urteilsvermögen brauchen.',
+          'Auch in der Ausführungsplanung hilft Automatisierung. Kollisionsprüfungen zwischen Tragwerk und Haustechnik, Mengenauszüge, Varianten von Detailanschlüssen: Aufgaben mit klaren Regeln und prüfbarem Ergebnis. Wir nutzen diese Werkzeuge dort, wo sie Zeit freispielen für die Fragen, die Urteilsvermögen brauchen.',
         ],
       },
       {
         titel: 'Wo die Grenze liegt',
         absaetze: [
           'Ein Modell kennt keinen Ort. Es weiss nicht, dass das Wohnzimmer des Nachbarn nach Süden liegt, dass die Gemeinde bei der Firsthöhe empfindlich ist oder dass die Bauherrschaft in fünf Jahren eine Generation mehr im Haus unterbringen möchte. Es optimiert, was messbar ist, und übersieht, was zählt.',
-          'Der zweite Punkt ist Verantwortung. Für ein Bauwerk haftet ein Mensch mit Namen und Berufsregister-Eintrag. Ein Vorschlag aus einem Modell ist ein Vorschlag – bis jemand ihn prüft, anpasst und unterschreibt. Diese Prüfung ist keine Formalie, sondern der Kern des Berufs.',
+          'Der zweite Punkt ist Verantwortung. Für ein Bauwerk haftet ein Mensch mit Namen und Berufsregister-Eintrag. Ein Vorschlag aus einem Modell ist ein Vorschlag, bis jemand ihn prüft, anpasst und unterschreibt. Diese Prüfung ist keine Formalie, sondern der Kern des Berufs.',
         ],
       },
       {
@@ -313,8 +313,8 @@ export const insights: Insight[] = [
       {
         titel: 'Ein Beispiel aus der eigenen Werkstatt',
         absaetze: [
-          'Für eine kleine, freistehende Raumeinheit im Garten haben wir mit einem generativen Werkzeug rasch mehrere Kubaturen durchgespielt — ohne konkrete Parzelle, ohne Bauherrschaft, rein als Formstudie. Die beiden Bilder zeigen zwei solche KI-generierten Varianten: ein eingeschossiger Pavillon und ein zweigeschossiger Kubus, beide in Holzverkleidung.',
-          'Zur Einordnung: Das sind Visualisierungen aus der Werkzeugerprobung, keine Fotos eines realisierten Projekts und keine Machbarkeitsstudie für ein bestehendes Grundstück. Genau das ist der in diesem Beitrag beschriebene Nutzen — und genau dort hört er auch auf: Für ein echtes Grundstück braucht es danach die eigentliche Arbeit.',
+          'Für eine kleine, freistehende Raumeinheit im Garten haben wir mit einem generativen Werkzeug rasch mehrere Kubaturen durchgespielt, ohne konkrete Parzelle, ohne Bauherrschaft, rein als Formstudie. Die beiden Bilder zeigen zwei solche KI-generierten Varianten: ein eingeschossiger Pavillon und ein zweigeschossiger Kubus, beide in Holzverkleidung.',
+          'Zur Einordnung: Das sind Visualisierungen aus der Werkzeugerprobung, keine Fotos eines realisierten Projekts und keine Machbarkeitsstudie für ein bestehendes Grundstück. Genau das ist der in diesem Beitrag beschriebene Nutzen, und genau dort hört er auch auf: Für ein echtes Grundstück braucht es danach die eigentliche Arbeit.',
         ],
         bilder: [
           '/images/insights/ki-entwurf-beispiel-1.jpg',
@@ -326,12 +326,12 @@ export const insights: Insight[] = [
       {
         frage: 'Entwerfen Sie unsere Projekte mit KI?',
         antwort:
-          'Wir nutzen generative Werkzeuge für Variantenstudien und rechenintensive Prüfungen. Der Entwurf, die Auswahl und die Verantwortung für das Ergebnis liegen bei uns – jedes Projekt wird von einem Architekten verantwortet, der es unterschreibt.',
+          'Wir nutzen generative Werkzeuge für Variantenstudien und rechenintensive Prüfungen. Der Entwurf, die Auswahl und die Verantwortung für das Ergebnis liegen bei uns: Jedes Projekt wird von einem Architekten verantwortet, der es unterschreibt.',
       },
       {
         frage: 'Wird Planung dadurch günstiger?',
         antwort:
-          'Teilweise. Bei Aufgaben mit klaren Regeln sparen wir Zeit, und das kommt bei umfangreichen Projekten im Honorar an. Die Phasen, die Abstimmung und Urteilsvermögen brauchen, werden dadurch nicht kürzer – sie sind der eigentliche Wert unserer Arbeit.',
+          'Teilweise. Bei Aufgaben mit klaren Regeln sparen wir Zeit, und das kommt bei umfangreichen Projekten im Honorar an. Die Phasen, die Abstimmung und Urteilsvermögen brauchen, werden dadurch nicht kürzer, denn sie sind der eigentliche Wert unserer Arbeit.',
       },
       {
         frage: 'Was passiert mit unseren Projektdaten?',
@@ -341,7 +341,7 @@ export const insights: Insight[] = [
       {
         frage: 'Können wir Varianten sehen, bevor wir uns entscheiden?',
         antwort:
-          'Ja. Wir zeigen in der Vorprojektphase mehrere Ansätze mit ihren Vor- und Nachteilen – anhand von Modellen, Schnitten und Kostenrahmen. Sie entscheiden auf einer nachvollziehbaren Grundlage, nicht auf ein Bild hin.',
+          'Ja. Wir zeigen in der Vorprojektphase mehrere Ansätze mit ihren Vor- und Nachteilen, anhand von Modellen, Schnitten und Kostenrahmen. Sie entscheiden auf einer nachvollziehbaren Grundlage, nicht auf ein Bild hin.',
       },
     ],
   },
@@ -358,13 +358,13 @@ export const insights: Insight[] = [
         titel: 'Graue Energie entscheidet mit',
         absaetze: [
           'Ein gut gedämmter Neubau verbraucht im Betrieb wenig. Doch bevor er bezogen wird, stecken Jahre an Emissionen in Beton, Stahl und Transport. Bei einem Wohnbau nach heutigem Standard macht diese graue Energie über den Lebenszyklus einen erheblichen Teil der Gesamtbilanz aus.',
-          'Daraus folgt eine einfache Reihenfolge: erhalten, wo es geht. Umbauen, wo Erhalt allein nicht reicht. Neu bauen, wo es sachlich begründet ist. Diese Reihenfolge stellen wir am Anfang jedes Projekts zur Diskussion – auch wenn die Anfrage anders lautet.',
+          'Daraus folgt eine einfache Reihenfolge: erhalten, wo es geht. Umbauen, wo Erhalt allein nicht reicht. Neu bauen, wo es sachlich begründet ist. Diese Reihenfolge stellen wir am Anfang jedes Projekts zur Diskussion, auch wenn die Anfrage anders lautet.',
         ],
       },
       {
         titel: 'Was Kreislauffähigkeit praktisch heisst',
         absaetze: [
-          'Kreislauffähig zu bauen beginnt bei der Fügung. Verschraubt statt verklebt, Schichten trennbar, Materialien sortenrein – das klingt technisch, entscheidet aber darüber, ob ein Bauteil in dreissig Jahren wiederverwendet oder entsorgt wird.',
+          'Kreislauffähig zu bauen beginnt bei der Fügung. Verschraubt statt verklebt, Schichten trennbar, Materialien sortenrein: Das klingt technisch, entscheidet aber darüber, ob ein Bauteil in dreissig Jahren wiederverwendet oder entsorgt wird.',
           'Dazu kommt die Nutzungsoffenheit. Eine Geschosshöhe, die auch ein Büro erlaubt. Ein Tragwerk, das eine Wand versetzen lässt. Ein Grundriss, der geteilt werden kann, wenn ein Haushalt kleiner wird. Gebäude, die sich anpassen lassen, werden nicht abgerissen.',
         ],
       },
@@ -390,7 +390,7 @@ export const insights: Insight[] = [
       {
         frage: 'Können wir wiederverwendete Bauteile einsetzen?',
         antwort:
-          'Ja, mit Vorlauf. Verfügbarkeit und Nachweise brauchen Zeit, deshalb klären wir früh, welche Bauteile in Frage kommen – häufig Tragwerkselemente, Fassadenplatten oder Innenausbau. Für tragende Teile ist ein Nachweis der Eigenschaften erforderlich.',
+          'Ja, mit Vorlauf. Verfügbarkeit und Nachweise brauchen Zeit, deshalb klären wir früh, welche Bauteile in Frage kommen, häufig Tragwerkselemente, Fassadenplatten oder Innenausbau. Für tragende Teile ist ein Nachweis der Eigenschaften erforderlich.',
       },
       {
         frage: 'Was ist mit Fördermitteln?',
@@ -402,7 +402,7 @@ export const insights: Insight[] = [
   {
     slug: 'warum-architekten',
     titel: 'Warum es Architekten weiterhin braucht',
-    lead: 'Software plant Details, Portale liefern Typenhäuser, Modelle erzeugen Bilder. Was ein Architekt beiträgt, wird dadurch nicht kleiner – nur sichtbarer.',
+    lead: 'Software plant Details, Portale liefern Typenhäuser, Modelle erzeugen Bilder. Was ein Architekt beiträgt, wird dadurch nicht kleiner, nur sichtbarer.',
     kategorie: 'Haltung',
     datum: '2026-03-11',
     lesezeit: 5,
@@ -412,28 +412,28 @@ export const insights: Insight[] = [
         titel: 'Die Aufgabe stellen, nicht nur lösen',
         absaetze: [
           'Bauherrschaften kommen mit einer Frage: vier Wohnungen auf diesem Grundstück. Nach dem ersten Gespräch ist es oft eine andere: fünf kleinere Einheiten, weil der Markt sie sucht, oder drei mit einer Option auf Aufstockung.',
-          'Diese Verschiebung ist die eigentliche Leistung. Wer nur die gestellte Aufgabe löst, löst manchmal die falsche. Ein Werkzeug optimiert, was man ihm vorgibt – es fragt nicht zurück.',
+          'Diese Verschiebung ist die eigentliche Leistung. Wer nur die gestellte Aufgabe löst, löst manchmal die falsche. Ein Werkzeug optimiert, was man ihm vorgibt, es fragt aber nicht zurück.',
         ],
       },
       {
         titel: 'Widersprüche aushalten',
         absaetze: [
           'Ein Bauprojekt besteht aus Anforderungen, die sich gegenseitig ausschliessen: Budget gegen Qualität, Ausnutzung gegen Nachbarschaft, Termin gegen Sorgfalt. Diese Konflikte lassen sich nicht wegrechnen, sie müssen gewichtet werden.',
-          'Gewichten heisst entscheiden – und Entscheidungen brauchen jemanden, der sie begründet, vor der Bauherrschaft, der Behörde und in zehn Jahren auch vor sich selbst.',
+          'Gewichten heisst entscheiden, und Entscheidungen brauchen jemanden, der sie begründet, vor der Bauherrschaft, der Behörde und in zehn Jahren auch vor sich selbst.',
         ],
       },
       {
         titel: 'Durch das Verfahren führen',
         absaetze: [
           'Zwischen Entwurf und Schlüsselübergabe liegen Baugesuch, Einsprachefristen, Vergaben, ein Dutzend Fachplaner und die Baustelle. Hier entscheidet sich, ob aus einer guten Idee ein gutes Haus wird.',
-          'Wir vertreten dabei die Interessen der Bauherrschaft – gegenüber Unternehmern, in Behördengesprächen, bei Nachträgen. Das ist unspektakulär und macht am Ende den Unterschied in Kosten, Terminen und Qualität.',
+          'Wir vertreten dabei die Interessen der Bauherrschaft: gegenüber Unternehmern, in Behördengesprächen, bei Nachträgen. Das ist unspektakulär und macht am Ende den Unterschied in Kosten, Terminen und Qualität.',
         ],
       },
       {
         titel: 'Der Wert bleibt sichtbar',
         absaetze: [
           'Ein sorgfältig geplantes Gebäude vermietet sich besser, hält länger und lässt sich anpassen. Diese Qualität entsteht nicht durch mehr Rechenleistung, sondern durch jemanden, der zuhört, abwägt und Verantwortung übernimmt.',
-          'Genau darin sehen wir unsere Aufgabe – heute wie vor zwanzig Jahren, nur mit besseren Werkzeugen.',
+          'Genau darin sehen wir unsere Aufgabe, heute wie vor zwanzig Jahren, nur mit besseren Werkzeugen.',
         ],
       },
     ],
@@ -451,7 +451,7 @@ export const insights: Insight[] = [
       {
         frage: 'Können wir einzelne Phasen beauftragen?',
         antwort:
-          'Ja. Viele Bauherrschaften beginnen mit Vorstudie und Vorprojekt und entscheiden danach über die Fortsetzung. Wir halten die Phasen so ab, dass ein Wechsel möglich bleibt – auch wenn durchgehende Begleitung meist das bessere Ergebnis bringt.',
+          'Ja. Viele Bauherrschaften beginnen mit Vorstudie und Vorprojekt und entscheiden danach über die Fortsetzung. Wir halten die Phasen so ab, dass ein Wechsel möglich bleibt, auch wenn durchgehende Begleitung meist das bessere Ergebnis bringt.',
       },
       {
         frage: 'Wie läuft die Zusammenarbeit ab?',
@@ -468,7 +468,7 @@ export const insights: Insight[] = [
   {
     slug: 'baukostenschub-2022',
     titel: 'Baukostenschub 2022: Was der Preissprung bei Stahl und Zement bedeutete',
-    lead: 'Innert eines Jahres verteuerte sich Stahl um siebzig Prozent; Zement zog binnen zwei Jahren um vierzig Prozent nach. Was diesen Schub auslöste — und was Bauherrschaften seither daraus mitnehmen.',
+    lead: 'Innert eines Jahres verteuerte sich Stahl um siebzig Prozent; Zement zog binnen zwei Jahren um vierzig Prozent nach. Was diesen Schub auslöste und was Bauherrschaften seither daraus mitnehmen.',
     kategorie: 'Kosten',
     datum: '2025-01-14',
     lesezeit: 5,
@@ -477,7 +477,7 @@ export const insights: Insight[] = [
       {
         titel: 'Der stärkste Anstieg seit Messbeginn',
         absaetze: [
-          'Im April 2022 stieg der Baupreisindex für den Hochbau gegenüber dem Vorjahr um 8,1 Prozent — der stärkste Anstieg innerhalb eines Jahres seit Beginn der Erhebung 1998. Die Materialkosten allein legten im Mai 2022 um 19,6 Prozent zu.',
+          'Im April 2022 stieg der Baupreisindex für den Hochbau gegenüber dem Vorjahr um 8,1 Prozent, der stärkste Anstieg innerhalb eines Jahres seit Beginn der Erhebung 1998. Die Materialkosten allein legten im Mai 2022 um 19,6 Prozent zu.',
           'Am stärksten betroffen waren mineralische Baustoffe und Metalle: Stahl verteuerte sich 2021 um rund siebzig Prozent, Zement zwischen 2022 und 2023 um rund vierzig Prozent. Wer zu diesem Zeitpunkt einen Kostenvoranschlag aus dem Vorjahr in der Schublade hatte, stand vor einer unangenehmen Überraschung.',
         ],
       },
@@ -485,14 +485,14 @@ export const insights: Insight[] = [
         titel: 'Lieferketten, Nachfrage, Wechselkurs',
         absaetze: [
           'Drei Faktoren trafen zusammen: Lieferkettenstörungen nach der Pandemie, eine hohe gleichzeitige Nachfrage nach Baustoffen und Fachpersonal sowie steigende Energiekosten in der Materialproduktion. Lange Lieferzeiten und Annahmestopps einzelner Werke verschärften die Lage zusätzlich.',
-          'Ab Ende 2023 beruhigte sich die Entwicklung wieder — auch weil der starke Schweizer Franken die Importkosten für Baumaterialien in Franken spürbar dämpfte. Die Baupreise stiegen seither nur noch leicht.',
+          'Ab Ende 2023 beruhigte sich die Entwicklung wieder, auch weil der starke Schweizer Franken die Importkosten für Baumaterialien in Franken spürbar dämpfte. Die Baupreise stiegen seither nur noch leicht.',
         ],
       },
       {
         titel: 'Was das für die Kostenschätzung heisst',
         absaetze: [
-          'Der Preisschub 2022 hat vor allem eines gezeigt: Eine Kostenschätzung ist eine Momentaufnahme, kein fixer Vertrag. Zwischen Vorprojekt und Vergabe können, je nach Marktlage, mehrere Prozentpunkte liegen — bei einem Mehrfamilienhaus schnell ein sechsstelliger Betrag.',
-          'Wir arbeiten deshalb mit einem gestuften Vorgehen: Kostenrahmen im Vorprojekt, Kostenschätzung im Bauprojekt, Kostenvoranschlag erst nach der Vergabe — mit wachsender Genauigkeit von Stufe zu Stufe, statt einer einzigen, früh fixierten Zahl.',
+          'Der Preisschub 2022 hat vor allem eines gezeigt: Eine Kostenschätzung ist eine Momentaufnahme, kein fixer Vertrag. Zwischen Vorprojekt und Vergabe können, je nach Marktlage, mehrere Prozentpunkte liegen, bei einem Mehrfamilienhaus schnell ein sechsstelliger Betrag.',
+          'Wir arbeiten deshalb mit einem gestuften Vorgehen: Kostenrahmen im Vorprojekt, Kostenschätzung im Bauprojekt, Kostenvoranschlag erst nach der Vergabe: mit wachsender Genauigkeit von Stufe zu Stufe, statt einer einzigen, früh fixierten Zahl.',
         ],
       },
     ],
@@ -500,7 +500,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wie schützt man sich vertraglich vor Materialpreisschwankungen?',
         antwort:
-          'Über Preisgleitklauseln in Werkverträgen, die Materialpreisänderungen zwischen Offerte und Ausführung nach einem definierten Index abbilden. Ohne eine solche Klausel trägt in der Regel der Unternehmer das Risiko bis zur Vergabe — danach die Bauherrschaft, wenn Nachträge berechtigt sind.',
+          'Über Preisgleitklauseln in Werkverträgen, die Materialpreisänderungen zwischen Offerte und Ausführung nach einem definierten Index abbilden. Ohne eine solche Klausel trägt in der Regel der Unternehmer das Risiko bis zur Vergabe, danach die Bauherrschaft, wenn Nachträge berechtigt sind.',
       },
       {
         frage: 'Lohnt es sich, Material frühzeitig zu bestellen oder Preise zu sichern?',
@@ -517,7 +517,7 @@ export const insights: Insight[] = [
   {
     slug: 'referenzzinssatz-bauzinsen',
     titel: 'Referenzzinssatz und Bauzinsen: Wie die Zinswende Investitionsentscheide veränderte',
-    lead: 'Nach Jahren auf historischem Tiefstand stieg der hypothekarische Referenzzinssatz 2023 erstmals wieder an. Was das für Investitionsentscheide bedeutete — und warum er seither wieder gesunken ist.',
+    lead: 'Nach Jahren auf historischem Tiefstand stieg der hypothekarische Referenzzinssatz 2023 erstmals wieder an. Was das für Investitionsentscheide bedeutete und warum er seither wieder gesunken ist.',
     kategorie: 'Kosten',
     datum: '2025-02-11',
     lesezeit: 6,
@@ -527,21 +527,21 @@ export const insights: Insight[] = [
         titel: 'Vom Tiefstand zur Wende',
         absaetze: [
           'Von März 2020 bis März 2023 verharrte der hypothekarische Referenzzinssatz auf seinem historischen Tiefststand von 1,25 Prozent. Mit den allgemein gestiegenen Zinsen begann er 2023 erstmals seit Jahren wieder zu steigen und erreichte im Dezember 2024 einen Stand von 1,75 Prozent.',
-          'Der Referenzzinssatz stützt sich auf den hypothekarischen Durchschnittszinssatz aller Banken und wird vierteljährlich vom Bundesamt für Wohnungswesen auf den nächsten Viertelprozentpunkt gerundet veröffentlicht — er reagiert damit träger und langsamer als etwa der Leitzins der Nationalbank.',
+          'Der Referenzzinssatz stützt sich auf den hypothekarischen Durchschnittszinssatz aller Banken und wird vierteljährlich vom Bundesamt für Wohnungswesen auf den nächsten Viertelprozentpunkt gerundet veröffentlicht. Er reagiert damit träger und langsamer als etwa der Leitzins der Nationalbank.',
         ],
       },
       {
         titel: 'Was das für Renditeobjekte bedeutete',
         absaetze: [
           'Für Bestandsmieten bedeutet ein steigender Referenzzinssatz, dass Vermieterschaften einen Teil der höheren Finanzierungskosten über Mietzinserhöhungen weitergeben dürfen. Für Neubauprojekte wirkte die Zinswende vor allem auf der Investitionsseite: Höhere Fremdkapitalkosten verschieben die Grenze, ab der sich ein Neubau- oder Verdichtungsprojekt rechnet.',
-          'Wer 2022 eine Ertragsrechnung mit den damaligen Zinssätzen erstellt hatte, musste sie 2023 unter Umständen neu durchrechnen — ein Beispiel dafür, warum eine Investitionsentscheidung nie allein auf einer einmaligen Momentaufnahme beruhen sollte.',
+          'Wer 2022 eine Ertragsrechnung mit den damaligen Zinssätzen erstellt hatte, musste sie 2023 unter Umständen neu durchrechnen: ein Beispiel dafür, warum eine Investitionsentscheidung nie allein auf einer einmaligen Momentaufnahme beruhen sollte.',
         ],
       },
       {
         titel: 'Die Entspannung seit 2025',
         absaetze: [
-          'Seit September 2025 ist der Referenzzinssatz wieder auf 1,25 Prozent gesunken und blieb auch im Juni 2026 auf diesem Niveau. Für laufende Projektentwicklungen heisst das etwas mehr Spielraum in der Ertragsrechnung als noch 2024 — wobei sich der Satz weiterhin vierteljährlich ändern kann.',
-          'Wir aktualisieren Ertragsrechnungen deshalb zu jedem wichtigen Projektmeilenstein neu, statt einmalig zu Beginn der Planung — gerade bei mehrjährigen Projekten kann sich die Zinslandschaft bis zur Realisierung deutlich verschieben.',
+          'Seit September 2025 ist der Referenzzinssatz wieder auf 1,25 Prozent gesunken und blieb auch im Juni 2026 auf diesem Niveau. Für laufende Projektentwicklungen heisst das etwas mehr Spielraum in der Ertragsrechnung als noch 2024, wobei sich der Satz weiterhin vierteljährlich ändern kann.',
+          'Wir aktualisieren Ertragsrechnungen deshalb zu jedem wichtigen Projektmeilenstein neu, statt einmalig zu Beginn der Planung, denn gerade bei mehrjährigen Projekten kann sich die Zinslandschaft bis zur Realisierung deutlich verschieben.',
         ],
       },
     ],
@@ -559,7 +559,7 @@ export const insights: Insight[] = [
       {
         frage: 'Sollten wir eine Projektentwicklung wegen der Zinslage verschieben?',
         antwort:
-          'Das hängt vom Einzelfall ab — Bauland und Baurecht warten nicht auf den günstigsten Zinszeitpunkt. Wir empfehlen, die Wirtschaftlichkeit bei aktuellem und leicht ungünstigerem Zins zu prüfen, statt auf einen bestimmten Zeitpunkt zu spekulieren.',
+          'Das hängt vom Einzelfall ab: Bauland und Baurecht warten nicht auf den günstigsten Zinszeitpunkt. Wir empfehlen, die Wirtschaftlichkeit bei aktuellem und leicht ungünstigerem Zins zu prüfen, statt auf einen bestimmten Zeitpunkt zu spekulieren.',
       },
     ],
   },
@@ -581,7 +581,7 @@ export const insights: Insight[] = [
       {
         titel: 'Warum Bauherrschaften Holz wählen',
         absaetze: [
-          'Der wichtigste Grund ist die graue Energie: Holz bindet beim Wachstum CO₂ und benötigt in der Herstellung deutlich weniger Energie als Beton oder Stahl. Dazu kommt die Vorfertigung — Holzelemente lassen sich witterungsunabhängig in der Werkhalle produzieren und auf der Baustelle in kurzer Zeit montieren.',
+          'Der wichtigste Grund ist die graue Energie: Holz bindet beim Wachstum CO₂ und benötigt in der Herstellung deutlich weniger Energie als Beton oder Stahl. Dazu kommt die Vorfertigung: Holzelemente lassen sich witterungsunabhängig in der Werkhalle produzieren und auf der Baustelle in kurzer Zeit montieren.',
           'Das verkürzt die Bauzeit und reduziert den Lärm auf der Baustelle, was besonders bei Verdichtungsprojekten in bewohnter Nachbarschaft ins Gewicht fällt.',
         ],
       },
@@ -589,7 +589,7 @@ export const insights: Insight[] = [
         titel: 'Wo die Grenzen liegen',
         absaetze: [
           'Holzbau ist nicht in jeder Situation die wirtschaftlichere Wahl. Bei sehr hohen Schallschutzanforderungen zwischen den Geschossen braucht es zusätzliche Massnahmen, die einen Teil des Gewichtsvorteils wieder aufheben. Auch die Feuchtigkeitsdetails an Übergängen zum Aussenraum verlangen sorgfältige Planung.',
-          'Für viele Bauaufgaben ist heute ein Hybrid aus Holz und Massivbau — etwa Betonkerne für Treppenhäuser und Nasszellen, Holz für die übrige Struktur — die pragmatischste Lösung.',
+          'Für viele Bauaufgaben ist heute ein Hybrid aus Holz und Massivbau die pragmatischste Lösung, etwa Betonkerne für Treppenhäuser und Nasszellen kombiniert mit Holz für die übrige Struktur.',
         ],
       },
     ],
@@ -607,7 +607,7 @@ export const insights: Insight[] = [
       {
         frage: 'Eignet sich Holzbau auch für eine Verdichtung im Bestand?',
         antwort:
-          'Ja, besonders bei Aufstockungen: Das geringere Gewicht von Holzelementen belastet das bestehende Fundament und Tragwerk weniger als eine Aufstockung in Massivbauweise — oft die entscheidende Voraussetzung, damit eine Aufstockung überhaupt möglich wird.',
+          'Ja, besonders bei Aufstockungen: Das geringere Gewicht von Holzelementen belastet das bestehende Fundament und Tragwerk weniger als eine Aufstockung in Massivbauweise, oft die entscheidende Voraussetzung, damit eine Aufstockung überhaupt möglich wird.',
       },
     ],
   },
@@ -623,14 +623,14 @@ export const insights: Insight[] = [
       {
         titel: 'Ein Mangel über die ganze Kette',
         absaetze: [
-          'Der Fachkräftemangel in der Baubranche betrifft nicht nur Handwerksberufe, sondern die ganze Kette von Architektur über Bauleitung bis zu einzelnen Gewerken. Besonders gesucht sind Bauleiterinnen und Poliere sowie Elektrofachkräfte — beide Berufsgruppen profitieren von einer robusten Auftragslage, die gleichzeitig zu wenig Personal auf sie treffen lässt.',
+          'Der Fachkräftemangel in der Baubranche betrifft nicht nur Handwerksberufe, sondern die ganze Kette von Architektur über Bauleitung bis zu einzelnen Gewerken. Besonders gesucht sind Bauleiterinnen und Poliere sowie Elektrofachkräfte: Beide Berufsgruppen profitieren von einer robusten Auftragslage, die gleichzeitig zu wenig Personal auf sie treffen lässt.',
           'Verstärkt wird der Mangel durch den demografischen Wandel: Mehr Fachkräfte gehen in Pension, als über die Berufsbildung nachrücken, dazu kommt eine gewisse Abwanderung ins Ausland oder in andere Branchen.',
         ],
       },
       {
         titel: 'Erste Entspannung, aber kein Ende',
         absaetze: [
-          'Der Fachkräftemangel-Index zeigt für 2025 einen spürbaren Rückgang gegenüber den Vorjahren, auch bedingt durch die konjunkturelle Abkühlung. Gleichzeitig ist die Zahl der Lernenden 2024 um rund zehn Prozent gestiegen — ein Effekt gezielter Nachwuchsförderung, der sich aber erst über Jahre in mehr ausgebildeten Fachkräften niederschlägt.',
+          'Der Fachkräftemangel-Index zeigt für 2025 einen spürbaren Rückgang gegenüber den Vorjahren, auch bedingt durch die konjunkturelle Abkühlung. Gleichzeitig ist die Zahl der Lernenden 2024 um rund zehn Prozent gestiegen, ein Effekt gezielter Nachwuchsförderung, der sich aber erst über Jahre in mehr ausgebildeten Fachkräften niederschlägt.',
           'Für die Deutschschweiz bleibt der Bau neben Gesundheitswesen und technischen Berufen eine der Branchen mit anhaltend spürbarem Mangel.',
         ],
       },
@@ -672,7 +672,7 @@ export const insights: Insight[] = [
       {
         titel: 'Vom Ausnahmezustand zur Gewohnheit',
         absaetze: [
-          'Die Homeoffice-Quote stieg von rund achtzehn Prozent im Jahr 2013 über fünfundzwanzig Prozent 2019 auf knapp vierzig Prozent während der Pandemie 2021 — und hat sich seither auf einem deutlich höheren Niveau als vor 2020 eingependelt. Was als Ausnahme begann, ist für viele Unternehmen zur festen Regel geworden.',
+          'Die Homeoffice-Quote stieg von rund achtzehn Prozent im Jahr 2013 über fünfundzwanzig Prozent 2019 auf knapp vierzig Prozent während der Pandemie 2021 und hat sich seither auf einem deutlich höheren Niveau als vor 2020 eingependelt. Was als Ausnahme begann, ist für viele Unternehmen zur festen Regel geworden.',
           'Die Folge zeigt sich im Büromarkt: Das Angebot an verfügbaren Büroflächen in den fünf grössten Büromärkten der Schweiz stieg 2024 gegenüber dem Vorjahr um neun Prozent. Landesweit stehen rund 3,17 Millionen Quadratmeter Bürofläche leer.',
         ],
       },
@@ -687,7 +687,7 @@ export const insights: Insight[] = [
         titel: 'Was das für die Planung bedeutet',
         absaetze: [
           'Wer heute ein Bürogebäude plant, plant für ein verändertes Nutzungsverhalten: weniger feste Einzelarbeitsplätze, mehr Flächen für Begegnung, Besprechung und konzentriertes Einzelarbeiten im Wechsel. Eine Grundrissstruktur, die sich mit wenig Aufwand umnutzen lässt, ist heute wertvoller als eine maximal verdichtete Bürofläche.',
-          'Bei Bestandsbauten stellt sich zunehmend die Frage der Umnutzung zu Wohnraum — technisch anspruchsvoll wegen Geschosshöhen und Belichtung, aber angesichts der Wohnungsknappheit ein Weg, der Prüfung wert ist.',
+          'Bei Bestandsbauten stellt sich zunehmend die Frage der Umnutzung zu Wohnraum, technisch anspruchsvoll wegen Geschosshöhen und Belichtung, aber angesichts der Wohnungsknappheit ein Weg, der Prüfung wert ist.',
         ],
       },
     ],
@@ -700,12 +700,12 @@ export const insights: Insight[] = [
       {
         frage: 'Was macht ein Bürogebäude heute noch vermietbar?',
         antwort:
-          'Vor allem Flexibilität in der Grundrissgestaltung, eine gute ÖV-Erschliessung und Aufenthaltsqualität — Aussenraum, Tageslicht, Gemeinschaftsflächen. Reine Flächenmaximierung ohne diese Qualitäten wird zunehmend schwerer vermietet.',
+          'Vor allem Flexibilität in der Grundrissgestaltung, eine gute ÖV-Erschliessung und Aufenthaltsqualität: Aussenraum, Tageslicht, Gemeinschaftsflächen. Reine Flächenmaximierung ohne diese Qualitäten wird zunehmend schwerer vermietet.',
       },
       {
         frage: 'Sollten Neubauprojekte heute noch reine Büroflächen vorsehen?',
         antwort:
-          'Wir empfehlen, das im Vorprojekt anhand der konkreten Lage zu prüfen — an zentralen, gut erschlossenen Standorten bleibt Büronutzung gefragt, in Agglomerationslagen lohnt sich oft eine gemischte oder wohnnutzungsoffene Planung.',
+          'Wir empfehlen, das im Vorprojekt anhand der konkreten Lage zu prüfen: An zentralen, gut erschlossenen Standorten bleibt Büronutzung gefragt, in Agglomerationslagen lohnt sich oft eine gemischte oder wohnnutzungsoffene Planung.',
       },
     ],
   },
@@ -728,8 +728,8 @@ export const insights: Insight[] = [
       {
         titel: 'Was sich für Bauvorhaben ändert',
         absaetze: [
-          'Für die Raumplanung bedeutet die Vorlage vereinfachte Verfahren für Anlagen von nationalem Interesse — etwa grössere Solar- und Windprojekte — sowie Anpassungen bei Bewilligungsabläufen für Energieanlagen. Für den einzelnen Wohnbau ändert sich das Baubewilligungsverfahren selbst nicht direkt.',
-          'Indirekt spürbar wird die Vorlage über die kantonalen Energievorschriften, die im Zug der Umsetzung angepasst werden — etwa bei Anforderungen an Eigenstromerzeugung und Netzanschluss neuer Gebäude.',
+          'Für die Raumplanung bedeutet die Vorlage vereinfachte Verfahren für Anlagen von nationalem Interesse, etwa grössere Solar- und Windprojekte, sowie Anpassungen bei Bewilligungsabläufen für Energieanlagen. Für den einzelnen Wohnbau ändert sich das Baubewilligungsverfahren selbst nicht direkt.',
+          'Indirekt spürbar wird die Vorlage über die kantonalen Energievorschriften, die im Zug der Umsetzung angepasst werden, etwa bei Anforderungen an Eigenstromerzeugung und Netzanschluss neuer Gebäude.',
         ],
       },
       {
@@ -744,7 +744,7 @@ export const insights: Insight[] = [
       {
         frage: 'Ändert der Mantelerlass die Solarpflicht für mein Bauvorhaben?',
         antwort:
-          'Nicht direkt — die Solarpflicht ab 300 Quadratmetern Gebäudefläche ist bereits im Energiegesetz verankert. Der Mantelerlass stärkt aber den generellen Ausbau erneuerbarer Energien, was künftige Verschärfungen wahrscheinlicher macht.',
+          'Nicht direkt. Die Solarpflicht ab 300 Quadratmetern Gebäudefläche ist bereits im Energiegesetz verankert. Der Mantelerlass stärkt aber den generellen Ausbau erneuerbarer Energien, was künftige Verschärfungen wahrscheinlicher macht.',
       },
       {
         frage: 'Betrifft mich das Gesetz bei einem privaten Einfamilienhaus überhaupt?',
@@ -761,7 +761,7 @@ export const insights: Insight[] = [
   {
     slug: 'mietrecht-abstimmung-2024',
     titel: 'Mietrecht-Abstimmung: Warum Untermiete und Eigenbedarf an der Urne scheiterten',
-    lead: 'Am 24. November 2024 lehnte die Schweizer Stimmbevölkerung zwei Mietrechtsvorlagen ab. Was geplant war — und warum es für Vermieterschaften beim geltenden Recht bleibt.',
+    lead: 'Am 24. November 2024 lehnte die Schweizer Stimmbevölkerung zwei Mietrechtsvorlagen ab. Was geplant war und warum es für Vermieterschaften beim geltenden Recht bleibt.',
     kategorie: 'Recht',
     datum: '2025-07-08',
     lesezeit: 5,
@@ -771,13 +771,13 @@ export const insights: Insight[] = [
         titel: 'Zwei Vorlagen, ein Nein',
         absaetze: [
           'Die Vorlage zur Untermiete wurde mit 51,6 Prozent, jene zum Eigenbedarf mit 53,8 Prozent abgelehnt. Beide waren vom Parlament beschlossen worden und hätten die Rechte von Vermieterschaften gegenüber Mietenden gestärkt.',
-          'Die Untermiete-Vorlage hätte ein schriftliches Gesuch für jede Untervermietung verlangt, dem die Vermieterschaft schriftlich zustimmen muss — unter anderem als Reaktion auf Untervermietungen über Plattformen. Die Eigenbedarfs-Vorlage hätte Kündigungen erleichtert, wenn Eigentümerinnen oder Eigentümer selbst benötigte Räume rascher beziehen wollten.',
+          'Die Untermiete-Vorlage hätte ein schriftliches Gesuch für jede Untervermietung verlangt, dem die Vermieterschaft schriftlich zustimmen muss, unter anderem als Reaktion auf Untervermietungen über Plattformen. Die Eigenbedarfs-Vorlage hätte Kündigungen erleichtert, wenn Eigentümerinnen oder Eigentümer selbst benötigte Räume rascher beziehen wollten.',
         ],
       },
       {
         titel: 'Warum das Volk Nein sagte',
         absaetze: [
-          'Der Bundesrat begründete die Ablehnung damit, dass die Änderungen aus Sicht der Stimmenden das Gleichgewicht zwischen Mietenden und Vermietenden zugunsten der Vermieterschaft verschoben hätten. Beide Resultate fielen knapp aus — ein Hinweis darauf, dass das Thema in der Bevölkerung kontrovers bleibt.',
+          'Der Bundesrat begründete die Ablehnung damit, dass die Änderungen aus Sicht der Stimmenden das Gleichgewicht zwischen Mietenden und Vermietenden zugunsten der Vermieterschaft verschoben hätten. Beide Resultate fielen knapp aus, ein Hinweis darauf, dass das Thema in der Bevölkerung kontrovers bleibt.',
           'Für Bauherrschaften mit Renditeobjekten bedeutet das: Das geltende Mietrecht bleibt unverändert in Kraft, Kündigungen wegen Eigenbedarfs und Regeln zur Untermiete richten sich weiterhin nach den bisherigen Bestimmungen des Obligationenrechts.',
         ],
       },
@@ -785,7 +785,7 @@ export const insights: Insight[] = [
         titel: 'Was für Investitionsentscheide bleibt',
         absaetze: [
           'Die Ablehnung ändert nichts an der grundsätzlichen Vermietbarkeit von Wohnraum, wohl aber an der Planungssicherheit für Eigentümerschaften, die auf eine spätere Selbstnutzung setzen. Wer eine Liegenschaft mit dieser Option kauft, sollte weiterhin mit den strengeren, bisherigen Anforderungen an eine Eigenbedarfskündigung rechnen.',
-          'Für Neubauprojekte hat die Abstimmung keine direkte Auswirkung — sie betrifft das Verhältnis zu bestehenden Mietverhältnissen, nicht die Planung oder Bewilligung neuer Bauten.',
+          'Für Neubauprojekte hat die Abstimmung keine direkte Auswirkung: Sie betrifft das Verhältnis zu bestehenden Mietverhältnissen, nicht die Planung oder Bewilligung neuer Bauten.',
         ],
       },
     ],
@@ -793,7 +793,7 @@ export const insights: Insight[] = [
       {
         frage: 'Was gilt jetzt für Kündigungen wegen Eigenbedarfs?',
         antwort:
-          'Es gelten weiterhin die bisherigen Bestimmungen des Obligationenrechts — Eigenbedarf muss konkret und aktuell begründet werden, eine Kündigung kann bei Härtefällen angefochten und die Mietdauer erstreckt werden.',
+          'Es gelten weiterhin die bisherigen Bestimmungen des Obligationenrechts: Eigenbedarf muss konkret und aktuell begründet werden, eine Kündigung kann bei Härtefällen angefochten und die Mietdauer erstreckt werden.',
       },
       {
         frage: 'Dürfen Mieterinnen und Mieter weiterhin frei untervermieten?',
@@ -803,7 +803,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wird das Thema in absehbarer Zeit wieder vors Volk kommen?',
         antwort:
-          'Das ist offen. Nach einer Ablehnung braucht eine neue Vorlage in der Regel einen neuen politischen Anlauf im Parlament — einen konkreten Zeitpunkt für eine Wiedervorlage gibt es aktuell nicht.',
+          'Das ist offen. Nach einer Ablehnung braucht eine neue Vorlage in der Regel einen neuen politischen Anlauf im Parlament, einen konkreten Zeitpunkt für eine Wiedervorlage gibt es aktuell nicht.',
       },
     ],
   },
@@ -820,20 +820,20 @@ export const insights: Insight[] = [
         titel: 'Vom Plan zum Modell',
         absaetze: [
           'Mit dem Aktionsplan «Digitale Schweiz» müssen Bund und bundesnahe Betriebe seit 2021 bei eigenen Hochbauprojekten die BIM-Methode anwenden, ab 2025 gilt das auch für Infrastrukturanlagen. Building Information Modeling bedeutet: Statt getrennter 2D-Pläne entsteht ein digitales Gebäudemodell, das Geometrie, Bauteile und Eigenschaften in einem Datensatz vereint.',
-          'Der Bund erwartet dadurch Effizienzgewinne bei Projektzielen, Terminen und Kosten in einer Grössenordnung von fünf bis zehn Prozent — vor allem, weil Fehler und Widersprüche zwischen Fachplanern früher sichtbar werden als bei getrennten 2D-Plänen.',
+          'Der Bund erwartet dadurch Effizienzgewinne bei Projektzielen, Terminen und Kosten in einer Grössenordnung von fünf bis zehn Prozent, vor allem, weil Fehler und Widersprüche zwischen Fachplanern früher sichtbar werden als bei getrennten 2D-Plänen.',
         ],
       },
       {
         titel: 'Was BIM in der Praxis bedeutet',
         absaetze: [
-          'Konkret arbeiten Architektur, Statik und Haustechnik im selben dreidimensionalen Modell statt in getrennten Plansätzen, die erst am Ende zusammengeführt werden. Kollisionen — etwa eine Lüftungsleitung, die durch einen tragenden Träger verläuft — werden so schon in der Planung sichtbar, nicht erst auf der Baustelle.',
+          'Konkret arbeiten Architektur, Statik und Haustechnik im selben dreidimensionalen Modell statt in getrennten Plansätzen, die erst am Ende zusammengeführt werden. Kollisionen, etwa eine Lüftungsleitung, die durch einen tragenden Träger verläuft, werden so schon in der Planung sichtbar, nicht erst auf der Baustelle.',
           'Für kleinere private Bauvorhaben ist die volle BIM-Methode heute noch nicht Standard, das Prinzip der digitalen Koordination zwischen den Fachplanern gehört aber zunehmend auch dort zur guten Praxis.',
         ],
       },
       {
         titel: 'Wie wir damit arbeiten',
         absaetze: [
-          'Wir setzen 3D-Planung bereits heute ein, um Varianten zu prüfen und Fachplaner frühzeitig zu koordinieren — unabhängig davon, ob ein Projekt die formalen BIM-Anforderungen des Bundes erfüllen muss. Für Bauherrschaften zählt vor allem das Ergebnis: weniger Widersprüche zwischen den Gewerken und eine Ausführungsplanung, die auf der Baustelle tatsächlich funktioniert.',
+          'Wir setzen 3D-Planung bereits heute ein, um Varianten zu prüfen und Fachplaner frühzeitig zu koordinieren, unabhängig davon, ob ein Projekt die formalen BIM-Anforderungen des Bundes erfüllen muss. Für Bauherrschaften zählt vor allem das Ergebnis: weniger Widersprüche zwischen den Gewerken und eine Ausführungsplanung, die auf der Baustelle tatsächlich funktioniert.',
           'Wo ein Bauherr oder eine öffentliche Auftraggeberin BIM explizit verlangt, klären wir die Anforderungen an Detaillierungsgrad und Datenformat vorab im Planungsvertrag.',
         ],
       },
@@ -842,12 +842,12 @@ export const insights: Insight[] = [
       {
         frage: 'Brauche ich für ein privates Einfamilienhaus BIM?',
         antwort:
-          'Formal nicht — die Pflicht betrifft Bundesbauten und bundesnahe Betriebe. Wir setzen 3D-Modelle aber unabhängig von einer formalen Pflicht ein, wo sie die Koordination zwischen den Fachplanern verbessern.',
+          'Formal nicht. Die Pflicht betrifft Bundesbauten und bundesnahe Betriebe. Wir setzen 3D-Modelle aber unabhängig von einer formalen Pflicht ein, wo sie die Koordination zwischen den Fachplanern verbessern.',
       },
       {
         frage: 'Wird Planung durch BIM teurer?',
         antwort:
-          'Der Koordinationsaufwand verschiebt sich stärker in die frühe Planungsphase, was dort mehr Zeit kostet. Dafür sinkt das Risiko teurer Kollisionen und Nachträge während der Ausführung — in der Gesamtbetrachtung meist ein Gewinn.',
+          'Der Koordinationsaufwand verschiebt sich stärker in die frühe Planungsphase, was dort mehr Zeit kostet. Dafür sinkt das Risiko teurer Kollisionen und Nachträge während der Ausführung, in der Gesamtbetrachtung meist ein Gewinn.',
       },
       {
         frage: 'Was passiert mit den BIM-Daten nach Bauabschluss?',
@@ -859,7 +859,7 @@ export const insights: Insight[] = [
   {
     slug: 'ladeinfrastruktur-neubau',
     titel: 'Ladeinfrastruktur im Neubau: Was Kantone bei E-Mobilität heute verlangen',
-    lead: 'Eine gesamtschweizerische Pflicht für Ladestationen gibt es nicht — wohl aber in mehreren Kantonen die Pflicht, Neubauten dafür vorzubereiten. Ein Überblick.',
+    lead: 'Eine gesamtschweizerische Pflicht für Ladestationen gibt es nicht, wohl aber in mehreren Kantonen die Pflicht, Neubauten dafür vorzubereiten. Ein Überblick.',
     kategorie: 'Nachhaltigkeit',
     datum: '2025-09-15',
     lesezeit: 5,
@@ -868,7 +868,7 @@ export const insights: Insight[] = [
       {
         titel: 'Vorbereitung statt Pflicht',
         absaetze: [
-          'Eine schweizweite Pflicht zur Installation von Ladestationen in neuen Mehrfamilienhäusern gibt es aktuell nicht. Mehrere Kantone — darunter Bern, Luzern, Neuenburg, Schaffhausen und Zürich — verlangen aber, dass bei Neubauten zumindest die baulichen Voraussetzungen für eine spätere Nachrüstung geschaffen werden.',
+          'Eine schweizweite Pflicht zur Installation von Ladestationen in neuen Mehrfamilienhäusern gibt es aktuell nicht. Mehrere Kantone, darunter Bern, Luzern, Neuenburg, Schaffhausen und Zürich, verlangen aber, dass bei Neubauten zumindest die baulichen Voraussetzungen für eine spätere Nachrüstung geschaffen werden.',
           'Das bedeutet in der Regel Vorverkabelung oder Leerrohre für eine bestimmte Anzahl Parkplätze, meist orientiert am technischen Standard des SIA-Merkblatts 2060 und den Mustervorschriften der Kantone im Energiebereich, kurz MuKEn.',
         ],
       },
@@ -876,13 +876,13 @@ export const insights: Insight[] = [
         titel: 'Was das für die Planung heisst',
         absaetze: [
           'Für eine Einstellhalle bedeutet das: Leitungsführung und Kapazität des Hausanschlusses müssen schon im Vorprojekt für die spätere Vollausstattung mit Ladepunkten mitgedacht werden, auch wenn zunächst nur ein Teil der Parkplätze tatsächlich ausgerüstet wird. Nachträgliches Aufbrechen von Bodenplatten für vergessene Leitungen ist um ein Vielfaches teurer als eine vorausschauende Leerrohrplanung.',
-          'Auf Bundesebene wird zudem ein Rechtsanspruch auf Ladeinfrastruktur für Mietende und Stockwerkeigentümerschaften geprüft — ein entsprechender Vorschlag soll voraussichtlich in der zweiten Jahreshälfte 2026 in die Vernehmlassung gehen.',
+          'Auf Bundesebene wird zudem ein Rechtsanspruch auf Ladeinfrastruktur für Mietende und Stockwerkeigentümerschaften geprüft: Ein entsprechender Vorschlag soll voraussichtlich in der zweiten Jahreshälfte 2026 in die Vernehmlassung gehen.',
         ],
       },
       {
         titel: 'Unsere Praxis',
         absaetze: [
-          'Wir sehen bei Einstellhallen grundsätzlich eine vollständige Leerrohrvorbereitung vor, unabhängig davon, ob der jeweilige Kanton das explizit verlangt — der Mehraufwand in der Bauphase ist gering, die spätere Nachrüstung ohne Aufwand dagegen ein klarer Vorteil für die Vermietbarkeit.',
+          'Wir sehen bei Einstellhallen grundsätzlich eine vollständige Leerrohrvorbereitung vor, unabhängig davon, ob der jeweilige Kanton das explizit verlangt: Der Mehraufwand in der Bauphase ist gering, die spätere Nachrüstung ohne Aufwand dagegen ein klarer Vorteil für die Vermietbarkeit.',
           'Bei der Wahl der Lastmanagement-Lösung stimmen wir uns früh mit dem Elektroplaner ab, damit die Hausanschlussleistung nicht zum Engpass wird, wenn später mehrere Ladepunkte gleichzeitig genutzt werden.',
         ],
       },
@@ -891,7 +891,7 @@ export const insights: Insight[] = [
       {
         frage: 'Muss ich bei einem Einfamilienhaus-Neubau eine Ladestation einbauen?',
         antwort:
-          'Eine generelle Pflicht besteht nicht, in einzelnen Kantonen aber die Pflicht zur baulichen Vorbereitung. Wir empfehlen unabhängig davon, mindestens ein Leerrohr zur Garage vorzusehen — der Aufwand ist beim Neubau minimal.',
+          'Eine generelle Pflicht besteht nicht, in einzelnen Kantonen aber die Pflicht zur baulichen Vorbereitung. Wir empfehlen unabhängig davon, mindestens ein Leerrohr zur Garage vorzusehen, der Aufwand ist beim Neubau minimal.',
       },
       {
         frage: 'Was kostet die Vorbereitung für Ladeinfrastruktur in einer Einstellhalle?',
@@ -908,7 +908,7 @@ export const insights: Insight[] = [
   {
     slug: 'sommerlicher-waermeschutz',
     titel: 'Sommerlicher Wärmeschutz: Warum Hitzeschutz kein Extra mehr ist',
-    lead: 'Mit häufigeren Hitzewellen gewinnt der sommerliche Wärmeschutz an Bedeutung — und ist längst Teil der SIA-Normen. Was das für Fassade und Fenster bedeutet.',
+    lead: 'Mit häufigeren Hitzewellen gewinnt der sommerliche Wärmeschutz an Bedeutung und ist längst Teil der SIA-Normen. Was das für Fassade und Fenster bedeutet.',
     kategorie: 'Nachhaltigkeit',
     datum: '2025-10-06',
     lesezeit: 6,
@@ -917,22 +917,22 @@ export const insights: Insight[] = [
       {
         titel: 'Die Norm hinter dem Thema',
         absaetze: [
-          'Der Nachweis des sommerlichen Wärmeschutzes stützt sich auf die Norm SIA 180 «Wärmeschutz, Feuchteschutz und Raumklima in Gebäuden», ergänzt durch die Normen SIA 382/1 und SIA 342 sowie die Merkblätter SIA 2024 und 2028. Sie verlangt, dass ein behagliches Raumklima primär mit konstruktiven Massnahmen sichergestellt wird — nicht mit zusätzlicher Kühltechnik.',
+          'Der Nachweis des sommerlichen Wärmeschutzes stützt sich auf die Norm SIA 180 «Wärmeschutz, Feuchteschutz und Raumklima in Gebäuden», ergänzt durch die Normen SIA 382/1 und SIA 342 sowie die Merkblätter SIA 2024 und 2028. Sie verlangt, dass ein behagliches Raumklima primär mit konstruktiven Massnahmen sichergestellt wird, nicht mit zusätzlicher Kühltechnik.',
           'Massgebend sind drei Faktoren: die Art und Effizienz der Verschattung von Fensterflächen, Standort und Ausrichtung des Gebäudes sowie die Wärmespeicherfähigkeit der Innenraumflächen.',
         ],
       },
       {
         titel: 'Warum das Thema drängender wird',
         absaetze: [
-          'Mit häufigeren und längeren Hitzewellen reicht eine Fassade, die nur den winterlichen Wärmeschutz optimiert, nicht mehr aus. Grossflächige Verglasungen ohne wirksame Verschattung können ein Gebäude im Sommer stärker aufheizen, als es im Winter Energie spart — mit der Folge, dass nachträglich eine Kühlung eingebaut werden muss, die weder geplant noch budgetiert war.',
-          'Wir prüfen den sommerlichen Wärmeschutz deshalb bereits im Entwurf, nicht erst als Nachweis kurz vor der Baueingabe — zu diesem Zeitpunkt lassen sich Fensteranteil, Verschattung und Speichermasse noch ohne Mehrkosten anpassen.',
+          'Mit häufigeren und längeren Hitzewellen reicht eine Fassade, die nur den winterlichen Wärmeschutz optimiert, nicht mehr aus. Grossflächige Verglasungen ohne wirksame Verschattung können ein Gebäude im Sommer stärker aufheizen, als es im Winter Energie spart, mit der Folge, dass nachträglich eine Kühlung eingebaut werden muss, die weder geplant noch budgetiert war.',
+          'Wir prüfen den sommerlichen Wärmeschutz deshalb bereits im Entwurf, nicht erst als Nachweis kurz vor der Baueingabe, denn zu diesem Zeitpunkt lassen sich Fensteranteil, Verschattung und Speichermasse noch ohne Mehrkosten anpassen.',
         ],
       },
       {
         titel: 'Bauliche Massnahmen statt Technik',
         absaetze: [
-          'Aussenliegende, bewegliche Verschattung — Lamellenstoren oder Storen vor der Fassade — ist deutlich wirksamer als innenliegender Sonnenschutz, weil sie die Wärme schon vor dem Glas abhält statt erst im Raum. Auskragende Bauteile wie Balkone oder Vordächer können sommerliche, hoch stehende Sonne blockieren und gleichzeitig die flache Wintersonne einfallen lassen.',
-          'Massive Bauteile mit hoher Speicherfähigkeit — Sichtbeton, mineralische Innenputze — puffern Temperaturspitzen ab, indem sie Wärme tagsüber aufnehmen und nachts wieder abgeben, wenn richtig gelüftet wird.',
+          'Aussenliegende, bewegliche Verschattung, also Lamellenstoren oder Storen vor der Fassade, ist deutlich wirksamer als innenliegender Sonnenschutz, weil sie die Wärme schon vor dem Glas abhält statt erst im Raum. Auskragende Bauteile wie Balkone oder Vordächer können sommerliche, hoch stehende Sonne blockieren und gleichzeitig die flache Wintersonne einfallen lassen.',
+          'Massive Bauteile mit hoher Speicherfähigkeit, etwa Sichtbeton oder mineralische Innenputze, puffern Temperaturspitzen ab, indem sie Wärme tagsüber aufnehmen und nachts wieder abgeben, wenn richtig gelüftet wird.',
         ],
       },
     ],
@@ -940,7 +940,7 @@ export const insights: Insight[] = [
       {
         frage: 'Reicht eine automatische Storensteuerung als Nachweis für sommerlichen Wärmeschutz?',
         antwort:
-          'Die Steuerung allein nicht — massgebend ist die bauliche Wirksamkeit der Verschattung selbst. Eine automatische Steuerung stellt aber sicher, dass die vorhandene Verschattung auch tatsächlich genutzt wird, etwa wenn niemand zu Hause ist.',
+          'Die Steuerung allein nicht. Massgebend ist die bauliche Wirksamkeit der Verschattung selbst. Eine automatische Steuerung stellt aber sicher, dass die vorhandene Verschattung auch tatsächlich genutzt wird, etwa wenn niemand zu Hause ist.',
       },
       {
         frage: 'Brauchen wir bei grossflächiger Verglasung zwingend eine Kühlung?',
@@ -957,7 +957,7 @@ export const insights: Insight[] = [
   {
     slug: 'wohnungsknappheit-leerwohnungsziffer',
     titel: 'Leerwohnungsziffer auf Rekordtief: Was die Wohnungsknappheit für Bauherrschaften bedeutet',
-    lead: 'Nur noch ein Prozent der Schweizer Wohnungen stehen leer — der tiefste Wert seit zwölf Jahren. Was hinter der Zahl steckt und was sie für Verdichtungsprojekte bedeutet.',
+    lead: 'Nur noch ein Prozent der Schweizer Wohnungen stehen leer, der tiefste Wert seit zwölf Jahren. Was hinter der Zahl steckt und was sie für Verdichtungsprojekte bedeutet.',
     kategorie: 'Verdichtung',
     datum: '2025-11-17',
     lesezeit: 6,
@@ -966,22 +966,22 @@ export const insights: Insight[] = [
       {
         titel: 'Der tiefste Stand seit zwölf Jahren',
         absaetze: [
-          'Am 1. Juni 2025 standen schweizweit noch 48\'455 Wohnungen leer — die Leerwohnungsziffer sank damit auf 1,0 Prozent, den tiefsten Stand seit zwölf Jahren und das fünfte Jahr in Folge rückläufig. Am angespanntesten ist die Lage in Genf (0,34 Prozent), Zug (0,42 Prozent) und Zürich (0,48 Prozent) — fünfzehn Kantone liegen unter der Ein-Prozent-Marke.',
-          'Am anderen Ende stehen die Kantone Jura (3,03 Prozent) und Solothurn (2,05 Prozent) mit spürbar mehr Leerstand — ein Hinweis darauf, wie unterschiedlich sich die Nachfrage regional verteilt.',
+          'Am 1. Juni 2025 standen schweizweit noch 48\'455 Wohnungen leer: Die Leerwohnungsziffer sank damit auf 1,0 Prozent, den tiefsten Stand seit zwölf Jahren und das fünfte Jahr in Folge rückläufig. Am angespanntesten ist die Lage in Genf (0,34 Prozent), Zug (0,42 Prozent) und Zürich (0,48 Prozent). Fünfzehn Kantone liegen unter der Ein-Prozent-Marke.',
+          'Am anderen Ende stehen die Kantone Jura (3,03 Prozent) und Solothurn (2,05 Prozent) mit spürbar mehr Leerstand, ein Hinweis darauf, wie unterschiedlich sich die Nachfrage regional verteilt.',
         ],
       },
       {
         titel: 'Eine strukturelle Lücke',
         absaetze: [
-          'Zwischen 2015 und 2019 entstanden im Schnitt gut 51\'000 Wohnungen pro Jahr, zwischen 2020 und 2024 waren es weniger als 46\'000. Gleichzeitig kamen im selben Zeitraum jährlich rund 50\'350 neue Haushalte hinzu — unter anderem, weil Haushalte im Schnitt kleiner werden. Rechnerisch ergibt das eine Lücke von rund 23\'000 Wohnungen pro Jahr.',
-          'Diese Lücke lässt sich nicht allein mit klassischem Neubau auf der grünen Wiese schliessen — dafür fehlt in den gefragten Lagen schlicht das unbebaute Land.',
+          'Zwischen 2015 und 2019 entstanden im Schnitt gut 51\'000 Wohnungen pro Jahr, zwischen 2020 und 2024 waren es weniger als 46\'000. Gleichzeitig kamen im selben Zeitraum jährlich rund 50\'350 neue Haushalte hinzu, unter anderem, weil Haushalte im Schnitt kleiner werden. Rechnerisch ergibt das eine Lücke von rund 23\'000 Wohnungen pro Jahr.',
+          'Diese Lücke lässt sich nicht allein mit klassischem Neubau auf der grünen Wiese schliessen, denn dafür fehlt in den gefragten Lagen schlicht das unbebaute Land.',
         ],
       },
       {
         titel: 'Was das für Verdichtungsprojekte bedeutet',
         absaetze: [
           'Für Eigentümerschaften mit einer bestehenden, nicht voll ausgenützten Parzelle verbessert die Wohnungsknappheit die Ausgangslage: Zusätzlicher Wohnraum durch Aufstockung, Anbau oder Ersatzneubau trifft auf eine Nachfrage, die in den meisten Lagen nicht abreisst. Das senkt tendenziell das Vermietungsrisiko neu geschaffener Wohnungen.',
-          'Gleichzeitig bleibt die Verdichtung an die bestehende Bau- und Nutzungsordnung gebunden — wie viel zusätzlicher Wohnraum tatsächlich möglich ist, hängt weiterhin von Ausnutzung, Grenzabständen und Gebäudehöhe der jeweiligen Gemeinde ab, nicht von der Marktlage.',
+          'Gleichzeitig bleibt die Verdichtung an die bestehende Bau- und Nutzungsordnung gebunden: Wie viel zusätzlicher Wohnraum tatsächlich möglich ist, hängt weiterhin von Ausnutzung, Grenzabständen und Gebäudehöhe der jeweiligen Gemeinde ab, nicht von der Marktlage.',
         ],
       },
     ],
@@ -989,12 +989,12 @@ export const insights: Insight[] = [
       {
         frage: 'Wird die Wohnungsknappheit die Baubewilligung für eine Verdichtung erleichtern?',
         antwort:
-          'Nicht automatisch — Bau- und Nutzungsordnungen ändern sich unabhängig von der aktuellen Marktlage, meist über längere Revisionszyklen. Die Marktlage verbessert aber die Wirtschaftlichkeit eines Vorhabens, das planungsrechtlich bereits möglich ist.',
+          'Nicht automatisch. Bau- und Nutzungsordnungen ändern sich unabhängig von der aktuellen Marktlage, meist über längere Revisionszyklen. Die Marktlage verbessert aber die Wirtschaftlichkeit eines Vorhabens, das planungsrechtlich bereits möglich ist.',
       },
       {
         frage: 'Lohnt sich eine Investition in Wohnbau angesichts der tiefen Leerstandsquote noch mehr als früher?',
         antwort:
-          'In den meisten Lagen mit tiefer Leerwohnungsziffer ja — das Vermietungsrisiko ist entsprechend gering. Wir prüfen die lokale Situation trotzdem projektspezifisch, da sich einzelne Gemeinden auch innerhalb eines Kantons deutlich unterscheiden können.',
+          'In den meisten Lagen mit tiefer Leerwohnungsziffer ja, das Vermietungsrisiko ist entsprechend gering. Wir prüfen die lokale Situation trotzdem projektspezifisch, da sich einzelne Gemeinden auch innerhalb eines Kantons deutlich unterscheiden können.',
       },
       {
         frage: 'Warum wird trotz Wohnungsknappheit nicht einfach mehr gebaut?',
@@ -1006,7 +1006,7 @@ export const insights: Insight[] = [
   {
     slug: 'solarpflicht-kantone',
     titel: 'Solarpflicht in den Kantonen: Was ab 2026 für Neubauten gilt',
-    lead: 'Der Bund verlangt eine Solarpflicht ab 300 Quadratmetern Gebäudefläche — die Kantone setzen sie aber sehr unterschiedlich um. Ein Überblick vor der nächsten Verschärfung.',
+    lead: 'Der Bund verlangt eine Solarpflicht ab 300 Quadratmetern Gebäudefläche, die Kantone setzen sie aber sehr unterschiedlich um. Ein Überblick vor der nächsten Verschärfung.',
     kategorie: 'Nachhaltigkeit',
     datum: '2025-12-10',
     lesezeit: 6,
@@ -1015,7 +1015,7 @@ export const insights: Insight[] = [
       {
         titel: 'Eine Pflicht, viele Umsetzungen',
         absaetze: [
-          'Auf Bundesebene gilt seit einigen Jahren eine Solarpflicht für Neubauten ab 300 Quadratmetern Gebäudefläche, verankert in Artikel 45a des Energiegesetzes. Ob Photovoltaik oder Solarthermie zum Einsatz kommt, schreibt der Bund nicht vor — beides ist zulässig.',
+          'Auf Bundesebene gilt seit einigen Jahren eine Solarpflicht für Neubauten ab 300 Quadratmetern Gebäudefläche, verankert in Artikel 45a des Energiegesetzes. Ob Photovoltaik oder Solarthermie zum Einsatz kommt, schreibt der Bund nicht vor, beides ist zulässig.',
           'Die konkrete Umsetzung und mögliche Ausnahmen liegen bei den Kantonen, die dabei deutlich unterschiedlich streng sind. Luzern verlangt bei Neubauten eine Solaranlage auf mindestens fünfzig Prozent der Dachfläche, bei Dachsanierungen auf mindestens fünfundzwanzig Prozent.',
         ],
       },
@@ -1029,7 +1029,7 @@ export const insights: Insight[] = [
       {
         titel: 'Was das für die Entwurfsplanung heisst',
         absaetze: [
-          'Wer heute ein Dach entwirft, sollte die spätere Solarnutzung von Anfang an mitdenken — Ausrichtung, Verschattung durch Dachaufbauten und Kamine sowie die statische Reserve für das zusätzliche Gewicht der Module. Nachträglich eine grosse Solaranlage auf ein dafür nicht vorbereitetes Dach zu bringen, ist möglich, aber selten die wirtschaftlichste Lösung.',
+          'Wer heute ein Dach entwirft, sollte die spätere Solarnutzung von Anfang an mitdenken: Ausrichtung, Verschattung durch Dachaufbauten und Kamine sowie die statische Reserve für das zusätzliche Gewicht der Module. Nachträglich eine grosse Solaranlage auf ein dafür nicht vorbereitetes Dach zu bringen, ist möglich, aber selten die wirtschaftlichste Lösung.',
           'Auch gestalterisch lohnt sich die frühe Integration: Eine von Beginn an mitgeplante Anlage lässt sich unauffälliger in die Dachfläche einfügen als eine später aufgesetzte Nachrüstung.',
         ],
       },
@@ -1038,7 +1038,7 @@ export const insights: Insight[] = [
       {
         frage: 'Gilt die Solarpflicht auch für ein normales Einfamilienhaus?',
         antwort:
-          'Die Bundespflicht setzt erst ab 300 Quadratmetern Gebäudefläche an, was viele Einfamilienhäuser unterschreiten. Einzelne Kantone kennen jedoch strengere, auch kleinere Bauten betreffende Regeln — wir prüfen das für Ihr Grundstück im Vorprojekt.',
+          'Die Bundespflicht setzt erst ab 300 Quadratmetern Gebäudefläche an, was viele Einfamilienhäuser unterschreiten. Einzelne Kantone kennen jedoch strengere, auch kleinere Bauten betreffende Regeln. Wir prüfen das für Ihr Grundstück im Vorprojekt.',
       },
       {
         frage: 'Muss ich Photovoltaik oder darf ich auch Solarthermie installieren?',
@@ -1065,20 +1065,20 @@ export const insights: Insight[] = [
         titel: 'Eine Vorlage, viele kantonale Gesetze',
         absaetze: [
           'Die Mustervorschriften der Kantone im Energiebereich, kurz MuKEn, sind kein eigenständiges Gesetz, sondern eine Vorlage, an der sich die kantonalen Energiegesetze orientieren. Sie regeln unter anderem Anforderungen an den winterlichen Wärmeschutz, den Heizungsersatz in Bestandsbauten sowie die Vorbereitung für Solaranlagen und Ladeinfrastruktur.',
-          'Weil jeder Kanton die MuKEn eigenständig in kantonales Recht überführt, unterscheiden sich Tempo und Strenge der Umsetzung von Kanton zu Kanton — was gerade für Büros, die in mehreren Kantonen planen, eine laufende Beobachtung verlangt.',
+          'Weil jeder Kanton die MuKEn eigenständig in kantonales Recht überführt, unterscheiden sich Tempo und Strenge der Umsetzung von Kanton zu Kanton, was gerade für Büros, die in mehreren Kantonen planen, eine laufende Beobachtung verlangt.',
         ],
       },
       {
         titel: 'Der Heizungsersatz als Kernthema',
         absaetze: [
-          'Ein zentrales Element vieler MuKEn-Umsetzungen ist die Regel, dass beim Ersatz einer fossilen Heizung in Bestandsbauten ein bestimmter Anteil erneuerbarer Energie nachgewiesen werden muss — meist mit mehreren zulässigen Standardlösungen zur Auswahl, etwa Wärmepumpe, Fernwärme oder eine verbesserte Gebäudedämmung.',
+          'Ein zentrales Element vieler MuKEn-Umsetzungen ist die Regel, dass beim Ersatz einer fossilen Heizung in Bestandsbauten ein bestimmter Anteil erneuerbarer Energie nachgewiesen werden muss, meist mit mehreren zulässigen Standardlösungen zur Auswahl, etwa Wärmepumpe, Fernwärme oder eine verbesserte Gebäudedämmung.',
           'Für Bauherrschaften mit älteren Liegenschaften heisst das: Der nächste Heizungsersatz ist nicht mehr allein eine technische Ersatzbeschaffung, sondern eine Entscheidung, die frühzeitig mit den geltenden kantonalen Vorgaben abgeglichen werden sollte.',
         ],
       },
       {
         titel: 'Wie wir das in der Planung berücksichtigen',
         absaetze: [
-          'Bei Umbauten und Sanierungen prüfen wir die anwendbaren kantonalen Energievorschriften zu Beginn des Vorprojekts, nicht erst beim Baugesuch — Nachweise zu Wärmeschutz, Heizsystem und Solarvorbereitung beeinflussen sonst nachträglich den Grundriss oder die Fassadengestaltung.',
+          'Bei Umbauten und Sanierungen prüfen wir die anwendbaren kantonalen Energievorschriften zu Beginn des Vorprojekts, nicht erst beim Baugesuch, denn Nachweise zu Wärmeschutz, Heizsystem und Solarvorbereitung beeinflussen sonst nachträglich den Grundriss oder die Fassadengestaltung.',
           'Da sich die kantonale Umsetzung der MuKEn laufend weiterentwickelt, halten wir uns über die jeweils aktuelle Fassung auf dem Laufenden, statt uns auf einen einmal gelernten Stand zu verlassen.',
         ],
       },
@@ -1087,7 +1087,7 @@ export const insights: Insight[] = [
       {
         frage: 'Gelten die MuKEn direkt für mein Bauvorhaben?',
         antwort:
-          'Nicht direkt — massgebend ist immer das kantonale Energiegesetz, das die MuKEn als Vorlage übernimmt. Wir prüfen für Ihr Vorhaben die tatsächlich geltende kantonale Fassung.',
+          'Nicht direkt. Massgebend ist immer das kantonale Energiegesetz, das die MuKEn als Vorlage übernimmt. Wir prüfen für Ihr Vorhaben die tatsächlich geltende kantonale Fassung.',
       },
       {
         frage: 'Muss ich beim Heizungsersatz zwingend eine Wärmepumpe einbauen?',

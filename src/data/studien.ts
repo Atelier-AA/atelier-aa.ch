@@ -51,7 +51,7 @@ export const studien: Studie[] = [
       ['Ausnützungsfläche', "ca. 1'723 m²"],
     ]),
     analyse:
-      'Die Dorfzone D erlaubt zwei Vollgeschosse und lässt auf der 1\'760 m² grossen Parzelle zwei eigenständige Mehrfamilienhäuser zu, statt eines einzelnen grossen Baukörpers. Mit rund 1\'723 m² Ausnützungsfläche lässt sich das Grundstück damit deutlich dichter nutzen, als ein einzelnes Einfamilienhaus es täte — die Doppellösung Haus A und Haus B war das Ergebnis dieser Abklärung.',
+      'Die Dorfzone D erlaubt zwei Vollgeschosse und lässt auf der 1\'760 m² grossen Parzelle zwei eigenständige Mehrfamilienhäuser zu, statt eines einzelnen grossen Baukörpers. Mit rund 1\'723 m² Ausnützungsfläche lässt sich das Grundstück damit deutlich dichter nutzen, als ein einzelnes Einfamilienhaus es täte. Die Doppellösung mit Haus A und Haus B war das Ergebnis dieser Abklärung.',
     luftbild: '/images/studien/effingen/luftbild.jpg',
     katasterplan: '/images/studien/effingen/katasterplan.jpg',
     projektbild: null,
@@ -72,7 +72,7 @@ export const studien: Studie[] = [
       ['Anrechenbare Fläche', "ca. 1'016 m² pro Geschoss"],
     ]),
     analyse:
-      'In der Wohnzone W1 ist nur ein Vollgeschoss zulässig — dafür erlaubt die Grösse der Parzelle von 3\'279 m² mit einer Überbauungsziffer von 0.31 eine Aufteilung in gleich fünf Einfamilienhäuser statt eines einzelnen grossen Baukörpers. Die niedrige Geschosszahl prägt hier die Siedlungsstruktur mehr als die Ausnützung selbst.',
+      'In der Wohnzone W1 ist nur ein Vollgeschoss zulässig, dafür erlaubt die Grösse der Parzelle von 3\'279 m² mit einer Überbauungsziffer von 0.31 eine Aufteilung in gleich fünf Einfamilienhäuser statt eines einzelnen grossen Baukörpers. Die niedrige Geschosszahl prägt hier die Siedlungsstruktur mehr als die Ausnützung selbst.',
     luftbild: '/images/studien/obfelden/luftbild.jpg',
     katasterplan: '/images/studien/obfelden/katasterplan.jpg',
     projektbild: null,
@@ -90,12 +90,12 @@ export const studien: Studie[] = [
       ['Zone', 'Zentrumzone 4'],
       ['Baumassenziffer', '7 m³/m²'],
       ['Gesamthöhe', 'max. 25 m'],
-      ['Wohnanteil', '40–80 %'],
+      ['Wohnanteil', '40 bis 80 %'],
       ['Gebäudetyp', 'Mischnutzung Wohnen/Gewerbe'],
       ['Total Ausnützung', "4'868 m² / 14'938 m³"],
     ]),
     analyse:
-      'Die Zentrumzone 4 arbeitet mit einer Baumassenziffer statt einer festen Geschosszahl — bei 2\'134 m² Grundstücksfläche und einer Gesamthöhe von bis zu 25 m ergibt das rund 4\'868 m² Ausnützungsfläche. Der vorgeschriebene Wohnanteil von 40 bis 80 % macht daraus zwingend eine Mischnutzung aus Wohnen und Gewerbe, kein reines Wohnhaus.',
+      'Die Zentrumzone 4 arbeitet mit einer Baumassenziffer statt einer festen Geschosszahl: Bei 2\'134 m² Grundstücksfläche und einer Gesamthöhe von bis zu 25 m ergibt das rund 4\'868 m² Ausnützungsfläche. Der vorgeschriebene Wohnanteil von 40 bis 80 % macht daraus zwingend eine Mischnutzung aus Wohnen und Gewerbe, kein reines Wohnhaus.',
     luftbild: '/images/studien/duebendorf/luftbild.jpg',
     katasterplan: null,
     projektbild: null,
@@ -139,7 +139,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'957 m²"],
     ]),
     analyse:
-      'Drei benachbarte Parzellen zusammen ergeben in Würenlos eine Fläche von 3\'262 m² — in der Zone W2E mit einer Ausnützungsziffer von 0.4 reicht das für ein Mehrfamilienhaus mit rund 1\'957 m² Wohnfläche. Erst der Zusammenschluss der drei Grundstücke macht ein Bauvolumen dieser Grösse möglich.',
+      'Drei benachbarte Parzellen zusammen ergeben in Würenlos eine Fläche von 3\'262 m². In der Zone W2E mit einer Ausnützungsziffer von 0.4 reicht das für ein Mehrfamilienhaus mit rund 1\'957 m² Wohnfläche. Erst der Zusammenschluss der drei Grundstücke macht ein Bauvolumen dieser Grösse möglich.',
     luftbild: '/images/studien/wuerenlos/luftbild.jpg',
     katasterplan: '/images/studien/wuerenlos/katasterplan.jpg',
     projektbild: null,
@@ -160,7 +160,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '555 m²'],
     ]),
     analyse:
-      'In der Dorfzone von Sulz sind bis zu drei Vollgeschosse zulässig — auf den vergleichsweise kleinen 595 m² Grundstücksfläche ergibt das ein kompaktes Mehrfamilienhaus mit rund 555 m² Ausnützungsfläche, fast im Verhältnis 1:1 zur Parzellengrösse.',
+      'In der Dorfzone von Sulz sind bis zu drei Vollgeschosse zulässig. Auf den vergleichsweise kleinen 595 m² Grundstücksfläche ergibt das ein kompaktes Mehrfamilienhaus mit rund 555 m² Ausnützungsfläche, fast im Verhältnis 1:1 zur Parzellengrösse.',
     luftbild: '/images/studien/sulz/luftbild.jpg',
     katasterplan: '/images/studien/sulz/katasterplan.jpg',
     projektbild: null,
@@ -182,7 +182,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '715 m²'],
     ]),
     analyse:
-      'Die Wohnzone 3 in Schlieren erlaubt drei Vollgeschosse bei einer Überbauungsziffer von 30 % — auf 596 m² Grundstücksfläche ergibt sich daraus ein Mehrfamilienhaus mit rund 715 m² Ausnützungsfläche, mehr als die Parzelle selbst misst.',
+      'Die Wohnzone 3 in Schlieren erlaubt drei Vollgeschosse bei einer Überbauungsziffer von 30 %. Auf 596 m² Grundstücksfläche ergibt sich daraus ein Mehrfamilienhaus mit rund 715 m² Ausnützungsfläche, mehr als die Parzelle selbst misst.',
     luftbild: null,
     katasterplan: '/images/studien/schlieren/katasterplan.jpg',
     projektbild: null,
@@ -203,7 +203,7 @@ export const studien: Studie[] = [
       ['Total Wohnfläche', "1'335.9 m²"],
     ]),
     analyse:
-      'Die Dorfzone in Fisibach begrenzt die Bebauung auf zwei Vollgeschosse — auf der 1\'405 m² grossen Parzelle liess sich das Bauvolumen trotzdem auf zwei eigenständige Mehrfamilienhäuser mit gemeinsamer Tiefgarage aufteilen, mit total rund 1\'336 m² Wohnfläche.',
+      'Die Dorfzone in Fisibach begrenzt die Bebauung auf zwei Vollgeschosse. Auf der 1\'405 m² grossen Parzelle liess sich das Bauvolumen trotzdem auf zwei eigenständige Mehrfamilienhäuser mit gemeinsamer Tiefgarage aufteilen, mit total rund 1\'336 m² Wohnfläche.',
     luftbild: '/images/studien/fisibach-studie/luftbild.jpg',
     katasterplan: '/images/studien/fisibach-studie/katasterplan.jpg',
     projektbild: null,
@@ -221,7 +221,7 @@ export const studien: Studie[] = [
       ['Ergebnis', 'nicht gewonnen, nicht gebaut'],
     ]),
     analyse:
-      'Für die Überbauung «Eichhölzli» in Fisibach hat Atelier AA Architekten einen Wettbewerbsbeitrag mit fünf einzelnen Baukörpern und einem gemeinsamen Gemeinschaftsbau eingereicht. Der Beitrag wurde nicht ausgezeichnet und ist nicht realisiert worden — er zeigt trotzdem den städtebaulichen Ansatz für diese Aufgabe.',
+      'Für die Überbauung «Eichhölzli» in Fisibach hat Atelier AA Architekten einen Wettbewerbsbeitrag mit fünf einzelnen Baukörpern und einem gemeinsamen Gemeinschaftsbau eingereicht. Der Beitrag wurde nicht ausgezeichnet und ist nicht realisiert worden, zeigt aber trotzdem den städtebaulichen Ansatz für diese Aufgabe.',
     luftbild: null,
     katasterplan: null,
     projektbild: '/images/studien/fisibach-wettbewerb/bild1.jpg',
@@ -239,7 +239,7 @@ export const studien: Studie[] = [
       ['Abmessungen Anbau', 'ca. 12.95 × 25.62 m'],
     ]),
     analyse:
-      'Für ein bestehendes Vereinslokal in Root hat Atelier AA Architekten einen Anbau konzipiert, der Saal, Bühne, Vorplatz und Küche zu einem zusammenhängenden Vereinshaus ergänzt — auf einer Grundfläche von rund 13 auf 26 Metern.',
+      'Für ein bestehendes Vereinslokal in Root hat Atelier AA Architekten einen Anbau konzipiert, der Saal, Bühne, Vorplatz und Küche zu einem zusammenhängenden Vereinshaus ergänzt, auf einer Grundfläche von rund 13 auf 26 Metern.',
     luftbild: null,
     katasterplan: null,
     projektbild: '/images/studien/root/bild1.jpg',
@@ -262,7 +262,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "2'733 m²"],
     ]),
     analyse:
-      'Die Zone WA3 erlaubt in Muhen eine Ausnützung von 110 % — auf den 2\'484 m² Grundstücksfläche ergibt das ein Mehrfamilienhaus mit rund 2\'733 m² Wohnfläche über drei Vollgeschosse plus Dachgeschoss.',
+      'Die Zone WA3 erlaubt in Muhen eine Ausnützung von 110 %. Auf den 2\'484 m² Grundstücksfläche ergibt das ein Mehrfamilienhaus mit rund 2\'733 m² Wohnfläche über drei Vollgeschosse plus Dachgeschoss.',
     luftbild: '/images/studien/muhen/luftbild.jpg',
     katasterplan: null,
     projektbild: null,
@@ -283,7 +283,7 @@ export const studien: Studie[] = [
       ['Ausnützung je Haus', '138 m² / 141 m²'],
     ]),
     analyse:
-      'Zwei benachbarte, ähnlich grosse Parzellen in Höri erlauben in der Zone E2 mit 40 % Ausnützung je ein Einfamilienhaus mit rund 140 m² Wohnfläche — zwei praktisch baugleiche Häuser auf zwei eigenständigen Grundstücken.',
+      'Zwei benachbarte, ähnlich grosse Parzellen in Höri erlauben in der Zone E2 mit 40 % Ausnützung je ein Einfamilienhaus mit rund 140 m² Wohnfläche: zwei praktisch baugleiche Häuser auf zwei eigenständigen Grundstücken.',
     luftbild: '/images/studien/hoeri/luftbild.jpg',
     katasterplan: '/images/studien/hoeri/katasterplan.jpg',
     projektbild: null,
@@ -305,7 +305,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '376 m²'],
     ]),
     analyse:
-      'In der Zone W1 sind in Villmergen zwei Vollgeschosse zulässig — mit einem zusätzlichen Attikageschoss lässt sich die 45-prozentige Ausnützung auf den 642 m² noch als Mehrfamilienhaus mit rund 376 m² Wohnfläche umsetzen, statt als einzelnes Einfamilienhaus.',
+      'In der Zone W1 sind in Villmergen zwei Vollgeschosse zulässig. Mit einem zusätzlichen Attikageschoss lässt sich die 45-prozentige Ausnützung auf den 642 m² noch als Mehrfamilienhaus mit rund 376 m² Wohnfläche umsetzen, statt als einzelnes Einfamilienhaus.',
     luftbild: '/images/studien/villmergen/luftbild.jpg',
     katasterplan: '/images/studien/villmergen/katasterplan.jpg',
     projektbild: null,
@@ -326,7 +326,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'091 m²"],
     ]),
     analyse:
-      'Drei zusammenhängende Parzellen an der Flurstrasse in Nussbaumen ergeben 2\'099 m² Grundstücksfläche — in der Zone W2 mit einer Ausnützungsziffer von 0.4 reicht das für ein Mehrfamilienhaus mit Attikageschoss und rund 1\'091 m² Wohnfläche.',
+      'Drei zusammenhängende Parzellen an der Flurstrasse in Nussbaumen ergeben 2\'099 m² Grundstücksfläche. In der Zone W2 mit einer Ausnützungsziffer von 0.4 reicht das für ein Mehrfamilienhaus mit Attikageschoss und rund 1\'091 m² Wohnfläche.',
     luftbild: null,
     katasterplan: '/images/studien/nussbaumen-flurstrasse-w2/katasterplan.jpg',
     projektbild: null,
@@ -368,7 +368,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '409 m²'],
     ]),
     analyse:
-      'Mit 30 % Ausnützung in der Zone W2 ergibt sich für die 880 m² grosse Parzelle an der Alten Zürcherstrasse ein Mehrfamilienhaus mit rund 409 m² Wohnfläche — zwei Vollgeschosse plus ein zusätzliches Attikageschoss unter der flach geneigten Dachform.',
+      'Mit 30 % Ausnützung in der Zone W2 ergibt sich für die 880 m² grosse Parzelle an der Alten Zürcherstrasse ein Mehrfamilienhaus mit rund 409 m² Wohnfläche: zwei Vollgeschosse plus ein zusätzliches Attikageschoss unter der flach geneigten Dachform.',
     luftbild: '/images/studien/birmensdorf/luftbild.jpg',
     katasterplan: '/images/studien/birmensdorf/katasterplan.jpg',
     projektbild: null,
@@ -390,7 +390,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '892 m²'],
     ]),
     analyse:
-      'Zwei kleine, zusammengelegte Parzellen an der Badenerstrasse in Zürich ergeben 643 m² — in der Zone W4 mit 120 % Ausnützung reicht das für ein viergeschossiges Mehrfamilienhaus mit Attika und rund 892 m² Wohnfläche, mehr als das Doppelte der Grundstücksfläche.',
+      'Zwei kleine, zusammengelegte Parzellen an der Badenerstrasse in Zürich ergeben 643 m². In der Zone W4 mit 120 % Ausnützung reicht das für ein viergeschossiges Mehrfamilienhaus mit Attika und rund 892 m² Wohnfläche, mehr als das Doppelte der Grundstücksfläche.',
     luftbild: '/images/studien/zuerich-badenerstrasse/luftbild.jpg',
     katasterplan: '/images/studien/zuerich-badenerstrasse/katasterplan.jpg',
     projektbild: null,
@@ -410,7 +410,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '913 m²'],
     ]),
     analyse:
-      'In der Dorfzone von Künten sind Geschosszahl und Grenzabstände bewusst offen gehalten, um sich ins bestehende Ortsbild einzupassen — auf den 1\'211 m² an der Dorfstrasse ergibt das ein Mehrfamilienhaus mit rund 913 m² Wohnfläche, inklusive ausgebautem Dachgeschoss.',
+      'In der Dorfzone von Künten sind Geschosszahl und Grenzabstände bewusst offen gehalten, um sich ins bestehende Ortsbild einzupassen. Auf den 1\'211 m² an der Dorfstrasse ergibt das ein Mehrfamilienhaus mit rund 913 m² Wohnfläche, inklusive ausgebautem Dachgeschoss.',
     luftbild: null,
     katasterplan: '/images/studien/kuenten-dorfstrasse/katasterplan.jpg',
     projektbild: null,
@@ -432,7 +432,7 @@ export const studien: Studie[] = [
       ['Total Wohnfläche', '509 m²'],
     ]),
     analyse:
-      'Die locker überbaute Zone W2L in Bergdietikon erlaubt mit einer Ausnützungsziffer von nur 0.25 keine Verdichtung im eigentlichen Sinn — auf den 2\'035 m² liess sich das Grundstück aber sinnvoll in drei Doppel-Einfamilienhäuser mit total rund 509 m² Wohnfläche aufteilen.',
+      'Die locker überbaute Zone W2L in Bergdietikon erlaubt mit einer Ausnützungsziffer von nur 0.25 keine Verdichtung im eigentlichen Sinn. Auf den 2\'035 m² liess sich das Grundstück aber sinnvoll in drei Doppel-Einfamilienhäuser mit total rund 509 m² Wohnfläche aufteilen.',
     luftbild: null,
     katasterplan: '/images/studien/bergdietikon/katasterplan.jpg',
     projektbild: null,
@@ -474,7 +474,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'650 m²"],
     ]),
     analyse:
-      'An der Ringstrasse in Nussbaumen ergeben zwei zusammengelegte Parzellen 1\'439 m² Grundstücksfläche — die Dorfzone erlaubt mit zwei Vollgeschossen eine Ausnützung von rund 1\'650 m², mehr als die Parzellenfläche selbst.',
+      'An der Ringstrasse in Nussbaumen ergeben zwei zusammengelegte Parzellen 1\'439 m² Grundstücksfläche. Die Dorfzone erlaubt mit zwei Vollgeschossen eine Ausnützung von rund 1\'650 m², mehr als die Parzellenfläche selbst.',
     luftbild: '/images/studien/nussbaumen-ringstrasse/luftbild.jpg',
     katasterplan: '/images/studien/nussbaumen-ringstrasse/katasterplan.jpg',
     projektbild: null,
@@ -494,7 +494,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "3'212 m²"],
     ]),
     analyse:
-      'Drei zusammenhängende Parzellen an der Kasernenstrasse in Bülach ergeben 3\'105 m² — in der Zone WG3.0A* mit einer Baumassenziffer von 3 lässt sich das Grundstück mit rund 3\'212 m² Ausnützungsfläche bebauen, mehr als die Grundstücksfläche selbst.',
+      'Drei zusammenhängende Parzellen an der Kasernenstrasse in Bülach ergeben 3\'105 m². In der Zone WG3.0A* mit einer Baumassenziffer von 3 lässt sich das Grundstück mit rund 3\'212 m² Ausnützungsfläche bebauen, mehr als die Grundstücksfläche selbst.',
     luftbild: '/images/studien/buelach/luftbild.jpg',
     katasterplan: '/images/studien/buelach/katasterplan.jpg',
     projektbild: null,
@@ -511,12 +511,12 @@ export const studien: Studie[] = [
       ['Grundstücksfläche', "2'091 m²"],
       ['Zone', 'W2'],
       ['Vollgeschosse', 'max. 2'],
-      ['Gebäudetyp', '7 Doppeleinfamilienhäuser (Haus A–G)'],
+      ['Gebäudetyp', '7 Doppeleinfamilienhäuser (Haus A bis G)'],
       ['Ausnützung mit Arealbonus', "1'254.9 m² (60 %)"],
       ['Ausnützung ohne Bonus', '941.2 m² (45 %)'],
     ]),
     analyse:
-      'Weil auf den drei zusammengelegten Parzellen mit 2\'091 m² eine Arealüberbauung möglich ist, steigt die zulässige Ausnützung von 45 % nach normaler Bauordnung auf 60 % — ein Unterschied von über 300 m² Wohnfläche, der aus sieben statt fünf Doppeleinfamilienhäusern besteht.',
+      'Weil auf den drei zusammengelegten Parzellen mit 2\'091 m² eine Arealüberbauung möglich ist, steigt die zulässige Ausnützung von 45 % nach normaler Bauordnung auf 60 %, ein Unterschied von über 300 m² Wohnfläche, der aus sieben statt fünf Doppeleinfamilienhäusern besteht.',
     luftbild: '/images/studien/hallwil/luftbild.jpg',
     katasterplan: '/images/studien/hallwil/katasterplan.jpg',
     projektbild: null,
@@ -539,7 +539,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "2'318 m²"],
     ]),
     analyse:
-      'Die Kernzone von Benzenschwil erlaubt mit 90 % eine der höchsten Ausnützungen im ganzen Bestand — auf 2\'576 m² Grundstücksfläche ergibt das ein Mehrfamilienhaus mit rund 2\'318 m² Wohnfläche, bei einer Gesamthöhe von bis zu 18 Metern.',
+      'Die Kernzone von Benzenschwil erlaubt mit 90 % eine der höchsten Ausnützungen im ganzen Bestand. Auf 2\'576 m² Grundstücksfläche ergibt das ein Mehrfamilienhaus mit rund 2\'318 m² Wohnfläche, bei einer Gesamthöhe von bis zu 18 Metern.',
     luftbild: '/images/studien/benzenschwil/luftbild.jpg',
     katasterplan: '/images/studien/benzenschwil/katasterplan.jpg',
     projektbild: null,
@@ -560,7 +560,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'071 m²"],
     ]),
     analyse:
-      'An der Egg in Künten — einem anderen Grundstück als das bereits realisierte Mehrfamilienhaus im Ort — erlaubt die Zone W2 mit 55 % Ausnützung auf 1\'116 m² ein Gebäude mit rund 1\'071 m² Wohnfläche.',
+      'An der Egg in Künten (einem anderen Grundstück als das bereits realisierte Mehrfamilienhaus im Ort) erlaubt die Zone W2 mit 55 % Ausnützung auf 1\'116 m² ein Gebäude mit rund 1\'071 m² Wohnfläche.',
     luftbild: '/images/studien/kuenten-egg/luftbild.jpg',
     katasterplan: '/images/studien/kuenten-egg/katasterplan.jpg',
     projektbild: null,
@@ -581,7 +581,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "2'828 m²"],
     ]),
     analyse:
-      'In der Kernzone 2 des historischen Städtchens Regensberg sind zwei Vollgeschosse und ein Untergeschoss zulässig — auf 2\'557 m² Grundstücksfläche ergibt das zwei Mehrfamilienhäuser mit total rund 2\'828 m² Wohnfläche.',
+      'In der Kernzone 2 des historischen Städtchens Regensberg sind zwei Vollgeschosse und ein Untergeschoss zulässig. Auf 2\'557 m² Grundstücksfläche ergibt das zwei Mehrfamilienhäuser mit total rund 2\'828 m² Wohnfläche.',
     luftbild: '/images/studien/regensberg/luftbild.jpg',
     katasterplan: '/images/studien/regensberg/katasterplan.jpg',
     projektbild: null,
@@ -623,7 +623,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung mit Arealbonus', "1'134 m²"],
     ]),
     analyse:
-      'Die Wohnzone 2 in Wohlenschwil begrenzt vor allem über die Gebäudehöhe von 7 Metern — mit Arealbonus lässt sich die Ausnützung auf den 1\'744 m² trotzdem auf rund 1\'134 m² steigern, mehr als eine einzelne Standardüberbauung ohne Bonus zulassen würde.',
+      'Die Wohnzone 2 in Wohlenschwil begrenzt vor allem über die Gebäudehöhe von 7 Metern. Mit Arealbonus lässt sich die Ausnützung auf den 1\'744 m² trotzdem auf rund 1\'134 m² steigern, mehr als eine einzelne Standardüberbauung ohne Bonus zulassen würde.',
     luftbild: '/images/studien/wohlenschwil/luftbild.jpg',
     katasterplan: '/images/studien/wohlenschwil/katasterplan.jpg',
     projektbild: null,
@@ -645,7 +645,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '674 m²'],
     ]),
     analyse:
-      'In der Zentrumszone von Untersiggenthal sind bis zu vier Vollgeschosse und 18 m Gesamthöhe zulässig — auf der vergleichsweise kleinen Parzelle von 465 m² am Kornfeldweg ergibt das trotzdem ein Mehrfamilienhaus mit Attika und rund 674 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
+      'In der Zentrumszone von Untersiggenthal sind bis zu vier Vollgeschosse und 18 m Gesamthöhe zulässig. Auf der vergleichsweise kleinen Parzelle von 465 m² am Kornfeldweg ergibt das trotzdem ein Mehrfamilienhaus mit Attika und rund 674 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
     luftbild: '/images/studien/untersiggenthal-kornfeldweg/luftbild.jpg',
     katasterplan: '/images/studien/untersiggenthal-kornfeldweg/katasterplan.jpg',
     projektbild: null,
@@ -664,7 +664,7 @@ export const studien: Studie[] = [
       ['Gesamtvolumen', "7'620.54 m³"],
     ]),
     analyse:
-      'In Mettmenstetten hat Atelier AA Architekten die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten — vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
+      'In Mettmenstetten hat Atelier AA Architekten die Bauherrschaft bei einem Ersatzneubau-Projekt vertreten: vier Reiheneinfamilienhäuser und ein Mehrfamilienhaus mit gemeinsamer Tiefgarage auf 1\'490 m² Grundstücksfläche, mit einem Gesamtvolumen von rund 7\'620 m³.',
     luftbild: '/images/studien/mettmenstetten/luftbild.jpg',
     katasterplan: '/images/studien/mettmenstetten/katasterplan.jpg',
     projektbild: null,
@@ -686,7 +686,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '959 m²'],
     ]),
     analyse:
-      'Vier benachbarte Parzellen an der Rötlerstrasse in Wohlenschwil ergeben zusammen 2\'132 m² — die Dorfkernzone mit 45 % Ausnützung und bis zu drei Vollgeschossen plus zwei Dachgeschossen erlaubt darauf ein Mehrfamilienhaus mit rund 959 m² Wohnfläche.',
+      'Vier benachbarte Parzellen an der Rötlerstrasse in Wohlenschwil ergeben zusammen 2\'132 m². Die Dorfkernzone mit 45 % Ausnützung und bis zu drei Vollgeschossen plus zwei Dachgeschossen erlaubt darauf ein Mehrfamilienhaus mit rund 959 m² Wohnfläche.',
     luftbild: '/images/studien/wohlenschwil-roetlerstrasse/luftbild.jpg',
     katasterplan: '/images/studien/wohlenschwil-roetlerstrasse/katasterplan.jpg',
     projektbild: null,
@@ -725,11 +725,11 @@ export const studien: Studie[] = [
       ['Grundstücksfläche', "1'507 m²"],
       ['Zone', 'Wohnzone W2'],
       ['Vollgeschosse', 'max. 2'],
-      ['Gebäudetyp', '4 Einfamilienhäuser (Haus A–D)'],
+      ['Gebäudetyp', '4 Einfamilienhäuser (Haus A bis D)'],
       ['Total Wohnfläche', '694 m²'],
     ]),
     analyse:
-      'Die 1\'507 m² am Bollackerweg in Killwangen reichen in der Wohnzone W2 für gleich vier Einfamilienhäuser statt eines einzelnen grossen Baukörpers — mit rund 694 m² Wohnfläche über zwei Vollgeschosse verteilt.',
+      'Die 1\'507 m² am Bollackerweg in Killwangen reichen in der Wohnzone W2 für gleich vier Einfamilienhäuser statt eines einzelnen grossen Baukörpers, mit rund 694 m² Wohnfläche über zwei Vollgeschosse verteilt.',
     luftbild: null,
     katasterplan: '/images/studien/killwangen-bollackerweg/katasterplan.jpg',
     projektbild: null,
@@ -750,7 +750,7 @@ export const studien: Studie[] = [
       ['Total Wohnfläche', '264 m²'],
     ]),
     analyse:
-      'An der Zürcherstrasse in Killwangen ersetzt ein Mehrfamilienhaus mit drei Geschosswohnungen ein bestehendes Einfamilienhaus auf nur 415 m² — die Zone W2 erlaubt dafür Erd-, Ober- und Attikageschoss mit rund 264 m² Wohnfläche.',
+      'An der Zürcherstrasse in Killwangen ersetzt ein Mehrfamilienhaus mit drei Geschosswohnungen ein bestehendes Einfamilienhaus auf nur 415 m². Die Zone W2 erlaubt dafür Erd-, Ober- und Attikageschoss mit rund 264 m² Wohnfläche.',
     luftbild: null,
     katasterplan: '/images/studien/killwangen-zuercherstrasse/katasterplan.jpg',
     projektbild: null,
@@ -771,7 +771,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'198 m³"],
     ]),
     analyse:
-      'Zwei zusammengelegte Parzellen an der Allmendstrasse in Wallisellen ergeben 749 m² — die Zone W1.6 erlaubt darauf ein Mehrfamilienhaus mit fünf Wohnungen über Erd-, Ober- und Attikageschoss.',
+      'Zwei zusammengelegte Parzellen an der Allmendstrasse in Wallisellen ergeben 749 m². Die Zone W1.6 erlaubt darauf ein Mehrfamilienhaus mit fünf Wohnungen über Erd-, Ober- und Attikageschoss.',
     luftbild: null,
     katasterplan: '/images/studien/wallisellen/katasterplan.jpg',
     projektbild: null,
@@ -814,7 +814,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '440 m²'],
     ]),
     analyse:
-      'Die Dorfzone D3 in Lommis erlaubt mit einer Ausnützungsziffer von 0.7 auf 629 m² ein dreigeschossiges Mehrfamilienhaus mit rund 440 m² Wohnfläche — ein Flachdach ist in dieser Zone allerdings nicht zulässig, nur ein geneigtes Dach.',
+      'Die Dorfzone D3 in Lommis erlaubt mit einer Ausnützungsziffer von 0.7 auf 629 m² ein dreigeschossiges Mehrfamilienhaus mit rund 440 m² Wohnfläche. Ein Flachdach ist in dieser Zone allerdings nicht zulässig, nur ein geneigtes Dach.',
     luftbild: '/images/studien/lommis/luftbild.jpg',
     katasterplan: '/images/studien/lommis/katasterplan.jpg',
     projektbild: null,
@@ -834,7 +834,7 @@ export const studien: Studie[] = [
       ['Gebäudetyp', 'Mehrfamilienhaus (Ersatzneubau)'],
     ]),
     analyse:
-      'Ein drittes Grundstück an der Hertensteinstrasse in Nussbaumen liegt in der Zone ZZ2, die ohne feste Ausnützungsziffer arbeitet — massgeblich ist hier die Gesamthöhe von bis zu 15 Metern, die einen Ersatzneubau für die bestehenden Mehrfamilienhäuser auf 1\'336 m² erlaubt.',
+      'Ein drittes Grundstück an der Hertensteinstrasse in Nussbaumen liegt in der Zone ZZ2, die ohne feste Ausnützungsziffer arbeitet: Massgeblich ist hier die Gesamthöhe von bis zu 15 Metern, die einen Ersatzneubau für die bestehenden Mehrfamilienhäuser auf 1\'336 m² erlaubt.',
     luftbild: null,
     katasterplan: '/images/studien/nussbaumen-hertensteinstrasse/katasterplan.jpg',
     projektbild: null,
@@ -855,7 +855,7 @@ export const studien: Studie[] = [
       ['Gebäudetyp', 'Villa mit Einliegerwohnung'],
     ]),
     analyse:
-      'Ein zweites Grundstück in Bergdietikon liegt ebenfalls in der locker überbauten Zone W2L — auf 1\'695 m² erlaubt die niedrige Ausnützungsziffer von 0.25 hier eine einzelne Villa mit Einliegerwohnung statt einer Mehrfamilienhaus-Verdichtung.',
+      'Ein zweites Grundstück in Bergdietikon liegt ebenfalls in der locker überbauten Zone W2L. Auf 1\'695 m² erlaubt die niedrige Ausnützungsziffer von 0.25 hier eine einzelne Villa mit Einliegerwohnung statt einer Mehrfamilienhaus-Verdichtung.',
     luftbild: null,
     katasterplan: '/images/studien/bergdietikon-gyrhaldenstrasse/katasterplan.jpg',
     projektbild: null,
@@ -876,7 +876,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '448 m²'],
     ]),
     analyse:
-      'Ein zweites Grundstück in Birmensdorf liegt in der Zone Z3 mit 70 % Ausnützung — auf 640 m² ergibt das ein Mehrfamilienhaus mit Attikageschoss und rund 448 m² Wohnfläche, unabhängig von der bereits realisierten Studie an der Alten Zürcherstrasse.',
+      'Ein zweites Grundstück in Birmensdorf liegt in der Zone Z3 mit 70 % Ausnützung. Auf 640 m² ergibt das ein Mehrfamilienhaus mit Attikageschoss und rund 448 m² Wohnfläche, unabhängig von der bereits realisierten Studie an der Alten Zürcherstrasse.',
     luftbild: null,
     katasterplan: '/images/studien/birmensdorf-zuercherstrasse/katasterplan.jpg',
     projektbild: null,
@@ -898,7 +898,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'071 m²"],
     ]),
     analyse:
-      'Die Kernzone von Othmarsingen liegt im Ortsbildschutzperimeter, erlaubt aber trotzdem 70 % Ausnützung — auf 1\'148 m² an der Hendschikerstrasse ergibt das ein dreigeschossiges Mehrfamilienhaus mit rund 1\'071 m² Wohnfläche.',
+      'Die Kernzone von Othmarsingen liegt im Ortsbildschutzperimeter, erlaubt aber trotzdem 70 % Ausnützung. Auf 1\'148 m² an der Hendschikerstrasse ergibt das ein dreigeschossiges Mehrfamilienhaus mit rund 1\'071 m² Wohnfläche.',
     luftbild: '/images/studien/othmarsingen/luftbild.jpg',
     katasterplan: '/images/studien/othmarsingen/katasterplan.jpg',
     projektbild: null,
@@ -915,10 +915,10 @@ export const studien: Studie[] = [
       ['Grundstücksfläche', "1'412 m²"],
       ['Zone', 'Wohnzone E2'],
       ['Gebäudehöhe', 'max. 7.5 m'],
-      ['Gebäudetyp', '3 Einfamilienhäuser (Haus A–C)'],
+      ['Gebäudetyp', '3 Einfamilienhäuser (Haus A bis C)'],
     ]),
     analyse:
-      'Die Wohnzone E2 in Nassenwil bei Niederhasli kennt keine Ausnützungsziffer — massgeblich sind Grenzabstand und Gebäudehöhe. Auf 1\'412 m² an der Buchserstrasse liess sich das Grundstück so in drei eigenständige Einfamilienhäuser aufteilen.',
+      'Die Wohnzone E2 in Nassenwil bei Niederhasli kennt keine Ausnützungsziffer: Massgeblich sind Grenzabstand und Gebäudehöhe. Auf 1\'412 m² an der Buchserstrasse liess sich das Grundstück so in drei eigenständige Einfamilienhäuser aufteilen.',
     luftbild: '/images/studien/niederhasli/luftbild.jpg',
     katasterplan: '/images/studien/niederhasli/katasterplan.jpg',
     projektbild: null,
@@ -939,7 +939,7 @@ export const studien: Studie[] = [
       ['Gebäudetyp', 'Mehrfamilienhaus mit Gewerbe und Tiefgarage'],
     ]),
     analyse:
-      'Die Wohn- und Arbeitszone WA3 an der Bahnhofstrasse in Boswil regelt die Bebauung über Fassaden- und Gesamthöhe statt über eine feste Geschosszahl — auf 1\'226 m² entsteht so Raum für ein Mehrfamilienhaus mit Gewerbenutzung im Erdgeschoss und Tiefgarage.',
+      'Die Wohn- und Arbeitszone WA3 an der Bahnhofstrasse in Boswil regelt die Bebauung über Fassaden- und Gesamthöhe statt über eine feste Geschosszahl. Auf 1\'226 m² entsteht so Raum für ein Mehrfamilienhaus mit Gewerbenutzung im Erdgeschoss und Tiefgarage.',
     luftbild: '/images/studien/boswil/luftbild.jpg',
     katasterplan: '/images/studien/boswil/katasterplan.jpg',
     projektbild: null,
@@ -981,7 +981,7 @@ export const studien: Studie[] = [
       ['Total Wohnfläche', '303 m²'],
     ]),
     analyse:
-      'In der Dorfkernzone von Zeihen legt der Gemeinderat Mass und Höhe im Einzelfall fest, statt sie starr vorzuschreiben — auf 505 m² am Mühliweiher entstand daraus ein Doppeleinfamilienhaus mit rund 303 m² Wohnfläche.',
+      'In der Dorfkernzone von Zeihen legt der Gemeinderat Mass und Höhe im Einzelfall fest, statt sie starr vorzuschreiben. Auf 505 m² am Mühliweiher entstand daraus ein Doppeleinfamilienhaus mit rund 303 m² Wohnfläche.',
     luftbild: '/images/studien/zeihen/luftbild.jpg',
     katasterplan: '/images/studien/zeihen/katasterplan.jpg',
     projektbild: null,
@@ -1003,7 +1003,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'111 m²"],
     ]),
     analyse:
-      'Die Kernzone an der Dorfstrasse in Windisch orientiert sich an der Grösse des bestehenden Hauses und erlaubt so 71.5 % Ausnützung — auf 1\'036 m² ergibt das ein Mehrfamilienhaus mit rund 1\'111 m² Wohnfläche.',
+      'Die Kernzone an der Dorfstrasse in Windisch orientiert sich an der Grösse des bestehenden Hauses und erlaubt so 71.5 % Ausnützung. Auf 1\'036 m² ergibt das ein Mehrfamilienhaus mit rund 1\'111 m² Wohnfläche.',
     luftbild: '/images/studien/windisch/luftbild.jpg',
     katasterplan: '/images/studien/windisch/katasterplan.jpg',
     projektbild: null,
@@ -1025,7 +1025,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'387 m²"],
     ]),
     analyse:
-      'Die Dorfkernzone an der Alten Poststrasse in Tägerig erlaubt mit 80 % eine der höchsten Ausnützungen im ganzen Bestand — auf 1\'156 m² ergibt das ein Mehrfamilienhaus mit rund 1\'387 m² Wohnfläche.',
+      'Die Dorfkernzone an der Alten Poststrasse in Tägerig erlaubt mit 80 % eine der höchsten Ausnützungen im ganzen Bestand. Auf 1\'156 m² ergibt das ein Mehrfamilienhaus mit rund 1\'387 m² Wohnfläche.',
     luftbild: '/images/studien/taegerig/luftbild.jpg',
     katasterplan: '/images/studien/taegerig/katasterplan.jpg',
     projektbild: null,
@@ -1046,7 +1046,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '608 m²'],
     ]),
     analyse:
-      'Die Wohnzone 2 am Mattenweg in Islisberg kennt keine Ausnützungsziffer — massgeblich sind Geschosszahl und Gebäudelänge. Auf 612 m² ergibt das ein Doppeleinfamilienhaus mit rund 608 m² Wohnfläche, fast im Verhältnis 1:1 zur Parzelle.',
+      'Die Wohnzone 2 am Mattenweg in Islisberg kennt keine Ausnützungsziffer: Massgeblich sind Geschosszahl und Gebäudelänge. Auf 612 m² ergibt das ein Doppeleinfamilienhaus mit rund 608 m² Wohnfläche, fast im Verhältnis 1:1 zur Parzelle.',
     luftbild: '/images/studien/islisberg/luftbild.jpg',
     katasterplan: '/images/studien/islisberg/katasterplan.jpg',
     projektbild: null,
@@ -1068,7 +1068,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '811 m²'],
     ]),
     analyse:
-      'Die Wohn- und Gewerbezone 4 an der Oelbergstrasse in Menziken erlaubt mit 90 % eine sehr hohe Ausnützung — auf 783 m² ergibt das ein Mehrfamilienhaus mit rund 811 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
+      'Die Wohn- und Gewerbezone 4 an der Oelbergstrasse in Menziken erlaubt mit 90 % eine sehr hohe Ausnützung. Auf 783 m² ergibt das ein Mehrfamilienhaus mit rund 811 m² Wohnfläche, mehr als die Grundstücksfläche selbst.',
     luftbild: '/images/studien/menziken/luftbild.jpg',
     katasterplan: '/images/studien/menziken/katasterplan.jpg',
     projektbild: null,
@@ -1112,7 +1112,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'838 m²"],
     ]),
     analyse:
-      'Eine BNO-Mutation am Wynenfeldweg in Buchs erhöht die Ausnützungsziffer der Wohnzone B auf 0.8 — auf 2\'297 m² ergibt das ein Mehrfamilienhaus mit rund 1\'838 m² Wohnfläche, deutlich mehr als nach der bisherigen Bauordnung möglich wäre.',
+      'Eine BNO-Mutation am Wynenfeldweg in Buchs erhöht die Ausnützungsziffer der Wohnzone B auf 0.8. Auf 2\'297 m² ergibt das ein Mehrfamilienhaus mit rund 1\'838 m² Wohnfläche, deutlich mehr als nach der bisherigen Bauordnung möglich wäre.',
     luftbild: '/images/studien/buchs-ag/luftbild.jpg',
     katasterplan: '/images/studien/buchs-ag/katasterplan.jpg',
     projektbild: null,
@@ -1172,11 +1172,11 @@ export const studien: Studie[] = [
       ['Grundstücksfläche', "4'140 m²"],
       ['Zone', 'Dorfzone D1'],
       ['Ausnützungsziffer', 'max. 0.55'],
-      ['Gebäudetyp', '3 Mehrfamilienhäuser (Haus I–III)'],
+      ['Gebäudetyp', '3 Mehrfamilienhäuser (Haus I bis III)'],
       ['Total Ausnützung', "2'268 m²"],
     ]),
     analyse:
-      'Das 4\'140 m² grosse Grundstück am Chlobächer in Oberwil-Lieli reicht in der Dorfzone D1 für gleich drei Mehrfamilienhäuser mit total rund 2\'268 m² Wohnfläche — eines der grössten Grundstücke in diesem Bestand.',
+      'Das 4\'140 m² grosse Grundstück am Chlobächer in Oberwil-Lieli reicht in der Dorfzone D1 für gleich drei Mehrfamilienhäuser mit total rund 2\'268 m² Wohnfläche, eines der grössten Grundstücke in diesem Bestand.',
     luftbild: '/images/studien/oberwil-lieli/luftbild.jpg',
     katasterplan: '/images/studien/oberwil-lieli/katasterplan.jpg',
     projektbild: null,
@@ -1197,7 +1197,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '820 m²'],
     ]),
     analyse:
-      'Die Wohn-/Gewerbezone 3 an der Zürcherstrasse in Oberlunkhofen regelt über Geschosszahl statt Ausnützungsziffer — auf 831 m² ergibt das ein Mehrfamilienhaus mit Attika und rund 820 m² Wohnfläche, praktisch im Verhältnis 1:1 zur Parzelle.',
+      'Die Wohn-/Gewerbezone 3 an der Zürcherstrasse in Oberlunkhofen regelt über Geschosszahl statt Ausnützungsziffer. Auf 831 m² ergibt das ein Mehrfamilienhaus mit Attika und rund 820 m² Wohnfläche, praktisch im Verhältnis 1:1 zur Parzelle.',
     luftbild: '/images/studien/oberlunkhofen/luftbild.jpg',
     katasterplan: '/images/studien/oberlunkhofen/katasterplan.jpg',
     projektbild: null,
@@ -1237,11 +1237,11 @@ export const studien: Studie[] = [
       ['Zone', 'Wohnzone E2'],
       ['Ausnützungsziffer', '0.45'],
       ['Vollgeschosse', 'max. 2'],
-      ['Gebäudetyp', '4 Mehrfamilienhäuser (Haus A–D)'],
+      ['Gebäudetyp', '4 Mehrfamilienhäuser (Haus A bis D)'],
       ['Total Ausnützung', '596 m²'],
     ]),
     analyse:
-      'Ein zweites Grundstück in Würenlos liegt in der Wohnzone E2 mit 45 % Ausnützung — auf 883 m² entstehen daraus vier kleinere Mehrfamilienhäuser mit total rund 596 m² Wohnfläche, unabhängig von der bereits realisierten Studie am Föhrenweg.',
+      'Ein zweites Grundstück in Würenlos liegt in der Wohnzone E2 mit 45 % Ausnützung. Auf 883 m² entstehen daraus vier kleinere Mehrfamilienhäuser mit total rund 596 m² Wohnfläche, unabhängig von der bereits realisierten Studie am Föhrenweg.',
     luftbild: '/images/studien/wuerenlos-gatteraecherring/luftbild.jpg',
     katasterplan: '/images/studien/wuerenlos-gatteraecherring/katasterplan.jpg',
     projektbild: null,
@@ -1263,7 +1263,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '573 m² (700 m² mit Arealbonus)'],
     ]),
     analyse:
-      'Ein zweites Grundstück in Hallwil liegt an der Erschliessung Oberrüti in der Wohn- und Arbeitszone WA-O — mit Arealüberbauung lässt sich die Ausnützung auf der anrechenbaren Fläche von 1\'041 m² von 573 auf rund 700 m² Wohnfläche steigern, unabhängig von der bereits realisierten Studie an der Sonnhalde.',
+      'Ein zweites Grundstück in Hallwil liegt an der Erschliessung Oberrüti in der Wohn- und Arbeitszone WA-O. Mit Arealüberbauung lässt sich die Ausnützung auf der anrechenbaren Fläche von 1\'041 m² von 573 auf rund 700 m² Wohnfläche steigern, unabhängig von der bereits realisierten Studie an der Sonnhalde.',
     luftbild: '/images/studien/hallwil-oberruti/luftbild.jpg',
     katasterplan: '/images/studien/hallwil-oberruti/katasterplan.jpg',
     projektbild: null,
@@ -1284,7 +1284,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '714 m²'],
     ]),
     analyse:
-      'An der Haldenrebenstrasse in Hedingen begrenzt die Wohnzone W1 vor allem über die Gebäudehöhe — auf 2\'072 m² entsteht so ein Mehrfamilienhaus mit Attika und Einstellhalle im Untergeschoss, rund 714 m² Wohnfläche.',
+      'An der Haldenrebenstrasse in Hedingen begrenzt die Wohnzone W1 vor allem über die Gebäudehöhe. Auf 2\'072 m² entsteht so ein Mehrfamilienhaus mit Attika und Einstellhalle im Untergeschoss, rund 714 m² Wohnfläche.',
     luftbild: '/images/studien/hedingen/luftbild.jpg',
     katasterplan: '/images/studien/hedingen/katasterplan.jpg',
     projektbild: null,
@@ -1306,7 +1306,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'057 m²"],
     ]),
     analyse:
-      'Vier zusammengelegte Parzellen an der Schmittegass in Spreitenbach ergeben 1\'468 m² — die Wohnzone 3 mit 60 % Ausnützung erlaubt darauf ein Mehrfamilienhaus mit rund 1\'057 m² Wohnfläche.',
+      'Vier zusammengelegte Parzellen an der Schmittegass in Spreitenbach ergeben 1\'468 m². Die Wohnzone 3 mit 60 % Ausnützung erlaubt darauf ein Mehrfamilienhaus mit rund 1\'057 m² Wohnfläche.',
     luftbild: '/images/studien/spreitenbach/luftbild.jpg',
     katasterplan: '/images/studien/spreitenbach/katasterplan.jpg',
     projektbild: null,
@@ -1348,7 +1348,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung (Bestand)', '582 m²'],
     ]),
     analyse:
-      'Im historischen Städtli von Sempach erlaubt eine Ausnützungsziffer von 0.55 auf der kleinen Parzelle von 163 m² ein mehrgeschossiges Wohn- und Geschäftshaus mit rund 582 m² Fläche — ein Vielfaches der eigentlichen Grundstücksgrösse, typisch für die dichte Altstadtbebauung.',
+      'Im historischen Städtli von Sempach erlaubt eine Ausnützungsziffer von 0.55 auf der kleinen Parzelle von 163 m² ein mehrgeschossiges Wohn- und Geschäftshaus mit rund 582 m² Fläche, ein Vielfaches der eigentlichen Grundstücksgrösse, typisch für die dichte Altstadtbebauung.',
     luftbild: '/images/studien/sempach/luftbild.jpg',
     katasterplan: '/images/studien/sempach/katasterplan.jpg',
     projektbild: null,
@@ -1369,7 +1369,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', '445 m²'],
     ]),
     analyse:
-      'Ein zweites Grundstück in Villmergen liegt an der Unterdorfstrasse in der Wohnzone b mit 80 % Ausnützung — auf 556 m² entsteht so ein Mehrfamilienhaus mit rund 445 m² Wohnfläche über drei Vollgeschosse, unabhängig von der bereits realisierten Studie am Brudermattweg.',
+      'Ein zweites Grundstück in Villmergen liegt an der Unterdorfstrasse in der Wohnzone b mit 80 % Ausnützung. Auf 556 m² entsteht so ein Mehrfamilienhaus mit rund 445 m² Wohnfläche über drei Vollgeschosse, unabhängig von der bereits realisierten Studie am Brudermattweg.',
     luftbild: '/images/studien/villmergen-unterdorfstrasse/luftbild.jpg',
     katasterplan: '/images/studien/villmergen-unterdorfstrasse/katasterplan.jpg',
     projektbild: null,
@@ -1390,7 +1390,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "8'100 m³"],
     ]),
     analyse:
-      'An der Bachstrasse in Obfelden — im selben Gewerbegebiet, in dem auch das eigene Büro liegt — erlaubt die Gewerbezone G mit einer Baumassenziffer von 4 auf 2\'025 m² ein Gebäude mit rund 8\'100 m³ umbautem Raum.',
+      'An der Bachstrasse in Obfelden (im selben Gewerbegebiet, in dem auch das eigene Büro liegt) erlaubt die Gewerbezone G mit einer Baumassenziffer von 4 auf 2\'025 m² ein Gebäude mit rund 8\'100 m³ umbautem Raum.',
     luftbild: '/images/studien/obfelden-bachstrasse/luftbild.jpg',
     katasterplan: '/images/studien/obfelden-bachstrasse/katasterplan.jpg',
     projektbild: null,
@@ -1411,7 +1411,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'493 m²"],
     ]),
     analyse:
-      'Die Dorfkernzone am Unterdorf in Wölflinswil regelt über die Geschosszahl statt eine Ausnützungsziffer — auf 946 m² ergibt das ein Mehrfamilienhaus mit rund 1\'493 m² Wohnfläche über zwei Vollgeschosse.',
+      'Die Dorfkernzone am Unterdorf in Wölflinswil regelt über die Geschosszahl statt eine Ausnützungsziffer. Auf 946 m² ergibt das ein Mehrfamilienhaus mit rund 1\'493 m² Wohnfläche über zwei Vollgeschosse.',
     luftbild: '/images/studien/woelflinswil/luftbild.jpg',
     katasterplan: '/images/studien/woelflinswil/katasterplan.jpg',
     projektbild: null,
@@ -1432,7 +1432,7 @@ export const studien: Studie[] = [
       ['Total Geschossfläche', 'ca. 1\'005 m²'],
     ]),
     analyse:
-      'An der Baslerstrasse in Bad Zurzach ersetzt ein Wohn- und Gewerbehaus mit sieben Wohnungen ein bestehendes Einfamilienhaus — die Wohn- und Gewerbezone erlaubt dafür drei Vollgeschosse plus Attika mit Gewerbe im Erdgeschoss.',
+      'An der Baslerstrasse in Bad Zurzach ersetzt ein Wohn- und Gewerbehaus mit sieben Wohnungen ein bestehendes Einfamilienhaus. Die Wohn- und Gewerbezone erlaubt dafür drei Vollgeschosse plus Attika mit Gewerbe im Erdgeschoss.',
     luftbild: '/images/studien/bad-zurzach/luftbild.jpg',
     katasterplan: '/images/studien/bad-zurzach/katasterplan.jpg',
     projektbild: null,
@@ -1453,7 +1453,7 @@ export const studien: Studie[] = [
       ['Total Ausnützung', "1'210 m²"],
     ]),
     analyse:
-      'An der Stafflerstrasse in Hermetschwil-Staffeln erlaubt die Wohnzone mit einer Ausnützungsziffer von 0.5 auf 2\'849 m² eine Wohnüberbauung mit mehreren Mehrfamilienhäusern, bei der zwei bestehende Gebäude erhalten bleiben — mit rund 1\'210 m² neuer Wohnfläche.',
+      'An der Stafflerstrasse in Hermetschwil-Staffeln erlaubt die Wohnzone mit einer Ausnützungsziffer von 0.5 auf 2\'849 m² eine Wohnüberbauung mit mehreren Mehrfamilienhäusern, bei der zwei bestehende Gebäude erhalten bleiben, mit rund 1\'210 m² neuer Wohnfläche.',
     luftbild: '/images/studien/hermetschwil/luftbild.jpg',
     katasterplan: '/images/studien/hermetschwil/katasterplan.jpg',
     projektbild: null,

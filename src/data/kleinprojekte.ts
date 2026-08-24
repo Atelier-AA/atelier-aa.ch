@@ -202,7 +202,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     strasse: 'Trottenstrasse',
     gebaeudetyp: 'Mehrfamilienhaus, Sanierung',
     bauherrschaft: null,
-    jahr: '2021–2022',
+    jahr: '2021 bis 2022',
     leistungen: ['Bauleitung'],
     bilder: [
       '/images/kleinprojekte/mfh-enetbaden/bild1.jpg',

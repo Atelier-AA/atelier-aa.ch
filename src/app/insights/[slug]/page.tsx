@@ -105,7 +105,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
           <div className="relative aspect-[16/9] w-full max-w-3xl bg-mist">
             <Image
               src={insight.bild}
-              alt={insight.titel}
+              alt={`${insight.titel}, Atelier AA Architekten`}
               fill
               priority
               className="object-cover"
@@ -130,7 +130,13 @@ export default async function InsightDetailPage({ params }: PageProps) {
                   <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {a.bilder.map((bild) => (
                       <div key={bild} className="relative aspect-[16/9] w-full bg-mist">
-                        <Image src={bild} alt={a.titel} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                        <Image
+                          src={bild}
+                          alt={`${a.titel}, Atelier AA Architekten`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                        />
                       </div>
                     ))}
                   </div>
@@ -146,7 +152,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
                 Sprechen wir über Ihr Projekt.
               </h2>
               <p className="text-lg text-graphite leading-relaxed mb-8">
-                Wir beraten Sie gerne — offen, konkret und ohne Verpflichtung.
+                Wir beraten Sie gerne: offen, konkret und ohne Verpflichtung.
               </p>
               <Button href="/kontakt" variant="text">
                 Kontaktieren Sie uns

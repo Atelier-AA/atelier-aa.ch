@@ -92,12 +92,12 @@ export default async function OrtPage({ params }: PageProps) {
             ) : ort.studien.length > 1 ? (
               <>
                 In {ort.ort} ({kanton.name}) haben wir {ort.studien.length} Machbarkeitsstudien
-                durchgeführt — die Grundlage, bevor aus einem Grundstück ein konkretes Bauprojekt
+                durchgeführt: die Grundlage, bevor aus einem Grundstück ein konkretes Bauprojekt
                 wird.
               </>
             ) : (
               <>
-                In {ort.ort} ({kanton.name}) haben wir eine Machbarkeitsstudie durchgeführt — die
+                In {ort.ort} ({kanton.name}) haben wir eine Machbarkeitsstudie durchgeführt: die
                 Grundlage, bevor aus einem Grundstück ein konkretes Bauprojekt wird.
               </>
             )}
@@ -133,7 +133,7 @@ export default async function OrtPage({ params }: PageProps) {
               Sie bauen in {ort.ort}?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Sprechen Sie mit uns über Ihr Vorhaben — wir kennen die Bauordnung und die
+              Sprechen Sie mit uns über Ihr Vorhaben: wir kennen die Bauordnung und die
               Abläufe vor Ort.
             </p>
             <Button href="/kontakt" variant="text">

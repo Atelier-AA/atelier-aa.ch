@@ -11,7 +11,7 @@ import { ortMitKanton } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Machbarkeitsstudie',
   description:
-    'Machbarkeitsstudie von Atelier AA Architekten GmbH: Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen — die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
+    'Machbarkeitsstudie von Atelier AA Architekten: Zonenkonformität, Volumenstudie und Kostenrahmen, die Entscheidungsgrundlage vor Ihrer Investition.',
   alternates: { canonical: '/leistungen/machbarkeitsstudie' },
 };
 
@@ -35,7 +35,7 @@ const schritte = [
   {
     nummer: '02',
     titel: 'Volumenstudie erarbeiten',
-    text: 'Auf dieser Grundlage entwerfen wir ein bis drei mögliche Bauvolumen — vom Anbau über die Aufstockung bis zum Ersatzneubau.',
+    text: 'Auf dieser Grundlage entwerfen wir ein bis drei mögliche Bauvolumen: vom Anbau über die Aufstockung bis zum Ersatzneubau.',
   },
   {
     nummer: '03',
@@ -45,7 +45,7 @@ const schritte = [
   {
     nummer: '04',
     titel: 'Entscheidungsgrundlage übergeben',
-    text: 'Sie erhalten einen kompakten Bericht mit Plänen, Kennzahlen und unserer Einschätzung — die Grundlage für den nächsten Schritt.',
+    text: 'Sie erhalten einen kompakten Bericht mit Plänen, Kennzahlen und unserer Einschätzung: die Grundlage für den nächsten Schritt.',
   },
 ];
 
@@ -60,7 +60,7 @@ export default function MachbarkeitsstudiePage() {
         provider: { '@id': 'https://www.atelier-aa.ch/#organisation' },
         areaServed: ['Zürich', 'Aargau', 'Zug'],
         description:
-          'Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen — die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
+          'Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen, die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
@@ -94,7 +94,7 @@ export default function MachbarkeitsstudiePage() {
             <p className="max-w-md text-lg leading-relaxed text-graphite md:text-xl">
               Sie besitzen ein Grundstück oder eine Liegenschaft und möchten wissen, ob
               sich Aufstockung, Anbau oder Ersatzneubau lohnt? Die Machbarkeitsstudie
-              liefert die Antwort — mit Volumenstudie und Kostenrahmen, bevor Sie
+              liefert die Antwort, mit Volumenstudie und Kostenrahmen, bevor Sie
               investieren.
             </p>
             <div className="mt-8">
@@ -163,7 +163,7 @@ export default function MachbarkeitsstudiePage() {
                       {bild && (
                         <Image
                           src={bild}
-                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}`}
+                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}, Atelier AA Architekten`}
                           fill
                           priority={idx < 2}
                           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
@@ -198,7 +198,7 @@ export default function MachbarkeitsstudiePage() {
               Fragen Sie sich, ob mehr <span className="font-semibold">möglich wäre?</span>
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Rufen Sie uns an und schildern Sie uns Ihr Grundstück — wir sagen Ihnen
+              Rufen Sie uns an und schildern Sie uns Ihr Grundstück: wir sagen Ihnen
               im Gespräch offen, was eine Machbarkeitsstudie zeigen könnte.
             </p>
             <Button href={`tel:${firma.telefonHref}`} variant="primary">

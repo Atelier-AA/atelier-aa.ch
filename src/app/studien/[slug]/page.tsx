@@ -101,7 +101,7 @@ export default async function StudieDetailPage({ params }: PageProps) {
                 <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                   <Image
                     src={b.src}
-                    alt={`${b.titel} — ${titel}, Atelier AA Architekten`}
+                    alt={`${b.titel}, ${titel}, Atelier AA Architekten`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"

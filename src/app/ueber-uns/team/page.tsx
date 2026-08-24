@@ -10,7 +10,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Team',
   description:
-    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH — geführt von Alisami Aljili.',
+    'Das Team von Atelier AA Architekten GmbH in Obfelden ZH, geführt von Alisami Aljili.',
   alternates: { canonical: '/ueber-uns/team' },
 };
 
@@ -40,7 +40,7 @@ export default function TeamPage() {
             <span className="font-semibold">Atelier AA Architekten.</span>
           </h1>
           <p className="mb-14 max-w-xl text-lg leading-relaxed text-graphite">
-            Ein eingespieltes Team mit klaren Verantwortlichkeiten — von der ersten
+            Ein eingespieltes Team mit klaren Verantwortlichkeiten: von der ersten
             Machbarkeitsstudie bis zur Bauleitung begleiten Sie dieselben
             Ansprechpersonen durch Ihr Projekt.
           </p>

@@ -32,7 +32,7 @@ export default function ProjektCard({
       <div className={`relative overflow-hidden bg-mist ${aspectClassName}`}>
         <Image
           src={projekt.thumbnail}
-          alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
+          alt={`${projekt.title}, ${ortMitKanton(projekt)}, Atelier AA Architekten`}
           fill
           priority={priority}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

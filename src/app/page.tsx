@@ -8,7 +8,7 @@ import AbschlussSection from '@/components/home/AbschlussSection';
 
 export const metadata: Metadata = {
   description:
-    'Atelier AA Architekten GmbH aus Obfelden plant Architektur, Umbau und Verdichtung mit Schwerpunkt Zürich, Aargau und Zug, auf Anfrage in der ganzen Schweiz. Wir realisieren Mehrfamilienhäuser, Sanierungen und Projektentwicklung von der Machbarkeitsstudie bis zur Schlüsselübergabe.',
+    'Atelier AA Architekten GmbH aus Obfelden: Neubau, Umbau und Verdichtung in Zürich, Aargau und Zug, von der Machbarkeitsstudie bis zur Bauleitung.',
   alternates: { canonical: '/' },
 };
 
