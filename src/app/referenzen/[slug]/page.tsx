@@ -12,6 +12,17 @@ import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import MehrLesen from '@/components/ui/MehrLesen';
 import { breadcrumbSchema } from '@/lib/schema';
+import { bildMasse } from '@/lib/bildmasse';
+
+/**
+ * Aus dem PDF-Pfad den Pfad des dazu konvertierten Vorschaubilds ableiten:
+ * `/dokumente/projekte/<slug>/<name>.pdf` → `/images/projekte/<slug>/plaene/<name>.jpg`.
+ */
+function planBild(datei: string): string {
+  return datei
+    .replace('/dokumente/projekte/', '/images/projekte/')
+    .replace(/\/([^/]+)\.pdf$/, '/plaene/$1.jpg');
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -69,6 +80,25 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   const [ersterAbschnitt, ...weitereAbschnitte] = projekt.abschnitte;
   const BASIS = 'https://www.atelier-aa.ch';
   const url = `${BASIS}/referenzen/${projekt.slug}`;
+
+  // Pixelmasse einmal zur Build-Zeit lesen (statische Seite), damit
+  // `next/image` ohne `fill` das natürliche Seitenverhältnis kennt —
+  // spart automatische Grössenreduktion und AVIF/WebP ein, ohne die Masse
+  // pro Bild von Hand zu pflegen.
+  const bezeichnung = `${projekt.title}, ${ortMitKanton(projekt)}`;
+  const bildPfade = [
+    projekt.heroImage,
+    ...projekt.galerie,
+    ...(projekt.plaene ?? []).map((p) => planBild(p.datei)),
+  ];
+  const bilder = await Promise.all(
+    bildPfade.map(async (src, idx) => ({
+      src,
+      alt: `${bezeichnung} – Ansicht ${idx + 1}, Atelier AA Architekten`,
+      video: projekt.videoClips?.find((v) => v.bildPfad === src),
+      ...(await bildMasse(src)),
+    }))
+  );
 
   /**
    * Strukturierte Daten für das Projekt.
@@ -139,13 +169,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
       */}
       <div className="flex flex-col pt-[5.4rem] md:pt-[6.3rem] lg:flex-row lg:items-start">
         <div className="order-2 w-full lg:order-1 lg:w-3/5">
-          <ProjektBilder
-            heroImage={projekt.heroImage}
-            galerie={projekt.galerie}
-            plaene={projekt.plaene}
-            projektTitel={projekt.title}
-            ort={projekt.ort}
-          />
+          <ProjektBilder bilder={bilder} />
         </div>
 
         <div className="order-1 w-full px-6 pt-[2.783rem] pb-12 md:px-10 md:pb-16 lg:order-2 lg:sticky lg:top-28 lg:w-2/5 lg:px-16 lg:pb-28">

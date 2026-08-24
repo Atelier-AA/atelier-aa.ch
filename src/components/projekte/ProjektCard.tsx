@@ -6,6 +6,8 @@ import type { Projekt } from '@/types';
 interface ProjektCardProps {
   projekt: Projekt;
   priority?: boolean;
+  /** Seitenverhältnis der Bildfläche. Standard: quadratisch wie auf /projekte. */
+  aspectClassName?: string;
 }
 
 /**
@@ -13,7 +15,11 @@ interface ProjektCardProps {
  * beim Hover, statt permanent als Text darunter — Bild und Beschriftung
  * verschmelzen zu einer Einheit statt zwei getrennten Blöcken.
  */
-export default function ProjektCard({ projekt, priority = false }: ProjektCardProps) {
+export default function ProjektCard({
+  projekt,
+  priority = false,
+  aspectClassName = 'aspect-square',
+}: ProjektCardProps) {
   return (
     <Link
       href={`/referenzen/${projekt.slug}`}
@@ -21,8 +27,9 @@ export default function ProjektCard({ projekt, priority = false }: ProjektCardPr
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
       {/* Quadratisches Bildformat 1:1 aus dem alten Theme
-          (`.referenzen-item:not(.referenzen-item--big) .referenzen__immage-inner`). */}
-      <div className="relative aspect-square overflow-hidden bg-mist">
+          (`.referenzen-item:not(.referenzen-item--big) .referenzen__immage-inner`),
+          überschreibbar für Abschnitte, die ein anderes Format brauchen. */}
+      <div className={`relative overflow-hidden bg-mist ${aspectClassName}`}>
         <Image
           src={projekt.thumbnail}
           alt={`${projekt.title}, ${ortMitKanton(projekt)}`}

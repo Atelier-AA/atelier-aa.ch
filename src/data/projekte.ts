@@ -63,8 +63,9 @@ export const projekte: Projekt[] = [
         antwort: 'Im Aargau rund 900 bis 1200 Franken pro Kubikmeter, je nach Standard.',
       },
       {
-        frage: 'Warum wurde ausgerechnet dieses Projekt als erstes Referenzprojekt gezeigt?',
-        antwort: 'Weil es das aktuellste realisierte Projekt ist.',
+        frage: 'Warum liegen Technik und Rückzugsräume im Untergeschoss statt im Erdgeschoss?',
+        antwort:
+          'Damit die Wohnebene ungestört bleibt: Das Erdgeschoss ist ganz dem Wohnen vorbehalten, die privaten Räume liegen darüber.',
       },
     ],
     thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
@@ -92,6 +93,20 @@ export const projekte: Projekt[] = [
     ],
     plaene: [{ titel: 'Kataster', datei: '/dokumente/projekte/efh-jonen/01-kataster.pdf' }],
     featured: true,
+    videoClips: [
+      {
+        bildPfad: '/images/projekte/efh-jonen/12.jpg',
+        mp4: '/images/projekte/efh-jonen/videos/12.mp4',
+        webm: '/images/projekte/efh-jonen/videos/12.webm',
+        poster: '/images/projekte/efh-jonen/videos/12-poster.jpg',
+      },
+      {
+        bildPfad: '/images/projekte/efh-jonen/16.jpg',
+        mp4: '/images/projekte/efh-jonen/videos/16.mp4',
+        webm: '/images/projekte/efh-jonen/videos/16.webm',
+        poster: '/images/projekte/efh-jonen/videos/16-poster.jpg',
+      },
+    ],
   },
   {
     slug: 'mfh-alte-poststrasse',
@@ -296,6 +311,14 @@ export const projekte: Projekt[] = [
       { titel: 'Schnitt AA', datei: '/dokumente/projekte/mfh-kuenten/08-schnitt-aa.pdf' },
     ],
     featured: false,
+    videoClips: [
+      {
+        bildPfad: '/images/projekte/mfh-kuenten/06.jpg',
+        mp4: '/images/projekte/mfh-kuenten/videos/06.mp4',
+        webm: '/images/projekte/mfh-kuenten/videos/06.webm',
+        poster: '/images/projekte/mfh-kuenten/videos/06-poster.jpg',
+      },
+    ],
   },
   {
     slug: 'mfh-letten',
@@ -482,6 +505,14 @@ export const projekte: Projekt[] = [
       { titel: 'Haus B, Nordwestfassade', datei: '/dokumente/projekte/mfh-hochwarting/08-haus-b-nordwestfassade.pdf' },
     ],
     featured: false,
+    videoClips: [
+      {
+        bildPfad: '/images/projekte/mfh-hochwarting/05.jpg',
+        mp4: '/images/projekte/mfh-hochwarting/videos/05.mp4',
+        webm: '/images/projekte/mfh-hochwarting/videos/05.webm',
+        poster: '/images/projekte/mfh-hochwarting/videos/05-poster.jpg',
+      },
+    ],
   },
   {
     slug: 'defh-safenwil',
@@ -889,6 +920,14 @@ export const projekte: Projekt[] = [
       { titel: 'Westansicht', datei: '/dokumente/projekte/wohnueberbauung-zelgi/08-westansicht.pdf' },
     ],
     featured: false,
+    videoClips: [
+      {
+        bildPfad: '/images/projekte/wohnueberbauung-zelgi/03.jpg',
+        mp4: '/images/projekte/wohnueberbauung-zelgi/videos/03.mp4',
+        webm: '/images/projekte/wohnueberbauung-zelgi/videos/03.webm',
+        poster: '/images/projekte/wohnueberbauung-zelgi/videos/03-poster.jpg',
+      },
+    ],
   },
   {
     slug: 'efh-merenschwand',
