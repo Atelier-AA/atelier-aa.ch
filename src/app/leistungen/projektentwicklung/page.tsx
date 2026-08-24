@@ -3,16 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import MachbarkeitCta from '@/components/ui/MachbarkeitCta';
 import ProjektentwicklungAnimation from '@/components/leistungen/ProjektentwicklungAnimation';
 import { projekte } from '@/data/projekte';
-import { firma } from '@/data/firma';
 import { breadcrumbSchema } from '@/lib/schema';
 import { ortMitKanton } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Projektentwicklung',
   description:
-    'Projektentwicklung von Atelier AA Architekten GmbH: von der Grundstücksidee über Potenzialanalyse und Wirtschaftlichkeit bis zum bewilligungsfähigen Projekt — für Investoren und Grundstückeigentümer in Zürich, Aargau und Zug.',
+    'Projektentwicklung von Atelier AA Architekten: von der Grundstücksidee bis zum bewilligungsfähigen Projekt, für Investoren in Zürich, Aargau und Zug.',
   alternates: { canonical: '/leistungen/projektentwicklung' },
 };
 
@@ -20,7 +20,7 @@ const schritte = [
   {
     nummer: '01',
     titel: 'Grundstück analysieren',
-    text: 'Lage, Zone, Ausnützung und Erschliessung — die Ausgangslage, bevor über Varianten gesprochen wird.',
+    text: 'Lage, Zone, Ausnützung und Erschliessung: die Ausgangslage, bevor über Varianten gesprochen wird.',
   },
   {
     nummer: '02',
@@ -109,7 +109,7 @@ export default function ProjektentwicklungPage() {
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-graphite md:text-xl">
                 Wir entwickeln Grundstücke und Liegenschaften von der ersten
-                Potenzialanalyse bis zur bewilligungsfähigen Projektidee — für
+                Potenzialanalyse bis zur bewilligungsfähigen Projektidee, für
                 Investoren, Grundstückeigentümer und institutionelle Bauherrschaften.
               </p>
             </div>
@@ -166,7 +166,7 @@ export default function ProjektentwicklungPage() {
                   <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                     <Image
                       src={p.thumbnail}
-                      alt={`${p.title}, ${ortMitKanton(p)}`}
+                      alt={`${p.title}, ${ortMitKanton(p)}, Atelier AA Architekten`}
                       fill
                       priority={idx < 2}
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
@@ -189,25 +189,8 @@ export default function ProjektentwicklungPage() {
         )}
       </Container>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. Animiert zum Anruf statt
-          FAQ (steht jetzt auf /haeufige-fragen). */}
-      <div className="mt-20 border-t border-mist pt-16 pb-4 md:mt-28">
-        <Container>
-          <div className="max-w-2xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-              Haben Sie ein <span className="font-semibold">Grundstück</span> im Blick?
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Rufen Sie uns an und schildern Sie uns Ihr Vorhaben — wir sagen Ihnen
-              offen, ob und wie sich eine Entwicklung lohnt.
-            </p>
-            <Button href={`tel:${firma.telefonHref}`} variant="primary">
-              {firma.telefon} anrufen
-            </Button>
-          </div>
-        </Container>
+      <div className="mt-20 md:mt-28">
+        <MachbarkeitCta />
       </div>
     </div>
   );

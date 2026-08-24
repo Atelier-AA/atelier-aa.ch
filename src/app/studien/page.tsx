@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import StudienGrid from '@/components/studien/StudienGrid';
 import { studien } from '@/data/studien';
 
 export const metadata: Metadata = {
   title: 'Studien',
   description:
-    'Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge von Atelier AA Architekten GmbH — Vorabklärungen, bevor aus einem Grundstück ein Bauprojekt wird.',
+    'Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge von Atelier AA Architekten GmbH: Vorabklärungen, bevor aus einem Grundstück ein Bauprojekt wird.',
   alternates: { canonical: '/studien' },
 };
 
@@ -21,7 +21,7 @@ export default function StudienPage() {
             Studien, die den <span className="font-semibold">Anfang</span> zeigen.
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
-            Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge — die Grundlage, bevor
+            Machbarkeitsstudien, Konzeptstudien und Wettbewerbsbeiträge, die Grundlage, bevor
             aus einem Grundstück ein konkretes Bauprojekt wird. Getrennt von den realisierten
             Referenzen, aber genauso Ausdruck unserer Ortskenntnis.
           </p>
@@ -30,25 +30,8 @@ export default function StudienPage() {
         <StudienGrid studien={studien} />
       </Container>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-              Fragen Sie sich, ob auf Ihrem <span className="font-semibold">Grundstück</span> mehr
-              möglich wäre?
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück möglich ist — mit
-              Volumenstudie und Kostenrahmen.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontakt aufnehmen
-            </Button>
-          </div>
-        </Container>
+      <div className="mt-24 md:mt-32">
+        <VorhabenCta />
       </div>
     </div>
   );

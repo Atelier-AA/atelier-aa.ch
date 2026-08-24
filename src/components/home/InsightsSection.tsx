@@ -20,12 +20,10 @@ export default function InsightsSection() {
         <div className="mb-10 max-w-2xl md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
           <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">
-            <span className="font-semibold">Fachbeiträge</span> aus unserer{' '}
-            <span className="font-semibold">Arbeit</span>
+            Aus dem <span className="font-semibold">Journal</span>
           </h2>
           <p className="mt-4 text-lg text-graphite leading-relaxed">
-            Verdichtung, Bewilligungsverfahren, Umbau im Alter, KI im Entwurf. Wir
-            schreiben über die Fragen, die uns Bauherrschaften stellen.
+            Fachbeiträge und Fragen aus unserer täglichen Arbeit.
           </p>
         </div>
 
@@ -40,7 +38,7 @@ export default function InsightsSection() {
               <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                 <Image
                   src={i.bild}
-                  alt={i.titel}
+                  alt={`${i.titel}, Atelier AA Architekten`}
                   fill
                   priority={idx < 2}
                   className="object-cover grayscale transition-[transform,filter] duration-500 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"

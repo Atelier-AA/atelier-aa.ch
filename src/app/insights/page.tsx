@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import InsightCard from '@/components/insights/InsightCard';
 import Eingeblendet from '@/components/ui/Eingeblendet';
-import Button from '@/components/ui/Button';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import { insights } from '@/data/insights';
 
 export const metadata: Metadata = {
   title: 'Journal',
   description:
-    'Fachbeiträge von Atelier AA Architekten GmbH zu KI im Entwurf, kreislauffähigem Bauen und der Rolle des Architekten. Mit Antworten auf häufige Fragen zu Honorar, Planungsphasen und Ablauf.',
+    'Fachbeiträge von Atelier AA Architekten zu KI im Entwurf, kreislauffähigem Bauen und der Rolle des Architekten.',
   alternates: { canonical: '/insights' },
 };
 
@@ -44,26 +44,8 @@ export default function InsightsPage() {
         </div>
       </Container>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-32 border-t border-mist pt-16 pb-20 md:mt-40 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Nächster Schritt
-            </p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-              Sie haben ein Vorhaben?
-            </h2>
-            <p className="mb-8 text-lg text-graphite leading-relaxed">
-              Ob Neubau, Umbau oder eine erste Machbarkeitsfrage – wir hören zu und sagen
-              Ihnen offen, was wir für sinnvoll halten.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontaktieren Sie uns
-            </Button>
-          </div>
-        </Container>
+      <div className="mt-32 md:mt-40">
+        <VorhabenCta />
       </div>
     </div>
   );

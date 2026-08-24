@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
 import { projekte } from '@/data/projekte';
 
@@ -19,12 +19,15 @@ export default function ProjektePage() {
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Referenzen
           </p>
+          {/* "Bestand" bleibt dem Hauptclaim vorbehalten, deshalb hier eine
+              andere Aussage, die zur Haltung "keine Architektur nach Schema"
+              passt. */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
-            <span className="font-semibold">Projekte</span>, die{' '}
-            <span className="font-semibold">Bestand</span> haben.
+            Jede <span className="font-semibold">Aufgabe</span> verlangt eine
+            eigene <span className="font-semibold">Antwort.</span>
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
-            Von der ersten Skizze bis zur präzisen Umsetzung – jedes Projekt
+            Von der ersten Skizze bis zur präzisen Umsetzung, jedes Projekt
             ist Ausdruck seines Ortes und seiner Nutzenden. Die folgende
             Auswahl zeigt einen Ausschnitt unserer Arbeit für Bauherrschaften
             in der ganzen Schweiz.
@@ -34,30 +37,8 @@ export default function ProjektePage() {
         <ProjekteFilter projekte={projekte} />
       </Container>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Nächster Schritt
-            </p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-              <span className="font-semibold">Architektur</span> mit{' '}
-              <span className="font-semibold">Verantwortung</span>
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Jedes Projekt beginnt mit dem Zuhören. Gemeinsam entwickeln wir
-              Architektur, die Funktion, Gestaltung und Nachhaltigkeit
-              verbindet – mit klarer Haltung und langfristigem Mehrwert.
-              Erfahren Sie, welche Leistungen wir dafür anbieten – vom
-              Vorprojekt bis zum Generalplaner-Mandat.
-            </p>
-            <Button href="/leistungen" variant="text">
-              Leistungen ansehen
-            </Button>
-          </div>
-        </Container>
+      <div className="mt-24 md:mt-32">
+        <VorhabenCta />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export const kompetenzen = [
       'Beratung vor Projektbeginn',
       'Klärung der Nutzungsanforderungen',
       'Raum- und Funktionsprogramm: Entwicklung eines Organisationsschemas',
-      'Grundstücksanalyse: Standortfaktoren und der Genius Loci',
+      'Grundstücksanalyse: Standort, Kontext und Rahmenbedingungen',
     ],
     text: 'Bevor die erste Linie gezeichnet ist, klären wir, was Ihr Projekt wirklich braucht, fachlich fundiert und auf Ihr Grundstück zugeschnitten.',
   },
@@ -66,7 +66,7 @@ export const kompetenzen = [
     punkte: [
       'Vollumfängliche Planung Ihres individuellen Bauvorhabens',
       'Übernahme Ihrer koordinativen Aufgaben und Pflichten',
-      'Atelier AA Architekten als Ihr alleiniger Vertrags- und Ansprechpartner',
+      'Ein zentraler Ansprechpartner für das gesamte Planungsteam',
     ],
     text: 'Als Generalplaner arbeiten wir konsequent auf einen termin- und kostengerechten Projekterfolg mit hoher architektonischer Qualität hin.',
   },
@@ -133,7 +133,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Welche Leistungen erbringen Sie nach SIA?',
     antwort:
-      'Wir arbeiten nach der Ordnung SIA 102 und deren Leistungsphasen: Strategische Planung, Vorstudien, Projektierung, Ausschreibung und Realisierung. Sie können diese Phasen einzeln oder zusammen beauftragen — üblich ist der Einstieg mit Vorstudie und Vorprojekt.',
+      'Wir arbeiten nach der Ordnung SIA 102 und deren Leistungsphasen: Strategische Planung, Vorstudien, Projektierung, Ausschreibung und Realisierung. Sie können diese Phasen einzeln oder zusammen beauftragen. Üblich ist der Einstieg mit Vorstudie und Vorprojekt.',
   },
   {
     frage: 'Können wir nur eine Machbarkeitsstudie beauftragen?',
@@ -153,7 +153,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Planen Sie auch Minergie oder zertifizierte Bauten?',
     antwort:
-      'Ja. Minergie, Minergie-P und SNBS sind uns vertraut. Wir weisen aber offen darauf hin, wo ein Zertifikat Mehrkosten verursacht, die sich im Betrieb nicht rechnen — die Entscheidung liegt bei Ihnen.',
+      'Ja. Minergie, Minergie-P und SNBS sind uns vertraut. Wir weisen aber offen darauf hin, wo ein Zertifikat Mehrkosten verursacht, die sich im Betrieb nicht rechnen. Die Entscheidung liegt bei Ihnen.',
   },
   {
     frage: 'Wie stellen Sie Kostensicherheit her?',
@@ -163,12 +163,12 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Was unterscheidet Sie von anderen Architekturbüros?',
     antwort:
-      'Der Gründer bringt über fünfzehn Jahre eigene Bau- und Immobilienpraxis mit. Das führt dazu, dass wirtschaftliche Fragen — Mietzinsniveau, Wohnungsmix, Vermietbarkeit — von Anfang an im Entwurf mitgedacht werden, statt erst am Ende geprüft zu werden.',
+      'Der Gründer bringt über fünfzehn Jahre eigene Bau- und Immobilienpraxis mit. Das führt dazu, dass wirtschaftliche Fragen (Mietzinsniveau, Wohnungsmix, Vermietbarkeit) von Anfang an im Entwurf mitgedacht werden, statt erst am Ende geprüft zu werden.',
   },
   {
     frage: 'Welche Leistungen bieten Sie an?',
     antwort:
-      'Architektur und Entwurf, Umbau und Sanierung, Projektentwicklung sowie Bauleitung — von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
+      'Architektur und Entwurf, Umbau und Sanierung, Projektentwicklung sowie Bauleitung: von der Machbarkeitsstudie über das Baugesuch bis zur Übergabe. Wir übernehmen einzelne Phasen oder die gesamte Planung.',
   },
   {
     frage: 'In welchen Regionen arbeitet Atelier AA Architekten?',
@@ -212,7 +212,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Was, wenn sich herausstellt, dass nichts möglich ist?',
     antwort:
-      'Auch das ist ein Ergebnis — und günstiger, als es ohne Prüfung erst in der Bauplanung zu erfahren.',
+      'Auch das ist ein Ergebnis, und günstiger, als es ohne Prüfung erst in der Bauplanung zu erfahren.',
   },
   // Vormals auf /leistungen/projektentwicklung.
   {

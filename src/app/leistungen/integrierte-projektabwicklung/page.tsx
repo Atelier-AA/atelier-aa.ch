@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -77,10 +77,11 @@ export default function IntegrierteProjektabwicklungPage() {
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-graphite">
           Wir haben uns intensiv mit integrierten Projektabwicklungsmodellen wie
           Design-Build auseinandergesetzt und wenden in einem aktuellen Projekt bereits
-          zentrale Prinzipien daraus an — nicht als starres Schema, sondern
+          zentrale Prinzipien daraus an, nicht als starres Schema, sondern
           projektbezogen, dort wo es ein Projekt tatsächlich besser macht.
         </p>
 
+        <h2 className="sr-only">Was sich dadurch ändert</h2>
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-8 border-t border-mist pt-16 sm:grid-cols-2 md:mt-20">
           {PUNKTE.map((punkt) => (
             <div key={punkt.titel} className="border-t border-mist pt-5">
@@ -99,19 +100,11 @@ export default function IntegrierteProjektabwicklungPage() {
           </Link>
         </div>
 
-        <div className="mt-24 max-w-3xl border-t border-mist pt-16 md:mt-32">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-            Sie möchten bauen?
-          </h2>
-          <p className="mb-8 text-lg leading-relaxed text-graphite">
-            Sprechen Sie mit uns über Ihr Projekt — offen, konkret und unverbindlich.
-          </p>
-          <Button href="/kontakt" variant="text">
-            Kontakt aufnehmen
-          </Button>
-        </div>
       </Container>
+
+      <div className="mt-24 md:mt-32">
+        <VorhabenCta />
+      </div>
     </div>
   );
 }

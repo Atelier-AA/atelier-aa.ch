@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
-import MehrLesen from '@/components/ui/MehrLesen';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import AblaufSection from '@/components/home/AblaufSection';
 import { bauaufgaben, kompetenzen } from '@/data/expertise';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
   description:
-    'Leistungen von Atelier AA Architekten GmbH: Neubau, Umbau und Sanierung, Verdichtung, Projektentwicklung, Bauleitung und Generalplanung für Wohnen und Gewerbe — Schwerpunkt Zürich, Aargau, Zug, auf Anfrage in der ganzen Schweiz.',
+    'Leistungen von Atelier AA Architekten: Neubau, Umbau, Verdichtung, Projektentwicklung und Generalplanung in Zürich, Aargau und Zug.',
   alternates: { canonical: '/leistungen' },
 };
 
@@ -21,31 +20,29 @@ export default function LeistungenPage() {
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
           <div>
-            {/* Tragende Begriffe fett, der Rest der Zeile normal. */}
+            {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
+                soll fachlich bleiben und mit den echten Leistungen
+                arbeiten, nicht mit einer weiteren Markenbotschaft, die mit
+                Hero, Intro und Büro-Abschnitt konkurrieren würde. Der
+                Einleitungstext bewusst deutlich verdichtet (ca. 50-60% der
+                vorherigen Länge) — Themen wie Lebenszykluskosten oder
+                Aufstockung/Anbau/Ersatzneubau gehören nicht in diesen Block. */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-6">
-              <span className="font-semibold">Architektur</span> mit Klarheit
+              Von der ersten <span className="font-semibold">Frage</span>
               <br />
-              und <span className="font-semibold">Verantwortung.</span>
+              bis zur <span className="font-semibold">Realisierung.</span>
             </h1>
             <div className="space-y-5 text-graphite leading-relaxed">
               <p>
-                Das Atelier AA Architekten bietet den gesamten Planungsprozess an – von der ersten Idee
-                bis zur hochwertigen Ausführung, auf Wunsch auch im Generalplaner-Mandat.
-                Wir übersetzen die Anforderungen von Menschen, Nutzung und Ort in
-                Architektur, die funktional, nachhaltig und wirtschaftlich trägt – mit
-                Schwerpunkt in den Kantonen Zürich, Aargau und Zug, für passende Aufgaben
-                auch darüber hinaus. Wie das konkret aussieht, zeigen die folgenden fünf
-                Leistungen.
+                Atelier AA Architekten begleitet den gesamten Planungsprozess, von der
+                ersten Idee bis zur hochwertigen Ausführung, auf Wunsch auch im
+                Generalplaner-Mandat.
               </p>
-              <MehrLesen nurMobil>
-                <p>
-                  Nachhaltigkeit ist für uns eine Rechenaufgabe: Wir rechnen
-                  Lebenszykluskosten neben den Erstellungskosten und legen offen, welche
-                  Massnahmen sich über die Nutzungsdauer tragen. Wo Bauland knapp ist, prüfen
-                  wir zuerst, welcher Weg trägt – Aufstockung, Anbau oder Ersatzneubau – bevor
-                  gestaltet wird.
-                </p>
-              </MehrLesen>
+              <p>
+                Ort, Nutzung, Machbarkeit, Wirtschaftlichkeit und Realisierung werden
+                zusammen gedacht, mit Schwerpunkt in Zürich, Aargau und Zug. Wie das
+                konkret aussieht, zeigen die folgenden fünf Leistungen.
+              </p>
             </div>
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
@@ -149,7 +146,7 @@ export default function LeistungenPage() {
           Text weiterhin, Screenreader ebenfalls — nur auf dem Bildschirm
           nimmt er keinen Platz mehr weg. */}
       <section className="sr-only">
-        <h2>Bauaufgaben — wofür wir Erfahrung mitbringen</h2>
+        <h2>Bauaufgaben: wofür wir Erfahrung mitbringen</h2>
         <div>
           {bauaufgaben.map((b) => (
             <div key={b.kategorie}>
@@ -160,29 +157,7 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="border-t border-mist pt-16 pb-20 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Nächster Schritt
-            </p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
-              Sie möchten bauen?
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Ob Neubau, Sanierung oder Verdichtung – sprechen Sie mit uns über Ihr
-              Projekt. In einem ersten Gespräch klären wir Potenzial, Rahmenbedingungen
-              und die nächsten Schritte, unverbindlich und auf Ihre Situation
-              zugeschnitten.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontakt aufnehmen
-            </Button>
-          </div>
-        </Container>
-      </div>
+      <VorhabenCta />
     </div>
   );
 }

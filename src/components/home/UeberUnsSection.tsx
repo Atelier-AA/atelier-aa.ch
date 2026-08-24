@@ -7,6 +7,11 @@ import Button from '@/components/ui/Button';
  * — hebt den Satz optisch heraus. Bg-mist grenzt den Abschnitt weiterhin von
  * den weissen Nachbarn ab; ein Porträt des Gründers füllt die Fläche neben
  * dem Text.
+ *
+ * "Bevor wir gestalten, wollen wir verstehen." ist laut Markenhierarchie die
+ * Haltungs-Aussage, die ausschliesslich hier steht (Büro-Abschnitt) — nicht
+ * im Hero und nicht im Intro darüber. Der Fliesstext darunter blieb bewusst
+ * weitgehend der ursprüngliche Text.
  */
 export default function UeberUnsSection() {
   return (
@@ -15,17 +20,14 @@ export default function UeberUnsSection() {
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Büro</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
-            {/* Wörtlich von der Über-uns-Seite; tragende Begriffe fett,
-                der Rest der Zeile normal. */}
             <h2 className="max-w-[20ch] text-4xl font-normal leading-[1.15] tracking-tight text-ink md:text-5xl lg:text-6xl">
-              Wir gestalten <span className="font-semibold">Architektur</span> mit
-              Verantwortung für Menschen, Orte und{' '}
-              <span className="font-semibold">Zukunft.</span>
+              Bevor wir gestalten, wollen wir{' '}
+              <span className="font-semibold">verstehen.</span>
             </h2>
             <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-graphite">
               Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
               dem Charakter des Ortes und den Bedürfnissen der Nutzenden entsteht der
-              Entwurf — geprüft anhand der SIA-Leistungsphasen und einer frühen
+              Entwurf, geprüft anhand der SIA-Leistungsphasen und einer frühen
               Kostenschätzung.
             </p>
             <div className="mt-7">

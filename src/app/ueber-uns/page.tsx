@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import MehrLesen from '@/components/ui/MehrLesen';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import { getTeamMember } from '@/data/team';
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ const ANSAETZE = [
   },
   {
     titel: 'Verantwortung für den gesamten Prozess',
-    text: 'Gestaltung, Kosten, Termine, Bewilligungsfähigkeit und Ausführung müssen zusammen gedacht werden — nicht nur der Entwurf.',
+    text: 'Gestaltung, Kosten, Termine, Bewilligungsfähigkeit und Ausführung müssen zusammen gedacht werden, nicht nur der Entwurf.',
   },
 ];
 
@@ -124,30 +125,40 @@ export default function UeberUnsPage() {
             <span className="font-semibold">aussieht</span>, sondern auch, wie sie{' '}
             <span className="font-semibold">entsteht.</span>
           </h2>
-          <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-graphite">
-            <p>
-              Die Qualität eines Projekts entscheidet sich nicht allein im Entwurf. Sie wird
-              ebenso davon geprägt, wie früh Wissen zusammenkommt, wie Entscheidungen getroffen
-              werden und wie eng Planung, Wirtschaftlichkeit und Ausführung miteinander
-              verbunden sind.
-            </p>
-            <p>
-              Deshalb haben wir uns bei Atelier AA intensiv mit integrierten
-              Projektabwicklungsmodellen wie Design-Build auseinandergesetzt. In einem
-              aktuellen Projekt haben wir bereits begonnen, zentrale Prinzipien daraus
-              anzuwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen
-              früher zusammen, beziehen relevantes Fachwissen gezielter in den Prozess ein und
-              schaffen damit eine breitere Grundlage für Entscheidungen.
-            </p>
-            <p>
-              Uns interessiert dabei nicht, ein neues Modell einfach zu übernehmen.{' '}
-              <span className="font-medium text-ink">
-                Wir wollen verstehen, welche Prinzipien ein Projekt tatsächlich besser machen.
-              </span>{' '}
-              Design-Build verstehen wir deshalb nicht als starres Schema, sondern als einen
-              Ansatz, den wir weiterdenken und projektbezogen einsetzen — denn auch die Art,
-              wie ein Projekt entsteht, ist für uns Teil der Architektur.
-            </p>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-graphite">
+            Die Qualität eines Projekts entscheidet sich nicht allein im Entwurf, sondern
+            auch davon, wie früh Wissen zusammenkommt und wie eng Planung, Wirtschaftlichkeit
+            und Ausführung miteinander verbunden sind. Deshalb haben wir uns mit integrierten
+            Projektabwicklungsmodellen wie Design-Build auseinandergesetzt und wenden in
+            einem aktuellen Projekt bereits zentrale Prinzipien daraus an.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-3">
+            <div className="border-t border-mist pt-5">
+              <h3 className="text-base font-medium text-ink">Wissen früher zusammenbringen</h3>
+              <p className="mt-3 text-sm leading-relaxed text-graphite">
+                Relevantes Fachwissen fliesst gezielter in den Prozess ein, statt erst nach
+                der Planung eingeholt zu werden.
+              </p>
+            </div>
+            <div className="border-t border-mist pt-5">
+              <h3 className="text-base font-medium text-ink">Entscheidungen früher treffen</h3>
+              <p className="mt-3 text-sm leading-relaxed text-graphite">
+                Technische und wirtschaftliche Konsequenzen werden sichtbar, bevor der Entwurf
+                feststeht.
+              </p>
+            </div>
+            <div className="border-t border-mist pt-5">
+              <h3 className="text-base font-medium text-ink">Planung und Ausführung verbinden</h3>
+              <p className="mt-3 text-sm leading-relaxed text-graphite">
+                Planung, Ausführung und wirtschaftliche Überlegungen werden früher
+                zusammengebracht, statt strikt nacheinander gedacht.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-graphite">
+            <p>Wir wollen verstehen, welche Prinzipien ein Projekt tatsächlich besser machen.</p>
             <p className="pt-2 text-2xl font-medium leading-snug text-ink">
               Bevor wir gestalten, wollen wir verstehen. Bevor wir entscheiden, wollen wir das
               relevante Wissen zusammenbringen.
@@ -195,23 +206,8 @@ export default function UeberUnsPage() {
         </Container>
       </div>
 
-      {/* Trennstrich ausserhalb des Container, randvoll über die ganze
-          Fensterbreite, wie auf der Startseite. */}
-      <div className="mt-24 border-t border-mist pt-16 pb-20 md:mt-32 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
-              Sie haben ein <span className="font-semibold">Vorhaben?</span>
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Sprechen wir über Ihr Projekt, offen, konkret und unverbindlich.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontaktieren Sie uns
-            </Button>
-          </div>
-        </Container>
+      <div className="mt-24 md:mt-32">
+        <VorhabenCta />
       </div>
     </div>
   );

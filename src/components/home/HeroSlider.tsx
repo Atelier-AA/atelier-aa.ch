@@ -96,7 +96,7 @@ export default function HeroSlider() {
         >
           <Image
             src={slide.image}
-            alt={`${slide.projekt}, ${ortMitKanton(slide)}`}
+            alt={`${slide.projekt}, ${ortMitKanton(slide)}, Atelier AA Architekten`}
             fill
             priority={idx === 0}
             className="object-cover"
@@ -118,6 +118,9 @@ export default function HeroSlider() {
               visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
+          {/* Bewusst keine Subline im Hero: Die Erklärung des Hauptclaims
+              steht im zweiten Startseiten-Block (IntroSection), der Hero
+              selbst bleibt visuell und inhaltlich ruhig. */}
           <h1 className="text-left text-[2.1rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.8rem] lg:text-[5.6rem]">
             <span className="block whitespace-nowrap">Architektur mit</span>{' '}
             <span className="block whitespace-nowrap">Bestand.</span>

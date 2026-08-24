@@ -6,7 +6,7 @@ import { firma } from '@/data/firma';
 export const metadata: Metadata = {
   title: 'Karriere',
   description:
-    'Offene Stelle bei Atelier AA Architekten GmbH in Obfelden: Architekt:in FH/ETH oder Zeichner:in EFZ Fachrichtung Architektur, 80–100 %.',
+    'Offene Stelle bei Atelier AA Architekten GmbH in Obfelden: Architekt:in FH/ETH oder Zeichner:in EFZ Fachrichtung Architektur, 80 bis 100 %.',
   alternates: { canonical: '/ueber-uns/karriere' },
 };
 
@@ -61,7 +61,7 @@ export default function KarrierePage() {
           <span className="font-semibold">Zeichner:in</span> EFZ Fachrichtung
           Architektur
         </h1>
-        <p className="mb-10 text-sm uppercase tracking-widest text-stone">80–100 %</p>
+        <p className="mb-10 text-sm uppercase tracking-widest text-stone">80 bis 100 %</p>
 
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <div>
@@ -77,7 +77,7 @@ export default function KarrierePage() {
             </dl>
 
             <h2 className="mb-4 text-2xl font-normal leading-tight text-ink">
-              Architektur mit <span className="font-semibold">bleibendem Wert.</span>
+              Ein Architekturbüro im <span className="font-semibold">Kanton Zürich.</span>
             </h2>
             <div className="space-y-4 text-graphite leading-relaxed">
               <p>

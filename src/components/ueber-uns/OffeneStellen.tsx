@@ -10,13 +10,13 @@ export default function OffeneStellen() {
             Karriere
           </p>
           <h2 className="text-3xl md:text-4xl font-normal text-ink mb-8 leading-tight">
-            Sind Sie <span className="font-semibold">kreativ</span> und wollen{' '}
-            <span className="font-semibold">mitgestalten</span>? Dann melden Sie sich bei uns.
+            Sie denken gerne mit, <span className="font-semibold">hinterfragen</span>{' '}
+            und <span className="font-semibold">entwickeln weiter?</span>
           </h2>
           <p className="text-lg text-graphite leading-relaxed mb-10">
-            Architektur entsteht bei uns im Team. Wenn Sie Leidenschaft für klare,
-            reduzierte Räume, Nachhaltigkeit und präzises Arbeiten teilen, freuen wir
-            uns auf Ihre Bewerbung.
+            Architektur entsteht bei uns im Team. Wenn Sie Freude an klaren,
+            reduzierten Räumen, an Nachhaltigkeit und an präzisem Arbeiten haben,
+            freuen wir uns auf Ihre Bewerbung.
           </p>
           <Button href="/ueber-uns/karriere" variant="text">
             offene Position ansehen

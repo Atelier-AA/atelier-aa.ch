@@ -4,9 +4,12 @@ import Button from '@/components/ui/Button';
 import MehrLesen from '@/components/ui/MehrLesen';
 
 /**
- * Manifest-Satz mit Gewichts-Kontrast innerhalb derselben Zeile: die
- * tragenden Schlüsselwörter fett, der Rest der Zeile normal — nicht
- * umgekehrt. Daneben ein Bild eines Referenzprojekts statt einer Kennzahl
+ * Diese Sektion trägt die "Erklärung" der Marke (Markenhierarchie: Marke im
+ * Hero → Erklärung hier → Haltung im Büro-Abschnitt weiter unten). Bewusst
+ * kein zweiter, konkurrierender Claim wie vorher "Wir glauben an Architektur
+ * mit bleibendem Wert." — der Satz war inhaltlich zu ähnlich zu "Architektur
+ * mit Bestand." im Hero direkt darüber.
+ * Daneben ein Bild eines Referenzprojekts statt einer Kennzahl
  * (Gründungsjahr): für Besucher ist das der relevantere Einstiegspunkt.
  *
  * Der Button steht bewusst in einer eigenen Grid-Zeile unterhalb von
@@ -21,9 +24,10 @@ export default function IntroSection() {
         <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[2fr_3fr]">
           {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <div className="lg:col-start-1 lg:row-start-1">
-            <h2 className="max-w-[18ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
-              Wir glauben an <span className="font-semibold">Architektur</span> mit
-              bleibendem <span className="font-semibold">Wert.</span>
+            <h2 className="max-w-[20ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
+              Wir gestalten Architektur aus dem{' '}
+              <span className="font-semibold">Verständnis für Ort, Aufgabe</span>{' '}
+              und <span className="font-semibold">Potenzial.</span>
             </h2>
             {/* Nur der erste, konkreteste Satz bleibt sichtbar; die weiteren
                 zwei Absätze stehen hinter "mehr lesen" — Bildspalte kann so
