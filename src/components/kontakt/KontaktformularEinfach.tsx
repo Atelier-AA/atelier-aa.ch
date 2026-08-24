@@ -11,7 +11,7 @@ import { firma } from '@/data/firma';
  * (z. B. RESEND_API_KEY noch nicht gesetzt), öffnet ein mailto-Link als
  * Auffangnetz, statt die Anfrage stillschweigend zu verlieren. */
 const feldStil =
-  'w-full rounded-[3px] border border-[#d9d7d4] bg-white px-4 py-3 text-base text-ink placeholder:text-stone focus:border-ink focus:outline-none';
+  'w-full rounded-[3px] border border-[#d9d7d4] bg-white px-4 py-3 text-base text-ink placeholder:text-stone focus:border-ink focus:outline-none focus-visible:ring-1 focus-visible:ring-ink focus-visible:ring-offset-1';
 
 type Status = 'idle' | 'senden' | 'gesendet' | 'fehler';
 
@@ -78,15 +78,32 @@ export default function KontaktformularEinfach() {
         />
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <input name="vorname" type="text" required placeholder="Vorname *" className={feldStil} />
-          <input name="nachname" type="text" required placeholder="Nachname *" className={feldStil} />
-          <input name="email" type="email" required placeholder="E-Mail *" className={feldStil} />
-          <input name="telefon" type="tel" placeholder="Telefonnummer" className={feldStil} />
+          <div>
+            <label htmlFor="vorname" className="sr-only">Vorname</label>
+            <input id="vorname" name="vorname" type="text" required placeholder="Vorname *" className={feldStil} />
+          </div>
+          <div>
+            <label htmlFor="nachname" className="sr-only">Nachname</label>
+            <input id="nachname" name="nachname" type="text" required placeholder="Nachname *" className={feldStil} />
+          </div>
+          <div>
+            <label htmlFor="email" className="sr-only">E-Mail</label>
+            <input id="email" name="email" type="email" required placeholder="E-Mail *" className={feldStil} />
+          </div>
+          <div>
+            <label htmlFor="telefon" className="sr-only">Telefonnummer</label>
+            <input id="telefon" name="telefon" type="tel" placeholder="Telefonnummer" className={feldStil} />
+          </div>
         </div>
 
-        <input name="unternehmen" type="text" placeholder="Unternehmen" className={`${feldStil} mt-5`} />
-        <input name="betreff" type="text" placeholder="Betreff" className={`${feldStil} mt-5`} />
-        <textarea name="nachricht" required rows={6} placeholder="Nachricht *" className={`${feldStil} mt-5 resize-y`} />
+        <label htmlFor="unternehmen" className="sr-only">Unternehmen</label>
+        <input id="unternehmen" name="unternehmen" type="text" placeholder="Unternehmen" className={`${feldStil} mt-5`} />
+
+        <label htmlFor="betreff" className="sr-only">Betreff</label>
+        <input id="betreff" name="betreff" type="text" placeholder="Betreff" className={`${feldStil} mt-5`} />
+
+        <label htmlFor="nachricht" className="sr-only">Nachricht</label>
+        <textarea id="nachricht" name="nachricht" required rows={6} placeholder="Nachricht *" className={`${feldStil} mt-5 resize-y`} />
 
         <label className="mt-6 flex items-start gap-2.5 text-xs leading-relaxed text-stone">
           <input type="checkbox" required className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-ink" />
