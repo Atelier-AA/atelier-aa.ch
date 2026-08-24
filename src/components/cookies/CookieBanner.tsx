@@ -98,7 +98,7 @@ export default function CookieBanner() {
       role="dialog"
       aria-modal="false"
       aria-label="Cookie-Einstellungen"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-mist bg-paper/98 px-6 py-6 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur sm:px-10"
+      className="fixed inset-x-0 bottom-0 z-20 border-t border-mist bg-paper/98 px-6 py-6 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur sm:px-10"
     >
       <div className="mx-auto max-w-4xl">
         {!einstellungenOffen ? (

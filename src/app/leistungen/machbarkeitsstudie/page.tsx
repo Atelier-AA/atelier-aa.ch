@@ -152,7 +152,7 @@ export default function MachbarkeitsstudiePage() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {studien
               .filter((s) =>
-                ['obfelden', 'birmensdorf', 'muemliswil', 'schinznach-bad'].includes(s.slug)
+                ['obfelden', 'birmensdorf', 'muemliswil', 'wuerenlos'].includes(s.slug)
               )
               .map((s, idx) => {
                 const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
