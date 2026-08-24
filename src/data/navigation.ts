@@ -20,13 +20,23 @@ export const navigation: NavLink[] = [
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
-// Nicht im Hauptmenü, nur im Footer verlinkt.
-export const footerZusatz: NavLink[] = [
-  { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
-  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
-  { href: '/kleinprojekte', label: 'Kleinprojekte' },
+// Footer, zwei inhaltlich getrennte Gruppen statt einer langen Linkliste —
+// "Atelier" (das Büro) und "Arbeit" (was wir tun).
+export const footerAtelier: NavLink[] = [
+  { href: '/ueber-uns', label: 'Büro' },
+  { href: '/ueber-uns/team', label: 'Team' },
+  { href: '/insights', label: 'Journal' },
   { href: '/ueber-uns/karriere', label: 'Karriere' },
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
+];
+
+export const footerArbeit: NavLink[] = [
+  { href: '/projekte', label: 'Projekte' },
+  { href: '/studien', label: 'Studien' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
+  { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
+  { href: '/kleinprojekte', label: 'Kleinprojekte' },
 ];
 
 export const footerLegal: NavLink[] = [

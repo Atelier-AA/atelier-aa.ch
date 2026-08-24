@@ -1,17 +1,16 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Logo from './Logo';
-import { navigation, footerZusatz, footerLegal } from '@/data/navigation';
+import { footerAtelier, footerArbeit, footerLegal } from '@/data/navigation';
 import { firma, sozialeMedien } from '@/data/firma';
 import { alleKantone } from '@/lib/regionen';
 import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
-import { cn } from '@/lib/utils';
 
 /**
  * Fusszeile auf einer Ebene: Wortmarke und Kernsatz stehen zusammen mit
- * Kontakt und Navigation in einem einzigen Block, statt in gestapelten,
- * durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile am Ende ist
- * durch eine feine Linie abgesetzt.
+ * Kontakt und den zwei Themenspalten in einem einzigen Block, statt in
+ * gestapelten, durch Trennlinien geteilten Zonen. Nur die Rechtlich-Zeile
+ * am Ende ist durch eine feine Linie abgesetzt.
  *
  * Bewusst ohne eigenen oberen Aussenabstand: Jede Seite bringt ihren
  * Abstand zum Seitenende schon selbst mit (üblich: `pb-20 md:pb-28`).
@@ -19,12 +18,6 @@ import { cn } from '@/lib/utils';
  * aber eine störende weisse Lücke, sobald der letzte Seitenabschnitt eine
  * eigene Hintergrundfarbe hatte (z. B. die Karriere-Box auf /ueber-uns).
  */
-/** "Team" steht als Unterlink von "Büro" hier direkt danach, statt in der
- *  Spalte mit den übrigen Zusatzseiten. */
-const navigationMitTeam = navigation.flatMap((item) =>
-  item.unterlink ? [item, { href: item.unterlink.href, label: item.unterlink.label }] : [item]
-);
-
 export default function Footer() {
   const year = new Date().getFullYear();
   const kantone = alleKantone();
@@ -35,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <Container className="py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto_auto] lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-12">
           <div className="max-w-md">
             <div className="mb-6 h-[35px] text-white md:h-[40px]">
               <Logo />
@@ -92,12 +85,26 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <p className="mt-6 text-xs text-white/50">
+              Tätigkeitsgebiet:{' '}
+              {kantone.map((k, i) => (
+                <span key={k.slug}>
+                  <Link
+                    href={`/regionen/${k.slug}`}
+                    className="underline underline-offset-2 hover:text-white"
+                  >
+                    {k.name}
+                  </Link>
+                  {i < kantone.length - 1 && ' · '}
+                </span>
+              ))}
+            </p>
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Navigation</h3>
+            <h3 className={spaltenTitel}>Atelier</h3>
             <ul>
-              {navigationMitTeam.map((item) => (
+              {footerAtelier.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={verweis}>
                     {item.label}
@@ -108,34 +115,12 @@ export default function Footer() {
           </div>
 
           <div>
-            {/* Ohne eigenen sichtbaren Titel — die Links sind auch ohne
-                Überschrift verständlich. Dasselbe Element wie die echten
-                Spaltentitel (nur unsichtbar statt weglassen), damit die
-                Liste exakt auf derselben Höhe wie Navigation und Kantone
-                beginnt, statt nur ungefähr per fester Pixelhöhe. */}
-            <h3 className={cn(spaltenTitel, 'hidden invisible lg:block')} aria-hidden="true">
-              Weitere Seiten
-            </h3>
+            <h3 className={spaltenTitel}>Arbeit</h3>
             <ul>
-              {footerZusatz.map((item) => (
+              {footerArbeit.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={verweis}>
                     {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className={cn(spaltenTitel, 'hidden invisible lg:block')} aria-hidden="true">
-              Kantone
-            </h3>
-            <ul>
-              {kantone.map((k) => (
-                <li key={k.slug}>
-                  <Link href={`/regionen/${k.slug}`} className={verweis}>
-                    Kanton {k.name}
                   </Link>
                 </li>
               ))}

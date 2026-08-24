@@ -71,7 +71,7 @@ export default function Header() {
               gleich groß und an derselben Stelle, egal in welchem Zustand. */}
           <Link
             href="/"
-            aria-label="Atelier AA Architekten – Startseite"
+            aria-label="Atelier AA Architekten: Startseite"
             className="block h-[44px] md:h-[52px]"
           >
             <Logo collapsed={collapsed} />
@@ -87,11 +87,8 @@ export default function Header() {
               aria-label="Kurznavigation"
               className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
             >
-              <Link
-                href="/leistungen"
-                className="hidden transition-opacity hover:opacity-60 lg:inline"
-              >
-                Leistungen
+              <Link href="/projekte" className="transition-opacity hover:opacity-60">
+                Projekte
               </Link>
               <Link
                 href="/ueber-uns"
@@ -99,8 +96,11 @@ export default function Header() {
               >
                 Büro
               </Link>
-              <Link href="/projekte" className="transition-opacity hover:opacity-60">
-                Projekte
+              <Link
+                href="/leistungen"
+                className="hidden transition-opacity hover:opacity-60 lg:inline"
+              >
+                Leistungen
               </Link>
               <Link href="/kontakt" className="transition-opacity hover:opacity-60">
                 Kontakt
