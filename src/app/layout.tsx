@@ -7,6 +7,7 @@ import GoogleAnalytics from '@/components/cookies/GoogleAnalytics';
 import MarketingPixel from '@/components/cookies/MarketingPixel';
 import { firma } from '@/data/firma';
 import { team } from '@/data/team';
+import { organisationSchema } from '@/lib/schema';
 import './globals.css';
 
 // Inter als Variable Font — wie im alten WordPress-Theme, das
@@ -87,60 +88,6 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 };
 
-/**
- * Strukturierte Firmendaten für Suchmaschinen und KI-Systeme.
- *
- * `ArchitecturalService` ist der spezifische schema.org-Typ für
- * Architekturbüros und ordnet die Seite eindeutig einer Branche, einem Ort und
- * einem Leistungsangebot zu. Genau diese Angaben braucht ein Sprachmodell, um
- * bei Fragen wie "Architekt in Obfelden" die Firma nennen zu können.
- */
-const organisationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ArchitecturalService',
-  '@id': 'https://www.atelier-aa.ch/#organisation',
-  name: firma.name,
-  url: 'https://www.atelier-aa.ch',
-  logo: 'https://www.atelier-aa.ch/images/logo/atelier-aa-signet-512.png',
-  telephone: firma.telefon,
-  email: firma.email,
-  foundingDate: firma.gruendung,
-  vatID: firma.uid,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: firma.strasse,
-    postalCode: firma.plz,
-    addressLocality: firma.ort,
-    addressRegion: 'ZH',
-    addressCountry: 'CH',
-  },
-  // Gemeinde-Koordinaten von Obfelden, nicht vermessen — für die Genauigkeit,
-  // die dieses Markup braucht, reicht das; eine Adress-genaue Vermessung
-  // würde keinen echten Zusatznutzen bringen.
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 47.2775,
-    longitude: 8.4372,
-  },
-  areaServed: { '@type': 'Country', name: 'Schweiz' },
-  knowsLanguage: ['de-CH'],
-  founder: { '@type': 'Person', name: firma.vertretungsberechtigt },
-  employee: team.map((m) => ({
-    '@id': `https://www.atelier-aa.ch/ueber-uns/${m.slug}#person`,
-  })),
-  description:
-    'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',
-  makesOffer: [
-    'Architektur und Entwurf',
-    'Umbau und Sanierung',
-    'Projektentwicklung',
-    'Bauleitung',
-  ].map((name) => ({
-    '@type': 'Offer',
-    itemOffered: { '@type': 'Service', name },
-  })),
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -151,7 +98,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema(firma, team)) }}
         />
         <Header />
         <main id="main" className="flex-1">
