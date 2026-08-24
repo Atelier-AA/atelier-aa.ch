@@ -9,6 +9,74 @@ import type { Insight, InsightFrage } from '@/types';
  */
 export const insights: Insight[] = [
   {
+    slug: 'design-build-projektabwicklung',
+    titel: 'Design-Build: Warum wir neue Formen der Projektabwicklung weiterdenken',
+    lead: 'Gute Architektur entscheidet sich nicht nur im Entwurf, sondern auch darin, wie ein Projekt organisiert wird. Wir beschäftigen uns mit integrierten Abwicklungsmodellen wie Design-Build — und wenden erste Prinzipien bereits in einem aktuellen Projekt an.',
+    kategorie: 'Prozess',
+    datum: '2026-08-20',
+    lesezeit: 6,
+    bild: '/images/buero/buero-1.jpg',
+    abschnitte: [
+      {
+        titel: 'Warum wir uns damit beschäftigen',
+        absaetze: [
+          'Klassische Projektabläufe führen häufig dazu, dass relevantes Wissen erst spät zusammenkommt: Der Entwurf steht weitgehend, bevor Fragen der Ausführung, der Kosten oder der Machbarkeit vollständig geklärt sind. Architektonische, technische und wirtschaftliche Entscheidungen beeinflussen sich aber gegenseitig — je später sie gemeinsam betrachtet werden, desto teurer wird jede Korrektur.',
+          'Uns interessiert deshalb, wie sich relevantes Wissen früher in einen Projektprozess einbinden lässt, statt es erst dann zu prüfen, wenn der Entwurf längst feststeht.',
+        ],
+      },
+      {
+        titel: 'Was Design-Build verändert',
+        absaetze: [
+          'Design-Build ist ein Modell integrierter Projektabwicklung: Planung und Ausführung werden nicht strikt nacheinander, sondern von Beginn an gemeinsam gedacht. Fachwissen aus der Ausführung fliesst früher in Entscheidungen ein, technische und wirtschaftliche Konsequenzen werden früher sichtbar.',
+          'Das verändert, wo Verantwortung liegt und wie Schnittstellen zwischen Planung und Ausführung organisiert sind. Beides lässt sich reduzieren, wenn die Beteiligten früher am selben Tisch sitzen — ohne dass Gestaltung zur Nebensache wird.',
+        ],
+      },
+      {
+        titel: 'Was wir bereits tun',
+        absaetze: [
+          'Atelier AA hat sich intensiv mit Design-Build und integrierter Projektabwicklung auseinandergesetzt und bereits ein aktuelles Projekt gestartet, in dem wir zentrale Prinzipien daraus anwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen früher zusammen und beziehen relevantes Fachwissen gezielter in den Prozess ein.',
+          'Das Projekt wird dadurch nicht vollständig nach Design-Build abgewickelt. Es ist ein Anfang, an dem wir prüfen, welche Prinzipien daraus ein Projekt tatsächlich besser machen — bevor wir daraus einen festen Ablauf für andere Projekte ableiten.',
+        ],
+      },
+      {
+        titel: 'Was uns daran interessiert',
+        absaetze: [
+          'Wann sollte Unternehmerwissen in ein Projekt einfliessen? Welche Entscheidungen werden heute zu spät getroffen? Wo entstehen Schnittstellen, die sich vermeiden liessen? Wie lassen sich Gestaltung, Kosten und Machbarkeit von Beginn an gemeinsam betrachten, statt sie nacheinander abzuprüfen? Und welche Projektbeteiligten müssen wann am Tisch sitzen, damit eine Entscheidung auf einer breiteren Grundlage steht?',
+          'Das sind für uns keine rhetorischen Fragen, sondern die, an denen sich zeigt, ob ein Prozess ein Projekt tatsächlich besser macht.',
+        ],
+      },
+      {
+        titel: 'Kein neues Schema',
+        absaetze: [
+          'Atelier AA arbeitet nicht nach starren Rezepten — auch Design-Build verstehen wir nicht als neues Schema, das sich unverändert auf jedes Projekt übertragen lässt, sondern als Ansatz, den wir projektbezogen einsetzen und weiterdenken. Auch die Art, wie ein Projekt entsteht, ist für uns Teil der Architektur.',
+          'Wir entwickeln damit nicht nur Architektur weiter, sondern auch die Prozesse, durch die sie möglich wird.',
+        ],
+      },
+    ],
+    fragen: [
+      {
+        frage: 'Was ist Design-Build?',
+        antwort:
+          'Ein Modell integrierter Projektabwicklung, bei dem Planung und Ausführung von Beginn an gemeinsam gedacht werden, statt strikt nacheinander. Fachwissen aus der Ausführung fliesst dadurch früher in Entscheidungen ein.',
+      },
+      {
+        frage: 'Arbeitet Atelier AA bereits vollständig nach Design-Build?',
+        antwort:
+          'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an — das Projekt wird aber nicht vollständig nach Design-Build abgewickelt.',
+      },
+      {
+        frage: 'Was bedeutet integrierte Projektabwicklung konkret?',
+        antwort:
+          'Planung, Ausführung und wirtschaftliche Überlegungen werden früher zusammengebracht, relevantes Fachwissen wird gezielter in den Prozess eingebunden, und unnötige Schnittstellen zwischen den Beteiligten werden reduziert.',
+      },
+      {
+        frage: 'Wird Atelier AA Design-Build künftig für alle Projekte anbieten?',
+        antwort:
+          'Das entscheidet sich am einzelnen Projekt. Wir setzen Prinzipien der integrierten Projektabwicklung dort ein, wo sie ein Projekt tatsächlich besser machen — nicht als festes Schema für jede Aufgabe.',
+      },
+    ],
+  },
+  {
     slug: 'verdichtung-innenentwicklung',
     titel: 'Verdichten statt neu bauen: Was auf Ihrem Grundstück möglich ist',
     lead: 'Bauland wird in Zürich, Aargau und Zug knapp. Der Bestand hält oft mehr aus, als seine Eigentümer vermuten — Aufstockung, Ersatzneubau oder Anbau.',
@@ -981,55 +1049,6 @@ export const insights: Insight[] = [
         frage: 'Was passiert, wenn mein Dach für eine grosse Solaranlage schlecht geeignet ist?',
         antwort:
           'Die kantonalen Vorschriften sehen in der Regel Ausnahmen für ungeeignete Dachflächen vor, etwa bei starker Verschattung oder ungünstiger Ausrichtung. Wir klären das im Baugesuchsverfahren mit der zuständigen Behörde ab.',
-      },
-    ],
-  },
-  {
-    slug: 'digitales-baugesuch-ebau',
-    titel: 'Das digitale Baugesuch kommt: eBau in Zürich und Aargau im Vergleich',
-    lead: 'Seit April 2024 reicht im Kanton Zürich die rein elektronische Baueingabe, der Aargau folgt mit der digitalen Baugesuchsabwicklung DIBA. Was sich für Bauherrschaften ändert.',
-    kategorie: 'Digitalisierung',
-    datum: '2026-02-09',
-    lesezeit: 6,
-    bild: '/images/insights/digitales-baugesuch.webp',
-    abschnitte: [
-      {
-        titel: 'Zürich als Vorreiter',
-        absaetze: [
-          'Seit dem 1. April 2024 genügt im Kanton Zürich die elektronische Eingabe eines Baugesuchs über die Plattform «eBaugesucheZH» — ein zusätzliches Papierdossier ist nicht mehr nötig. Städte und Gemeinden haben bis zum 31. März 2027 Zeit, sich an die Plattform anzubinden; ab dem 1. April 2027 müssen sämtliche Baugesuche im Kanton darüber eingereicht werden.',
-          'Für Bauherrschaften und Planungsbüros bedeutet das schon heute weniger Papierdossiers, eine zentrale Ablage aller Verfahrensschritte und in der Regel eine schnellere Rückmeldung der Bauverwaltung, da Unterlagen nicht mehr postalisch zirkulieren müssen.',
-        ],
-      },
-      {
-        titel: 'Der Aargau zieht nach',
-        absaetze: [
-          'Im Kanton Aargau wird das Baugesuchsverfahren mit der digitalen Baugesuchsabwicklung DIBA grundlegend modernisiert; die Einführung ist auf Anfang 2026 angesetzt und wird vom Departement Bau, Verkehr und Umwelt den Gemeinden ausdrücklich empfohlen. Der Kanton Zug hat zum jetzigen Zeitpunkt noch keine vergleichbar konkrete Digitalisierungsstrategie für das Baugesuchsverfahren kommuniziert.',
-          'Für ein Büro, das in allen drei Kantonen tätig ist, heisst das vorerst: mit unterschiedlichen Reifegraden der Digitalisierung parallel arbeiten, bis sich die Verfahren angeglichen haben.',
-        ],
-      },
-      {
-        titel: 'Was sich für die Dossiererstellung ändert',
-        absaetze: [
-          'Digitale Verfahren verlangen strukturierte, oft normierte Dateiformate statt eingescannter Pläne — das erhöht die Anforderungen an eine saubere digitale Planablage von Anfang an. Wer seine Pläne von Beginn weg konsequent digital und versioniert führt, hat beim Wechsel auf ein digitales Verfahren keinen Mehraufwand.',
-          'Wir haben unsere internen Abläufe bereits auf durchgängig digitale Dossiers ausgerichtet, unabhängig davon, ob die jeweilige Gemeinde die elektronische Einreichung schon verlangt oder erst noch einführt.',
-        ],
-      },
-    ],
-    fragen: [
-      {
-        frage: 'Muss ich mein Baugesuch im Kanton Zürich jetzt zwingend elektronisch einreichen?',
-        antwort:
-          'Die elektronische Eingabe genügt seit April 2024, ein Papierdossier ist nicht mehr nötig. Zur zwingenden Pflicht für alle Gemeinden wird die Plattform «eBaugesucheZH» erst ab dem 1. April 2027.',
-      },
-      {
-        frage: 'Wird ein digitales Verfahren die Bewilligungsdauer verkürzen?',
-        antwort:
-          'Tendenziell ja, vor allem durch schnelleren internen Umlauf bei der Behörde. Die gesetzlichen Fristen für Prüfung und öffentliche Auflage ändern sich durch die Digitalisierung des Verfahrens allein aber nicht.',
-      },
-      {
-        frage: 'Was, wenn meine Gemeinde noch nicht an das digitale Verfahren angebunden ist?',
-        antwort:
-          'Dann reichen wir das Dossier weiterhin im bisherigen Verfahren der jeweiligen Gemeinde ein. Wir richten unsere Planunterlagen aber schon heute so aus, dass eine spätere Umstellung ohne Mehraufwand möglich ist.',
       },
     ],
   },

@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 import { insights } from '@/data/insights';
 
 export const metadata: Metadata = {
-  title: 'Insights',
+  title: 'Journal',
   description:
     'Fachbeiträge von Atelier AA Architekten GmbH zu KI im Entwurf, kreislauffähigem Bauen und der Rolle des Architekten. Mit Antworten auf häufige Fragen zu Honorar, Planungsphasen und Ablauf.',
   alternates: { canonical: '/insights' },
@@ -17,7 +17,7 @@ export default function InsightsPage() {
     <div className="pt-32 md:pt-40">
       <Container>
         <div className="max-w-3xl mb-16 md:mb-24">
-          <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
+          <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
           <h1 className="text-4xl font-normal leading-tight text-ink md:text-5xl lg:text-6xl">
             Gedanken zu <span className="font-semibold">Architektur</span>
             <br />

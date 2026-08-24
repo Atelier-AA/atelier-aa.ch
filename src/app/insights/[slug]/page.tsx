@@ -73,7 +73,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
-        { name: 'Insights', pfad: '/insights' },
+        { name: 'Journal', pfad: '/insights' },
         { name: insight.titel, pfad: `/insights/${insight.slug}` },
       ]),
     ],

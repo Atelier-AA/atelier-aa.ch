@@ -18,7 +18,7 @@ export default function InsightsSection() {
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
         <div className="mb-10 max-w-2xl md:mb-16">
-          <p className="text-xs uppercase tracking-widest text-stone mb-4">Insights</p>
+          <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
           <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">
             <span className="font-semibold">Fachbeiträge</span> aus unserer{' '}
             <span className="font-semibold">Arbeit</span>
@@ -35,7 +35,7 @@ export default function InsightsSection() {
               key={i.slug}
               href={`/insights/${i.slug}`}
               className="group block min-w-0"
-              aria-label={`Beitrag lesen: ${i.titel}`}
+              aria-label={`Beitrag lesen: ${i.titel}, ${formatDatum(i.datum)}`}
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                 <Image

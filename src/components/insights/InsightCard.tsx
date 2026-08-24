@@ -18,7 +18,7 @@ export default function InsightCard({ insight, priority = false }: InsightCardPr
     <Link
       href={`/insights/${insight.slug}`}
       className="group block min-w-0"
-      aria-label={`Beitrag lesen: ${insight.titel}`}
+      aria-label={`Beitrag lesen: ${insight.titel}, ${insight.kategorie}, ${formatDatum(insight.datum)}`}
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-mist">
         <Image
