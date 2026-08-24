@@ -13,7 +13,11 @@ const config: Config = {
       colors: {
         ink: '#111111',
         graphite: '#3a3a3a',
-        stone: '#7a7a7a',
+        // War #7a7a7a — auf den kleinen, getrackten Eyebrow-Labels (11px)
+        // knapp unter dem WCAG-AA-Kontrast von 4.5:1 gegen paper/weiss
+        // (Lighthouse-Audit). Dieser Ton besteht mit ca. 5.2:1, sichtbar
+        // praktisch identisch.
+        stone: '#6b6b6b',
         mist: '#f5f5f4',
         paper: '#fafaf9',
       },

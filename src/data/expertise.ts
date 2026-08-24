@@ -21,7 +21,7 @@ export const kompetenzen = [
     titel: 'Beratung',
     punkte: [
       'Beratung vor Projektbeginn',
-      'Branchenspezifische Bedarfsermittlung',
+      'Klärung der Nutzungsanforderungen',
       'Raum- und Funktionsprogramm: Entwicklung eines Organisationsschemas',
       'Grundstücksanalyse: Standortfaktoren und der Genius Loci',
     ],
@@ -45,7 +45,7 @@ export const kompetenzen = [
     titel: 'Planung und Koordination',
     punkte: [
       'SIA-Teilphasen 31/32: Vorprojekt und Bauprojekt',
-      'Generalplanung: Das Planungsteam als Mannschaft',
+      'Generalplanung: ein Ansprechpartner für das gesamte Planungsteam',
       'SIA-Teilphase 33: Bewilligungsverfahren',
       'SIA-Teilphase 51: Ausführungsprojekt',
     ],

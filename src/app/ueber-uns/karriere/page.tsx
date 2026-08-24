@@ -30,7 +30,7 @@ const profil = [
   'Sehr gute Deutschkenntnisse in Wort und Schrift',
   'Selbstständige, strukturierte und verantwortungsbewusste Arbeitsweise',
   'Hohes Qualitätsbewusstsein sowie ein gutes Verständnis für Gestaltung und Konstruktion',
-  'Freude an der Zusammenarbeit in einem kleinen, engagierten Team',
+  'Freude an direkter, kollegialer Zusammenarbeit im ganzen Planungsteam',
 ];
 
 const erwartet = [
