@@ -12,7 +12,7 @@ export default function UeberUnsSection() {
   return (
     <section className="bg-mist py-20 md:py-28">
       <Container>
-        <p className="mb-4 text-xs uppercase tracking-widest text-stone">Über uns</p>
+        <p className="mb-4 text-xs uppercase tracking-widest text-stone">Büro</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
             {/* Wörtlich von der Über-uns-Seite; tragende Begriffe fett,
@@ -24,9 +24,9 @@ export default function UeberUnsSection() {
             </h2>
             <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-graphite">
               Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
-              dem Charakter des Ortes und den Bedürfnissen der Nutzenden entwickeln wir
-              individuelle Lösungen mit klarer Haltung und präziser Gestaltung, geprüft
-              anhand der SIA-Leistungsphasen und einer frühen Kostenschätzung.
+              dem Charakter des Ortes und den Bedürfnissen der Nutzenden entsteht der
+              Entwurf — geprüft anhand der SIA-Leistungsphasen und einer frühen
+              Kostenschätzung.
             </p>
             <div className="mt-7">
               <Button href="/ueber-uns" variant="text">

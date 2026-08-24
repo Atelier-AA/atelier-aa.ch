@@ -42,11 +42,11 @@ export default function IntroSection() {
                 Zürich, Aargau und Zug.
               </p>
               <p className="max-w-[42ch] text-lg leading-relaxed text-graphite">
-                Jeder Ort erzählt eine Geschichte. Jede Aufgabe trägt ihre eigene Identität in
-                sich. Mit Sorgfalt, Klarheit und einem tiefen Verständnis für Menschen und
-                Räume entwickeln wir Architektur, die mehr ist als ein Gebäude. Sie schafft
-                Lebensqualität, Orientierung und Zugehörigkeit. Wie das konkret aussieht,
-                zeigen unsere realisierten Projekte.
+                Wir beginnen nicht mit einer Form, sondern mit dem Ort: mit dem, was auf dem
+                Grundstück bereits steht, mit den baurechtlichen Möglichkeiten und mit dem,
+                was die Nutzenden tatsächlich brauchen. Architektur entsteht für uns als
+                Konsequenz aus dieser Analyse, nicht davor. Wie das konkret aussieht, zeigen
+                unsere realisierten Projekte.
               </p>
             </MehrLesen>
           </div>
