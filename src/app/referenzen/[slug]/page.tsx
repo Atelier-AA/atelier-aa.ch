@@ -94,7 +94,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   const bilder = await Promise.all(
     bildPfade.map(async (src, idx) => ({
       src,
-      alt: `${bezeichnung} – Ansicht ${idx + 1}, Atelier AA Architekten`,
+      alt: `${bezeichnung}, Ansicht ${idx + 1}, Atelier AA Architekten`,
       video: projekt.videoClips?.find((v) => v.bildPfad === src),
       ...(await bildMasse(src)),
     }))
@@ -224,6 +224,39 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             </MehrLesen>
           )}
 
+          {/* Entscheidungslogik statt nur Ergebnis: zeigt, wie gedacht und
+              entschieden wurde, nicht nur, was gebaut wurde. Nur bei
+              Projekten mit echter, dokumentierter Entscheidung gesetzt. */}
+          {projekt.entscheidung && (
+            <section className="mt-[2.783rem] border-t border-mist pt-12">
+              <h2 className="mb-6 text-xs font-medium uppercase tracking-widest text-stone">
+                Die Entscheidung
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <p className="mb-1 text-sm font-medium text-ink">Ausgangslage</p>
+                  <p className="leading-relaxed text-graphite">
+                    {projekt.entscheidung.ausgangslage}
+                  </p>
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-medium text-ink">Die entscheidende Frage</p>
+                  <p className="leading-relaxed text-graphite">{projekt.entscheidung.frage}</p>
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-medium text-ink">Unsere Entscheidung</p>
+                  <p className="leading-relaxed text-graphite">
+                    {projekt.entscheidung.entscheidung}
+                  </p>
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-medium text-ink">Resultat</p>
+                  <p className="leading-relaxed text-graphite">{projekt.entscheidung.resultat}</p>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Eckdaten und Leistungsumfang */}
           <div className="mt-[2.783rem] grid grid-cols-1 gap-12 border-t border-mist pt-12 sm:grid-cols-2">
             <div>
@@ -291,7 +324,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">
               Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück
-              möglich ist — mit Volumenstudie und Kostenrahmen.
+              möglich ist, mit Volumenstudie und Kostenrahmen.
             </p>
             <Button href="/kontakt" variant="text">
               Kontaktieren Sie uns

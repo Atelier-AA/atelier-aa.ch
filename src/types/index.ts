@@ -64,6 +64,18 @@ export interface Projekt {
    * entsprechen — sonst bleibt es beim Foto.
    */
   videoClips?: { bildPfad: string; mp4: string; webm: string; poster: string }[];
+  /**
+   * Entscheidungslogik statt nur Ergebnis: zeigt, wie gedacht und
+   * entschieden wurde, nicht nur, was gebaut wurde. Nur gesetzt, wo eine
+   * echte, dokumentierte Entscheidung vorliegt — nichts erfunden, keine
+   * Pflichtangabe für jedes Projekt.
+   */
+  entscheidung?: {
+    ausgangslage: string;
+    frage: string;
+    entscheidung: string;
+    resultat: string;
+  };
 }
 
 /**

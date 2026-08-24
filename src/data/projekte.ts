@@ -32,11 +32,11 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten. Die Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber, verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
+      'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss; die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten. Die Ebenen sind klar geordnet: Rückzug und Technik im Untergeschoss, Wohnen im Erdgeschoss, private Räume darüber, verbunden durch eine offene Treppe mit Glasgeländer. Aussen prägen eine helle Putzfassade und dunkel abgesetzte Fensterbänder das Bild, innen der Blick über die offene Landschaft rund um Jonen.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
-        absaetze: ['Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss — die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten.'],
+        absaetze: ['Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss; die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten.'],
       },
       {
         titel: 'Die Lösung',
@@ -49,10 +49,19 @@ export const projekte: Projekt[] = [
       { label: 'Besonderheit', wert: 'Eigenprojekt des Büros' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss; die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten.',
+      frage: 'Wie ordnet man die Ebenen, wenn Rückzug, Technik und Wohnen im selben Haus zusammenkommen?',
+      entscheidung:
+        'Technik und Rückzugsräume ins Untergeschoss, das Erdgeschoss ganz dem Wohnen vorbehalten, private Räume im Obergeschoss darüber, verbunden durch eine offene Treppe mit Glasgeländer.',
+      resultat:
+        'Die Wohnebene bleibt ungestört; helle Putzfassade und dunkel abgesetzte Fensterbänder aussen, innen der Blick über die offene Landschaft rund um Jonen.',
+    },
     fragen: [
       {
         frage: 'Was bedeutet es, wenn ein Architekturbüro für sich selbst baut?',
-        antwort: 'Anspruch und Bauherrenwunsch liegen in einer Person — am Verfahren ändert das nichts.',
+        antwort: 'Anspruch und Bauherrenwunsch liegen in einer Person: Am Verfahren ändert das nichts.',
       },
       {
         frage: 'Worauf muss man bei einem schwierig erschlossenen Grundstück achten?',
@@ -62,15 +71,12 @@ export const projekte: Projekt[] = [
         frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
         antwort: 'Im Aargau rund 900 bis 1200 Franken pro Kubikmeter, je nach Standard.',
       },
-      {
-        frage: 'Warum liegen Technik und Rückzugsräume im Untergeschoss statt im Erdgeschoss?',
-        antwort:
-          'Damit die Wohnebene ungestört bleibt: Das Erdgeschoss ist ganz dem Wohnen vorbehalten, die privaten Räume liegen darüber.',
-      },
     ],
     thumbnail: '/images/projekte/efh-jonen/thumb.jpg',
     heroImage: '/images/projekte/efh-jonen/hero.jpg',
     galerie: [
+      '/images/projekte/efh-jonen/12.jpg',
+      '/images/projekte/efh-jonen/16.jpg',
       '/images/projekte/efh-jonen/01.jpg',
       '/images/projekte/efh-jonen/02.jpg',
       '/images/projekte/efh-jonen/03.jpg',
@@ -82,11 +88,9 @@ export const projekte: Projekt[] = [
       '/images/projekte/efh-jonen/09.jpg',
       '/images/projekte/efh-jonen/10.jpg',
       '/images/projekte/efh-jonen/11.jpg',
-      '/images/projekte/efh-jonen/12.jpg',
       '/images/projekte/efh-jonen/13.jpg',
       '/images/projekte/efh-jonen/14.jpg',
       '/images/projekte/efh-jonen/15.jpg',
-      '/images/projekte/efh-jonen/16.jpg',
       '/images/projekte/efh-jonen/17.jpg',
       '/images/projekte/efh-jonen/18.jpg',
       '/images/projekte/efh-jonen/19.jpg',
@@ -124,7 +128,7 @@ export const projekte: Projekt[] = [
       'Bauleitung',
     ],
     beschreibung:
-      'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone. Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach — der Betrieb ist fossilfrei.',
+      'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone. Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach: Der Betrieb ist fossilfrei.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
@@ -132,7 +136,7 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Die Lösung',
-        absaetze: ['Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach — der Betrieb ist fossilfrei.'],
+        absaetze: ['Das Satteldachhaus mit vertikaler Fassadengliederung nimmt die Dachlandschaft der Umgebung auf und bietet trotzdem mehr Wohnfläche; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert. Jede Wohnung ist zweiseitig orientiert mit offener, abtrennbarer Küche. Massivbau mit hinterlüfteter Fassade, Erdsonden-Wärmepumpe und photovoltaikbereitem Dach: Der Betrieb ist fossilfrei.'],
       },
     ],
     daten: [
@@ -151,7 +155,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie viele Wohnungen sind auf unserem Grundstück möglich?',
         antwort:
-          'Das hängt von Ausnutzung, Grenzabständen und Gebäudehöhe Ihrer Gemeinde ab — wir zeigen die Bandbreite in einer Machbarkeitsstudie.',
+          'Das hängt von Ausnutzung, Grenzabständen und Gebäudehöhe Ihrer Gemeinde ab; wir zeigen die Bandbreite in einer Machbarkeitsstudie.',
       },
       {
         frage: 'Was kostet ein Mehrfamilienhaus pro Kubikmeter?',
@@ -212,12 +216,16 @@ export const projekte: Projekt[] = [
       { label: 'Besonderheit', wert: 'Gemeinsame Einstellhalle und Aussenraum' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Zwei Mehrfamilienhäuser in Adliswil (ZH), auf zwei ursprünglich getrennt geplanten Nachbarparzellen.',
+      frage: 'Zwei Grundstücke getrennt entwickeln oder als Ensemble?',
+      entscheidung:
+        'Gemeinsame Entwicklung mit gemeinsamer Einstellhalle, Erschliessung und Werkleitungen statt zwei separater Projekte.',
+      resultat:
+        'Statt zweier Restflächen ein zusammenhängender Hof, gesenkte Erstellungskosten und ein deutlich nutzbarerer Aussenraum.',
+    },
     fragen: [
-      {
-        frage: 'Lohnt es sich, zwei Nachbarparzellen gemeinsam zu entwickeln?',
-        antwort:
-          'Meist ja — gemeinsame Einstellhalle, Erschliessung und Werkleitungen senken die Kosten deutlich und der Aussenraum wird nutzbarer.',
-      },
       {
         frage: 'Wie planen Sie für eine gute Rendite?',
         antwort:
@@ -261,7 +269,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Mehrfamilienhaus am Hang in Künten (AG): Das Volumen ist in drei Stufen gegliedert, die dem abfallenden Gelände folgen und jeder Wohnung Terrasse und Aussicht geben, bei minimalem Aushub. Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet — Putz, Holz, mineralische Farbtöne.',
+      'Mehrfamilienhaus am Hang in Künten (AG): Das Volumen ist in drei Stufen gegliedert, die dem abfallenden Gelände folgen und jeder Wohnung Terrasse und Aussicht geben, bei minimalem Aushub. Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet: Putz, Holz, mineralische Farbtöne.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
@@ -269,7 +277,7 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Die Lösung',
-        absaetze: ['Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet — Putz, Holz, mineralische Farbtöne.'],
+        absaetze: ['Die Wohnräume orientieren sich nach Südwesten, die Schlafräume liegen kühler bergseitig; auskragende Terrassenböden verschatten im Sommer und lassen die flache Wintersonne ein. Im dörflich geprägten Künten haben wir bewusst mit wenigen, ortsüblichen Materialien gearbeitet: Putz, Holz, mineralische Farbtöne.'],
       },
     ],
     daten: [
@@ -293,12 +301,12 @@ export const projekte: Projekt[] = [
     thumbnail: '/images/projekte/mfh-kuenten/thumb.jpg',
     heroImage: '/images/projekte/mfh-kuenten/hero.jpg',
     galerie: [
+      '/images/projekte/mfh-kuenten/06.jpg',
       '/images/projekte/mfh-kuenten/01.jpg',
       '/images/projekte/mfh-kuenten/02.jpg',
       '/images/projekte/mfh-kuenten/03.jpg',
       '/images/projekte/mfh-kuenten/04.jpg',
       '/images/projekte/mfh-kuenten/05.jpg',
-      '/images/projekte/mfh-kuenten/06.jpg',
     ],
     plaene: [
       { titel: 'Kataster', datei: '/dokumente/projekte/mfh-kuenten/01-kataster.pdf' },
@@ -358,12 +366,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt sich die Umnutzung eines Bürogebäudes zu Wohnraum?',
         antwort:
-          'Oft ja, wenn Tragstruktur und Geschosshöhen mitspielen — der Rohbau bleibt erhalten, Grundrisse und Technik werden neu.',
+          'Oft ja, wenn Tragstruktur und Geschosshöhen mitspielen: Der Rohbau bleibt erhalten, Grundrisse und Technik werden neu.',
       },
       {
         frage: 'Wie werden auskragende Balkone konstruktiv gelöst?',
         antwort:
-          'Über verstärkte Deckenplatten oder eingespannte Träger mit wärmebrückenfreier Dämmung — früh mit dem Tragwerksplaner abzustimmen.',
+          'Über verstärkte Deckenplatten oder eingespannte Träger mit wärmebrückenfreier Dämmung, früh mit dem Tragwerksplaner abzustimmen.',
       },
       {
         frage: 'Wie lange dauert eine Kernsanierung mit Umnutzung?',
@@ -399,7 +407,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Ausschreibungsplanung', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
-      'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand. Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen — die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.',
+      'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand. Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen; die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.',
     abschnitte: [
       {
         titel: 'Der Bestand',
@@ -407,7 +415,7 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Der Eingriff',
-        absaetze: ['Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen — die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.'],
+        absaetze: ['Eine durchgängige, rahmenlose Schiebeverglasung öffnet das Erdgeschoss nahezu nahtlos zum Garten und führt das Licht tief in den Wohnbereich. Die Beschattung wünschte die Bauherrschaft ohne sichtbare Führungsschienen; die Lösung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr. Der neue Balkon im Obergeschoss bietet Sicht über die Nachbarschaft bis zum Zugersee.'],
       },
     ],
     daten: [
@@ -420,7 +428,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie lässt sich ein Erdgeschoss ohne sichtbare Statik öffnen?',
         antwort:
-          'Meist über rahmenlose Schiebeverglasungen mit verstärkten Sturzkonstruktionen — abhängig von der bestehenden Tragstruktur.',
+          'Meist über rahmenlose Schiebeverglasungen mit verstärkten Sturzkonstruktionen, abhängig von der bestehenden Tragstruktur.',
       },
       {
         frage: 'Wie funktioniert eine Beschattung ohne sichtbare Führungsschienen?',
@@ -430,7 +438,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt sich eine Erweiterung gegenüber einem Neubau?',
         antwort:
-          'Oft ja, wenn Lage und Struktur stimmen — die vorhandene Erschliessung wird weiter genutzt, was meist günstiger ist.',
+          'Oft ja, wenn Lage und Struktur stimmen: Die vorhandene Erschliessung wird weiter genutzt, was meist günstiger ist.',
       },
     ],
     thumbnail: '/images/projekte/efh-huenenberg/thumb.jpg',
@@ -456,7 +464,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Bauleitung'],
     beschreibung:
-      'Wohnbau mit klarer Ordnung in Glashütten (AG): Ein einfaches Raster setzt Fenster, Balkone und Wohnungstrennungen in ein ruhiges Verhältnis, mit begründeten Abweichungen als Akzent. Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund — mineralischer Putz, robuste Böden, langlebige Beschläge.',
+      'Wohnbau mit klarer Ordnung in Glashütten (AG): Ein einfaches Raster setzt Fenster, Balkone und Wohnungstrennungen in ein ruhiges Verhältnis, mit begründeten Abweichungen als Akzent. Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund: mineralischer Putz, robuste Böden, langlebige Beschläge.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
@@ -464,7 +472,7 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Die Lösung',
-        absaetze: ['Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund — mineralischer Putz, robuste Böden, langlebige Beschläge.'],
+        absaetze: ['Die Grundrisse trennen offene Wohnbereiche von geschützten Schlafräumen; ein gemeinsamer Raum im Erdgeschoss bietet Platz für Velos und Kinderwagen. Bei der Materialwahl stand Dauerhaftigkeit im Vordergrund: mineralischer Putz, robuste Böden, langlebige Beschläge.'],
       },
     ],
     daten: [
@@ -477,7 +485,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wie viel Fläche sollten wir für Nebenräume einplanen?',
         antwort:
-          'Rund zwei bis drei Quadratmeter je Wohnung zusätzlich zu den Kellerabteilen — oft gestrichen und danach vermisst.',
+          'Rund zwei bis drei Quadratmeter je Wohnung zusätzlich zu den Kellerabteilen, oft gestrichen und danach vermisst.',
       },
       {
         frage: 'Welche Materialien halten am längsten?',
@@ -488,11 +496,11 @@ export const projekte: Projekt[] = [
     thumbnail: '/images/projekte/mfh-hochwarting/thumb.jpg',
     heroImage: '/images/projekte/mfh-hochwarting/hero.jpg',
     galerie: [
+      '/images/projekte/mfh-hochwarting/05.jpg',
       '/images/projekte/mfh-hochwarting/01.jpg',
       '/images/projekte/mfh-hochwarting/02.jpg',
       '/images/projekte/mfh-hochwarting/03.jpg',
       '/images/projekte/mfh-hochwarting/04.jpg',
-      '/images/projekte/mfh-hochwarting/05.jpg',
     ],
     plaene: [
       { titel: 'Umgebungsplan', datei: '/dokumente/projekte/mfh-hochwarting/01-umgebungsplan.pdf' },
@@ -635,7 +643,7 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch'],
     beschreibung:
-      'Studie für ein zusätzliches, freistehendes Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess. Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert — die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.',
+      'Studie für ein zusätzliches, freistehendes Einfamilienhaus auf einem Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess. Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert; die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
@@ -643,7 +651,7 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Die Lösung',
-        absaetze: ['Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert — die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.'],
+        absaetze: ['Das Projekt wurde bis zur Baubewilligung geführt und bewilligt, bislang aber nicht realisiert; die Visualisierungen zeigen den geplanten, nicht den bestehenden Zustand: eine helle, warmtonige Putzfassade, ein geneigtes Dach mit Dachflächenfenstern und im Erdgeschoss einen offenen Wohn-, Ess- und Kochbereich mit Kücheninsel.'],
       },
     ],
     daten: [
@@ -655,12 +663,12 @@ export const projekte: Projekt[] = [
       {
         frage: 'Kann ich auf meinem Grundstück ein weiteres Haus bauen, obwohl schon eines steht?',
         antwort:
-          'Das hängt von Ausnützungsreserve, Grenzabständen und Erschliessung ab — eine Machbarkeitsstudie zeigt, was möglich ist.',
+          'Das hängt von Ausnützungsreserve, Grenzabständen und Erschliessung ab; eine Machbarkeitsstudie zeigt, was möglich ist.',
       },
       {
         frage: 'Was passiert mit einer erteilten Baubewilligung, wenn nicht gebaut wird?',
         antwort:
-          'Sie ist befristet, meist zwei bis drei Jahre, und verfällt danach — sie kann aber mit dem Grundstück verkauft werden.',
+          'Sie ist befristet, meist zwei bis drei Jahre, und verfällt danach; sie kann aber mit dem Grundstück verkauft werden.',
       },
     ],
     thumbnail: '/images/projekte/efh-buchs/thumb.jpg',
@@ -691,11 +699,11 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase — wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet. Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.',
+      'Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase; wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet. Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.',
     abschnitte: [
       {
         titel: 'Der Bestand',
-        absaetze: ['Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase — wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet.'],
+        absaetze: ['Kernsanierung eines bestehenden Einfamilienhauses in Dietikon (ZH), aktuell in der Bauphase; wir haben die Bauherrschaft bereits vor dem Kauf beraten und seither durch alle Phasen begleitet.'],
       },
       {
         titel: 'Der Eingriff',
@@ -711,7 +719,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Was bedeutet Kernsanierung bis auf das Mauerwerk?',
         antwort:
-          'Das Gebäude wird bis auf die tragende Struktur zurückgebaut — Innenwände, Böden, Fenster und Haustechnik werden komplett erneuert.',
+          'Das Gebäude wird bis auf die tragende Struktur zurückgebaut: Innenwände, Böden, Fenster und Haustechnik werden komplett erneuert.',
       },
       {
         frage: 'Wie können Sie mich schon vor dem Grundstückskauf unterstützen?',
@@ -773,7 +781,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Lohnt sich eine Kernsanierung für einen privaten Investor?',
         antwort:
-          'Meist ja, wenn Lage und Bausubstanz stimmen — der Wiederverkaufswert steigt oft deutlicher als bei einer reinen Auffrischung.',
+          'Meist ja, wenn Lage und Bausubstanz stimmen: Der Wiederverkaufswert steigt oft deutlicher als bei einer reinen Auffrischung.',
       },
       {
         frage: 'Was bedeutet eine beratende Baubegleitung ohne Bauleitungsmandat?',
@@ -841,7 +849,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Können wir die Bauleitung bei einer Sanierung selbst übernehmen?',
         antwort:
-          'Ja, wenn Zeit und Erfahrung für die Koordination der Handwerker vorhanden sind — wir übergeben eine ausführungsreife Planung.',
+          'Ja, wenn Zeit und Erfahrung für die Koordination der Handwerker vorhanden sind; wir übergeben eine ausführungsreife Planung.',
       },
     ],
     thumbnail: '/images/projekte/efh-rupperswil/thumb.jpg',
@@ -888,24 +896,33 @@ export const projekte: Projekt[] = [
       { label: 'Geschosse', wert: '2 Vollgeschosse, Dachgeschoss, Untergeschoss' },
       { label: 'Realisierung', wert: 'Durch einen Generalunternehmer nach Verkauf' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal (AG), umgeben von giebelständiger Bebauung.',
+      frage: 'Wie fügt sich ein neues Mehrfamilienhaus in eine giebelständig geprägte Umgebung ein?',
+      entscheidung:
+        'Ein Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern, der die giebelständige Umgebung aufnimmt und in drei Wohngeschosse mit vertikaler Holzlattenfassade übersetzt.',
+      resultat:
+        'Die Wohnungen gruppieren sich symmetrisch um ein zentrales Treppenhaus mit Lift, jede mit eigenem Balkon oder eigener Terrasse, in einem Baukörper, der sich in die Umgebung einfügt statt sich von ihr abzuheben.',
+    },
     fragen: [
       {
         frage: 'Was bedeutet es, wenn ein Projekt an einen Generalunternehmer verkauft wird?',
         antwort:
-          'Die Realisierung geht an den GU über, während unsere Planung als Grundlage bestehen bleibt — üblich, wenn die Bauherrschaft weiterveräussert.',
+          'Die Realisierung geht an den GU über, während unsere Planung als Grundlage bestehen bleibt. Das ist üblich, wenn die Bauherrschaft weiterveräussert.',
       },
       {
         frage: 'Welche Vorteile bietet eine Holzfassade bei einem Mehrfamilienhaus?',
         antwort:
-          'Leicht, gut vorfertigbar, alterungsfähig im Erscheinungsbild — verlangt aber sorgfältige Detailplanung bei Anschlüssen.',
+          'Leicht, gut vorfertigbar, alterungsfähig im Erscheinungsbild, verlangt aber sorgfältige Detailplanung bei Anschlüssen.',
       },
     ],
     thumbnail: '/images/projekte/wohnueberbauung-zelgi/thumb.jpg',
     heroImage: '/images/projekte/wohnueberbauung-zelgi/hero.jpg',
     galerie: [
+      '/images/projekte/wohnueberbauung-zelgi/03.jpg',
       '/images/projekte/wohnueberbauung-zelgi/01.jpg',
       '/images/projekte/wohnueberbauung-zelgi/02.jpg',
-      '/images/projekte/wohnueberbauung-zelgi/03.jpg',
       '/images/projekte/wohnueberbauung-zelgi/04.jpg',
       '/images/projekte/wohnueberbauung-zelgi/05.jpg',
     ],
@@ -940,11 +957,11 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
-      'Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren — reduziert und kantig im gewachsenen, giebelständig geprägten Quartier. Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Eingang, ein Balkon mit dunklem Glasgeländer öffnet sich zur Gartenseite mit grossformatig gepflasterter Terrasse. Die Bauleitung haben wir beratend begleitet.',
+      'Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren, reduziert und kantig im gewachsenen, giebelständig geprägten Quartier. Ein gedeckter Vorbereich mit Holzbalken-Vordach markiert den Eingang, ein Balkon mit dunklem Glasgeländer öffnet sich zur Gartenseite mit grossformatig gepflasterter Terrasse. Die Bauleitung haben wir beratend begleitet.',
     abschnitte: [
       {
         titel: 'Der Bestand',
-        absaetze: ['Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren — reduziert und kantig im gewachsenen, giebelständig geprägten Quartier.'],
+        absaetze: ['Totalsanierung eines Einfamilienhauses in Merenschwand (AG): Der zweigeschossige, weiss verputzte Baukörper unter einem Flachdach mit Kiesbelag erhielt dunkel gerahmte Fenster und aussenliegende Lamellenstoren, reduziert und kantig im gewachsenen, giebelständig geprägten Quartier.'],
       },
       {
         titel: 'Der Eingriff',
@@ -994,11 +1011,11 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Kaufberatung', 'Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben — aktuell in Ausführung. Der Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss trägt ein durchgehendes, dunkles Ziegeldach mit einzelnen Dachflächenfenstern. Balkone auf schlanken, dunklen Stützen ziehen sich über alle Geschosse; im Erdgeschoss setzen sich die Aussenräume in gedeckten, bepflanzten Sitzplätzen fort.',
+      'Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben, aktuell in Ausführung. Der Satteldachbau mit drei Vollgeschossen und ausgebautem Dachgeschoss trägt ein durchgehendes, dunkles Ziegeldach mit einzelnen Dachflächenfenstern. Balkone auf schlanken, dunklen Stützen ziehen sich über alle Geschosse; im Erdgeschoss setzen sich die Aussenräume in gedeckten, bepflanzten Sitzplätzen fort.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
-        absaetze: ['Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben — aktuell in Ausführung.'],
+        absaetze: ['Neubau eines Mehrfamilienhauses in Würenlingen (AG) für einen Investor, den wir bereits vor dem Grundstückskauf beraten und seither durch alle Phasen begleitet haben, aktuell in Ausführung.'],
       },
       {
         titel: 'Die Lösung',
@@ -1014,7 +1031,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Wann sollten wir einen Architekten in den Grundstückskauf einbeziehen?',
         antwort:
-          'Am besten vor der Kaufzusage — wir prüfen anhand von Bauzone und Ausnützung, was realistisch möglich ist.',
+          'Am besten vor der Kaufzusage: Wir prüfen anhand von Bauzone und Ausnützung, was realistisch möglich ist.',
       },
       {
         frage: 'Was ist bei einem Mehrfamilienhaus mit Satteldach zu beachten?',
