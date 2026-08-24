@@ -146,6 +146,16 @@ export const projekte: Projekt[] = [
       { label: 'Wärmeerzeugung', wert: 'Erdsonden-Wärmepumpe' },
       { label: 'Status', wert: 'In Realisierung' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone.',
+      frage:
+        'Wie lässt sich auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone mehr Wohnfläche gewinnen, ohne die vorgegebene Dachlandschaft zu stören?',
+      entscheidung:
+        'Ein Satteldachhaus mit vertikaler Fassadengliederung, das die Dachlandschaft der Umgebung aufnimmt; vorgelagerte Balkone lassen die Wohnungsflächen ungeschmälert, jede Wohnung ist zweiseitig orientiert.',
+      resultat:
+        'Mehr Wohnfläche trotz Dachvorgabe, ungeschmälerte Wohnungsgrundrisse und ein fossilfreier Betrieb durch Erdsonden-Wärmepumpe und photovoltaikbereites Dach.',
+    },
     fragen: [
       {
         frage: 'Wie lange dauert ein Mehrfamilienhaus von der ersten Skizze bis zum Einzug?',
@@ -286,6 +296,15 @@ export const projekte: Projekt[] = [
       { label: 'Ausrichtung', wert: 'Wohnräume Südwest' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage: 'Mehrfamilienhaus am Hang in Künten (AG), dörflich geprägte Umgebung.',
+      frage:
+        'Wie lässt sich am Hang jeder Wohnung Terrasse und Aussicht geben, ohne grossen Aushub und ohne den dörflichen Charakter zu stören?',
+      entscheidung:
+        'Das Volumen in drei Stufen gegliedert, die dem Gelände folgen; Wohnräume nach Südwesten, kühlere Schlafräume bergseitig, auskragende Terrassenböden als Sonnenschutz, wenige ortsübliche Materialien (Putz, Holz, mineralische Farbtöne).',
+      resultat:
+        'Minimaler Aushub, jede Wohnung mit eigener Terrasse und Aussicht, ein Baukörper, der sich ins dörfliche Bild einfügt statt sich abzuheben.',
+    },
     fragen: [
       {
         frage: 'Ist Bauen am Hang teurer?',
@@ -362,6 +381,15 @@ export const projekte: Projekt[] = [
       { label: 'Besonderheit', wert: 'Auskragende Balkone im Dachgeschoss' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Ein ehemaliges Bürogebäude in Ottenbach (ZH), umzunutzen zu einem Mehrfamilienhaus mit acht Wohnungen.',
+      frage: 'Bestehende Struktur erhalten oder das Bürogebäude ersetzen?',
+      entscheidung:
+        'Kernsanierung bis auf den Rohbau: Die bestehende Struktur bleibt erhalten, Grundrisse, Haustechnik und Gebäudehülle werden vollständig neu; auskragende Balkone im Dachgeschoss als bewusst sichtbarer neuer Akzent.',
+      resultat:
+        'Acht Wohnungen in einem ehemaligen Bürogebäude, dessen Erscheinungsbild heute von den auskragenden Balkonen geprägt ist statt vom geschlossenen Bürohaus.',
+    },
     fragen: [
       {
         frage: 'Lohnt sich die Umnutzung eines Bürogebäudes zu Wohnraum?',
@@ -424,6 +452,16 @@ export const projekte: Projekt[] = [
       { label: 'Ausblick', wert: 'Balkon mit Sicht auf den Zugersee' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand.',
+      frage:
+        'Wie lässt sich die Beschattung der neuen Schiebeverglasung einbauen, ohne dass Führungsschienen sichtbar sind, wie es die Bauherrschaft wünschte?',
+      entscheidung:
+        'Die Führung liegt vollständig im Sturzbereich, stabilisiert durch ein verstecktes Stahlrohr, statt einer sichtbaren Aussenmontage.',
+      resultat:
+        'Eine durchgängige, rahmenlose Schiebeverglasung ohne sichtbare Technik, dazu ein neuer Balkon im Obergeschoss mit Sicht bis zum Zugersee.',
+    },
     fragen: [
       {
         frage: 'Wie lässt sich ein Erdgeschoss ohne sichtbare Statik öffnen?',
@@ -481,6 +519,14 @@ export const projekte: Projekt[] = [
       { label: 'Besonderheit', wert: 'Gemeinschaftsraum im Erdgeschoss' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage: 'Wohnbau mit klarer Ordnung in Glashütten (AG).',
+      frage: 'Wie schafft ein einfaches Fassadenraster Ordnung, ohne monoton zu wirken?',
+      entscheidung:
+        'Ein einfaches Raster für Fenster, Balkone und Wohnungstrennungen, mit begründeten Abweichungen als Akzent; offene Wohnbereiche von geschützten Schlafräumen getrennt, ein gemeinsamer Raum im Erdgeschoss für Velos und Kinderwagen.',
+      resultat:
+        'Ein ruhiges, geordnetes Erscheinungsbild mit gezielten Akzenten und dauerhaften Materialien wie mineralischem Putz und robusten Böden.',
+    },
     fragen: [
       {
         frage: 'Wie viel Fläche sollten wir für Nebenräume einplanen?',
@@ -549,6 +595,15 @@ export const projekte: Projekt[] = [
       { label: 'Bauherrschaft', wert: 'Investor' },
       { label: 'Bauleitung', wert: 'Durch einen externen Bauleiter' },
     ],
+    entscheidung: {
+      ausgangslage: 'Doppeleinfamilienhaus in Safenwil (AG) für einen Investor.',
+      frage:
+        'Wie wirkt ein Doppeleinfamilienhaus als ein zusammenhängender Baukörper, obwohl es zwei unabhängige Einheiten mit je eigenem Eingang sind?',
+      entscheidung:
+        'Eine gemeinsame Wand und eine einheitliche Kubatur mit zurückversetztem Attikageschoss und Dachterrasse, aber je eigener Garage und Hauseingang pro Einheit.',
+      resultat:
+        'Ein kompakter, wirtschaftlicher Baukörper, der als Ganzes wirkt, mit privatem Aussenraum über der Dachterrasse für beide Einheiten.',
+    },
     fragen: [
       {
         frage: 'Was unterscheidet ein Doppeleinfamilienhaus von zwei freistehenden Häusern?',
@@ -659,6 +714,15 @@ export const projekte: Projekt[] = [
       { label: 'Bauherrschaft', wert: 'Privater Bauherr' },
       { label: 'Status', wert: 'Baubewilligung erteilt, nicht realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Ein Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess.',
+      frage:
+        'Lässt sich auf einem Grundstück mit bestehendem Wohnhaus noch ein zusätzliches, freistehendes Einfamilienhaus realisieren?',
+      entscheidung:
+        'Ein zusätzliches freistehendes Einfamilienhaus wurde geplant und bis zur Baueingabe geführt, unter Nutzung der vorhandenen Ausnützungsreserve.',
+      resultat: 'Die Baubewilligung wurde erteilt; realisiert ist das Projekt bislang nicht.',
+    },
     fragen: [
       {
         frage: 'Kann ich auf meinem Grundstück ein weiteres Haus bauen, obwohl schon eines steht?',
@@ -777,6 +841,16 @@ export const projekte: Projekt[] = [
       { label: 'Bauherrschaft', wert: 'Privater Investor' },
       { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos (AG) für einen privaten Investor, mit aussenliegenden Lamellenstoren für ein ruhiges Fassadenbild.',
+      frage:
+        'Wie lässt sich zusätzlicher Aussenraum im Obergeschoss schaffen, ohne das ruhige Fassadenbild zu stören?',
+      entscheidung:
+        'Ein neuer Balkon über der bestehenden gedeckten Terrasse im Erdgeschoss, in derselben zurückhaltenden Formensprache wie die sanierte Fassade.',
+      resultat:
+        'Zusätzlicher privater Aussenraum im Obergeschoss, ohne das ruhige, einheitliche Fassadenbild zu beeinträchtigen.',
+    },
     fragen: [
       {
         frage: 'Lohnt sich eine Kernsanierung für einen privaten Investor?',
@@ -840,6 +914,16 @@ export const projekte: Projekt[] = [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Kernsanierung und Erweiterung' },
       { label: 'Bauleitung', wert: 'Durch die Bauherrschaft selbst' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Kernsanierung und Erweiterung eines Einfamilienhauses in Rupperswil (AG), eingebettet zwischen traditionell gedeckten Nachbarhäusern.',
+      frage:
+        'Wie ergänzt man einen flachdachigen Erweiterungsbau neben giebelständigen Nachbarhäusern, ohne aus dem Ortsbild zu fallen?',
+      entscheidung:
+        'Der giebelständige Hauptbaukörper bleibt bestimmend, ein niedrigerer, flachdachiger Nebenbau tritt zurückhaltend hinzu; eine gemeinsame, weiss verputzte Fassade verbindet beide Teile.',
+      resultat:
+        'Unterschiedliche Raumhöhen unter einem einheitlichen äusseren Ausdruck, ein durchgehender heller Wohnbereich innen.',
+    },
     fragen: [
       {
         frage: 'Was zeichnet die Aussengestaltung dieses Hauses aus?',
@@ -972,6 +1056,16 @@ export const projekte: Projekt[] = [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Totalsanierung' },
       { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Totalsanierung eines Einfamilienhauses in Merenschwand (AG), in einem gewachsenen, giebelständig geprägten Quartier.',
+      frage:
+        'Wie fügt sich ein kantiger Flachdachbau zurückhaltend in ein giebelständig geprägtes Quartier ein?',
+      entscheidung:
+        'Eine reduzierte, kantige Formensprache mit dunkel gerahmten Fenstern und aussenliegenden Lamellenstoren statt einer auffälligen Gestaltung; ein gedeckter Vorbereich markiert den Eingang.',
+      resultat:
+        'Ein ruhiges, zurückhaltendes Erscheinungsbild trotz baulichem Kontrast zur Umgebung, mit neuem Balkon und Terrasse als Mehrwert.',
+    },
     fragen: [
       {
         frage: 'Was ist der Unterschied zwischen Total- und Kernsanierung?',
