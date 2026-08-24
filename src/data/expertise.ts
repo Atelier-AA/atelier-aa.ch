@@ -84,50 +84,6 @@ export const bauaufgaben = [
   },
 ];
 
-/** Planungsphasen nach SIA 102, für den Abschnitt "Planungsphasen". */
-export const planungsphasen = [
-  {
-    nummer: '01',
-    titel: 'Machbarkeitsstudie',
-    text: 'Klärung von Potenzial, Rahmenbedingungen und ersten Varianten.',
-  },
-  {
-    nummer: '02',
-    titel: 'Vorprojekt',
-    text: 'Entwicklung des architektonischen Konzepts, erste Kostenschätzung.',
-  },
-  {
-    nummer: '03',
-    titel: 'Bauprojekt',
-    text: 'Detaillierung von Gestaltung, Konstruktion und Kosten.',
-  },
-  {
-    nummer: '04',
-    titel: 'Baubewilligungsverfahren',
-    text: 'Aufbereitung und Begleitung des Bewilligungsverfahrens.',
-  },
-  {
-    nummer: '05',
-    titel: 'Ausschreibung',
-    text: 'Ausschreibung, Offertvergleich und Vergabe an Unternehmer.',
-  },
-  {
-    nummer: '06',
-    titel: 'Ausführungsplanung',
-    text: 'Detailpläne für die Realisierung.',
-  },
-  {
-    nummer: '07',
-    titel: 'Realisierung und Bauleitung',
-    text: 'Bauüberwachung, Qualitäts-, Kosten- und Terminkontrolle.',
-  },
-  {
-    nummer: '08',
-    titel: 'Inbetriebnahme und Abschluss',
-    text: 'Übergabe, Mängelbehebung, Dokumentation.',
-  },
-];
-
 /** Häufige Fragen zu Leistungen und Zusammenarbeit. */
 export const expertiseFragen: InsightFrage[] = [
   {

@@ -157,12 +157,6 @@ export interface NavLink {
   unterlink?: { href: string; label: string };
 }
 
-/**
- * Ein Abschnitt im Fliesstext eines Beitrags.
- * @deprecated Verwende `Abschnitt` — gleicher Aufbau, allgemeiner benannt.
- */
-export type InsightAbschnitt = Abschnitt;
-
 export interface Insight {
   slug: string;
   titel: string;

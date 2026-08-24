@@ -40,10 +40,3 @@ export function speichereEinwilligung(wahl: { statistik: boolean; marketing: boo
   window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(einwilligung));
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT));
 }
-
-/** Setzt die gespeicherte Entscheidung zurück, damit das Banner erneut erscheint. */
-export function einwilligungZuruecksetzen(): void {
-  if (typeof window === 'undefined') return;
-  window.localStorage.removeItem(CONSENT_STORAGE_KEY);
-  window.dispatchEvent(new CustomEvent(CONSENT_EVENT));
-}

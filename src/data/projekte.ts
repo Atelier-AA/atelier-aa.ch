@@ -1373,7 +1373,3 @@ export function getProjekt(slug: string): Projekt | undefined {
 export function getWeitereProjekte(currentSlug: string, count = 4): Projekt[] {
   return projekte.filter((p) => p.slug !== currentSlug).slice(0, count);
 }
-
-export function getFeaturedProjekte(): Projekt[] {
-  return projekte.filter((p) => p.featured);
-}
