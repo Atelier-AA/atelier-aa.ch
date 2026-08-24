@@ -61,7 +61,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
   const breadcrumb = breadcrumbSchema([
     { name: 'Startseite', pfad: '/' },
-    { name: 'Über uns', pfad: '/ueber-uns' },
+    { name: 'Büro', pfad: '/ueber-uns' },
     { name: 'Team', pfad: '/ueber-uns/team' },
     { name: person.name, pfad: `/ueber-uns/${person.slug}` },
   ]);
@@ -149,7 +149,10 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
           </div>
 
-          <section className="mt-28 border-t border-mist pt-16 pb-20 md:mt-36 md:pb-28">
+          {/* Haltung/editorial-Text steht jetzt auf /ueber-uns (Büro-Seite),
+              nicht mehr hier — sonst stand derselbe Text an zwei Stellen. */}
+
+          <section className="mt-20 border-t border-mist pt-16 pb-20 md:mt-28 md:pb-28">
             <h2 className="text-xs uppercase tracking-widest text-stone mb-12">
               Weitere Teammitglieder
             </h2>

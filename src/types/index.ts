@@ -57,6 +57,13 @@ export interface Projekt {
   /** Downloadbare Pläne als PDF. Nur gesetzt, wenn Originalpläne vorliegen. */
   plaene?: ProjektPlan[];
   featured: boolean;
+  /**
+   * Ersetzt ein Foto in `galerie` durch eine kurze, geprüft echte
+   * Kamerafahrt über genau dasselbe Bild (Testlauf, vorerst nur bei
+   * efh-jonen). `bildPfad` muss exakt einem Eintrag in `galerie`
+   * entsprechen — sonst bleibt es beim Foto.
+   */
+  videoClips?: { bildPfad: string; mp4: string; webm: string; poster: string }[];
 }
 
 /**
@@ -123,6 +130,12 @@ export interface TeamMember {
   absaetze: string[];
   /** E-Mail-Adresse für die direkte Kontaktaufnahme. `null`, wenn keine. */
   email: string | null;
+  /**
+   * Persönliche Editorial-Sektion, bislang nur bei Alisami — eigene Stimme
+   * des Inhabers statt Werdegangs-Absätzen. Schlusszeile separat, damit sie
+   * auf der Seite optisch hervorgehoben stehen kann.
+   */
+  editorial?: { absaetze: string[]; schlusszeile: string };
 }
 
 export interface NavLink {

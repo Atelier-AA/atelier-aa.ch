@@ -1,92 +1,199 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import MehrLesen from '@/components/ui/MehrLesen';
+import { getTeamMember } from '@/data/team';
 
 export const metadata: Metadata = {
-  title: 'Über uns',
+  title: 'Büro',
   description:
     'Atelier AA Architekten GmbH in Obfelden ZH: Architekturbüro für Neubau, Umbau, Sanierung, Projektentwicklung und Generalplanung in Zürich, Aargau und Zug.',
   alternates: { canonical: '/ueber-uns' },
 };
 
 /**
- * Reine Firmenseite: Haltung, was konkret gebaut wird, Region. Die
- * Team-Galerie steht auf einer eigenen Seite (/ueber-uns/team), damit diese
- * Seite nicht überladen wirkt, jetzt wo der Text konkreter/länger ist.
+ * Die vier Ansätze sind keine eigene Erfindung, sondern Kernsätze aus
+ * Alisamis Haltungstext (unten, wörtlich) auf einen Titel verdichtet — sie
+ * dürfen sich nicht mit den fünf Leistungen (src/data/expertise.ts,
+ * Beratung/Analyse/Planung/Realisierung/Generalplanung) überschneiden: die
+ * Leistungen sind Prozessschritte, die Ansätze sind die Haltung dahinter.
+ */
+const ANSAETZE = [
+  {
+    titel: 'Zuhören vor Entwerfen',
+    text: 'Unsere Aufgabe ist es, genau zuzuhören, die richtigen Fragen zu stellen und daraus eine Lösung zu entwickeln, die gestalterisch überzeugt und gleichzeitig realisierbar bleibt.',
+  },
+  {
+    titel: 'Keine Architektur nach Schema',
+    text: 'Jedes Projekt hat andere Voraussetzungen: einen anderen Ort, eine andere Bauherrschaft, ein anderes Budget und andere Ziele.',
+  },
+  {
+    titel: 'Entwurf als Prozess',
+    text: 'Architektur entwickelt sich. Man analysiert, entwirft, hinterfragt, verwirft und präzisiert, bis aus unterschiedlichen Anforderungen eine klare Antwort entsteht.',
+  },
+  {
+    titel: 'Verantwortung für den gesamten Prozess',
+    text: 'Gestaltung, Kosten, Termine, Bewilligungsfähigkeit und Ausführung müssen zusammen gedacht werden — nicht nur der Entwurf.',
+  },
+];
+
+/**
+ * Reine Firmenseite: Leitbild, Haltung, Ansätze, Geschichte, Region. Die
+ * Team-Galerie steht auf einer eigenen Seite (/ueber-uns/team). Der
+ * Haltungstext stand vorher zusätzlich auf Alisamis persönlicher Profilseite
+ * — das erzeugte einen Widerspruch (derselbe Text an zwei Stellen), deshalb
+ * steht er jetzt nur noch hier, als Haltung des Büros statt als private
+ * Meinung.
  */
 export default function UeberUnsPage() {
+  const gruender = getTeamMember('alisami-aljili');
+  const haltung = gruender?.editorial;
+
   return (
     <div className="pt-32 md:pt-40">
       <Container>
-        {/* "Über uns" steht über beiden Spalten, auch über dem Video, statt
-            nur über dem Text. */}
-        <p className="text-xs uppercase tracking-widest text-stone mb-8">Über uns</p>
+        <p className="text-xs uppercase tracking-widest text-stone mb-8">Büro</p>
 
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* H1 und Fliesstext zusammen in der linken Spalte, so hoch wie
-              das Video daneben. Engere Zeilen- und Absatzabstände, damit der
-              Text unten auf derselben Höhe endet. Der Team-Button steht
-              direkt darunter, linksbündig mit dem Text statt unter dem
-              Video. */}
-          <div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-4">
-              Wir gestalten <span className="font-semibold">Architektur</span> mit
-              Verantwortung, für Menschen, Orte und{' '}
-              <span className="font-semibold">Zukunft.</span>
-            </h1>
-            <div className="text-graphite leading-snug">
-              <p className="text-lg text-ink">
-                Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden
-                im Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
-                Mehrfamilienhäuser und Wohnüberbauungen sowie Generalplanungsmandate in
-                Zürich, Aargau und Zug, von der Machbarkeitsstudie über Baugesuch und
-                Ausführungsplanung bis zur Bauleitung.
-              </p>
-              <MehrLesen nurMobil className="mt-3 space-y-3">
-                <p>
-                  Zuhören heisst bei uns: ein Gespräch vor Ort führen, das Grundstück in
-                  seiner Umgebung verstehen, und die Fragen stellen, die sich im
-                  Projektverlauf sonst erst später ergeben. Erst danach beginnt der
-                  Entwurf, nie umgekehrt.
-                </p>
-                <p>
-                  Wir führen das Atelier AA Architekten mit dieser Haltung, mit einem
-                  engagierten, fachlich qualifizierten Team und zeitgemässen Werkzeugen wie
-                  der 3D-Planung, die unsere Prozesse unterstützen, ohne unsere
-                  Grundhaltung zu ersetzen.
-                </p>
-                <p>
-                  Wir verbinden Architektur, Funktion und Wirtschaftlichkeit zu
-                  nachhaltigen Konzepten mit langfristigem Mehrwert. Dabei denken wir
-                  Ressourcen, Konstruktion und Lebenszyklus von Anfang an mit. Diese
-                  Haltung tragen wir seit der Gründung 2021 in jedes Projekt.
-                </p>
-              </MehrLesen>
-            </div>
-            <div className="mt-6">
-              <Button href="/ueber-uns/team" variant="text">
-                Unser Team ansehen
-              </Button>
-            </div>
-          </div>
-
-          {/* Team-Video statt der Baustellen-Drohnenmontage von /leistungen —
-              zeigt die Menschen hinter dem Büro. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-square">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/ueber-uns-team.mp4"
-              poster="/images/team/ueber-uns-team-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-            />
-          </div>
-        </div>
+        <h1 className="max-w-4xl text-3xl font-normal leading-[1.15] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          Wir entwerfen nicht für den <span className="font-semibold">Moment.</span> Wir
+          schaffen Orte mit <span className="font-semibold">Bestand.</span>
+        </h1>
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-graphite">
+          Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden im
+          Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
+          Mehrfamilienhäuser und Wohnüberbauungen sowie Generalplanungsmandate in
+          Zürich, Aargau und Zug, von der Machbarkeitsstudie über Baugesuch und
+          Ausführungsplanung bis zur Bauleitung.
+        </p>
       </Container>
+
+      {/* Haltung: wörtlich Alisamis eigener Text. */}
+      {haltung && (
+        <div className="mt-24 border-t border-mist pt-16 md:mt-32">
+          <Container>
+            <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-[1fr_2fr]">
+              <p className="text-xs uppercase tracking-widest text-stone">Haltung</p>
+              <div className="max-w-2xl text-lg leading-relaxed text-graphite">
+                <p>{haltung.absaetze[0]}</p>
+                <MehrLesen className="mt-5 space-y-5">
+                  {haltung.absaetze.slice(1).map((absatz) => (
+                    <p key={absatz.slice(0, 40)}>{absatz}</p>
+                  ))}
+                  <p className="pt-2 text-2xl font-medium leading-snug text-ink">
+                    {haltung.schlusszeile}
+                  </p>
+                </MehrLesen>
+                <p className="mt-5 text-sm text-stone">
+                  {gruender?.name}, {gruender?.rolle}
+                </p>
+              </div>
+            </div>
+          </Container>
+        </div>
+      )}
+
+      {/* Ansätze: aus dem Haltungstext oben verdichtet, nicht neu erfunden. */}
+      <div className="mt-24 border-t border-mist pt-16 md:mt-32">
+        <Container>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Ansätze</p>
+          <h2 className="mb-10 max-w-xl text-3xl font-normal leading-tight text-ink md:text-4xl">
+            Vier Ansätze, die <span className="font-semibold">jedes Projekt</span> tragen.
+          </h2>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+            {ANSAETZE.map((a) => (
+              <div key={a.titel}>
+                <h3 className="text-base font-medium text-ink">{a.titel}</h3>
+                <p className="mt-3 text-sm text-graphite leading-relaxed">{a.text}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+
+      {/* Weiterentwicklung der Haltung: nicht nur wie Architektur aussieht,
+          sondern wie sie entsteht. Bewusst als Fortführung der Ansätze oben
+          platziert, nicht als eigenständiges neues Leistungsversprechen —
+          deshalb keine eigene Nav, kein "Design-Build"-Menüpunkt. */}
+      <div className="mt-24 border-t border-mist pt-16 md:mt-32">
+        <Container>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
+          <h2 className="max-w-3xl text-3xl font-normal leading-tight text-ink md:text-4xl">
+            Wir hinterfragen nicht nur, wie Architektur{' '}
+            <span className="font-semibold">aussieht</span>, sondern auch, wie sie{' '}
+            <span className="font-semibold">entsteht.</span>
+          </h2>
+          <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-graphite">
+            <p>
+              Die Qualität eines Projekts entscheidet sich nicht allein im Entwurf. Sie wird
+              ebenso davon geprägt, wie früh Wissen zusammenkommt, wie Entscheidungen getroffen
+              werden und wie eng Planung, Wirtschaftlichkeit und Ausführung miteinander
+              verbunden sind.
+            </p>
+            <p>
+              Deshalb haben wir uns bei Atelier AA intensiv mit integrierten
+              Projektabwicklungsmodellen wie Design-Build auseinandergesetzt. In einem
+              aktuellen Projekt haben wir bereits begonnen, zentrale Prinzipien daraus
+              anzuwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen
+              früher zusammen, beziehen relevantes Fachwissen gezielter in den Prozess ein und
+              schaffen damit eine breitere Grundlage für Entscheidungen.
+            </p>
+            <p>
+              Uns interessiert dabei nicht, ein neues Modell einfach zu übernehmen.{' '}
+              <span className="font-medium text-ink">
+                Wir wollen verstehen, welche Prinzipien ein Projekt tatsächlich besser machen.
+              </span>{' '}
+              Design-Build verstehen wir deshalb nicht als starres Schema, sondern als einen
+              Ansatz, den wir weiterdenken und projektbezogen einsetzen — denn auch die Art,
+              wie ein Projekt entsteht, ist für uns Teil der Architektur.
+            </p>
+            <p className="pt-2 text-2xl font-medium leading-snug text-ink">
+              Bevor wir gestalten, wollen wir verstehen. Bevor wir entscheiden, wollen wir das
+              relevante Wissen zusammenbringen.
+            </p>
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/insights/design-build-projektabwicklung"
+              className="text-sm text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+            >
+              Mehr dazu im Journal →
+            </Link>
+          </div>
+        </Container>
+      </div>
+
+      {/* Echte Bürofotos statt des entfernten Videos, plus Link zur
+          Team-Seite — ohne die Geschichte-Erzählung, die hier zu viel war.
+          Drei statt nur ein Bild, aber als schlanker Streifen statt einer
+          grossen Galerie; alle drei in Schwarzweiss wie die Team-Fotos. */}
+      <div className="mt-24 border-t border-mist pt-16 md:mt-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              '/images/kontakt/kontakt-buero.jpg',
+              '/images/buero/buero-1.jpg',
+              '/images/buero/buero-2.jpg',
+            ].map((src) => (
+              <div key={src} className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
+                <Image
+                  src={src}
+                  alt="Das Atelier von Atelier AA Architekten in Obfelden"
+                  fill
+                  className="object-cover grayscale"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Button href="/ueber-uns/team" variant="text">
+              Das Team kennenlernen
+            </Button>
+          </div>
+        </Container>
+      </div>
 
       {/* Trennstrich ausserhalb des Container, randvoll über die ganze
           Fensterbreite, wie auf der Startseite. */}
