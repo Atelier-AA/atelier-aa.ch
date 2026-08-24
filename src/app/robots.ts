@@ -11,9 +11,11 @@ import type { MetadataRoute } from 'next';
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: '*', allow: '/' },
-      { userAgent: 'Googlebot', allow: '/' },
-      { userAgent: 'Google-Extended', allow: '/' },
+      // /vorschau/* sind interne Entwurfsseiten, nirgends verlinkt, aber ohne
+      // diese Regel technisch crawlbar.
+      { userAgent: '*', allow: '/', disallow: '/vorschau/' },
+      { userAgent: 'Googlebot', allow: '/', disallow: '/vorschau/' },
+      { userAgent: 'Google-Extended', allow: '/', disallow: '/vorschau/' },
     ],
     sitemap: 'https://www.atelier-aa.ch/sitemap.xml',
     host: 'https://www.atelier-aa.ch',

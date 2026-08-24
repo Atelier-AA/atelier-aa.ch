@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
       // Seite wurde von "Expertise" in "Leistungen" umbenannt — alte Links
       // und bereits indexierte Suchergebnisse sollen nicht ins Leere laufen.
       { source: '/expertise', destination: '/leistungen', permanent: true },
+      // Altlast der früheren PHP-Website, bei Google noch indexiert.
+      { source: '/indexxxx.php', destination: '/', permanent: true },
     ];
   },
 };
