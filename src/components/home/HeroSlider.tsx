@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Arrow from '@/components/ui/Arrow';
 import { cn, ortMitKanton } from '@/lib/utils';
 
 interface Slide {
@@ -126,6 +127,13 @@ export default function HeroSlider() {
             <p className="mt-5 max-w-[30ch] text-base text-white/75 sm:text-lg">
               Wir schaffen Orte, die bleiben.
             </p>
+            <Link
+              href="/projekte"
+              className="group mt-6 inline-flex items-center gap-4 text-[1.125rem] tracking-[0.1em] text-white transition-colors hover:text-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              Unsere Projekte entdecken
+              <Arrow className="h-[15px] w-[50px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
+            </Link>
           </div>
 
           <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
