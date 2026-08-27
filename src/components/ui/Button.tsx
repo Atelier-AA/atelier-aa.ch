@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const base =
-  'inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed';
+  'inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink';
 
 const variants = {
   primary: 'bg-ink text-white px-8 py-4 hover:bg-graphite',
@@ -41,7 +41,7 @@ export default function Button({
     variant === 'text' ? (
       <>
         {children}
-        <Arrow className="w-[50px] h-[15px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em]" />
+        <Arrow className="w-[50px] h-[15px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
       </>
     ) : (
       children

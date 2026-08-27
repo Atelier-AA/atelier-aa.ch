@@ -32,7 +32,7 @@ export default function InsightsSection() {
             <Link
               key={i.slug}
               href={`/insights/${i.slug}`}
-              className="group block min-w-0"
+              className="group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               aria-label={`Beitrag lesen: ${i.titel}, ${formatDatum(i.datum)}`}
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-mist">
@@ -41,11 +41,11 @@ export default function InsightsSection() {
                   alt={`${i.titel}, Atelier AA Architekten`}
                   fill
                   priority={idx < 2}
-                  className="object-cover grayscale transition-[transform,filter] duration-500 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
+                  className="object-cover grayscale transition-[transform,filter] duration-500 ease-out group-hover:scale-[1.05] group-hover:grayscale-0 group-focus-visible:scale-[1.05] group-focus-visible:grayscale-0"
                   sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
+                <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                   <p className="line-clamp-2 text-lg font-medium leading-tight text-white">
                     {i.titel}
                   </p>
