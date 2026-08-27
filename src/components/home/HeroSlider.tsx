@@ -129,10 +129,10 @@ export default function HeroSlider() {
             </p>
             <Link
               href="/projekte"
-              className="group mt-6 inline-flex items-center gap-4 text-[1.125rem] tracking-[0.1em] text-white transition-colors hover:text-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="group mt-6 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Unsere Projekte entdecken
-              <Arrow className="h-[15px] w-[50px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
+              <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
             </Link>
           </div>
 
