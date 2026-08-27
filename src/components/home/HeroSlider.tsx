@@ -124,7 +124,7 @@ export default function HeroSlider() {
               <span className="block whitespace-nowrap">Architektur mit</span>{' '}
               <span className="block whitespace-nowrap">Bestand.</span>
             </h1>
-            <p className="mt-5 max-w-[30ch] text-base text-white/75 sm:text-lg">
+            <p className="mt-5 max-w-[30ch] text-[1.3rem] text-white/75 sm:text-[1.46rem]">
               Wir schaffen Orte, die bleiben.
             </p>
             <Link
