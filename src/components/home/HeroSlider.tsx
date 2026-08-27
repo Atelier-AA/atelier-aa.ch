@@ -126,12 +126,6 @@ export default function HeroSlider() {
             <p className="mt-5 max-w-[30ch] text-base text-white/75 sm:text-lg">
               Wir schaffen Orte, die bleiben.
             </p>
-            <Link
-              href="/projekte"
-              className="mt-6 inline-block text-sm text-white underline underline-offset-4 decoration-white/50 transition-colors hover:decoration-white"
-            >
-              Unsere Projekte entdecken
-            </Link>
           </div>
 
           <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
