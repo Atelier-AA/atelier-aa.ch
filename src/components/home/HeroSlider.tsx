@@ -126,15 +126,14 @@ export default function HeroSlider() {
             <p className="mt-4 text-[0.58rem] uppercase tracking-widest text-white/70 sm:whitespace-nowrap sm:text-[0.72rem] lg:text-[0.87rem]">
               Wir schaffen Orte, die bleiben
             </p>
+            <Link
+              href="/projekte"
+              className="group mt-6 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              Unsere Projekte entdecken
+              <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
+            </Link>
           </div>
-
-          <Link
-            href="/projekte"
-            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-xs uppercase tracking-widest text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-          >
-            Unsere Projekte entdecken
-            <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
-          </Link>
 
           <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
             {/* Bildunterschrift im Stil "TYP — ORT · Zähler", wie im
