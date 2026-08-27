@@ -118,36 +118,33 @@ export default function HeroSlider() {
               visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
-          {/* Bewusst keine Subline im Hero: Die Erklärung des Hauptclaims
-              steht im zweiten Startseiten-Block (IntroSection), der Hero
-              selbst bleibt visuell und inhaltlich ruhig. */}
-          <h1 className="text-left text-[2.1rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.8rem] lg:text-[5.6rem]">
-            <span className="block whitespace-nowrap">Architektur mit</span>{' '}
-            <span className="block whitespace-nowrap">Bestand.</span>
-          </h1>
+          <div>
+            <h1 className="text-left text-[2.1rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.8rem] lg:text-[5.6rem]">
+              <span className="block whitespace-nowrap">Architektur mit</span>{' '}
+              <span className="block whitespace-nowrap">Bestand.</span>
+            </h1>
+            <p className="mt-5 max-w-[30ch] text-base text-white/75 sm:text-lg">
+              Wir schaffen Orte, die bleiben.
+            </p>
+            <Link
+              href="/projekte"
+              className="mt-6 inline-block text-sm text-white underline underline-offset-4 decoration-white/50 transition-colors hover:decoration-white"
+            >
+              Unsere Projekte entdecken
+            </Link>
+          </div>
 
-          <div className="flex items-end justify-between gap-6 md:w-72 md:flex-col md:items-start md:gap-4">
-            {/* Projekt-Bezeichnung immer auf genau einer Zeile (truncate),
-                zusammen mit dem Ort darunter also fest auf zwei Zeilen. */}
-            <Link href={slides[current].href} className="group block w-full min-w-0 text-white">
-              <p className="truncate text-xl font-medium">{slides[current].projekt}</p>
-              <p className="mt-1 truncate text-sm uppercase tracking-[0.15em] text-white/60">
-                {slides[current].ort}
+          <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
+            {/* Bildunterschrift im Stil "TYP — ORT · Zähler", wie im
+                Vorschau-Konzept: Gebäudetyp und Ort in Versalien, Zähler
+                zeigt Position im Slider statt der bisherigen Balkenreihe. */}
+            <Link href={slides[current].href} className="group block max-w-full min-w-0 text-white md:text-right">
+              <p className="truncate text-xs uppercase tracking-[0.15em] text-white/70">
+                {slides[current].projekt.toUpperCase()} — {slides[current].ort.toUpperCase()}
+                {' · '}
+                {String(current + 1).padStart(2, '0')}/{String(slides.length).padStart(2, '0')}
               </p>
             </Link>
-            <div className="flex gap-3">
-              {slides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrent(idx)}
-                  aria-label={`Slide ${idx + 1} anzeigen`}
-                  className={cn(
-                    'h-px transition-all duration-300',
-                    idx === current ? 'w-16 bg-white' : 'w-8 bg-white/40'
-                  )}
-                />
-              ))}
-            </div>
           </div>
         </div>
 
