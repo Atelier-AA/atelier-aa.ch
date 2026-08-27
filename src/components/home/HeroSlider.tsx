@@ -120,12 +120,11 @@ export default function HeroSlider() {
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
           <div>
-            <h1 className="text-left text-[2.1rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.8rem] lg:text-[5.6rem]">
-              <span className="block whitespace-nowrap">Architektur mit</span>{' '}
-              <span className="block whitespace-nowrap">Bestand.</span>
+            <h1 className="text-left text-[1.9rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.8rem] lg:text-[3.6rem]">
+              Architektur mit Bestand.
             </h1>
-            <p className="mt-5 max-w-[30ch] text-[1.3rem] text-white/75 sm:text-[1.46rem]">
-              Wir schaffen Orte, die bleiben.
+            <p className="mt-4 max-w-[30ch] text-xs uppercase tracking-widest text-white/70">
+              Wir schaffen Orte, die bleiben
             </p>
             <Link
               href="/projekte"
