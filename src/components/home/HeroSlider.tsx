@@ -119,25 +119,22 @@ export default function HeroSlider() {
               visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
-          <div className="-translate-y-[30%]">
+          <div>
             <h1 className="text-left text-[2.47rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-[3.64rem] lg:text-[4.68rem]">
               Architektur mit Bestand.
             </h1>
-            <Link
-              href="/projekte"
-              className="group mt-6 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Unsere Projekte entdecken
-              <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
-            </Link>
+            <p className="mt-4 text-[0.58rem] uppercase tracking-widest text-white/70 sm:whitespace-nowrap sm:text-[0.72rem] lg:text-[0.87rem]">
+              Wir schaffen Orte, die bleiben
+            </p>
           </div>
 
-          {/* Subline auf Wunsch von der Headline gelöst: klein, auf gleicher
-              horizontaler Höhe wie die Bildunterschrift rechts, während
-              Headline unverändert (Grösse und Position) bleibt. */}
-          <p className="text-[0.58rem] uppercase tracking-widest text-white/70 sm:whitespace-nowrap sm:text-[0.72rem] lg:text-[0.87rem]">
-            Wir schaffen Orte, die bleiben
-          </p>
+          <Link
+            href="/projekte"
+            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-xs uppercase tracking-widest text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Unsere Projekte entdecken
+            <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
+          </Link>
 
           <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
             {/* Bildunterschrift im Stil "TYP — ORT · Zähler", wie im
