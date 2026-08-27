@@ -109,7 +109,7 @@ export default function CookieBanner() {
               der Seite erforderlich. Mehr dazu in unserer{' '}
               <Link
                 href="/datenschutzerklaerung"
-                className="underline underline-offset-4 hover:text-ink"
+                className="rounded-sm underline underline-offset-4 hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Datenschutzerklärung
               </Link>
@@ -119,21 +119,21 @@ export default function CookieBanner() {
               <button
                 type="button"
                 onClick={() => setEinstellungenOffen(true)}
-                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink"
+                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Einstellungen
               </button>
               <button
                 type="button"
                 onClick={alleAblehnen}
-                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink"
+                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Alle ablehnen
               </button>
               <button
                 type="button"
                 onClick={alleAkzeptieren}
-                className="rounded-full bg-ink px-5 py-2.5 text-sm text-white transition-opacity hover:opacity-85"
+                className="rounded-full bg-ink px-5 py-2.5 text-sm text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Alle akzeptieren
               </button>
@@ -199,21 +199,21 @@ export default function CookieBanner() {
               <button
                 type="button"
                 onClick={alleAblehnen}
-                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink"
+                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Alle ablehnen
               </button>
               <button
                 type="button"
                 onClick={auswahlSpeichern}
-                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink"
+                className="rounded-full border border-mist px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Nur ausgewählte
               </button>
               <button
                 type="button"
                 onClick={alleAkzeptieren}
-                className="rounded-full bg-ink px-5 py-2.5 text-sm text-white transition-opacity hover:opacity-85"
+                className="rounded-full bg-ink px-5 py-2.5 text-sm text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               >
                 Alle akzeptieren
               </button>

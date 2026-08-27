@@ -87,22 +87,22 @@ export default function Header() {
               aria-label="Kurznavigation"
               className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
             >
-              <Link href="/projekte" className="transition-opacity hover:opacity-60">
+              <Link href="/projekte" className="rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor]">
                 Projekte
               </Link>
               <Link
                 href="/ueber-uns"
-                className="hidden transition-opacity hover:opacity-60 lg:inline"
+                className="hidden rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor] lg:inline"
               >
                 Büro
               </Link>
               <Link
                 href="/leistungen"
-                className="hidden transition-opacity hover:opacity-60 lg:inline"
+                className="hidden rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor] lg:inline"
               >
                 Leistungen
               </Link>
-              <Link href="/kontakt" className="transition-opacity hover:opacity-60">
+              <Link href="/kontakt" className="rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor]">
                 Kontakt
               </Link>
             </nav>
@@ -116,7 +116,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5"
+              className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[currentColor]"
               aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
