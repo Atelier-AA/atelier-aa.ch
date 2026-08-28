@@ -121,31 +121,29 @@ export default function HeroSlider() {
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
           <div>
             <h1
-              className="text-left font-[family-name:var(--font-fraunces)] font-medium leading-[1.05] tracking-tight text-white"
-              style={{ fontSize: 'clamp(2.4rem, 1.55rem + 3.47vw, 7.8rem)' }}
+              className="text-left font-bold leading-[1.1] tracking-tight text-white"
+              style={{ fontSize: 'clamp(1.8rem, 1.2rem + 1.8vw, 3.8rem)' }}
             >
               Architektur mit Bestand.
             </h1>
-            <p className="mt-4 font-[family-name:var(--font-fraunces)] text-[0.7rem] italic tracking-wide text-white/70 sm:whitespace-nowrap sm:text-[0.9rem] lg:text-[1.05rem]">
+            <p className="mt-3 text-[0.65rem] uppercase tracking-[0.15em] text-white/70 sm:text-xs">
               Wir schaffen Orte, die bleiben
             </p>
           </div>
 
           <Link
             href="/projekte"
-            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap font-[family-name:var(--font-fraunces)] text-sm text-white/70 underline underline-offset-4 decoration-white/40 transition-colors hover:text-white hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-xs uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             Unsere Projekte entdecken
             <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
           </Link>
 
           <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
-            {/* Bildunterschrift im Stil "TYP — ORT · Zähler", wie im
-                Vorschau-Konzept: Gebäudetyp und Ort in Versalien, Zähler
-                zeigt Position im Slider statt der bisherigen Balkenreihe. */}
+            {/* Bildunterschrift: Projektname · Zähler, wie im Vorschau-Konzept. */}
             <Link href={slides[current].href} className="group block max-w-full min-w-0 text-white md:text-right">
-              <p className="truncate font-[family-name:var(--font-fraunces)] text-xs uppercase tracking-[0.15em] text-white/70">
-                {slides[current].projekt.toUpperCase()} — {slides[current].ort.toUpperCase()}
+              <p className="truncate text-xs uppercase tracking-[0.15em] text-white/70">
+                {slides[current].projekt.toUpperCase()}
                 {' · '}
                 {String(current + 1).padStart(2, '0')}/{String(slides.length).padStart(2, '0')}
               </p>

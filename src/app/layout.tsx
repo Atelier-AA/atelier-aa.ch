@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Fraunces } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieBanner from '@/components/cookies/CookieBanner';
@@ -18,15 +18,6 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-});
-
-// Nur für die Vorschau des Hero-Designs (siehe HeroSlider.tsx) — bewusst
-// nicht sitewide eingesetzt, die restliche Website bleibt bei Inter.
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  display: 'swap',
-  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -103,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="de" className={inter.variable}>
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
