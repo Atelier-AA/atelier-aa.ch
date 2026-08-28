@@ -111,37 +111,43 @@ export default function HeroSlider() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-end px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
-        <div className="flex flex-col items-start justify-end gap-6 md:flex-row md:items-end md:justify-between">
-          {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
-              px-6/md:px-10/lg:px-16). Vorschau: normale Gross-/Kleinschreibung
-              statt Versalien. */}
-          {/* Leerzeichen als eigene Textnode zwischen den beiden Blöcken:
-              visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
-              dieses Leerzeichen verschmilzt roher Text (Screenreader,
-              Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
-          <div>
-            <h1
-              className="text-left font-bold leading-[1.1] tracking-tight text-white"
-              style={{ fontSize: 'clamp(1.8rem, 1.2rem + 1.8vw, 3.8rem)' }}
+        <div className="flex flex-col gap-10 md:gap-14">
+          {/* Headline-Gruppe: Headline, Subline und "Entdecken"-Link auf
+              gleicher Ebene, mit deutlichem Abstand nach unten zur
+              Bildunterschrift-Zeile — auf Kundenwunsch höher positioniert
+              statt direkt am unteren Rand. */}
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+            {/* Links auf gleicher Höhe wie das Logo im Header (Container-Padding
+                px-6/md:px-10/lg:px-16). Vorschau: normale Gross-/Kleinschreibung
+                statt Versalien. */}
+            {/* Leerzeichen als eigene Textnode zwischen den beiden Blöcken:
+                visuell erzwingt "block" ohnehin den Zeilenumbruch, aber ohne
+                dieses Leerzeichen verschmilzt roher Text (Screenreader,
+                Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
+            <div>
+              <h1
+                className="text-left font-bold leading-[1.1] tracking-tight text-white"
+                style={{ fontSize: 'clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)' }}
+              >
+                Architektur mit Bestand.
+              </h1>
+              <p className="mt-3 text-[0.65rem] uppercase tracking-[0.15em] text-white/70 sm:text-xs">
+                Wir schaffen Orte, die bleiben
+              </p>
+            </div>
+
+            <Link
+              href="/projekte"
+              className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-xs uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Architektur mit Bestand.
-            </h1>
-            <p className="mt-3 text-[0.65rem] uppercase tracking-[0.15em] text-white/70 sm:text-xs">
-              Wir schaffen Orte, die bleiben
-            </p>
+              Unsere Projekte entdecken
+              <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
+            </Link>
           </div>
 
-          <Link
-            href="/projekte"
-            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-xs uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-          >
-            Unsere Projekte entdecken
-            <Arrow className="h-[8px] w-[28px] shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-[0.2em] group-focus-visible:translate-x-[0.2em]" />
-          </Link>
-
-          <div className="flex items-end justify-between gap-6 md:w-[26rem] md:flex-col md:items-end md:gap-4">
-            {/* Bildunterschrift: Projektname · Zähler, wie im Vorschau-Konzept. */}
-            <Link href={slides[current].href} className="group block max-w-full min-w-0 text-white md:text-right">
+          {/* Bildunterschrift bleibt unten, unabhängig von der Headline-Gruppe. */}
+          <div className="flex justify-end">
+            <Link href={slides[current].href} className="group block max-w-full min-w-0 text-white">
               <p className="truncate text-xs uppercase tracking-[0.15em] text-white/70">
                 {slides[current].projekt.toUpperCase()}
                 {' · '}
