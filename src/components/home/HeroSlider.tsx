@@ -127,7 +127,7 @@ export default function HeroSlider() {
             >
               Architektur mit Bestand.
             </h1>
-            <p className="mt-3 text-[0.65rem] uppercase tracking-[0.15em] text-white/70 sm:text-xs">
+            <p className="mt-3 text-[0.78rem] uppercase tracking-[0.15em] text-white/70 sm:text-[0.9rem]">
               Wir schaffen Orte, die bleiben
             </p>
           </div>
