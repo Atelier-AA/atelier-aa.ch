@@ -111,7 +111,7 @@ export default function HeroSlider() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-end px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-[3.5rem] md:gap-[4.9rem]">
           {/* Headline-Gruppe: allein, mit grossem Abstand nach unten zur
               Zeile mit "Entdecken"-Link und Bildunterschrift — auf
               Kundenwunsch deutlich höher positioniert statt direkt am
