@@ -144,7 +144,7 @@ export default function ProjektentwicklungHeroVorschau() {
                   <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                     <Image
                       src={p.thumbnail}
-                      alt={`${p.title}, ${ortMitKanton(p)}`}
+                      alt={`${p.title}, ${ortMitKanton(p)}, Atelier AA Architekten`}
                       fill
                       priority={idx < 2}
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

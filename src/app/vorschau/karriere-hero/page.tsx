@@ -101,7 +101,7 @@ export default function KarriereHeroVorschau() {
 
           <div className="relative aspect-[4/5] w-full overflow-hidden bg-mist lg:sticky lg:top-32">
             <Image
-              src="/images/kleinprojekte/umbau-buerogebaeude-obfelden/bild1.jpg"
+              src="/images/kleinprojekte/umbau-buerogebaeude-obfelden/atelier-aa-umbau-buerogebaeude-obfelden-bild1.jpg"
               alt="Büro von Atelier AA Architekten in Obfelden"
               fill
               priority

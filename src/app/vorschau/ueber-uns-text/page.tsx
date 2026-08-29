@@ -66,7 +66,8 @@ export default function UeberUnsTextVorschau() {
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/ueber-uns-team.mp4"
-              poster="/images/team/ueber-uns-team-poster.jpg"
+              poster="/images/team/atelier-aa-ueber-uns-team-poster.jpg"
+              aria-label="Das Team von Atelier AA Architekten im Büro in Obfelden"
               autoPlay
               muted
               loop

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Atelier AA Architekten',
     images: [
       {
-        url: '/images/hero/slide-hochwarting-2.jpg',
+        url: '/images/hero/atelier-aa-hero-hochwarting-2.jpg',
         width: 2400,
         height: 1340,
         alt: 'Atelier AA Architekten',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Atelier AA Architekten',
     description:
       'Architekturbüro in Obfelden für Neubau, Umbau und Generalplanung in Zürich, Aargau und Zug.',
-    images: ['/images/hero/slide-hochwarting-2.jpg'],
+    images: ['/images/hero/atelier-aa-hero-hochwarting-2.jpg'],
   },
   // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
   icons: {

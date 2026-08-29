@@ -85,8 +85,8 @@ export default function MachbarkeitsstudieHeroVorschau() {
 
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
             <Image
-              src="/images/leistungen/machbarkeitsstudie-hero.jpg"
-              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
+              src="/images/leistungen/atelier-aa-leistungen-machbarkeitsstudie-hero.jpg"
+              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie, Atelier AA Architekten, Zürich, Aargau und Zug"
               fill
               priority
               className="object-cover"
@@ -142,7 +142,7 @@ export default function MachbarkeitsstudieHeroVorschau() {
                       {bild && (
                         <Image
                           src={bild}
-                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}`}
+                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}, Atelier AA Architekten`}
                           fill
                           priority={idx < 2}
                           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

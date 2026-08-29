@@ -18,7 +18,12 @@ export default function LeistungenPage() {
       <Container className="mb-16 md:mb-24">
         <p className="mb-8 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+        {/* Ab lg `items-stretch`: Das Video übernimmt die Höhe der Textspalte,
+            statt sie über ein festes Seitenverhältnis zu bestimmen. Vorher war
+            es bei 4:3 rund 590px hoch, der Text aber nur etwa 330px — daneben
+            stand oben und unten viel Leere. So passen beide Spalten auf jeder
+            Fensterbreite zusammen, ohne den Text auf eine Pixelhöhe zu trimmen. */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-16">
           <div>
             {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
                 soll fachlich bleiben und mit den echten Leistungen
@@ -26,7 +31,11 @@ export default function LeistungenPage() {
                 Hero, Intro und Büro-Abschnitt konkurrieren würde. Der
                 Einleitungstext bewusst deutlich verdichtet (ca. 50-60% der
                 vorherigen Länge) — Themen wie Lebenszykluskosten oder
-                Aufstockung/Anbau/Ersatzneubau gehören nicht in diesen Block. */}
+                Aufstockung/Anbau/Ersatzneubau gehören nicht in diesen Block.
+                Der dritte Absatz kam später dazu, weil die Spalte neben dem
+                Video zu kurz war. Er beantwortet die naheliegende Rückfrage
+                zum Auftragsumfang und bleibt damit in der Sache dieses
+                Abschnitts — die oben ausgeschlossenen Themen bleiben draussen. */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-6">
               Von der ersten <span className="font-semibold">Frage</span>
               <br />
@@ -43,15 +52,21 @@ export default function LeistungenPage() {
                 zusammen gedacht, mit Schwerpunkt in Zürich, Aargau und Zug. Wie das
                 konkret aussieht, zeigen die folgenden fünf Leistungen.
               </p>
+              <p>
+                Der Umfang richtet sich nach Ihrem Vorhaben: Sie können uns für
+                einzelne Phasen beauftragen, etwa nur für Machbarkeitsstudie und
+                Baugesuch, oder für den gesamten Weg bis zur Übergabe.
+              </p>
             </div>
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
               reale, laufende Projekte statt eines einzelnen Referenzbilds. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-[4/3]">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full lg:min-h-[420px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"
-              poster="/images/leistungen/montage-poster.jpg"
+              poster="/images/leistungen/atelier-aa-leistungen-montage-poster.jpg"
+              aria-label="Drohnenaufnahmen laufender Baustellen von Atelier AA Architekten in Zürich, Aargau und Zug"
               autoPlay
               muted
               loop
@@ -82,15 +97,26 @@ export default function LeistungenPage() {
                 </p>
                 <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">{k.titel}</h3>
                 <ul className="mt-5 space-y-2">
-                  {k.punkte.map((punkt) => (
-                    <li key={punkt} className="flex gap-3 text-sm leading-relaxed text-graphite">
-                      <span
-                        aria-hidden="true"
-                        className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-stone"
-                      />
-                      {punkt}
-                    </li>
-                  ))}
+                  {k.punkte.map((punkt) => {
+                    /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften
+                       lesen, was gemacht wird, Fachleute finden die Phase trotzdem. */
+                    const text = typeof punkt === 'string' ? punkt : punkt.text;
+                    const sia = typeof punkt === 'string' ? null : punkt.sia;
+                    return (
+                      <li key={text} className="flex gap-3 text-sm leading-relaxed text-graphite">
+                        <span
+                          aria-hidden="true"
+                          className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-stone"
+                        />
+                        <span>
+                          {text}
+                          {sia && (
+                            <span className="mt-0.5 block text-xs text-stone">{sia}</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
                 <p className="mt-5 text-sm leading-relaxed text-graphite">{k.text}</p>
                 {k.links && k.links.length > 0 && (

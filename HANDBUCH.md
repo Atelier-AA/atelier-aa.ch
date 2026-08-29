@@ -109,12 +109,18 @@ Dateien in diesen Ordner legen, **genau so benannt**:
 
 | Datei | Zweck | Format | Grösse |
 |---|---|---|---|
-| `thumb.jpg` | Kachel in der Übersicht | 4:3 querformat | ca. 1200×900 px |
-| `hero.jpg` | Grosses Bild oben auf der Projektseite | 16:9 querformat | ca. 1600×900 px |
-| `01.jpg` … `04.jpg` | Galerie | beliebig | max. 1600 px lange Kante |
+| `atelier-aa-<slug>-thumb.jpg` | Kachel in der Übersicht | 4:3 querformat | ca. 1200×900 px |
+| `atelier-aa-<slug>-hero.jpg` | Grosses Bild oben auf der Projektseite | 16:9 querformat | ca. 1600×900 px |
+| `atelier-aa-<slug>-01.jpg` … `-04.jpg` | Galerie | beliebig | max. 1600 px lange Kante |
+
+Für `mfh-kuenten` heissen die Dateien also `atelier-aa-mfh-kuenten-thumb.jpg`,
+`atelier-aa-mfh-kuenten-hero.jpg`, `atelier-aa-mfh-kuenten-01.jpg` und so fort.
 
 Regeln für Bilddateien:
 
+- **Jeder Dateiname beginnt mit `atelier-aa-`**, danach folgt der Slug des
+  Projekts. Der Dateiname ist das, was in der Google-Bildersuche steht — er
+  soll das Büro und das Projekt benennen, nicht bloss `01.jpg`.
 - **Kleinbuchstaben**, keine Leerzeichen, keine Umlaute im Dateinamen
 - `.jpg` für Fotos, `.png` nur für Grafiken mit Transparenz
 - **Unter 500 KB pro Datei.** Grössere Bilder machen die Seite langsam. Zum
@@ -162,13 +168,13 @@ bestimmt die Anzeige):
       antwort: 'Zwei bis vier Sätze, erster Satz beantwortet die Frage.',
     },
   ],
-  thumbnail: '/images/projekte/wohnhaus-baerenweg/thumb.jpg',
-  heroImage: '/images/projekte/wohnhaus-baerenweg/hero.jpg',
+  thumbnail: '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-thumb.jpg',
+  heroImage: '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-hero.jpg',
   galerie: [
-    '/images/projekte/wohnhaus-baerenweg/01.jpg',
-    '/images/projekte/wohnhaus-baerenweg/02.jpg',
-    '/images/projekte/wohnhaus-baerenweg/03.jpg',
-    '/images/projekte/wohnhaus-baerenweg/04.jpg',
+    '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-01.jpg',
+    '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-02.jpg',
+    '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-03.jpg',
+    '/images/projekte/wohnhaus-baerenweg/atelier-aa-wohnhaus-baerenweg-04.jpg',
   ],
   featured: true,                        // true = erscheint auf Startseite und Expertise
 },
@@ -203,7 +209,8 @@ Wichtig zu den Feldern:
 - **`featured`**: Auf der Expertise-Seite werden die ersten drei Projekte mit
   `featured: true` gezeigt. Mehr als drei ist erlaubt, es erscheinen aber nur
   drei.
-- **Bildpfade** beginnen immer mit `/images/...` (ohne `public`).
+- **Bildpfade** beginnen immer mit `/images/...` (ohne `public`), der
+  Dateiname immer mit `atelier-aa-`.
 
 ### Schritt 3: Prüfen
 
@@ -236,10 +243,10 @@ Klick auf das Porträt geöffnet wird.
   Hintergrund, ähnlicher Ausschnitt, ähnliche Helligkeit. Ein Foto, das
   herausfällt, sieht im Raster sofort falsch aus.
 - Unter 200 KB
-- Ablegen als `public/images/team/vorname-nachname.jpg` —
+- Ablegen als `public/images/team/atelier-aa-vorname-nachname.jpg` —
   **kleingeschrieben, Bindestrich, keine Umlaute**:
-  - Aljili Aljisami → `aljili-aljisami.jpg`
-  - Céline Müller → `celine-mueller.jpg`
+  - Aljili Aljisami → `atelier-aa-aljili-aljisami.jpg`
+  - Céline Müller → `atelier-aa-celine-mueller.jpg`
 
 ### Schritt 2: Eintrag in `src/data/team.ts`
 
@@ -248,7 +255,7 @@ Klick auf das Porträt geöffnet wird.
   slug: 'celine-mueller',                // Adresse: /ueber-uns/celine-mueller
   name: 'Céline Müller',
   rolle: 'Architektin',
-  bild: '/images/team/celine-mueller.jpg',
+  bild: '/images/team/atelier-aa-celine-mueller.jpg',
   kurz: 'Ein Satz, was diese Person im Büro verantwortet.',
   schwerpunkte: [                        // 3 bis 4 Fachgebiete
     'Ausführungsplanung',
@@ -305,8 +312,9 @@ automatisch.
 
 ### Schritt 1: Bild ablegen
 
-`public/images/insights/<thema>.jpg` — sprechender Name, kleingeschrieben:
-`ki-entwurf.png`, `kreislauf-bauen.jpg`, `holzbau-mehrgeschossig.jpg`.
+`public/images/insights/atelier-aa-<thema>.jpg` — sprechender Name,
+kleingeschrieben: `atelier-aa-ki-entwurf.png`, `atelier-aa-kreislauf-bauen.jpg`,
+`atelier-aa-holzbau-mehrgeschossig.jpg`.
 Querformat, ca. 1600×900 px, unter 500 KB.
 
 ### Schritt 2: Eintrag in `src/data/insights.ts`
@@ -322,7 +330,7 @@ Am **Anfang** der Liste (neuester Beitrag zuerst):
   kategorie: 'Konstruktion',             // siehe Liste unten
   datum: '2026-08-15',                   // Format JJJJ-MM-TT, sonst Fehler
   lesezeit: 6,                           // Zahl, ohne "Min."
-  bild: '/images/insights/holzbau-mehrgeschossig.jpg',
+  bild: '/images/insights/atelier-aa-holzbau-mehrgeschossig.jpg',
   abschnitte: [
     {
       titel: 'Zwischentitel als Frage oder Aussage',
@@ -432,7 +440,7 @@ Datei: `src/components/home/HeroSlider.tsx`, Liste `slides` ganz oben.
 
 ```ts
 {
-  image: '/images/hero/slide-baerenweg.jpg',
+  image: '/images/hero/atelier-aa-hero-baerenweg.jpg',
   projekt: 'Wohnhaus Bärenweg',
   ort: 'Affoltern am Albis',
   kanton: 'ZH',
@@ -442,7 +450,8 @@ Datei: `src/components/home/HeroSlider.tsx`, Liste `slides` ganz oben.
 
 Zu beachten:
 
-- **Bilder gehören nach `public/images/hero/`**, benannt `slide-<name>.jpg`
+- **Bilder gehören nach `public/images/hero/`**, benannt
+  `atelier-aa-hero-<name>.jpg`
 - Der Bildbereich ist **bildschirmhoch**. Das Bild wird beschnitten, wenn das
   Fenster ein anderes Verhältnis hat. Wähle Bilder, bei denen das Motiv mittig
   liegt und unten nichts Wichtiges ist — dort steht die Projektbezeichnung.
@@ -477,7 +486,7 @@ wie das alte, muss im Code nichts geändert werden.
 
 ```bash
 # Beispiel: Titelbild eines Projekts ersetzen
-cp ~/Downloads/neues-bild.jpg public/images/projekte/mfh-kuenten/thumb.jpg
+cp ~/Downloads/neues-bild.jpg public/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-thumb.jpg
 ```
 
 **Wenn der Name sich ändert** (oder die Endung von `.jpg` zu `.png`), musst du
@@ -540,31 +549,32 @@ public/
     │   ├── atelier-aa-logo.svg         Wortmarke (im Code eingebettet, Datei als Reserve)
     │   └── atelier-aa-signet-512.png   Das „A" allein
     ├── hero/
-    │   └── slide-<name>.jpg            Slider der Startseite
+    │   └── atelier-aa-hero-<name>.jpg  Slider der Startseite
     ├── projekte/
     │   └── <slug>/                     ein Ordner je Projekt
-    │       ├── thumb.jpg               Kachel, 4:3
-    │       ├── hero.jpg                Titelbild, 16:9
-    │       └── 01.jpg … 04.jpg         Galerie
+    │       ├── atelier-aa-<slug>-thumb.jpg   Kachel, 4:3
+    │       ├── atelier-aa-<slug>-hero.jpg    Titelbild, 16:9
+    │       └── atelier-aa-<slug>-01.jpg …    Galerie
     ├── team/
-    │   └── vorname-nachname.jpg        Porträt, quadratisch
+    │   └── atelier-aa-<vorname-nachname>.jpg  Porträt, quadratisch
     ├── insights/
-    │   └── <thema>.jpg                 Beitragsbild, querformat
+    │   └── atelier-aa-<thema>.jpg      Beitragsbild, querformat
     ├── expertise/
-    │   └── <thema>.jpg                 Bild im Themenblock, 4:3
+    │   └── atelier-aa-<thema>.jpg      Bild im Themenblock, 4:3
     └── kontakt/
-        └── kontakt-hero.jpg            Titelbild Kontaktseite
+        └── atelier-aa-kontakt-<name>.jpg  Titelbild Kontaktseite
 ```
 
 ### Namensregeln (gelten überall)
 
 | Regel | richtig | falsch |
 |---|---|---|
-| Kleinbuchstaben | `thumb.jpg` | `Thumb.JPG` |
+| Name beginnt mit `atelier-aa-` | `atelier-aa-mfh-kuenten-01.jpg` | `01.jpg` |
+| Kleinbuchstaben | `atelier-aa-mfh-kuenten-thumb.jpg` | `Thumb.JPG` |
 | Bindestriche statt Leerzeichen | `mfh-kuenten` | `MFH Künten` |
 | Umlaute ausschreiben | `kuenten`, `baerenweg` | `künten`, `bärenweg` |
 | Endung = echtes Format | PNG-Datei heisst `.png` | PNG-Datei heisst `.jpg` |
-| Pfad im Code ohne `public` | `/images/team/x.jpg` | `/public/images/team/x.jpg` |
+| Pfad im Code ohne `public` | `/images/team/atelier-aa-x.jpg` | `/public/images/team/atelier-aa-x.jpg` |
 
 ### Grössen und Gewichte
 
@@ -865,8 +875,9 @@ und wo die Bilder liegen.
 Dann:
 1. Slug bilden: kleingeschrieben, Umlaute ausschreiben, Bindestriche.
 2. Ordner public/images/projekte/<slug>/ anlegen.
-3. Bilder einsortieren als thumb.jpg (4:3), hero.jpg (16:9),
-   01.jpg bis 04.jpg. Bei über 500 KB auf die Grösse hinweisen.
+3. Bilder einsortieren als atelier-aa-<slug>-thumb.jpg (4:3),
+   atelier-aa-<slug>-hero.jpg (16:9), atelier-aa-<slug>-01.jpg bis -04.jpg.
+   Bei über 500 KB auf die Grösse hinweisen.
 4. Eintrag am Anfang von src/data/projekte.ts einfügen. Bauherrschaft
    null setzen, wenn ungenannt — keine Platzhalter erfinden.
 5. npm run type-check und npm run build.

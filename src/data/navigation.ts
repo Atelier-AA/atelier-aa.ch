@@ -7,6 +7,11 @@ import type { NavLink } from '@/types';
 //
 // Im Vollbild-Menü (siehe MobileMenu.tsx) sind alle Punkte gleich gross —
 // unterschiedliche Grössenstufen wurden vom Kunden ausdrücklich abgelehnt.
+//
+// "Studien" steht bewusst nicht mehr hier, sondern nur noch im Footer: 70
+// Studien gegenüber 22 Projekten haben im Hauptmenü die Projekte verdrängt,
+// die als Visitenkarte eines Architekturbüros zuerst wirken sollen. Die Seite
+// /studien bleibt vollständig bestehen, verlinkt und indexierbar.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
   {
@@ -15,7 +20,6 @@ export const navigation: NavLink[] = [
     unterlink: { href: '/ueber-uns/team', label: 'Team' },
   },
   { href: '/leistungen', label: 'Leistungen' },
-  { href: '/studien', label: 'Studien' },
   { href: '/insights', label: 'Journal' },
   { href: '/kontakt', label: 'Kontakt' },
 ];

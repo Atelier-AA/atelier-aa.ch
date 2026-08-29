@@ -106,8 +106,8 @@ export default function MachbarkeitsstudiePage() {
 
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-mist">
             <Image
-              src="/images/leistungen/machbarkeitsstudie-hero.jpg"
-              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie"
+              src="/images/leistungen/atelier-aa-leistungen-machbarkeitsstudie-hero.jpg"
+              alt="Katasterplan eines Grundstücks als Grundlage der Machbarkeitsstudie, Atelier AA Architekten, Zürich, Aargau und Zug"
               fill
               priority
               className="object-cover"

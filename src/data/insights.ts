@@ -15,7 +15,7 @@ export const insights: Insight[] = [
     kategorie: 'Prozess',
     datum: '2026-08-20',
     lesezeit: 6,
-    bild: '/images/buero/buero-1.jpg',
+    bild: '/images/buero/atelier-aa-buero-1.jpg',
     abschnitte: [
       {
         titel: 'Warum wir uns damit beschäftigen',
@@ -83,7 +83,7 @@ export const insights: Insight[] = [
     kategorie: 'Verdichtung',
     datum: '2026-07-20',
     lesezeit: 7,
-    bild: '/images/insights/verdichtung.webp',
+    bild: '/images/insights/atelier-aa-verdichtung.webp',
     abschnitte: [
       {
         titel: 'Die Reserve liegt im Bestand',
@@ -150,7 +150,7 @@ export const insights: Insight[] = [
     kategorie: 'Recht',
     datum: '2026-04-08',
     lesezeit: 8,
-    bild: '/images/insights/baugesuch.webp',
+    bild: '/images/insights/atelier-aa-baugesuch.webp',
     abschnitte: [
       {
         titel: 'Der Ablauf in vier Schritten',
@@ -220,7 +220,7 @@ export const insights: Insight[] = [
     kategorie: 'Umbau',
     datum: '2026-01-22',
     lesezeit: 6,
-    bild: '/images/insights/wohnen-im-alter.webp',
+    bild: '/images/insights/atelier-aa-wohnen-im-alter.webp',
     abschnitte: [
       {
         titel: 'Die Ausgangslage',
@@ -287,7 +287,7 @@ export const insights: Insight[] = [
     kategorie: 'Digitalisierung',
     datum: '2026-08-05',
     lesezeit: 6,
-    bild: '/images/insights/ki-entwurf.png',
+    bild: '/images/insights/atelier-aa-ki-entwurf.png',
     abschnitte: [
       {
         titel: 'Was die Werkzeuge heute leisten',
@@ -317,8 +317,8 @@ export const insights: Insight[] = [
           'Zur Einordnung: Das sind Visualisierungen aus der Werkzeugerprobung, keine Fotos eines realisierten Projekts und keine Machbarkeitsstudie für ein bestehendes Grundstück. Genau das ist der in diesem Beitrag beschriebene Nutzen, und genau dort hört er auch auf: Für ein echtes Grundstück braucht es danach die eigentliche Arbeit.',
         ],
         bilder: [
-          '/images/insights/ki-entwurf-beispiel-1.jpg',
-          '/images/insights/ki-entwurf-beispiel-2.jpg',
+          '/images/insights/atelier-aa-ki-entwurf-beispiel-1.jpg',
+          '/images/insights/atelier-aa-ki-entwurf-beispiel-2.jpg',
         ],
       },
     ],
@@ -352,7 +352,7 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2026-06-17',
     lesezeit: 7,
-    bild: '/images/insights/kreislauf-bauen.jpg',
+    bild: '/images/insights/atelier-aa-kreislauf-bauen.jpg',
     abschnitte: [
       {
         titel: 'Graue Energie entscheidet mit',
@@ -406,7 +406,7 @@ export const insights: Insight[] = [
     kategorie: 'Haltung',
     datum: '2026-03-11',
     lesezeit: 5,
-    bild: '/images/insights/rolle-architekt.png',
+    bild: '/images/insights/atelier-aa-rolle-architekt.png',
     abschnitte: [
       {
         titel: 'Die Aufgabe stellen, nicht nur lösen',
@@ -472,7 +472,7 @@ export const insights: Insight[] = [
     kategorie: 'Kosten',
     datum: '2025-01-14',
     lesezeit: 5,
-    bild: '/images/insights/baukostenschub-2022.webp',
+    bild: '/images/insights/atelier-aa-baukostenschub-2022.webp',
     abschnitte: [
       {
         titel: 'Der stärkste Anstieg seit Messbeginn',
@@ -515,62 +515,13 @@ export const insights: Insight[] = [
     ],
   },
   {
-    slug: 'referenzzinssatz-bauzinsen',
-    titel: 'Referenzzinssatz und Bauzinsen: Wie die Zinswende Investitionsentscheide veränderte',
-    lead: 'Nach Jahren auf historischem Tiefstand stieg der hypothekarische Referenzzinssatz 2023 erstmals wieder an. Was das für Investitionsentscheide bedeutete und warum er seither wieder gesunken ist.',
-    kategorie: 'Kosten',
-    datum: '2025-02-11',
-    lesezeit: 6,
-    bild: '/images/insights/referenzzinssatz.webp',
-    abschnitte: [
-      {
-        titel: 'Vom Tiefstand zur Wende',
-        absaetze: [
-          'Von März 2020 bis März 2023 verharrte der hypothekarische Referenzzinssatz auf seinem historischen Tiefststand von 1,25 Prozent. Mit den allgemein gestiegenen Zinsen begann er 2023 erstmals seit Jahren wieder zu steigen und erreichte im Dezember 2024 einen Stand von 1,75 Prozent.',
-          'Der Referenzzinssatz stützt sich auf den hypothekarischen Durchschnittszinssatz aller Banken und wird vierteljährlich vom Bundesamt für Wohnungswesen auf den nächsten Viertelprozentpunkt gerundet veröffentlicht. Er reagiert damit träger und langsamer als etwa der Leitzins der Nationalbank.',
-        ],
-      },
-      {
-        titel: 'Was das für Renditeobjekte bedeutete',
-        absaetze: [
-          'Für Bestandsmieten bedeutet ein steigender Referenzzinssatz, dass Vermieterschaften einen Teil der höheren Finanzierungskosten über Mietzinserhöhungen weitergeben dürfen. Für Neubauprojekte wirkte die Zinswende vor allem auf der Investitionsseite: Höhere Fremdkapitalkosten verschieben die Grenze, ab der sich ein Neubau- oder Verdichtungsprojekt rechnet.',
-          'Wer 2022 eine Ertragsrechnung mit den damaligen Zinssätzen erstellt hatte, musste sie 2023 unter Umständen neu durchrechnen: ein Beispiel dafür, warum eine Investitionsentscheidung nie allein auf einer einmaligen Momentaufnahme beruhen sollte.',
-        ],
-      },
-      {
-        titel: 'Die Entspannung seit 2025',
-        absaetze: [
-          'Seit September 2025 ist der Referenzzinssatz wieder auf 1,25 Prozent gesunken und blieb auch im Juni 2026 auf diesem Niveau. Für laufende Projektentwicklungen heisst das etwas mehr Spielraum in der Ertragsrechnung als noch 2024, wobei sich der Satz weiterhin vierteljährlich ändern kann.',
-          'Wir aktualisieren Ertragsrechnungen deshalb zu jedem wichtigen Projektmeilenstein neu, statt einmalig zu Beginn der Planung, denn gerade bei mehrjährigen Projekten kann sich die Zinslandschaft bis zur Realisierung deutlich verschieben.',
-        ],
-      },
-    ],
-    fragen: [
-      {
-        frage: 'Wie oft ändert sich der Referenzzinssatz?',
-        antwort:
-          'Er wird vierteljährlich durch das Bundesamt für Wohnungswesen bekannt gegeben, basierend auf dem hypothekarischen Durchschnittszinssatz der Banken, gerundet auf den nächsten Viertelprozentpunkt.',
-      },
-      {
-        frage: 'Wie wirkt sich der Referenzzinssatz auf eine Projektentwicklung aus?',
-        antwort:
-          'Vor allem über die Finanzierungskosten in der Ertragsrechnung: Ein höherer Zins erhöht die Anforderungen an die erzielbaren Mietzinse, damit sich ein Projekt trägt. Wir bilden das in der Machbarkeitsstudie mit aktuellen Werten ab.',
-      },
-      {
-        frage: 'Sollten wir eine Projektentwicklung wegen der Zinslage verschieben?',
-        antwort:
-          'Das hängt vom Einzelfall ab: Bauland und Baurecht warten nicht auf den günstigsten Zinszeitpunkt. Wir empfehlen, die Wirtschaftlichkeit bei aktuellem und leicht ungünstigerem Zins zu prüfen, statt auf einen bestimmten Zeitpunkt zu spekulieren.',
-      },
-    ],
-  },
-  {
     slug: 'holzbau-mehrgeschossig',
     titel: 'Holzbau im Aufwind: Warum mehrgeschossige Holzhäuser sich verdoppelt haben',
     lead: 'Zwischen 2014 und 2024 hat sich die Zahl bewilligter Wohnbauten mit Holztragwerk und mindestens fünf Geschossen mehr als verdoppelt. Was hinter diesem Trend steckt.',
     kategorie: 'Nachhaltigkeit',
     datum: '2025-03-18',
     lesezeit: 6,
-    bild: '/images/insights/holzbau.webp',
+    bild: '/images/insights/atelier-aa-holzbau.webp',
     abschnitte: [
       {
         titel: 'Von Randerscheinung zu Marktanteil',
@@ -612,111 +563,13 @@ export const insights: Insight[] = [
     ],
   },
   {
-    slug: 'fachkraeftemangel-bau',
-    titel: 'Fachkräftemangel am Bau: Wenn Projekte auf Handwerker warten müssen',
-    lead: 'Bauleiterinnen, Poliere und Elektrofachkräfte gehören seit Jahren zu den gesuchtesten Berufen der Schweiz. Was das für Terminpläne bedeutet.',
-    kategorie: 'Branche',
-    datum: '2025-04-09',
-    lesezeit: 5,
-    bild: '/images/insights/fachkraeftemangel.webp',
-    abschnitte: [
-      {
-        titel: 'Ein Mangel über die ganze Kette',
-        absaetze: [
-          'Der Fachkräftemangel in der Baubranche betrifft nicht nur Handwerksberufe, sondern die ganze Kette von Architektur über Bauleitung bis zu einzelnen Gewerken. Besonders gesucht sind Bauleiterinnen und Poliere sowie Elektrofachkräfte: Beide Berufsgruppen profitieren von einer robusten Auftragslage, die gleichzeitig zu wenig Personal auf sie treffen lässt.',
-          'Verstärkt wird der Mangel durch den demografischen Wandel: Mehr Fachkräfte gehen in Pension, als über die Berufsbildung nachrücken, dazu kommt eine gewisse Abwanderung ins Ausland oder in andere Branchen.',
-        ],
-      },
-      {
-        titel: 'Erste Entspannung, aber kein Ende',
-        absaetze: [
-          'Der Fachkräftemangel-Index zeigt für 2025 einen spürbaren Rückgang gegenüber den Vorjahren, auch bedingt durch die konjunkturelle Abkühlung. Gleichzeitig ist die Zahl der Lernenden 2024 um rund zehn Prozent gestiegen, ein Effekt gezielter Nachwuchsförderung, der sich aber erst über Jahre in mehr ausgebildeten Fachkräften niederschlägt.',
-          'Für die Deutschschweiz bleibt der Bau neben Gesundheitswesen und technischen Berufen eine der Branchen mit anhaltend spürbarem Mangel.',
-        ],
-      },
-      {
-        titel: 'Was das für die Terminplanung bedeutet',
-        absaetze: [
-          'Für Bauherrschaften heisst das: Ausführungstermine früh und mit Puffer planen, statt kurzfristig auf verfügbare Kapazitäten zu hoffen. Wer ein Gewerk erst kurz vor der geplanten Ausführung ausschreibt, riskiert entweder eine Verzögerung oder einen Aufpreis für kurzfristige Verfügbarkeit.',
-          'Wir schreiben deshalb Kernbereiche wie Rohbau, Fenster und Haustechnik nach Möglichkeit deutlich vor dem geplanten Baubeginn aus, auch wenn die Ausführungsplanung dafür entsprechend früh abgeschlossen sein muss.',
-        ],
-      },
-    ],
-    fragen: [
-      {
-        frage: 'Wie wirkt sich der Fachkräftemangel auf die Baukosten aus?',
-        antwort:
-          'Indirekt über die Löhne: Steigende Lohnkosten in gesuchten Gewerken sind neben den Materialpreisen ein Treiber der Baupreisentwicklung. Wie stark, hängt vom jeweiligen Gewerk und der regionalen Verfügbarkeit ab.',
-      },
-      {
-        frage: 'Sollten wir Unternehmer schon vor dem Baugesuch anfragen?',
-        antwort:
-          'Eine unverbindliche Verfügbarkeitsabklärung bei Schlüsselgewerken kann sinnvoll sein, sobald der grobe Terminplan steht. Eine verbindliche Vergabe ist zu diesem Zeitpunkt meist noch verfrüht, weil die Ausführungsplanung fehlt.',
-      },
-      {
-        frage: 'Verzögert der Fachkräftemangel auch die Planungsphase?',
-        antwort:
-          'Weniger stark als die Ausführung, da hier auch Fachplaner und Behörden beteiligt sind, deren Kapazität unabhängig von der Handwerkerverfügbarkeit ist. Engpässe zeigen sich vor allem bei der Terminfindung für Baubeginn und einzelne Gewerke.',
-      },
-    ],
-  },
-  {
-    slug: 'homeoffice-bueroflaechen',
-    titel: 'Homeoffice und die Folgen: Warum Büroflächen in der Schweiz leer stehen',
-    lead: 'Landesweit stehen heute rund 3,17 Millionen Quadratmeter Bürofläche leer, fast neun Prozent mehr als im Vorjahr. Was das für Bauherrschaften mit Gewerbeflächen bedeutet.',
-    kategorie: 'Branche',
-    datum: '2025-05-21',
-    lesezeit: 6,
-    bild: '/images/insights/bueroflaechen.webp',
-    abschnitte: [
-      {
-        titel: 'Vom Ausnahmezustand zur Gewohnheit',
-        absaetze: [
-          'Die Homeoffice-Quote stieg von rund achtzehn Prozent im Jahr 2013 über fünfundzwanzig Prozent 2019 auf knapp vierzig Prozent während der Pandemie 2021 und hat sich seither auf einem deutlich höheren Niveau als vor 2020 eingependelt. Was als Ausnahme begann, ist für viele Unternehmen zur festen Regel geworden.',
-          'Die Folge zeigt sich im Büromarkt: Das Angebot an verfügbaren Büroflächen in den fünf grössten Büromärkten der Schweiz stieg 2024 gegenüber dem Vorjahr um neun Prozent. Landesweit stehen rund 3,17 Millionen Quadratmeter Bürofläche leer.',
-        ],
-      },
-      {
-        titel: 'Nicht überall gleich stark',
-        absaetze: [
-          'Der Leerstand verteilt sich ungleich: Besonders betroffen sind Agglomerationslagen wie Chur, Luzern und Zug sowie einzelne Zürcher Stadtkreise und Vororte, wo die Leerstandsquote stellenweise gegen zwölf Prozent reicht. Zentrale, gut erschlossene Innenstadtlagen sind deutlich weniger betroffen.',
-          'Das verschiebt auch die Anforderungen an neue Büroflächen: Flexibilität, Erreichbarkeit mit dem öffentlichen Verkehr und eine hohe Aufenthaltsqualität wiegen heute schwerer als reine Fläche.',
-        ],
-      },
-      {
-        titel: 'Was das für die Planung bedeutet',
-        absaetze: [
-          'Wer heute ein Bürogebäude plant, plant für ein verändertes Nutzungsverhalten: weniger feste Einzelarbeitsplätze, mehr Flächen für Begegnung, Besprechung und konzentriertes Einzelarbeiten im Wechsel. Eine Grundrissstruktur, die sich mit wenig Aufwand umnutzen lässt, ist heute wertvoller als eine maximal verdichtete Bürofläche.',
-          'Bei Bestandsbauten stellt sich zunehmend die Frage der Umnutzung zu Wohnraum, technisch anspruchsvoll wegen Geschosshöhen und Belichtung, aber angesichts der Wohnungsknappheit ein Weg, der Prüfung wert ist.',
-        ],
-      },
-    ],
-    fragen: [
-      {
-        frage: 'Lohnt sich die Umnutzung eines leerstehenden Bürogebäudes zu Wohnraum?',
-        antwort:
-          'Oft ja, wenn Geschosshöhen, Belichtung über die Fassade und die Erschliessung mitspielen. Eine Machbarkeitsstudie klärt, ob sich die bestehende Struktur für Wohnnutzung eignet, bevor in die Detailplanung investiert wird.',
-      },
-      {
-        frage: 'Was macht ein Bürogebäude heute noch vermietbar?',
-        antwort:
-          'Vor allem Flexibilität in der Grundrissgestaltung, eine gute ÖV-Erschliessung und Aufenthaltsqualität: Aussenraum, Tageslicht, Gemeinschaftsflächen. Reine Flächenmaximierung ohne diese Qualitäten wird zunehmend schwerer vermietet.',
-      },
-      {
-        frage: 'Sollten Neubauprojekte heute noch reine Büroflächen vorsehen?',
-        antwort:
-          'Wir empfehlen, das im Vorprojekt anhand der konkreten Lage zu prüfen: An zentralen, gut erschlossenen Standorten bleibt Büronutzung gefragt, in Agglomerationslagen lohnt sich oft eine gemischte oder wohnnutzungsoffene Planung.',
-      },
-    ],
-  },
-  {
     slug: 'stromgesetz-mantelerlass',
     titel: 'Das neue Stromgesetz: Was der Mantelerlass für Bauherrschaften bedeutet',
     lead: 'Mit 68,7 Prozent Ja-Stimmen hat die Schweiz im Juni 2024 den Mantelerlass angenommen. Was sich damit für Bauvorhaben ändert.',
     kategorie: 'Recht',
     datum: '2025-06-16',
     lesezeit: 6,
-    bild: '/images/insights/stromgesetz.webp',
+    bild: '/images/insights/atelier-aa-stromgesetz.webp',
     abschnitte: [
       {
         titel: 'Vier Gesetze in einer Vorlage',
@@ -759,62 +612,13 @@ export const insights: Insight[] = [
     ],
   },
   {
-    slug: 'mietrecht-abstimmung-2024',
-    titel: 'Mietrecht-Abstimmung: Warum Untermiete und Eigenbedarf an der Urne scheiterten',
-    lead: 'Am 24. November 2024 lehnte die Schweizer Stimmbevölkerung zwei Mietrechtsvorlagen ab. Was geplant war und warum es für Vermieterschaften beim geltenden Recht bleibt.',
-    kategorie: 'Recht',
-    datum: '2025-07-08',
-    lesezeit: 5,
-    bild: '/images/insights/mietrecht.webp',
-    abschnitte: [
-      {
-        titel: 'Zwei Vorlagen, ein Nein',
-        absaetze: [
-          'Die Vorlage zur Untermiete wurde mit 51,6 Prozent, jene zum Eigenbedarf mit 53,8 Prozent abgelehnt. Beide waren vom Parlament beschlossen worden und hätten die Rechte von Vermieterschaften gegenüber Mietenden gestärkt.',
-          'Die Untermiete-Vorlage hätte ein schriftliches Gesuch für jede Untervermietung verlangt, dem die Vermieterschaft schriftlich zustimmen muss, unter anderem als Reaktion auf Untervermietungen über Plattformen. Die Eigenbedarfs-Vorlage hätte Kündigungen erleichtert, wenn Eigentümerinnen oder Eigentümer selbst benötigte Räume rascher beziehen wollten.',
-        ],
-      },
-      {
-        titel: 'Warum das Volk Nein sagte',
-        absaetze: [
-          'Der Bundesrat begründete die Ablehnung damit, dass die Änderungen aus Sicht der Stimmenden das Gleichgewicht zwischen Mietenden und Vermietenden zugunsten der Vermieterschaft verschoben hätten. Beide Resultate fielen knapp aus, ein Hinweis darauf, dass das Thema in der Bevölkerung kontrovers bleibt.',
-          'Für Bauherrschaften mit Renditeobjekten bedeutet das: Das geltende Mietrecht bleibt unverändert in Kraft, Kündigungen wegen Eigenbedarfs und Regeln zur Untermiete richten sich weiterhin nach den bisherigen Bestimmungen des Obligationenrechts.',
-        ],
-      },
-      {
-        titel: 'Was für Investitionsentscheide bleibt',
-        absaetze: [
-          'Die Ablehnung ändert nichts an der grundsätzlichen Vermietbarkeit von Wohnraum, wohl aber an der Planungssicherheit für Eigentümerschaften, die auf eine spätere Selbstnutzung setzen. Wer eine Liegenschaft mit dieser Option kauft, sollte weiterhin mit den strengeren, bisherigen Anforderungen an eine Eigenbedarfskündigung rechnen.',
-          'Für Neubauprojekte hat die Abstimmung keine direkte Auswirkung: Sie betrifft das Verhältnis zu bestehenden Mietverhältnissen, nicht die Planung oder Bewilligung neuer Bauten.',
-        ],
-      },
-    ],
-    fragen: [
-      {
-        frage: 'Was gilt jetzt für Kündigungen wegen Eigenbedarfs?',
-        antwort:
-          'Es gelten weiterhin die bisherigen Bestimmungen des Obligationenrechts: Eigenbedarf muss konkret und aktuell begründet werden, eine Kündigung kann bei Härtefällen angefochten und die Mietdauer erstreckt werden.',
-      },
-      {
-        frage: 'Dürfen Mieterinnen und Mieter weiterhin frei untervermieten?',
-        antwort:
-          'Ja, im bisherigen gesetzlichen Rahmen: Die Untervermietung braucht die Zustimmung der Vermieterschaft, die nur aus bestimmten Gründen verweigert werden darf. Die geplante Verschärfung wurde abgelehnt.',
-      },
-      {
-        frage: 'Wird das Thema in absehbarer Zeit wieder vors Volk kommen?',
-        antwort:
-          'Das ist offen. Nach einer Ablehnung braucht eine neue Vorlage in der Regel einen neuen politischen Anlauf im Parlament, einen konkreten Zeitpunkt für eine Wiedervorlage gibt es aktuell nicht.',
-      },
-    ],
-  },
-  {
     slug: 'bim-pflicht-planung',
     titel: 'BIM wird Pflicht: Was die Digitalisierung für Planer und Bauherrschaften bedeutet',
     lead: 'Seit 2021 muss der Bund bei eigenen Bauprojekten mit der BIM-Methode arbeiten, ab 2025 auch bei Infrastrukturanlagen. Was Building Information Modeling praktisch verändert.',
     kategorie: 'Digitalisierung',
     datum: '2025-08-19',
     lesezeit: 6,
-    bild: '/images/insights/bim.webp',
+    bild: '/images/insights/atelier-aa-bim.webp',
     abschnitte: [
       {
         titel: 'Vom Plan zum Modell',
@@ -863,7 +667,7 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2025-09-15',
     lesezeit: 5,
-    bild: '/images/insights/ladeinfrastruktur.webp',
+    bild: '/images/insights/atelier-aa-ladeinfrastruktur.webp',
     abschnitte: [
       {
         titel: 'Vorbereitung statt Pflicht',
@@ -912,7 +716,7 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2025-10-06',
     lesezeit: 6,
-    bild: '/images/insights/hitzeschutz.webp',
+    bild: '/images/insights/atelier-aa-hitzeschutz.webp',
     abschnitte: [
       {
         titel: 'Die Norm hinter dem Thema',
@@ -961,7 +765,7 @@ export const insights: Insight[] = [
     kategorie: 'Verdichtung',
     datum: '2025-11-17',
     lesezeit: 6,
-    bild: '/images/insights/wohnungsknappheit.webp',
+    bild: '/images/insights/atelier-aa-wohnungsknappheit.webp',
     abschnitte: [
       {
         titel: 'Der tiefste Stand seit zwölf Jahren',
@@ -1010,7 +814,7 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2025-12-10',
     lesezeit: 6,
-    bild: '/images/insights/solarpflicht.webp',
+    bild: '/images/insights/atelier-aa-solarpflicht.webp',
     abschnitte: [
       {
         titel: 'Eine Pflicht, viele Umsetzungen',
@@ -1059,7 +863,7 @@ export const insights: Insight[] = [
     kategorie: 'Recht',
     datum: '2026-05-13',
     lesezeit: 5,
-    bild: '/images/insights/muken.webp',
+    bild: '/images/insights/atelier-aa-muken.webp',
     abschnitte: [
       {
         titel: 'Eine Vorlage, viele kantonale Gesetze',

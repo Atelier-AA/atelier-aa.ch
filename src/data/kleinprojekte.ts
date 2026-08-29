@@ -16,7 +16,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2020',
     leistungen: ['Umbau- und Erweiterungsplanung', 'Baueingabe'],
-    bilder: ['/images/kleinprojekte/efh-bunjaku/bild1.jpg', '/images/kleinprojekte/efh-bunjaku/bild2.jpg'],
+    bilder: ['/images/kleinprojekte/efh-bunjaku/atelier-aa-efh-bunjaku-bild1.jpg', '/images/kleinprojekte/efh-bunjaku/atelier-aa-efh-bunjaku-bild2.jpg'],
   },
   {
     slug: 'umbau-buerogebaeude-obfelden',
@@ -28,9 +28,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2021',
     leistungen: ['Baueingabe', 'Ausführungsplanung', 'Bauleitung'],
     bilder: [
-      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/bild1.jpg',
-      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/bild2.jpg',
-      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/bild3.jpg',
+      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/atelier-aa-umbau-buerogebaeude-obfelden-bild1.jpg',
+      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/atelier-aa-umbau-buerogebaeude-obfelden-bild2.jpg',
+      '/images/kleinprojekte/umbau-buerogebaeude-obfelden/atelier-aa-umbau-buerogebaeude-obfelden-bild3.jpg',
     ],
   },
   {
@@ -43,8 +43,8 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2021',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
-      '/images/kleinprojekte/umbau-coiffeur-affoltern/bild1.jpg',
-      '/images/kleinprojekte/umbau-coiffeur-affoltern/bild2.jpg',
+      '/images/kleinprojekte/umbau-coiffeur-affoltern/atelier-aa-umbau-coiffeur-affoltern-bild1.jpg',
+      '/images/kleinprojekte/umbau-coiffeur-affoltern/atelier-aa-umbau-coiffeur-affoltern-bild2.jpg',
     ],
   },
   {
@@ -57,8 +57,8 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
-      '/images/kleinprojekte/efh-alimi-othmarsingen/bild1.jpg',
-      '/images/kleinprojekte/efh-alimi-othmarsingen/bild2.jpg',
+      '/images/kleinprojekte/efh-alimi-othmarsingen/atelier-aa-efh-alimi-othmarsingen-bild1.jpg',
+      '/images/kleinprojekte/efh-alimi-othmarsingen/atelier-aa-efh-alimi-othmarsingen-bild2.jpg',
     ],
   },
   {
@@ -70,7 +70,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Ausführungsplanung'],
-    bilder: ['/images/kleinprojekte/pool-hug-florin/bild1.jpg'],
+    bilder: ['/images/kleinprojekte/pool-hug-florin/atelier-aa-pool-hug-florin-bild1.jpg'],
   },
   {
     slug: 'efh-epstein-obfelden',
@@ -82,9 +82,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Projektierung', 'Baugesuch'],
     bilder: [
-      '/images/kleinprojekte/efh-epstein-obfelden/bild1.jpg',
-      '/images/kleinprojekte/efh-epstein-obfelden/bild2.jpg',
-      '/images/kleinprojekte/efh-epstein-obfelden/bild3.jpg',
+      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild1.jpg',
+      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild2.jpg',
+      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild3.jpg',
     ],
   },
   {
@@ -96,7 +96,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Planung', 'Baueingabe'],
-    bilder: ['/images/kleinprojekte/mfh-einsele-wuerenlos/bild1.jpg'],
+    bilder: ['/images/kleinprojekte/mfh-einsele-wuerenlos/atelier-aa-mfh-einsele-wuerenlos-bild1.jpg'],
   },
   {
     slug: 'efh-mittelweg-trimmis',
@@ -108,9 +108,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2024',
     leistungen: ['Generalplanung', 'Ausführungsplanung', 'Baubegleitung'],
     bilder: [
-      '/images/kleinprojekte/efh-mittelweg-trimmis/bild1.jpg',
-      '/images/kleinprojekte/efh-mittelweg-trimmis/bild2.jpg',
-      '/images/kleinprojekte/efh-mittelweg-trimmis/bild3.jpg',
+      '/images/kleinprojekte/efh-mittelweg-trimmis/atelier-aa-efh-mittelweg-trimmis-bild1.jpg',
+      '/images/kleinprojekte/efh-mittelweg-trimmis/atelier-aa-efh-mittelweg-trimmis-bild2.jpg',
+      '/images/kleinprojekte/efh-mittelweg-trimmis/atelier-aa-efh-mittelweg-trimmis-bild3.jpg',
     ],
   },
   {
@@ -123,9 +123,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2023',
     leistungen: ['Generalplanung', 'Vorprojekt', 'Ausführung'],
     bilder: [
-      '/images/kleinprojekte/efh-leemann-obfelden/bild1.jpg',
-      '/images/kleinprojekte/efh-leemann-obfelden/bild2.jpg',
-      '/images/kleinprojekte/efh-leemann-obfelden/bild3.jpg',
+      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild1.jpg',
+      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild2.jpg',
+      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild3.jpg',
     ],
   },
   {
@@ -138,8 +138,8 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2023',
     leistungen: ['Projektierung', 'Baueingabe', 'Ausführungsplanung'],
     bilder: [
-      '/images/kleinprojekte/pool-tobelstrasse-wermatswil/bild1.jpg',
-      '/images/kleinprojekte/pool-tobelstrasse-wermatswil/bild2.jpg',
+      '/images/kleinprojekte/pool-tobelstrasse-wermatswil/atelier-aa-pool-tobelstrasse-wermatswil-bild1.jpg',
+      '/images/kleinprojekte/pool-tobelstrasse-wermatswil/atelier-aa-pool-tobelstrasse-wermatswil-bild2.jpg',
     ],
   },
   {
@@ -152,9 +152,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2023',
     leistungen: ['Generalplanung', 'Bauleitung'],
     bilder: [
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/bild1.jpg',
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/bild2.jpg',
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/bild3.jpg',
+      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild1.jpg',
+      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild2.jpg',
+      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild3.jpg',
     ],
   },
   {
@@ -167,10 +167,10 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung', 'Bauleitung'],
     bilder: [
-      '/images/kleinprojekte/defh-safenwil/bild1.jpg',
-      '/images/kleinprojekte/defh-safenwil/bild2.jpg',
-      '/images/kleinprojekte/defh-safenwil/bild3.jpg',
-      '/images/kleinprojekte/defh-safenwil/bild4.jpg',
+      '/images/kleinprojekte/defh-safenwil/atelier-aa-defh-safenwil-bild1.jpg',
+      '/images/kleinprojekte/defh-safenwil/atelier-aa-defh-safenwil-bild2.jpg',
+      '/images/kleinprojekte/defh-safenwil/atelier-aa-defh-safenwil-bild3.jpg',
+      '/images/kleinprojekte/defh-safenwil/atelier-aa-defh-safenwil-bild4.jpg',
     ],
   },
   {
@@ -182,7 +182,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Ausführungsplanung', 'Baueingabe'],
-    bilder: ['/images/kleinprojekte/efh-daenikon/bild1.jpg', '/images/kleinprojekte/efh-daenikon/bild2.jpg'],
+    bilder: ['/images/kleinprojekte/efh-daenikon/atelier-aa-efh-daenikon-bild1.jpg', '/images/kleinprojekte/efh-daenikon/atelier-aa-efh-daenikon-bild2.jpg'],
   },
   {
     slug: 'adliswil-nasszelle',
@@ -193,7 +193,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
-    bilder: ['/images/kleinprojekte/adliswil-nasszelle/bild1.jpg'],
+    bilder: ['/images/kleinprojekte/adliswil-nasszelle/atelier-aa-adliswil-nasszelle-bild1.jpg'],
   },
   {
     slug: 'mfh-enetbaden',
@@ -205,9 +205,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2021 bis 2022',
     leistungen: ['Bauleitung'],
     bilder: [
-      '/images/kleinprojekte/mfh-enetbaden/bild1.jpg',
-      '/images/kleinprojekte/mfh-enetbaden/bild2.jpg',
-      '/images/kleinprojekte/mfh-enetbaden/bild3.jpg',
+      '/images/kleinprojekte/mfh-enetbaden/atelier-aa-mfh-enetbaden-bild1.jpg',
+      '/images/kleinprojekte/mfh-enetbaden/atelier-aa-mfh-enetbaden-bild2.jpg',
+      '/images/kleinprojekte/mfh-enetbaden/atelier-aa-mfh-enetbaden-bild3.jpg',
     ],
   },
   {
@@ -219,7 +219,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: 'in Planung',
     leistungen: ['Projektierung', 'Baugesuch'],
-    bilder: ['/images/kleinprojekte/efh-neerach/bild1.jpg'],
+    bilder: ['/images/kleinprojekte/efh-neerach/atelier-aa-efh-neerach-bild1.jpg'],
   },
 ];
 

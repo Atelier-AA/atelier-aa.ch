@@ -15,7 +15,14 @@ import type { InsightFrage } from '@/types';
  * gleichrangige Punkte aufzuführen — die stehen als Beispiele innerhalb von
  * "Planung und Koordination" sowie separat, sr-only, im Abschnitt Bauaufgaben.
  * `punkte` sind die konkreten Leistungen je Kompetenz, `text` ordnet sie ein.
+ *
+ * Ein Punkt ist entweder eine einfache Zeichenkette oder — wo es einen
+ * Normbezug gibt — ein Objekt aus Klartext und SIA-Angabe. Bauherrschaften
+ * lesen zuerst, was gemacht wird; die Phasennummer steht darunter kleiner für
+ * Fachleute. Früher stand die Nummer voran ("SIA-Teilphase 33:
+ * Bewilligungsverfahren"), was den verständlichen Teil verdeckt hat.
  */
+export type KompetenzPunkt = string | { text: string; sia: string };
 export const kompetenzen = [
   {
     titel: 'Beratung',
@@ -30,7 +37,7 @@ export const kompetenzen = [
   {
     titel: 'Analyse und Konzept',
     punkte: [
-      'SIA-Phasen 1/2: Strategische Planung und Vorstudien mit Machbarkeitsstudie',
+      { text: 'Strategische Planung und Vorstudien mit Machbarkeitsstudie', sia: 'SIA-Phasen 1/2' },
       'Weichenstellung: Projektentwicklung',
       'Wettbewerbe',
       'Planungsinstrumente: Simulation und Modell',
@@ -44,19 +51,19 @@ export const kompetenzen = [
   {
     titel: 'Planung und Koordination',
     punkte: [
-      'SIA-Teilphasen 31/32: Vorprojekt und Bauprojekt',
+      { text: 'Vorprojekt und Bauprojekt', sia: 'SIA-Teilphasen 31/32' },
       'Generalplanung: ein Ansprechpartner für das gesamte Planungsteam',
-      'SIA-Teilphase 33: Bewilligungsverfahren',
-      'SIA-Teilphase 51: Ausführungsprojekt',
+      { text: 'Bewilligungsverfahren', sia: 'SIA-Teilphase 33' },
+      { text: 'Ausführungsprojekt', sia: 'SIA-Teilphase 51' },
     ],
     text: 'Wir führen Entwurf, Bewilligung und Ausführungsplanung so zusammen, dass alle Fachplaner auf denselben Stand hinarbeiten.',
   },
   {
     titel: 'Realisierung',
     punkte: [
-      'SIA-Teilphase 41: Ausschreibung und Offertvergleich',
-      'SIA-Teilphase 42: Vergabe',
-      'SIA-Teilphasen 52/53: Ausführung und Abschluss',
+      { text: 'Ausschreibung und Offertvergleich', sia: 'SIA-Teilphase 41' },
+      { text: 'Vergabe', sia: 'SIA-Teilphase 42' },
+      { text: 'Ausführung und Abschluss', sia: 'SIA-Teilphasen 52/53' },
       'Kosten- und Terminkontrolle',
     ],
     text: 'Von der Ausschreibung bis zur Übergabe begleiten wir die Baustelle und sichern Qualität, Kosten und Termine.',

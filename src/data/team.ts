@@ -17,7 +17,7 @@ export const team: TeamMember[] = [
     slug: 'alisami-aljili',
     name: 'Alisami Aljili',
     rolle: 'Inhaber, Geschäftsführer',
-    bild: '/images/team/alisami-aljili.jpg',
+    bild: '/images/team/atelier-aa-alisami-aljili.jpg',
     bildAlt:
       'Alisami Aljili, Architekt in Zürich, Aargau und Zug, Gründer und Geschäftsführer von Atelier AA Architekten',
     kurz: 'Gründer von Atelier AA Architekten, verantwortlich für Entwurf und Projektleitung.',
@@ -51,7 +51,7 @@ export const team: TeamMember[] = [
     slug: 'ejup-bajrami',
     name: 'Ejup Bajrami',
     rolle: 'Projektleiter',
-    bild: '/images/team/ejup-bajrami.jpg',
+    bild: '/images/team/atelier-aa-ejup-bajrami.jpg',
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     slug: 'yakup-uslu',
     name: 'Yakup Uslu',
     rolle: 'Projektleiter',
-    bild: '/images/team/yakup-uslu.jpg',
+    bild: '/images/team/atelier-aa-yakup-uslu.jpg',
     kurz: 'Leitet Projekte in der Planung.',
     schwerpunkte: ['Projektleitung', 'Planung', 'Bauherren- und Behördenkontakt'],
     absaetze: [
@@ -75,7 +75,7 @@ export const team: TeamMember[] = [
     slug: 'fatime-aljili',
     name: 'Fatime Aljili',
     rolle: 'Personal',
-    bild: '/images/team/fatime-aljili.jpg',
+    bild: '/images/team/atelier-aa-fatime-aljili.jpg',
     kurz: 'Verantwortlich für Personalfragen im Büro.',
     schwerpunkte: ['Personalwesen', 'Büroorganisation'],
     absaetze: [
@@ -87,7 +87,7 @@ export const team: TeamMember[] = [
     slug: 'riccarda-tscharner',
     name: 'Ricarda Tscharner',
     rolle: 'Assistentin der Geschäftsleitung',
-    bild: '/images/team/riccarda-tscharner.jpg',
+    bild: '/images/team/atelier-aa-riccarda-tscharner.jpg',
     kurz: 'Unterstützt die Geschäftsleitung in administrativen und organisatorischen Aufgaben.',
     schwerpunkte: ['Administration', 'Büroorganisation', 'Unterstützung der Geschäftsleitung'],
     absaetze: [

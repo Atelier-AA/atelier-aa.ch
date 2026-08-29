@@ -183,9 +183,9 @@ export default function UeberUnsPage() {
         <Container>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              '/images/kontakt/kontakt-buero.jpg',
-              '/images/buero/buero-1.jpg',
-              '/images/buero/buero-2.jpg',
+              '/images/kontakt/atelier-aa-kontakt-buero.jpg',
+              '/images/buero/atelier-aa-buero-1.jpg',
+              '/images/buero/atelier-aa-buero-2.jpg',
             ].map((src) => (
               <div key={src} className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
                 <Image

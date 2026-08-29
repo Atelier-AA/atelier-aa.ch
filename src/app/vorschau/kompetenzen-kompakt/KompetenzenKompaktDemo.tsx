@@ -28,7 +28,7 @@ function ReferenzBild({ projekt, priority }: { projekt: Projekt; priority: boole
       <div className="relative h-60 overflow-hidden bg-mist">
         <Image
           src={projekt.thumbnail}
-          alt={`${projekt.title}, ${ortMitKanton(projekt)}`}
+          alt={`${projekt.title}, ${ortMitKanton(projekt)}, Atelier AA Architekten`}
           fill
           priority={priority}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"

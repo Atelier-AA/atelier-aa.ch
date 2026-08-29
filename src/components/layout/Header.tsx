@@ -33,10 +33,19 @@ export default function Header() {
   // konstant ist (nur die Breite ändert sich innerhalb von Logo.tsx).
   const collapsed = scrolled && !mobileOpen;
 
+  // Vergleichsseite für die dunkle Menü-Variante. Reine Entwurfsroute, per
+  // robots.txt gesperrt — die Ausnahme steht hier, damit der echte Burger
+  // dasselbe Menü öffnet und der Vergleich nicht an einem Nachbau hängt.
+  const menueVariante = pathname === '/vorschau/menu-dunkel' ? 'dunkel' : 'hell';
+
   // Nur die Startseite hat den dunklen Hero hinter dem transparenten Header.
-  // Bei offenem Menü liegt die dunkle Fläche des Overlays darunter — dort
-  // gilt also ebenfalls Weiss statt Schwarz.
-  const onDark = mobileOpen || (isHome && !scrolled);
+  // Bei offenem Menü liegt die HELLE Fläche des Overlays darunter (siehe
+  // MobileMenu.tsx, umgekehrte Farbgebung) — Logo, Kurznavigation und das
+  // Schliesskreuz müssen dort also dunkel sein, auch auf der Startseite.
+  // Bei der dunklen Variante gilt das Umgekehrte: dort wieder Weiss.
+  const onDark = mobileOpen
+    ? menueVariante === 'dunkel'
+    : isHome && !scrolled;
 
   return (
     <>
@@ -52,9 +61,9 @@ export default function Header() {
           // Bei offenem Menü über das Overlay (z-40) heben, damit Logo und
           // Burger sichtbar und bedienbar bleiben; sonst darunter.
           mobileOpen ? 'z-50' : 'z-30',
-          // Bei offenem Menü bleibt die Kopfzeile durchsichtig: Die dunkle
-          // Fläche des Menüs liegt ohnehin dahinter, ein weisser Streifen
-          // mit Trennlinie darüber würde sie zerschneiden.
+          // Bei offenem Menü bleibt die Kopfzeile durchsichtig: Die helle
+          // Fläche des Menüs liegt ohnehin dahinter, ein Streifen mit
+          // Trennlinie darüber würde sie zerschneiden.
           mobileOpen
             ? 'bg-transparent pt-6 pb-4 lg:py-4'
             : scrolled
@@ -143,7 +152,11 @@ export default function Header() {
           </div>
         </Container>
       </header>
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileMenu
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        variante={menueVariante}
+      />
     </>
   );
 }
