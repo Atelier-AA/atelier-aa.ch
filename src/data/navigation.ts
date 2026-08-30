@@ -46,7 +46,7 @@ export const footerAtelier: NavLink[] = [
 export const footerArbeit: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
   { href: '/leistungen', label: 'Leistungen' },
-  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
+  { href: '/leistungen/machbarkeitsstudie', label: 'Studien' },
   { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
   { href: '/projekte#werkliste', label: 'Werkliste' },
 ];
