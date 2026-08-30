@@ -88,23 +88,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            {/* Tätigkeitsgebiet als Textzeile, nicht als eigene Spalte —
-                sechs gleichrangige Kantonslinks im Raster behaupteten sechs
-                gleichwertige Tätigkeitsgebiete. */}
-            <p className="mt-6 text-xs text-white/50">
-              Tätigkeitsgebiet:{' '}
-              {kantone.map((k, i) => (
-                <span key={k.slug}>
-                  <Link
-                    href={`/regionen/${k.slug}`}
-                    className="rounded-sm underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    {k.name}
-                  </Link>
-                  {i < kantone.length - 1 && ' · '}
-                </span>
-              ))}
-            </p>
           </div>
 
           <div>
@@ -135,8 +118,24 @@ export default function Footer() {
         </div>
 
         {/* Rechtliches */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>Atelier AA Architekten © {year}. Alle Rechte vorbehalten.</p>
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
+            <p>Atelier AA Architekten © {year}. Alle Rechte vorbehalten.</p>
+            <p>
+              Tätigkeitsgebiet:{' '}
+              {kantone.map((k, i) => (
+                <span key={k.slug}>
+                  <Link
+                    href={`/regionen/${k.slug}`}
+                    className="rounded-sm underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    {k.name}
+                  </Link>
+                  {i < kantone.length - 1 && ' · '}
+                </span>
+              ))}
+            </p>
+          </div>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLegal.map((item) => (
               <li key={item.href}>
