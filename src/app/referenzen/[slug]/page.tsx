@@ -180,7 +180,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           <p className="mb-[0.85rem] text-xs font-medium uppercase tracking-widest text-stone">
             {ortMitKanton(projekt)} · {projekt.jahr}
           </p>
-          <h1 className="mb-8 text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
+          <h1 className="mb-8 text-h1 font-normal leading-[1.1] tracking-tight text-ink">
             {projekt.title}
           </h1>
           {/* Wenn Abschnitte vorhanden sind, enthalten sie bereits denselben

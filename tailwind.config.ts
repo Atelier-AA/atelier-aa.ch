@@ -19,10 +19,19 @@ const config: Config = {
       // Vergleichsbüros geht über 400 hinaus — fett wirkt laut, nicht gross.
       // Darum bleibt die Grösse fast gleich und der Schnitt geht deutlich
       // zurück.
+      //
+      // Die Werte stammen von der Live-Seite (atelier-aa-ch.vercel.app),
+      // werden hier aber als EINE Stufe je Ebene geführt statt pro Seite
+      // eigener Werte: H1 60px (dort der Wert von /projekte, /ueber-uns und
+      // /insights), H2 40px (dort der Wert der Zwischenüberschriften auf der
+      // Startseite). Auf der Live-Seite variieren dieselben Ebenen zwischen
+      // 48 und 60 bzw. 30 und 48px — genau das liess die Seite unruhig
+      // wirken. Beide Kurven erreichen ihren Endwert bei 1100px, dem
+      // Umschaltpunkt der Seite.
       fontSize: {
         hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
-        h1:    ['clamp(2rem, 1.225rem + 3.31vw, 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
-        h2:    ['clamp(1.75rem, 1.35rem + 1.1vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
+        h1:    ['clamp(2.25rem, 1.27rem + 3.61vw, 3.75rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
+        h2:    ['clamp(1.75rem, 1.36rem + 1.66vw, 2.5rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
         karte: ['1rem', { lineHeight: '1.6' }],
       },
