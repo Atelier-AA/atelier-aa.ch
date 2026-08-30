@@ -85,7 +85,7 @@ export default function LeistungenPage() {
                 <p className="text-xs uppercase tracking-widest text-stone">
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">{k.titel}</h3>
+                <h3 className="mt-6 text-xl font-medium leading-tight text-ink">{k.titel}</h3>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften

@@ -21,7 +21,7 @@ export default function IntroSection() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[2fr_3fr]">
+        <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
           {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <div className="lg:col-start-1 lg:row-start-1">
             <h2 className="max-w-[20ch] text-h1 text-ink">
