@@ -18,7 +18,7 @@ export default function ImpressumPage() {
           <p className="text-xs uppercase tracking-widest text-stone mb-4">
             Rechtliches
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink mb-16">
+          <h1 className="text-h1 font-medium text-ink mb-16">
             Impressum
           </h1>
 

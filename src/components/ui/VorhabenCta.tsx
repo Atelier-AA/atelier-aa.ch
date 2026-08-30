@@ -12,7 +12,7 @@ export default function VorhabenCta() {
       <Container>
         <div className="max-w-3xl">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-          <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+          <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
             Sie haben ein Vorhaben?
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-graphite">

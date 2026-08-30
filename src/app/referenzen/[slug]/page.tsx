@@ -200,7 +200,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
               beide font-medium (500) statt font-light. */}
           {ersterAbschnitt && (
             <section className="mb-14 last:mb-0">
-              <h2 className="mb-5 text-4xl font-medium leading-tight text-ink md:text-5xl">
+              <h2 className="mb-5 text-h2 font-medium leading-tight text-ink md:text-h1">
                 {ersterAbschnitt.titel}
               </h2>
               <div className="space-y-5 leading-relaxed text-graphite">
@@ -215,7 +215,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             <MehrLesen nurMobil>
               {weitereAbschnitte.map((a) => (
                 <section key={a.titel} className="mb-14 last:mb-0">
-                  <h2 className="mb-5 text-4xl font-medium leading-tight text-ink md:text-5xl">
+                  <h2 className="mb-5 text-h2 font-medium leading-tight text-ink md:text-h1">
                     {a.titel}
                   </h2>
                   <div className="space-y-5 leading-relaxed text-graphite">
@@ -323,7 +323,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Nächster Schritt
             </p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl">
+            <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
               Planen Sie ein ähnliches Projekt?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

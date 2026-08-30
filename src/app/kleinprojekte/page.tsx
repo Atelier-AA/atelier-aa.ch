@@ -17,7 +17,7 @@ export default function KleinprojektePage() {
       <Container>
         <div className="max-w-3xl mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Kleinere Arbeiten</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
+          <h1 className="text-h1 font-normal text-ink leading-tight">
             Kleinprojekte, <span className="font-semibold">gebaut</span> und bewährt.
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">
@@ -35,7 +35,7 @@ export default function KleinprojektePage() {
         <Container>
           <div className="max-w-3xl">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+            <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
               Auch ein <span className="font-semibold">kleines</span> Vorhaben?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

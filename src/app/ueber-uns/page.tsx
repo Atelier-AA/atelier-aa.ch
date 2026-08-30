@@ -57,7 +57,7 @@ export default function UeberUnsPage() {
       <Container>
         <p className="text-xs uppercase tracking-widest text-stone mb-8">Büro</p>
 
-        <h1 className="max-w-4xl text-3xl font-normal leading-[1.15] tracking-tight text-ink md:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-h2 font-normal leading-[1.15] tracking-tight text-ink md:text-h1">
           Wir entwerfen nicht für den <span className="font-semibold">Moment.</span> Wir
           schaffen Orte mit <span className="font-semibold">Bestand.</span>
         </h1>
@@ -99,7 +99,7 @@ export default function UeberUnsPage() {
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Ansätze</p>
-          <h2 className="mb-10 max-w-xl text-3xl font-normal leading-tight text-ink md:text-4xl">
+          <h2 className="mb-10 max-w-xl text-h2 font-normal leading-tight text-ink md:text-h2">
             Vier Ansätze, die <span className="font-semibold">jedes Projekt</span> tragen.
           </h2>
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
@@ -120,7 +120,7 @@ export default function UeberUnsPage() {
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
-          <h2 className="max-w-3xl text-3xl font-normal leading-tight text-ink md:text-4xl">
+          <h2 className="max-w-3xl text-h2 font-normal leading-tight text-ink md:text-h2">
             Wir hinterfragen nicht nur, wie Architektur{' '}
             <span className="font-semibold">aussieht</span>, sondern auch, wie sie{' '}
             <span className="font-semibold">entsteht.</span>

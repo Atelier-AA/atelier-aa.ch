@@ -9,7 +9,7 @@ export default function OffeneStellen() {
           <p className="text-xs uppercase tracking-widest text-stone mb-6">
             Karriere
           </p>
-          <h2 className="text-3xl md:text-4xl font-normal text-ink mb-8 leading-tight">
+          <h2 className="text-h2 font-normal text-ink mb-8 leading-tight">
             Sie denken gerne mit, <span className="font-semibold">hinterfragen</span>{' '}
             und <span className="font-semibold">entwickeln weiter?</span>
           </h2>

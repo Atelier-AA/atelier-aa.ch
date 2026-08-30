@@ -56,7 +56,7 @@ export default function KarrierePage() {
     <div className="pt-32 pb-20 md:pb-28 md:pt-40">
       <Container>
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Karriere</p>
-        <h1 className="mb-3 max-w-2xl text-3xl font-normal leading-[1.1] tracking-tight text-ink md:text-4xl lg:text-5xl">
+        <h1 className="mb-3 max-w-2xl text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h2">
           <span className="font-semibold">Architekt:in</span> FH/ETH oder{' '}
           <span className="font-semibold">Zeichner:in</span> EFZ Fachrichtung
           Architektur
@@ -114,7 +114,7 @@ export default function KarrierePage() {
               ))}
             </ul>
 
-            <h2 className="mt-14 mb-6 text-3xl font-normal leading-tight text-ink md:text-4xl">
+            <h2 className="mt-14 mb-6 text-h2 font-normal leading-tight text-ink md:text-h2">
               Möchtest du mit uns{' '}
               <span className="font-semibold">Architektur gestalten?</span>
             </h2>

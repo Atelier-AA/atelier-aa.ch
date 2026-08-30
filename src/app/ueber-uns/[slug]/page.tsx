@@ -100,7 +100,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
 
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-ink">
+              <h1 className="text-h1 font-medium leading-tight text-ink">
                 {person.name}
               </h1>
               <p className="mt-3 text-lg text-stone">{person.rolle}</p>

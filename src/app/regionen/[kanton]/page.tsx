@@ -21,10 +21,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const kanton = getKantonBySlug(kantonSlug);
   if (!kanton) return { title: 'Seite nicht gefunden' };
 
-  const anzahl = kanton.projekte.length;
   return {
     title: `Architekt im Kanton ${kanton.name}`,
-    description: `Atelier AA Architekten GmbH: ${anzahl} realisierte oder projektierte Bauvorhaben im Kanton ${kanton.name}. Neubau, Umbau und Verdichtung.`,
+    description: `Atelier AA Architekten begleitet Neubauten, Umbauten und Machbarkeitsstudien im Kanton ${kanton.name} — von der ersten Grundstücksanalyse bis zur Realisierung.`,
     alternates: { canonical: `/regionen/${kanton.slug}` },
   };
 }
@@ -50,22 +49,25 @@ export default async function KantonPage({ params }: PageProps) {
       <Container>
         <div className="mb-16 max-w-3xl md:mb-24">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Einsatzgebiet</p>
-          <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          <h1 className="text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
             Architekt im{' '}
             <span className="font-semibold">Kanton {kanton.name}</span>
           </h1>
           <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
             {kanton.projekte.length > 0 ? (
               <>
-                Im Kanton {kanton.name} haben wir {kanton.projekte.length} realisierte oder
-                projektierte Bauvorhaben{kanton.studien.length > 0 && ' sowie zahlreiche Machbarkeits- und Konzeptstudien'} in{' '}
-                {orte.length === 1 ? 'dieser Gemeinde' : `insgesamt ${orte.length} Gemeinden`}{' '}
+                Im Kanton {kanton.name} haben wir{' '}
+                {kanton.projekte.length === 1
+                  ? 'ein realisiertes oder projektiertes Bauvorhaben'
+                  : `${kanton.projekte.length} realisierte oder projektierte Bauvorhaben`}
+                {kanton.studien.length > 0 && ' sowie zahlreiche Machbarkeits- und Konzeptstudien'} in{' '}
+                {orte.length === 1 ? 'einer Gemeinde' : `insgesamt ${orte.length} Gemeinden`}{' '}
                 bearbeitet: {orte.map((o) => o.ort).join(', ')}.
               </>
             ) : (
               <>
                 Im Kanton {kanton.name} haben wir Machbarkeitsstudien durchgeführt, in{' '}
-                {orte.length === 1 ? 'dieser Gemeinde' : `${orte.length} Gemeinden`}:{' '}
+                {orte.length === 1 ? 'einer Gemeinde' : `${orte.length} Gemeinden`}:{' '}
                 {orte.map((o) => o.ort).join(', ')}.
               </>
             )}
@@ -115,7 +117,7 @@ export default async function KantonPage({ params }: PageProps) {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Nächster Schritt
             </p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+            <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
               Sie bauen im Kanton {kanton.name}?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

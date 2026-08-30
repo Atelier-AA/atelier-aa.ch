@@ -12,14 +12,18 @@ import { formatDatum } from '@/lib/utils';
  * bis zu zwei Zeilen); fest sichtbar bleibt nur das Datum darunter.
  */
 export default function InsightsSection() {
-  const neueste = insights.slice(0, 4);
+  // Zwei statt vier: Vier Journalkarten hatten auf der Startseite dasselbe
+  // visuelle Gewicht wie vier Projekte — damit behauptete die Seite, die
+  // Fachbeiträge seien so wichtig wie die Bauten. Einer wirkt zufällig, zwei
+  // zeigen, dass es eine Reihe gibt.
+  const neueste = insights.slice(0, 2);
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
         <div className="mb-10 max-w-2xl md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
-          <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">
+          <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
             Aus dem <span className="font-semibold">Journal</span>
           </h2>
           <p className="mt-4 text-lg text-graphite leading-relaxed">
@@ -27,7 +31,7 @@ export default function InsightsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {neueste.map((i, idx) => (
             <Link
               key={i.slug}

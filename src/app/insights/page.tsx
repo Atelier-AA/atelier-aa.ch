@@ -18,8 +18,8 @@ export default function InsightsPage() {
       <Container>
         <div className="max-w-3xl mb-16 md:mb-24">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
-          <h1 className="text-4xl font-normal leading-tight text-ink md:text-5xl lg:text-6xl">
-            Gedanken zu <span className="font-semibold">Architektur</span>
+          <h1 className="text-h2 font-normal leading-tight text-ink md:text-h1">
+            Gedanken zu <span className="font-semibold">Architektur</span>{' '}
             <br />
             und <span className="font-semibold">Planung</span>
           </h1>

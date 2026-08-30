@@ -17,7 +17,7 @@ export default function StudienPage() {
       <Container>
         <div className="max-w-3xl mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Vorabklärungen</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
+          <h1 className="text-h1 font-normal text-ink leading-tight">
             Studien, die den <span className="font-semibold">Anfang</span> zeigen.
           </h1>
           <p className="mt-6 text-lg text-graphite leading-relaxed">

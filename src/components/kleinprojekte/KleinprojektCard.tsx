@@ -17,7 +17,7 @@ export default function KleinprojektCard({ projekt }: KleinprojektCardProps) {
   return (
     <div className="flex flex-col gap-1 border-b border-mist py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
       <p className="text-lg font-medium leading-tight text-ink">{titel}</p>
-      <p className="text-sm text-stone sm:text-right">
+      <p className="text-karte text-stone sm:text-right">
         {projekt.gebaeudetyp}
         {projekt.jahr ? ` · ${projekt.jahr}` : ''}
       </p>

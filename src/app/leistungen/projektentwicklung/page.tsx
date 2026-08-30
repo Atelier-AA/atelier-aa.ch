@@ -103,7 +103,7 @@ export default function ProjektentwicklungPage() {
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
                 Projektentwicklung
               </p>
-              <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+              <h1 className="mb-8 text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
                 Von der Grundstücksidee zum{' '}
                 <span className="font-semibold">bewilligungsfähigen Projekt.</span>
               </h1>
@@ -115,7 +115,7 @@ export default function ProjektentwicklungPage() {
             </div>
             <div className="lg:col-start-1 lg:row-start-2">
               <div className="mt-10 flex items-baseline gap-4 border-t border-mist pt-8">
-                <span className="text-6xl font-semibold leading-none text-ink">7</span>
+                <span className="text-h1 font-semibold leading-none text-ink">7</span>
                 <span className="max-w-[22ch] text-graphite leading-snug">
                   Schritte von der Grundstücksidee bis zur Übergabe.
                 </span>

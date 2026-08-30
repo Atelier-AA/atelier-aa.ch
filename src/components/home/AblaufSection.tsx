@@ -15,7 +15,7 @@ export default function AblaufSection() {
       <Container>
         <div className="max-w-3xl mb-14">
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Ablauf</p>
-          <h2 className="text-3xl md:text-4xl font-medium text-ink leading-tight">
+          <h2 className="text-h2 font-medium text-ink leading-tight">
             So arbeiten wir
           </h2>
         </div>

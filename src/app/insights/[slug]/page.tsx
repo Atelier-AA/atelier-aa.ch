@@ -92,7 +92,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <p className="text-xs uppercase tracking-[0.1em] text-stone mb-4">
               {insight.kategorie} · {formatDatum(insight.datum)} · {insight.lesezeit} Min.
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight">
+            <h1 className="text-h1 font-medium text-ink leading-tight">
               {insight.titel}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-graphite leading-relaxed">
@@ -148,7 +148,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
               <p className="mb-4 text-xs uppercase tracking-widest text-stone">
                 Nächster Schritt
               </p>
-              <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+              <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
                 Sprechen wir über Ihr Projekt.
               </h2>
               <p className="text-lg text-graphite leading-relaxed mb-8">

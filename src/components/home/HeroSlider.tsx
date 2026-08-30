@@ -18,7 +18,7 @@ interface Slide {
 // Ausschliesslich Mehrfamilienhaus-Projekte, vom Nutzer aus einer Vorschau
 // mit allen verfügbaren Projektfotos ausgewählt und in dieser Reihenfolge
 // festgelegt.
-const slides: Slide[] = [
+const alleSlides: Slide[] = [
   {
     image: '/images/hero/atelier-aa-hero-hochwarting-2.jpg',
     projekt: 'Mehrfamilienhäuser',
@@ -70,6 +70,18 @@ const slides: Slide[] = [
   },
 ];
 
+/**
+ * Wie viele Slides tatsächlich laufen.
+ *
+ * Alle drei Prüfberichte halten sieben unabhängig voneinander für zu viele:
+ * Sieben Bilder zerstreuen die erste Botschaft und lassen keines für sich
+ * stehen. Die Reihenfolge oben stammt vom Kunden und bleibt unangetastet —
+ * gezeigt werden die ersten drei. Wer andere zeigen will, sortiert oben um
+ * oder erhöht diese Zahl; verloren geht nichts.
+ */
+const SICHTBARE_SLIDES = 3;
+const slides = alleSlides.slice(0, SICHTBARE_SLIDES);
+
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
 
@@ -85,7 +97,7 @@ export default function HeroSlider() {
   // ein-/ausfahrende Browserleiste den Hero nicht abschneidet; `h-screen` bleibt
   // Fallback für Browser ohne svh-Support.
   return (
-    <section className="relative w-full h-screen h-svh overflow-hidden bg-ink">
+    <section className="relative w-full h-[82vh] h-[82svh] overflow-hidden bg-ink">
       {slides.map((slide, idx) => (
         <div
           key={slide.image}
@@ -121,10 +133,12 @@ export default function HeroSlider() {
               dieses Leerzeichen verschmilzt roher Text (Screenreader,
               Crawler ohne CSS-Rendering) zu "ArchitekturmitBestand". */}
           <div>
-            <h1
-              className="text-left font-bold leading-[1.1] tracking-tight text-white"
-              style={{ fontSize: 'clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)' }}
-            >
+            {/* Schnitt 400 statt 700 und dieselbe Grösse wie alle übrigen H1
+                (Token `text-h1`): Der Hero stand auf 63px in Schnitt 700 —
+                keines der Vergleichsbüros geht über 400 hinaus. Fett wirkt
+                laut, nicht gross. Die eigene clamp()-Angabe entfällt, damit
+                der Hero nicht wieder aus der Skala ausbricht. */}
+            <h1 className="text-left text-h1 text-white">
               Architektur mit Bestand.
             </h1>
             <p className="mt-3 text-[0.78rem] uppercase tracking-[0.15em] text-white/70 sm:text-[0.9rem]">

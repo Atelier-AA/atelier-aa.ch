@@ -42,7 +42,7 @@ export default function HaeufigeFragenPage() {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Häufige Fragen
             </p>
-            <h1 className="text-4xl font-normal leading-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="text-h2 font-normal leading-tight text-ink md:text-h1">
               Fragen zu <span className="font-semibold">Leistungen</span> und{' '}
               <span className="font-semibold">Zusammenarbeit</span>
             </h1>

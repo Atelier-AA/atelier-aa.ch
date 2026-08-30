@@ -35,7 +35,7 @@ export default function TeamPage() {
       <div className="pt-32 md:pt-40">
         <Container>
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Team</p>
-          <h1 className="mb-6 max-w-2xl text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 max-w-2xl text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
             Die Menschen hinter{' '}
             <span className="font-semibold">Atelier AA Architekten.</span>
           </h1>

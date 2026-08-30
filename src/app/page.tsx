@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import HeroSlider from '@/components/home/HeroSlider';
 import IntroSection from '@/components/home/IntroSection';
+import ZielgruppenSection from '@/components/home/ZielgruppenSection';
 import KompetenzenReferenzenSection from '@/components/home/KompetenzenReferenzenSection';
 import UeberUnsSection from '@/components/home/UeberUnsSection';
 import InsightsSection from '@/components/home/InsightsSection';
@@ -29,6 +30,7 @@ export default function HomePage() {
     <>
       <HeroSlider />
       <IntroSection />
+      <ZielgruppenSection />
       <KompetenzenReferenzenSection />
       <UeberUnsSection />
       <InsightsSection />

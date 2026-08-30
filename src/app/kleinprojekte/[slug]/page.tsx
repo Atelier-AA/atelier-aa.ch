@@ -50,7 +50,7 @@ export default async function KleinprojektDetailPage({ params }: PageProps) {
             <p className="mb-4 text-xs font-medium uppercase tracking-widest text-stone">
               {projekt.jahr ?? 'Realisiert'}
             </p>
-            <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="mb-8 text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
               {titel}
             </h1>
             <p className="text-lg leading-relaxed text-graphite">{projekt.gebaeudetyp}</p>

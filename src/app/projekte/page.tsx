@@ -22,7 +22,7 @@ export default function ProjektePage() {
           {/* "Bestand" bleibt dem Hauptclaim vorbehalten, deshalb hier eine
               andere Aussage, die zur Haltung "keine Architektur nach Schema"
               passt. */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-ink leading-tight">
+          <h1 className="text-h1 font-normal text-ink leading-tight">
             Jede <span className="font-semibold">Aufgabe</span> verlangt eine
             eigene <span className="font-semibold">Antwort.</span>
           </h1>

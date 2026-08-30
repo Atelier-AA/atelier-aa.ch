@@ -39,7 +39,7 @@ export default function DatenschutzPage() {
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">
             Rechtliches
           </p>
-          <h1 className="mb-6 text-4xl font-medium text-ink md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-h2 font-medium text-ink md:text-h1">
             Datenschutzerklärung
           </h1>
           <p className="mb-16 text-sm text-stone">Stand: {stand}</p>

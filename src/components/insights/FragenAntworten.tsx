@@ -35,7 +35,7 @@ export default function FragenAntworten({
       className="mt-20 md:mt-28 border-t border-mist pt-16"
     >
       {titel && (
-        <h2 className="text-2xl md:text-3xl font-medium text-ink mb-10">{titel}</h2>
+        <h2 className="text-2xl md:text-h2 font-medium text-ink mb-10">{titel}</h2>
       )}
 
       <div className="border-t border-mist">

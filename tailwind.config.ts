@@ -10,6 +10,28 @@ const config: Config = {
         // das Logo, deshalb erst ab 1100px auf die Desktop-Leiste wechseln.
         lg: '1100px',
       },
+      // Zentrale Typografie-Tokens. Vorher setzte jede Komponente ihre Grössen
+      // selbst — dabei sind fünf verschiedene H2-Grössen nebeneinander
+      // entstanden (36/40/48/56/60px). Ab jetzt leiten alle Überschriften von
+      // hier ab, damit das nicht wieder auseinanderläuft.
+      //
+      // Schnitt statt Grösse: Die H1 stand auf 63px in Schnitt 700. Keines der
+      // Vergleichsbüros geht über 400 hinaus — fett wirkt laut, nicht gross.
+      // Darum bleibt die Grösse fast gleich und der Schnitt geht deutlich
+      // zurück.
+      fontSize: {
+        h1:    ['clamp(2.38rem, 1.6rem + 2.2vw, 3.56rem)', { lineHeight: '1.06', letterSpacing: '-0.022em', fontWeight: '400' }],
+        h2:    ['clamp(1.75rem, 1.35rem + 1.1vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
+        h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
+        karte: ['1rem', { lineHeight: '1.6' }],
+      },
+      maxWidth: {
+        // Zeilenlänge in ch, nicht in px: Die Grenze hängt an der Schrift,
+        // nicht an der Bildschirmbreite. Über ~68 Zeichen findet das Auge
+        // beim Zeilenwechsel den Zeilenanfang nicht mehr zuverlässig.
+        lesbar: '68ch',
+        content: '1440px',
+      },
       colors: {
         ink: '#111111',
         graphite: '#3a3a3a',
@@ -25,9 +47,8 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
-      maxWidth: {
-        content: '1440px',
-      },
+      // (content bleibt bei 1440px: Die Zeilenlänge begrenzt der Text selbst
+      // über max-w-lesbar, die Gesamtbreite trägt weiterhin die Bilder.)
       letterSpacing: {
         widest: '.2em',
       },

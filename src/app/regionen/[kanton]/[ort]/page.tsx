@@ -12,6 +12,27 @@ interface PageProps {
   params: Promise<{ kanton: string; ort: string }>;
 }
 
+/**
+ * Gebäudetyp mit korrektem unbestimmtem Artikel im Akkusativ.
+ *
+ * Die frühere Fassung setzte pauschal `ein {typ.toLowerCase()}` und erzeugte
+ * damit gleich drei Fehler: Kleinschreibung eines Substantivs, falsches
+ * Geschlecht ("ein Wohnüberbauung", "ein Gewerbebau") und einen
+ * Singular-Artikel vor einem Plural ("ein Reiheneinfamilienhäuser").
+ * Plural-Typen bekommen gar keinen Artikel.
+ */
+function mitArtikel(typ: string): string {
+  const artikel: Record<string, string> = {
+    Doppeleinfamilienhaus: 'ein',
+    Einfamilienhaus: 'ein',
+    Mehrfamilienhaus: 'ein',
+    Gewerbebau: 'einen',
+    Wohnüberbauung: 'eine',
+  };
+  const a = artikel[typ];
+  return a ? `${a} ${typ}` : typ;
+}
+
 export function generateStaticParams() {
   return alleKantone().flatMap((k) =>
     orteInKanton(k.kuerzel).map((o) => ({ kanton: k.slug, ort: o.slug }))
@@ -68,7 +89,7 @@ export default async function OrtPage({ params }: PageProps) {
           >
             ← Kanton {kanton.name}
           </Link>
-          <h1 className="text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          <h1 className="text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
             Architekt in <span className="font-semibold">{ort.ort}</span>
           </h1>
           <p className="mt-10 text-lg leading-relaxed text-graphite md:text-xl">
@@ -81,7 +102,7 @@ export default async function OrtPage({ params }: PageProps) {
                 </>
               ) : (
                 <>
-                  In {ort.ort} ({kanton.name}) haben wir ein {ort.projekte[0].typ.toLowerCase()}{' '}
+                  In {ort.ort} ({kanton.name}) haben wir {mitArtikel(ort.projekte[0].typ)}{' '}
                   {ort.projekte[0].jahr === 'in Realisierung' ||
                   ort.projekte[0].jahr === 'in Planung'
                     ? 'projektiert'
@@ -129,7 +150,7 @@ export default async function OrtPage({ params }: PageProps) {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Nächster Schritt
             </p>
-            <h2 className="mb-6 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight text-ink md:text-5xl">
+            <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
               Sie bauen in {ort.ort}?
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

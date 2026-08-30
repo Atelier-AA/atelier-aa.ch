@@ -25,7 +25,7 @@ export default function KontaktPage() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h1 className="text-4xl font-normal leading-tight text-ink mb-10 max-w-lg md:text-5xl lg:text-6xl">
+            <h1 className="text-h2 font-normal leading-tight text-ink mb-10 max-w-lg md:text-h1">
               Der erste <span className="font-semibold">Schritt</span> ist ein{' '}
               <span className="font-semibold">Gespräch.</span>
             </h1>
@@ -44,7 +44,7 @@ export default function KontaktPage() {
             </address>
             <a
               href={`tel:${firma.telefonHref}`}
-              className="mt-8 block text-4xl font-semibold leading-none tracking-tight text-ink transition-opacity hover:opacity-70 md:text-5xl"
+              className="mt-8 block text-h2 font-semibold leading-none tracking-tight text-ink transition-opacity hover:opacity-70 md:text-h1"
             >
               {firma.telefon}
             </a>{' '}

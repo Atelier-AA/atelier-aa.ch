@@ -88,7 +88,7 @@ export default function MachbarkeitsstudiePage() {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Machbarkeitsstudie
             </p>
-            <h1 className="mb-8 text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="mb-8 text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
               Was auf Ihrem <span className="font-semibold">Grundstück</span> möglich ist.
             </h1>
             <p className="max-w-md text-lg leading-relaxed text-graphite md:text-xl">
@@ -194,7 +194,7 @@ export default function MachbarkeitsstudiePage() {
         <Container>
           <div className="max-w-2xl">
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>
-            <h2 className="mb-6 text-4xl font-normal leading-tight text-ink md:text-5xl">
+            <h2 className="mb-6 text-h2 font-normal leading-tight text-ink md:text-h1">
               Fragen Sie sich, ob mehr <span className="font-semibold">möglich wäre?</span>
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-graphite">

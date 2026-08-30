@@ -36,8 +36,8 @@ export default function LeistungenPage() {
                 Video zu kurz war. Er beantwortet die naheliegende Rückfrage
                 zum Auftragsumfang und bleibt damit in der Sache dieses
                 Abschnitts — die oben ausgeschlossenen Themen bleiben draussen. */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-ink leading-[1.1] tracking-tight mb-6">
-              Von der ersten <span className="font-semibold">Frage</span>
+            <h1 className="text-h1 font-normal text-ink leading-[1.1] tracking-tight mb-6">
+              Von der ersten <span className="font-semibold">Frage</span>{' '}
               <br />
               bis zur <span className="font-semibold">Realisierung.</span>
             </h1>
@@ -85,7 +85,7 @@ export default function LeistungenPage() {
             <p className="mb-4 text-xs uppercase tracking-widest text-stone">
               Angebot
             </p>
-            <h2 className="text-3xl font-medium leading-tight text-ink md:text-4xl">
+            <h2 className="text-h2 font-medium leading-tight text-ink md:text-h2">
               Leistungen
             </h2>
           </div>
@@ -103,7 +103,7 @@ export default function LeistungenPage() {
                     const text = typeof punkt === 'string' ? punkt : punkt.text;
                     const sia = typeof punkt === 'string' ? null : punkt.sia;
                     return (
-                      <li key={text} className="flex gap-3 text-sm leading-relaxed text-graphite">
+                      <li key={text} className="flex gap-3 text-karte leading-relaxed text-graphite">
                         <span
                           aria-hidden="true"
                           className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-stone"
@@ -118,14 +118,14 @@ export default function LeistungenPage() {
                     );
                   })}
                 </ul>
-                <p className="mt-5 text-sm leading-relaxed text-graphite">{k.text}</p>
+                <p className="mt-5 text-karte leading-relaxed text-graphite">{k.text}</p>
                 {k.links && k.links.length > 0 && (
                   <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                     {k.links.map((l) => (
                       <li key={l.href}>
                         <Link
                           href={l.href}
-                          className="text-sm text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+                          className="text-karte text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
                         >
                           {l.label} →
                         </Link>
@@ -151,12 +151,12 @@ export default function LeistungenPage() {
                 <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">
                   Integrierte Projektabwicklung
                 </h3>
-                <p className="mt-5 text-sm leading-relaxed text-graphite">
+                <p className="mt-5 text-karte leading-relaxed text-graphite">
                   Wir setzen uns mit Modellen wie Design-Build auseinander und wenden erste
                   Prinzipien bereits in einem aktuellen Projekt an.
                 </p>
               </div>
-              <p className="mt-5 text-sm text-ink underline decoration-stone underline-offset-4 group-hover:decoration-ink">
+              <p className="mt-5 text-karte text-ink underline decoration-stone underline-offset-4 group-hover:decoration-ink">
                 Mehr erfahren →
               </p>
             </Link>

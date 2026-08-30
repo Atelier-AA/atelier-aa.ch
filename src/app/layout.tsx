@@ -94,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={inter.variable}>
+    <html lang="de-CH" className={inter.variable}>
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"

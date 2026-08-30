@@ -71,7 +71,7 @@ export default function IntegrierteProjektabwicklungPage() {
           ← Leistungen
         </Link>
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
-        <h1 className="max-w-2xl text-4xl font-normal leading-[1.1] tracking-tight text-ink md:text-5xl">
+        <h1 className="max-w-2xl text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
           Integrierte Projektabwicklung
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-graphite">

@@ -37,7 +37,7 @@ export default function Footer() {
                 Hero der Startseite. Eine dritte Variante desselben Gedankens
                 ("Orte mit Bestand", "Orte, die bleiben") schwächt die Aussage,
                 statt sie zu verstärken. Hier steht darum, was das Büro tut. */}
-            <p className="text-2xl md:text-3xl font-light leading-tight">
+            <p className="text-2xl md:text-h2 font-light leading-tight">
               Architektur für Neubau, Umbau und Verdichtung in Zürich, Aargau und Zug.
             </p>
           </div>
