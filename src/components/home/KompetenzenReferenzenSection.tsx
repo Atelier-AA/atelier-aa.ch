@@ -1,6 +1,7 @@
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import ProjektCard from '@/components/projekte/ProjektCard';
+import { kompetenzen } from '@/data/expertise';
 import { getProjekt } from '@/data/projekte';
 
 /**
@@ -13,36 +14,6 @@ import { getProjekt } from '@/data/projekte';
  */
 const AUSWAHL = ['mfh-alte-poststrasse', 'mfh-wuerenlingen', 'defh-weiningen'];
 
-/**
- * Drei Kundenschritte statt der fünf Fachkompetenzen — ausdrücklich nur auf
- * der Startseite. Eine Bauherrschaft weiss nicht, ob sie "Analyse und
- * Konzept" oder "Planung und Koordination" braucht; sie weiss, dass sie noch
- * nichts geklärt hat. Drei Schritte sind eine Landkarte, fünf Rollen sind ein
- * Organigramm. Die fünf Kompetenzen mit ihren SIA-Bezügen bleiben auf
- * /leistungen vollständig erhalten — sie arbeiten dort für Fachpublikum und
- * Suchmaschinen.
- *
- * Die Zuordnung folgt den Kompetenzen in `expertise.ts`: Klären fasst
- * Beratung und Analyse/Konzept, Planen die Planung und Koordination,
- * Realisieren die Realisierung und Generalplanung.
- */
-const SCHRITTE = [
-  {
-    titel: 'Was möglich ist',
-    text: 'Beratung, Grundstücksanalyse und Machbarkeitsstudie. Bevor Ressourcen in die Ausführung fliessen, steht fest, was Ihr Grundstück zulässt und was es kostet.',
-    leistungen: ['Beratung', 'Grundstücksanalyse', 'Machbarkeitsstudie', 'Projektentwicklung'],
-  },
-  {
-    titel: 'Wie es entsteht',
-    text: 'Entwurf, Baugesuch und Ausführungsplanung. Auf Wunsch als Generalplanung, mit einem Ansprechpartner für das gesamte Planungsteam.',
-    leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Generalplanung'],
-  },
-  {
-    titel: 'Wie es gebaut wird',
-    text: 'Ausschreibung, Vergabe und Bauleitung bis zur Übergabe. Wir begleiten die Baustelle und sichern Qualität, Kosten und Termine.',
-    leistungen: ['Ausschreibung', 'Vergabe', 'Bauleitung', 'Kostenkontrolle'],
-  },
-];
 
 /**
  * Leistungen als durchgehender Prozess (5 nummerierte Stufen), Projekte als
@@ -61,21 +32,14 @@ export default function KompetenzenReferenzenSection() {
       <Container>
         <p className="mb-10 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
-        {/* Kacheln auf grauem Grund statt freistehendem Text. Frei stehend
-            hoben sich die drei Blöcke von nichts ab und wirkten wie ein
-            unfertiger Platzhalter. Die aufgeführten Leistungen darunter
-            zeigen, was jeweils konkret dahintersteckt — vorher stand das nur
-            im Fliesstext und ging darin unter. */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {SCHRITTE.map((s) => (
-            <div key={s.titel} className="flex flex-col bg-mist p-8">
-              <h3 className="text-h2 font-semibold text-ink">{s.titel}</h3>
-              <p className="mt-4 text-karte leading-relaxed text-graphite">{s.text}</p>
-              <ul className="mt-6 flex flex-col gap-1.5 border-t border-stone/20 pt-5 text-karte text-graphite">
-                {s.leistungen.map((l) => (
-                  <li key={l}>{l}</li>
-                ))}
-              </ul>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-6">
+          {kompetenzen.map((k, idx) => (
+            <div key={k.titel} className="border-t border-mist pt-5">
+              <p className="mb-3 text-xs uppercase tracking-widest text-stone">
+                0{idx + 1}
+              </p>
+              <h3 className="text-base font-medium text-ink">{k.titel}</h3>
+              <p className="mt-3 text-karte text-graphite leading-relaxed">{k.text}</p>
             </div>
           ))}
         </div>

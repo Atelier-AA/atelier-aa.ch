@@ -18,12 +18,8 @@ export default function LeistungenPage() {
       <Container className="mb-16 md:mb-24">
         <p className="mb-8 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
-        {/* Untereinander statt nebeneinander: Text auf Lesebreite, darunter
-            das Video über die volle Breite. Nebeneinander mussten Textlänge
-            und Videohöhe zusammenpassen — eine Abhängigkeit, die bei jeder
-            Textänderung neu zu justieren war. */}
-        <div className="flex flex-col gap-12 md:gap-16">
-          <div className="max-w-3xl">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+          <div>
             {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
                 soll fachlich bleiben und mit den echten Leistungen
                 arbeiten, nicht mit einer weiteren Markenbotschaft, die mit
@@ -36,8 +32,9 @@ export default function LeistungenPage() {
                 zum Auftragsumfang und bleibt damit in der Sache dieses
                 Abschnitts — die oben ausgeschlossenen Themen bleiben draussen. */}
             <h1 className="text-h1 font-normal text-ink leading-[1.1] tracking-tight mb-6">
-              Von der ersten <span className="font-semibold">Frage</span> bis zur{' '}
-              <span className="font-semibold">Realisierung.</span>
+              Von der ersten <span className="font-semibold">Frage</span>{' '}
+              <br />
+              bis zur <span className="font-semibold">Realisierung.</span>
             </h1>
             <div className="space-y-5 text-graphite leading-relaxed">
               <p>
@@ -50,16 +47,11 @@ export default function LeistungenPage() {
                 zusammen gedacht, mit Schwerpunkt in Zürich, Aargau und Zug. Wie das
                 konkret aussieht, zeigen die folgenden fünf Leistungen.
               </p>
-              <p>
-                Der Umfang richtet sich nach Ihrem Vorhaben: Sie können uns für
-                einzelne Phasen beauftragen, etwa nur für Machbarkeitsstudie und
-                Baugesuch, oder für den gesamten Weg bis zur Übergabe.
-              </p>
             </div>
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
               reale, laufende Projekte statt eines einzelnen Referenzbilds. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-[4/3]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"
@@ -88,9 +80,12 @@ export default function LeistungenPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {kompetenzen.map((k) => (
+            {kompetenzen.map((k, index) => (
               <div key={k.titel} className="bg-mist p-8">
-                <h3 className="text-h3 font-semibold text-ink">{k.titel}</h3>
+                <p className="text-xs uppercase tracking-widest text-stone">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">{k.titel}</h3>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften

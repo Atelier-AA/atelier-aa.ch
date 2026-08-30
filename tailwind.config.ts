@@ -20,9 +20,9 @@ const config: Config = {
       // Darum bleibt die Grösse fast gleich und der Schnitt geht deutlich
       // zurück.
       fontSize: {
-        hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
-        h1:    ['clamp(1.67rem, 1.12rem + 1.54vw, 2.49rem)', { lineHeight: '1.1', letterSpacing: '-0.018em', fontWeight: '400' }],
-        h2:    ['clamp(1.23rem, 0.95rem + 0.77vw, 1.58rem)', { lineHeight: '1.2', letterSpacing: '-0.012em', fontWeight: '400' }],
+        hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
+        h1:    ['clamp(2.38rem, 1.6rem + 2.2vw, 3.56rem)', { lineHeight: '1.06', letterSpacing: '-0.022em', fontWeight: '400' }],
+        h2:    ['clamp(1.75rem, 1.35rem + 1.1vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
         karte: ['1rem', { lineHeight: '1.6' }],
       },
@@ -41,7 +41,7 @@ const config: Config = {
         // (Lighthouse-Audit). Dieser Ton besteht mit ca. 5.2:1, sichtbar
         // praktisch identisch.
         stone: '#6b6b6b',
-        mist: '#ecece9',
+        mist: '#f5f5f4',
         paper: '#fafaf9',
       },
       fontFamily: {

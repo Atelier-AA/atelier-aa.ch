@@ -3,7 +3,7 @@ import Container from '@/components/ui/Container';
 import Logo from './Logo';
 import { footerAtelier, footerArbeit, footerLegal } from '@/data/navigation';
 import { firma, sozialeMedien } from '@/data/firma';
-import { kantoneMitProjekten } from '@/lib/regionen';
+import { alleKantone } from '@/lib/regionen';
 import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
 
 /**
@@ -20,7 +20,7 @@ import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
  */
 export default function Footer() {
   const year = new Date().getFullYear();
-  const kantone = kantoneMitProjekten();
+  const kantone = alleKantone();
   const spaltenTitel = 'mb-6 text-xs uppercase tracking-widest text-white/50';
   const verweis =
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <Container className="py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto_auto] lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-12">
           <div className="max-w-md">
             <div className="mb-6 h-[35px] text-white md:h-[40px]">
               <Logo />
@@ -88,19 +88,23 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
-
-          <div>
-            <h3 className={spaltenTitel}>Tätigkeitsgebiete</h3>
-            <ul>
-              {kantone.map((k) => (
-                <li key={k.slug}>
-                  <Link href={`/regionen/${k.slug}`} className={verweis}>
+            {/* Tätigkeitsgebiet als Textzeile, nicht als eigene Spalte —
+                sechs gleichrangige Kantonslinks im Raster behaupteten sechs
+                gleichwertige Tätigkeitsgebiete. */}
+            <p className="mt-6 text-xs text-white/50">
+              Tätigkeitsgebiet:{' '}
+              {kantone.map((k, i) => (
+                <span key={k.slug}>
+                  <Link
+                    href={`/regionen/${k.slug}`}
+                    className="rounded-sm underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
                     {k.name}
                   </Link>
-                </li>
+                  {i < kantone.length - 1 && ' · '}
+                </span>
               ))}
-            </ul>
+            </p>
           </div>
 
           <div>

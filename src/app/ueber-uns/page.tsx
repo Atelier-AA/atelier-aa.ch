@@ -57,44 +57,35 @@ export default function UeberUnsPage() {
       <Container>
         <p className="text-xs uppercase tracking-widest text-stone mb-8">Büro</p>
 
-        <h1 className="max-w-4xl text-h2 font-normal leading-[1.15] tracking-tight text-ink md:text-h1">
-          Wir entwerfen nicht für den <span className="font-semibold">Moment.</span> Wir
-          schaffen Orte mit <span className="font-semibold">Bestand.</span>
-        </h1>
-        <p className="mt-8 max-w-lesbar text-lg leading-relaxed text-graphite">
-          Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden im
-          Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
-          Mehrfamilienhäuser und Wohnüberbauungen, auf Wunsch auch im
-          Generalplanermandat — von der Machbarkeitsstudie über Baugesuch und
-          Ausführungsplanung bis zur Bauleitung.
-        </p>
-
-        {/* Die Bürobilder begleiten den Einleitungstext, statt als Streifen
-            am Seitenende zu stehen — dort wirkten sie angehängt und ohne
-            Bezug. Versetzte Höhen, damit die Reihe nicht als Bildband liest.
-            Schwarzweiss wie die Team-Fotos. */}
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {[
-            { src: '/images/kontakt/atelier-aa-kontakt-buero.jpg', hoch: false },
-            { src: '/images/buero/atelier-aa-buero-1.jpg', hoch: true },
-            { src: '/images/buero/atelier-aa-buero-2.jpg', hoch: false },
-          ].map((bild, idx) => (
-            <div
-              key={bild.src}
-              className={`relative w-full overflow-hidden bg-mist ${
-                bild.hoch ? 'aspect-[3/4] sm:mt-10' : 'aspect-[4/3]'
-              }`}
-            >
-              <Image
-                src={bild.src}
-                alt="Das Atelier von Atelier AA Architekten in Obfelden"
-                fill
-                priority={idx === 0}
-                className="object-cover grayscale"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </div>
-          ))}
+        {/* Zwei Spalten, Text links, Bild rechts. Die Seite hat dadurch
+            durchgehend zweispaltige Abschnitte mit wechselnder Seite
+            (Einstieg Text links, Haltung Bild links, Weiterentwicklung Text
+            links) — vorher stand alles untereinander über die volle Breite
+            und wirkte deshalb textlastig. */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
+          <div>
+            <h1 className="text-h2 font-normal leading-[1.15] tracking-tight text-ink md:text-h1">
+              Wir entwerfen nicht für den <span className="font-semibold">Moment.</span> Wir
+              schaffen Orte mit <span className="font-semibold">Bestand.</span>
+            </h1>
+            <p className="mt-8 max-w-lesbar text-lg leading-relaxed text-graphite">
+              Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden im
+              Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
+              Mehrfamilienhäuser und Wohnüberbauungen, auf Wunsch auch im
+              Generalplanermandat — von der Machbarkeitsstudie über Baugesuch und
+              Ausführungsplanung bis zur Bauleitung.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
+            <Image
+              src="/images/buero/atelier-aa-buero-1.jpg"
+              alt="Das Atelier von Atelier AA Architekten in Obfelden"
+              fill
+              priority
+              className="object-cover grayscale"
+              sizes="(max-width: 1100px) 100vw, 40vw"
+            />
+          </div>
         </div>
       </Container>
 
@@ -102,9 +93,18 @@ export default function UeberUnsPage() {
       {haltung && (
         <div className="mt-24 border-t border-mist pt-16 md:mt-32">
           <Container>
-            <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-[1fr_2fr]">
-              <p className="text-xs uppercase tracking-widest text-stone">Haltung</p>
-              <div className="max-w-2xl text-lg leading-relaxed text-graphite">
+            <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-[2fr_3fr]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
+                <Image
+                  src="/images/kontakt/atelier-aa-kontakt-buero.jpg"
+                  alt="Das Atelier von Atelier AA Architekten in Obfelden"
+                  fill
+                  className="object-cover grayscale"
+                  sizes="(max-width: 1100px) 100vw, 40vw"
+                />
+              </div>
+              <div className="text-lg leading-relaxed text-graphite">
+                <p className="mb-6 text-xs uppercase tracking-widest text-stone">Haltung</p>
                 <p>{haltung.absaetze[0]}</p>
                 <MehrLesen className="mt-5 space-y-5">
                   {haltung.absaetze.slice(1).map((absatz) => (
@@ -147,13 +147,15 @@ export default function UeberUnsPage() {
           deshalb keine eigene Nav, kein "Design-Build"-Menüpunkt. */}
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
+          <div className="grid grid-cols-1 items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
+          <div>
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
-          <h2 className="max-w-3xl text-h2 font-normal leading-tight text-ink md:text-h2">
+          <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
             Wir hinterfragen nicht nur, wie Architektur{' '}
             <span className="font-semibold">aussieht</span>, sondern auch, wie sie{' '}
             <span className="font-semibold">entsteht.</span>
           </h2>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-graphite">
+          <p className="mt-8 max-w-lesbar text-lg leading-relaxed text-graphite">
             Die Qualität eines Projekts entscheidet sich nicht allein im Entwurf, sondern
             auch davon, wie früh Wissen zusammenkommt und wie eng Planung, Wirtschaftlichkeit
             und Ausführung miteinander verbunden sind. Deshalb haben wir uns mit integrierten
@@ -161,12 +163,22 @@ export default function UeberUnsPage() {
             einem aktuellen Projekt bereits zentrale Prinzipien daraus an.
           </p>
 
-          {/* Drei Kacheln statt Spalten mit Haarlinie — dieselbe Behandlung
-              wie die Ansätze darüber. Der frühere Abschluss darunter ist
+          <div className="mt-10">
+            <Link
+              href="/insights/design-build-projektabwicklung"
+              className="text-karte text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
+            >
+              Mehr dazu im Journal →
+            </Link>
+          </div>
+          </div>
+
+          {/* Die drei Kacheln untereinander in der rechten Spalte — dieselbe
+              Behandlung wie die Ansätze darüber. Der frühere Abschluss ist
               entfallen: Er wiederholte mit "Bevor wir gestalten, wollen wir
               verstehen" wörtlich die Überschrift des Büro-Abschnitts auf der
-              Startseite und machte den Abschnitt unnötig lang. */}
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              Startseite. */}
+          <div className="flex flex-col gap-6">
             <div className="bg-mist p-8">
               <h3 className="text-h3 text-ink">Wissen früher zusammenbringen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
@@ -190,13 +202,6 @@ export default function UeberUnsPage() {
             </div>
           </div>
 
-          <div className="mt-10">
-            <Link
-              href="/insights/design-build-projektabwicklung"
-              className="text-sm text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
-            >
-              Mehr dazu im Journal →
-            </Link>
           </div>
         </Container>
       </div>

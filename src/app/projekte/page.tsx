@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import KleinprojekteAufklappbar from '@/components/kleinprojekte/KleinprojekteAufklappbar';
-import { kleinprojekte } from '@/data/kleinprojekte';
+import WeitereArbeiten from '@/components/kleinprojekte/WeitereArbeiten';
 import VorhabenCta from '@/components/ui/VorhabenCta';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
 import { projekte } from '@/data/projekte';
@@ -39,11 +38,10 @@ export default function ProjektePage() {
         <ProjekteFilter projekte={projekte} />
       </Container>
 
-      {/* Kleinprojekte stehen hier statt auf einer eigenen Seite im Footer:
-          ebenfalls ausgeführte Arbeiten, nur kleiner. Eingeklappt, damit die
-          Textliste das Bildraster darüber nicht in die Länge zieht. */}
+      {/* Die kleineren Aufträge stehen hier statt auf einer eigenen Seite:
+          ebenfalls ausgeführte Arbeiten, nur kleiner im Umfang. */}
       <Container className="mt-20 md:mt-28">
-        <KleinprojekteAufklappbar projekte={kleinprojekte} />
+        <WeitereArbeiten />
       </Container>
 
       <div className="mt-24 md:mt-32">

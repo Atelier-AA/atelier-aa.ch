@@ -8,7 +8,7 @@ import Button from './Button';
  */
 export default function VorhabenCta() {
   return (
-    <div className="border-t border-mist pt-16 pb-20 md:pb-28">
+    <div className="bg-mist pt-16 pb-20 md:pb-28">
       <Container>
         <div className="max-w-3xl">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Nächster Schritt</p>

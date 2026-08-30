@@ -36,19 +36,19 @@ export const footerAtelier: NavLink[] = [
 ];
 
 /**
- * Footer: nur noch Einstiege, nicht die ganze Seitenstruktur.
+ * Footer-Spalte "Arbeit", wieder in voller Länge.
  *
- * Entfallen sind Studien/Machbarkeitsstudie, Projektentwicklung und
- * Kleinprojekte. Die ersten beiden stehen als Unterlinks bei der Kompetenz
- * "Analyse und Konzept" auf /leistungen, die Kleinprojekte unten auf
- * /projekte — dort, wo sie inhaltlich hingehören. Für Suchmaschinen zählt,
- * DASS eine Seite verlinkt ist, nicht dass sie im Footer steht; über die
- * jeweilige Hauptseite ist jede von überall zwei Klicks entfernt.
+ * "Studien" und "Weitere Arbeiten" zeigen auf ihre neuen Ziele: /studien und
+ * /kleinprojekte gibt es als eigene Übersichten nicht mehr, sie leiten nur
+ * noch weiter. Ein Link auf eine Weiterleitung wäre auf jeder der 228 Seiten
+ * ein unnötiger Umweg.
  */
 export const footerArbeit: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
   { href: '/leistungen', label: 'Leistungen' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
+  { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
+  { href: '/projekte#weitere-arbeiten', label: 'Weitere Arbeiten' },
 ];
 
 export const footerLegal: NavLink[] = [

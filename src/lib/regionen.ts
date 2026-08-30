@@ -16,6 +16,8 @@ const KANTON_NAMEN: Record<string, string> = {
   ZG: 'Zug',
   LU: 'Luzern',
   SZ: 'Schwyz',
+  TG: 'Thurgau',
+  SO: 'Solothurn',
 };
 
 export function slugify(text: string): string {

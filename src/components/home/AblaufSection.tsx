@@ -11,19 +11,21 @@ import { ablauf } from '@/data/startseite';
  */
 export default function AblaufSection() {
   return (
-    <section className="bg-mist py-16 md:py-20">
+    <section className="py-16 md:py-20">
       <Container>
-        {/* Ohne Überschrift "So arbeiten wir": Das Label "Ablauf" sagt es
-            bereits, und eine grosse Zeile über kleinem Text war genau das,
-            was die Seite überladen wirken liess. Ohne Nummerierung, weil die
-            Reihenfolge der Spalten sie ohnehin zeigt. */}
-        <p className="mb-10 text-xs uppercase tracking-widest text-stone">Ablauf</p>
+        <div className="max-w-3xl mb-14">
+          <p className="text-xs uppercase tracking-widest text-stone mb-4">Ablauf</p>
+          <h2 className="text-h2 font-medium text-ink leading-tight">
+            So arbeiten wir
+          </h2>
+        </div>
 
-        <ol className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {ablauf.map((phase) => (
             <li key={phase.nummer}>
-              <h3 className="mb-3 text-h3 text-ink">{phase.titel}</h3>
-              <p className="max-w-lesbar text-karte leading-relaxed text-graphite">{phase.text}</p>
+              <p className="text-sm tracking-[0.1em] text-stone mb-4">{phase.nummer}</p>
+              <h3 className="text-xl font-medium text-ink mb-3">{phase.titel}</h3>
+              <p className="text-graphite leading-relaxed">{phase.text}</p>
             </li>
           ))}
         </ol>
