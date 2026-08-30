@@ -217,7 +217,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     strasse: 'Hohmatt',
     gebaeudetyp: 'Einfamilienhaus, Neubau',
     bauherrschaft: null,
-    jahr: 'in Planung',
+    jahr: '2021',
     leistungen: ['Projektierung', 'Baugesuch'],
     bilder: ['/images/kleinprojekte/efh-neerach/atelier-aa-efh-neerach-bild1.jpg'],
   },
