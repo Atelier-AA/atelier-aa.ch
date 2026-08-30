@@ -28,9 +28,13 @@ const config: Config = {
       // 48 und 60 bzw. 30 und 48px — genau das liess die Seite unruhig
       // wirken. Beide Kurven erreichen ihren Endwert bei 1100px, dem
       // Umschaltpunkt der Seite.
+      //
+      // H1 anschliessend auf Kundenwunsch um 30% reduziert: 60 -> 42px. H2
+      // blieb dabei bei 40px, die beiden Ebenen liegen also nur noch 2px
+      // auseinander.
       fontSize: {
         hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
-        h1:    ['clamp(2.25rem, 1.27rem + 3.61vw, 3.75rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
+        h1:    ['clamp(1.575rem, 1.03rem + 2.32vw, 2.625rem)', { lineHeight: '1.12', letterSpacing: '-0.018em', fontWeight: '400' }],
         h2:    ['clamp(1.75rem, 1.36rem + 1.66vw, 2.5rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
         karte: ['1rem', { lineHeight: '1.6' }],
