@@ -23,11 +23,15 @@ export default function ProjektePage() {
           {/* "Bestand" bleibt dem Hauptclaim vorbehalten, deshalb hier eine
               andere Aussage, die zur Haltung "keine Architektur nach Schema"
               passt. */}
-          <h1 className="text-h1 text-ink">
+          {/* Masse wie die Überschrift der Startseite: dieselbe Stufe,
+              dieselbe Zeilenbreite von 20 Zeichen, derselbe Abstand zum
+              Fliesstext. Vorher war sie 60px bei Zeilenhöhe 1.25 und ohne
+              enge Laufweite — vier Abweichungen auf einmal. */}
+          <h1 className="max-w-[20ch] text-h1 text-ink">
             Jede <span className="font-semibold">Aufgabe</span> verlangt eine
             eigene <span className="font-semibold">Antwort.</span>
           </h1>
-          <p className="mt-6 max-w-lesbar text-lg text-graphite leading-relaxed">
+          <p className="mt-8 max-w-lesbar text-lg text-graphite leading-relaxed">
             Von der ersten Skizze bis zur präzisen Umsetzung, jedes Projekt
             ist Ausdruck seines Ortes und seiner Nutzenden. Die folgende
             Auswahl zeigt einen Ausschnitt unserer Arbeit für Bauherrschaften
