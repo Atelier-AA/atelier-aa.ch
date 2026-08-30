@@ -51,6 +51,22 @@ export function alleKantone(): KantonMitProjekten[] {
   }));
 }
 
+/**
+ * Kantone mit mindestens einem realisierten oder projektierten Bauvorhaben.
+ *
+ * Für den Footer: Sechs gleichwertige Kantonslinks behaupten sechs
+ * gleichwertige Tätigkeitsgebiete. Luzern, Thurgau und Solothurn haben aber
+ * kein einziges Projekt, nur je ein bis zwei Studien — wer dort klickt,
+ * findet eine fast leere Seite und hat mehr verloren als gewonnen.
+ *
+ * Bewusst eine Regel statt einer festen Liste: Sobald in einem dieser
+ * Kantone ein Projekt dazukommt, erscheint er von selbst wieder. Die Seiten
+ * bleiben in allen Fällen bestehen und über die Sitemap auffindbar.
+ */
+export function kantoneMitProjekten(): KantonMitProjekten[] {
+  return alleKantone().filter((k) => k.projekte.length > 0);
+}
+
 export function getKantonBySlug(slug: string): KantonMitProjekten | undefined {
   return alleKantone().find((k) => k.slug === slug);
 }

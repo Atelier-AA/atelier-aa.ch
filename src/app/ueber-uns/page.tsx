@@ -102,11 +102,11 @@ export default function UeberUnsPage() {
           <h2 className="mb-10 max-w-xl text-h2 font-normal leading-tight text-ink md:text-h2">
             Vier Ansätze, die <span className="font-semibold">jedes Projekt</span> tragen.
           </h2>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {ANSAETZE.map((a) => (
-              <div key={a.titel}>
-                <h3 className="text-base font-medium text-ink">{a.titel}</h3>
-                <p className="mt-3 text-sm text-graphite leading-relaxed">{a.text}</p>
+              <div key={a.titel} className="bg-mist p-8">
+                <h3 className="text-h3 text-ink">{a.titel}</h3>
+                <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{a.text}</p>
               </div>
             ))}
           </div>
@@ -133,38 +133,36 @@ export default function UeberUnsPage() {
             einem aktuellen Projekt bereits zentrale Prinzipien daraus an.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-3">
-            <div className="border-t border-mist pt-5">
-              <h3 className="text-base font-medium text-ink">Wissen früher zusammenbringen</h3>
-              <p className="mt-3 text-sm leading-relaxed text-graphite">
+          {/* Drei Kacheln statt Spalten mit Haarlinie — dieselbe Behandlung
+              wie die Ansätze darüber. Der frühere Abschluss darunter ist
+              entfallen: Er wiederholte mit "Bevor wir gestalten, wollen wir
+              verstehen" wörtlich die Überschrift des Büro-Abschnitts auf der
+              Startseite und machte den Abschnitt unnötig lang. */}
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="bg-mist p-8">
+              <h3 className="text-h3 text-ink">Wissen früher zusammenbringen</h3>
+              <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Relevantes Fachwissen fliesst gezielter in den Prozess ein, statt erst nach
                 der Planung eingeholt zu werden.
               </p>
             </div>
-            <div className="border-t border-mist pt-5">
-              <h3 className="text-base font-medium text-ink">Entscheidungen früher treffen</h3>
-              <p className="mt-3 text-sm leading-relaxed text-graphite">
+            <div className="bg-mist p-8">
+              <h3 className="text-h3 text-ink">Entscheidungen früher treffen</h3>
+              <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Technische und wirtschaftliche Konsequenzen werden sichtbar, bevor der Entwurf
                 feststeht.
               </p>
             </div>
-            <div className="border-t border-mist pt-5">
-              <h3 className="text-base font-medium text-ink">Planung und Ausführung verbinden</h3>
-              <p className="mt-3 text-sm leading-relaxed text-graphite">
+            <div className="bg-mist p-8">
+              <h3 className="text-h3 text-ink">Planung und Ausführung verbinden</h3>
+              <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Planung, Ausführung und wirtschaftliche Überlegungen werden früher
                 zusammengebracht, statt strikt nacheinander gedacht.
               </p>
             </div>
           </div>
 
-          <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-graphite">
-            <p>Wir wollen verstehen, welche Prinzipien ein Projekt tatsächlich besser machen.</p>
-            <p className="pt-2 text-2xl font-medium leading-snug text-ink">
-              Bevor wir gestalten, wollen wir verstehen. Bevor wir entscheiden, wollen wir das
-              relevante Wissen zusammenbringen.
-            </p>
-          </div>
-          <div className="mt-8">
+          <div className="mt-10">
             <Link
               href="/insights/design-build-projektabwicklung"
               className="text-sm text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"

@@ -23,31 +23,32 @@ export default function InsightsSection() {
   // zweimal auf derselben Seite.
   const neueste = insights.slice(0, 3);
 
-  /** Format je Kachel: gross, mittel, klein — von links nach rechts. */
-  const FORMATE = ['aspect-[4/5]', 'aspect-[4/3]', 'aspect-[1/1]'];
-  const SPALTEN = ['sm:col-span-5', 'sm:col-span-4', 'sm:col-span-3'];
+  /** Der erste Beitrag bleibt gross und steht allein links, die beiden
+   *  kleineren rechts übereinander. 5:3 ist so gewählt, dass die rechte
+   *  Spalte samt Abstand genau die Höhe des linken 4:5-Bildes erreicht. */
+  const FORMATE = ['aspect-[4/5]', 'aspect-[5/3]', 'aspect-[5/3]'];
+  const PLATZ = ['md:row-span-2', '', ''];
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
         <div className="mb-10 max-w-2xl md:mb-16">
+          {/* Ohne eigene Überschrift: "Aus dem Journal" wiederholte nur das
+              Label darüber. Der Einordnungssatz trägt den Abschnitt. */}
           <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
-          <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
-            Aus dem <span className="font-semibold">Journal</span>
-          </h2>
-          <p className="mt-4 text-lg text-graphite leading-relaxed">
+          <p className="max-w-lesbar text-lg text-graphite leading-relaxed">
             Fachbeiträge und Fragen aus unserer täglichen Arbeit.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-12">
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:grid-rows-2">
           {neueste.map((i, idx) => (
             <Link
               key={i.slug}
               href={`/insights/${i.slug}`}
               className={cn(
                 'group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink',
-                SPALTEN[idx]
+                PLATZ[idx]
               )}
               aria-label={`Beitrag lesen: ${i.titel}, ${formatDatum(i.datum)}`}
             >

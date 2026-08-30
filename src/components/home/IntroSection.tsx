@@ -24,7 +24,7 @@ export default function IntroSection() {
         <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[2fr_3fr]">
           {/* Text wörtlich von der alten Startseite (Post 15, "Starseite"). */}
           <div className="lg:col-start-1 lg:row-start-1">
-            <h2 className="max-w-[20ch] text-[2rem] font-normal leading-[1.1] tracking-tight text-ink sm:text-[2.75rem] lg:text-[3.5rem]">
+            <h2 className="max-w-[20ch] text-h1 text-ink">
               Wir gestalten Architektur aus dem{' '}
               <span className="font-semibold">Verständnis für Ort, Aufgabe</span>{' '}
               und <span className="font-semibold">Potenzial.</span>

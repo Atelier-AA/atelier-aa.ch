@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ortMitKanton } from '@/lib/utils';
+import { cn, ortMitKanton } from '@/lib/utils';
 import type { Projekt } from '@/types';
 
 interface ProjektCardProps {
@@ -8,6 +8,9 @@ interface ProjektCardProps {
   priority?: boolean;
   /** Seitenverhältnis der Bildfläche. Standard: quadratisch wie auf /projekte. */
   aspectClassName?: string;
+  /** Zusätzliche Klassen am Link — etwa um die Kachel eine Zeilenhöhe
+   *  ausfüllen zu lassen statt einem festen Seitenverhältnis zu folgen. */
+  className?: string;
 }
 
 /**
@@ -19,11 +22,15 @@ export default function ProjektCard({
   projekt,
   priority = false,
   aspectClassName = 'aspect-square',
+  className,
 }: ProjektCardProps) {
   return (
     <Link
       href={`/referenzen/${projekt.slug}`}
-      className="group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+      className={cn(
+        'group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink',
+        className
+      )}
       aria-label={`Zum Projekt ${projekt.title} in ${ortMitKanton(projekt)}`}
     >
       {/* Quadratisches Bildformat 1:1 aus dem alten Theme

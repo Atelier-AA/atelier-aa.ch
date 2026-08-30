@@ -20,6 +20,7 @@ const config: Config = {
       // Darum bleibt die Grösse fast gleich und der Schnitt geht deutlich
       // zurück.
       fontSize: {
+        hero:  ['clamp(2.2rem, 1.5rem + 1.95vw, 3.25rem)', { lineHeight: '1.05', letterSpacing: '-0.022em', fontWeight: '400' }],
         h1:    ['clamp(1.67rem, 1.12rem + 1.54vw, 2.49rem)', { lineHeight: '1.1', letterSpacing: '-0.018em', fontWeight: '400' }],
         h2:    ['clamp(1.23rem, 0.95rem + 0.77vw, 1.58rem)', { lineHeight: '1.2', letterSpacing: '-0.012em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],

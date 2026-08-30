@@ -23,7 +23,7 @@ export default function LeistungenPage() {
             es bei 4:3 rund 590px hoch, der Text aber nur etwa 330px — daneben
             stand oben und unten viel Leere. So passen beide Spalten auf jeder
             Fensterbreite zusammen, ohne den Text auf eine Pixelhöhe zu trimmen. */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1fr] lg:items-stretch lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-16">
           <div>
             {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
                 soll fachlich bleiben und mit den echten Leistungen
@@ -60,7 +60,7 @@ export default function LeistungenPage() {
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
               reale, laufende Projekte statt eines einzelnen Referenzbilds. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full lg:min-h-[420px]">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full lg:min-h-[560px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"
@@ -89,12 +89,9 @@ export default function LeistungenPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {kompetenzen.map((k, index) => (
+            {kompetenzen.map((k) => (
               <div key={k.titel} className="bg-mist p-8">
-                <p className="text-xs uppercase tracking-widest text-stone">
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">{k.titel}</h3>
+                <h3 className="text-h2 text-ink">{k.titel}</h3>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften

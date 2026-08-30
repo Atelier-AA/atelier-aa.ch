@@ -138,7 +138,7 @@ export default function HeroSlider() {
                 keines der Vergleichsbüros geht über 400 hinaus. Fett wirkt
                 laut, nicht gross. Die eigene clamp()-Angabe entfällt, damit
                 der Hero nicht wieder aus der Skala ausbricht. */}
-            <h1 className="text-left text-h1 text-white">
+            <h1 className="text-left text-hero text-white">
               Architektur mit Bestand.
             </h1>
             <p className="mt-3 text-[0.78rem] uppercase tracking-[0.15em] text-white/70 sm:text-[0.9rem]">
