@@ -147,8 +147,8 @@ export default function UeberUnsPage() {
           deshalb keine eigene Nav, kein "Design-Build"-Menüpunkt. */}
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-x-14 gap-y-10 lg:grid-cols-2">
-          <div>
+          <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-2 lg:items-stretch">
+          <div className="flex flex-col">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
           <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
             Wir hinterfragen nicht nur, wie Architektur{' '}
@@ -163,7 +163,7 @@ export default function UeberUnsPage() {
             einem aktuellen Projekt bereits zentrale Prinzipien daraus an.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 lg:mt-auto lg:pt-10">
             <Link
               href="/insights/design-build-projektabwicklung"
               className="text-karte text-ink underline decoration-stone underline-offset-4 hover:decoration-ink"
