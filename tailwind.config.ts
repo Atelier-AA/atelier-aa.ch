@@ -21,7 +21,7 @@ const config: Config = {
       // zurück.
       fontSize: {
         hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
-        h1:    ['clamp(2rem, 1.36rem + 1.8vw, 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
+        h1:    ['clamp(2rem, 1.225rem + 3.31vw, 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '400' }],
         h2:    ['clamp(1.75rem, 1.35rem + 1.1vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
         karte: ['1rem', { lineHeight: '1.6' }],
