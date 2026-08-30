@@ -23,11 +23,13 @@ export default function InsightsSection() {
   // zweimal auf derselben Seite.
   const neueste = insights.slice(0, 3);
 
-  /** Der erste Beitrag bleibt gross und steht allein links, die beiden
-   *  kleineren rechts übereinander. 5:3 ist so gewählt, dass die rechte
-   *  Spalte samt Abstand genau die Höhe des linken 4:5-Bildes erreicht. */
+  /** Der erste Beitrag steht gross links, die beiden kleineren rechts
+   *  übereinander. Breiten wie in der früheren Fassung — 5 und 4 von 12
+   *  Spalten statt je der halben Seitenbreite; auf halber Breite wurden die
+   *  Bilder zu gross. 5:3 rechts ist so gewählt, dass die gestapelte Spalte
+   *  samt Abstand die Höhe des linken 4:5-Bildes erreicht. */
   const FORMATE = ['aspect-[4/5]', 'aspect-[5/3]', 'aspect-[5/3]'];
-  const PLATZ = ['md:row-span-2', '', ''];
+  const PLATZ = ['md:col-span-5 md:row-span-2', 'md:col-span-4', 'md:col-span-4'];
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
@@ -41,7 +43,7 @@ export default function InsightsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:grid-rows-2">
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 md:grid-rows-2">
           {neueste.map((i, idx) => (
             <Link
               key={i.slug}

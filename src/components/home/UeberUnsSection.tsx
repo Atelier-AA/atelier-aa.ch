@@ -28,12 +28,23 @@ export default function UeberUnsSection() {
               <br />
               wollen wir <span className="font-semibold">verstehen.</span>
             </h2>
-            <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-graphite">
-              Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
-              dem Charakter des Ortes und den Bedürfnissen der Nutzenden entsteht der
-              Entwurf, geprüft anhand der SIA-Leistungsphasen und einer frühen
-              Kostenschätzung.
-            </p>
+            <div className="mt-8 max-w-lesbar space-y-5 text-lg leading-relaxed text-graphite">
+              <p>
+                Jedes Projekt beginnt mit dem Zuhören. Aus den Anforderungen der Aufgabe,
+                dem Charakter des Ortes und den Bedürfnissen der Nutzenden entsteht der
+                Entwurf, geprüft anhand der SIA-Leistungsphasen und einer frühen
+                Kostenschätzung.
+              </p>
+              <p>
+                Atelier AA Architekten GmbH hat ihren Sitz in Obfelden im Kanton Zürich.
+                Wir planen und realisieren Einfamilienhäuser, Mehrfamilienhäuser und
+                Wohnüberbauungen, auf Wunsch auch im Generalplanermandat.
+              </p>
+              <p>
+                Verantwortlich für Entwurf und Projektleitung ist Alisami Aljili, der das
+                Büro gegründet hat und jedes Projekt persönlich begleitet.
+              </p>
+            </div>
             <div className="mt-7">
               <Button href="/ueber-uns" variant="text">
                 Mehr über uns

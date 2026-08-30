@@ -18,13 +18,12 @@ export default function LeistungenPage() {
       <Container className="mb-16 md:mb-24">
         <p className="mb-8 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
-        {/* Ab lg `items-stretch`: Das Video übernimmt die Höhe der Textspalte,
-            statt sie über ein festes Seitenverhältnis zu bestimmen. Vorher war
-            es bei 4:3 rund 590px hoch, der Text aber nur etwa 330px — daneben
-            stand oben und unten viel Leere. So passen beide Spalten auf jeder
-            Fensterbreite zusammen, ohne den Text auf eine Pixelhöhe zu trimmen. */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-16">
-          <div>
+        {/* Untereinander statt nebeneinander: Text auf Lesebreite, darunter
+            das Video über die volle Breite. Nebeneinander mussten Textlänge
+            und Videohöhe zusammenpassen — eine Abhängigkeit, die bei jeder
+            Textänderung neu zu justieren war. */}
+        <div className="flex flex-col gap-12 md:gap-16">
+          <div className="max-w-3xl">
             {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
                 soll fachlich bleiben und mit den echten Leistungen
                 arbeiten, nicht mit einer weiteren Markenbotschaft, die mit
@@ -60,7 +59,7 @@ export default function LeistungenPage() {
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
               reale, laufende Projekte statt eines einzelnen Referenzbilds. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-auto lg:h-full lg:min-h-[560px]">
+          <div className="relative aspect-video w-full overflow-hidden bg-mist">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/leistungen-projekte-montage.mp4"
@@ -91,7 +90,7 @@ export default function LeistungenPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {kompetenzen.map((k) => (
               <div key={k.titel} className="bg-mist p-8">
-                <h3 className="text-h2 text-ink">{k.titel}</h3>
+                <h3 className="text-h3 font-semibold text-ink">{k.titel}</h3>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften
@@ -137,19 +136,24 @@ export default function LeistungenPage() {
                 Punkte-Liste — signalisiert damit, dass es keine der fünf
                 gleichrangigen Kernleistungen ist, sondern eine
                 Weiterentwicklung der Arbeitsweise, verlinkt auf eine eigene
-                Seite statt hier ausgebreitet zu werden. */}
+                Seite statt hier ausgebreitet zu werden. "Design-Build" steht
+                als Titel statt der früheren Zeile "Weiterentwicklung": Der
+                Begriff ist das, wonach gesucht wird. */}
             <Link
               href="/leistungen/integrierte-projektabwicklung"
               className="group flex flex-col justify-between bg-mist p-8 transition-colors hover:bg-stone/15"
             >
               <div>
-                <p className="text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
-                <h3 className="mt-6 text-2xl font-medium leading-tight text-ink">
-                  Integrierte Projektabwicklung
+                <h3 className="text-h3 font-semibold text-ink">
+                  Design-Build
                 </h3>
+                <p className="mt-1 text-karte text-stone">Integrierte Projektabwicklung</p>
                 <p className="mt-5 text-karte leading-relaxed text-graphite">
-                  Wir setzen uns mit Modellen wie Design-Build auseinander und wenden erste
-                  Prinzipien bereits in einem aktuellen Projekt an.
+                  Planung und Ausführung werden früher zusammengedacht, statt strikt
+                  nacheinander. Wissen aus der Ausführung fliesst schon in den Entwurf
+                  ein, technische und wirtschaftliche Folgen werden sichtbar, bevor
+                  etwas feststeht. Wir setzen uns mit diesen Modellen auseinander und
+                  wenden erste Prinzipien bereits in einem aktuellen Projekt an.
                 </p>
               </div>
               <p className="mt-5 text-karte text-ink underline decoration-stone underline-offset-4 group-hover:decoration-ink">

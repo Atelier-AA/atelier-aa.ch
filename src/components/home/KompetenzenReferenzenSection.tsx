@@ -11,7 +11,7 @@ import { getProjekt } from '@/data/projekte';
  * Stünde eines davon auch hier, sähe man dasselbe Projekt zweimal auf einer
  * Seite. Frühere Auswahl waren Sihlaurain, Safenwil und Jonen.
  */
-const AUSWAHL = ['mfh-letten', 'defh-safenwil', 'wohnueberbauung-zelgi'];
+const AUSWAHL = ['mfh-alte-poststrasse', 'mfh-wuerenlingen', 'defh-weiningen'];
 
 /**
  * Drei Kundenschritte statt der fünf Fachkompetenzen — ausdrücklich nur auf
@@ -28,16 +28,19 @@ const AUSWAHL = ['mfh-letten', 'defh-safenwil', 'wohnueberbauung-zelgi'];
  */
 const SCHRITTE = [
   {
-    titel: 'Klären',
-    text: 'Beratung, Grundstücksanalyse, Machbarkeitsstudie und Projektentwicklung. Bevor Ressourcen in die Ausführung fliessen, steht fest, was möglich ist.',
+    titel: 'Was möglich ist',
+    text: 'Beratung, Grundstücksanalyse und Machbarkeitsstudie. Bevor Ressourcen in die Ausführung fliessen, steht fest, was Ihr Grundstück zulässt und was es kostet.',
+    leistungen: ['Beratung', 'Grundstücksanalyse', 'Machbarkeitsstudie', 'Projektentwicklung'],
   },
   {
-    titel: 'Planen',
-    text: 'Entwurf, Baugesuch, Ausführungsplanung und Koordination — auf Wunsch als Generalplanung mit einem Ansprechpartner für das gesamte Planungsteam.',
+    titel: 'Wie es entsteht',
+    text: 'Entwurf, Baugesuch und Ausführungsplanung. Auf Wunsch als Generalplanung, mit einem Ansprechpartner für das gesamte Planungsteam.',
+    leistungen: ['Entwurf', 'Baugesuch', 'Ausführungsplanung', 'Generalplanung'],
   },
   {
-    titel: 'Realisieren',
-    text: 'Ausschreibung, Vergabe, Bauleitung und Übergabe. Wir begleiten die Baustelle und sichern Qualität, Kosten und Termine.',
+    titel: 'Wie es gebaut wird',
+    text: 'Ausschreibung, Vergabe und Bauleitung bis zur Übergabe. Wir begleiten die Baustelle und sichern Qualität, Kosten und Termine.',
+    leistungen: ['Ausschreibung', 'Vergabe', 'Bauleitung', 'Kostenkontrolle'],
   },
 ];
 
@@ -58,11 +61,21 @@ export default function KompetenzenReferenzenSection() {
       <Container>
         <p className="mb-10 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3">
+        {/* Kacheln auf grauem Grund statt freistehendem Text. Frei stehend
+            hoben sich die drei Blöcke von nichts ab und wirkten wie ein
+            unfertiger Platzhalter. Die aufgeführten Leistungen darunter
+            zeigen, was jeweils konkret dahintersteckt — vorher stand das nur
+            im Fliesstext und ging darin unter. */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {SCHRITTE.map((s) => (
-            <div key={s.titel}>
-              <h3 className="text-h2 text-ink">{s.titel}</h3>
-              <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{s.text}</p>
+            <div key={s.titel} className="flex flex-col bg-mist p-8">
+              <h3 className="text-h2 font-semibold text-ink">{s.titel}</h3>
+              <p className="mt-4 text-karte leading-relaxed text-graphite">{s.text}</p>
+              <ul className="mt-6 flex flex-col gap-1.5 border-t border-stone/20 pt-5 text-karte text-graphite">
+                {s.leistungen.map((l) => (
+                  <li key={l}>{l}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

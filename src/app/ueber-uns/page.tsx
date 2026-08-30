@@ -61,13 +61,41 @@ export default function UeberUnsPage() {
           Wir entwerfen nicht für den <span className="font-semibold">Moment.</span> Wir
           schaffen Orte mit <span className="font-semibold">Bestand.</span>
         </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-graphite">
+        <p className="mt-8 max-w-lesbar text-lg leading-relaxed text-graphite">
           Atelier AA Architekten GmbH ist ein Architekturbüro mit Sitz in Obfelden im
           Kanton Zürich. Wir planen und realisieren Einfamilienhäuser,
-          Mehrfamilienhäuser und Wohnüberbauungen sowie Generalplanungsmandate in
-          Zürich, Aargau und Zug, von der Machbarkeitsstudie über Baugesuch und
+          Mehrfamilienhäuser und Wohnüberbauungen, auf Wunsch auch im
+          Generalplanermandat — von der Machbarkeitsstudie über Baugesuch und
           Ausführungsplanung bis zur Bauleitung.
         </p>
+
+        {/* Die Bürobilder begleiten den Einleitungstext, statt als Streifen
+            am Seitenende zu stehen — dort wirkten sie angehängt und ohne
+            Bezug. Versetzte Höhen, damit die Reihe nicht als Bildband liest.
+            Schwarzweiss wie die Team-Fotos. */}
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {[
+            { src: '/images/kontakt/atelier-aa-kontakt-buero.jpg', hoch: false },
+            { src: '/images/buero/atelier-aa-buero-1.jpg', hoch: true },
+            { src: '/images/buero/atelier-aa-buero-2.jpg', hoch: false },
+          ].map((bild, idx) => (
+            <div
+              key={bild.src}
+              className={`relative w-full overflow-hidden bg-mist ${
+                bild.hoch ? 'aspect-[3/4] sm:mt-10' : 'aspect-[4/3]'
+              }`}
+            >
+              <Image
+                src={bild.src}
+                alt="Das Atelier von Atelier AA Architekten in Obfelden"
+                fill
+                priority={idx === 0}
+                className="object-cover grayscale"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+            </div>
+          ))}
+        </div>
       </Container>
 
       {/* Haltung: wörtlich Alisamis eigener Text. */}
@@ -169,37 +197,6 @@ export default function UeberUnsPage() {
             >
               Mehr dazu im Journal →
             </Link>
-          </div>
-        </Container>
-      </div>
-
-      {/* Echte Bürofotos statt des entfernten Videos, plus Link zur
-          Team-Seite — ohne die Geschichte-Erzählung, die hier zu viel war.
-          Drei statt nur ein Bild, aber als schlanker Streifen statt einer
-          grossen Galerie; alle drei in Schwarzweiss wie die Team-Fotos. */}
-      <div className="mt-24 border-t border-mist pt-16 md:mt-32">
-        <Container>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {[
-              '/images/kontakt/atelier-aa-kontakt-buero.jpg',
-              '/images/buero/atelier-aa-buero-1.jpg',
-              '/images/buero/atelier-aa-buero-2.jpg',
-            ].map((src) => (
-              <div key={src} className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
-                <Image
-                  src={src}
-                  alt="Das Atelier von Atelier AA Architekten in Obfelden"
-                  fill
-                  className="object-cover grayscale"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Button href="/ueber-uns/team" variant="text">
-              Das Team kennenlernen
-            </Button>
           </div>
         </Container>
       </div>

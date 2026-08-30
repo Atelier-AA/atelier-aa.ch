@@ -35,8 +35,11 @@ export default function TeamPage() {
       <div className="pt-32 md:pt-40">
         <Container>
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Team</p>
-          <h1 className="mb-6 max-w-2xl text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
+          <h1 className="mb-6 text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
             Die Menschen hinter{' '}
+            {/* Fester Umbruch, damit der Bürename nicht mitten drin bricht —
+                zuvor stand "Atelier AA" oben und "Architekten" darunter. */}
+            <br />
             <span className="font-semibold">Atelier AA Architekten.</span>
           </h1>
           <p className="mb-14 max-w-xl text-lg leading-relaxed text-graphite">
