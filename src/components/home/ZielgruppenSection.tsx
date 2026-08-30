@@ -24,8 +24,12 @@ const WEGE = [
   {
     titel: 'Sie besitzen ein Grundstück',
     text: 'Sie halten ein Grundstück oder eine Liegenschaft und möchten deren Potenzial kennen? Wir prüfen Ausnutzung, Baurecht, Volumen und Wirtschaftlichkeit und zeigen die möglichen nächsten Schritte.',
-    href: '/leistungen/projektentwicklung',
-    label: 'Zur Projektentwicklung',
+    // Führt auf die Machbarkeitsstudie, nicht auf die Projektentwicklung:
+    // Sie ist das wichtigste Einstiegsprodukt und muss von der Startseite
+    // aus erreichbar bleiben, nachdem der grosse Machbarkeits-Block hier
+    // durch diese beiden Spalten ersetzt wurde.
+    href: '/leistungen/machbarkeitsstudie',
+    label: 'Studien ansehen',
   },
 ];
 

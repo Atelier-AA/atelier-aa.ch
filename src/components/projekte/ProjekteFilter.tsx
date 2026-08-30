@@ -24,8 +24,8 @@ const KATEGORIEN = [
 // Wettbewerbsbeiträge und kleinere Umbauten sollen nicht in der
 // Projekte-Übersicht auftauchen, sollen von hier aus aber auffindbar sein.
 const EXTERNE_VERWEISE = [
-  { label: 'Studien', href: '/studien' },
-  { label: 'Kleinprojekte', href: '/kleinprojekte' },
+  { label: 'Studien', href: '/leistungen/machbarkeitsstudie' },
+  { label: 'Kleinprojekte', href: '#kleinprojekte' },
 ];
 
 export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {

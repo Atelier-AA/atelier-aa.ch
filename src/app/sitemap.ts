@@ -21,8 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const statisch = [
     { pfad: '', prio: 1.0, freq: 'monthly' as const },
     { pfad: '/projekte', prio: 0.9, freq: 'monthly' as const },
-    { pfad: '/studien', prio: 0.7, freq: 'monthly' as const },
-    { pfad: '/kleinprojekte', prio: 0.5, freq: 'monthly' as const },
     { pfad: '/leistungen', prio: 0.8, freq: 'monthly' as const },
     { pfad: '/leistungen/machbarkeitsstudie', prio: 0.7, freq: 'monthly' as const },
     { pfad: '/leistungen/projektentwicklung', prio: 0.7, freq: 'monthly' as const },

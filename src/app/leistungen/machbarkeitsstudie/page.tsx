@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { studien, studieTitel } from '@/data/studien';
+import { studien } from '@/data/studien';
+import StudienGrid from '@/components/studien/StudienGrid';
 import { firma } from '@/data/firma';
 import { breadcrumbSchema } from '@/lib/schema';
 import { ortMitKanton } from '@/lib/utils';
@@ -132,58 +133,40 @@ export default function MachbarkeitsstudiePage() {
 
         <div className="mt-14 border-t border-mist pt-11 md:mt-20">
           <p className="mb-10 text-xs uppercase tracking-widest text-stone">Ablauf</p>
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+          {/* Kacheln auf grauem Grund statt freistehendem Text — dasselbe
+              Grau wie überall sonst. Eine Überschrift über den Schritten gibt
+              es bewusst nicht: Das Label "Ablauf" sagt bereits alles, und
+              eine grosse Zeile über kleinem Text war genau das, was die Seite
+              überladen wirken liess. */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {schritte.map((s) => (
-              <div key={s.nummer}>
-                <p className="mb-3 text-sm text-stone">{s.nummer}</p>
-                <h2 className="mb-2 text-xl font-medium text-ink">{s.titel}</h2>
-                <p className="text-graphite leading-relaxed">{s.text}</p>
+              <div key={s.nummer} className="bg-mist p-8">
+                <p className="mb-3 text-xs uppercase tracking-widest text-stone">{s.nummer}</p>
+                <h3 className="mb-2 text-h3 text-ink">{s.titel}</h3>
+                <p className="max-w-lesbar leading-relaxed text-graphite">{s.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* 4 schmale, hohe Kacheln (aspect-[3/4]), gleiches Format wie bei
-            Projektentwicklung und dem Journal auf der Startseite. Bewusst
-            ohne Link zur Detailseite (wie StudieCard) — Studien sollen nicht
-            von der Übersicht aus nebeneinander vergleichbar sein. */}
+        {/* Zusammengeführt mit der früheren Seite /studien: Oben steht das
+            Angebot, hier unten die tatsächlich durchgeführten Auftragsstudien
+            als Beleg. Getrennt waren beide schwer auseinanderzuhalten — von
+            69 Studien sind 65 wörtlich Machbarkeitsstudien. Wer wissen will,
+            ob sich eine lohnt, sieht direkt darunter echte Beispiele.
+
+            Die Kacheln verlinken bewusst NICHT auf die Detailseiten (siehe
+            StudieCard) — Studien sollen nicht nebeneinander vergleichbar
+            sein. Über Google bleiben sie einzeln auffindbar. */}
         <div className="mt-14 border-t border-mist pt-11 md:mt-20">
-          <p className="mb-10 text-xs uppercase tracking-widest text-stone">Beispiele</p>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {studien
-              .filter((s) =>
-                ['obfelden', 'birmensdorf', 'muemliswil', 'wuerenlos'].includes(s.slug)
-              )
-              .map((s, idx) => {
-                const bild = s.luftbild ?? s.katasterplan ?? s.projektbild;
-                const titel = studieTitel(s);
-                return (
-                  <div key={s.slug} className="group block min-w-0">
-                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                      {bild && (
-                        <Image
-                          src={bild}
-                          alt={`${s.kategorie} in ${ortMitKanton({ ort: s.ort, kanton: s.kanton })}, Atelier AA Architekten`}
-                          fill
-                          priority={idx < 2}
-                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
-                          sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                        <p className="mb-1 text-xs uppercase tracking-[0.1em] text-white/80">
-                          {s.kategorie}
-                        </p>
-                        <p className="truncate text-lg font-medium leading-tight text-white">
-                          {titel}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
+          <p className="mb-3 text-xs uppercase tracking-widest text-stone">Auftragsstudien</p>
+          <p className="mb-10 max-w-lesbar text-graphite leading-relaxed">
+            Diese Abklärungen haben wir für Bauherrschaften und
+            Grundeigentümerinnen durchgeführt — mit Zone, Parzelle und
+            Kennzahlen aus dem amtlichen Kataster. Ohne Finanzzahlen und ohne
+            Namen der Bauherrschaft.
+          </p>
+          <StudienGrid studien={studien} />
         </div>
       </Container>
 

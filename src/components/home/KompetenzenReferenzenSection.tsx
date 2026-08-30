@@ -49,16 +49,10 @@ export default function KompetenzenReferenzenSection() {
   const projekte = AUSWAHL.map((slug) => getProjekt(slug)).filter((p) => p !== undefined);
 
   return (
+    <>
     <section className="border-t border-mist py-16 md:py-20">
       <Container>
-        <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-          Leistungen &amp; Projekte
-        </p>
-        <h2 className="mb-12 text-h2 text-ink">
-          <span className="font-semibold">Leistungen,</span>
-          <br />
-          sichtbar in echten <span className="font-semibold">Projekten.</span>
-        </h2>
+        <p className="mb-10 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3">
           {SCHRITTE.map((s, idx) => (
@@ -66,7 +60,7 @@ export default function KompetenzenReferenzenSection() {
               <p className="mb-3 text-xs uppercase tracking-widest text-stone">
                 0{idx + 1}
               </p>
-              <h3 className="text-h3 text-ink">{s.titel}</h3>
+              <h3 className="text-h2 text-ink">{s.titel}</h3>
               <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{s.text}</p>
             </div>
           ))}
@@ -77,26 +71,25 @@ export default function KompetenzenReferenzenSection() {
           </Button>
         </div>
 
-        {/* Eigenständiger Streifen, unabhängig von der Anzahl Leistungen
-            oben — keine erzwungene Zuordnung zwischen Text und Bild mehr. */}
-        <div className="mt-16 border-t border-mist pt-14 md:mt-20 md:pt-16">
+      </Container>
+    </section>
+
+    <section className="border-t border-mist py-16 md:py-20">
+      <Container>
+        <div>
           <p className="mb-8 text-xs uppercase tracking-widest text-stone">
             Ausgewählte Projekte
           </p>
-          {/* Ein grosses Querformat, darunter zwei ergänzende. Vier gleich
-              grosse Kacheln à 304px behaupteten, alle vier Projekte seien
-              gleich stark — und liessen von Architektur wenig erkennen. */}
-          <div className="flex flex-col gap-8">
+          {/* Links ein hohes Bild, rechts zwei gestapelte. Klare Hierarchie,
+              ohne dass ein Bild die halbe Seite einnimmt: Das volle
+              Querformat davor war rund 810px hoch. */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {projekte[0] && (
-              <ProjektCard
-                projekt={projekte[0]}
-                priority
-                aspectClassName="aspect-[16/9]"
-              />
+              <ProjektCard projekt={projekte[0]} priority aspectClassName="aspect-[4/5]" />
             )}
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="flex flex-col gap-8">
               {projekte.slice(1).map((p) => (
-                <ProjektCard key={p.slug} projekt={p} aspectClassName="aspect-[4/3]" />
+                <ProjektCard key={p.slug} projekt={p} aspectClassName="aspect-[3/2]" />
               ))}
             </div>
           </div>
@@ -108,5 +101,6 @@ export default function KompetenzenReferenzenSection() {
         </div>
       </Container>
     </section>
+    </>
   );
 }

@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
       { source: '/expertise', destination: '/leistungen', permanent: true },
       // Altlast der früheren PHP-Website, bei Google noch indexiert.
       { source: '/indexxxx.php', destination: '/', permanent: true },
+      // Die Studien-Übersicht ist in die Machbarkeitsstudie aufgegangen:
+      // oben das Angebot, unten dieselben Studien als Beleg. Die 69
+      // Detailseiten unter /studien/<slug> bleiben unverändert bestehen.
+      { source: '/studien', destination: '/leistungen/machbarkeitsstudie', permanent: true },
+      // Kleinprojekte stehen jetzt unten auf /projekte. Die 16 Detailseiten
+      // unter /kleinprojekte/<slug> bleiben unverändert bestehen.
+      { source: '/kleinprojekte', destination: '/projekte', permanent: true },
     ];
   },
 };

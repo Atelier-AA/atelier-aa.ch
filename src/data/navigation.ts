@@ -5,6 +5,10 @@ import type { NavLink } from '@/types';
 // "Über uns", zwischenzeitlich "Atelier"). Die Ziel-URLs bleiben unverändert
 // (/leistungen, /ueber-uns) — nur Label und Reihenfolge im Menü ändern sich.
 //
+// Ab lg stehen alle sechs Punkte offen in der Kopfzeile — kein Burger mehr.
+// Ein Büro mit sechs Seiten braucht kein verstecktes Menü. Auf dem Handy
+// bleibt der Burger, dort passen sechs Punkte nicht in eine Zeile.
+//
 // Im Vollbild-Menü (siehe MobileMenu.tsx) sind alle Punkte gleich gross —
 // unterschiedliche Grössenstufen wurden vom Kunden ausdrücklich abgelehnt.
 //
@@ -14,11 +18,8 @@ import type { NavLink } from '@/types';
 // /studien bleibt vollständig bestehen, verlinkt und indexierbar.
 export const navigation: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
-  {
-    href: '/ueber-uns',
-    label: 'Büro',
-    unterlink: { href: '/ueber-uns/team', label: 'Team' },
-  },
+  { href: '/ueber-uns', label: 'Büro' },
+  { href: '/ueber-uns/team', label: 'Team' },
   { href: '/leistungen', label: 'Leistungen' },
   { href: '/insights', label: 'Journal' },
   { href: '/kontakt', label: 'Kontakt' },
@@ -34,13 +35,20 @@ export const footerAtelier: NavLink[] = [
   { href: '/haeufige-fragen', label: 'Häufige Fragen' },
 ];
 
+/**
+ * Footer: nur noch Einstiege, nicht die ganze Seitenstruktur.
+ *
+ * Entfallen sind Studien/Machbarkeitsstudie, Projektentwicklung und
+ * Kleinprojekte. Die ersten beiden stehen als Unterlinks bei der Kompetenz
+ * "Analyse und Konzept" auf /leistungen, die Kleinprojekte unten auf
+ * /projekte — dort, wo sie inhaltlich hingehören. Für Suchmaschinen zählt,
+ * DASS eine Seite verlinkt ist, nicht dass sie im Footer steht; über die
+ * jeweilige Hauptseite ist jede von überall zwei Klicks entfernt.
+ */
 export const footerArbeit: NavLink[] = [
   { href: '/projekte', label: 'Projekte' },
-  { href: '/studien', label: 'Studien' },
   { href: '/leistungen', label: 'Leistungen' },
-  { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
-  { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
-  { href: '/kleinprojekte', label: 'Kleinprojekte' },
+  { href: '/kontakt', label: 'Kontakt' },
 ];
 
 export const footerLegal: NavLink[] = [

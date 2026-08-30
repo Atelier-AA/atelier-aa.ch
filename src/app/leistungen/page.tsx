@@ -23,7 +23,7 @@ export default function LeistungenPage() {
             es bei 4:3 rund 590px hoch, der Text aber nur etwa 330px — daneben
             stand oben und unten viel Leere. So passen beide Spalten auf jeder
             Fensterbreite zusammen, ohne den Text auf eine Pixelhöhe zu trimmen. */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1fr] lg:items-stretch lg:gap-16">
           <div>
             {/* Bewusst keine "Architektur mit …"-Formel hier: Diese Seite
                 soll fachlich bleiben und mit den echten Leistungen
@@ -37,9 +37,8 @@ export default function LeistungenPage() {
                 zum Auftragsumfang und bleibt damit in der Sache dieses
                 Abschnitts — die oben ausgeschlossenen Themen bleiben draussen. */}
             <h1 className="text-h1 font-normal text-ink leading-[1.1] tracking-tight mb-6">
-              Von der ersten <span className="font-semibold">Frage</span>{' '}
-              <br />
-              bis zur <span className="font-semibold">Realisierung.</span>
+              Von der ersten <span className="font-semibold">Frage</span> bis zur{' '}
+              <span className="font-semibold">Realisierung.</span>
             </h1>
             <div className="space-y-5 text-graphite leading-relaxed">
               <p>

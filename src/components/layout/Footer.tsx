@@ -33,12 +33,11 @@ export default function Footer() {
             <div className="mb-6 h-[35px] text-white md:h-[40px]">
               <Logo />
             </div>
-            {/* Bewusst kein zweiter Claim: "Architektur mit Bestand." steht im
-                Hero der Startseite. Eine dritte Variante desselben Gedankens
-                ("Orte mit Bestand", "Orte, die bleiben") schwächt die Aussage,
-                statt sie zu verstärken. Hier steht darum, was das Büro tut. */}
+            {/* Vom Kunden ausdrücklich zurückgeholt. Der Gedanke steht damit
+                zweimal auf der Startseite — im Hero und hier. Bewusst in Kauf
+                genommen: Ganz unten liest sich ein Satz anders als im Hero. */}
             <p className="text-2xl md:text-h2 font-light leading-tight">
-              Architektur für Neubau, Umbau und Verdichtung in Zürich, Aargau und Zug.
+              Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
             </p>
           </div>
 

@@ -7,6 +7,7 @@ import Container from '@/components/ui/Container';
 import MobileMenu from './MobileMenu';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
+import { navigation } from '@/data/navigation';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -92,28 +93,31 @@ export default function Header() {
                 Ziele. Ab lg ist genug Platz, um auch Leistungen und Über uns
                 direkt zu zeigen, statt sie auf Desktop-Breite unnötig hinter
                 dem Burger zu verstecken. Alle übrigen Menüpunkte bleiben dort. */}
+            {/* Ab lg stehen alle Punkte offen — der Burger entfällt dort
+                ganz. Unter lg bleiben nur die zwei meistgesuchten Ziele
+                sichtbar, der Rest liegt hinter dem Burger: sechs Punkte
+                passen auf einem 375px-Bildschirm nicht in eine Zeile. */}
             <nav
-              aria-label="Kurznavigation"
-              className="hidden items-center gap-8 text-sm uppercase tracking-widest sm:flex"
+              aria-label="Hauptnavigation"
+              className="hidden items-center gap-6 text-sm uppercase tracking-widest sm:flex lg:gap-8"
             >
-              <Link href="/projekte" className="rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor]">
-                Projekte
-              </Link>
-              <Link
-                href="/ueber-uns"
-                className="hidden rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor] lg:inline"
-              >
-                Büro
-              </Link>
-              <Link
-                href="/leistungen"
-                className="hidden rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor] lg:inline"
-              >
-                Leistungen
-              </Link>
-              <Link href="/kontakt" className="rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor]">
-                Kontakt
-              </Link>
+              {navigation.map((item) => {
+                // Unter lg nur Projekte und Kontakt, sonst wird die Zeile
+                // auf dem Handy zu lang.
+                const immerSichtbar = item.href === '/projekte' || item.href === '/kontakt';
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                      'rounded-sm transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[currentColor]',
+                      immerSichtbar ? 'inline' : 'hidden lg:inline'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Burger, der beim Öffnen zum Schliessen-Kreuz wird. Liegt mit z-50
@@ -125,7 +129,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[currentColor]"
+              className="relative z-50 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[currentColor] lg:hidden"
               aria-label={mobileOpen ? 'Menü schliessen' : 'Menü öffnen'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"

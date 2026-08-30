@@ -97,7 +97,7 @@ export default function HeroSlider() {
   // ein-/ausfahrende Browserleiste den Hero nicht abschneidet; `h-screen` bleibt
   // Fallback für Browser ohne svh-Support.
   return (
-    <section className="relative w-full h-[82vh] h-[82svh] overflow-hidden bg-ink">
+    <section className="relative w-full h-screen h-svh overflow-hidden bg-ink">
       {slides.map((slide, idx) => (
         <div
           key={slide.image}

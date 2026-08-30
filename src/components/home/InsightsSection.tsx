@@ -3,20 +3,29 @@ import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { insights } from '@/data/insights';
-import { formatDatum } from '@/lib/utils';
+import { cn, formatDatum } from '@/lib/utils';
 
 /**
- * Vier Fachbeiträge auf der Startseite, im selben hochformatigen Bildstil
- * (3:4) wie die Übersicht auf /insights (inkl. Zoom beim Hover). Der Titel
+ * Drei Fachbeiträge auf der Startseite in drei verschiedenen Grössen (siehe
+ * FORMATE/SPALTEN unten), im Bildstil der Übersicht auf /insights (inkl.
+ * Zoom beim Hover). Der Titel
  * blendet erst beim Hover über dem Bild ein (dunkler Verlauf, weisser Text,
  * bis zu zwei Zeilen); fest sichtbar bleibt nur das Datum darunter.
  */
 export default function InsightsSection() {
-  // Zwei statt vier: Vier Journalkarten hatten auf der Startseite dasselbe
-  // visuelle Gewicht wie vier Projekte — damit behauptete die Seite, die
-  // Fachbeiträge seien so wichtig wie die Bauten. Einer wirkt zufällig, zwei
-  // zeigen, dass es eine Reihe gibt.
-  const neueste = insights.slice(0, 2);
+  // Drei Beiträge in drei verschiedenen Grössen: Vier gleich grosse Karten
+  // hatten dasselbe visuelle Gewicht wie vier Projekte — damit behauptete die
+  // Seite, die Fachbeiträge seien so wichtig wie die Bauten. Drei ungleiche
+  // Kacheln zeigen eine Reihe, ohne sie den Projekten gleichzustellen.
+  //
+  // Bewusst ein anderer Rhythmus als beim Projektraster darüber (dort links
+  // hoch, rechts zwei gestapelt) — sonst wiederholt sich dasselbe Muster
+  // zweimal auf derselben Seite.
+  const neueste = insights.slice(0, 3);
+
+  /** Format je Kachel: gross, mittel, klein — von links nach rechts. */
+  const FORMATE = ['aspect-[4/5]', 'aspect-[4/3]', 'aspect-[1/1]'];
+  const SPALTEN = ['sm:col-span-5', 'sm:col-span-4', 'sm:col-span-3'];
 
   return (
     <section className="py-16 md:py-20 border-t border-mist">
@@ -31,15 +40,18 @@ export default function InsightsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-12">
           {neueste.map((i, idx) => (
             <Link
               key={i.slug}
               href={`/insights/${i.slug}`}
-              className="group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              className={cn(
+                'group block min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink',
+                SPALTEN[idx]
+              )}
               aria-label={`Beitrag lesen: ${i.titel}, ${formatDatum(i.datum)}`}
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+              <div className={cn('relative overflow-hidden bg-mist', FORMATE[idx])}>
                 <Image
                   src={i.bild}
                   alt={`${i.titel}, Atelier AA Architekten`}

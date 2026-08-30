@@ -44,8 +44,8 @@ export const kompetenzen = [
     ],
     text: 'In dieser Phase entsteht die Grundlage jeder Entscheidung: Wir prüfen Potenzial und Machbarkeit, bevor Ressourcen in die Ausführung fliessen.',
     links: [
-      { label: 'Machbarkeitsstudie im Detail', href: '/leistungen/machbarkeitsstudie' },
-      { label: 'Projektentwicklung im Detail', href: '/leistungen/projektentwicklung' },
+      { label: 'Studien', href: '/leistungen/machbarkeitsstudie' },
+      { label: 'Projektentwicklung', href: '/leistungen/projektentwicklung' },
     ],
   },
   {
