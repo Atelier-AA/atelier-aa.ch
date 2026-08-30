@@ -40,8 +40,15 @@ export default function ZielgruppenSection() {
           {WEGE.map((weg) => (
             <div key={weg.href}>
               {/* Schlüsselwort halbfett, wie bei allen übrigen Überschriften
-                  der Seite. */}
-              <h2 className="text-h1 text-ink">
+                  der Seite.
+
+                  Bewusste Ausnahme von der H1-Stufe: 20% kleiner (34 statt
+                  42px). Hier stehen zwei Überschriften nebeneinander statt
+                  einer allein — auf voller H1-Grösse überstrahlen sie den
+                  Abschnitt, obwohl sie nur wegweisen sollen. Der Wert ist
+                  von der H1-Kurve abgeleitet, damit er beim Verkleinern des
+                  Fensters im gleichen Verhältnis mitgeht. */}
+              <h2 className="text-[clamp(1.26rem,0.824rem+1.856vw,2.1rem)] font-normal leading-[1.12] tracking-tight text-ink">
                 {weg.titel[0]}{' '}
                 <span className="font-semibold">{weg.titel[1]}</span>
               </h2>

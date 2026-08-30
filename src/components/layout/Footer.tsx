@@ -36,7 +36,7 @@ export default function Footer() {
             {/* Vom Kunden ausdrücklich zurückgeholt. Der Gedanke steht damit
                 zweimal auf der Startseite — im Hero und hier. Bewusst in Kauf
                 genommen: Ganz unten liest sich ein Satz anders als im Hero. */}
-            <p className="text-2xl md:text-h2 font-light leading-tight">
+            <p className="text-2xl md:text-3xl font-light leading-tight">
               Wir entwerfen nicht für den Moment. Wir schaffen Orte mit Bestand.
             </p>
           </div>
