@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import WeitereArbeiten from '@/components/kleinprojekte/WeitereArbeiten';
+import Werkliste from '@/components/kleinprojekte/Werkliste';
 import VorhabenCta from '@/components/ui/VorhabenCta';
 import ProjekteFilter from '@/components/projekte/ProjekteFilter';
 import { projekte } from '@/data/projekte';
@@ -41,7 +41,7 @@ export default function ProjektePage() {
       {/* Die kleineren Aufträge stehen hier statt auf einer eigenen Seite:
           ebenfalls ausgeführte Arbeiten, nur kleiner im Umfang. */}
       <Container className="mt-20 md:mt-28">
-        <WeitereArbeiten />
+        <Werkliste />
       </Container>
 
       <div className="mt-24 md:mt-32">

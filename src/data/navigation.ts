@@ -38,7 +38,7 @@ export const footerAtelier: NavLink[] = [
 /**
  * Footer-Spalte "Arbeit", wieder in voller Länge.
  *
- * "Studien" und "Weitere Arbeiten" zeigen auf ihre neuen Ziele: /studien und
+ * "Studien" und "Werkliste" zeigen auf ihre neuen Ziele: /studien und
  * /kleinprojekte gibt es als eigene Übersichten nicht mehr, sie leiten nur
  * noch weiter. Ein Link auf eine Weiterleitung wäre auf jeder der 228 Seiten
  * ein unnötiger Umweg.
@@ -48,7 +48,7 @@ export const footerArbeit: NavLink[] = [
   { href: '/leistungen', label: 'Leistungen' },
   { href: '/leistungen/machbarkeitsstudie', label: 'Machbarkeitsstudie' },
   { href: '/leistungen/projektentwicklung', label: 'Projektentwicklung' },
-  { href: '/projekte#weitere-arbeiten', label: 'Weitere Arbeiten' },
+  { href: '/projekte#werkliste', label: 'Werkliste' },
 ];
 
 export const footerLegal: NavLink[] = [

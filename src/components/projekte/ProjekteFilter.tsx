@@ -20,12 +20,16 @@ const KATEGORIEN = [
   'Gewerbe',
 ];
 
-// Führen auf eigene Seiten statt hier zu filtern — Machbarkeitsstudien,
-// Wettbewerbsbeiträge und kleinere Umbauten sollen nicht in der
-// Projekte-Übersicht auftauchen, sollen von hier aus aber auffindbar sein.
+// Führt auf eine eigene Seite statt hier zu filtern — Machbarkeitsstudien
+// und Wettbewerbsbeiträge sollen nicht in der Projekte-Übersicht auftauchen,
+// von hier aus aber auffindbar sein.
+//
+// Die Werkliste stand hier ebenfalls, ist aber entfallen: Sie steht seit dem
+// Zusammenlegen weiter unten auf derselben Seite, und ein Eintrag, der nur
+// einen Anker anspringt, sieht in einer Filterzeile wie ein weiterer Filter
+// aus, ist aber keiner.
 const EXTERNE_VERWEISE = [
   { label: 'Studien', href: '/leistungen/machbarkeitsstudie' },
-  { label: 'Kleinprojekte', href: '#kleinprojekte' },
 ];
 
 export default function ProjekteFilter({ projekte }: ProjekteFilterProps) {

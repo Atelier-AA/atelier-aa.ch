@@ -37,16 +37,15 @@ const sortiert = [...kleinprojekte].sort((a, b) => abschlussjahr(a) - abschlussj
  * Die Fotos bleiben bewusst aussen vor, siehe die Begründung in
  * `KleinprojektCard` zur Bilder-Sitemap.
  */
-export default function WeitereArbeiten() {
+export default function Werkliste() {
   const [offen, setOffen] = useState(false);
 
   return (
     <div
-      id="weitere-arbeiten"
+      id="werkliste"
       className="scroll-mt-32 bg-mist px-6 py-12 md:px-10 md:py-16"
     >
-      <p className="mb-3 text-xs uppercase tracking-widest text-stone">Werkliste</p>
-      <h2 className="text-h2 text-ink">Weitere Arbeiten</h2>
+      <h2 className="text-h2 text-ink">Werkliste</h2>
       <p className="mt-4 max-w-lesbar leading-relaxed text-graphite">
         Umbauten, Anbauten und kleinere Neubauten, die wir neben den grösseren
         Projekten ausgeführt haben.
@@ -56,7 +55,7 @@ export default function WeitereArbeiten() {
         type="button"
         onClick={() => setOffen(!offen)}
         aria-expanded={offen}
-        aria-controls="werkliste"
+        aria-controls="werkliste-eintraege"
         className="group mt-8 flex items-center gap-3 rounded-sm text-sm uppercase tracking-widest text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
       >
         <span
@@ -74,7 +73,7 @@ export default function WeitereArbeiten() {
       </button>
 
       {offen && (
-        <ul id="werkliste" className="mt-10 border-t border-stone/25">
+        <ul id="werkliste-eintraege" className="mt-10 border-t border-stone/25">
           {sortiert.map((p) => (
             <li
               key={p.slug}

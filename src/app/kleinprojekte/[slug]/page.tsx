@@ -34,7 +34,7 @@ export default async function KleinprojektDetailPage({ params }: PageProps) {
 
   const breadcrumb = breadcrumbSchema([
     { name: 'Startseite', pfad: '/' },
-    { name: 'Kleinprojekte', pfad: '/kleinprojekte' },
+    { name: 'Werkliste', pfad: '/projekte#werkliste' },
     { name: titel, pfad: `/kleinprojekte/${projekt.slug}` },
   ]);
 
