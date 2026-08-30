@@ -17,15 +17,7 @@ export default function InsightsSection() {
   return (
     <section className="py-16 md:py-20 border-t border-mist">
       <Container>
-        <div className="mb-10 max-w-2xl md:mb-16">
-          <p className="text-xs uppercase tracking-widest text-stone mb-4">Journal</p>
-          <h2 className="text-3xl font-normal leading-tight text-ink md:text-4xl">
-            Aus dem <span className="font-semibold">Journal</span>
-          </h2>
-          <p className="mt-4 text-lg text-graphite leading-relaxed">
-            Fachbeiträge und Fragen aus unserer täglichen Arbeit.
-          </p>
-        </div>
+        <p className="mb-10 text-xs uppercase tracking-widest text-stone md:mb-16">Journal</p>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {neueste.map((i, idx) => (

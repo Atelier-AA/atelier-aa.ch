@@ -1,4 +1,24 @@
+'use client';
+
+import { useState } from 'react';
 import { kleinprojekte } from '@/data/kleinprojekte';
+import type { Kleinprojekt } from '@/types';
+
+/**
+ * Jahr als Zahl für die Sortierung.
+ *
+ * Die Daten enthalten neben einfachen Jahreszahlen auch Zeiträume wie
+ * "2021 bis 2022" — dort zählt das Abschlussjahr, nicht der Beginn. Einträge
+ * ohne verwertbare Jahreszahl wandern ans Ende, statt sich als 0 an den
+ * Anfang zu setzen.
+ */
+function abschlussjahr(p: Kleinprojekt): number {
+  const jahre = (p.jahr ?? '').match(/\d{4}/g);
+  if (!jahre) return Number.POSITIVE_INFINITY;
+  return Math.max(...jahre.map(Number));
+}
+
+const sortiert = [...kleinprojekte].sort((a, b) => abschlussjahr(a) - abschlussjahr(b));
 
 /**
  * Werkliste der kleineren Aufträge, unten auf /projekte.
@@ -8,17 +28,23 @@ import { kleinprojekte } from '@/data/kleinprojekte';
  * Gewerbebauten, Anbauten, Pools und kleinere Neubauten — reale Aufträge,
  * nur kleiner im Umfang.
  *
- * Bewusst offen statt eingeklappt: Eine gut gesetzte Werkliste ist selbst ein
- * Argument. Eingeklappt hing dort eine Zeile mit einem einsamen Plus, die
- * nichts zeigte und nichts versprach.
+ * Eingeklappt, damit die Liste das Bildraster darüber nicht in die Länge
+ * zieht. Anders als in einer früheren Fassung steht der Auslöser aber nicht
+ * als einsames Plus am rechten Rand: Er sitzt beim Titel, ist beschriftet
+ * und nennt die Anzahl — man weiss also, was einen erwartet, bevor man
+ * klickt.
  *
- * Als Tabelle mit gleichmässigen Zeilen, wie ein Werkverzeichnis — die Fotos
- * bleiben bewusst aussen vor (siehe die Begründung in `KleinprojektCard`
- * zur Bilder-Sitemap).
+ * Die Fotos bleiben bewusst aussen vor, siehe die Begründung in
+ * `KleinprojektCard` zur Bilder-Sitemap.
  */
 export default function WeitereArbeiten() {
+  const [offen, setOffen] = useState(false);
+
   return (
-    <div id="weitere-arbeiten" className="scroll-mt-32 bg-mist px-6 py-12 md:px-10 md:py-16">
+    <div
+      id="weitere-arbeiten"
+      className="scroll-mt-32 bg-mist px-6 py-12 md:px-10 md:py-16"
+    >
       <p className="mb-3 text-xs uppercase tracking-widest text-stone">Werkliste</p>
       <h2 className="text-h2 text-ink">Weitere Arbeiten</h2>
       <p className="mt-4 max-w-lesbar leading-relaxed text-graphite">
@@ -26,24 +52,47 @@ export default function WeitereArbeiten() {
         Projekten ausgeführt haben.
       </p>
 
-      <ul className="mt-10 border-t border-stone/25">
-        {kleinprojekte.map((p) => (
-          <li
-            key={p.slug}
-            className="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-1 border-b border-stone/25 py-4 sm:grid-cols-[1fr_1fr_auto]"
-          >
-            <span className="font-medium text-ink">
-              {p.strasse ? `${p.ort}, ${p.strasse}` : p.ort}
-            </span>
-            <span className="col-span-2 text-karte text-graphite sm:col-span-1 sm:col-start-2">
-              {p.gebaeudetyp}
-            </span>
-            <span className="col-start-2 row-start-1 text-karte tabular-nums text-stone sm:col-start-3">
-              {p.jahr ?? '—'}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <button
+        type="button"
+        onClick={() => setOffen(!offen)}
+        aria-expanded={offen}
+        aria-controls="werkliste"
+        className="group mt-8 flex items-center gap-3 rounded-sm text-sm uppercase tracking-widest text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+      >
+        <span
+          aria-hidden="true"
+          className="relative block h-3 w-3 shrink-0"
+        >
+          <span className="absolute top-1/2 left-0 block h-px w-3 bg-current" />
+          <span
+            className={`absolute top-1/2 left-0 block h-px w-3 bg-current transition-transform duration-300 ease-out ${
+              offen ? 'rotate-0' : 'rotate-90'
+            }`}
+          />
+        </span>
+        {offen ? 'Werkliste schliessen' : `Werkliste ansehen (${sortiert.length})`}
+      </button>
+
+      {offen && (
+        <ul id="werkliste" className="mt-10 border-t border-stone/25">
+          {sortiert.map((p) => (
+            <li
+              key={p.slug}
+              className="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-1 border-b border-stone/25 py-4 sm:grid-cols-[1fr_1fr_auto]"
+            >
+              <span className="font-medium text-ink">
+                {p.strasse ? `${p.ort}, ${p.strasse}` : p.ort}
+              </span>
+              <span className="col-span-2 text-karte text-graphite sm:col-span-1 sm:col-start-2">
+                {p.gebaeudetyp}
+              </span>
+              <span className="col-start-2 row-start-1 text-karte tabular-nums text-stone sm:col-start-3">
+                {p.jahr ?? '—'}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

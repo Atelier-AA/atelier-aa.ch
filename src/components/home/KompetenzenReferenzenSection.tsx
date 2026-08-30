@@ -33,11 +33,8 @@ export default function KompetenzenReferenzenSection() {
         <p className="mb-10 text-xs uppercase tracking-widest text-stone">Leistungen</p>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-6">
-          {kompetenzen.map((k, idx) => (
-            <div key={k.titel} className="border-t border-mist pt-5">
-              <p className="mb-3 text-xs uppercase tracking-widest text-stone">
-                0{idx + 1}
-              </p>
+          {kompetenzen.map((k) => (
+            <div key={k.titel}>
               <h3 className="text-base font-medium text-ink">{k.titel}</h3>
               <p className="mt-3 text-karte text-graphite leading-relaxed">{k.text}</p>
             </div>

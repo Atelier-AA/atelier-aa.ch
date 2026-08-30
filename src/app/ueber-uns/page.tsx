@@ -147,7 +147,7 @@ export default function UeberUnsPage() {
           deshalb keine eigene Nav, kein "Design-Build"-Menüpunkt. */}
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
-          <div className="grid grid-cols-1 items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
+          <div className="grid grid-cols-1 items-center gap-x-14 gap-y-10 lg:grid-cols-2">
           <div>
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
           <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
@@ -174,26 +174,27 @@ export default function UeberUnsPage() {
           </div>
 
           {/* Die drei Kacheln untereinander in der rechten Spalte — dieselbe
-              Behandlung wie die Ansätze darüber. Der frühere Abschluss ist
-              entfallen: Er wiederholte mit "Bevor wir gestalten, wollen wir
-              verstehen" wörtlich die Überschrift des Büro-Abschnitts auf der
-              Startseite. */}
-          <div className="flex flex-col gap-6">
-            <div className="bg-mist p-8">
+              Behandlung wie die Ansätze darüber, aber mit weniger Innenabstand:
+              Sonst wird die Spalte deutlich höher als der Text daneben. Der
+              frühere Abschluss ist entfallen, er wiederholte mit "Bevor wir
+              gestalten, wollen wir verstehen" wörtlich die Überschrift des
+              Büro-Abschnitts auf der Startseite. */}
+          <div className="flex flex-col gap-4">
+            <div className="bg-mist p-6">
               <h3 className="text-h3 text-ink">Wissen früher zusammenbringen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Relevantes Fachwissen fliesst gezielter in den Prozess ein, statt erst nach
                 der Planung eingeholt zu werden.
               </p>
             </div>
-            <div className="bg-mist p-8">
+            <div className="bg-mist p-6">
               <h3 className="text-h3 text-ink">Entscheidungen früher treffen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Technische und wirtschaftliche Konsequenzen werden sichtbar, bevor der Entwurf
                 feststeht.
               </p>
             </div>
-            <div className="bg-mist p-8">
+            <div className="bg-mist p-6">
               <h3 className="text-h3 text-ink">Planung und Ausführung verbinden</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Planung, Ausführung und wirtschaftliche Überlegungen werden früher
