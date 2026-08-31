@@ -27,10 +27,11 @@ export default function LeistungenPage() {
                 Einleitungstext bewusst deutlich verdichtet (ca. 50-60% der
                 vorherigen Länge) — Themen wie Lebenszykluskosten oder
                 Aufstockung/Anbau/Ersatzneubau gehören nicht in diesen Block.
-                Der dritte Absatz kam später dazu, weil die Spalte neben dem
-                Video zu kurz war. Er beantwortet die naheliegende Rückfrage
-                zum Auftragsumfang und bleibt damit in der Sache dieses
-                Abschnitts — die oben ausgeschlossenen Themen bleiben draussen. */}
+                Der Absatz zum Auftragsumfang kam später dazu, weil die
+                Textspalte neben dem Video zu kurz war und das Verhältnis
+                dadurch schief wirkte. Er beantwortet die naheliegende
+                Rückfrage und bleibt in der Sache dieses Abschnitts — die oben
+                ausgeschlossenen Themen bleiben draussen. */}
             <h1 className="text-h1 font-normal text-ink leading-[1.1] tracking-tight mb-6">
               Von der ersten <span className="font-semibold">Frage</span>{' '}
               <br />
@@ -44,8 +45,16 @@ export default function LeistungenPage() {
               </p>
               <p>
                 Ort, Nutzung, Machbarkeit, Wirtschaftlichkeit und Realisierung werden
-                zusammen gedacht, mit Schwerpunkt in Zürich, Aargau und Zug. Wie das
-                konkret aussieht, zeigen die folgenden fünf Leistungen.
+                zusammen gedacht, mit Schwerpunkt in Zürich, Aargau und Zug.
+              </p>
+              <p>
+                Der Umfang richtet sich nach Ihrem Vorhaben: Sie können uns für einzelne
+                Phasen beauftragen, etwa nur für die Machbarkeitsstudie oder das
+                Baugesuch, oder für den gesamten Weg bis zur Übergabe. In beiden Fällen
+                bleibt dieselbe Ansprechperson zuständig.
+              </p>
+              <p>
+                Wie das konkret aussieht, zeigen die folgenden fünf Leistungen.
               </p>
             </div>
           </div>
