@@ -247,7 +247,7 @@ export const projekte: Projekt[] = [
           'Eine gemeinsame Entwicklung bleibt möglich, braucht aber einen frühen Dienstbarkeitsvertrag zu Erschliessung, Einstellhalle und Kostenteilung.',
       },
     ],
-    thumbnail: '/images/projekte/mfh-sihlaurain/atelier-aa-mfh-sihlaurain-thumb.jpg',
+    thumbnail: '/images/projekte/mfh-sihlaurain/atelier-aa-mfh-sihlaurain-12.jpg',
     heroImage: '/images/projekte/mfh-sihlaurain/atelier-aa-mfh-sihlaurain-hero.jpg',
     galerie: [
       '/images/projekte/mfh-sihlaurain/atelier-aa-mfh-sihlaurain-01.jpg',

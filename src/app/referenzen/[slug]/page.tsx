@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProjektBilder from '@/components/projekte/ProjektBilder';
-import ProjektMeta from '@/components/projekte/ProjektMeta';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { ortMitKanton } from '@/lib/utils';
@@ -190,8 +189,6 @@ export default async function ProjektDetailPage({ params }: PageProps) {
           {projekt.abschnitte.length === 0 && (
             <p className="text-lg leading-relaxed text-graphite">{projekt.beschreibung}</p>
           )}
-
-          <ProjektMeta kunde={projekt.kunde} />
 
           {/* Ausführliche Beschreibung in Abschnitten. Gibt der Seite den Text,
               den eine Bildergalerie allein nicht liefert — für Leser wie für
