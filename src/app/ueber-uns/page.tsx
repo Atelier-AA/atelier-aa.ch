@@ -132,7 +132,7 @@ export default function UeberUnsPage() {
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {ANSAETZE.map((a) => (
-              <div key={a.titel} className="border-t border-stone/30 bg-mist p-8">
+              <div key={a.titel} className="border border-stone/30 bg-mist p-8">
                 <h3 className="text-h3 text-ink">{a.titel}</h3>
                 <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{a.text}</p>
               </div>
@@ -180,21 +180,21 @@ export default function UeberUnsPage() {
               gestalten, wollen wir verstehen" wörtlich die Überschrift des
               Büro-Abschnitts auf der Startseite. */}
           <div className="flex flex-col gap-4">
-            <div className="border-t border-stone/30 bg-mist p-6">
+            <div className="border border-stone/30 bg-mist p-6">
               <h3 className="text-h3 text-ink">Wissen früher zusammenbringen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Relevantes Fachwissen fliesst gezielter in den Prozess ein, statt erst nach
                 der Planung eingeholt zu werden.
               </p>
             </div>
-            <div className="border-t border-stone/30 bg-mist p-6">
+            <div className="border border-stone/30 bg-mist p-6">
               <h3 className="text-h3 text-ink">Entscheidungen früher treffen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Technische und wirtschaftliche Konsequenzen werden sichtbar, bevor der Entwurf
                 feststeht.
               </p>
             </div>
-            <div className="border-t border-stone/30 bg-mist p-6">
+            <div className="border border-stone/30 bg-mist p-6">
               <h3 className="text-h3 text-ink">Planung und Ausführung verbinden</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Planung, Ausführung und wirtschaftliche Überlegungen werden früher
