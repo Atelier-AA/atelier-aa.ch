@@ -11,7 +11,7 @@ export default function MachbarkeitCta() {
       <Container>
         <div className="max-w-3xl">
           <p className="mb-4 text-xs uppercase tracking-widest text-stone">Machbarkeit</p>
-          <h2 className="mb-6 text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
+          <h2 className="mb-6 text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl">
             Fragen Sie sich, ob auf Ihrem Grundstück mehr möglich wäre?
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-graphite">

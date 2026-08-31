@@ -48,7 +48,7 @@ export default function ZielgruppenSection() {
                   Abschnitt, obwohl sie nur wegweisen sollen. Der Wert ist
                   von der H1-Kurve abgeleitet, damit er beim Verkleinern des
                   Fensters im gleichen Verhältnis mitgeht. */}
-              <h2 className="text-[clamp(1.26rem,0.824rem+1.856vw,2.1rem)] font-normal leading-[1.12] tracking-tight text-ink">
+              <h2 className="text-3xl font-normal leading-tight tracking-tight text-ink md:text-4xl">
                 {weg.titel[0]}{' '}
                 <span className="font-semibold">{weg.titel[1]}</span>
               </h2>
