@@ -13,19 +13,14 @@ export default function AblaufSection() {
   return (
     <section className="py-16 md:py-20">
       <Container>
-        <div className="max-w-3xl mb-14">
-          <p className="text-xs uppercase tracking-widest text-stone mb-4">Ablauf</p>
-          <h2 className="text-h2 font-medium text-ink leading-tight">
-            So arbeiten wir
-          </h2>
-        </div>
+        <p className="mb-12 text-xs uppercase tracking-widest text-stone">Ablauf</p>
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {ablauf.map((phase) => (
-            <li key={phase.nummer}>
-              <p className="text-sm tracking-[0.1em] text-stone mb-4">{phase.nummer}</p>
-              <h3 className="text-xl font-medium text-ink mb-3">{phase.titel}</h3>
-              <p className="text-graphite leading-relaxed">{phase.text}</p>
+            <li key={phase.nummer} className="border-t border-ink pt-5">
+              <p className="mb-4 text-xs uppercase tracking-widest text-stone">{phase.nummer}</p>
+              <h3 className="mb-3 text-xl font-medium text-ink">{phase.titel}</h3>
+              <p className="leading-relaxed text-graphite">{phase.text}</p>
             </li>
           ))}
         </ol>

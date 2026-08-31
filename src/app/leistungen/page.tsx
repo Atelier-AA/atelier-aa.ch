@@ -80,21 +80,13 @@ export default function LeistungenPage() {
           über den Bildschirm — fügt sich damit ins übrige Seitenbild ein. */}
       <section className="border-t border-mist py-20 md:pt-28">
         <Container>
-          <div className="mb-14 max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Angebot
-            </p>
-            <h2 className="text-h2 font-medium leading-tight text-ink md:text-h2">
-              Leistungen
-            </h2>
-          </div>
+          <p className="mb-12 text-xs uppercase tracking-widest text-stone">Angebot</p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {kompetenzen.map((k, index) => (
-              <div key={k.titel} className="bg-mist p-8">
-                <p className="text-xs uppercase tracking-widest text-stone">
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h3 className="mt-6 text-xl font-medium leading-tight text-ink">{k.titel}</h3>
+            {kompetenzen.map((k) => (
+              <div key={k.titel} className="border-t-2 border-ink bg-mist p-8">
+                <h3 className="border-b border-stone/30 pb-5 text-xl font-medium leading-tight text-ink">
+                  {k.titel}
+                </h3>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften
@@ -117,7 +109,9 @@ export default function LeistungenPage() {
                     );
                   })}
                 </ul>
-                <p className="mt-5 text-karte leading-relaxed text-graphite">{k.text}</p>
+                <p className="mt-5 border-t border-stone/30 pt-5 text-karte leading-relaxed text-graphite">
+                  {k.text}
+                </p>
                 {k.links && k.links.length > 0 && (
                   <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                     {k.links.map((l) => (
