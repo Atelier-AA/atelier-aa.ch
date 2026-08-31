@@ -133,7 +133,7 @@ export default function UeberUnsPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {ANSAETZE.map((a) => (
               <div key={a.titel} className="bg-mist p-8">
-                <h3 className="text-h3 text-ink">{a.titel}</h3>
+                <h2 className="text-h3 text-ink">{a.titel}</h2>
                 <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{a.text}</p>
               </div>
             ))}

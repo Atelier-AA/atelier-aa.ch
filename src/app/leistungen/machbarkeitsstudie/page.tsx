@@ -142,7 +142,7 @@ export default function MachbarkeitsstudiePage() {
             {schritte.map((s) => (
               <div key={s.nummer} className="bg-mist p-8">
                 <p className="mb-3 text-xs uppercase tracking-widest text-stone">{s.nummer}</p>
-                <h3 className="mb-2 text-h3 text-ink">{s.titel}</h3>
+                <h2 className="mb-2 text-h3 text-ink">{s.titel}</h2>
                 <p className="max-w-lesbar leading-relaxed text-graphite">{s.text}</p>
               </div>
             ))}

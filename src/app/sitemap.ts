@@ -83,12 +83,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       },
-      ...orteInKanton(k.kuerzel).map((o) => ({
-        url: `${BASIS}/regionen/${k.slug}/${o.slug}`,
-        lastModified: heute,
-        changeFrequency: 'yearly' as const,
-        priority: 0.6,
-      })),
+      // Nur Gemeinden mit realisiertem Projekt: Die übrigen stehen auf
+      // noindex (siehe regionen/[kanton]/[ort]/page.tsx) und gehören dann
+      // auch nicht in die Sitemap — sonst meldet Google sie als
+      // "gefunden, nicht indexiert".
+      ...orteInKanton(k.kuerzel)
+        .filter((o) => o.projekte.length > 0)
+        .map((o) => ({
+          url: `${BASIS}/regionen/${k.slug}/${o.slug}`,
+          lastModified: heute,
+          changeFrequency: 'yearly' as const,
+          priority: 0.6,
+        })),
     ]),
   ];
 }

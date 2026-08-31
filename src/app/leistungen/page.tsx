@@ -84,9 +84,9 @@ export default function LeistungenPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {kompetenzen.map((k) => (
               <div key={k.titel} className="bg-mist p-8">
-                <h3 className="border-b border-stone/30 pb-5 text-xl font-medium leading-tight text-ink">
+                <h2 className="border-b border-stone/30 pb-5 text-xl font-medium leading-tight text-ink">
                   {k.titel}
-                </h3>
+                </h2>
                 <ul className="mt-5 space-y-2">
                   {k.punkte.map((punkt) => {
                     /* Klartext zuerst, Normbezug darunter kleiner: Bauherrschaften
@@ -142,9 +142,9 @@ export default function LeistungenPage() {
               className="group flex flex-col justify-between bg-mist p-8 transition-colors hover:bg-stone/15"
             >
               <div>
-                <h3 className="text-h3 font-semibold text-ink">
+                <h2 className="text-h3 font-semibold text-ink">
                   Design-Build
-                </h3>
+                </h2>
                 <p className="mt-1 text-karte text-stone">Integrierte Projektabwicklung</p>
                 <p className="mt-5 text-karte leading-relaxed text-graphite">
                   Planung und Ausführung werden früher zusammengedacht, statt strikt

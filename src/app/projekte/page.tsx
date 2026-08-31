@@ -8,7 +8,7 @@ import { projekte } from '@/data/projekte';
 export const metadata: Metadata = {
   title: 'Projekte',
   description:
-    'Referenzprojekte von Atelier AA Architekten GmbH aus Obfelden ZH: Mehrfamilienhäuser in Untersiggenthal, Adliswil, Künten und Glashütten. Wohnbau, Umbau und Sanierung in der ganzen Schweiz.',
+    'Referenzprojekte von Atelier AA Architekten: Mehrfamilienhäuser, Einfamilienhäuser und Umbauten in Zürich, Aargau und Zug.',
   alternates: { canonical: '/projekte' },
 };
 

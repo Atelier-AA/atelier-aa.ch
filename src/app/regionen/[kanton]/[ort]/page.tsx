@@ -57,6 +57,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `Architekt in ${ort.ort}`,
     description: beschreibung,
     alternates: { canonical: `/regionen/${kanton.slug}/${ort.slug}` },
+    /*
+     * Gemeinden, hinter denen nur eine Studie steht, gehen nicht in den
+     * Index — sie bleiben erreichbar und intern verlinkt (`follow`).
+     *
+     * Grund: Von rund 53 Wörtern je Gemeindeseite sind über die Hälfte auf
+     * allen Seiten zeichengleich. Ein Vergleich aller Paare ergab 963 über
+     * 90 % Textähnlichkeit, das ähnlichste Paar bei 98 %. Solche
+     * Beinahe-Duplikate nimmt Google in der Regel ohnehin nicht auf; sie
+     * jetzt anzubieten, schadet beim Neustart mehr, als sie nützen.
+     *
+     * Die Gemeinden mit einem realisierten Projekt bleiben indexiert: Dort
+     * trägt der Text eine eigene Aussage. Sobald die übrigen Seiten
+     * inhaltlich ausgebaut sind, faellt diese Sperre von selbst weg.
+     */
+    ...(ort.projekte.length === 0 ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

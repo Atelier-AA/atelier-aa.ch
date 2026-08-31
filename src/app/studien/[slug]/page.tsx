@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { studien, getStudie, studieTitel } from '@/data/studien';
-import { ortMitKanton } from '@/lib/utils';
+import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
 import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
@@ -23,7 +23,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const titel = studieTitel(studie);
   return {
     title: `${studie.kategorie}: ${titel}`,
-    description: `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`,
+    description: kurzbeschreibung(
+      `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`
+    ),
     alternates: { canonical: `/studien/${studie.slug}` },
   };
 }
@@ -61,7 +63,7 @@ export default async function StudieDetailPage({ params }: PageProps) {
         '@type': 'CreativeWork',
         '@id': `${url}#studie`,
         name: `${studie.kategorie}: ${titel}`,
-        description: studie.analyse,
+        description: kurzbeschreibung(studie.analyse),
         inLanguage: 'de-CH',
         creator: { '@id': `${BASIS}/#organisation` },
         about: { '@type': 'Thing', name: studie.kategorie },

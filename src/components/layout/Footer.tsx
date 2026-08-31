@@ -21,6 +21,10 @@ import CookieSettingsLink from '@/components/cookies/CookieSettingsLink';
 export default function Footer() {
   const year = new Date().getFullYear();
   const kantone = alleKantone();
+  // Die Spaltentitel sind h2, nicht h3: Sie sind die obersten Überschriften
+  // innerhalb des Footers. Als h3 erzeugten sie auf jeder Seite ohne eigene
+  // h2 im Inhalt — Studien, Werkliste, Kontakt — einen Sprung von h1 auf h3,
+  // der Screenreadern eine fehlende Zwischenebene meldet.
   const spaltenTitel = 'mb-6 text-xs uppercase tracking-widest text-white/50';
   const verweis =
     'inline-block py-1 text-sm text-white/75 transition-colors duration-300 hover:text-white rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
@@ -42,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Kontakt</h3>
+            <h2 className={spaltenTitel}>Kontakt</h2>
             <address className="not-italic text-sm leading-relaxed space-y-1 text-white/75">
               <p className="text-white">{firma.name}</p>
               <p>{firma.strasse}</p>
@@ -91,7 +95,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Atelier</h3>
+            <h2 className={spaltenTitel}>Atelier</h2>
             <ul>
               {footerAtelier.map((item) => (
                 <li key={item.href}>
@@ -104,7 +108,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={spaltenTitel}>Arbeit</h3>
+            <h2 className={spaltenTitel}>Arbeit</h2>
             <ul>
               {footerArbeit.map((item) => (
                 <li key={item.href}>

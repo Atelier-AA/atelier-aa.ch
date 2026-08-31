@@ -5,7 +5,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import InsightCard from '@/components/insights/InsightCard';
 import { insights, getInsight, getWeitereInsights } from '@/data/insights';
-import { formatDatum } from '@/lib/utils';
+import { formatDatum, kurzbeschreibung } from '@/lib/utils';
 import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: insight.titel,
-    description: insight.lead,
+    description: kurzbeschreibung(insight.lead),
     alternates: { canonical: `/insights/${insight.slug}` },
     openGraph: {
       type: 'article',
       title: insight.titel,
-      description: insight.lead,
+      description: kurzbeschreibung(insight.lead),
       images: [insight.bild],
       publishedTime: insight.datum,
     },
@@ -60,7 +60,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
         '@type': 'Article',
         '@id': `${url}#article`,
         headline: insight.titel,
-        description: insight.lead,
+        description: kurzbeschreibung(insight.lead),
         image: `${BASIS}${insight.bild}`,
         datePublished: insight.datum,
         dateModified: insight.datum,

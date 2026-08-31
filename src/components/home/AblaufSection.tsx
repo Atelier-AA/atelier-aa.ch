@@ -18,7 +18,7 @@ export default function AblaufSection() {
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {ablauf.map((phase) => (
             <li key={phase.nummer}>
-              <h3 className="mb-3 text-xl font-medium text-ink">{phase.titel}</h3>
+              <h2 className="mb-3 text-xl font-medium text-ink">{phase.titel}</h2>
               <p className="leading-relaxed text-graphite">{phase.text}</p>
             </li>
           ))}

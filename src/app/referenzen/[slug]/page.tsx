@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import ProjektBilder from '@/components/projekte/ProjektBilder';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
-import { ortMitKanton } from '@/lib/utils';
+import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
 import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import Button from '@/components/ui/Button';
@@ -53,12 +53,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: seoTitel,
-    description: projekt.beschreibung,
+    description: kurzbeschreibung(projekt.beschreibung),
     alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
       title: seoTitel,
-      description: projekt.beschreibung,
+      description: kurzbeschreibung(projekt.beschreibung),
       images: [projekt.heroImage],
     },
   };
@@ -114,7 +114,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         '@type': 'CreativeWork',
         '@id': `${url}#projekt`,
         name: `${projekt.title}, ${projekt.ort} ${projekt.kanton}`,
-        description: projekt.beschreibung,
+        description: kurzbeschreibung(projekt.beschreibung),
         image: `${BASIS}${projekt.heroImage}`,
         dateCreated: projekt.jahr,
         inLanguage: 'de-CH',

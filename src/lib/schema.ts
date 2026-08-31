@@ -77,8 +77,16 @@ export function organisationSchema(firma: typeof Firma, team: TeamMember[]) {
     // Organisations-Schema mit den echten externen Auftritten der Firma.
     sameAs: [sozialeMedien.linkedin, sozialeMedien.instagram],
     founder: { '@type': 'Person', name: firma.vertretungsberechtigt },
+    // Name und Funktion stehen mit im Knoten, nicht nur die Referenz:
+    // Google löst @id-Verweise über Dokumentgrenzen hinweg nicht auf, die
+    // Personendaten der Einzelseiten kämen hier also nie an. Ohne diese
+    // beiden Felder trug die employee-Angabe gar keine Information.
     employee: team.map((m) => ({
+      '@type': 'Person',
       '@id': `${BASIS}/ueber-uns/${m.slug}#person`,
+      name: m.name,
+      jobTitle: m.rolle,
+      url: `${BASIS}/ueber-uns/${m.slug}`,
     })),
     description:
       'Atelier AA Architekten GmbH in Obfelden plant und realisiert Wohn- und Gewerbebauten in der Schweiz. Leistungen: Architektur, Umbau und Sanierung, Projektentwicklung und Bauleitung.',

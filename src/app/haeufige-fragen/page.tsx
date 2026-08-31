@@ -46,7 +46,7 @@ export default function HaeufigeFragenPage() {
               Fragen zu <span className="font-semibold">Leistungen</span> und{' '}
               <span className="font-semibold">Zusammenarbeit</span>
             </h1>
-            <FragenAntworten fragen={expertiseFragen} />
+            <FragenAntworten fragen={expertiseFragen} titel="Fragen zu Leistungen und Ablauf" />
             <FragenAntworten fragen={insightFragen} titel="Fragen aus unseren Fachbeiträgen" />
           </div>
         </Container>

@@ -7,7 +7,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Integrierte Projektabwicklung',
   description:
-    'Atelier AA Architekten setzt sich mit integrierten Projektabwicklungsmodellen wie Design-Build auseinander und wendet in einem aktuellen Projekt bereits zentrale Prinzipien davon an.',
+    'Design-Build bei Atelier AA Architekten: Planung und Ausführung früher zusammengedacht, angewendet in einem laufenden Projekt.',
   alternates: { canonical: '/leistungen/integrierte-projektabwicklung' },
 };
 

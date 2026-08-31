@@ -8,6 +8,7 @@ import TeamMember from '@/components/ueber-uns/TeamMember';
 import { team, getTeamMember } from '@/data/team';
 import { firma } from '@/data/firma';
 import { breadcrumbSchema } from '@/lib/schema';
+import { kurzbeschreibung } from '@/lib/utils';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,7 +26,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${person.name}, ${person.rolle}`,
-    description: `${person.name}, ${person.rolle} bei Atelier AA Architekten GmbH in Obfelden. Schwerpunkte: ${person.schwerpunkte.join(', ')}.`,
+    description: kurzbeschreibung(
+      `${person.name}, ${person.rolle} bei Atelier AA Architekten in Obfelden. Schwerpunkte: ${person.schwerpunkte.join(', ')}.`
+    ),
     alternates: { canonical: `/ueber-uns/${person.slug}` },
     openGraph: {
       type: 'profile',
