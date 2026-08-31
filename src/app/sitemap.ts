@@ -9,6 +9,22 @@ import { alleKantone, orteInKanton } from '@/lib/regionen';
 const BASIS = 'https://atelier-aa.ch';
 
 /**
+ * Adressform. Der statische Export nach Hostpoint legt jede Seite als
+ * <Pfad>/index.html ab; Apache liefert das nur unter <Pfad>/ aus. Damit die
+ * Sitemap dieselbe Form nennt wie die Canonicals und nicht auf
+ * Weiterleitungen zeigt, haengt sie dort einen Schraegstrich an.
+ *
+ * Auf Vercel bleibt die Variable leer und alles ist wie bisher.
+ */
+const SCHRAEG = process.env.NEXT_PUBLIC_SCHRAEGSTRICH === '1' ? '/' : '';
+
+/** Adresse zusammensetzen, mit passender Adressform. */
+function adr(pfad: string): string {
+  if (pfad === '' || pfad === '/') return `${BASIS}/`;
+  return `${BASIS}${pfad}${SCHRAEG}`;
+}
+
+/**
  * Sitemap für Suchmaschinen und KI-Crawler.
  *
  * Next.js liefert daraus /sitemap.xml. Die Prioritäten spiegeln, was für
@@ -41,31 +57,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...statisch.map((s) => ({
-      url: `${BASIS}${s.pfad}`,
+      url: adr(s.pfad),
       lastModified: heute,
       changeFrequency: s.freq,
       priority: s.prio,
     })),
     ...projekte.map((p) => ({
-      url: `${BASIS}/referenzen/${p.slug}`,
+      url: adr(`/referenzen/${p.slug}`),
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
     ...insights.map((i) => ({
-      url: `${BASIS}/insights/${i.slug}`,
+      url: adr(`/insights/${i.slug}`),
       lastModified: new Date(i.datum),
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     })),
     ...team.map((m) => ({
-      url: `${BASIS}/ueber-uns/${m.slug}`,
+      url: adr(`/ueber-uns/${m.slug}`),
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
     ...studien.map((s) => ({
-      url: `${BASIS}/studien/${s.slug}`,
+      url: adr(`/studien/${s.slug}`),
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
@@ -74,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // (siehe KleinprojektCard.tsx), sind aber über die Bilder-Erweiterung der
     // Sitemap für Google Bilder & KI-Crawler weiterhin auffindbar.
     ...kleinprojekte.map((k) => ({
-      url: `${BASIS}/kleinprojekte/${k.slug}`,
+      url: adr(`/kleinprojekte/${k.slug}`),
       lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.4,
@@ -82,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...alleKantone().flatMap((k) => [
       {
-        url: `${BASIS}/regionen/${k.slug}`,
+        url: adr(`/regionen/${k.slug}`),
         lastModified: heute,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
@@ -94,7 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...orteInKanton(k.kuerzel)
         .filter((o) => o.projekte.length > 0)
         .map((o) => ({
-          url: `${BASIS}/regionen/${k.slug}/${o.slug}`,
+          url: adr(`/regionen/${k.slug}/${o.slug}`),
           lastModified: heute,
           changeFrequency: 'yearly' as const,
           priority: 0.6,

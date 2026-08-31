@@ -35,16 +35,23 @@ rm -rf .next out
 # Das Kontaktformular muss bei Hostpoint auf kontakt.php zeigen, nicht auf
 # die Next-Route /api/kontakt, die es dort nicht gibt. Der Wert landet zur
 # Bauzeit im JavaScript-Bundle.
-NEXT_PUBLIC_FORMULAR_ZIEL=/kontakt.php npx next build
+NEXT_PUBLIC_FORMULAR_ZIEL=/kontakt.php \
+  NEXT_PUBLIC_SCHRAEGSTRICH=1 \
+  npx next build
 
 echo "→ Hostpoint-Dateien beilegen"
 cp hostpoint/htaccess.txt out/.htaccess
 cp hostpoint/kontakt.php out/kontakt.php
 cp hostpoint/user.ini.txt out/.user.ini
-mkdir -p out/mailer-php
-cp hostpoint/mailer/index.php hostpoint/mailer/brevo.php \
-   hostpoint/mailer/konfig.beispiel.php out/mailer-php/
-cp hostpoint/mailer/htaccess.txt out/mailer-php/.htaccess
+# Der Mailer kommt bewusst NICHT mit. Entschieden am 31.08.2026: Die
+# Website soll online, der Mailer wird spaeter nachgeholt. Der Code liegt
+# unveraendert in hostpoint/mailer/ — zum Aktivieren diese Zeilen wieder
+# einkommentieren und konfig.php anlegen.
+#
+# mkdir -p out/mailer-php
+# cp hostpoint/mailer/index.php hostpoint/mailer/brevo.php \
+#    hostpoint/mailer/konfig.beispiel.php out/mailer-php/
+# cp hostpoint/mailer/htaccess.txt out/mailer-php/.htaccess
 
 echo
 echo "Fertig. Der gesamte Inhalt von out/ gehört in das Verzeichnis www."

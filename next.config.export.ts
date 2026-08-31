@@ -21,11 +21,16 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  // Kein Schraegstrich am Ende: Die Adressen bleiben damit Zeichen fuer
-  // Zeichen dieselben wie heute auf Vercel und wie in der Sitemap. Der
-  // Export legt <Pfad>.html ab; Apache liefert das ueber eine Rewrite-Regel
-  // in der .htaccess aus, ohne Weiterleitung.
-  trailingSlash: false,
+  // Jede Seite wird als <Pfad>/index.html abgelegt. Damit liefert Apache
+  // sie ohne jede Rewrite-Regel aus — DirectoryIndex genuegt, und das
+  // koennen alle Webhostings.
+  //
+  // Der erste Versuch arbeitete mit <Pfad>.html und einer Rewrite-Regel plus
+  // DirectorySlash Off. Das war die Schwachstelle: Zu ueber-uns, leistungen
+  // und insights gibt es Datei UND Ordner mit gleichem Namen, und wenn die
+  // .htaccess fehlt oder eine Direktive nicht erlaubt ist, sind genau diese
+  // Seiten nicht erreichbar. Genau das ist auf dem Server passiert.
+  trailingSlash: true,
 };
 
 export default nextConfig;

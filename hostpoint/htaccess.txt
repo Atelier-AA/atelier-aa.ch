@@ -33,24 +33,19 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 # ---------------------------------------------------------------------------
-# Adressen ohne .html ausliefern
+# Adressform
 #
-# Der Export legt jede Seite als <Pfad>.html ab. Damit /projekte weiterhin
-# unter /projekte erreichbar ist, liefert Apache die Datei intern aus —
-# ohne Weiterleitung, die Adresse im Browser bleibt unveraendert.
+# Der Export legt jede Seite als <Pfad>/index.html ab. Apache liefert das von
+# selbst aus, sobald DirectoryIndex index.html gilt — das ist ueberall die
+# Voreinstellung. Es braucht deshalb KEINE Rewrite-Regeln.
+#
+# Der erste Entwurf arbeitete mit <Pfad>.html plus Rewrite-Regel und
+# DirectorySlash Off. Das ist entfallen: Zu ueber-uns, leistungen und
+# insights gibt es Datei und Ordner mit gleichem Namen, und dort war die
+# Loesung anfaellig. Genau diese drei Seiten waren auf dem Server nicht
+# erreichbar.
 # ---------------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # Verzeichnisse und vorhandene Dateien unangetastet lassen
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
-
-  # /projekte  ->  /projekte.html
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-</IfModule>
+DirectoryIndex index.html
 
 # ---------------------------------------------------------------------------
 # Weiterleitungen alter Adressen, alle als echte 301
@@ -60,29 +55,29 @@ AddDefaultCharset UTF-8
 # ---------------------------------------------------------------------------
 
 # Frühere Bezeichnungen der Leistungsseite
-Redirect 301 /expertise /leistungen
+Redirect 301 /expertise /leistungen/
 
 # Altlast der PHP-Website, bei Google noch indexiert
 Redirect 301 /indexxxx.php /
 
 # Übersichtsseiten, die in andere Seiten aufgegangen sind.
 # Die Detailseiten unter /studien/… und /kleinprojekte/… bleiben bestehen.
-Redirect 301 /studien /leistungen/machbarkeitsstudie
-Redirect 301 /kleinprojekte /projekte
+Redirect 301 /studien /leistungen/machbarkeitsstudie/
+Redirect 301 /kleinprojekte /projekte/
 
 # Personenseite: der Slug schrieb "Riccarda" mit zwei c, der sichtbare Name
 # war immer "Ricarda".
-Redirect 301 /ueber-uns/riccarda-tscharner /ueber-uns/ricarda-tscharner
+Redirect 301 /ueber-uns/riccarda-tscharner /ueber-uns/ricarda-tscharner/
 
 # Sieben Werkliste-Adressen trugen den Familiennamen der Bauherrschaft in
 # der URL. Ersetzt durch Strasse und Ort.
-Redirect 301 /kleinprojekte/efh-bunjaku /kleinprojekte/efh-fahrweidstrasse-weiningen
-Redirect 301 /kleinprojekte/efh-alimi-othmarsingen /kleinprojekte/efh-waldrueti-othmarsingen
-Redirect 301 /kleinprojekte/pool-hug-florin /kleinprojekte/pool-zug
-Redirect 301 /kleinprojekte/efh-epstein-obfelden /kleinprojekte/efh-fabrikstrasse-obfelden
-Redirect 301 /kleinprojekte/mfh-einsele-wuerenlos /kleinprojekte/mfh-weizenstrasse-wuerenlos
-Redirect 301 /kleinprojekte/efh-leemann-obfelden /kleinprojekte/efh-schuerweidestrasse-obfelden
-Redirect 301 /kleinprojekte/umbau-efh-spoetl-zuerich /kleinprojekte/umbau-efh-schneegloeggliweg-zuerich
+Redirect 301 /kleinprojekte/efh-bunjaku /kleinprojekte/efh-fahrweidstrasse-weiningen/
+Redirect 301 /kleinprojekte/efh-alimi-othmarsingen /kleinprojekte/efh-waldrueti-othmarsingen/
+Redirect 301 /kleinprojekte/pool-hug-florin /kleinprojekte/pool-zug/
+Redirect 301 /kleinprojekte/efh-epstein-obfelden /kleinprojekte/efh-fabrikstrasse-obfelden/
+Redirect 301 /kleinprojekte/mfh-einsele-wuerenlos /kleinprojekte/mfh-weizenstrasse-wuerenlos/
+Redirect 301 /kleinprojekte/efh-leemann-obfelden /kleinprojekte/efh-schuerweidestrasse-obfelden/
+Redirect 301 /kleinprojekte/umbau-efh-spoetl-zuerich /kleinprojekte/umbau-efh-schneegloeggliweg-zuerich/
 
 # ---------------------------------------------------------------------------
 # Sicherheits-Header
