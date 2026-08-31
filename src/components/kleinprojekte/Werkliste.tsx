@@ -43,7 +43,7 @@ export default function Werkliste() {
   return (
     <div
       id="werkliste"
-      className="scroll-mt-32 bg-mist px-6 py-12 md:px-10 md:py-16"
+      className="scroll-mt-32 border-t border-stone/30 bg-mist px-6 py-12 md:px-10 md:py-16"
     >
       <h2 className="text-h2 text-ink">Werkliste</h2>
       <p className="mt-4 max-w-lesbar leading-relaxed text-graphite">

@@ -83,7 +83,7 @@ export default function LeistungenPage() {
           <p className="mb-12 text-xs uppercase tracking-widest text-stone">Angebot</p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {kompetenzen.map((k) => (
-              <div key={k.titel} className="border-t-2 border-ink bg-mist p-8">
+              <div key={k.titel} className="border-t border-stone/30 bg-mist p-8">
                 <h3 className="border-b border-stone/30 pb-5 text-xl font-medium leading-tight text-ink">
                   {k.titel}
                 </h3>
@@ -139,7 +139,7 @@ export default function LeistungenPage() {
                 Begriff ist das, wonach gesucht wird. */}
             <Link
               href="/leistungen/integrierte-projektabwicklung"
-              className="group flex flex-col justify-between bg-mist p-8 transition-colors hover:bg-stone/15"
+              className="group flex flex-col justify-between border-t border-stone/30 bg-mist p-8 transition-colors hover:bg-stone/15"
             >
               <div>
                 <h3 className="text-h3 font-semibold text-ink">

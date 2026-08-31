@@ -30,7 +30,7 @@ export default function KontaktKachel({ variante = 0 }: { variante?: number }) {
   const { titel, text } = kontaktTexte[variante % kontaktTexte.length];
 
   return (
-    <div className="relative flex aspect-square flex-col justify-center bg-mist p-8">
+    <div className="relative flex aspect-square flex-col justify-center border-t border-stone/30 bg-mist p-8">
       <p className="text-xl font-medium leading-snug text-ink">{titel}</p>
       <p className="mt-3 text-graphite leading-relaxed">{text}</p>
       <div className="mt-6">

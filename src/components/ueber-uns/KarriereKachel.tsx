@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button';
  */
 export default function KarriereKachel() {
   return (
-    <div className="relative flex aspect-[3/4] flex-col justify-center bg-mist p-8">
+    <div className="relative flex aspect-[3/4] flex-col justify-center border-t border-stone/30 bg-mist p-8">
       <p className="text-xl font-medium leading-snug text-ink">Hier könntest du sein.</p>
       <p className="mt-3 text-graphite leading-relaxed">
         Suchst du eine neue Herausforderung als Architekt:in? Wir freuen uns auf deine
