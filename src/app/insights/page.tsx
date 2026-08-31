@@ -45,7 +45,7 @@ export default function InsightsPage() {
       </Container>
 
       <div className="mt-32 md:mt-40">
-        <VorhabenCta />
+        <VorhabenCta variante="journal" />
       </div>
     </div>
   );

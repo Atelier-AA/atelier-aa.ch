@@ -49,7 +49,7 @@ export default function ProjektePage() {
       </Container>
 
       <div className="mt-24 md:mt-32">
-        <VorhabenCta />
+        <VorhabenCta variante="projekte" />
       </div>
     </div>
   );

@@ -187,7 +187,7 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      <VorhabenCta />
+      <VorhabenCta variante="leistungen" />
     </div>
   );
 }

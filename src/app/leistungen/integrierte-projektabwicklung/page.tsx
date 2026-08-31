@@ -103,7 +103,7 @@ export default function IntegrierteProjektabwicklungPage() {
       </Container>
 
       <div className="mt-24 md:mt-32">
-        <VorhabenCta />
+        <VorhabenCta variante="designBuild" />
       </div>
     </div>
   );

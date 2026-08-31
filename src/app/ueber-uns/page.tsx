@@ -208,7 +208,7 @@ export default function UeberUnsPage() {
       </div>
 
       <div className="mt-24 md:mt-32">
-        <VorhabenCta />
+        <VorhabenCta variante="buero" />
       </div>
     </div>
   );
