@@ -20,13 +20,15 @@ export default function UeberUnsSection() {
         <p className="mb-4 text-xs uppercase tracking-widest text-stone">Büro</p>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
-            {/* Fester Umbruch nach dem Komma: Der Satz besteht aus Bedingung
-                und Folge, und genau dort soll er brechen — nicht dort, wo die
-                Zeile zufällig zu Ende ist. */}
-            <h2 className="text-h2 font-normal leading-[1.15] tracking-tight text-ink md:text-h1">
-              Bevor wir gestalten,{' '}
-              <br />
-              wollen wir <span className="font-semibold">verstehen.</span>
+            {/* Wortlaut aus der Fassung vor Commit 248fc4b, auf Kundenwunsch
+                zurückgeholt: Er benennt die Haltung mit Verantwortung statt
+                nur die Reihenfolge von Verstehen und Gestalten. Kein fester
+                Umbruch — der Satz ist zu lang dafür und bräche je nach
+                Fensterbreite an der falschen Stelle. */}
+            <h2 className="max-w-[20ch] text-h2 font-normal leading-[1.15] tracking-tight text-ink md:text-h1">
+              Wir gestalten <span className="font-semibold">Architektur</span> mit
+              Verantwortung für Menschen, Orte und{' '}
+              <span className="font-semibold">Zukunft.</span>
             </h2>
             <div className="mt-8 max-w-lesbar space-y-5 text-lg leading-relaxed text-graphite">
               <p>

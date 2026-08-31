@@ -482,7 +482,6 @@ export const projekte: Projekt[] = [
     thumbnail: '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-thumb.jpg',
     heroImage: '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-hero.jpg',
     galerie: [
-      '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-01.jpg',
       '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-02.jpg',
       '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-03.jpg',
       '/images/projekte/efh-huenenberg/atelier-aa-efh-huenenberg-04.jpg',
@@ -1183,7 +1182,10 @@ export const projekte: Projekt[] = [
     ],
     thumbnail: '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-thumb.jpg',
     heroImage: '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-hero.jpg',
-    galerie: ['/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-01.jpg'],
+    // 01.jpg war byteweise dieselbe Datei wie hero.jpg und erschien darum
+    // direkt darunter ein zweites Mal. Die Galerie bleibt leer; das Foto
+    // steht weiterhin als grosses Bild oben, darunter folgen die Pläne.
+    galerie: [],
     plaene: [
       { titel: 'Situation', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-01-situation.pdf' },
       { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-02-untergeschoss.pdf' },
