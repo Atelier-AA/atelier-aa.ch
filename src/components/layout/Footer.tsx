@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className={spaltenTitel}>Atelier</h2>
+            <h2 className={spaltenTitel}>Büro</h2>
             <ul>
               {footerAtelier.map((item) => (
                 <li key={item.href}>

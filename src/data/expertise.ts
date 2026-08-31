@@ -56,7 +56,7 @@ export const kompetenzen = [
       { text: 'Bewilligungsverfahren', sia: 'SIA-Teilphase 33' },
       { text: 'Ausführungsprojekt', sia: 'SIA-Teilphase 51' },
     ],
-    text: 'Wir führen Entwurf, Bewilligung und Ausführungsplanung so zusammen, dass alle Fachplaner auf denselben Stand hinarbeiten.',
+    text: 'Wir führen Entwurf, Bewilligung und Ausführungsplanung so zusammen, dass alle Fachplaner auf denselben Stand hinarbeiten — und prüfen die Kostenfolgen einer Entscheidung, solange sie noch offen ist.',
   },
   {
     titel: 'Realisierung',
@@ -121,7 +121,7 @@ export const expertiseFragen: InsightFrage[] = [
   {
     frage: 'Wie stellen Sie Kostensicherheit her?',
     antwort:
-      'Die Kostengenauigkeit vereinbaren wir projektspezifisch und verfeinern sie in Stufen: ein grober Kostenrahmen im Vorprojekt (SIA-Richtwert rund ±15 Prozent), eine genauere Kostenschätzung im Bauprojekt (rund ±10 Prozent) und ein verbindlicher Kostenvoranschlag nach der Vergabe. Während der Ausführung prüfen wir Nachträge einzeln auf Berechtigung.',
+      'Die Kostengenauigkeit vereinbaren wir projektspezifisch und verfeinern sie in Stufen: eine Kostenschätzung im Vorprojekt, für die SIA 102 ohne andere Vereinbarung rund ±15 Prozent vorsieht, den detaillierteren Kostenvoranschlag im Bauprojekt mit rund ±10 Prozent, und danach die Präzisierung anhand der eingegangenen Unternehmerofferten. Während der Ausführung prüfen wir Nachträge einzeln auf Berechtigung.',
   },
   {
     frage: 'Was unterscheidet Sie von anderen Architekturbüros?',

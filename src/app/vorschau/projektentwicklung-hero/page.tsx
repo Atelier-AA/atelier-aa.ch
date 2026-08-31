@@ -38,7 +38,7 @@ const schritte = [
   },
   {
     nummer: '06',
-    titel: 'Bewilligung erwirken',
+    titel: 'Bewilligungsverfahren begleiten',
     text: 'Wir begleiten das Baugesuch durch das Verfahren der zuständigen Gemeinde.',
   },
   {

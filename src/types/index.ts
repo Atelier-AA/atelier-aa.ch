@@ -56,6 +56,13 @@ export interface Projekt {
   galerie: string[];
   /** Downloadbare Pläne als PDF. Nur gesetzt, wenn Originalpläne vorliegen. */
   plaene?: ProjektPlan[];
+  /**
+   * Überschreibt den generierten Satz auf der Gemeindeseite ("In X haben wir
+   * … realisiert"). Nötig, wenn Anzahl oder Mandat nicht aus `typ` und `jahr`
+   * ableitbar sind — etwa bei einem reinen Bauleitungsmandat für mehrere
+   * Häuser. Beginnt sprachlich nach "In <Ort> (<Kanton>) haben wir ".
+   */
+  regionSatz?: string;
   featured: boolean;
   /**
    * Ersetzt ein Foto in `galerie` durch eine kurze, geprüft echte

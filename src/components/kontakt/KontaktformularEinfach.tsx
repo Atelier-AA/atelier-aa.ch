@@ -112,7 +112,7 @@ export default function KontaktformularEinfach() {
             <Link href="/datenschutzerklaerung" className="underline underline-offset-2 hover:text-ink">
               Datenschutzerklärung
             </Link>{' '}
-            gelesen und bin einverstanden.
+            zur Kenntnis genommen.
           </span>
         </label>
 

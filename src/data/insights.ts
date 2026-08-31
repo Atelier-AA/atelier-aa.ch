@@ -10,8 +10,8 @@ import type { Insight, InsightFrage } from '@/types';
 export const insights: Insight[] = [
   {
     slug: 'design-build-projektabwicklung',
-    titel: 'Design-Build: Warum wir neue Formen der Projektabwicklung weiterdenken',
-    lead: 'Gute Architektur entscheidet sich nicht nur im Entwurf, sondern auch darin, wie ein Projekt organisiert wird. Wir beschäftigen uns mit integrierten Abwicklungsmodellen wie Design-Build und wenden erste Prinzipien bereits in einem aktuellen Projekt an.',
+    titel: 'Design Build: Warum wir neue Formen der Projektabwicklung weiterdenken',
+    lead: 'Gute Architektur entscheidet sich nicht nur im Entwurf, sondern auch darin, wie ein Projekt organisiert wird. Wir beschäftigen uns mit integrierten Abwicklungsmodellen wie Design Build und wenden erste Prinzipien bereits in einem aktuellen Projekt an.',
     kategorie: 'Prozess',
     datum: '2026-08-20',
     lesezeit: 6,
@@ -25,17 +25,17 @@ export const insights: Insight[] = [
         ],
       },
       {
-        titel: 'Was Design-Build verändert',
+        titel: 'Was Design Build verändert',
         absaetze: [
-          'Design-Build ist ein Modell integrierter Projektabwicklung: Planung und Ausführung werden nicht strikt nacheinander, sondern von Beginn an gemeinsam gedacht. Fachwissen aus der Ausführung fliesst früher in Entscheidungen ein, technische und wirtschaftliche Konsequenzen werden früher sichtbar.',
+          'Design Build ist ein Modell integrierter Projektabwicklung: Planung und Ausführung werden nicht strikt nacheinander, sondern von Beginn an gemeinsam gedacht. Fachwissen aus der Ausführung fliesst früher in Entscheidungen ein, technische und wirtschaftliche Konsequenzen werden früher sichtbar.',
           'Das verändert, wo Verantwortung liegt und wie Schnittstellen zwischen Planung und Ausführung organisiert sind. Beides lässt sich reduzieren, wenn die Beteiligten früher am selben Tisch sitzen, ohne dass Gestaltung zur Nebensache wird.',
         ],
       },
       {
         titel: 'Was wir bereits tun',
         absaetze: [
-          'Atelier AA hat sich intensiv mit Design-Build und integrierter Projektabwicklung auseinandergesetzt und bereits ein aktuelles Projekt gestartet, in dem wir zentrale Prinzipien daraus anwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen früher zusammen und beziehen relevantes Fachwissen gezielter in den Prozess ein.',
-          'Das Projekt wird dadurch nicht vollständig nach Design-Build abgewickelt. Es ist ein Anfang, an dem wir prüfen, welche Prinzipien daraus ein Projekt tatsächlich besser machen, bevor wir daraus einen festen Ablauf für andere Projekte ableiten.',
+          'Atelier AA hat sich intensiv mit Design Build und integrierter Projektabwicklung auseinandergesetzt und bereits ein aktuelles Projekt gestartet, in dem wir zentrale Prinzipien daraus anwenden: Wir bringen Planung, Ausführung und wirtschaftliche Überlegungen früher zusammen und beziehen relevantes Fachwissen gezielter in den Prozess ein.',
+          'Das Projekt wird dadurch nicht vollständig nach Design Build abgewickelt. Es ist ein Anfang, an dem wir prüfen, welche Prinzipien daraus ein Projekt tatsächlich besser machen, bevor wir daraus einen festen Ablauf für andere Projekte ableiten.',
         ],
       },
       {
@@ -48,21 +48,21 @@ export const insights: Insight[] = [
       {
         titel: 'Kein neues Schema',
         absaetze: [
-          'Atelier AA arbeitet nicht nach starren Rezepten: Auch Design-Build verstehen wir nicht als neues Schema, das sich unverändert auf jedes Projekt übertragen lässt, sondern als Ansatz, den wir projektbezogen einsetzen und weiterdenken. Auch die Art, wie ein Projekt entsteht, ist für uns Teil der Architektur.',
+          'Atelier AA arbeitet nicht nach starren Rezepten: Auch Design Build verstehen wir nicht als neues Schema, das sich unverändert auf jedes Projekt übertragen lässt, sondern als Ansatz, den wir projektbezogen einsetzen und weiterdenken. Auch die Art, wie ein Projekt entsteht, ist für uns Teil der Architektur.',
           'Wir entwickeln damit nicht nur Architektur weiter, sondern auch die Prozesse, durch die sie möglich wird.',
         ],
       },
     ],
     fragen: [
       {
-        frage: 'Was ist Design-Build?',
+        frage: 'Was ist Design Build?',
         antwort:
           'Ein Modell integrierter Projektabwicklung, bei dem Planung und Ausführung von Beginn an gemeinsam gedacht werden, statt strikt nacheinander. Fachwissen aus der Ausführung fliesst dadurch früher in Entscheidungen ein.',
       },
       {
-        frage: 'Arbeitet Atelier AA bereits vollständig nach Design-Build?',
+        frage: 'Arbeitet Atelier AA bereits vollständig nach Design Build?',
         antwort:
-          'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an, das Projekt wird aber nicht vollständig nach Design-Build abgewickelt.',
+          'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an, das Projekt wird aber nicht vollständig nach Design Build abgewickelt.',
       },
       {
         frage: 'Was bedeutet integrierte Projektabwicklung konkret?',
@@ -70,7 +70,7 @@ export const insights: Insight[] = [
           'Planung, Ausführung und wirtschaftliche Überlegungen werden früher zusammengebracht, relevantes Fachwissen wird gezielter in den Prozess eingebunden, und unnötige Schnittstellen zwischen den Beteiligten werden reduziert.',
       },
       {
-        frage: 'Wird Atelier AA Design-Build künftig für alle Projekte anbieten?',
+        frage: 'Wird Atelier AA Design Build künftig für alle Projekte anbieten?',
         antwort:
           'Das entscheidet sich am einzelnen Projekt. Wir setzen Prinzipien der integrierten Projektabwicklung dort ein, wo sie ein Projekt tatsächlich besser machen, nicht als festes Schema für jede Aufgabe.',
       },
@@ -88,7 +88,7 @@ export const insights: Insight[] = [
       {
         titel: 'Die Reserve liegt im Bestand',
         absaetze: [
-          'Viele Einfamilienhaus-Parzellen in den Kantonen Zürich, Aargau und Zug stammen aus den Sechziger- und Siebzigerjahren. Sie nutzen ihre zulässige Ausnutzung häufig nur zur Hälfte aus. Wo damals ein Haus für vier Personen stand, wäre heute Wohnraum für drei Haushalte möglich.',
+          'Viele Einfamilienhaus-Parzellen in den Kantonen Zürich, Aargau und Zug stammen aus den Sechziger- und Siebzigerjahren. Nach heutiger Bau- und Zonenordnung liegen dort oft noch Nutzungsreserven. Wo damals ein Haus für vier Personen stand, kann heute Wohnraum für mehrere Haushalte möglich sein, je nach Parzelle.',
           'Das Raumplanungsgesetz verlangt seit der Revision Innenentwicklung vor Neueinzonung. Kantone und Gemeinden haben ihre Bau- und Nutzungsordnungen entsprechend angepasst: Vielerorts wurden Ausnutzungsziffern erhöht oder Attikageschosse zugelassen. Diese Reserven sind vielen Eigentümern nicht bewusst.',
         ],
       },
@@ -104,13 +104,13 @@ export const insights: Insight[] = [
         titel: 'Was die Machbarkeit entscheidet',
         absaetze: [
           'Vier Grössen bestimmen den Rahmen: Ausnutzungs- oder Baumassenziffer, Grenzabstände, Gebäudehöhe und Dachform. Alle vier stehen in der Bau- und Nutzungsordnung Ihrer Gemeinde. Dazu kommen Sonderregeln: Ortsbildschutz, Gewässerabstände, Lärmschutz an Verkehrsachsen.',
-          'Der zweite Faktor sind die Nachbarn. Eine Verdichtung, die Schatten wirft oder Einblick schafft, zieht Einsprachen an. Wir prüfen diese Wirkungen im Entwurf und suchen das Gespräch, bevor das Baugesuch eingereicht wird. Das kostet Wochen und spart Jahre.',
+          'Der zweite Faktor sind die Nachbarn. Eine Verdichtung, die Schatten wirft oder Einblick schafft, zieht Einsprachen an. Wir prüfen diese Wirkungen im Entwurf und suchen das Gespräch, bevor das Baugesuch eingereicht wird. So wird Konfliktpotenzial erkennbar, solange das Projekt noch anpassbar ist.',
         ],
       },
       {
         titel: 'Der wirtschaftliche Rahmen',
         absaetze: [
-          'Eine Aufstockung mit zwei zusätzlichen Wohnungen bewegt sich je nach Ausbaustandard und Konstruktion in einer Grössenordnung von rund einer bis eineinhalb Millionen Franken. Die entstehenden Mietzinse tragen diese Investition in den Kantonen Zürich und Zug in der Regel, im Aargau je nach Lage.',
+          'Eine Aufstockung mit zwei zusätzlichen Wohnungen bewegt sich je nach Ausbaustandard und Konstruktion in einer Grössenordnung von rund einer bis eineinhalb Millionen Franken; Preisstand 2026, grober Erfahrungswert. Ob die erzielbaren Mietzinse diese Investition tragen, hängt von Lage, Baukosten, Finanzierung und Wohnungsmix ab und rechnen wir für die konkrete Parzelle durch.',
           'Wir empfehlen, mit einer Machbarkeitsstudie zu beginnen: Volumenstudie, Prüfung der Bauordnung, Kostenrahmen, Ertragsrechnung. Der Aufwand liegt im vierstelligen Bereich und schafft die Grundlage für eine Entscheidung, die sechs- bis siebenstellig ist.',
         ],
       },
@@ -139,7 +139,7 @@ export const insights: Insight[] = [
       {
         frage: 'Brauchen wir für eine Aufstockung eine Baubewilligung?',
         antwort:
-          'Ja, immer. Zusätzliche Geschossfläche ist bewilligungspflichtig. Rechnen Sie mit drei bis neun Monaten Verfahrensdauer, abhängig von Gemeinde und Einsprachelage.',
+          'In der Regel ja: Zusätzliche Geschossfläche ist bewilligungspflichtig. Die konkreten Anforderungen richten sich nach dem kantonalen und kommunalen Baurecht. Für das Verfahren sind je nach Gemeinde, Fachstellen und Einsprachelage mehrere Monate einzuplanen.',
       },
     ],
   },
@@ -155,16 +155,17 @@ export const insights: Insight[] = [
       {
         titel: 'Der Ablauf in vier Schritten',
         absaetze: [
-          'Zuerst die Vorabklärung: Ein Gespräch mit der Bauverwaltung Ihrer Gemeinde, bevor Pläne gezeichnet sind. Es klärt, ob das Vorhaben grundsätzlich im Rahmen liegt und wo die Behörde empfindlich ist. Dieser Termin ist kostenlos und erspart Korrekturrunden.',
+          'Zuerst die Vorabklärung: Ein Gespräch mit der Bauverwaltung Ihrer Gemeinde, bevor Pläne gezeichnet sind. Es klärt, ob das Vorhaben grundsätzlich im Rahmen liegt und wo die Behörde empfindlich ist, und erspart Korrekturrunden. Umfang, Ablauf und allfällige Gebühren regelt jede Gemeinde selbst.',
           'Dann das Baugesuch selbst: Situationsplan, Grundrisse, Schnitte, Fassaden, Berechnung der Ausnutzung, Nachweise zu Energie, Lärm und Brandschutz, Baueingabeformular. Wir stellen das Dossier zusammen und reichen es ein.',
           'Nach der formellen Prüfung folgt die öffentliche Auflage, in der Nachbarn Einsprache erheben können. Die genaue Frist regelt jede Gemeinde beziehungsweise jeder Kanton für sich.',
-          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Mit Einsprachen folgt ein Aussprachetermin; scheitert er, entscheidet die Baubehörde, und der Weg an eine kantonale Beschwerdeinstanz steht offen. Für die rechtliche Vertretung in diesem Verfahren empfehlen wir eine Anwältin oder einen Anwalt: Wir kennen den Ablauf aus der Praxis, sind aber keine Rechtsvertretung.',
+          'Ohne Einsprachen erteilt die Gemeinde die Bewilligung, oft mit Auflagen. Bei einer Einsprache kann die Behörde zu einem Einigungsgespräch einladen, verpflichtet ist sie dazu nicht. Kommt keine Einigung zustande, entscheidet die Baubehörde, und der Weg an eine kantonale Beschwerdeinstanz steht offen. Für die rechtliche Vertretung in diesem Verfahren empfehlen wir eine Anwältin oder einen Anwalt: Wir kennen den Ablauf aus der Praxis, sind aber keine Rechtsvertretung.',
         ],
       },
       {
         titel: 'Wie lange es dauert',
         absaetze: [
-          'Ein unbestrittenes Einfamilienhaus wird in den drei Kantonen typischerweise in zwei bis vier Monaten bewilligt. Ein Mehrfamilienhaus braucht drei bis sechs Monate, weil mehr Fachstellen beteiligt sind.',
+          'Die folgenden Zeitangaben sind grobe Orientierungswerte aus unserer Projekterfahrung, keine Zusicherung: Die tatsächliche Dauer hängt von der Gemeinde, der Vollständigkeit des Gesuchs und der Einsprachelage ab.',
+          'Im Kanton Zürich sind die Entscheidfristen gesetzlich geregelt: In der Regel entscheidet die Behörde innert zwei Monaten seit der Vorprüfung, bei Neubauten und grösseren Umbauvorhaben innert vier Monaten. Die Frist läuft erst ab Abschluss der Vorprüfung, nicht ab Einreichung.',
           'Kommt eine Einsprache dazu, verlängert sich das um Monate. Geht der Fall an die kantonale Beschwerdeinstanz, sind ein bis zwei Jahre realistisch. Diese Bandbreite ist der Grund, warum wir Einsprachen vorbeugen, statt sie in Kauf zu nehmen.',
           'Bei Bauten in Ortsbildschutzzonen oder mit Bezug zu einem Inventarobjekt kommt die kantonale Denkmalpflege dazu: Planen Sie zwei bis drei Monate zusätzlich ein.',
         ],
@@ -174,13 +175,13 @@ export const insights: Insight[] = [
         absaetze: [
           'Die Ausnutzungsberechnung ist die häufigste Fehlerquelle. Was zur Bruttogeschossfläche zählt, ist kantonal unterschiedlich geregelt: Untergeschosse, Dachräume und Balkone werden verschieden behandelt. Ein Fehler hier führt zur Rückweisung.',
           'Der Lärmschutz nach Lärmschutz-Verordnung wird oft zu spät geprüft. An einer Verkehrsachse können Grundrisse angepasst werden müssen, damit Schlafräume auf der lärmabgewandten Seite liegen. Wer das erst nach dem Entwurf prüft, zeichnet zweimal.',
-          'Der dritte Punkt sind Parkplätze. Die geforderte Anzahl ergibt sich aus einer kommunalen Wegleitung und lässt sich nicht verhandeln. Eine Einstellhalle, die zu klein geplant ist, macht das ganze Projekt hinfällig.',
+          'Der dritte Punkt sind Parkplätze. Die geforderte Anzahl richtet sich nach den kantonalen und kommunalen Vorgaben. Je nach Standort, Erschliessung und Nutzung sind Reduktionen, Mobilitätskonzepte oder Ersatzabgaben möglich, das muss aber früh geklärt werden. Eine Einstellhalle, die zu klein geplant ist, macht das ganze Projekt hinfällig.',
         ],
       },
       {
         titel: 'Unterschiede zwischen den Kantonen',
         absaetze: [
-          'Der Kanton Zürich arbeitet mit der Baumassenziffer, der Aargau meist mit der Ausnutzungsziffer, der Kanton Zug kennt beide je nach Gemeinde. Die Zahlen sind nicht direkt vergleichbar. Wer aus einem Kanton Erfahrungswerte mitbringt, verschätzt sich.',
+          'Welche Nutzungsziffer massgebend ist, steht in der Bau- und Zonenordnung der jeweiligen Gemeinde: Baumassenziffer, Ausnutzungsziffer, Überbauungsziffer oder eine Kombination. Die Zahlen sind nicht direkt vergleichbar. Wer aus einer anderen Gemeinde Erfahrungswerte mitbringt, verschätzt sich.',
           'Auch die Verfahrensfristen und die Zuständigkeiten unterscheiden sich von Kanton zu Kanton. Wir kennen diese Unterschiede aus der Praxis in diesen Kantonen und richten das Dossier auf die jeweilige Behörde aus.',
         ],
       },
@@ -189,7 +190,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wie lange dauert eine Baubewilligung im Kanton Zürich?',
         antwort:
-          'Bei einem unbestrittenen Einfamilienhaus zwei bis vier Monate, bei einem Mehrfamilienhaus drei bis sechs. Mit Einsprachen verlängert sich das Verfahren um Monate, bei einem Gang ans Baurekursgericht auf ein bis zwei Jahre.',
+          'Im Kanton Zürich entscheidet die Behörde in der Regel innert zwei Monaten seit der Vorprüfung, bei Neubauten und grösseren Umbauten innert vier Monaten. Bis zur Vorprüfung vergeht zusätzlich Zeit, und mit Einsprachen verlängert sich das Verfahren um Monate, bei einem Gang ans Baurekursgericht auf ein bis zwei Jahre.',
       },
       {
         frage: 'Was kostet ein Baugesuch?',
@@ -204,7 +205,7 @@ export const insights: Insight[] = [
       {
         frage: 'Was passiert bei einer Einsprache?',
         antwort:
-          'Die Gemeinde lädt zu einem Aussprachetermin. Viele Einsprachen lassen sich dort mit einer Anpassung ausräumen. Kommt keine Einigung zustande, entscheidet die Baubehörde; dagegen steht der Weg an eine kantonale Beschwerdeinstanz offen.',
+          'Häufig lässt sich mit den Einsprechenden das Gespräch suchen, teils auf Einladung der Gemeinde. Viele Einsprachen lassen sich mit einer Anpassung ausräumen. Kommt keine Einigung zustande, entscheidet die Baubehörde; dagegen steht der Weg an eine kantonale Beschwerdeinstanz offen.',
       },
       {
         frage: 'Dürfen wir vor der Bewilligung mit dem Bauen beginnen?',
@@ -371,7 +372,7 @@ export const insights: Insight[] = [
       {
         titel: 'Der wirtschaftliche Teil',
         absaetze: [
-          'Kreislauffähigkeit ist kein Aufpreis für ein gutes Gewissen. Trennbare Konstruktionen senken Rückbaukosten, nutzungsoffene Grundrisse verlängern die Vermietbarkeit, und Bauteile aus dem Bestand ersparen Neubeschaffung.',
+          'Kreislauffähigkeit ist kein Aufpreis für ein gutes Gewissen. Trennbare Konstruktionen können späteren Rückbau und Wiederverwendung erleichtern, nutzungsoffene Grundrisse die Anpassungsfähigkeit erhöhen, und Bauteile aus dem Bestand ersparen Neubeschaffung.',
           'Wir rechnen das im Vorprojekt durch, statt es zu behaupten: Lebenszykluskosten neben Erstellungskosten, mit den Annahmen offengelegt. So ist entscheidbar, welche Massnahmen sich tragen und welche nicht.',
         ],
       },
@@ -385,7 +386,7 @@ export const insights: Insight[] = [
       {
         frage: 'Ist nachhaltiges Bauen teurer?',
         antwort:
-          'In der Erstellung teils, über den Lebenszyklus meist nicht. Entscheidend ist, früh zu planen: Wer Nachhaltigkeit ab dem Vorprojekt mitdenkt, zahlt deutlich weniger als wer sie später nachrüstet.',
+          'Einzelne Massnahmen erhöhen die Erstellungskosten, können aber Betriebs-, Energie- und späteren Umbaukosten senken. Entscheidend ist deshalb die Betrachtung über den Lebenszyklus, und dass früh geplant wird: Wer Nachhaltigkeit ab dem Vorprojekt mitdenkt, zahlt weniger als wer sie später nachrüstet.',
       },
       {
         frage: 'Können wir wiederverwendete Bauteile einsetzen?',
@@ -446,7 +447,7 @@ export const insights: Insight[] = [
       {
         frage: 'Was kostet die Planung?',
         antwort:
-          'Das Honorar richtet sich nach Umfang und Schwierigkeit, üblicherweise nach den SIA-Ordnungen als Prozentsatz der Baukosten oder nach Aufwand. Wir legen die Grundlage im Angebot offen und rechnen sie phasenweise ab, damit sie nachvollziehbar bleibt.',
+          'Das Honorar wird projektspezifisch anhand des vereinbarten Leistungsumfangs, der Komplexität und des Aufwands festgelegt. Die Ordnung SIA 102:2020 nennt dafür mehrere Modelle, unter anderem Pauschalhonorar, Honorar nach effektivem Zeitaufwand oder ein baukostenbezogenes Honorar; eine allgemeine Prozenttabelle gibt es darin nicht mehr. Wir legen die gewählte Grundlage im Angebot offen und rechnen phasenweise ab, damit sie nachvollziehbar bleibt.',
       },
       {
         frage: 'Können wir einzelne Phasen beauftragen?',
@@ -477,8 +478,8 @@ export const insights: Insight[] = [
       {
         titel: 'Der stärkste Anstieg seit Messbeginn',
         absaetze: [
-          'Im April 2022 stieg der Baupreisindex für den Hochbau gegenüber dem Vorjahr um 8,1 Prozent, der stärkste Anstieg innerhalb eines Jahres seit Beginn der Erhebung 1998. Die Materialkosten allein legten im Mai 2022 um 19,6 Prozent zu.',
-          'Am stärksten betroffen waren mineralische Baustoffe und Metalle: Stahl verteuerte sich 2021 um rund siebzig Prozent, Zement zwischen 2022 und 2023 um rund vierzig Prozent. Wer zu diesem Zeitpunkt einen Kostenvoranschlag aus dem Vorjahr in der Schublade hatte, stand vor einer unangenehmen Überraschung.',
+          'Im April 2022 stieg der Baupreisindex des Bundesamts für Statistik für den Hochbau gegenüber dem Vorjahr um 8,1 Prozent, der stärkste Anstieg innerhalb eines Jahres seit Beginn der Erhebung 1998. Die Materialkosten im Hochbau allein legten im Mai 2022 um 19,6 Prozent zu.',
+          'Am stärksten betroffen waren Metalle und mineralische Baustoffe: Stahl verteuerte sich nach Erhebungen des Schweizerischen Baumeisterverbands im Verlauf von 2021 um rund siebzig Prozent, Zement zwischen 2022 und 2023 um rund vierzig Prozent. Wer zu diesem Zeitpunkt einen Kostenvoranschlag aus dem Vorjahr in der Schublade hatte, stand vor einer unangenehmen Überraschung.',
         ],
       },
       {
@@ -492,7 +493,7 @@ export const insights: Insight[] = [
         titel: 'Was das für die Kostenschätzung heisst',
         absaetze: [
           'Der Preisschub 2022 hat vor allem eines gezeigt: Eine Kostenschätzung ist eine Momentaufnahme, kein fixer Vertrag. Zwischen Vorprojekt und Vergabe können, je nach Marktlage, mehrere Prozentpunkte liegen, bei einem Mehrfamilienhaus schnell ein sechsstelliger Betrag.',
-          'Wir arbeiten deshalb mit einem gestuften Vorgehen: Kostenrahmen im Vorprojekt, Kostenschätzung im Bauprojekt, Kostenvoranschlag erst nach der Vergabe: mit wachsender Genauigkeit von Stufe zu Stufe, statt einer einzigen, früh fixierten Zahl.',
+          'Wir arbeiten deshalb mit einem gestuften Vorgehen: Kostenschätzung im Vorprojekt, Kostenvoranschlag im Bauprojekt, danach die Präzisierung anhand der eingegangenen Unternehmerofferten. Die Genauigkeit wächst von Stufe zu Stufe, statt eine einzige, früh fixierte Zahl zu verteidigen.',
         ],
       },
     ],
@@ -510,7 +511,7 @@ export const insights: Insight[] = [
       {
         frage: 'Wie genau ist ein Kostenvoranschlag heute?',
         antwort:
-          'Nach der Vergabe der Unternehmerarbeiten liegt die Genauigkeit erfahrungsgemäss bei etwa plus/minus fünf Prozent. Nachträge aus effektivem Mehraufwand oder Planänderungen bleiben trotzdem möglich und werden einzeln geprüft.',
+          'Nach Ausschreibung und einem wesentlichen Teil der Vergaben lässt sich die Kostenprognose weiter präzisieren, weil die tatsächlichen Unternehmerofferten vorliegen. Wie genau, hängt vom Projektstand, den bereits vergebenen Arbeiten und den verbleibenden Risiken ab. Nachträge aus effektivem Mehraufwand oder Planänderungen bleiben möglich und werden einzeln geprüft.',
       },
     ],
   },
@@ -526,7 +527,7 @@ export const insights: Insight[] = [
       {
         titel: 'Von Randerscheinung zu Marktanteil',
         absaetze: [
-          'Holz hat 2024 einen Anteil von 8,4 Prozent am Neubau von Mehrfamilienhäusern in der Schweiz erreicht, unter Einbezug von Umbauten sogar 10,8 Prozent. Bei Gebäuden mit fünf oder mehr Geschossen ist die Zahl bewilligter Holzbauten zwischen 2014 und 2024 von rund 100 auf 215 gestiegen.',
+          'Nach den Marktzahlen von Holzbau Schweiz erreichte Holz 2024 bei Neubauten mit mindestens drei Wohneinheiten einen Anteil von 8,4 Prozent, unter Einbezug von Umbauten 10,8 Prozent. Bei Wohngebäuden mit tragender Holzkonstruktion und mindestens fünf Geschossen stieg die Zahl der Bewilligungen zwischen 2014 und 2024 von rund 100 auf 215, hat sich also mehr als verdoppelt.',
         ],
       },
       {
@@ -597,7 +598,7 @@ export const insights: Insight[] = [
       {
         frage: 'Ändert der Mantelerlass die Solarpflicht für mein Bauvorhaben?',
         antwort:
-          'Nicht direkt. Die Solarpflicht ab 300 Quadratmetern Gebäudefläche ist bereits im Energiegesetz verankert. Der Mantelerlass stärkt aber den generellen Ausbau erneuerbarer Energien, was künftige Verschärfungen wahrscheinlicher macht.',
+          'Nicht direkt. Die Solarpflicht bei mehr als 300 Quadratmetern anrechenbarer Gebäudefläche ist bereits im Energiegesetz verankert. Der Mantelerlass stärkt aber den generellen Ausbau erneuerbarer Energien, was künftige Verschärfungen wahrscheinlicher macht.',
       },
       {
         frage: 'Betrifft mich das Gesetz bei einem privaten Einfamilienhaus überhaupt?',
@@ -613,7 +614,7 @@ export const insights: Insight[] = [
   },
   {
     slug: 'bim-pflicht-planung',
-    titel: 'BIM wird Pflicht: Was die Digitalisierung für Planer und Bauherrschaften bedeutet',
+    titel: 'Wo BIM Pflicht wird: Was die Digitalisierung für Planer und Bauherrschaften bedeutet',
     lead: 'Seit 2021 muss der Bund bei eigenen Bauprojekten mit der BIM-Methode arbeiten, ab 2025 auch bei Infrastrukturanlagen. Was Building Information Modeling praktisch verändert.',
     kategorie: 'Digitalisierung',
     datum: '2025-08-19',
@@ -623,8 +624,8 @@ export const insights: Insight[] = [
       {
         titel: 'Vom Plan zum Modell',
         absaetze: [
-          'Mit dem Aktionsplan «Digitale Schweiz» müssen Bund und bundesnahe Betriebe seit 2021 bei eigenen Hochbauprojekten die BIM-Methode anwenden, ab 2025 gilt das auch für Infrastrukturanlagen. Building Information Modeling bedeutet: Statt getrennter 2D-Pläne entsteht ein digitales Gebäudemodell, das Geometrie, Bauteile und Eigenschaften in einem Datensatz vereint.',
-          'Der Bund erwartet dadurch Effizienzgewinne bei Projektzielen, Terminen und Kosten in einer Grössenordnung von fünf bis zehn Prozent, vor allem, weil Fehler und Widersprüche zwischen Fachplanern früher sichtbar werden als bei getrennten 2D-Plänen.',
+          'Bundesstellen und bundesnahe Unternehmen führen die BIM-Methode seit mehreren Jahren schrittweise ein, zunächst bei eigenen Hochbauprojekten ab einer bestimmten Projektgrösse, inzwischen auch bei Infrastrukturanlagen. Building Information Modeling bedeutet: Statt getrennter 2D-Pläne entsteht ein digitales Gebäudemodell, das Geometrie, Bauteile und Eigenschaften in einem Datensatz vereint.',
+          'Der erwartete Nutzen liegt darin, Planungswidersprüche früher sichtbar zu machen und Informationen konsistenter zu koordinieren: Fehler und Widersprüche zwischen Fachplanern zeigen sich am gemeinsamen Modell früher als bei getrennten 2D-Plänen.',
         ],
       },
       {
@@ -680,13 +681,13 @@ export const insights: Insight[] = [
         titel: 'Was das für die Planung heisst',
         absaetze: [
           'Für eine Einstellhalle bedeutet das: Leitungsführung und Kapazität des Hausanschlusses müssen schon im Vorprojekt für die spätere Vollausstattung mit Ladepunkten mitgedacht werden, auch wenn zunächst nur ein Teil der Parkplätze tatsächlich ausgerüstet wird. Nachträgliches Aufbrechen von Bodenplatten für vergessene Leitungen ist um ein Vielfaches teurer als eine vorausschauende Leerrohrplanung.',
-          'Auf Bundesebene wird zudem ein Rechtsanspruch auf Ladeinfrastruktur für Mietende und Stockwerkeigentümerschaften geprüft: Ein entsprechender Vorschlag soll voraussichtlich in der zweiten Jahreshälfte 2026 in die Vernehmlassung gehen.',
+          'Auf Bundesebene wird zudem ein Rechtsanspruch auf Ladeinfrastruktur für Mietende und Stockwerkeigentümerschaften geprüft: Eine entsprechende Änderung des Energiegesetzes befindet sich 2026 in der Vernehmlassung. Bis dahin gilt, was Kanton und Gemeinde vorschreiben.',
         ],
       },
       {
         titel: 'Unsere Praxis',
         absaetze: [
-          'Wir sehen bei Einstellhallen grundsätzlich eine vollständige Leerrohrvorbereitung vor, unabhängig davon, ob der jeweilige Kanton das explizit verlangt: Der Mehraufwand in der Bauphase ist gering, die spätere Nachrüstung ohne Aufwand dagegen ein klarer Vorteil für die Vermietbarkeit.',
+          'Wir sehen bei Einstellhallen grundsätzlich eine vollständige Leerrohrvorbereitung vor, unabhängig davon, ob der jeweilige Kanton das explizit verlangt: Eine vorausschauende Vorbereitung im Neubau ist in der Regel deutlich einfacher als eine spätere Nachrüstung, und eine nachrüstbare Einstellhalle ist ein Vorteil für die Vermietbarkeit.',
           'Bei der Wahl der Lastmanagement-Lösung stimmen wir uns früh mit dem Elektroplaner ab, damit die Hausanschlussleistung nicht zum Engpass wird, wenn später mehrere Ladepunkte gleichzeitig genutzt werden.',
         ],
       },
@@ -728,7 +729,7 @@ export const insights: Insight[] = [
       {
         titel: 'Warum das Thema drängender wird',
         absaetze: [
-          'Mit häufigeren und längeren Hitzewellen reicht eine Fassade, die nur den winterlichen Wärmeschutz optimiert, nicht mehr aus. Grossflächige Verglasungen ohne wirksame Verschattung können ein Gebäude im Sommer stärker aufheizen, als es im Winter Energie spart, mit der Folge, dass nachträglich eine Kühlung eingebaut werden muss, die weder geplant noch budgetiert war.',
+          'Mit häufigeren und längeren Hitzewellen reicht eine Fassade, die nur den winterlichen Wärmeschutz optimiert, nicht mehr aus. Grossflächige Verglasungen können ohne wirksamen Sonnenschutz zu erheblichen sommerlichen Wärmeeinträgen führen, mit der Folge, dass nachträglich eine Kühlung eingebaut werden muss, die weder geplant noch budgetiert war.',
           'Wir prüfen den sommerlichen Wärmeschutz deshalb bereits im Entwurf, nicht erst als Nachweis kurz vor der Baueingabe, denn zu diesem Zeitpunkt lassen sich Fensteranteil, Verschattung und Speichermasse noch ohne Mehrkosten anpassen.',
         ],
       },
@@ -777,7 +778,7 @@ export const insights: Insight[] = [
       {
         titel: 'Eine strukturelle Lücke',
         absaetze: [
-          'Zwischen 2015 und 2019 entstanden im Schnitt gut 51\'000 Wohnungen pro Jahr, zwischen 2020 und 2024 waren es weniger als 46\'000. Gleichzeitig kamen im selben Zeitraum jährlich rund 50\'350 neue Haushalte hinzu, unter anderem, weil Haushalte im Schnitt kleiner werden. Rechnerisch ergibt das eine Lücke von rund 23\'000 Wohnungen pro Jahr.',
+          'Zwischen 2015 und 2019 entstanden im Schnitt gut 51\'000 Wohnungen pro Jahr, zwischen 2020 und 2024 waren es weniger als 46\'000. Gleichzeitig kamen im selben Zeitraum jährlich rund 50\'350 neue Haushalte hinzu, unter anderem, weil Haushalte im Schnitt kleiner werden. Rechnerisch fehlten damit jährlich gut 4000 Wohnungen, über die fünf Jahre rund 22\'000.',
           'Diese Lücke lässt sich nicht allein mit klassischem Neubau auf der grünen Wiese schliessen, denn dafür fehlt in den gefragten Lagen schlicht das unbebaute Land.',
         ],
       },
@@ -798,7 +799,7 @@ export const insights: Insight[] = [
       {
         frage: 'Lohnt sich eine Investition in Wohnbau angesichts der tiefen Leerstandsquote noch mehr als früher?',
         antwort:
-          'In den meisten Lagen mit tiefer Leerwohnungsziffer ja, das Vermietungsrisiko ist entsprechend gering. Wir prüfen die lokale Situation trotzdem projektspezifisch, da sich einzelne Gemeinden auch innerhalb eines Kantons deutlich unterscheiden können.',
+          'Eine tiefe Leerwohnungsziffer kann das Vermietungsrisiko senken. Ob sich ein Wohnbau wirtschaftlich trägt, hängt aber zusätzlich von Grundstück, Baukosten, Finanzierung, erzielbaren Mietzinsen und Projektstruktur ab. Wir prüfen das projektspezifisch, auch weil sich einzelne Gemeinden innerhalb eines Kantons deutlich unterscheiden können.',
       },
       {
         frage: 'Warum wird trotz Wohnungsknappheit nicht einfach mehr gebaut?',
@@ -809,8 +810,8 @@ export const insights: Insight[] = [
   },
   {
     slug: 'solarpflicht-kantone',
-    titel: 'Solarpflicht in den Kantonen: Was ab 2026 für Neubauten gilt',
-    lead: 'Der Bund verlangt eine Solarpflicht ab 300 Quadratmetern Gebäudefläche, die Kantone setzen sie aber sehr unterschiedlich um. Ein Überblick vor der nächsten Verschärfung.',
+    titel: 'Solarpflicht in den Kantonen: Was 2026 für Neubauten gilt',
+    lead: 'Der Bund verlangt eine Solarpflicht bei mehr als 300 Quadratmetern anrechenbarer Gebäudefläche, die Kantone setzen sie aber sehr unterschiedlich um. Ein Überblick vor der nächsten Verschärfung.',
     kategorie: 'Nachhaltigkeit',
     datum: '2025-12-10',
     lesezeit: 6,
@@ -819,14 +820,14 @@ export const insights: Insight[] = [
       {
         titel: 'Eine Pflicht, viele Umsetzungen',
         absaetze: [
-          'Auf Bundesebene gilt seit einigen Jahren eine Solarpflicht für Neubauten ab 300 Quadratmetern Gebäudefläche, verankert in Artikel 45a des Energiegesetzes. Ob Photovoltaik oder Solarthermie zum Einsatz kommt, schreibt der Bund nicht vor, beides ist zulässig.',
+          'Auf Bundesebene gilt seit dem 1. Januar 2023 eine Solarpflicht für Neubauten mit mehr als 300 Quadratmetern anrechenbarer Gebäudefläche, verankert in Artikel 45a des Energiegesetzes. Ob Photovoltaik oder Solarthermie zum Einsatz kommt, schreibt der Bund nicht vor, beides ist zulässig.',
           'Die konkrete Umsetzung und mögliche Ausnahmen liegen bei den Kantonen, die dabei deutlich unterschiedlich streng sind. Luzern verlangt bei Neubauten eine Solaranlage auf mindestens fünfzig Prozent der Dachfläche, bei Dachsanierungen auf mindestens fünfundzwanzig Prozent.',
         ],
       },
       {
         titel: 'Bern als jüngstes Beispiel',
         absaetze: [
-          'Im Kanton Bern gelten ab dem 1. Januar 2026 neue, strengere Vorschriften: Neubauten müssen mit Anlagen zur Solarenergienutzung im Umfang von mindestens zehn Prozent der anrechenbaren Gebäudefläche ausgestattet werden, gut geeignete Dachflächen sind zu mindestens sechzig Prozent der Brutto-Dachfläche zu nutzen.',
+          'Im Kanton Bern gelten ab dem 1. Januar 2026 neue, strengere Vorschriften: Neubauten müssen mit Anlagen zur Solarenergienutzung im Umfang von mindestens zehn Prozent der anrechenbaren Gebäudefläche ausgestattet werden, gut geeignete Dachflächen sind zu mindestens sechzig Prozent der Bruttodachfläche zu nutzen.',
           'Diese Verschärfung reiht sich in einen klaren Trend ein: Kantone, die ihre Energievorschriften revidieren, tendieren fast durchgehend zu strengeren, nicht zu lockereren Solaranforderungen.',
         ],
       },
@@ -842,7 +843,7 @@ export const insights: Insight[] = [
       {
         frage: 'Gilt die Solarpflicht auch für ein normales Einfamilienhaus?',
         antwort:
-          'Die Bundespflicht setzt erst ab 300 Quadratmetern Gebäudefläche an, was viele Einfamilienhäuser unterschreiten. Einzelne Kantone kennen jedoch strengere, auch kleinere Bauten betreffende Regeln. Wir prüfen das für Ihr Grundstück im Vorprojekt.',
+          'Die Bundespflicht greift erst über 300 Quadratmetern anrechenbarer Gebäudefläche, was viele Einfamilienhäuser unterschreiten. Einzelne Kantone kennen jedoch strengere, auch kleinere Bauten betreffende Regeln. Wir prüfen das für Ihr Grundstück im Vorprojekt.',
       },
       {
         frage: 'Muss ich Photovoltaik oder darf ich auch Solarthermie installieren?',

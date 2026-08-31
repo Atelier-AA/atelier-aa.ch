@@ -114,11 +114,13 @@ export default function DatenschutzPage() {
                 abgeschlossen.
               </p>
               <p className="mt-4">
-                Findet dabei eine Übermittlung ins Ausland statt, erfolgt diese auf
-                Grundlage der Standardvertragsklauseln beziehungsweise eines vom
-                Bundesrat anerkannten angemessenen Datenschutzniveaus. Auskunft über den
-                eingesetzten Anbieter und den Serverstandort erhalten Sie jederzeit auf
-                Anfrage.
+                Die Website wird auf der Infrastruktur von Vercel Inc., 340 S Lemon Ave
+                #4133, Walnut, CA 91789, USA betrieben. Die Auslieferung erfolgt über
+                Server in Europa; technisch bedingt kann es zu einer Übermittlung in die
+                USA kommen. Wir stützen diese Übermittlung auf die
+                Standardvertragsklauseln der EU-Kommission beziehungsweise auf das
+                Swiss-U.S. Data Privacy Framework, soweit der Anbieter darunter
+                zertifiziert ist.
               </p>
             </section>
 
@@ -135,9 +137,10 @@ export default function DatenschutzPage() {
               <p className="mt-4">
                 Die Bekanntgabe dieser Daten ist freiwillig. Ohne sie können wir Ihre
                 Anfrage jedoch nicht bearbeiten. Wir bewahren Anfragen so lange auf, wie
-                es für die Bearbeitung und zur Erfüllung gesetzlicher
-                Aufbewahrungspflichten erforderlich ist; Geschäftsunterlagen unterliegen
-                einer Aufbewahrungsfrist von zehn Jahren.
+                es für die Bearbeitung erforderlich ist. Entsteht daraus ein
+                Geschäftsverhältnis, gelten für die daraus hervorgehenden
+                Geschäftsbücher und Buchungsbelege die gesetzlichen
+                Aufbewahrungsfristen, insbesondere zehn Jahre nach Artikel 958f OR.
               </p>
             </section>
 
@@ -205,23 +208,28 @@ export default function DatenschutzPage() {
               </p>
               <p className="mt-4">
                 Die Daten können dabei an Server von Google in die USA übermittelt
-                werden. Google hat sich dem EU-U.S. Data Privacy Framework unterstellt;
-                ergänzend stützen wir die Übermittlung auf die Standardvertragsklauseln
-                der EU-Kommission. Die Daten werden nach 14 Monaten automatisch gelöscht.
-                Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO,
-                Art. 31 Abs. 2 lit. a DSG).
+                werden. Google hat sich dem EU-U.S. und dem Swiss-U.S. Data Privacy
+                Framework unterstellt; für Übermittlungen aus der Schweiz ist das
+                Swiss-U.S. Data Privacy Framework maßgeblich. Ergänzend stützen wir die
+                Übermittlung auf die Standardvertragsklauseln der EU-Kommission. Die
+                Daten werden nach 14 Monaten automatisch gelöscht. Die Bearbeitung
+                erfolgt aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; im
+                Schweizer Recht Einwilligung nach Art. 31 Abs. 1 DSG).
               </p>
               <p className="mt-4 font-medium text-ink">Marketing: Werbepixel</p>
               <p className="mt-2">
-                Bei erteilter Einwilligung setzen wir einen Werbepixel (z. B. Meta Pixel
-                von Meta Platforms Ireland Limited) ein, um die Wirksamkeit unserer
+                Bei erteilter Einwilligung setzen wir den Meta-Pixel von Meta Platforms
+                Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland ein, um die
+                Wirksamkeit unserer
                 Online-Werbung zu messen und Ihnen auf anderen Plattformen für Sie
                 relevantere Inhalte zu unserem Angebot zu zeigen. Dabei werden Angaben zu
                 Ihrem Besuch unserer Website an den jeweiligen Anbieter übermittelt und
                 können dort mit Ihrem dortigen Konto verknüpft werden. Es kann zu einer
-                Übermittlung in die USA kommen; die Anbieter stützen sich dafür auf die
-                Standardvertragsklauseln der EU-Kommission. Rechtsgrundlage ist Ihre
-                Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, Art. 31 Abs. 2 lit. a DSG).
+                Übermittlung in die USA kommen; Meta stützt sich dafür auf die
+                Standardvertragsklauseln der EU-Kommission und auf das EU-U.S.
+                beziehungsweise Swiss-U.S. Data Privacy Framework. Die Bearbeitung
+                erfolgt aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; im
+                Schweizer Recht Einwilligung nach Art. 31 Abs. 1 DSG).
               </p>
               <p className="mt-4">
                 Google Analytics und der Werbepixel laden technisch erst, nachdem Sie der

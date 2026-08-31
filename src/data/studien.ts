@@ -428,11 +428,11 @@ export const studien: Studie[] = [
       ['Zone', 'W2L (locker)'],
       ['Ausnützungsziffer', '0.25'],
       ['Vollgeschosse', 'max. 2'],
-      ['Gebäudetyp', '3 Doppel-Einfamilienhäuser'],
+      ['Gebäudetyp', '3 Doppeleinfamilienhäuser'],
       ['Total Wohnfläche', '509 m²'],
     ]),
     analyse:
-      'Die locker überbaute Zone W2L in Bergdietikon erlaubt mit einer Ausnützungsziffer von nur 0.25 keine Verdichtung im eigentlichen Sinn. Auf den 2\'035 m² liess sich das Grundstück aber sinnvoll in drei Doppel-Einfamilienhäuser mit total rund 509 m² Wohnfläche aufteilen.',
+      'Die locker überbaute Zone W2L in Bergdietikon erlaubt mit einer Ausnützungsziffer von nur 0.25 keine Verdichtung im eigentlichen Sinn. Auf den 2\'035 m² liess sich das Grundstück aber sinnvoll in drei Doppeleinfamilienhäuser mit total rund 509 m² Wohnfläche aufteilen.',
     luftbild: null,
     katasterplan: '/images/studien/bergdietikon/atelier-aa-bergdietikon-katasterplan.jpg',
     projektbild: null,

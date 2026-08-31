@@ -7,7 +7,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Integrierte Projektabwicklung',
   description:
-    'Design-Build bei Atelier AA Architekten: Planung und Ausführung früher zusammengedacht, angewendet in einem laufenden Projekt.',
+    'Design Build bei Atelier AA Architekten: Planung und Ausführung früher zusammengedacht, angewendet in einem laufenden Projekt.',
   alternates: { canonical: '/leistungen/integrierte-projektabwicklung' },
 };
 
@@ -70,13 +70,13 @@ export default function IntegrierteProjektabwicklungPage() {
         >
           ← Leistungen
         </Link>
-        <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
+        <p className="mb-4 text-xs uppercase tracking-widest text-stone">Design Build</p>
         <h1 className="max-w-2xl text-h2 font-normal leading-[1.1] tracking-tight text-ink md:text-h1">
           Integrierte Projektabwicklung
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-graphite">
           Wir haben uns intensiv mit integrierten Projektabwicklungsmodellen wie
-          Design-Build auseinandergesetzt und wenden in einem aktuellen Projekt bereits
+          Design Build auseinandergesetzt und wenden in einem aktuellen Projekt bereits
           zentrale Prinzipien daraus an, nicht als starres Schema, sondern
           projektbezogen, dort wo es ein Projekt tatsächlich besser macht.
         </p>

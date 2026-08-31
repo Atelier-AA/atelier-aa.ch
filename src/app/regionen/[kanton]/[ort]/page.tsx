@@ -21,6 +21,31 @@ interface PageProps {
  * Singular-Artikel vor einem Plural ("ein Reiheneinfamilienhäuser").
  * Plural-Typen bekommen gar keinen Artikel.
  */
+/**
+ * Aus dem `jahr`-Feld einen grammatikalisch und sachlich richtigen Satzteil
+ * bilden. Das Feld enthält entweder eine Jahreszahl oder einen Status
+ * ("im Bau", "baubewilligt", "nicht realisiert"). Vorher wurden nur zwei
+ * Statuswerte abgefangen, alle anderen landeten in `realisiert (…)` — die
+ * Gemeindeseite behauptete dadurch "realisiert (nicht realisiert)" und
+ * "realisiert (baubewilligt)".
+ */
+function statusSatz(jahr: string): string {
+  if (/^\d{4}$/.test(jahr)) return `realisiert (${jahr})`;
+  switch (jahr) {
+    case 'im Bau':
+    case 'in Realisierung':
+      return 'geplant, das Projekt ist im Bau';
+    case 'baubewilligt':
+      return 'geplant, das Projekt ist baubewilligt';
+    case 'in Planung':
+      return 'projektiert';
+    case 'nicht realisiert':
+      return 'projektiert, gebaut wurde es nicht';
+    default:
+      return `projektiert (${jahr})`;
+  }
+}
+
 function mitArtikel(typ: string): string {
   const artikel: Record<string, string> = {
     Doppeleinfamilienhaus: 'ein',
@@ -117,11 +142,9 @@ export default async function OrtPage({ params }: PageProps) {
                 </>
               ) : (
                 <>
-                  In {ort.ort} ({kanton.name}) haben wir {mitArtikel(ort.projekte[0].typ)}{' '}
-                  {ort.projekte[0].jahr === 'in Realisierung' ||
-                  ort.projekte[0].jahr === 'in Planung'
-                    ? 'projektiert'
-                    : `realisiert (${ort.projekte[0].jahr})`}
+                  In {ort.ort} ({kanton.name}) haben wir{' '}
+                  {ort.projekte[0].regionSatz ??
+                    `${mitArtikel(ort.projekte[0].typ)} ${statusSatz(ort.projekte[0].jahr)}`}
                   .
                 </>
               )

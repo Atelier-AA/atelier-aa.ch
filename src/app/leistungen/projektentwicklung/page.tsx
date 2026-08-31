@@ -35,7 +35,7 @@ const schritte = [
   {
     nummer: '04',
     titel: 'Wirtschaftlichkeit prüfen',
-    text: 'Erstellungskosten, Mietzinsniveau und Wohnungsmix rechnen wir gegeneinander, nicht erst am Ende.',
+    text: 'Erstellungskosten, Mietzinsniveau und Wohnungsmix rechnen wir gegeneinander, nicht erst am Ende — zusammen mit der Frage, wie lange sich die Flächen so vermieten lassen.',
   },
   {
     nummer: '05',
@@ -44,7 +44,7 @@ const schritte = [
   },
   {
     nummer: '06',
-    titel: 'Bewilligung erwirken',
+    titel: 'Bewilligungsverfahren begleiten',
     text: 'Wir begleiten das Baugesuch durch das Verfahren der zuständigen Gemeinde.',
   },
   {

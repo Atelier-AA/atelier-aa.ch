@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieBanner from '@/components/cookies/CookieBanner';
+import NurOeffentlich from '@/components/layout/NurOeffentlich';
 import GoogleAnalytics from '@/components/cookies/GoogleAnalytics';
 import MarketingPixel from '@/components/cookies/MarketingPixel';
 import { firma } from '@/data/firma';
@@ -100,14 +101,22 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema(firma, team)) }}
         />
-        <Header />
+        <NurOeffentlich>
+          <Header />
+        </NurOeffentlich>
         <main id="main" className="flex-1">
           {children}
         </main>
-        <Footer />
-        <GoogleAnalytics />
-        <MarketingPixel />
-        <CookieBanner />
+        <NurOeffentlich>
+          <Footer />
+        </NurOeffentlich>
+        <NurOeffentlich>
+          <GoogleAnalytics />
+          <MarketingPixel />
+        </NurOeffentlich>
+        <NurOeffentlich>
+          <CookieBanner />
+        </NurOeffentlich>
       </body>
     </html>
   );

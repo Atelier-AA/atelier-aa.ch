@@ -134,7 +134,7 @@ export default function LeistungenPage() {
                 Punkte-Liste — signalisiert damit, dass es keine der fünf
                 gleichrangigen Kernleistungen ist, sondern eine
                 Weiterentwicklung der Arbeitsweise, verlinkt auf eine eigene
-                Seite statt hier ausgebreitet zu werden. "Design-Build" steht
+                Seite statt hier ausgebreitet zu werden. "Design Build" steht
                 als Titel statt der früheren Zeile "Weiterentwicklung": Der
                 Begriff ist das, wonach gesucht wird. */}
             <Link
@@ -143,7 +143,7 @@ export default function LeistungenPage() {
             >
               <div>
                 <h2 className="text-h3 font-semibold text-ink">
-                  Design-Build
+                  Design Build
                 </h2>
                 <p className="mt-1 text-karte text-stone">Integrierte Projektabwicklung</p>
                 <p className="mt-5 text-karte leading-relaxed text-graphite">

@@ -26,7 +26,8 @@ export const navigation: NavLink[] = [
 ];
 
 // Footer, zwei inhaltlich getrennte Gruppen statt einer langen Linkliste —
-// "Atelier" (das Büro) und "Arbeit" (was wir tun).
+// "Büro" und "Arbeit" (was wir tun). Die Spalte hiess bis zum Launch-Cleanup
+// "Atelier"; verbindlich ist jetzt websiteweit "Büro".
 export const footerAtelier: NavLink[] = [
   { href: '/ueber-uns', label: 'Büro' },
   { href: '/ueber-uns/team', label: 'Team' },

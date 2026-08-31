@@ -49,9 +49,17 @@ const VARIANTEN = {
     href: '/haeufige-fragen',
     label: 'Häufige Fragen ansehen',
   },
-  /** Nach Design-Build: Der Beitrag im Journal geht deutlich tiefer. */
+  /** Auf einer einzelnen Projektseite: Der Besucher hat ein konkretes
+   *  Projekt in allen Details gesehen und vergleicht es mit dem eigenen. */
+  projektDetail: {
+    titel: ['Planen Sie ein', 'ähnliches Projekt?'],
+    text: 'Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück möglich ist, mit Volumenstudie und Kostenrahmen.',
+    href: '/kontakt',
+    label: 'Kontaktieren Sie uns',
+  },
+  /** Nach Design Build: Der Beitrag im Journal geht deutlich tiefer. */
   designBuild: {
-    titel: ['Design-Build in der', 'Praxis.'],
+    titel: ['Design Build in der', 'Praxis.'],
     text: 'Welche Prinzipien wir in einem laufenden Projekt bereits anwenden und wo die Grenzen liegen, beschreiben wir ausführlich im Journal.',
     href: '/insights/design-build-projektabwicklung',
     label: 'Beitrag lesen',

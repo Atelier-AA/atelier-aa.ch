@@ -8,14 +8,18 @@ import type { MetadataRoute } from 'next';
  * Googlebot auswertet. Ohne diese Freigabe können Antworten in Gemini die Seite
  * nicht als Quelle nutzen.
  */
+const GESPERRT = ['/vorschau/', '/mailer', '/api/mailer'];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // /vorschau/* sind interne Entwurfsseiten, nirgends verlinkt, aber ohne
-      // diese Regel technisch crawlbar.
-      { userAgent: '*', allow: '/', disallow: '/vorschau/' },
-      { userAgent: 'Googlebot', allow: '/', disallow: '/vorschau/' },
-      { userAgent: 'Google-Extended', allow: '/', disallow: '/vorschau/' },
+      // /vorschau/* sind interne Entwurfsseiten, /mailer und /api/mailer der
+      // interne Mailing-Bereich: nirgends verlinkt, aber ohne diese Regel
+      // technisch crawlbar. Der Zugriffsschutz liegt nicht hier, sondern im
+      // Anmeldelink — robots.txt hält nur die Suchmaschinen fern.
+      { userAgent: '*', allow: '/', disallow: GESPERRT },
+      { userAgent: 'Googlebot', allow: '/', disallow: GESPERRT },
+      { userAgent: 'Google-Extended', allow: '/', disallow: GESPERRT },
     ],
     sitemap: 'https://www.atelier-aa.ch/sitemap.xml',
     host: 'https://www.atelier-aa.ch',

@@ -87,10 +87,15 @@ export default function ImpressumPage() {
                 Aufsicht und Berufsausübung
               </h2>
               <p>
-                Die Berufsbezeichnung «Architekt» ist in der Schweiz kantonal geregelt.
-                Wir erbringen unsere Leistungen nach den Ordnungen des Schweizerischen
-                Ingenieur- und Architektenvereins (SIA), insbesondere SIA 102 für
-                Leistungen und Honorare der Architektinnen und Architekten.
+                Die Berufsausübung als Architektin oder Architekt ist in der Schweiz auf
+                Bundesebene nicht reglementiert. Einzelne Kantone stellen besondere
+                Anforderungen an die Berufsausübung beziehungsweise an die Unterzeichnung
+                von Baugesuchen.
+              </p>
+              <p className="mt-4">
+                Unsere Leistungsbilder orientieren sich an der Ordnung SIA 102:2020 für
+                Leistungen und Honorare der Architektinnen und Architekten. Der konkrete
+                Leistungsumfang und die Vergütung werden projektspezifisch vereinbart.
               </p>
             </section>
 

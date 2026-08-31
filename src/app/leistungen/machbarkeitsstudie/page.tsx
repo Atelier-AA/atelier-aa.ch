@@ -24,6 +24,8 @@ const enthalten = [
   'Mögliche Wohn-/Nutzfläche',
   'Ein bis drei bauliche Varianten',
   'Grober Kostenrahmen je Variante',
+  'Verhältnis von Nutz- und Erschliessungsfläche',
+  'Beurteilung des Bestands, wo vorhanden',
   'Einschätzung zu Bewilligungsrisiken',
 ];
 
@@ -46,7 +48,7 @@ const schritte = [
   {
     nummer: '04',
     titel: 'Entscheidungsgrundlage übergeben',
-    text: 'Sie erhalten einen kompakten Bericht mit Plänen, Kennzahlen und unserer Einschätzung: die Grundlage für den nächsten Schritt.',
+    text: 'Sie erhalten einen kompakten Bericht mit Plänen, Kennzahlen und unserer Einschätzung: weiterplanen, die Variante ändern oder das Vorhaben nicht weiterverfolgen.',
   },
 ];
 
@@ -118,8 +120,13 @@ export default function MachbarkeitsstudiePage() {
         </div>
 
         <div className="mt-14 border-t border-mist pt-11 md:mt-20">
-          <p className="mb-8 text-xs uppercase tracking-widest text-stone">
+          <p className="mb-3 text-xs uppercase tracking-widest text-stone">
             Was die Studie enthält
+          </p>
+          <p className="mb-8 max-w-lesbar leading-relaxed text-graphite">
+            Nicht nur, wie viel auf dem Grundstück gebaut werden darf, sondern welche der
+            möglichen Varianten sich baurechtlich, wirtschaftlich und architektonisch
+            trägt.
           </p>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {enthalten.map((e) => (

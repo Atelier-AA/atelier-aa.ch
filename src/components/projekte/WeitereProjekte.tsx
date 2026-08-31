@@ -17,7 +17,7 @@ export default function WeitereProjekte({ projekte }: WeitereProjekteProps) {
   if (projekte.length === 0) return null;
 
   return (
-    <section className="py-20 md:py-28 border-t border-mist mt-20">
+    <section className="py-20 md:py-28 border-t border-mist">
       <Container>
         <h2 className="text-xs uppercase tracking-widest text-stone mb-12">
           Weitere Projekte

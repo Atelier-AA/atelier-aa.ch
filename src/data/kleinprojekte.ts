@@ -8,7 +8,7 @@ import type { Kleinprojekt } from '@/types';
  */
 export const kleinprojekte: Kleinprojekt[] = [
   {
-    slug: 'efh-bunjaku',
+    slug: 'efh-fahrweidstrasse-weiningen',
     ort: 'Fahrweid-Weiningen',
     kanton: 'ZH',
     strasse: 'Fahrweidstrasse',
@@ -16,7 +16,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2020',
     leistungen: ['Umbau- und Erweiterungsplanung', 'Baueingabe'],
-    bilder: ['/images/kleinprojekte/efh-bunjaku/atelier-aa-efh-bunjaku-bild1.jpg', '/images/kleinprojekte/efh-bunjaku/atelier-aa-efh-bunjaku-bild2.jpg'],
+    bilder: ['/images/kleinprojekte/efh-fahrweidstrasse-weiningen/atelier-aa-efh-fahrweidstrasse-weiningen-bild1.jpg', '/images/kleinprojekte/efh-fahrweidstrasse-weiningen/atelier-aa-efh-fahrweidstrasse-weiningen-bild2.jpg'],
   },
   {
     slug: 'umbau-buerogebaeude-obfelden',
@@ -48,7 +48,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     ],
   },
   {
-    slug: 'efh-alimi-othmarsingen',
+    slug: 'efh-waldrueti-othmarsingen',
     ort: 'Othmarsingen',
     kanton: 'AG',
     strasse: 'Waldrüti',
@@ -57,12 +57,12 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
-      '/images/kleinprojekte/efh-alimi-othmarsingen/atelier-aa-efh-alimi-othmarsingen-bild1.jpg',
-      '/images/kleinprojekte/efh-alimi-othmarsingen/atelier-aa-efh-alimi-othmarsingen-bild2.jpg',
+      '/images/kleinprojekte/efh-waldrueti-othmarsingen/atelier-aa-efh-waldrueti-othmarsingen-bild1.jpg',
+      '/images/kleinprojekte/efh-waldrueti-othmarsingen/atelier-aa-efh-waldrueti-othmarsingen-bild2.jpg',
     ],
   },
   {
-    slug: 'pool-hug-florin',
+    slug: 'pool-zug',
     ort: 'Zug',
     kanton: 'ZG',
     strasse: null,
@@ -70,10 +70,10 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Ausführungsplanung'],
-    bilder: ['/images/kleinprojekte/pool-hug-florin/atelier-aa-pool-hug-florin-bild1.jpg'],
+    bilder: ['/images/kleinprojekte/pool-zug/atelier-aa-pool-zug-bild1.jpg'],
   },
   {
-    slug: 'efh-epstein-obfelden',
+    slug: 'efh-fabrikstrasse-obfelden',
     ort: 'Obfelden',
     kanton: 'ZH',
     strasse: 'Fabrikstrasse',
@@ -82,13 +82,13 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Projektierung', 'Baugesuch'],
     bilder: [
-      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild1.jpg',
-      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild2.jpg',
-      '/images/kleinprojekte/efh-epstein-obfelden/atelier-aa-efh-epstein-obfelden-bild3.jpg',
+      '/images/kleinprojekte/efh-fabrikstrasse-obfelden/atelier-aa-efh-fabrikstrasse-obfelden-bild1.jpg',
+      '/images/kleinprojekte/efh-fabrikstrasse-obfelden/atelier-aa-efh-fabrikstrasse-obfelden-bild2.jpg',
+      '/images/kleinprojekte/efh-fabrikstrasse-obfelden/atelier-aa-efh-fabrikstrasse-obfelden-bild3.jpg',
     ],
   },
   {
-    slug: 'mfh-einsele-wuerenlos',
+    slug: 'mfh-weizenstrasse-wuerenlos',
     ort: 'Würenlos',
     kanton: 'AG',
     strasse: 'Weizenstrasse',
@@ -96,7 +96,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     bauherrschaft: null,
     jahr: '2022',
     leistungen: ['Planung', 'Baueingabe'],
-    bilder: ['/images/kleinprojekte/mfh-einsele-wuerenlos/atelier-aa-mfh-einsele-wuerenlos-bild1.jpg'],
+    bilder: ['/images/kleinprojekte/mfh-weizenstrasse-wuerenlos/atelier-aa-mfh-weizenstrasse-wuerenlos-bild1.jpg'],
   },
   {
     slug: 'efh-mittelweg-trimmis',
@@ -114,7 +114,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     ],
   },
   {
-    slug: 'efh-leemann-obfelden',
+    slug: 'efh-schuerweidestrasse-obfelden',
     ort: 'Obfelden',
     kanton: 'ZH',
     strasse: 'Schürweidestrasse',
@@ -123,9 +123,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2023',
     leistungen: ['Generalplanung', 'Vorprojekt', 'Ausführung'],
     bilder: [
-      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild1.jpg',
-      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild2.jpg',
-      '/images/kleinprojekte/efh-leemann-obfelden/atelier-aa-efh-leemann-obfelden-bild3.jpg',
+      '/images/kleinprojekte/efh-schuerweidestrasse-obfelden/atelier-aa-efh-schuerweidestrasse-obfelden-bild1.jpg',
+      '/images/kleinprojekte/efh-schuerweidestrasse-obfelden/atelier-aa-efh-schuerweidestrasse-obfelden-bild2.jpg',
+      '/images/kleinprojekte/efh-schuerweidestrasse-obfelden/atelier-aa-efh-schuerweidestrasse-obfelden-bild3.jpg',
     ],
   },
   {
@@ -143,7 +143,7 @@ export const kleinprojekte: Kleinprojekt[] = [
     ],
   },
   {
-    slug: 'umbau-efh-spoetl-zuerich',
+    slug: 'umbau-efh-schneegloeggliweg-zuerich',
     ort: 'Zürich',
     kanton: 'ZH',
     strasse: 'Schneeglöggliweg',
@@ -152,9 +152,9 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2023',
     leistungen: ['Generalplanung', 'Bauleitung'],
     bilder: [
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild1.jpg',
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild2.jpg',
-      '/images/kleinprojekte/umbau-efh-spoetl-zuerich/atelier-aa-umbau-efh-spoetl-zuerich-bild3.jpg',
+      '/images/kleinprojekte/umbau-efh-schneegloeggliweg-zuerich/atelier-aa-umbau-efh-schneegloeggliweg-zuerich-bild1.jpg',
+      '/images/kleinprojekte/umbau-efh-schneegloeggliweg-zuerich/atelier-aa-umbau-efh-schneegloeggliweg-zuerich-bild2.jpg',
+      '/images/kleinprojekte/umbau-efh-schneegloeggliweg-zuerich/atelier-aa-umbau-efh-schneegloeggliweg-zuerich-bild3.jpg',
     ],
   },
   {

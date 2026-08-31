@@ -51,7 +51,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Neubau eines Einfamilienhauses in Jonen (AG) mit zwei Vollgeschossen, Dachgeschoss und Untergeschoss; die Bauherrschaft war zugleich Inhaber von Atelier AA Architekten.',
+        'Vier Ebenen für ein einzelnes Haus: Untergeschoss, zwei Vollgeschosse und Dachgeschoss. Technik, Rückzugsräume und der offene Wohnbereich mussten sich darin alle unterbringen lassen, ohne einander zu stören.',
       frage: 'Wie ordnet man die Ebenen, wenn Rückzug, Technik und Wohnen im selben Haus zusammenkommen?',
       entscheidung:
         'Technik und Rückzugsräume ins Untergeschoss, das Erdgeschoss ganz dem Wohnen vorbehalten, private Räume im Obergeschoss darüber, verbunden durch eine offene Treppe mit Glasgeländer.',
@@ -69,7 +69,8 @@ export const projekte: Projekt[] = [
       },
       {
         frage: 'Was kostet ein Einfamilienhaus-Neubau mit Untergeschoss?',
-        antwort: 'Im Aargau rund 900 bis 1200 Franken pro Kubikmeter, je nach Standard.',
+        antwort:
+          'Im Aargau rund 900 bis 1200 Franken pro Kubikmeter, je nach Standard. Preisstand 2026, grober Erfahrungswert; abhängig von Projekt, Standard, Konstruktion und Leistungsabgrenzung.',
       },
     ],
     thumbnail: '/images/projekte/efh-jonen/atelier-aa-efh-jonen-thumb.jpg',
@@ -148,7 +149,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Mehrfamilienhaus an der Alten Poststrasse in Untersiggenthal (AG), auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone.',
+        'Das Grundstück fällt nach Süden ab und liegt in gewachsener Wohnzone. Die Dachform der Umgebung war vorgegeben und begrenzte damit das mögliche Volumen.',
       frage:
         'Wie lässt sich auf einem nach Süden abfallenden Grundstück in gewachsener Wohnzone mehr Wohnfläche gewinnen, ohne die vorgegebene Dachlandschaft zu stören?',
       entscheidung:
@@ -170,7 +171,7 @@ export const projekte: Projekt[] = [
       {
         frage: 'Was kostet ein Mehrfamilienhaus pro Kubikmeter?',
         antwort:
-          'Im Aargau und Zürich aktuell rund 700 bis 900 Franken pro Kubikmeter, je nach Standard und Lage.',
+          'Im Aargau und Zürich aktuell rund 700 bis 900 Franken pro Kubikmeter, je nach Standard und Lage. Preisstand 2026, grober Erfahrungswert; abhängig von Projekt, Standard, Konstruktion und Leistungsabgrenzung.',
       },
     ],
     thumbnail: '/images/projekte/mfh-alte-poststrasse/atelier-aa-mfh-alte-poststrasse-thumb.jpg',
@@ -228,7 +229,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Zwei Mehrfamilienhäuser in Adliswil (ZH), auf zwei ursprünglich getrennt geplanten Nachbarparzellen.',
+        'Zwei benachbarte Parzellen, für die zunächst je ein eigenes Projekt vorgesehen war: mit eigener Einstellhalle, eigener Erschliessung und je einer Restfläche als Aussenraum.',
       frage: 'Zwei Grundstücke getrennt entwickeln oder als Ensemble?',
       entscheidung:
         'Gemeinsame Entwicklung mit gemeinsamer Einstellhalle, Erschliessung und Werkleitungen statt zwei separater Projekte.',
@@ -383,7 +384,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Ein ehemaliges Bürogebäude in Ottenbach (ZH), umzunutzen zu einem Mehrfamilienhaus mit acht Wohnungen.',
+        'Ein Bürogebäude, dessen Tragstruktur weiterverwendbar war, dessen Grundrisse, Haustechnik und Gebäudehülle für Wohnnutzung aber nicht taugten.',
       frage: 'Bestehende Struktur erhalten oder das Bürogebäude ersetzen?',
       entscheidung:
         'Kernsanierung bis auf den Rohbau: Die bestehende Struktur bleibt erhalten, Grundrisse, Haustechnik und Gebäudehülle werden vollständig neu; auskragende Balkone im Dachgeschoss als bewusst sichtbarer neuer Akzent.',
@@ -454,7 +455,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Sanierung und Erweiterung eines Einfamilienhauses in Hünenberg (ZG), ohne störende statische Eingriffe in den Bestand.',
+        'Das Erdgeschoss sollte sich zum Garten öffnen, ohne Eingriff in die Statik des Bestands. Die Bauherrschaft wollte zudem keine sichtbare Beschattungstechnik an der Fassade.',
       frage:
         'Wie lässt sich die Beschattung der neuen Schiebeverglasung einbauen, ohne dass Führungsschienen sichtbar sind, wie es die Bauherrschaft wünschte?',
       entscheidung:
@@ -640,11 +641,11 @@ export const projekte: Projekt[] = [
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Machbarkeitsstudie', 'Projektierung', 'Baugesuch', 'Ausschreibungsplanung', 'Ausführungsplanung'],
     beschreibung:
-      'Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade. Zum Garten öffnen sich Balkone mit schlanken Metallgeländern über gedeckten Terrassen. Innen verbindet eine gewendelte Treppe den offenen, hell gehaltenen Wohn- und Essbereich mit den oberen Geschossen; eine grosse Schiebeverglasung stellt den Bezug zum Garten her.',
+      'Drei Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor, geplant zum Verkauf als Eigentum: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade. Zum Garten öffnen sich Balkone mit schlanken Metallgeländern über gedeckten Terrassen. Innen verbindet eine gewendelte Treppe den offenen, hell gehaltenen Wohn- und Essbereich mit den oberen Geschossen; eine grosse Schiebeverglasung stellt den Bezug zum Garten her.',
     abschnitte: [
       {
         titel: 'Die Aufgabe',
-        absaetze: ['Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor: giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade.'],
+        absaetze: ['Drei Reiheneinfamilienhäuser in Hochfelden (ZH) für einen Investor, geplant zum Verkauf als Eigentum. Giebelständige Baukörper mit steilem, dunkel gedecktem Satteldach, liegenden Dachflächenfenstern und zurückhaltender heller Putzfassade.'],
       },
       {
         titel: 'Die Lösung',
@@ -652,10 +653,20 @@ export const projekte: Projekt[] = [
       },
     ],
     daten: [
-      { label: 'Gebäudetyp', wert: 'Reiheneinfamilienhäuser' },
+      { label: 'Gebäudetyp', wert: 'Drei Reiheneinfamilienhäuser, Neubau' },
       { label: 'Bauherrschaft', wert: 'Investor' },
+      { label: 'Verwertung', wert: 'Verkauf als Eigentum' },
       { label: 'Bauleitung', wert: 'Durch die Bauherrschaft mit dem Unternehmer' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Drei Reiheneinfamilienhäuser für einen Investor, geplant zum Verkauf als Eigentum. Die Umgebung in Hochfelden ist giebelständig geprägt: einzeln stehende Häuser mit steilen Dächern.',
+      frage: 'Wie fügt sich eine Reihe von drei Häusern in eine giebelständige Umgebung ein, ohne als ein langer Riegel zu wirken?',
+      entscheidung:
+        'Drei einzeln lesbare, giebelständige Baukörper statt eines durchlaufenden Volumens, jeder mit steilem, dunkel gedecktem Satteldach; die helle Putzfassade bleibt zurückhaltend, die Balkone liegen zum Garten.',
+      resultat:
+        'Die Zeile liest sich als Folge einzelner Häuser statt als ein Riegel. Jede der drei Einheiten hat eigenen Garten, gedeckte Terrasse und Balkon.',
+    },
     fragen: [
       {
         frage: 'Was zeichnet die Planung von Reiheneinfamilienhäusern aus?',
@@ -715,7 +726,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Ein Grundstück mit bestehendem Wohnhaus in Buchs (AG), das noch Ausnützungsreserve zuliess.',
+        'Auf dem Grundstück stand bereits ein Wohnhaus. Die zulässige Ausnützung war damit teilweise, aber nicht vollständig ausgeschöpft.',
       frage:
         'Lässt sich auf einem Grundstück mit bestehendem Wohnhaus noch ein zusätzliches, freistehendes Einfamilienhaus realisieren?',
       entscheidung:
@@ -770,7 +781,10 @@ export const projekte: Projekt[] = [
       },
       {
         titel: 'Der Eingriff',
-        absaetze: ['Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; bessere Aufnahmen des fertigen Zustands folgen. Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern; die Bauleitung vor Ort begleiten wir beratend.'],
+        absaetze: [
+          'Die Aufnahmen zeigen das Gebäude zurückgebaut bis auf das tragende Backsteinmauerwerk unter dem steilen Satteldach, vollständig eingerüstet; Aufnahmen des fertigen Zustands folgen.',
+          'Das Grundstück liegt an einer Strassenkreuzung, umgeben von Nachbarbebauung mit geneigten Dächern. Lärm und Einblick kommen damit von zwei Seiten, und die Wohnräume orientieren sich entsprechend von der Strasse weg. Die Bauleitung vor Ort begleiten wir beratend.',
+        ],
       },
     ],
     daten: [
@@ -778,6 +792,15 @@ export const projekte: Projekt[] = [
       { label: 'Bauherrschaft', wert: 'Privater Bauherr, bei Kauf beraten' },
       { label: 'Baubegleitung', wert: 'Beratend, ohne Bauleitungsmandat' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Ein bestehendes Einfamilienhaus in Dietikon (ZH), das die Bauherrschaft kaufen wollte. Vor dem Kauf haben wir Bausubstanz, Sanierungskosten und den baurechtlichen Rahmen gemeinsam beurteilt.',
+      frage: 'Die bestehende Struktur erhalten oder abbrechen und neu bauen?',
+      entscheidung:
+        'Kernsanierung mit Erhalt des tragenden Backsteinmauerwerks unter dem Satteldach statt Ersatzneubau: Rückbau bis auf die Tragstruktur, alles darüber neu.',
+      resultat:
+        'Die tragende Struktur bleibt erhalten statt abgebrochen zu werden. Sie ist der Teil eines Hauses, in dem die meiste graue Energie steckt, und der Erhalt hielt das Vorhaben zugleich im Rahmen, den die Bauherrschaft beim Kauf gerechnet hatte.',
+    },
     fragen: [
       {
         frage: 'Was bedeutet Kernsanierung bis auf das Mauerwerk?',
@@ -842,7 +865,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Kernsanierung eines bestehenden Einfamilienhauses in Würenlos (AG) für einen privaten Investor, mit aussenliegenden Lamellenstoren für ein ruhiges Fassadenbild.',
+        'Im Erdgeschoss gab es eine gedeckte Terrasse, im Obergeschoss keinen eigenen Aussenraum. Die sanierte Fassade sollte ruhig und einheitlich bleiben.',
       frage:
         'Wie lässt sich zusätzlicher Aussenraum im Obergeschoss schaffen, ohne das ruhige Fassadenbild zu stören?',
       entscheidung:
@@ -915,7 +938,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Kernsanierung und Erweiterung eines Einfamilienhauses in Rupperswil (AG), eingebettet zwischen traditionell gedeckten Nachbarhäusern.',
+        'Ein Einfamilienhaus zwischen traditionell gedeckten Nachbarhäusern, das erweitert werden sollte. Der Erweiterungsbau fällt niedriger aus als der giebelständige Hauptbaukörper.',
       frage:
         'Wie ergänzt man einen flachdachigen Erweiterungsbau neben giebelständigen Nachbarhäusern, ohne aus dem Ortsbild zu fallen?',
       entscheidung:
@@ -981,7 +1004,7 @@ export const projekte: Projekt[] = [
     ],
     entscheidung: {
       ausgangslage:
-        'Neubau eines Mehrfamilienhauses im Gebiet Zelgi in Untersiggenthal (AG), umgeben von giebelständiger Bebauung.',
+        'Eine Parzelle im Gebiet Zelgi, umgeben von giebelständiger Bebauung. Unterzubringen waren drei Wohngeschosse über einem Untergeschoss.',
       frage: 'Wie fügt sich ein neues Mehrfamilienhaus in eine giebelständig geprägte Umgebung ein?',
       entscheidung:
         'Ein Baukörper mit steilem Satteldach und liegenden Dachflächenfenstern, der die giebelständige Umgebung aufnimmt und in drei Wohngeschosse mit vertikaler Holzlattenfassade übersetzt.',
@@ -1120,6 +1143,15 @@ export const projekte: Projekt[] = [
       { label: 'Geschosse', wert: '3 Vollgeschosse, ausgebautes Dachgeschoss' },
       { label: 'Bauherrschaft', wert: 'Investor, ab Grundstückskauf begleitet' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Der Investor prüfte den Kauf einer Parzelle in Würenlingen (AG). Vor dem Entscheid war offen, welches Volumen die Zone zulässt und ob der geforderte Preis das erreichbare Projekt trägt.',
+      frage: 'Lohnt sich der Kauf zu diesem Preis, und welches Gebäude ist auf dieser Parzelle überhaupt möglich?',
+      entscheidung:
+        'Wir haben mögliches Volumen und Wirtschaftlichkeit zusammen geprüft, bevor gekauft wurde: drei Vollgeschosse mit ausgebautem Dachgeschoss als Weg, die zulässige Ausnützung zu nutzen, gerechnet gegen Erstellungskosten und erzielbare Mietzinsen.',
+      resultat:
+        'Der Kaufpreis wurde auf dieser Grundlage verhandelt. Das Projekt ist heute in Ausführung, geplant von denselben Personen, die den Kauf beurteilt haben.',
+    },
     fragen: [
       {
         frage: 'Wann sollten wir einen Architekten in den Grundstückskauf einbeziehen?',
@@ -1167,11 +1199,25 @@ export const projekte: Projekt[] = [
     kategorien: ['Umbau', 'Wohnen'],
     leistungen: ['Projektierung', 'Baugesuch'],
     beschreibung:
-      'Umbau und Erweiterung eines Einfamilienhauses in Othmarsingen (AG): Situationsplan, Geschosse, Schnitte und Fassade liegen bis zur Baueingabe ausgearbeitet vor. Das Foto zeigt das Haus im heutigen Zustand vor dem Umbau.',
-    abschnitte: [],
+      'Kernsanierung und Erweiterung eines Einfamilienhauses in Othmarsingen (AG). Das Haus war für die Familie zu klein geworden; die Baueingabe ist vorbereitet. Das Foto zeigt den heutigen Zustand vor dem Umbau.',
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: [
+          'Ein Einfamilienhaus in Othmarsingen (AG), das für die Familie zu klein geworden ist. Statt eines Umzugs sollte das Haus selbst mehr Platz bieten: Kernsanierung des Bestands, verbunden mit einer Erweiterung.',
+        ],
+      },
+      {
+        titel: 'Der Stand',
+        absaetze: [
+          'Situationsplan, Geschosse, Schnitte und Fassade sind bis zur Baueingabe ausgearbeitet. Baurechtlich liegt das Vorhaben klar im Rahmen der Bau- und Zonenordnung.',
+          'Pläne und Ansichten des geplanten Zustands zeigen wir erst, wenn die Baubewilligung vorliegt. Bis dahin steht hier nur das Haus, wie es heute ist.',
+        ],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Einfamilienhaus, Umbau und Erweiterung' },
-      { label: 'Status', wert: 'In Planung' },
+      { label: 'Status', wert: 'In Planung, Baueingabe vorbereitet' },
     ],
     fragen: [
       {
@@ -1186,15 +1232,7 @@ export const projekte: Projekt[] = [
     // direkt darunter ein zweites Mal. Die Galerie bleibt leer; das Foto
     // steht weiterhin als grosses Bild oben, darunter folgen die Pläne.
     galerie: [],
-    plaene: [
-      { titel: 'Situation', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-01-situation.pdf' },
-      { titel: 'Untergeschoss', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-02-untergeschoss.pdf' },
-      { titel: 'Obergeschoss', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-03-obergeschoss.pdf' },
-      { titel: 'Erdgeschoss', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-04-erdgeschoss.pdf' },
-      { titel: 'Schnitt 1', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-05-schnitt-1.pdf' },
-      { titel: 'Schnitt 2', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-06-schnitt-2.pdf' },
-      { titel: 'Fassade', datei: '/dokumente/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-07-fassade.pdf' },
-    ],
+    plaene: [],
     featured: false,
   },
   /**
@@ -1220,12 +1258,36 @@ export const projekte: Projekt[] = [
     leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Nutzungsänderung eines Gebäudeteils in Obfelden (ZH) zu einer Kleintierpraxis, mit Umbau und Parkplatznachweis für den neuen Betrieb im Erdgeschoss einer Gewerbeliegenschaft.',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: [
+          'Das leerstehende Erdgeschoss einer Gewerbeliegenschaft in Obfelden (ZH), bis auf den Rohbau ohne nutzbare Installationen. Daraus sollte eine Kleintierpraxis werden: eine Nutzungsänderung, die ein Baugesuch verlangte.',
+        ],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: [
+          'Eine Tierarztpraxis stellt Anforderungen, die ein Gewerberaum nicht mitbringt. Der Röntgenraum brauchte abgeschirmte Wände, Behandlung und Operation reinigbare Oberflächen und eine entsprechende Lüftung, und Sanitär- wie Abwasserleitungen mussten im Bestand vollständig neu geführt werden.',
+          'Der Grundriss trennt ausserdem die Wartebereiche, damit Hunde und Katzen nicht am selben Ort warten. Weil die Liegenschaft leer stand, liess sich in einem Zug bauen statt in Etappen um einen laufenden Betrieb herum.',
+        ],
+      },
+    ],
     daten: [
       { label: 'Gebäudetyp', wert: 'Gewerbebau, Nutzungsänderung zu Kleintierpraxis' },
       { label: 'Bauherrschaft', wert: 'Kleintierpraxis Obfelden' },
+      { label: 'Besonderheit', wert: 'Röntgenraum mit Strahlenschutz' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Eine Kleintierpraxis bringt mehr Kundenverkehr als die bisherige Nutzung. Für die Nutzungsänderung verlangte die Gemeinde deshalb einen Nachweis über zusätzliche Pflichtparkfelder.',
+      frage: 'Wie lässt sich der geforderte Parkplatznachweis auf dem bestehenden Areal erbringen?',
+      entscheidung:
+        'Zusätzliche Parkfelder wurden auf dem Areal ausgewiesen und im Baugesuch nachgewiesen, statt die Praxisfläche oder das Raumprogramm zu verkleinern.',
+      resultat:
+        'Die Nutzungsänderung wurde bewilligt, und die Praxis konnte das Erdgeschoss im geplanten Umfang belegen.',
+    },
     fragen: [
       {
         frage: 'Ist das ganze Gebäude die Kleintierpraxis?',
@@ -1256,15 +1318,39 @@ export const projekte: Projekt[] = [
     leistungen: ['Projektierung', 'Baugesuch', 'Ausführungsplanung'],
     beschreibung:
       'Mieterausbau von Gemeinschaftsräumen im Untergeschoss sowie Erweiterung der Besucherparkplätze für eine Gewerbeliegenschaft in Obfelden (ZH).',
-    abschnitte: [],
+    abschnitte: [
+      {
+        titel: 'Der Bestand',
+        absaetze: [
+          'Das Untergeschoss einer Gewerbeliegenschaft in Obfelden (ZH), das für die Mieterschaft nutzbar gemacht werden sollte: Lager- und Technikflächen für die einzelnen Betriebe und ein gemeinsamer Aufenthalts- und Pausenraum. Bauherrschaft war die Grundeigentümerin, nicht ein einzelner Mieter.',
+        ],
+      },
+      {
+        titel: 'Der Eingriff',
+        absaetze: [
+          'Massgebend war der Brandschutz. Ein Aufenthaltsraum im Untergeschoss verlangt gesicherte Fluchtwege; Einteilung und Erschliessung richteten sich danach, nicht umgekehrt.',
+          'Gleichzeitig wurden die Besucherparkplätze erweitert. Die Betriebe im Haus brachten mehr Besucherverkehr, als das bestehende Angebot aufnehmen konnte.',
+        ],
+      },
+    ],
     daten: [
       {
         label: 'Gebäudetyp',
         wert: 'Gewerbebau, Mieterausbau Untergeschoss und Parkplatzerweiterung',
       },
+      { label: 'Gebäudetyp', wert: 'Gewerbeliegenschaft, Mieterausbau' },
       { label: 'Bauherrschaft', wert: 'Remnex Zug' },
       { label: 'Status', wert: 'Realisiert' },
     ],
+    entscheidung: {
+      ausgangslage:
+        'Auf derselben Liegenschaft liefen zwei Vorhaben mit unterschiedlichen Bauherrschaften: die Nutzungsänderung zur Kleintierpraxis im Erdgeschoss und der Mieterausbau der Grundeigentümerin im Untergeschoss.',
+      frage: 'Ein gemeinsames Baugesuch für beide Vorhaben oder zwei getrennte Verfahren?',
+      entscheidung:
+        'Zwei getrennte Baugesuche, parallel geführt: Jede Bauherrschaft bleibt für ihr eigenes Vorhaben verantwortlich, während wir die Bauabläufe im Haus aufeinander abstimmten.',
+      resultat:
+        'Beide Vorhaben wurden bewilligt und im selben Zeitraum ausgeführt; eine Verzögerung im einen Verfahren hätte das andere nicht aufgehalten.',
+    },
     fragen: [
       {
         frage: 'Gehört das zum Projekt Kleintierpraxis?',
@@ -1296,33 +1382,54 @@ export const projekte: Projekt[] = [
     featured: false,
   },
   /**
-   * Frühestes Projektstadium ohne verwertbare Unterlagen: weder Fotos noch
-   * Pläne liegen vor, nur der Ordnername als Adresse. Platzhalterbild
-   * (neutrale Haus-Grafik) statt Fassaden- oder Grundrisszeichnung, da auch
-   * kein Plansatz existiert.
+   * Zwei Bauten für eine Erbengemeinschaft, über zwei Bauzonen verteilt:
+   * Einfamilienhaus in der Wohnzone, Doppeleinfamilienhaus in der Kernzone.
+   * Deshalb `typ: 'Wohnüberbauung'` — "Doppeleinfamilienhaus" allein hätte das
+   * freistehende Haus verschwiegen, unter anderem im generierten Text der
+   * Gemeindeseiten. Bilder sind Visualisierungen aus der Planung; das Projekt
+   * ist baubewilligt, gebaut ist noch nichts.
    */
   {
     slug: 'defh-weiningen',
-    title: 'Doppeleinfamilienhaus',
+    title: 'Einfamilien- und Doppeleinfamilienhaus',
     ort: 'Weiningen',
     kanton: 'ZH',
     kunde: null,
-    jahr: 'in Planung',
-    typ: 'Doppeleinfamilienhaus',
+    jahr: 'baubewilligt',
+    typ: 'Wohnüberbauung',
     kategorien: ['Neubau', 'Wohnen'],
     leistungen: ['Projektierung'],
     beschreibung:
-      'Doppeleinfamilienhaus in Weiningen (ZH): Erste Visualisierungen zeigen einen giebelständigen Baukörper mit steilem Satteldach, heller Putzfassade und filigranen Glasgeländern an den Balkonen. Im Erdgeschoss ein durchgehender Wohn-, Ess- und Kochbereich mit offener Kochinsel und hellem Eichenboden, mit Terrassenzugang über bodentiefe Fenster.',
-    abschnitte: [],
+      'Ein freistehendes Einfamilienhaus und ein Doppeleinfamilienhaus in Weiningen (ZH) für eine Erbengemeinschaft, verbunden durch eine gemeinsame Tiefgarage mit Autolift. Die Parzelle liegt in zwei Bauzonen. Die Visualisierungen zeigen giebelständige Baukörper mit steilem Satteldach, heller Putzfassade und filigranen Glasgeländern an den Balkonen.',
+    abschnitte: [
+      {
+        titel: 'Die Aufgabe',
+        absaetze: [
+          'Für eine Erbengemeinschaft in Weiningen (ZH) entstehen zwei Bauten auf einer Parzelle: ein freistehendes Einfamilienhaus und ein Doppeleinfamilienhaus, erschlossen über eine gemeinsame Tiefgarage.',
+          'Die Besonderheit liegt im Baurecht. Die Parzelle verläuft über zwei Bauzonen: Das Einfamilienhaus liegt in der Wohnzone, das Doppeleinfamilienhaus in der Kernzone.',
+        ],
+      },
+      {
+        titel: 'Die Lösung',
+        absaetze: [
+          'Zwei Zonen bedeuten zwei Regelwerke. Ausnützung, Gebäudehöhe und Dachform sind in der Kernzone anders geregelt als in der Wohnzone. Volumen und Stellung der beiden Bauten ergeben sich deshalb aus den Vorschriften, nicht aus einer freien Setzung.',
+          'Die gemeinsame Tiefgarage wird über einen Autolift erschlossen statt über eine Rampe. Ein Lift braucht deutlich weniger Fläche, die auf einer Parzelle mit zwei Zonen in beiden Bereichen gekostet hätte.',
+          'Im Erdgeschoss durchgehender Wohn-, Ess- und Kochbereich mit offener Kochinsel und hellem Eichenboden, mit Terrassenzugang über bodentiefe Fenster.',
+        ],
+      },
+    ],
     daten: [
-      { label: 'Gebäudetyp', wert: 'Doppeleinfamilienhaus, Neubau' },
-      { label: 'Status', wert: 'In Planung' },
+      { label: 'Gebäudetyp', wert: 'Einfamilienhaus und Doppeleinfamilienhaus, Neubau' },
+      { label: 'Bauherrschaft', wert: 'Erbengemeinschaft' },
+      { label: 'Bauzonen', wert: 'Wohnzone und Kernzone' },
+      { label: 'Besonderheit', wert: 'Gemeinsame Tiefgarage mit Autolift' },
+      { label: 'Status', wert: 'Baubewilligt, Baubeginn steht an' },
     ],
     fragen: [
       {
         frage: 'Sind das bereits Fotos vom fertigen Haus?',
         antwort:
-          'Nein, das sind Visualisierungen aus der Entwurfsplanung. Das Projekt befindet sich weiterhin in der Planungsphase, gebaut ist noch nichts. Sobald das Haus realisiert ist, ergänzen wir die Seite mit echten Fotos.',
+          'Nein, das sind Visualisierungen aus der Planung. Das Projekt ist baubewilligt, der Baubeginn steht an; gebaut ist noch nichts. Sobald die Häuser stehen, ergänzen wir die Seite mit Fotos.',
       },
     ],
     thumbnail: '/images/projekte/defh-weiningen/atelier-aa-defh-weiningen-thumb.jpg',
@@ -1331,23 +1438,47 @@ export const projekte: Projekt[] = [
       '/images/projekte/defh-weiningen/atelier-aa-defh-weiningen-01.jpg',
       '/images/projekte/defh-weiningen/atelier-aa-defh-weiningen-02.jpg',
     ],
+    entscheidung: {
+      ausgangslage:
+        'Eine Parzelle einer Erbengemeinschaft in Weiningen (ZH), die über zwei Bauzonen verläuft: Wohnzone und Kernzone, mit unterschiedlichen Vorschriften zu Ausnützung, Gebäudehöhe und Dachform.',
+      frage: 'Wie verteilt man das Bauvolumen auf eine Parzelle, für die zwei verschiedene Zonenvorschriften gelten?',
+      entscheidung:
+        'Das freistehende Einfamilienhaus in der Wohnzone, das Doppeleinfamilienhaus in der Kernzone, beide erschlossen über eine gemeinsame Tiefgarage mit Autolift statt über eine flächenintensive Rampe.',
+      resultat:
+        'Drei Wohneinheiten auf einer Parzelle, jede Zone innerhalb ihrer eigenen Vorschriften genutzt. Das Projekt ist baubewilligt.',
+    },
     featured: false,
   },
   {
     slug: 'mfh-niederweningen',
-    title: 'Mehrfamilienhaus Murzelnstrasse',
+    title: 'Mehrfamilienhäuser Murzelnstrasse',
     ort: 'Niederweningen',
     kanton: 'ZH',
     kunde: null,
     jahr: 'im Bau',
     typ: 'Mehrfamilienhaus',
     kategorien: ['Neubau', 'Wohnen'],
-    leistungen: ['Projektierung'],
+    leistungen: ['Bauleitung'],
     beschreibung:
-      'Mehrfamilienhaus an der Murzelnstrasse in Niederweningen (ZH): zwei Neubauten neben einem bestehenden Gebäude, aktuell im Rohbau mit Dachstuhl und Fassade im Bau. Luftaufnahmen von der Baustelle dokumentieren den Baufortschritt.',
-    abschnitte: [],
+      'Drei neu gebaute Mehrfamilienhäuser an der Murzelnstrasse in Niederweningen (ZH), aktuell im Rohbau mit Dachstuhl und Fassade im Bau. Luftaufnahmen von der Baustelle dokumentieren den Baufortschritt.',
+    abschnitte: [
+      {
+        titel: 'Das Mandat',
+        absaetze: [
+          'Drei Mehrfamilienhäuser an der Murzelnstrasse in Niederweningen (ZH), gleichzeitig im Bau. Unser Auftrag ist die Bauleitung: Wir führen die Ausführung für die Bauherrschaft. Entwurf und Baugesuch waren nicht Teil des Mandats.',
+        ],
+      },
+      {
+        titel: 'Der Stand',
+        absaetze: [
+          'Die Rohbauten stehen, Dachstuhl und Fassade sind im Bau. Drei Baukörper gleichzeitig heisst, dass Vergaben, Materiallieferungen und Handwerkereinsätze über alle drei hinweg abgestimmt werden müssen, damit sich Verzögerungen an einem Haus nicht auf die anderen übertragen.',
+          'Die Luftaufnahmen dokumentieren den Baufortschritt. Fotos der fertigen Häuser ergänzen wir nach Bezug.',
+        ],
+      },
+    ],
     daten: [
-      { label: 'Gebäudetyp', wert: 'Mehrfamilienhaus, Neubau' },
+      { label: 'Gebäudetyp', wert: 'Drei Mehrfamilienhäuser, Neubau' },
+      { label: 'Mandat', wert: 'Bauleitung, ohne Planung und Baugesuch' },
       { label: 'Status', wert: 'Im Bau' },
     ],
     fragen: [
@@ -1364,6 +1495,7 @@ export const projekte: Projekt[] = [
       '/images/projekte/mfh-niederweningen/atelier-aa-mfh-niederweningen-02.jpg',
       '/images/projekte/mfh-niederweningen/atelier-aa-mfh-niederweningen-03.jpg',
     ],
+    regionSatz: 'die Bauleitung für drei Mehrfamilienhäuser geführt, die derzeit im Bau sind',
     featured: false,
   },
 ];

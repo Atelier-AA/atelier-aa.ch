@@ -1,5 +1,10 @@
 'use client';
 
+// Achtung bei der Hintergrundfarbe: `bg-paper/[0.98]` mit Klammern. Die
+// Kurzform `bg-paper/98` erzeugt keine CSS-Regel, weil 98 nicht in Tailwinds
+// Deckkraft-Skala steht — das Banner stand deshalb ohne Fuellfarbe ueber dem
+// Seiteninhalt.
+
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
@@ -98,7 +103,7 @@ export default function CookieBanner() {
       role="dialog"
       aria-modal="false"
       aria-label="Cookie-Einstellungen"
-      className="fixed inset-x-0 bottom-0 z-20 border-t border-mist bg-paper/98 px-6 py-6 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur sm:px-10"
+      className="fixed inset-x-0 bottom-0 z-20 border-t border-mist bg-paper/[0.98] px-6 py-6 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur sm:px-10"
     >
       <div className="mx-auto max-w-4xl">
         {!einstellungenOffen ? (

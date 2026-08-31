@@ -75,6 +75,12 @@ export default function UeberUnsPage() {
               Generalplanermandat — von der Machbarkeitsstudie über Baugesuch und
               Ausführungsplanung bis zur Bauleitung.
             </p>
+            <p className="mt-5 max-w-lesbar text-lg leading-relaxed text-graphite">
+              Orte mit Bestand heisst für uns: Wir prüfen zuerst, was ein bestehendes
+              Gebäude noch leisten kann, bevor über Ersatz gesprochen wird — und planen
+              Konstruktion und Grundrisse so, dass sie eine spätere Nutzungsänderung
+              zulassen.
+            </p>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist">
             <Image
@@ -144,12 +150,12 @@ export default function UeberUnsPage() {
       {/* Weiterentwicklung der Haltung: nicht nur wie Architektur aussieht,
           sondern wie sie entsteht. Bewusst als Fortführung der Ansätze oben
           platziert, nicht als eigenständiges neues Leistungsversprechen —
-          deshalb keine eigene Nav, kein "Design-Build"-Menüpunkt. */}
+          deshalb keine eigene Nav, kein "Design Build"-Menüpunkt. */}
       <div className="mt-24 border-t border-mist pt-16 md:mt-32">
         <Container>
           <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-2 lg:items-stretch">
           <div className="flex flex-col">
-          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Weiterentwicklung</p>
+          <p className="mb-4 text-xs uppercase tracking-widest text-stone">Design Build</p>
           <h2 className="text-h2 font-normal leading-tight text-ink md:text-h2">
             Wir hinterfragen nicht nur, wie Architektur{' '}
             <span className="font-semibold">aussieht</span>, sondern auch, wie sie{' '}
@@ -159,7 +165,7 @@ export default function UeberUnsPage() {
             Die Qualität eines Projekts entscheidet sich nicht allein im Entwurf, sondern
             auch davon, wie früh Wissen zusammenkommt und wie eng Planung, Wirtschaftlichkeit
             und Ausführung miteinander verbunden sind. Deshalb haben wir uns mit integrierten
-            Projektabwicklungsmodellen wie Design-Build auseinandergesetzt und wenden in
+            Projektabwicklungsmodellen wie Design Build auseinandergesetzt und wenden in
             einem aktuellen Projekt bereits zentrale Prinzipien daraus an.
           </p>
 
@@ -179,22 +185,22 @@ export default function UeberUnsPage() {
               frühere Abschluss ist entfallen, er wiederholte mit "Bevor wir
               gestalten, wollen wir verstehen" wörtlich die Überschrift des
               Büro-Abschnitts auf der Startseite. */}
-          <div className="flex flex-col gap-4">
-            <div className="bg-mist p-6">
+          <div className="flex flex-col gap-9 lg:pt-8">
+            <div>
               <h3 className="text-h3 text-ink">Wissen früher zusammenbringen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Relevantes Fachwissen fliesst gezielter in den Prozess ein, statt erst nach
                 der Planung eingeholt zu werden.
               </p>
             </div>
-            <div className="bg-mist p-6">
+            <div>
               <h3 className="text-h3 text-ink">Entscheidungen früher treffen</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Technische und wirtschaftliche Konsequenzen werden sichtbar, bevor der Entwurf
                 feststeht.
               </p>
             </div>
-            <div className="bg-mist p-6">
+            <div>
               <h3 className="text-h3 text-ink">Planung und Ausführung verbinden</h3>
               <p className="mt-3 text-karte leading-relaxed text-graphite">
                 Planung, Ausführung und wirtschaftliche Überlegungen werden früher

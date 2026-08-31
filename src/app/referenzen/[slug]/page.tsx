@@ -7,8 +7,7 @@ import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
 import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
-import Button from '@/components/ui/Button';
-import Container from '@/components/ui/Container';
+import VorhabenCta from '@/components/ui/VorhabenCta';
 import MehrLesen from '@/components/ui/MehrLesen';
 import { breadcrumbSchema } from '@/lib/schema';
 import { bildMasse } from '@/lib/bildmasse';
@@ -313,26 +312,12 @@ export default async function ProjektDetailPage({ params }: PageProps) {
 
       {/* Abschluss-CTA bewusst ausserhalb der zweispaltigen Ansicht, auf
           voller Breite — anders als der übrige Text, der in der schmalen
-          Sticky-Spalte steht. */}
-      <section className="border-t border-mist py-20 md:py-28">
-        <Container>
-          <div className="max-w-2xl">
-            <p className="mb-4 text-xs uppercase tracking-widest text-stone">
-              Nächster Schritt
-            </p>
-            <h2 className="mb-6 max-w-[18ch] text-h2 font-medium leading-tight tracking-tight text-ink md:text-h1">
-              Planen Sie ein ähnliches Projekt?
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-graphite">
-              Wir prüfen in einer Machbarkeitsstudie, was auf Ihrem Grundstück
-              möglich ist, mit Volumenstudie und Kostenrahmen.
-            </p>
-            <Button href="/kontakt" variant="text">
-              Kontaktieren Sie uns
-            </Button>
-          </div>
-        </Container>
-      </section>
+          Sticky-Spalte steht. Derselbe Baustein wie auf allen anderen Seiten,
+          damit der Seitenabschluss überall gleich aussieht: vorher stand hier
+          eine handgebaute Kopie ohne Fläche und mit abweichender Schriftgrösse. */}
+      <div className="mt-24 md:mt-32">
+        <VorhabenCta variante="projektDetail" />
+      </div>
 
       <WeitereProjekte projekte={weitere} />
     </>
