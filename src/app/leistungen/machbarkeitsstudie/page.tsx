@@ -140,7 +140,7 @@ export default function MachbarkeitsstudiePage() {
               überladen wirken liess. */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {schritte.map((s) => (
-              <div key={s.nummer} className="border border-stone/30 bg-mist p-8">
+              <div key={s.nummer} className="bg-mist p-8">
                 <p className="mb-3 text-xs uppercase tracking-widest text-stone">{s.nummer}</p>
                 <h3 className="mb-2 text-h3 text-ink">{s.titel}</h3>
                 <p className="max-w-lesbar leading-relaxed text-graphite">{s.text}</p>
