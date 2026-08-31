@@ -18,3 +18,11 @@ tsconfig.tsbuildinfo
 # Nachbau und nicht Teil der Anwendung. Enthält ausserdem Produktions-
 # Zugangsdaten (wp-config.php) und den DB-Dump mit Benutzer-Hashes.
 vorlage-wordpress/
+
+# Sicherungsarchive und Git-Bundles. Liegen bewusst im Projektordner, gehören
+# aber nicht ins Repository: Sie sind je rund 170 MB und überschreiten damit
+# GitHubs Dateigrenze von 100 MB — ein Push scheitert daran. Ein früherer
+# `git add -A` hatte sie versehentlich aufgenommen, die Historie musste
+# deshalb bereinigt werden.
+*.tar.gz
+*.bundle
