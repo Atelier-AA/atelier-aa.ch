@@ -44,7 +44,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
 
   const weitere = getWeitereInsights(slug, 4);
 
-  const BASIS = 'https://www.atelier-aa.ch';
+  const BASIS = 'https://atelier-aa.ch';
   const url = `${BASIS}/insights/${insight.slug}`;
 
   /**

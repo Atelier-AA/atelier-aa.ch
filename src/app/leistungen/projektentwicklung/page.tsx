@@ -64,9 +64,9 @@ export default function ProjektentwicklungPage() {
     '@graph': [
       {
         '@type': 'Service',
-        '@id': 'https://www.atelier-aa.ch/leistungen/projektentwicklung#service',
+        '@id': 'https://atelier-aa.ch/leistungen/projektentwicklung#service',
         name: 'Projektentwicklung',
-        provider: { '@id': 'https://www.atelier-aa.ch/#organisation' },
+        provider: { '@id': 'https://atelier-aa.ch/#organisation' },
         areaServed: ['Zürich', 'Aargau', 'Zug'],
         description:
           'Von der Grundstücksidee über Potenzialanalyse und Wirtschaftlichkeit bis zum bewilligungsfähigen Projekt.',

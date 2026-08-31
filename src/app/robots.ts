@@ -10,6 +10,10 @@ import type { MetadataRoute } from 'next';
  */
 const GESPERRT = ['/vorschau/', '/mailer', '/api/mailer'];
 
+/** Fuer den statischen Export nach Hostpoint: ausdruecklich statisch.
+ *  Auf Vercel aendert das nichts, dort ist die Route ohnehin statisch. */
+export const dynamic = 'force-static';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -21,7 +25,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Googlebot', allow: '/', disallow: GESPERRT },
       { userAgent: 'Google-Extended', allow: '/', disallow: GESPERRT },
     ],
-    sitemap: 'https://www.atelier-aa.ch/sitemap.xml',
-    host: 'https://www.atelier-aa.ch',
+    sitemap: 'https://atelier-aa.ch/sitemap.xml',
+    host: 'https://atelier-aa.ch',
   };
 }

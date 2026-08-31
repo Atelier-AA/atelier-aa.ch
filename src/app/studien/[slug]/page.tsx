@@ -47,7 +47,7 @@ export default async function StudieDetailPage({ params }: PageProps) {
       : null,
   ].filter((b): b is { src: string; titel: string } => Boolean(b));
 
-  const BASIS = 'https://www.atelier-aa.ch';
+  const BASIS = 'https://atelier-aa.ch';
   const url = `${BASIS}/studien/${studie.slug}`;
 
   /**

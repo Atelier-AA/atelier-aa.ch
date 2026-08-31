@@ -76,7 +76,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   // "mehr lesen" — sonst steht auf schmalen Bildschirmen der gesamte
   // Projekttext vor dem ersten Bild.
   const [ersterAbschnitt, ...weitereAbschnitte] = projekt.abschnitte;
-  const BASIS = 'https://www.atelier-aa.ch';
+  const BASIS = 'https://atelier-aa.ch';
   const url = `${BASIS}/referenzen/${projekt.slug}`;
 
   // Pixelmasse einmal zur Build-Zeit lesen (statische Seite), damit

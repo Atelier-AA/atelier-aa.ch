@@ -26,3 +26,6 @@ vorlage-wordpress/
 # deshalb bereinigt werden.
 *.tar.gz
 *.bundle
+out/
+hostpoint/mailer/konfig.php
+.export-beiseite/

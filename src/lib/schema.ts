@@ -2,7 +2,7 @@ import type { firma as Firma } from '@/data/firma';
 import { sozialeMedien } from '@/data/firma';
 import type { TeamMember } from '@/types';
 
-const BASIS = 'https://www.atelier-aa.ch';
+const BASIS = 'https://atelier-aa.ch';
 
 /**
  * BreadcrumbList-Schema für Detailseiten. Hilft Suchmaschinen und

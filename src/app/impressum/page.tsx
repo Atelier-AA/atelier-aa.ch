@@ -51,7 +51,7 @@ export default function ImpressumPage() {
                   {firma.email}
                 </a>
                 <br />
-                www.atelier-aa.ch
+                atelier-aa.ch
               </p>
             </section>
 

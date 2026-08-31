@@ -58,9 +58,9 @@ export default function MachbarkeitsstudiePage() {
     '@graph': [
       {
         '@type': 'Service',
-        '@id': 'https://www.atelier-aa.ch/leistungen/machbarkeitsstudie#service',
+        '@id': 'https://atelier-aa.ch/leistungen/machbarkeitsstudie#service',
         name: 'Machbarkeitsstudie',
-        provider: { '@id': 'https://www.atelier-aa.ch/#organisation' },
+        provider: { '@id': 'https://atelier-aa.ch/#organisation' },
         areaServed: ['Zürich', 'Aargau', 'Zug'],
         description:
           'Zonenkonformität, Ausnützung, Volumenstudie und Kostenrahmen, die Entscheidungsgrundlage, bevor Sie in ein Bauvorhaben investieren.',

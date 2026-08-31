@@ -6,7 +6,7 @@ import { studien } from '@/data/studien';
 import { kleinprojekte } from '@/data/kleinprojekte';
 import { alleKantone, orteInKanton } from '@/lib/regionen';
 
-const BASIS = 'https://www.atelier-aa.ch';
+const BASIS = 'https://atelier-aa.ch';
 
 /**
  * Sitemap für Suchmaschinen und KI-Crawler.
@@ -15,6 +15,10 @@ const BASIS = 'https://www.atelier-aa.ch';
  * Auftragsanfragen zählt: Startseite und Projekte zuerst, dann die
  * inhaltstragenden Seiten, rechtliche Seiten zuletzt.
  */
+/** Fuer den statischen Export nach Hostpoint: ausdruecklich statisch.
+ *  Auf Vercel aendert das nichts, dort ist die Route ohnehin statisch. */
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const heute = new Date();
 

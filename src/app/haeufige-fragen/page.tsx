@@ -21,7 +21,7 @@ export default function HaeufigeFragenPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    '@id': 'https://www.atelier-aa.ch/haeufige-fragen#faq',
+    '@id': 'https://atelier-aa.ch/haeufige-fragen#faq',
     inLanguage: 'de-CH',
     mainEntity: [...expertiseFragen, ...insightFragen].map((f) => ({
       '@type': 'Question',

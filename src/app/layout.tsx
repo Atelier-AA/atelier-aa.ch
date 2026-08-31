@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.atelier-aa.ch'),
+  metadataBase: new URL('https://atelier-aa.ch'),
   title: {
     default: 'Atelier AA Architekten | Zürich, Aargau, Zug',
     template: '%s | Atelier AA Architekten',

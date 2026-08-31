@@ -1,0 +1,151 @@
+# .htaccess für atelier-aa.ch bei Hostpoint
+#
+# Diese Datei ersetzt drei Dinge, die vorher der Next.js-Server auf Vercel
+# übernommen hat und die bei einem statischen Export sonst verloren wären:
+#
+#   1. die dreizehn Weiterleitungen alter Adressen
+#   2. die Sicherheits-Header
+#   3. den Zwang auf HTTPS und auf die Adresse ohne www
+#
+# Beim Hochladen als ".htaccess" in das Verzeichnis www legen.
+
+# ---------------------------------------------------------------------------
+# Zeichensatz
+# ---------------------------------------------------------------------------
+AddDefaultCharset UTF-8
+
+# ---------------------------------------------------------------------------
+# HTTPS und Adressform erzwingen
+#
+# Die Hauptadresse ist atelier-aa.ch OHNE www. So war es bisher schon
+# eingerichtet, und alle Canonicals der Website zeigen dorthin.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http → https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://atelier-aa.ch/$1 [R=301,L]
+
+  # www → ohne www
+  RewriteCond %{HTTP_HOST} ^www\.atelier-aa\.ch$ [NC]
+  RewriteRule ^(.*)$ https://atelier-aa.ch/$1 [R=301,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Adressen ohne .html ausliefern
+#
+# Der Export legt jede Seite als <Pfad>.html ab. Damit /projekte weiterhin
+# unter /projekte erreichbar ist, liefert Apache die Datei intern aus —
+# ohne Weiterleitung, die Adresse im Browser bleibt unveraendert.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Verzeichnisse und vorhandene Dateien unangetastet lassen
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # /projekte  ->  /projekte.html
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Weiterleitungen alter Adressen, alle als echte 301
+#
+# Vercel lieferte hier 308. Google behandelt beide gleich, 301 ist auf
+# Apache aber die übliche und von allen Werkzeugen erwartete Form.
+# ---------------------------------------------------------------------------
+
+# Frühere Bezeichnungen der Leistungsseite
+Redirect 301 /expertise /leistungen
+
+# Altlast der PHP-Website, bei Google noch indexiert
+Redirect 301 /indexxxx.php /
+
+# Übersichtsseiten, die in andere Seiten aufgegangen sind.
+# Die Detailseiten unter /studien/… und /kleinprojekte/… bleiben bestehen.
+Redirect 301 /studien /leistungen/machbarkeitsstudie
+Redirect 301 /kleinprojekte /projekte
+
+# Personenseite: der Slug schrieb "Riccarda" mit zwei c, der sichtbare Name
+# war immer "Ricarda".
+Redirect 301 /ueber-uns/riccarda-tscharner /ueber-uns/ricarda-tscharner
+
+# Sieben Werkliste-Adressen trugen den Familiennamen der Bauherrschaft in
+# der URL. Ersetzt durch Strasse und Ort.
+Redirect 301 /kleinprojekte/efh-bunjaku /kleinprojekte/efh-fahrweidstrasse-weiningen
+Redirect 301 /kleinprojekte/efh-alimi-othmarsingen /kleinprojekte/efh-waldrueti-othmarsingen
+Redirect 301 /kleinprojekte/pool-hug-florin /kleinprojekte/pool-zug
+Redirect 301 /kleinprojekte/efh-epstein-obfelden /kleinprojekte/efh-fabrikstrasse-obfelden
+Redirect 301 /kleinprojekte/mfh-einsele-wuerenlos /kleinprojekte/mfh-weizenstrasse-wuerenlos
+Redirect 301 /kleinprojekte/efh-leemann-obfelden /kleinprojekte/efh-schuerweidestrasse-obfelden
+Redirect 301 /kleinprojekte/umbau-efh-spoetl-zuerich /kleinprojekte/umbau-efh-schneegloeggliweg-zuerich
+
+# ---------------------------------------------------------------------------
+# Sicherheits-Header
+#
+# Diese setzte bisher Vercel. Ohne diesen Block wären sie nach dem Umzug
+# weg — die Website wäre also unsicherer als vorher.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Ein Jahr HSTS. Erst einschalten, wenn HTTPS zuverlässig läuft: Browser
+  # merken sich die Angabe und lassen danach kein http mehr zu.
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Zwischenspeicherung
+#
+# Bilder, Videos, Schriften und die von Next erzeugten Dateien tragen einen
+# Inhaltsstempel im Namen und dürfen deshalb lange zwischengespeichert
+# werden. HTML nicht, damit Änderungen sofort sichtbar sind.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType video/mp4               "access plus 1 year"
+  ExpiresByType video/webm              "access plus 1 year"
+  ExpiresByType font/woff2              "access plus 1 year"
+  ExpiresByType application/pdf         "access plus 1 month"
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Fehlerseite
+#
+# Der Export legt die 404-Seite unter /404.html ab.
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
+# Interne Verzeichnisse
+#
+# Die Vorschauseiten unter /vorschau werden gar nicht exportiert, es braucht
+# hier also keine Sperre. Eine solche Regel wäre ohnehin unwirksam, weil die
+# .html-Regel weiter oben mit [L] schon vorher greift.
+# ---------------------------------------------------------------------------
+
+# Verzeichnisinhalte nicht auflisten
+Options -Indexes
+
+# Konfigurationsdateien nicht ausliefern
+<FilesMatch "^(\.htaccess|\.user\.ini|.*\.md)$">
+  Require all denied
+</FilesMatch>
