@@ -12,7 +12,7 @@ import { getProjekt } from '@/data/projekte';
  * Stünde eines davon auch hier, sähe man dasselbe Projekt zweimal auf einer
  * Seite. Frühere Auswahl waren Sihlaurain, Safenwil und Jonen.
  */
-const AUSWAHL = ['mfh-sihlaurain', 'mfh-wuerenlingen', 'defh-weiningen'];
+const AUSWAHL = ['mfh-sihlaurain', 'refh-hochfelden', 'wohnueberbauung-zelgi'];
 
 
 /**
