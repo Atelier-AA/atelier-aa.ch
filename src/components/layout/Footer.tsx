@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Rechtliches */}
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
-            <p>Atelier AA Architekten © {year}. Alle Rechte vorbehalten.</p>
+            <p>Atelier AA Architekten GmbH © {year}. Alle Rechte vorbehalten.</p>
             <p>
               Tätigkeitsgebiet:{' '}
               {kantone.map((k, i) => (

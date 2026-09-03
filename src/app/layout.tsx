@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieBanner from '@/components/cookies/CookieBanner';
-import NurOeffentlich from '@/components/layout/NurOeffentlich';
 import GoogleAnalytics from '@/components/cookies/GoogleAnalytics';
 import MarketingPixel from '@/components/cookies/MarketingPixel';
 import { firma } from '@/data/firma';
@@ -29,6 +28,15 @@ export const metadata: Metadata = {
   },
   description:
     'Atelier AA Architekten GmbH aus Obfelden plant und realisiert Wohnbauten in Zürich, Aargau und Zug, von der Machbarkeitsstudie bis zur Bauleitung.',
+  /*
+   * Bestätigung für die Google Search Console. Google akzeptiert zwei Wege:
+   * dieses Meta-Element im HTML oder einen TXT-Eintrag im DNS. Das Element
+   * hier deckt die Eigenschaft "URL-Präfix" ab und muss stehen bleiben —
+   * Google prüft es regelmässig nach, nicht nur einmal.
+   */
+  verification: {
+    google: 'WTHRvG73rntQ64LxInu_fcHSdYIdXlXqRAM44eO6hzA',
+  },
   keywords: [
     'Architektur',
     'Architekten',
@@ -47,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'Atelier AA Architekten',
     images: [
       {
-        url: '/images/hero/atelier-aa-hero-hochwarting-2.jpg',
+        url: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg',
         width: 2400,
         height: 1340,
         alt: 'Atelier AA Architekten',
@@ -59,7 +67,7 @@ export const metadata: Metadata = {
     title: 'Atelier AA Architekten',
     description:
       'Architekturbüro in Obfelden für Neubau, Umbau und Generalplanung in Zürich, Aargau und Zug.',
-    images: ['/images/hero/atelier-aa-hero-hochwarting-2.jpg'],
+    images: ['/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg'],
   },
   // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
   icons: {
@@ -101,22 +109,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema(firma, team)) }}
         />
-        <NurOeffentlich>
           <Header />
-        </NurOeffentlich>
         <main id="main" className="flex-1">
           {children}
         </main>
-        <NurOeffentlich>
           <Footer />
-        </NurOeffentlich>
-        <NurOeffentlich>
           <GoogleAnalytics />
           <MarketingPixel />
-        </NurOeffentlich>
-        <NurOeffentlich>
           <CookieBanner />
-        </NurOeffentlich>
       </body>
     </html>
   );

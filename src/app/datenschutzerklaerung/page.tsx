@@ -210,7 +210,7 @@ export default function DatenschutzPage() {
                 Die Daten können dabei an Server von Google in die USA übermittelt
                 werden. Google hat sich dem EU-U.S. und dem Swiss-U.S. Data Privacy
                 Framework unterstellt; für Übermittlungen aus der Schweiz ist das
-                Swiss-U.S. Data Privacy Framework maßgeblich. Ergänzend stützen wir die
+                Swiss-U.S. Data Privacy Framework massgeblich. Ergänzend stützen wir die
                 Übermittlung auf die Standardvertragsklauseln der EU-Kommission. Die
                 Daten werden nach 14 Monaten automatisch gelöscht. Die Bearbeitung
                 erfolgt aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; im

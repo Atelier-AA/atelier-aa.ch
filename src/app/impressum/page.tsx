@@ -73,7 +73,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="mb-3 text-xs uppercase tracking-widest text-stone">
-                Zweck der Gesellschaft
+                Tätigkeitsbereich
               </h2>
               <p>
                 Projektentwicklung, Konzeption, Entwurf, Planung und Realisierung von

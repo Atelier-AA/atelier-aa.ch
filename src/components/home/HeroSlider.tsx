@@ -15,58 +15,54 @@ interface Slide {
   href: string;
 }
 
-// Ausschliesslich Mehrfamilienhaus-Projekte, vom Nutzer aus einer Vorschau
-// mit allen verfügbaren Projektfotos ausgewählt und in dieser Reihenfolge
-// festgelegt.
+// Die Bilder zeigen direkt auf Dateien aus den Projektordnern. Meist ist das
+// das Vorschaubild (`…-hero.jpg`); bei Künten und Jonen ist bewusst ein
+// anderes Foto gewählt (Künten Bild 02, Jonen das Treppenhaus — Vorgabe vom
+// 01.09. und 02.09.2026). Vorher lagen hier eigene Dateien unter /images/hero/ — die
+// blieben beim Erneuern der Projektbilder stehen und zeigten dadurch veraltete
+// Aufnahmen. Über diesen Weg ist der Slider immer auf dem Stand der Projekte.
 const alleSlides: Slide[] = [
   {
-    image: '/images/hero/atelier-aa-hero-hochwarting-2.jpg',
+    image: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg',
     projekt: 'Mehrfamilienhäuser',
     ort: 'Glashütten',
     kanton: 'AG',
     href: '/referenzen/mfh-hochwarting',
   },
   {
-    image: '/images/hero/atelier-aa-hero-kuenten-1.jpg',
+    image: '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-02.jpg',
     projekt: 'Mehrfamilienhaus',
     ort: 'Künten',
     kanton: 'AG',
     href: '/referenzen/mfh-kuenten',
   },
   {
-    image: '/images/hero/atelier-aa-hero-treppenhaus-1.jpg',
+    image: '/images/projekte/efh-jonen/atelier-aa-efh-jonen-12.jpg',
     projekt: 'Einfamilienhaus',
     ort: 'Jonen',
     kanton: 'AG',
     href: '/referenzen/efh-jonen',
   },
   {
-    image: '/images/hero/atelier-aa-hero-fassade-1.jpg',
+    image: '/images/projekte/mfh-sihlaurain/atelier-aa-mfh-sihlaurain-hero.jpg',
     projekt: 'Mehrfamilienhäuser Sihlaurain',
     ort: 'Adliswil',
     kanton: 'ZH',
     href: '/referenzen/mfh-sihlaurain',
   },
   {
-    image: '/images/hero/atelier-aa-hero-modell-1.jpg',
+    image: '/images/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-hero.jpg',
     projekt: 'Mehrfamilienhaus Zelgi',
     ort: 'Untersiggenthal',
     kanton: 'AG',
     href: '/referenzen/wohnueberbauung-zelgi',
   },
   {
-    image: '/images/hero/atelier-aa-hero-wuerenlingen-1.jpg',
+    image: '/images/projekte/mfh-wuerenlingen/atelier-aa-mfh-wuerenlingen-hero.jpg',
     projekt: 'Mehrfamilienhaus',
     ort: 'Würenlingen',
     kanton: 'AG',
     href: '/referenzen/mfh-wuerenlingen',
-  },
-  {
-    image: '/images/hero/atelier-aa-hero-wohnzimmer-1.jpg',
-    projekt: 'Mehrfamilienhaus',
-    ort: 'Künten',
-    kanton: 'AG',
-    href: '/referenzen/mfh-kuenten',
   },
 ];
 
@@ -84,7 +80,6 @@ const slides = alleSlides.slice(0, SICHTBARE_SLIDES);
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((c) => (c + 1) % slides.length);
@@ -121,6 +116,7 @@ export default function HeroSlider() {
           wo Titel und Bildunterschrift lesbar bleiben müssen; der Rest des
           Bilds bleibt in Originalhelligkeit statt gleichmässig abgedunkelt. */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+
 
       <div className="relative z-10 flex h-full flex-col justify-end px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-14">
         <div className="flex flex-col gap-[3.5rem] md:gap-[4.9rem]">
