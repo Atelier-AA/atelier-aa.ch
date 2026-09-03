@@ -845,18 +845,34 @@ Skills sind gespeicherte Arbeitsanweisungen, die du mit `/name` aufrufst. Sie
 liegen als Markdown-Dateien im Projekt und lassen sich mit dem Team teilen —
 so muss niemand die Schritte im Kopf haben.
 
+### Kommandozentrale und Weisheiten
+
+Zwei Dateien im Projektstamm liest jede Claude-Sitzung automatisch:
+
+| Datei | Zweck |
+|---|---|
+| `CLAUDE.md` | Kommandozentrale: wer wir sind, wie gearbeitet wird, wo was steht. |
+| `WEISHEITEN.md` | Leitsätze von Alisami Aljili, wörtlich, nummeriert, datiert, mit Bedeutung und Anwendung. |
+
+Sagt Alisami im Gespräch einen Spruch („das Geld liegt auf der Strasse"),
+trägt Claude ihn mit dem Skill `/weisheit` ein. Der Skill liegt in
+`.claude/skills/weisheit/SKILL.md`. Die Weisheiten sind intern und gehören
+nicht auf die Website.
+
 ### Anlegen
 
-Ordner `.claude/skills/` im Projekt, darin eine Datei je Skill:
+Ordner `.claude/skills/` im Projekt, darin ein Unterordner je Skill mit
+einer Datei `SKILL.md`:
 
 ```
 .claude/skills/
-├── neues-projekt.md
-├── neuer-beitrag.md
-├── neues-teammitglied.md
-├── bilder-pruefen.md
-├── seite-pruefen.md
-└── ki-check.md
+├── weisheit/SKILL.md          (vorhanden)
+├── neues-projekt/SKILL.md
+├── neuer-beitrag/SKILL.md
+├── neues-teammitglied/SKILL.md
+├── bilder-pruefen/SKILL.md
+├── seite-pruefen/SKILL.md
+└── ki-check/SKILL.md
 ```
 
 Aufbau einer solchen Datei:
