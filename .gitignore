@@ -29,3 +29,10 @@ vorlage-wordpress/
 out/
 hostpoint/mailer/konfig.php
 .export-beiseite/
+.vercel
+.env*
+
+# Wegwerf-Skripte und Zwischendateien der Bildwerkzeuge. Alles mit Punkt am
+# Anfang unter werkzeuge/ ist einmalig benutzt oder abgeleitet und lässt sich
+# jederzeit neu erzeugen — die dauerhaften Werkzeuge haben keinen Punkt.
+werkzeuge/.*
