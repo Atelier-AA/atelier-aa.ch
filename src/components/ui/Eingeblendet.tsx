@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { useSichtbar } from '@/lib/bewegung';
 
 interface EingeblendetProps {
   children: React.ReactNode;
@@ -10,25 +11,12 @@ interface EingeblendetProps {
 
 /**
  * Blendet Kinder-Elemente sanft ein (Fade + Hochgleiten), sobald sie beim
- * Scrollen in den sichtbaren Bereich kommen. Gleiches Muster wie bei den
- * Bildern auf der Projektdetailseite (ProjektBilder).
+ * Scrollen in den sichtbaren Bereich kommen. Die Beobachtung steckt in
+ * `lib/bewegung.ts` und wird mit ProjektBilder geteilt.
  */
 export default function Eingeblendet({ children, className }: EingeblendetProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [sichtbar, setSichtbar] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const beobachter = new IntersectionObserver(
-      ([eintrag]) => {
-        if (eintrag.isIntersecting) setSichtbar(true);
-      },
-      { threshold: 0.15 }
-    );
-    beobachter.observe(el);
-    return () => beobachter.disconnect();
-  }, []);
+  const sichtbar = useSichtbar(ref);
 
   return (
     <div

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import Arrow from './Arrow';
 import { cn } from '@/lib/utils';
 
@@ -28,15 +28,20 @@ export default function MehrLesen({
   nurMobil?: boolean;
 }) {
   const [offen, setOffen] = useState(false);
+  // Der wechselnde Beschriftungstext zeigt den Zustand nur visuell; für
+  // assistive Technik braucht es aria-expanded und die Verbindung zum Bereich.
+  const bereichId = useId();
 
   return (
     <>
-      <div className={cn(!offen && (nurMobil ? 'hidden lg:block' : 'hidden'), className)}>
+      <div id={bereichId} className={cn(!offen && (nurMobil ? 'hidden lg:block' : 'hidden'), className)}>
         {children}
       </div>
       <button
         type="button"
         onClick={() => setOffen((v) => !v)}
+        aria-expanded={offen}
+        aria-controls={bereichId}
         className={cn(
           'group mt-3 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-stone transition-colors hover:text-ink',
           nurMobil && 'lg:hidden'

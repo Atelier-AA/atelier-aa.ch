@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { useSichtbar } from '@/lib/bewegung';
 
-export interface ProjektBild {
+interface ProjektBild {
   src: string;
   alt: string;
   width: number;
@@ -22,24 +23,12 @@ interface ProjektBilderProps {
   bilder: ProjektBild[];
 }
 
+export type { ProjektBild };
+
 /** Ein Bild oder Video, das beim Reinscrollen sanft einblendet und leicht hochgleitet. */
 function EingeblendetesBild({ src, alt, width, height, video, eager }: ProjektBild & { eager?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [sichtbar, setSichtbar] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const beobachter = new IntersectionObserver(
-      ([eintrag]) => {
-        if (eintrag.isIntersecting) setSichtbar(true);
-      },
-      { threshold: 0.15 }
-    );
-    beobachter.observe(el);
-    return () => beobachter.disconnect();
-  }, []);
-
+  const sichtbar = useSichtbar(ref);
   return (
     <div
       ref={ref}

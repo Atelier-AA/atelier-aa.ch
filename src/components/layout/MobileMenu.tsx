@@ -176,7 +176,12 @@ export default function MobileMenu({ open, onClose, variante = 'hell' }: MobileM
 
     if (!imDom) return;
 
-    vorherFokussiert.current = document.activeElement as HTMLElement | null;
+    /* Nur beim erstmaligen Öffnen festhalten. Liefe der Effekt erneut,
+       während das Menü offen ist, würde hier ein Menülink gespeichert und
+       beim Schliessen ein bereits entferntes Element fokussiert. */
+    if (!vorherFokussiert.current) {
+      vorherFokussiert.current = document.activeElement as HTMLElement | null;
+    }
 
     const fokussierbare = () =>
       Array.from(

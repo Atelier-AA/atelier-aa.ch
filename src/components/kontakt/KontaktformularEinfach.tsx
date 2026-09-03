@@ -134,12 +134,14 @@ export default function KontaktformularEinfach() {
         </div>
 
         {status === 'gesendet' && (
-          <p className="mt-4 text-sm text-graphite">
+          /* role="status" statt eines gewöhnlichen Absatzes: Screenreader
+             kündigen die Meldung nach dem Absenden sonst nicht an. */
+          <p role="status" className="mt-4 text-sm text-graphite">
             Vielen Dank für Ihre Nachricht. Wir melden uns so schnell wie möglich zurück.
           </p>
         )}
         {status === 'fehler' && (
-          <p className="mt-4 text-sm text-graphite">
+          <p role="alert" className="mt-4 text-sm text-graphite">
             Der direkte Versand hat nicht geklappt. Ihr E-Mail-Programm sollte sich mit der
             vorausgefüllten Anfrage geöffnet haben. Falls nicht, schreiben Sie uns direkt an{' '}
             {firma.email}.
