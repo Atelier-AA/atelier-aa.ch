@@ -55,21 +55,25 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'methoden',
         frage: 'Was ist Design Build?',
         antwort:
           'Ein Modell integrierter Projektabwicklung, bei dem Planung und Ausführung von Beginn an gemeinsam gedacht werden, statt strikt nacheinander. Fachwissen aus der Ausführung fliesst dadurch früher in Entscheidungen ein.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Arbeitet Atelier AA bereits vollständig nach Design Build?',
         antwort:
           'Nein. Wir haben uns intensiv mit dem Modell auseinandergesetzt und wenden erste zentrale Prinzipien daraus in einem aktuellen Projekt an, das Projekt wird aber nicht vollständig nach Design Build abgewickelt.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Was bedeutet integrierte Projektabwicklung konkret?',
         antwort:
           'Planung, Ausführung und wirtschaftliche Überlegungen werden früher zusammengebracht, relevantes Fachwissen wird gezielter in den Prozess eingebunden, und unnötige Schnittstellen zwischen den Beteiligten werden reduziert.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Wird Atelier AA Design Build künftig für alle Projekte anbieten?',
         antwort:
           'Das entscheidet sich am einzelnen Projekt. Wir setzen Prinzipien der integrierten Projektabwicklung dort ein, wo sie ein Projekt tatsächlich besser machen, nicht als festes Schema für jede Aufgabe.',
@@ -117,26 +121,31 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'bestand',
         frage: 'Wie erfahren wir, ob unser Grundstück Ausnutzungsreserven hat?',
         antwort:
           'Aus der Bau- und Nutzungsordnung Ihrer Gemeinde und dem Zonenplan, verglichen mit der bestehenden Bruttogeschossfläche. Wir prüfen das in einer Machbarkeitsstudie und zeigen Ihnen, wie viel zusätzliche Fläche zulässig wäre.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Können wir während einer Aufstockung im Haus bleiben?',
         antwort:
           'Häufig ja, mit Einschränkungen. Beim Öffnen des Dachs ist eine Notabdichtung nötig, und Lärm entsteht. Eine Etappierung, die den Wohnbereich schützt, ist planbar. Wir stimmen sie vor Baubeginn mit Ihnen ab.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Was ist günstiger: Aufstockung oder Ersatzneubau?',
         antwort:
           'Pro Quadratmeter ist der Ersatzneubau oft günstiger, weil er ohne Rücksicht auf Bestehendes gebaut wird. Insgesamt ist die Aufstockung meist wirtschaftlicher, weil Fundament, Keller und Erschliessung bestehen bleiben. Entscheidend ist der Zustand des Bestands.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Wie hoch ist das Risiko einer Einsprache?',
         antwort:
           'Es hängt stark von der Wirkung auf die Nachbarschaft ab: Schatten, Einblick, Verkehr. Wir beurteilen das im Entwurf und empfehlen bei kritischen Situationen ein Gespräch mit den Nachbarn vor der Einreichung. Das reduziert das Risiko erheblich.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Brauchen wir für eine Aufstockung eine Baubewilligung?',
         antwort:
           'In der Regel ja: Zusätzliche Geschossfläche ist bewilligungspflichtig. Die konkreten Anforderungen richten sich nach dem kantonalen und kommunalen Baurecht. Für das Verfahren sind je nach Gemeinde, Fachstellen und Einsprachelage mehrere Monate einzuplanen.',
@@ -188,26 +197,31 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'bewilligung',
         frage: 'Wie lange dauert eine Baubewilligung im Kanton Zürich?',
         antwort:
           'Im Kanton Zürich entscheidet die Behörde in der Regel innert zwei Monaten seit der Vorprüfung, bei Neubauten und grösseren Umbauten innert vier Monaten. Bis zur Vorprüfung vergeht zusätzlich Zeit, und mit Einsprachen verlängert sich das Verfahren um Monate, bei einem Gang ans Baurekursgericht auf ein bis zwei Jahre.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Was kostet ein Baugesuch?',
         antwort:
           'Die Gebühren der Gemeinde richten sich meist nach den Baukosten und liegen im Promillebereich. Dazu kommt unser Honorar für die Erstellung des Dossiers sowie die Kosten für Fachnachweise zu Energie, Lärm und Brandschutz. Wir legen das im Angebot getrennt aus.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Können wir das Baugesuch selbst einreichen?',
         antwort:
           'Formell ja, praktisch selten sinnvoll. Die Nachweise sind fachlich anspruchsvoll und ein Formfehler kostet eine Verfahrensrunde. Bei einfachen Vorhaben wie einem Gartenhaus ist es machbar.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Was passiert bei einer Einsprache?',
         antwort:
           'Häufig lässt sich mit den Einsprechenden das Gespräch suchen, teils auf Einladung der Gemeinde. Viele Einsprachen lassen sich mit einer Anpassung ausräumen. Kommt keine Einigung zustande, entscheidet die Baubehörde; dagegen steht der Weg an eine kantonale Beschwerdeinstanz offen.',
       },
       {
+        gruppe: 'bewilligung',
         frage: 'Dürfen wir vor der Bewilligung mit dem Bauen beginnen?',
         antwort:
           'Nein. Ein Baubeginn ohne rechtskräftige Bewilligung kann zur Einstellung und im Extremfall zum Rückbau führen. Vorbereitende Arbeiten wie Baugrunduntersuchungen sind zulässig.',
@@ -255,26 +269,31 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'kosten',
         frage: 'Was kostet ein hindernisfreier Umbau?',
         antwort:
           'Ein Bad mit bodengleicher Dusche liegt bei 25\'000 bis 50\'000 Franken, ein Homelift ab rund 60\'000. Für ein Erdgeschoss, das zur vollständigen Wohnung umgebaut wird, rechnen Sie je nach Substanz mit 150\'000 bis 350\'000 Franken. Wir erstellen dazu einen Kostenrahmen im Vorprojekt.',
       },
       {
+        gruppe: 'kosten',
         frage: 'Gibt es Fördermittel oder Beiträge?',
         antwort:
-          'Für energetische Massnahmen bestehen kantonale Programme, für hindernisfreie Anpassungen unter Umständen Beiträge von IV oder Ergänzungsleistungen. Bei einer AHV-Rente sind die Möglichkeiten begrenzt. Wir prüfen zu Projektbeginn, was in Frage kommt.',
+          'Für energetische Massnahmen bestehen kantonale und kommunale Programme, die sich regelmässig ändern. Für hindernisfreie Anpassungen kommen unter Umständen Beiträge von IV oder Ergänzungsleistungen in Frage; bei einer AHV-Rente sind die Möglichkeiten begrenzt. Wir prüfen zu Projektbeginn, was für Ihr Vorhaben zutrifft, und berücksichtigen die Fristen in der Terminplanung.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Lohnt sich der Umbau gegenüber einem Verkauf?',
         antwort:
           'Das ist eine Rechnung mit drei Grössen: Umbaukosten, Verkaufswert des Hauses und Preis einer geeigneten Wohnung. Wir klären diese Zahlen gemeinsam mit einer Immobilienbewertung. Erst mit allen drei Werten ist die Frage entscheidbar.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Können wir das Obergeschoss separat vermieten?',
         antwort:
           'Häufig ja, wenn ein eigener Zugang, eine Küche und ein Bad möglich sind. Bauordnung und Brandschutz setzen dabei Grenzen, und die zusätzliche Wohneinheit ist bewilligungspflichtig. Wir prüfen das in der Machbarkeitsstudie mit.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Wie lange dauert ein solcher Umbau?',
         antwort:
           'Ein Badumbau vier bis acht Wochen, ein Erdgeschoss-Umbau vier bis sechs Monate. Im bewohnten Zustand verlängert sich das um etwa ein Drittel, weil in Etappen gearbeitet wird.',
@@ -325,21 +344,25 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'methoden',
         frage: 'Entwerfen Sie unsere Projekte mit KI?',
         antwort:
           'Wir nutzen generative Werkzeuge für Variantenstudien und rechenintensive Prüfungen. Der Entwurf, die Auswahl und die Verantwortung für das Ergebnis liegen bei uns: Jedes Projekt wird von einem Architekten verantwortet, der es unterschreibt.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Wird Planung dadurch günstiger?',
         antwort:
           'Teilweise. Bei Aufgaben mit klaren Regeln sparen wir Zeit, und das kommt bei umfangreichen Projekten im Honorar an. Die Phasen, die Abstimmung und Urteilsvermögen brauchen, werden dadurch nicht kürzer, denn sie sind der eigentliche Wert unserer Arbeit.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Was passiert mit unseren Projektdaten?',
         antwort:
           'Projektbezogene Unterlagen geben wir nicht in öffentliche KI-Dienste. Wo wir Werkzeuge einsetzen, die Daten verarbeiten, klären wir Speicherort und Zweck vorab und halten das im Planungsvertrag fest.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Können wir Varianten sehen, bevor wir uns entscheiden?',
         antwort:
           'Ja. Wir zeigen in der Vorprojektphase mehrere Ansätze mit ihren Vor- und Nachteilen, anhand von Modellen, Schnitten und Kostenrahmen. Sie entscheiden auf einer nachvollziehbaren Grundlage, nicht auf ein Bild hin.',
@@ -353,7 +376,7 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2026-06-17',
     lesezeit: 7,
-    bild: '/images/insights/atelier-aa-kreislauf-bauen.jpg',
+    bild: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-06.jpg',
     abschnitte: [
       {
         titel: 'Graue Energie entscheidet mit',
@@ -379,24 +402,22 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'bestand',
         frage: 'Lohnt sich ein Umbau gegenüber einem Neubau?',
         antwort:
           'Oft ja, aber nicht immer. Es hängt vom Zustand der Tragstruktur, der Schadstoffsituation und Ihren Nutzungsanforderungen ab. Wir prüfen das in einer Vorstudie mit Kostenrahmen für beide Wege, damit die Entscheidung auf Zahlen beruht.',
       },
       {
+        gruppe: 'energie',
         frage: 'Ist nachhaltiges Bauen teurer?',
         antwort:
           'Einzelne Massnahmen erhöhen die Erstellungskosten, können aber Betriebs-, Energie- und späteren Umbaukosten senken. Entscheidend ist deshalb die Betrachtung über den Lebenszyklus, und dass früh geplant wird: Wer Nachhaltigkeit ab dem Vorprojekt mitdenkt, zahlt weniger als wer sie später nachrüstet.',
       },
       {
+        gruppe: 'bauweise',
         frage: 'Können wir wiederverwendete Bauteile einsetzen?',
         antwort:
           'Ja, mit Vorlauf. Verfügbarkeit und Nachweise brauchen Zeit, deshalb klären wir früh, welche Bauteile in Frage kommen, häufig Tragwerkselemente, Fassadenplatten oder Innenausbau. Für tragende Teile ist ein Nachweis der Eigenschaften erforderlich.',
-      },
-      {
-        frage: 'Was ist mit Fördermitteln?',
-        antwort:
-          'Für energetische Sanierungen bestehen kantonale und kommunale Programme, die sich regelmässig ändern. Wir prüfen zu Projektbeginn, was für Ihr Vorhaben in Frage kommt, und berücksichtigen die Fristen in der Terminplanung.',
       },
     ],
   },
@@ -440,26 +461,31 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'auftrag',
         frage: 'Ab wann sollten wir einen Architekten einbeziehen?',
         antwort:
           'Vor dem Grundstückskauf, wenn möglich. Ausnutzung, Erschliessung und Baulinien bestimmen, was realistisch ist. Eine kurze Machbarkeitsprüfung kostet wenig und verhindert Fehlentscheide im sechsstelligen Bereich.',
       },
       {
+        gruppe: 'kosten',
         frage: 'Was kostet die Planung?',
         antwort:
           'Das Honorar wird projektspezifisch anhand des vereinbarten Leistungsumfangs, der Komplexität und des Aufwands festgelegt. Die Ordnung SIA 102:2020 nennt dafür mehrere Modelle, unter anderem Pauschalhonorar, Honorar nach effektivem Zeitaufwand oder ein baukostenbezogenes Honorar; eine allgemeine Prozenttabelle gibt es darin nicht mehr. Wir legen die gewählte Grundlage im Angebot offen und rechnen phasenweise ab, damit sie nachvollziehbar bleibt.',
       },
       {
+        gruppe: 'auftrag',
         frage: 'Können wir einzelne Phasen beauftragen?',
         antwort:
           'Ja. Viele Bauherrschaften beginnen mit Vorstudie und Vorprojekt und entscheiden danach über die Fortsetzung. Wir halten die Phasen so ab, dass ein Wechsel möglich bleibt, auch wenn durchgehende Begleitung meist das bessere Ergebnis bringt.',
       },
       {
+        gruppe: 'auftrag',
         frage: 'Wie läuft die Zusammenarbeit ab?',
         antwort:
           'Mit einem Gespräch über Ihr Vorhaben, den Ort und Ihr Budget. Danach schlagen wir das Vorgehen vor, mit Phasen, Terminen und Honorar. Während des Projekts gibt es feste Termine und einen festen Ansprechpartner.',
       },
       {
+        gruppe: 'auftrag',
         frage: 'Arbeiten Sie auch bei kleineren Vorhaben?',
         antwort:
           'Ja. Umbauten, Aufstockungen und Sanierungen gehören zu unserem Alltag. Bei kleineren Aufgaben stimmen wir den Leistungsumfang so ab, dass der Planungsaufwand zum Vorhaben passt.',
@@ -499,16 +525,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'kosten',
         frage: 'Wie schützt man sich vertraglich vor Materialpreisschwankungen?',
         antwort:
           'Über Preisgleitklauseln in Werkverträgen, die Materialpreisänderungen zwischen Offerte und Ausführung nach einem definierten Index abbilden. Ohne eine solche Klausel trägt in der Regel der Unternehmer das Risiko bis zur Vergabe, danach die Bauherrschaft, wenn Nachträge berechtigt sind.',
       },
       {
+        gruppe: 'kosten',
         frage: 'Lohnt es sich, Material frühzeitig zu bestellen oder Preise zu sichern?',
         antwort:
           'Bei Bauteilen mit langer Lieferzeit oder bekannter Preisvolatilität kann eine frühe Vergabe oder Reservierung sinnvoll sein. Das verlangt aber eine Projektplanung, die so weit steht, dass Mengen und Spezifikationen schon verlässlich feststehen.',
       },
       {
+        gruppe: 'kosten',
         frage: 'Wie genau ist ein Kostenvoranschlag heute?',
         antwort:
           'Nach Ausschreibung und einem wesentlichen Teil der Vergaben lässt sich die Kostenprognose weiter präzisieren, weil die tatsächlichen Unternehmerofferten vorliegen. Wie genau, hängt vom Projektstand, den bereits vergebenen Arbeiten und den verbleibenden Risiken ab. Nachträge aus effektivem Mehraufwand oder Planänderungen bleiben möglich und werden einzeln geprüft.',
@@ -547,16 +576,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'bauweise',
         frage: 'Ist Holzbau teurer als konventioneller Massivbau?',
         antwort:
           'In der reinen Erstellung meist vergleichbar, teils leicht teurer. Die kürzere Bauzeit und geringere Lärmbelastung gleichen das bei vielen Projekten wirtschaftlich aus. Die genaue Rechnung hängt von Gebäudetyp, Grundriss und Standort ab.',
       },
       {
+        gruppe: 'bauweise',
         frage: 'Wie steht es um den Brandschutz bei mehrgeschossigen Holzbauten?',
         antwort:
           'Die Schweizer Brandschutzvorschriften erlauben auch für Holztragwerke Gebäude bis in grössere Höhen, mit entsprechenden Anforderungen an Kapselung und Sprinkleranlagen. Die Details werden projektspezifisch mit der Brandschutzbehörde abgestimmt.',
       },
       {
+        gruppe: 'bauweise',
         frage: 'Eignet sich Holzbau auch für eine Verdichtung im Bestand?',
         antwort:
           'Ja, besonders bei Aufstockungen: Das geringere Gewicht von Holzelementen belastet das bestehende Fundament und Tragwerk weniger als eine Aufstockung in Massivbauweise, oft die entscheidende Voraussetzung, damit eine Aufstockung überhaupt möglich wird.',
@@ -596,16 +628,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'energie',
         frage: 'Ändert der Mantelerlass die Solarpflicht für mein Bauvorhaben?',
         antwort:
           'Nicht direkt. Die Solarpflicht bei mehr als 300 Quadratmetern anrechenbarer Gebäudefläche ist bereits im Energiegesetz verankert. Der Mantelerlass stärkt aber den generellen Ausbau erneuerbarer Energien, was künftige Verschärfungen wahrscheinlicher macht.',
       },
       {
-        frage: 'Betrifft mich das Gesetz bei einem privaten Einfamilienhaus überhaupt?',
+        gruppe: 'energie',
+        frage: 'Betrifft mich der Mantelerlass bei einem privaten Einfamilienhaus?',
         antwort:
           'Direkt vor allem über die kantonale Umsetzung bei Energievorschriften. Die grossen Verfahrenserleichterungen der Vorlage betreffen in erster Linie grössere Energieanlagen, nicht den einzelnen Wohnbau.',
       },
       {
+        gruppe: 'energie',
         frage: 'Wann treten die neuen Bestimmungen in Kraft?',
         antwort:
           'Der Mantelerlass wird stufenweise umgesetzt, mit entsprechenden Verordnungen des Bundesrats und Anpassungen auf kantonaler Ebene. Für ein konkretes Projekt prüfen wir den jeweils aktuellen Stand zu Beginn der Planung.',
@@ -645,16 +680,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'methoden',
         frage: 'Brauche ich für ein privates Einfamilienhaus BIM?',
         antwort:
           'Formal nicht. Die Pflicht betrifft Bundesbauten und bundesnahe Betriebe. Wir setzen 3D-Modelle aber unabhängig von einer formalen Pflicht ein, wo sie die Koordination zwischen den Fachplanern verbessern.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Wird Planung durch BIM teurer?',
         antwort:
           'Der Koordinationsaufwand verschiebt sich stärker in die frühe Planungsphase, was dort mehr Zeit kostet. Dafür sinkt das Risiko teurer Kollisionen und Nachträge während der Ausführung, in der Gesamtbetrachtung meist ein Gewinn.',
       },
       {
+        gruppe: 'methoden',
         frage: 'Was passiert mit den BIM-Daten nach Bauabschluss?',
         antwort:
           'Sie können als digitaler Bestandsplan für den Betrieb und spätere Umbauten dienen, sofern das im Planungsvertrag vereinbart und die Datenpflege entsprechend budgetiert wird.',
@@ -694,16 +732,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'technik',
         frage: 'Muss ich bei einem Einfamilienhaus-Neubau eine Ladestation einbauen?',
         antwort:
           'Eine generelle Pflicht besteht nicht, in einzelnen Kantonen aber die Pflicht zur baulichen Vorbereitung. Wir empfehlen unabhängig davon, mindestens ein Leerrohr zur Garage vorzusehen, der Aufwand ist beim Neubau minimal.',
       },
       {
+        gruppe: 'technik',
         frage: 'Was kostet die Vorbereitung für Ladeinfrastruktur in einer Einstellhalle?',
         antwort:
           'Die reine Leerrohrvorbereitung liegt im Neubau meist im niedrigen vierstelligen Bereich für die ganze Halle. Die eigentlichen Ladestationen und das Lastmanagement kommen erst bei tatsächlicher Installation dazu.',
       },
       {
+        gruppe: 'technik',
         frage: 'Was ist Lastmanagement und wieso brauche ich das?',
         antwort:
           'Lastmanagement verteilt die verfügbare Anschlussleistung dynamisch auf die aktiven Ladepunkte, damit nicht jeder Stellplatz einzeln für die maximale Ladeleistung abgesichert werden muss. Das spart Kosten beim Hausanschluss, besonders bei vielen Stellplätzen.',
@@ -743,16 +784,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'technik',
         frage: 'Reicht eine automatische Storensteuerung als Nachweis für sommerlichen Wärmeschutz?',
         antwort:
           'Die Steuerung allein nicht. Massgebend ist die bauliche Wirksamkeit der Verschattung selbst. Eine automatische Steuerung stellt aber sicher, dass die vorhandene Verschattung auch tatsächlich genutzt wird, etwa wenn niemand zu Hause ist.',
       },
       {
+        gruppe: 'technik',
         frage: 'Brauchen wir bei grossflächiger Verglasung zwingend eine Kühlung?',
         antwort:
           'Nicht zwingend, wenn Verschattung, Ausrichtung und Speichermasse von Anfang an mitgeplant werden. Wird die Verglasung erst nachträglich vergrössert, ohne diese Massnahmen anzupassen, steigt das Risiko einer Überhitzung deutlich.',
       },
       {
+        gruppe: 'technik',
         frage: 'Gilt der Nachweis auch bei einem Umbau oder nur bei Neubauten?',
         antwort:
           'Der Nachweis wird vor allem bei Neubauten und grösseren Umbauten mit relevanten Fassadenänderungen verlangt. Bei kleineren Umbauten lohnt sich eine Prüfung trotzdem, wenn sich der Fensteranteil oder die Verschattungssituation ändert.',
@@ -792,16 +836,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'bestand',
         frage: 'Wird die Wohnungsknappheit die Baubewilligung für eine Verdichtung erleichtern?',
         antwort:
           'Nicht automatisch. Bau- und Nutzungsordnungen ändern sich unabhängig von der aktuellen Marktlage, meist über längere Revisionszyklen. Die Marktlage verbessert aber die Wirtschaftlichkeit eines Vorhabens, das planungsrechtlich bereits möglich ist.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Lohnt sich eine Investition in Wohnbau angesichts der tiefen Leerstandsquote noch mehr als früher?',
         antwort:
           'Eine tiefe Leerwohnungsziffer kann das Vermietungsrisiko senken. Ob sich ein Wohnbau wirtschaftlich trägt, hängt aber zusätzlich von Grundstück, Baukosten, Finanzierung, erzielbaren Mietzinsen und Projektstruktur ab. Wir prüfen das projektspezifisch, auch weil sich einzelne Gemeinden innerhalb eines Kantons deutlich unterscheiden können.',
       },
       {
+        gruppe: 'bestand',
         frage: 'Warum wird trotz Wohnungsknappheit nicht einfach mehr gebaut?',
         antwort:
           'Weil Bauland in gefragten Lagen knapp ist, Verfahren Zeit brauchen und der Fachkräftemangel die Bautätigkeit zusätzlich bremst. Die Lücke zwischen Nachfrage und Fertigstellungen baut sich deshalb nur langsam ab.',
@@ -841,16 +888,19 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'energie',
         frage: 'Gilt die Solarpflicht auch für ein normales Einfamilienhaus?',
         antwort:
           'Die Bundespflicht greift erst über 300 Quadratmetern anrechenbarer Gebäudefläche, was viele Einfamilienhäuser unterschreiten. Einzelne Kantone kennen jedoch strengere, auch kleinere Bauten betreffende Regeln. Wir prüfen das für Ihr Grundstück im Vorprojekt.',
       },
       {
+        gruppe: 'energie',
         frage: 'Muss ich Photovoltaik oder darf ich auch Solarthermie installieren?',
         antwort:
           'Auf Bundesebene ist beides zulässig. Photovoltaik ist in der Praxis meist die flexiblere Wahl, weil der erzeugte Strom für Haushalt, Wärmepumpe und zunehmend auch Elektromobilität genutzt werden kann.',
       },
       {
+        gruppe: 'energie',
         frage: 'Was passiert, wenn mein Dach für eine grosse Solaranlage schlecht geeignet ist?',
         antwort:
           'Die kantonalen Vorschriften sehen in der Regel Ausnahmen für ungeeignete Dachflächen vor, etwa bei starker Verschattung oder ungünstiger Ausrichtung. Wir klären das im Baugesuchsverfahren mit der zuständigen Behörde ab.',
@@ -890,23 +940,34 @@ export const insights: Insight[] = [
     ],
     fragen: [
       {
+        gruppe: 'energie',
         frage: 'Gelten die MuKEn direkt für mein Bauvorhaben?',
         antwort:
           'Nicht direkt. Massgebend ist immer das kantonale Energiegesetz, das die MuKEn als Vorlage übernimmt. Wir prüfen für Ihr Vorhaben die tatsächlich geltende kantonale Fassung.',
       },
       {
+        gruppe: 'energie',
         frage: 'Muss ich beim Heizungsersatz zwingend eine Wärmepumpe einbauen?',
         antwort:
           'Nicht zwingend eine Wärmepumpe, aber in der Regel eine von mehreren zulässigen Standardlösungen mit einem Mindestanteil erneuerbarer Energie. Welche Lösung sich für Ihre Liegenschaft eignet, hängt von Gebäudehülle, Grundstück und Anschlussmöglichkeiten ab.',
       },
       {
+        gruppe: 'energie',
         frage: 'Betrifft das auch denkmalgeschützte Gebäude?',
         antwort:
           'Für Gebäude mit Ortsbild- oder Denkmalschutz gelten häufig Ausnahmen oder angepasste Anforderungen, insbesondere wenn energetische Massnahmen das geschützte Erscheinungsbild beeinträchtigen würden. Das wird im Einzelfall mit der Denkmalpflege abgestimmt.',
       },
     ],
   },
-].sort((a, b) => (a.datum < b.datum ? 1 : -1));
+];
+
+// Neueste Beiträge zuerst. Die Sortierung steht bewusst NACH der Zuweisung:
+// hing sie direkt am Feldliteral, war das Literal nicht mehr durch den
+// Zieltyp typisiert. TypeScript leitete den Typ dann von unten her ab und
+// verbreiterte die Gruppen-Literale zu `string`, was gegen FragenGruppe
+// nicht mehr zuweisbar ist. sort() verändert das Feld an Ort und Stelle,
+// noch bevor eine andere Datei es liest.
+insights.sort((a, b) => (a.datum < b.datum ? 1 : -1));
 
 export function getInsight(slug: string): Insight | undefined {
   return insights.find((i) => i.slug === slug);
