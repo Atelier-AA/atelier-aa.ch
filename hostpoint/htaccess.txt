@@ -61,9 +61,19 @@ Redirect 301 /expertise /leistungen/
 Redirect 301 /indexxxx.php /
 
 # Übersichtsseiten, die in andere Seiten aufgegangen sind.
+#
+# Hier muss es RedirectMatch mit ^…/?$ sein, nicht Redirect. Redirect wirkt
+# in Apache als Präfixregel: "Redirect 301 /studien …" trifft auch
+# /studien/obfelden/ und hängt den Rest an das Ziel an. Mit einem echten
+# Apache 2.4 nachgemessen — /studien/obfelden/ landete auf
+# /leistungen/machbarkeitsstudie//obfelden/ und damit auf einer 404. Das
+# hätte 69 Studien- und 16 Kleinprojektseiten aus dem Index geworfen und
+# zusätzlich die sieben gezielten Weiterleitungen weiter unten überschattet,
+# die dadurch nie gefeuert hätten.
+#
 # Die Detailseiten unter /studien/… und /kleinprojekte/… bleiben bestehen.
-Redirect 301 /studien /leistungen/machbarkeitsstudie/
-Redirect 301 /kleinprojekte /projekte/
+RedirectMatch 301 ^/studien/?$ /leistungen/machbarkeitsstudie/
+RedirectMatch 301 ^/kleinprojekte/?$ /projekte/
 
 # Personenseite: der Slug schrieb "Riccarda" mit zwei c, der sichtbare Name
 # war immer "Ricarda".
@@ -98,23 +108,41 @@ Redirect 301 /kleinprojekte/umbau-efh-spoetl-zuerich /kleinprojekte/umbau-efh-sc
 # ---------------------------------------------------------------------------
 # Zwischenspeicherung
 #
-# Bilder, Videos, Schriften und die von Next erzeugten Dateien tragen einen
-# Inhaltsstempel im Namen und dürfen deshalb lange zwischengespeichert
-# werden. HTML nicht, damit Änderungen sofort sichtbar sind.
+# Die von Next erzeugten Dateien unter /_next/static/ tragen einen
+# Inhaltsstempel im Namen: ändert sich der Inhalt, ändert sich der Name. Sie
+# dürfen deshalb ein Jahr zwischengespeichert werden.
+#
+# Bilder und Videos unter /images/ tragen keinen Stempel — sie heissen
+# dauerhaft gleich, damit sie unter demselben Namen ausgetauscht werden
+# können. Bei einem Jahr Cache sähen wiederkehrende Besucher ein
+# ausgetauschtes Bild bis zu ein Jahr lang nicht. Darum sieben Tage: lange
+# genug, dass Wiederbesuche schnell sind, kurz genug, dass ein Bildtausch
+# innerhalb einer Woche überall ankommt.
+#
+# HTML gar nicht, damit Textänderungen sofort sichtbar sind.
 # ---------------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType image/jpeg              "access plus 1 year"
-  ExpiresByType image/png               "access plus 1 year"
-  ExpiresByType image/webp              "access plus 1 year"
-  ExpiresByType image/svg+xml           "access plus 1 year"
-  ExpiresByType video/mp4               "access plus 1 year"
-  ExpiresByType video/webm              "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 7 days"
+  ExpiresByType image/png               "access plus 7 days"
+  ExpiresByType image/webp              "access plus 7 days"
+  ExpiresByType image/svg+xml           "access plus 7 days"
+  ExpiresByType video/mp4               "access plus 7 days"
+  ExpiresByType video/webm              "access plus 7 days"
   ExpiresByType font/woff2              "access plus 1 year"
   ExpiresByType application/pdf         "access plus 1 month"
   ExpiresByType text/css                "access plus 1 year"
   ExpiresByType application/javascript  "access plus 1 year"
   ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# Für die gestempelten Next-Dateien bleibt es bei einem Jahr. Die Regel muss
+# über den Pfad laufen, weil mod_expires nur den Dateityp kennt.
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/_next/static/" GESTEMPELT
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable" env=GESTEMPELT
 </IfModule>
 
 <IfModule mod_deflate.c>

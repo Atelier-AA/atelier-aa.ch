@@ -87,6 +87,27 @@ jobs:
       - name: Browsertests ausführen
         run: npm run test:e2e -- --reporter=html
 
+      # Die neun Playwright-Tests decken fünf Seiten ab. Dieses Werkzeug geht
+      # alle rund 214 exportierten Seiten auf Handy und Rechner durch und
+      # sucht kaputte Bilder, waagrechten Überlauf, Konsolen- und Ladefehler.
+      # Es endet seit 03.09.2026 mit einem Fehlerkode, wenn es echte Befunde
+      # hat; vorher lief es auch bei Befunden erfolgreich durch.
+      - name: Alle Seiten im Browser prüfen
+        run: |
+          python3 -m http.server 8080 --directory out --bind 127.0.0.1 &
+          for i in $(seq 1 20); do
+            curl -sf http://127.0.0.1:8080/ >/dev/null && break || sleep 1
+          done
+          node werkzeuge/pruefung-browser.mjs
+
+      - name: Befunde der Seitenprüfung hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seitenpruefung
+          path: werkzeuge/.browserpruefung.json
+          if-no-files-found: ignore
+
       - name: Playwright-Bericht hochladen
         if: failure()
         uses: actions/upload-artifact@v4

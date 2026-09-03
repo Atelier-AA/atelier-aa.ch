@@ -4,8 +4,16 @@ import { chromium } from 'playwright';
 const B = 'http://127.0.0.1:8080';
 const browser = await chromium.launch({ channel: 'chrome' });
 const erg = [];
+/* Nur `true` gilt als bestanden. Bis zum 03.09.2026 stand hier `r === false`
+ * als Fehlerbedingung — die Prüfungen unten geben bei einem Problem aber
+ * meist einen erklärenden Text zurück ("kein Video-Element", "HTTP 404").
+ * Solche Ergebnisse landeten unter "ok", ein fehlender Knopf oder ein
+ * unabspielbares Video konnte die Prüfung also bestehen. */
 const pruef = async (name, fn) => {
-  try { const r = await fn(); erg.push([r === false ? 'FEHLER' : 'ok', name, typeof r === 'string' ? r : '']); }
+  try {
+    const r = await fn();
+    erg.push([r === true ? 'ok' : 'FEHLER', name, typeof r === 'string' ? r : '']);
+  }
   catch (e) { erg.push(['FEHLER', name, e.message.split('\n')[0].slice(0, 90)]); }
 };
 
@@ -34,14 +42,20 @@ for (const mobil of [true, false]) {
       const knopf = p.locator('header button').first();
       if (!await knopf.count()) return 'kein Menüknopf';
       await knopf.click(); await p.waitForTimeout(500);
-      const sichtbar = await p.locator('a', { hasText: /^Projekte$/ }).first().isVisible().catch(() => false);
+      /* Der Menüeintrag heisst "Projekte →", nicht "Projekte". Mit
+       * /^Projekte$/ fand diese Prüfung ihn nie und meldete ein
+       * einwandfrei funktionierendes Menü als defekt. Der Suchbereich ist
+       * jetzt der Dialog, damit nicht der gleichnamige Link im Fuss
+       * gefunden wird. */
+      const sichtbar = await p.locator('[role="dialog"] a', { hasText: /^Projekte/ })
+        .first().isVisible().catch(() => false);
       await knopf.click(); await p.waitForTimeout(400);
       return sichtbar ? true : 'Menü öffnete nicht sichtbar';
     });
     await pruef(g + ' Navigation über das Menü funktioniert', async () => {
       await p.goto(B + '/', { waitUntil: 'load' }); await p.waitForTimeout(500);
       await p.locator('header button').first().click(); await p.waitForTimeout(400);
-      await p.locator('header a', { hasText: /^Projekte$/ }).first().click();
+        await p.locator('[role="dialog"] a', { hasText: /^Projekte/ }).first().click();
       await p.waitForURL(/projekte/, { timeout: 8000 });
       return p.url().includes('projekte');
     });
@@ -70,15 +84,22 @@ for (const mobil of [true, false]) {
 
   await pruef(g + ' Video hat Standbild und spielt', async () => {
     await p.goto(B + '/referenzen/mfh-sihlaurain/', { waitUntil: 'load' });
-    await p.evaluate(() => window.scrollBy(0, 900)); await p.waitForTimeout(2500);
+    /* Feste 900 px reichten am Handy nicht bis zum Clip; die Quellen
+     * hängen erst dran, wenn er im Blick ist. Darum gezielt hinscrollen. */
+    await p.locator('video').first().scrollIntoViewIfNeeded();
+    await p.waitForTimeout(2500);
     const v = await p.evaluate(() => {
       const x = document.querySelector('video');
       if (!x) return null;
       return { poster: !!x.poster, quellen: x.querySelectorAll('source').length,
-               bereit: x.readyState, breite: x.videoWidth };
+               bereit: x.readyState, breite: x.videoWidth,
+               laeuft: !x.paused, zeit: x.currentTime };
     });
     if (!v) return 'kein Video-Element';
-    return v.poster && v.quellen >= 1 ? true : JSON.stringify(v);
+    /* Nicht nur Vorhandensein prüfen, sondern dass er wirklich abspielt:
+     * ein Clip, der stehen bleibt, hat diese Prüfung vorher bestanden. */
+    return v.poster && v.quellen >= 1 && v.laeuft && v.zeit > 0
+      ? true : JSON.stringify(v);
   });
 
   await pruef(g + ' Kontaktformular prüft Eingaben', async () => {
@@ -93,8 +114,11 @@ for (const mobil of [true, false]) {
   await pruef(g + ' Projektfilter reagiert', async () => {
     await p.goto(B + '/projekte/', { waitUntil: 'load' }); await p.waitForTimeout(600);
     const vor = await p.locator('a[href^="/referenzen/"]').count();
-    const f = p.getByRole('button', { name: /Mehrfamilienhaus/i }).first();
-    if (!await f.count()) return 'kein Filterknopf gefunden';
+    /* Die Filter heissen Alle, Umbau, Neubau, Mieterausbau, Wohnen, Büro,
+     * Gewerbe. Vorher wurde nach "Mehrfamilienhaus" gesucht — den Knopf gab
+     * es nie, die Prüfung lief also immer ins Leere und meldete nichts. */
+    const f = p.getByRole('button', { name: /^Umbau$/i }).first();
+    if (!await f.count()) return 'kein Filterknopf "Umbau" gefunden';
     await f.click(); await p.waitForTimeout(600);
     const nach = await p.locator('a[href^="/referenzen/"]').count();
     return nach !== vor ? true : 'Zahl der Projekte unverändert (' + vor + ')';
@@ -121,4 +145,8 @@ for (const mobil of [true, false]) {
 await browser.close();
 const breite = Math.max(...erg.map(e => e[1].length));
 erg.forEach(([s, n, d]) => console.log('  ' + (s === 'ok' ? 'ok    ' : 'FEHLER') + '  ' + n.padEnd(breite) + '  ' + d));
-console.log('\n  ' + erg.filter(e => e[0] === 'ok').length + ' von ' + erg.length + ' Prüfungen bestanden');
+const bestanden = erg.filter(e => e[0] === 'ok').length;
+console.log('\n  ' + bestanden + ' von ' + erg.length + ' Prüfungen bestanden');
+/* Mit einem Fehlerkode enden, damit ein Aufruf in der Kontrolle scheitert
+ * statt still durchzulaufen. */
+if (bestanden < erg.length) process.exitCode = 1;

@@ -5,13 +5,19 @@
  * Ausgeschlossen sind `Pläne/` (das sind Pläne, kein Galeriebild) und
  * `Archiv…/` (überschriebene alte Stände).
  *
- * Ohne `--anwenden` wird nur der Plan gedruckt.
+ * Dieses Skript liest nur und schreibt genau eine Datei:
+ * `werkzeuge/.manifest.json`. Das eigentliche Erzeugen der Bilder und das
+ * Nachführen von `projekte.ts` macht danach `galerien-aufbauen.mjs`.
+ *
+ * Bis zum 03.09.2026 stand hier ein Schalter `--anwenden` samt Hinweis, ohne
+ * ihn werde nur geplant. Der Schalter wurde nie ausgewertet: mit und ohne ihn
+ * lief dasselbe. Entfernt, statt ihn scheinbar wirksam zu lassen — ebenso die
+ * drei Importe statSync, unlinkSync und renameSync, die von der ursprünglich
+ * hier geplanten Anwendung übrig waren und nirgends benutzt werden.
  */
 import sharp from 'sharp';
-import { readdirSync, existsSync, statSync, writeFileSync, unlinkSync, renameSync } from 'fs';
+import { readdirSync, existsSync, writeFileSync } from 'fs';
 import { join, basename } from 'path';
-
-const ANWENDEN = process.argv.includes('--anwenden');
 const BILD = /\.(jpe?g|png|heic|webp|tiff?)$/i;
 
 export const ZUORDNUNG = {

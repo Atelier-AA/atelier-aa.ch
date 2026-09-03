@@ -30,9 +30,9 @@ export default function InsightCard({ insight, priority = false }: InsightCardPr
           sizes="(max-width: 600px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100" />
 
-        <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+        <div className="absolute inset-x-4 bottom-4 transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100">
           <p className="truncate text-lg font-medium leading-tight text-white">
             {insight.titel}
           </p>

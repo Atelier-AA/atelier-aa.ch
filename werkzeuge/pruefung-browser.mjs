@@ -26,7 +26,9 @@ const seiten = [];
 })('out');
 const alle = [...new Set(seiten.map(x => x.replace(/\/+$/, '/') || '/'))].sort();
 
-const browser = await chromium.launch({ channel: 'chrome' });
+/* Lokal das installierte Chrome, in der Kontrolle das mitgelieferte Chromium:
+ * dort ist der Chrome-Kanal nicht vorhanden und der Start würde scheitern. */
+const browser = await chromium.launch(process.env.CI ? {} : { channel: 'chrome' });
 const befunde = [];
 
 for (const g of GERAETE) {
@@ -105,3 +107,12 @@ for (const b of echt.slice(0, 25)) {
 }
 const klein = befunde.filter(b => b.nurKlein);
 if (klein.length) console.log('\n  Seiten mit kleinen Tippflächen: ' + klein.length + ' (nur Hinweis)');
+
+/* Mit einem Fehlerkode enden, wenn es echte Befunde gab — kleine Tippflächen
+ * bleiben ein Hinweis und lassen den Lauf bestehen. Ohne das lief dieses
+ * Werkzeug auch bei kaputten Seiten erfolgreich durch und konnte in der
+ * Kontrolle nichts verhindern. */
+if (echt.length > 0) {
+  console.log('\n  ' + echt.length + ' echte Befunde — Lauf gilt als gescheitert.');
+  process.exitCode = 1;
+}

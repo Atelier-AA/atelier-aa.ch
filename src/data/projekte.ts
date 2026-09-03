@@ -1222,12 +1222,14 @@ export const projekte: Projekt[] = [
     ],
       thumbnail: '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-thumb.jpg',
       heroImage: '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-hero.jpg',
-    // 01.jpg war byteweise dieselbe Datei wie hero.jpg und erschien darum
-    // direkt darunter ein zweites Mal. Die Galerie bleibt leer; das Foto
-    // steht weiterhin als grosses Bild oben, darunter folgen die Pläne.
-      galerie: [
-        '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-01.jpg',
-      ],
+      // 01.jpg zeigt dieselbe Aufnahme wie hero.jpg und erschien darum direkt
+      // darunter ein zweites Mal. Die Galerie bleibt leer; das Foto steht
+      // weiterhin als grosses Bild oben, darunter folgen die Pläne.
+      //
+      // Am 03.09.2026 hatte galerien-aufbauen.mjs den Eintrag wieder eingesetzt,
+      // weil die Datei im Quellordner liegt. Der Slug steht dort jetzt unter
+      // ENTFERNT, damit ein Neuaufbau ihn auslässt.
+      galerie: [],
     plaene: [],
     featured: false,
   },
@@ -1330,10 +1332,9 @@ export const projekte: Projekt[] = [
       },
     ],
     daten: [
-      {
-        label: 'Gebäudetyp',
-        wert: 'Gewerbebau, Mieterausbau Untergeschoss und Parkplatzerweiterung',
-      },
+      // Hier standen zwei Zeilen mit derselben Beschriftung «Gebäudetyp» und
+      // unterschiedlichem Inhalt; auf der Seite erschienen beide untereinander.
+      // Alisami hat am 03.09.2026 die kurze Fassung gewählt.
       { label: 'Gebäudetyp', wert: 'Gewerbeliegenschaft, Mieterausbau' },
       { label: 'Bauherrschaft', wert: 'Remnex Zug' },
       { label: 'Status', wert: 'Realisiert' },

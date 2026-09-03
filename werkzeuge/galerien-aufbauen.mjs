@@ -75,7 +75,7 @@ for (const [slug, v] of Object.entries(man)) {
   const raus = v.galerie.length > 1 ? String(nrVorschau).padStart(2, '0') : null;
   /* Auf Kundenwunsch entfernte Bilder (03.09.2026), damit ein Neuaufbau sie
      nicht zurückholt. */
-  const ENTFERNT = { 'mfh-kuenten': ['03'], 'mfh-hochwarting': ['06'] };
+  const ENTFERNT = { 'mfh-kuenten': ['03'], 'mfh-hochwarting': ['06'], 'efh-othmarsingen': ['01'] };
   let dateien = [...v.galerie.map(g => g.nr), ...(VIDEOPLAETZE[slug] ?? [])]
     .filter(nr => nr !== raus)
     .filter(nr => !(ENTFERNT[slug] ?? []).includes(nr));
