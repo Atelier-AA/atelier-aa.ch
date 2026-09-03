@@ -17,6 +17,7 @@ type Status = 'idle' | 'senden' | 'gesendet' | 'fehler';
 
 export default function KontaktformularEinfach() {
   const [status, setStatus] = useState<Status>('idle');
+  const [geladenAm] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,12 +32,20 @@ export default function KontaktformularEinfach() {
       betreff: String(daten.get('betreff') ?? ''),
       nachricht: String(daten.get('nachricht') ?? ''),
       webseite: String(daten.get('webseite') ?? ''), // Honeypot, muss leer bleiben
+      // Zeitpunkt des Seitenaufbaus. Ein Formular, das in unter drei
+      // Sekunden zurueckkommt, wurde nicht von Hand ausgefuellt. Wird
+      // serverseitig geprueft.
+      zeit: geladenAm,
     };
 
     setStatus('senden');
 
     try {
-      const antwort = await fetch('/api/kontakt', {
+      // Auf Vercel laeuft die Next-Route, bei Hostpoint das PHP-Skript.
+      // Der Pfad kommt aus der Umgebung, damit dieselbe Komponente fuer
+      // beide Ziele gebaut werden kann.
+      const ziel = process.env.NEXT_PUBLIC_FORMULAR_ZIEL || '/api/kontakt';
+      const antwort = await fetch(ziel, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(werte),
@@ -125,12 +134,14 @@ export default function KontaktformularEinfach() {
         </div>
 
         {status === 'gesendet' && (
-          <p className="mt-4 text-sm text-graphite">
+          /* role="status" statt eines gewöhnlichen Absatzes: Screenreader
+             kündigen die Meldung nach dem Absenden sonst nicht an. */
+          <p role="status" className="mt-4 text-sm text-graphite">
             Vielen Dank für Ihre Nachricht. Wir melden uns so schnell wie möglich zurück.
           </p>
         )}
         {status === 'fehler' && (
-          <p className="mt-4 text-sm text-graphite">
+          <p role="alert" className="mt-4 text-sm text-graphite">
             Der direkte Versand hat nicht geklappt. Ihr E-Mail-Programm sollte sich mit der
             vorausgefüllten Anfrage geöffnet haben. Falls nicht, schreiben Sie uns direkt an{' '}
             {firma.email}.

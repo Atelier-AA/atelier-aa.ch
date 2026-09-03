@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieBanner from '@/components/cookies/CookieBanner';
-import NurOeffentlich from '@/components/layout/NurOeffentlich';
 import GoogleAnalytics from '@/components/cookies/GoogleAnalytics';
 import MarketingPixel from '@/components/cookies/MarketingPixel';
 import { firma } from '@/data/firma';
@@ -22,13 +21,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.atelier-aa.ch'),
+  metadataBase: new URL('https://atelier-aa.ch'),
   title: {
     default: 'Atelier AA Architekten | Zürich, Aargau, Zug',
     template: '%s | Atelier AA Architekten',
   },
   description:
     'Atelier AA Architekten GmbH aus Obfelden plant und realisiert Wohnbauten in Zürich, Aargau und Zug, von der Machbarkeitsstudie bis zur Bauleitung.',
+  /*
+   * Bestätigung für die Google Search Console. Google akzeptiert zwei Wege:
+   * dieses Meta-Element im HTML oder einen TXT-Eintrag im DNS. Das Element
+   * hier deckt die Eigenschaft "URL-Präfix" ab und muss stehen bleiben —
+   * Google prüft es regelmässig nach, nicht nur einmal.
+   */
+  verification: {
+    google: 'WTHRvG73rntQ64LxInu_fcHSdYIdXlXqRAM44eO6hzA',
+  },
   keywords: [
     'Architektur',
     'Architekten',
@@ -47,19 +55,23 @@ export const metadata: Metadata = {
     siteName: 'Atelier AA Architekten',
     images: [
       {
-        url: '/images/hero/atelier-aa-hero-hochwarting-2.jpg',
+        url: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg',
         width: 2400,
         height: 1340,
         alt: 'Atelier AA Architekten',
       },
     ],
   },
+  /*
+   * Nur Kartenform und Ersatzbild global. Titel und Beschreibung standen
+   * hier fest und wurden von keiner Unterseite überschrieben — geteilte
+   * Projekt- und Journalseiten zeigten deshalb alle denselben Text statt
+   * ihres eigenen. Ohne diese zwei Felder greift X auf die Angaben aus
+   * openGraph zurück, und die setzt jede Seite selbst.
+   */
   twitter: {
     card: 'summary_large_image',
-    title: 'Atelier AA Architekten',
-    description:
-      'Architekturbüro in Obfelden für Neubau, Umbau und Generalplanung in Zürich, Aargau und Zug.',
-    images: ['/images/hero/atelier-aa-hero-hochwarting-2.jpg'],
+    images: ['/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg'],
   },
   // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
   icons: {
@@ -68,9 +80,6 @@ export const metadata: Metadata = {
   },
   // Kanonische Adresse je Seite: verhindert, dass Varianten derselben Seite als
   // Dubletten gewertet werden und die Sichtbarkeit aufteilen.
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: true,
     follow: true,
@@ -101,22 +110,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema(firma, team)) }}
         />
-        <NurOeffentlich>
           <Header />
-        </NurOeffentlich>
         <main id="main" className="flex-1">
           {children}
         </main>
-        <NurOeffentlich>
           <Footer />
-        </NurOeffentlich>
-        <NurOeffentlich>
           <GoogleAnalytics />
           <MarketingPixel />
-        </NurOeffentlich>
-        <NurOeffentlich>
           <CookieBanner />
-        </NurOeffentlich>
       </body>
     </html>
   );

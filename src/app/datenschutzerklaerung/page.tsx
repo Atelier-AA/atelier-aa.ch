@@ -16,13 +16,17 @@ export const metadata: Metadata = {
  * seit 1. September 2023) und, für Besucher aus dem EU-Raum, den
  * Informationspflichten der DSGVO.
  *
- * WICHTIG — vor der Veröffentlichung juristisch prüfen lassen. Ein Abschnitt
- * muss an den tatsächlichen Betrieb angepasst werden:
- * - «Hosting und Server-Logfiles»: Anbieter und Standort eintragen (bei einem
- *   Betrieb auf Vercel liegt eine Auftragsbearbeitung mit US-Bezug vor).
+ * WICHTIG — vor der Veröffentlichung juristisch prüfen lassen.
+ *
+ * Abschnitt «Hosting und Server-Logfiles» nennt seit 03.09.2026 die Hostpoint
+ * AG in Rapperswil-Jona mit Servern in der Schweiz. Vorher stand hier Vercel
+ * Inc. mit US-Bezug — das war nach dem Umzug auf Hostpoint falsch und musste
+ * berichtigt werden, weil eine Datenschutzerklärung beschreiben muss, was
+ * tatsächlich geschieht. Adresse und Vertrag zur Auftragsbearbeitung bitte
+ * gegen die eigenen Hostpoint-Unterlagen prüfen.
  *
  * Google Analytics und der Meta-Werbepixel (Abschnitt 7) laden erst, sobald in
- * den Vercel-Umgebungsvariablen NEXT_PUBLIC_GA_MEASUREMENT_ID bzw.
+ * den Umgebungsvariablen NEXT_PUBLIC_GA_MEASUREMENT_ID bzw.
  * NEXT_PUBLIC_META_PIXEL_ID gesetzt sind UND die Besucherin/der Besucher im
  * Cookie-Banner zugestimmt hat (siehe CookieBanner.tsx, GoogleAnalytics.tsx,
  * MarketingPixel.tsx). Vor dem Live-Start sind beide Variablen leer, es
@@ -114,13 +118,10 @@ export default function DatenschutzPage() {
                 abgeschlossen.
               </p>
               <p className="mt-4">
-                Die Website wird auf der Infrastruktur von Vercel Inc., 340 S Lemon Ave
-                #4133, Walnut, CA 91789, USA betrieben. Die Auslieferung erfolgt über
-                Server in Europa; technisch bedingt kann es zu einer Übermittlung in die
-                USA kommen. Wir stützen diese Übermittlung auf die
-                Standardvertragsklauseln der EU-Kommission beziehungsweise auf das
-                Swiss-U.S. Data Privacy Framework, soweit der Anbieter darunter
-                zertifiziert ist.
+                Die Website wird bei der Hostpoint AG, Neue Jonastrasse 60, 8640
+                Rapperswil-Jona, Schweiz betrieben. Die Daten werden auf Servern in der
+                Schweiz bearbeitet. Eine Übermittlung ins Ausland findet im Rahmen des
+                Hostings nicht statt.
               </p>
             </section>
 
@@ -210,7 +211,7 @@ export default function DatenschutzPage() {
                 Die Daten können dabei an Server von Google in die USA übermittelt
                 werden. Google hat sich dem EU-U.S. und dem Swiss-U.S. Data Privacy
                 Framework unterstellt; für Übermittlungen aus der Schweiz ist das
-                Swiss-U.S. Data Privacy Framework maßgeblich. Ergänzend stützen wir die
+                Swiss-U.S. Data Privacy Framework massgeblich. Ergänzend stützen wir die
                 Übermittlung auf die Standardvertragsklauseln der EU-Kommission. Die
                 Daten werden nach 14 Monaten automatisch gelöscht. Die Bearbeitung
                 erfolgt aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO; im

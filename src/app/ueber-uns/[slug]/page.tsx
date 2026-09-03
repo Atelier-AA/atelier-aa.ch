@@ -52,13 +52,13 @@ export default async function TeamMemberPage({ params }: PageProps) {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': `https://www.atelier-aa.ch/ueber-uns/${person.slug}#person`,
+    '@id': `https://atelier-aa.ch/ueber-uns/${person.slug}#person`,
     name: person.name,
     jobTitle: person.rolle,
-    image: `https://www.atelier-aa.ch${person.bild}`,
+    image: `https://atelier-aa.ch${person.bild}`,
     description: person.kurz,
     knowsAbout: person.schwerpunkte,
-    worksFor: { '@id': 'https://www.atelier-aa.ch/#organisation' },
+    worksFor: { '@id': 'https://atelier-aa.ch/#organisation' },
     ...(person.email ? { email: person.email } : {}),
   };
 

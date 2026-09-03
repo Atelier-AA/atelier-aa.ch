@@ -12,6 +12,53 @@ import { firma } from '@/data/firma';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Feldlängen. Ohne sie kann eine einzelne Anfrage beliebig grosse Werte
+ * mitschicken, die dann durch Speicher, Protokolle und den Versanddienst
+ * wandern. Die Werte sind grosszügig gewählt und schneiden echte Anfragen
+ * nicht ab.
+ */
+const MAX_FELD = 300;
+const MAX_EMAIL = 254; // RFC 5321
+const MAX_NACHRICHT = 5000;
+
+/**
+ * Einfache Ratenbegrenzung je Absenderadresse.
+ *
+ * Bewusst im Arbeitsspeicher: diese Route läuft nur in der Vercel-Vorschau,
+ * die Produktion auf Hostpoint nutzt kontakt.php mit einer dateibasierten
+ * Sperre. Ein Speicherzähler überlebt keinen Kaltstart und wirkt bei
+ * mehreren Instanzen nur je Instanz — als Bremse gegen einfache Fluten
+ * genügt das hier. Für eine dauerhafte Lösung bräuchte es Vercel KV oder
+ * die Firewall.
+ */
+const MAX_PRO_STUNDE = 5;
+const zaehler = new Map<string, number[]>();
+
+function zuVieleAnfragen(adresse: string): boolean {
+  const jetzt = Date.now();
+  const grenze = jetzt - 3600_000;
+  const bisher = (zaehler.get(adresse) ?? []).filter((z) => z > grenze);
+  if (bisher.length >= MAX_PRO_STUNDE) {
+    zaehler.set(adresse, bisher);
+    return true;
+  }
+  bisher.push(jetzt);
+  zaehler.set(adresse, bisher);
+  // Verwaiste Einträge aufräumen, damit die Karte nicht unbegrenzt wächst.
+  if (zaehler.size > 5000) {
+    for (const [k, v] of zaehler) {
+      if (v.every((z) => z <= grenze)) zaehler.delete(k);
+    }
+  }
+  return false;
+}
+
+/** Kürzt und säubert einen Wert aus der Anfrage. */
+function feld(wert: unknown, max = MAX_FELD): string {
+  return typeof wert === 'string' ? wert.trim().slice(0, max) : '';
+}
+
 function escapeHtml(wert: string) {
   return wert
     .replace(/&/g, '&amp;')
@@ -33,13 +80,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const vorname = String(body.vorname ?? '').trim();
-  const nachname = String(body.nachname ?? '').trim();
-  const email = String(body.email ?? '').trim();
-  const telefon = String(body.telefon ?? '').trim();
-  const unternehmen = String(body.unternehmen ?? '').trim();
-  const betreff = String(body.betreff ?? '').trim();
-  const nachricht = String(body.nachricht ?? '').trim();
+  const adresse =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unbekannt';
+  if (zuVieleAnfragen(adresse)) {
+    return NextResponse.json(
+      { error: 'Es wurden zu viele Nachrichten gesendet. Bitte später erneut versuchen.' },
+      { status: 429 },
+    );
+  }
+
+  const vorname = feld(body.vorname);
+  const nachname = feld(body.nachname);
+  const email = feld(body.email, MAX_EMAIL);
+  const telefon = feld(body.telefon);
+  const unternehmen = feld(body.unternehmen);
+  const betreff = feld(body.betreff);
+  const nachricht = feld(body.nachricht, MAX_NACHRICHT);
 
   if (!vorname || !nachname || !email || !nachricht) {
     return NextResponse.json(

@@ -20,7 +20,7 @@ export default function MenuDunkelVorschau() {
   return (
     <div className="relative min-h-screen">
       <Image
-        src="/images/hero/atelier-aa-hero-hochwarting-2.jpg"
+        src="/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg"
         alt="Mehrfamilienhaus Hochwarting, Atelier AA Architekten"
         fill
         priority

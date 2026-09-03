@@ -1,0 +1,15 @@
+; .user.ini für atelier-aa.ch bei Hostpoint
+;
+; Setzt die Absenderadresse für Mails, die PHP-Skripte verschicken. Ohne
+; diesen Eintrag verwendet der Server eine Standardadresse, die nicht zur
+; Domain passt — solche Mails scheitern an den Absenderrichtlinien und
+; landen beim Empfänger im Spam oder werden gar nicht angenommen.
+;
+; Beim Hochladen als ".user.ini" in das Verzeichnis www legen.
+
+sendmail_from = info@atelier-aa.ch
+
+; Grosszügig genug für Anhänge am Kontaktformular, aber nicht unbegrenzt.
+upload_max_filesize = 8M
+post_max_size = 10M
+max_execution_time = 120

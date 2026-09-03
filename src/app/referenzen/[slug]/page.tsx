@@ -5,6 +5,7 @@ import ProjektBilder from '@/components/projekte/ProjektBilder';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
+import { PROJEKT_BESCHREIBUNG } from '@/data/metabeschreibungen';
 import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import VorhabenCta from '@/components/ui/VorhabenCta';
@@ -51,13 +52,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const seoTitel = `${projekt.title} ${ortMitKanton(projekt)}`;
 
   return {
-    title: seoTitel,
-    description: kurzbeschreibung(projekt.beschreibung),
+    /*
+     * `absolute` statt der Vorlage aus dem Layout: die hängt
+     * " | Atelier AA Architekten" an, also 25 Zeichen. Zusammen mit dem
+     * eigenen Titel überschritten 73 Seiten die rund 65 Zeichen, die Google
+     * in der Trefferliste zeigt. Auf Detailseiten steht die Marke ohnehin in
+     * der Adresse und im Text.
+     */
+    title: { absolute: seoTitel },
+    description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
     alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
       title: seoTitel,
-      description: kurzbeschreibung(projekt.beschreibung),
+      description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
       images: [projekt.heroImage],
     },
   };
@@ -76,7 +84,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
   // "mehr lesen" — sonst steht auf schmalen Bildschirmen der gesamte
   // Projekttext vor dem ersten Bild.
   const [ersterAbschnitt, ...weitereAbschnitte] = projekt.abschnitte;
-  const BASIS = 'https://www.atelier-aa.ch';
+  const BASIS = 'https://atelier-aa.ch';
   const url = `${BASIS}/referenzen/${projekt.slug}`;
 
   // Pixelmasse einmal zur Build-Zeit lesen (statische Seite), damit
@@ -113,9 +121,15 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         '@type': 'CreativeWork',
         '@id': `${url}#projekt`,
         name: `${projekt.title}, ${projekt.ort} ${projekt.kanton}`,
-        description: kurzbeschreibung(projekt.beschreibung),
+        description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
         image: `${BASIS}${projekt.heroImage}`,
-        dateCreated: projekt.jahr,
+        /*
+         * Nur echte Jahreszahlen. Das Feld `jahr` trägt auch Statuswerte wie
+         * «im Bau», «baubewilligt» oder «nicht realisiert»; als Schema.org-
+         * Datumsangabe sind die ungültig und standen auf 12 Projektseiten.
+         * Der Status steckt weiter unten in `creativeWorkStatus`.
+         */
+        ...(/^\d{4}$/.test(projekt.jahr) ? { dateCreated: projekt.jahr } : {}),
         inLanguage: 'de-CH',
         creator: { '@id': `${BASIS}/#organisation` },
         about: { '@type': 'Thing', name: projekt.typ },

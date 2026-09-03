@@ -39,6 +39,13 @@ export default function CookieBanner() {
   const [statistik, setStatistik] = useState(false);
   const [marketing, setMarketing] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
+  /*
+   * Beim erneuten Öffnen über die Fusszeile erschien der Dialog bisher, ohne
+   * dass der Fokus mitwanderte. Tastatur- und Screenreader-Nutzer standen
+   * weiter beim Fussknopf und mussten den Dialog erst suchen.
+   */
+  const ausloeser = useRef<HTMLElement | null>(null);
+  const [neuGeoeffnet, setNeuGeoeffnet] = useState(false);
 
   useEffect(() => {
     if (!sichtbar) return;
@@ -70,14 +77,31 @@ export default function CookieBanner() {
       setMarketing(aktuell?.marketing ?? false);
       setEinstellungenOffen(true);
       setSichtbar(true);
+      // Auslöser festhalten, damit der Fokus nach dem Schliessen dorthin
+      // zurückkehrt statt am Seitenanfang zu landen.
+      ausloeser.current = document.activeElement as HTMLElement | null;
+      setNeuGeoeffnet(true);
     };
     window.addEventListener(COOKIE_SETTINGS_EVENT, oeffnen);
     return () => window.removeEventListener(COOKIE_SETTINGS_EVENT, oeffnen);
   }, []);
 
+  useEffect(() => {
+    if (!neuGeoeffnet || !sichtbar) return;
+    const erster = bannerRef.current?.querySelector<HTMLElement>(
+      'button, a[href], input:not([disabled])',
+    );
+    erster?.focus();
+    setNeuGeoeffnet(false);
+  }, [neuGeoeffnet, sichtbar]);
+
   if (!sichtbar) return null;
 
   const schliessen = () => {
+    // Fokus an den Auslöser zurückgeben, falls der Dialog von dort kam.
+    const zurueck = ausloeser.current;
+    ausloeser.current = null;
+    if (zurueck) setTimeout(() => zurueck.focus(), 0);
     setSichtbar(false);
     setEinstellungenOffen(false);
   };

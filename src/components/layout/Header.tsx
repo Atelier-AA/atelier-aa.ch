@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Container from '@/components/ui/Container';
@@ -12,6 +12,13 @@ import { navigation } from '@/data/navigation';
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  /*
+   * Stabil halten: eine bei jedem Rendern neu erzeugte Funktion landet in den
+   * Abhängigkeiten des Fokus-Effekts von MobileMenu. Der Effekt liefe dann
+   * beim Scrollen erneut und merkte sich den falschen Rücksprungpunkt — beim
+   * Schliessen landete der Fokus im Nichts statt auf dem Menüknopf.
+   */
+  const menueSchliessen = useCallback(() => setMobileOpen(false), []);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -158,7 +165,7 @@ export default function Header() {
       </header>
       <MobileMenu
         open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        onClose={menueSchliessen}
         variante={menueVariante}
       />
     </>

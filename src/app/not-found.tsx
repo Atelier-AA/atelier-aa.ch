@@ -1,5 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
+
+/*
+ * Eigener Titel: ohne diese Angabe erbt die Fehlerseite den Titel der
+ * Startseite. Im Browser-Tab und in der Verlaufsliste stand dann
+ * "Atelier AA Architekten | Zürich, Aargau, Zug", obwohl die Seite
+ * "Seite nicht gefunden" zeigt.
+ */
+export const metadata: Metadata = {
+  title: 'Seite nicht gefunden',
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

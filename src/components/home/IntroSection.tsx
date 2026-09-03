@@ -60,7 +60,7 @@ export default function IntroSection() {
               "mehr lesen" den Text daneben verlängert. */}
           <div className="relative min-h-[16rem] w-full self-start bg-mist lg:col-start-2 lg:row-start-1 lg:aspect-video lg:min-h-0">
             <Image
-              src="/images/projekte/efh-jonen/atelier-aa-efh-jonen-16.jpg"
+              src="/images/projekte/efh-jonen/atelier-aa-efh-jonen-17.jpg"
               alt="Treppe mit Lichtband, Einfamilienhaus Jonen, Atelier AA Architekten"
               fill
               className="object-cover"

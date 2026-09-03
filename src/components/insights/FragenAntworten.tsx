@@ -4,6 +4,18 @@ interface FragenAntwortenProps {
   fragen: InsightFrage[];
   /** Überschrift des Abschnitts. */
   titel?: string;
+  /**
+   * Anker für die Sprungmarken. Muss je Seite eindeutig sein: /haeufige-fragen
+   * zeigt neun Blöcke, und eine neunmal vergebene ID wäre ungültiges HTML und
+   * würde das Inhaltsverzeichnis unbrauchbar machen.
+   */
+  id?: string;
+  /**
+   * Engere Abstände und kleinere Überschrift für Seiten mit mehreren Blöcken
+   * hintereinander. Der grosszügige Standardabstand ist für den Fall gedacht,
+   * dass ein einziger Q&A-Abschnitt eine Seite abschliesst.
+   */
+  kompakt?: boolean;
 }
 
 /**
@@ -25,17 +37,32 @@ interface FragenAntwortenProps {
 export default function FragenAntworten({
   fragen,
   titel,
+  id = 'faq',
+  kompakt = false,
 }: FragenAntwortenProps) {
   if (fragen.length === 0) return null;
 
   return (
     <section
-      id="faq"
+      id={id}
       aria-label={titel ?? 'Fragen und Antworten'}
-      className="mt-20 md:mt-28 border-t border-mist pt-16"
+      // scroll-mt hält die Überschrift beim Sprung unter dem festen Kopf frei.
+      className={
+        kompakt
+          ? 'mt-16 scroll-mt-28 border-t border-mist pt-10'
+          : 'mt-20 scroll-mt-28 border-t border-mist pt-16 md:mt-28'
+      }
     >
       {titel && (
-        <h2 className="text-2xl md:text-h2 font-medium text-ink mb-10">{titel}</h2>
+        <h2
+          className={
+            kompakt
+              ? 'mb-6 text-xl font-medium text-ink md:text-2xl'
+              : 'mb-10 text-2xl font-medium text-ink md:text-h2'
+          }
+        >
+          {titel}
+        </h2>
       )}
 
       <div className="border-t border-mist">
@@ -56,7 +83,7 @@ export default function FragenAntworten({
               </span>
             </summary>
             <div className="pb-8 pr-10">
-              <p className="text-lg text-graphite leading-relaxed">{f.antwort}</p>
+              <p className="text-lg leading-relaxed text-graphite">{f.antwort}</p>
             </div>
           </details>
         ))}

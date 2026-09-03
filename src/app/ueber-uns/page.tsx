@@ -139,7 +139,10 @@ export default function UeberUnsPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {ANSAETZE.map((a) => (
               <div key={a.titel} className="bg-mist p-8">
-                <h2 className="text-h3 text-ink">{a.titel}</h2>
+                {/* h3, nicht h2: die vier Ansätze sind Unterpunkte der
+                    Abschnittsüberschrift darüber. Als h2 standen fünf
+                    gleichrangige Abschnitte in der Gliederung. */}
+                <h3 className="text-h3 text-ink">{a.titel}</h3>
                 <p className="mt-3 max-w-lesbar text-karte leading-relaxed text-graphite">{a.text}</p>
               </div>
             ))}

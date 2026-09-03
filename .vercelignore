@@ -1,0 +1,14 @@
+# Nicht auf Vercel hochladen.
+#
+# out/          fertiger Hostpoint-Export, 178 MB, wird dort nicht gebraucht
+# hostpoint/    Apache-Konfiguration und die PHP-Fassung des Mailers
+# werkzeuge/.*  Zwischenergebnisse der Bildwerkzeuge
+out
+hostpoint
+.export-beiseite
+werkzeuge/.manifest.json
+werkzeuge/.ergebnis.json
+werkzeuge/.videos.json
+werkzeuge/.bilder-plan.json
+werkzeuge/.*.mjs
+*.tsbuildinfo

@@ -15,7 +15,23 @@ export default function MarketingPixel() {
   const [erlaubt, setErlaubt] = useState(false);
 
   useEffect(() => {
-    const pruefen = () => setErlaubt(ladeEinwilligung()?.marketing === true);
+    const pruefen = () => {
+      const jetztErlaubt = ladeEinwilligung()?.marketing === true;
+      setErlaubt(jetztErlaubt);
+      /*
+       * Meta kennt keinen Abschalter wie ga-disable. Ein einmal geladenes
+       * fbevents.js lässt sich nicht sauber entladen — wir können nur
+       * verhindern, dass weitere Ereignisse abgesetzt werden, indem die
+       * Warteschlange geleert und die Funktion stillgelegt wird.
+       */
+      if (!jetztErlaubt) {
+        const w = window as unknown as Record<string, unknown>;
+        if (typeof w.fbq === 'function') {
+          w.fbq = () => undefined;
+          w._fbq = undefined;
+        }
+      }
+    };
     pruefen();
     window.addEventListener(CONSENT_EVENT, pruefen);
     return () => window.removeEventListener(CONSENT_EVENT, pruefen);

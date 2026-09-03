@@ -6,7 +6,23 @@ import { studien } from '@/data/studien';
 import { kleinprojekte } from '@/data/kleinprojekte';
 import { alleKantone, orteInKanton } from '@/lib/regionen';
 
-const BASIS = 'https://www.atelier-aa.ch';
+const BASIS = 'https://atelier-aa.ch';
+
+/**
+ * Adressform. Der statische Export nach Hostpoint legt jede Seite als
+ * <Pfad>/index.html ab; Apache liefert das nur unter <Pfad>/ aus. Damit die
+ * Sitemap dieselbe Form nennt wie die Canonicals und nicht auf
+ * Weiterleitungen zeigt, haengt sie dort einen Schraegstrich an.
+ *
+ * Auf Vercel bleibt die Variable leer und alles ist wie bisher.
+ */
+const SCHRAEG = process.env.NEXT_PUBLIC_SCHRAEGSTRICH === '1' ? '/' : '';
+
+/** Adresse zusammensetzen, mit passender Adressform. */
+function adr(pfad: string): string {
+  if (pfad === '' || pfad === '/') return `${BASIS}/`;
+  return `${BASIS}${pfad}${SCHRAEG}`;
+}
 
 /**
  * Sitemap für Suchmaschinen und KI-Crawler.
@@ -15,8 +31,20 @@ const BASIS = 'https://www.atelier-aa.ch';
  * Auftragsanfragen zählt: Startseite und Projekte zuerst, dann die
  * inhaltstragenden Seiten, rechtliche Seiten zuletzt.
  */
+/** Fuer den statischen Export nach Hostpoint: ausdruecklich statisch.
+ *  Auf Vercel aendert das nichts, dort ist die Route ohnehin statisch. */
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const heute = new Date();
+  /*
+   * Bewusst KEIN lastModified für Inhalte ohne belastbares Datum.
+   *
+   * Vorher trug jeder Export das jeweils heutige Datum ein — 150 von 166
+   * Adressen behaupteten damit bei jedem Bauen, gerade geändert worden zu
+   * sein. Das entwertet die Angabe: Suchmaschinen können echte Änderungen
+   * nicht mehr von einem blossen Neubau unterscheiden. Nur die Fachbeiträge
+   * haben ein echtes Datum, das steht unten bei `i.datum`.
+   */
 
   const statisch = [
     { pfad: '', prio: 1.0, freq: 'monthly' as const },
@@ -37,32 +65,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...statisch.map((s) => ({
-      url: `${BASIS}${s.pfad}`,
-      lastModified: heute,
+      url: adr(s.pfad),
       changeFrequency: s.freq,
       priority: s.prio,
     })),
     ...projekte.map((p) => ({
-      url: `${BASIS}/referenzen/${p.slug}`,
-      lastModified: heute,
+      url: adr(`/referenzen/${p.slug}`),
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
     ...insights.map((i) => ({
-      url: `${BASIS}/insights/${i.slug}`,
+      url: adr(`/insights/${i.slug}`),
       lastModified: new Date(i.datum),
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     })),
     ...team.map((m) => ({
-      url: `${BASIS}/ueber-uns/${m.slug}`,
-      lastModified: heute,
+      url: adr(`/ueber-uns/${m.slug}`),
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
     ...studien.map((s) => ({
-      url: `${BASIS}/studien/${s.slug}`,
-      lastModified: heute,
+      url: adr(`/studien/${s.slug}`),
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
@@ -70,16 +94,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // (siehe KleinprojektCard.tsx), sind aber über die Bilder-Erweiterung der
     // Sitemap für Google Bilder & KI-Crawler weiterhin auffindbar.
     ...kleinprojekte.map((k) => ({
-      url: `${BASIS}/kleinprojekte/${k.slug}`,
-      lastModified: heute,
+      url: adr(`/kleinprojekte/${k.slug}`),
       changeFrequency: 'yearly' as const,
       priority: 0.4,
       images: k.bilder.map((b) => `${BASIS}${b}`),
     })),
     ...alleKantone().flatMap((k) => [
       {
-        url: `${BASIS}/regionen/${k.slug}`,
-        lastModified: heute,
+        url: adr(`/regionen/${k.slug}`),
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       },
@@ -90,8 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...orteInKanton(k.kuerzel)
         .filter((o) => o.projekte.length > 0)
         .map((o) => ({
-          url: `${BASIS}/regionen/${k.slug}/${o.slug}`,
-          lastModified: heute,
+          url: adr(`/regionen/${k.slug}/${o.slug}`),
           changeFrequency: 'yearly' as const,
           priority: 0.6,
         })),

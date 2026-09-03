@@ -10,7 +10,25 @@ export interface Abschnitt {
 export interface InsightFrage {
   frage: string;
   antwort: string;
+  /**
+   * Themenblock auf /haeufige-fragen. Ohne Angabe erscheint die Frage
+   * ungruppiert — so bei den Fragen der Projektseiten, die je Seite nur
+   * ein bis drei Stück umfassen.
+   */
+  gruppe?: FragenGruppe;
 }
+
+/** Die Themenblöcke von /haeufige-fragen, in der Reihenfolge der Seite. */
+export type FragenGruppe =
+  | 'auftrag'
+  | 'kosten'
+  | 'machbarkeit'
+  | 'bewilligung'
+  | 'bestand'
+  | 'energie'
+  | 'technik'
+  | 'bauweise'
+  | 'methoden';
 
 /** Eckdaten eines Projekts als Beschriftung-Wert-Paar. */
 export interface ProjektDaten {

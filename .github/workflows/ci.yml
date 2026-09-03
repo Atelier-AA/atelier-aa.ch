@@ -1,0 +1,118 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - relaunch-v2
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  pruefen:
+    name: Prüfen
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quelltext auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Typen prüfen
+        run: npm run type-check
+
+      - name: Quelltext prüfen
+        run: npm run lint
+
+  einheitstests:
+    name: Einheitstests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quelltext auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Einheitstests ausführen
+        run: npm test
+
+  bauen-und-browsertests:
+    name: Bauen und Browsertests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quelltext auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Playwright-Browser zwischenspeichern
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+
+      - name: Chromium und Systemabhängigkeiten installieren
+        run: npx playwright install --with-deps chromium
+
+      - name: Statischen Export bauen
+        run: ./werkzeuge/export-hostpoint.sh
+
+      - name: Browsertests ausführen
+        run: npm run test:e2e -- --reporter=html
+
+      # Die neun Playwright-Tests decken fünf Seiten ab. Dieses Werkzeug geht
+      # alle rund 214 exportierten Seiten auf Handy und Rechner durch und
+      # sucht kaputte Bilder, waagrechten Überlauf, Konsolen- und Ladefehler.
+      # Es endet seit 03.09.2026 mit einem Fehlerkode, wenn es echte Befunde
+      # hat; vorher lief es auch bei Befunden erfolgreich durch.
+      - name: Alle Seiten im Browser prüfen
+        run: |
+          python3 -m http.server 8080 --directory out --bind 127.0.0.1 &
+          for i in $(seq 1 20); do
+            curl -sf http://127.0.0.1:8080/ >/dev/null && break || sleep 1
+          done
+          node werkzeuge/pruefung-browser.mjs
+
+      - name: Befunde der Seitenprüfung hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seitenpruefung
+          path: werkzeuge/.browserpruefung.json
+          if-no-files-found: ignore
+
+      - name: Playwright-Bericht hochladen
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-bericht
+          path: playwright-report/
+          if-no-files-found: warn
+          retention-days: 14

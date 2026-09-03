@@ -57,7 +57,10 @@ export const kleinprojekte: Kleinprojekt[] = [
     jahr: '2022',
     leistungen: ['Baueingabe', 'Ausführungsplanung'],
     bilder: [
-      '/images/kleinprojekte/efh-waldrueti-othmarsingen/atelier-aa-efh-waldrueti-othmarsingen-bild1.jpg',
+      /* Dasselbe Haus wie das Projekt efh-othmarsingen; die Datei hier war die
+       * alte Fassung derselben Aufnahme (1600 px). Direkt auf das Projektbild
+       * verweisen, dann bleiben beide Seiten künftig von selbst gleich. */
+      '/images/projekte/efh-othmarsingen/atelier-aa-efh-othmarsingen-01.jpg',
       '/images/kleinprojekte/efh-waldrueti-othmarsingen/atelier-aa-efh-waldrueti-othmarsingen-bild2.jpg',
     ],
   },

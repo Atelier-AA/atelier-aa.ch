@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
  * jede Kachel im Text an einen anderen Beweggrund adressiert (eigene Idee,
  * ungenutztes Grundstück, Eindruck der gezeigten Arbeit).
  */
-export const kontaktTexte = [
+const kontaktTexte = [
   {
     titel: 'Ein Projekt im Kopf, aber noch keinen Plan?',
     text: 'Wir hören zu, bevor wir zeichnen. Erzählen Sie uns von Ihrer Idee.',

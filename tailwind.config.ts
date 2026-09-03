@@ -34,7 +34,12 @@ const config: Config = {
       // auseinander.
       fontSize: {
         hero:  ['clamp(2.52rem, 1.68rem + 2.52vw, 5.32rem)', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
-        h1:    ['clamp(1.575rem, 1.03rem + 2.32vw, 2.625rem)', { lineHeight: '1.12', letterSpacing: '-0.018em', fontWeight: '400' }],
+        // Die Untergrenze war 1.575rem und lag damit unter der von h2 (1.75rem):
+        // unterhalb von rund 800 px Fensterbreite war die Hauptüberschrift kleiner
+        // als die Zwischentitel darunter — am Handy gemessen 25.5 gegen 28.2 px.
+        // Untergrenze und Steigung so gewählt, dass h1 auf jeder Breite über h2
+        // liegt und die Obergrenze am Rechner unverändert bleibt.
+        h1:    ['clamp(1.9rem, 1.42rem + 2.05vw, 2.625rem)', { lineHeight: '1.12', letterSpacing: '-0.018em', fontWeight: '400' }],
         h2:    ['clamp(1.75rem, 1.36rem + 1.66vw, 2.5rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '400' }],
         h3:    ['1.25rem', { lineHeight: '1.35', letterSpacing: '-0.005em', fontWeight: '500' }],
         karte: ['1rem', { lineHeight: '1.6' }],

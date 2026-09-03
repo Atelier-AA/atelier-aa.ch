@@ -8,20 +8,23 @@ import type { MetadataRoute } from 'next';
  * Googlebot auswertet. Ohne diese Freigabe können Antworten in Gemini die Seite
  * nicht als Quelle nutzen.
  */
-const GESPERRT = ['/vorschau/', '/mailer', '/api/mailer'];
+const GESPERRT = ['/vorschau/'];
+
+/** Fuer den statischen Export nach Hostpoint: ausdruecklich statisch.
+ *  Auf Vercel aendert das nichts, dort ist die Route ohnehin statisch. */
+export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // /vorschau/* sind interne Entwurfsseiten, /mailer und /api/mailer der
-      // interne Mailing-Bereich: nirgends verlinkt, aber ohne diese Regel
-      // technisch crawlbar. Der Zugriffsschutz liegt nicht hier, sondern im
-      // Anmeldelink — robots.txt hält nur die Suchmaschinen fern.
+        // /vorschau/* sind interne Entwurfsseiten: nirgends verlinkt, aber
+        // ohne diese Regel technisch crawlbar. Der Mailing-Bereich wurde am
+        // 03.09.2026 entfernt und braucht keine Sperre mehr.
       { userAgent: '*', allow: '/', disallow: GESPERRT },
       { userAgent: 'Googlebot', allow: '/', disallow: GESPERRT },
       { userAgent: 'Google-Extended', allow: '/', disallow: GESPERRT },
     ],
-    sitemap: 'https://www.atelier-aa.ch/sitemap.xml',
-    host: 'https://www.atelier-aa.ch',
+    sitemap: 'https://atelier-aa.ch/sitemap.xml',
+    host: 'https://atelier-aa.ch',
   };
 }

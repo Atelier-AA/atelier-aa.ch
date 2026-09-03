@@ -1,0 +1,174 @@
+# .htaccess für atelier-aa.ch bei Hostpoint
+#
+# Diese Datei ersetzt drei Dinge, die vorher der Next.js-Server auf Vercel
+# übernommen hat und die bei einem statischen Export sonst verloren wären:
+#
+#   1. die dreizehn Weiterleitungen alter Adressen
+#   2. die Sicherheits-Header
+#   3. den Zwang auf HTTPS und auf die Adresse ohne www
+#
+# Beim Hochladen als ".htaccess" in das Verzeichnis www legen.
+
+# ---------------------------------------------------------------------------
+# Zeichensatz
+# ---------------------------------------------------------------------------
+AddDefaultCharset UTF-8
+
+# ---------------------------------------------------------------------------
+# HTTPS und Adressform erzwingen
+#
+# Die Hauptadresse ist atelier-aa.ch OHNE www. So war es bisher schon
+# eingerichtet, und alle Canonicals der Website zeigen dorthin.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http → https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://atelier-aa.ch/$1 [R=301,L]
+
+  # www → ohne www
+  RewriteCond %{HTTP_HOST} ^www\.atelier-aa\.ch$ [NC]
+  RewriteRule ^(.*)$ https://atelier-aa.ch/$1 [R=301,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Adressform
+#
+# Der Export legt jede Seite als <Pfad>/index.html ab. Apache liefert das von
+# selbst aus, sobald DirectoryIndex index.html gilt — das ist ueberall die
+# Voreinstellung. Es braucht deshalb KEINE Rewrite-Regeln.
+#
+# Der erste Entwurf arbeitete mit <Pfad>.html plus Rewrite-Regel und
+# DirectorySlash Off. Das ist entfallen: Zu ueber-uns, leistungen und
+# insights gibt es Datei und Ordner mit gleichem Namen, und dort war die
+# Loesung anfaellig. Genau diese drei Seiten waren auf dem Server nicht
+# erreichbar.
+# ---------------------------------------------------------------------------
+DirectoryIndex index.html
+
+# ---------------------------------------------------------------------------
+# Weiterleitungen alter Adressen, alle als echte 301
+#
+# Vercel lieferte hier 308. Google behandelt beide gleich, 301 ist auf
+# Apache aber die übliche und von allen Werkzeugen erwartete Form.
+# ---------------------------------------------------------------------------
+
+# Frühere Bezeichnungen der Leistungsseite
+Redirect 301 /expertise /leistungen/
+
+# Altlast der PHP-Website, bei Google noch indexiert
+Redirect 301 /indexxxx.php /
+
+# Übersichtsseiten, die in andere Seiten aufgegangen sind.
+#
+# Hier muss es RedirectMatch mit ^…/?$ sein, nicht Redirect. Redirect wirkt
+# in Apache als Präfixregel: "Redirect 301 /studien …" trifft auch
+# /studien/obfelden/ und hängt den Rest an das Ziel an. Mit einem echten
+# Apache 2.4 nachgemessen — /studien/obfelden/ landete auf
+# /leistungen/machbarkeitsstudie//obfelden/ und damit auf einer 404. Das
+# hätte 69 Studien- und 16 Kleinprojektseiten aus dem Index geworfen und
+# zusätzlich die sieben gezielten Weiterleitungen weiter unten überschattet,
+# die dadurch nie gefeuert hätten.
+#
+# Die Detailseiten unter /studien/… und /kleinprojekte/… bleiben bestehen.
+RedirectMatch 301 ^/studien/?$ /leistungen/machbarkeitsstudie/
+RedirectMatch 301 ^/kleinprojekte/?$ /projekte/
+
+# Personenseite: der Slug schrieb "Riccarda" mit zwei c, der sichtbare Name
+# war immer "Ricarda".
+Redirect 301 /ueber-uns/riccarda-tscharner /ueber-uns/ricarda-tscharner/
+
+# Sieben Werkliste-Adressen trugen den Familiennamen der Bauherrschaft in
+# der URL. Ersetzt durch Strasse und Ort.
+Redirect 301 /kleinprojekte/efh-bunjaku /kleinprojekte/efh-fahrweidstrasse-weiningen/
+Redirect 301 /kleinprojekte/efh-alimi-othmarsingen /kleinprojekte/efh-waldrueti-othmarsingen/
+Redirect 301 /kleinprojekte/pool-hug-florin /kleinprojekte/pool-zug/
+Redirect 301 /kleinprojekte/efh-epstein-obfelden /kleinprojekte/efh-fabrikstrasse-obfelden/
+Redirect 301 /kleinprojekte/mfh-einsele-wuerenlos /kleinprojekte/mfh-weizenstrasse-wuerenlos/
+Redirect 301 /kleinprojekte/efh-leemann-obfelden /kleinprojekte/efh-schuerweidestrasse-obfelden/
+Redirect 301 /kleinprojekte/umbau-efh-spoetl-zuerich /kleinprojekte/umbau-efh-schneegloeggliweg-zuerich/
+
+# ---------------------------------------------------------------------------
+# Sicherheits-Header
+#
+# Diese setzte bisher Vercel. Ohne diesen Block wären sie nach dem Umzug
+# weg — die Website wäre also unsicherer als vorher.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Ein Jahr HSTS. Erst einschalten, wenn HTTPS zuverlässig läuft: Browser
+  # merken sich die Angabe und lassen danach kein http mehr zu.
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Zwischenspeicherung
+#
+# Die von Next erzeugten Dateien unter /_next/static/ tragen einen
+# Inhaltsstempel im Namen: ändert sich der Inhalt, ändert sich der Name. Sie
+# dürfen deshalb ein Jahr zwischengespeichert werden.
+#
+# Bilder und Videos unter /images/ tragen keinen Stempel — sie heissen
+# dauerhaft gleich, damit sie unter demselben Namen ausgetauscht werden
+# können. Bei einem Jahr Cache sähen wiederkehrende Besucher ein
+# ausgetauschtes Bild bis zu ein Jahr lang nicht. Darum sieben Tage: lange
+# genug, dass Wiederbesuche schnell sind, kurz genug, dass ein Bildtausch
+# innerhalb einer Woche überall ankommt.
+#
+# HTML gar nicht, damit Textänderungen sofort sichtbar sind.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg              "access plus 7 days"
+  ExpiresByType image/png               "access plus 7 days"
+  ExpiresByType image/webp              "access plus 7 days"
+  ExpiresByType image/svg+xml           "access plus 7 days"
+  ExpiresByType video/mp4               "access plus 7 days"
+  ExpiresByType video/webm              "access plus 7 days"
+  ExpiresByType font/woff2              "access plus 1 year"
+  ExpiresByType application/pdf         "access plus 1 month"
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# Für die gestempelten Next-Dateien bleibt es bei einem Jahr. Die Regel muss
+# über den Pfad laufen, weil mod_expires nur den Dateityp kennt.
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/_next/static/" GESTEMPELT
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable" env=GESTEMPELT
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Fehlerseite
+#
+# Der Export legt die 404-Seite unter /404.html ab.
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
+# Interne Verzeichnisse
+#
+# Die Vorschauseiten unter /vorschau werden gar nicht exportiert, es braucht
+# hier also keine Sperre. Eine solche Regel wäre ohnehin unwirksam, weil die
+# .html-Regel weiter oben mit [L] schon vorher greift.
+# ---------------------------------------------------------------------------
+
+# Verzeichnisinhalte nicht auflisten
+Options -Indexes
+
+# Konfigurationsdateien nicht ausliefern
+<FilesMatch "^(\.htaccess|\.user\.ini|.*\.md)$">
+  Require all denied
+</FilesMatch>

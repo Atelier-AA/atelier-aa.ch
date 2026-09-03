@@ -4,6 +4,7 @@ import Container from '@/components/ui/Container';
 import VorhabenCta from '@/components/ui/VorhabenCta';
 import AblaufSection from '@/components/home/AblaufSection';
 import { bauaufgaben, kompetenzen } from '@/data/expertise';
+import BaustellenVideo from '@/components/leistungen/BaustellenVideo';
 
 export const metadata: Metadata = {
   title: 'Leistungen',
@@ -60,19 +61,11 @@ export default function LeistungenPage() {
           </div>
           {/* Zusammenschnitt mehrerer Baustellen-Drohnenaufnahmen — zeigt
               reale, laufende Projekte statt eines einzelnen Referenzbilds. */}
-          <div className="relative aspect-video w-full overflow-hidden bg-mist lg:aspect-[4/3]">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/leistungen-projekte-montage.mp4"
-              poster="/images/leistungen/atelier-aa-leistungen-montage-poster.jpg"
-              aria-label="Drohnenaufnahmen laufender Baustellen von Atelier AA Architekten in Zürich, Aargau und Zug"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-            />
-          </div>
+          <BaustellenVideo
+            mp4="/videos/leistungen-projekte-montage.mp4"
+            poster="/images/leistungen/atelier-aa-leistungen-montage-poster.jpg"
+            beschreibung="Drohnenaufnahmen laufender Baustellen von Atelier AA Architekten in Zürich, Aargau und Zug"
+          />
         </div>
       </Container>
 

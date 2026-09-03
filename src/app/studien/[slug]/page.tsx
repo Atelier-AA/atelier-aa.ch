@@ -5,6 +5,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { studien, getStudie, studieTitel } from '@/data/studien';
 import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
+import { STUDIE_BESCHREIBUNG } from '@/data/metabeschreibungen';
 import { breadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
@@ -22,10 +23,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const titel = studieTitel(studie);
   return {
-    title: `${studie.kategorie}: ${titel}`,
-    description: kurzbeschreibung(
-      `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`
-    ),
+    /*
+     * `absolute` statt der Vorlage aus dem Layout: die hängt
+     * " | Atelier AA Architekten" an, also 25 Zeichen. Zusammen mit dem
+     * eigenen Titel überschritten 73 Seiten die rund 65 Zeichen, die Google
+     * in der Trefferliste zeigt — der längste hatte 114. Auf Detailseiten
+     * steht die Marke ohnehin in der Adresse und im Text.
+     */
+    title: { absolute: `${studie.kategorie}: ${titel}` },
+    /*
+     * Der Vorspann hiess bis zum 03.09.2026 "… von Atelier AA Architekten GmbH
+     * in Ort KT: …" und verbrauchte damit 70 der 155 Zeichen — fast die Hälfte
+     * für Text, der nichts über das Grundstück sagt. Google zeigt den
+     * Firmennamen ohnehin separat als Seitenname an. Ohne diesen Zusatz bleibt
+     * dreissig Zeichen mehr Platz für die eigentliche Analyse, und bei drei
+     * Studien passt der erste Satz nun vollständig hinein.
+     */
+    description:
+      STUDIE_BESCHREIBUNG[studie.slug] ??
+      kurzbeschreibung(
+        `${studie.kategorie} in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`
+      ),
     alternates: { canonical: `/studien/${studie.slug}` },
   };
 }
@@ -47,7 +65,7 @@ export default async function StudieDetailPage({ params }: PageProps) {
       : null,
   ].filter((b): b is { src: string; titel: string } => Boolean(b));
 
-  const BASIS = 'https://www.atelier-aa.ch';
+  const BASIS = 'https://atelier-aa.ch';
   const url = `${BASIS}/studien/${studie.slug}`;
 
   /**
@@ -81,7 +99,10 @@ export default async function StudieDetailPage({ params }: PageProps) {
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
-        { name: 'Studien', pfad: '/studien' },
+        /* Nicht '/studien' — dort liegt keine Seite, die Adresse endet über
+           eine Weiterleitung bei der Machbarkeitsstudie. Ein Breadcrumb soll
+           auf das echte Ziel zeigen, nicht auf eine Weiterleitung. */
+        { name: 'Machbarkeitsstudien', pfad: '/leistungen/machbarkeitsstudie' },
         { name: titel, pfad: `/studien/${studie.slug}` },
       ]),
     ],
