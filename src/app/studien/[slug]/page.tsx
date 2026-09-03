@@ -22,7 +22,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const titel = studieTitel(studie);
   return {
-    title: `${studie.kategorie}: ${titel}`,
+    /*
+     * `absolute` statt der Vorlage aus dem Layout: die hängt
+     * " | Atelier AA Architekten" an, also 25 Zeichen. Zusammen mit dem
+     * eigenen Titel überschritten 73 Seiten die rund 65 Zeichen, die Google
+     * in der Trefferliste zeigt — der längste hatte 114. Auf Detailseiten
+     * steht die Marke ohnehin in der Adresse und im Text.
+     */
+    title: { absolute: `${studie.kategorie}: ${titel}` },
     description: kurzbeschreibung(
       `${studie.kategorie} von Atelier AA Architekten GmbH in ${ortMitKanton({ ort: studie.ort, kanton: studie.kanton })}: ${studie.analyse}`
     ),
@@ -81,7 +88,10 @@ export default async function StudieDetailPage({ params }: PageProps) {
       },
       breadcrumbSchema([
         { name: 'Startseite', pfad: '/' },
-        { name: 'Studien', pfad: '/studien' },
+        /* Nicht '/studien' — dort liegt keine Seite, die Adresse endet über
+           eine Weiterleitung bei der Machbarkeitsstudie. Ein Breadcrumb soll
+           auf das echte Ziel zeigen, nicht auf eine Weiterleitung. */
+        { name: 'Machbarkeitsstudien', pfad: '/leistungen/machbarkeitsstudie' },
         { name: titel, pfad: `/studien/${studie.slug}` },
       ]),
     ],

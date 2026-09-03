@@ -21,16 +21,30 @@ export function kurzbeschreibung(text: string, max = 155): string {
   if (sauber.length <= max) return sauber;
 
   const anschnitt = sauber.slice(0, max);
+
+  // 1. Am liebsten am Satzende. Die Schwelle lag bei 50 % und war zu streng —
+  //    dadurch endeten Beschreibungen mitten im Satz, obwohl ein Punkt kurz
+  //    davor stand.
   const satzende = Math.max(
     anschnitt.lastIndexOf('. '),
     anschnitt.lastIndexOf('! '),
     anschnitt.lastIndexOf('? ')
   );
-  // Nur wenn danach noch ein brauchbarer Satz steht, sonst wird es zu kurz.
-  if (satzende > max * 0.5) return anschnitt.slice(0, satzende + 1);
+  if (satzende > max * 0.35) return anschnitt.slice(0, satzende + 1);
 
+  // 2. Sonst an einer Teilsatzgrenze. "…mit Volumenstudie und Kostenrahmen…"
+  //    liest sich deutlich besser als "…ein zurückversetztes…".
+  const teilsatz = Math.max(
+    anschnitt.lastIndexOf(', '),
+    anschnitt.lastIndexOf('; '),
+    anschnitt.lastIndexOf(' – '),
+    anschnitt.lastIndexOf(' — ')
+  );
+  if (teilsatz > max * 0.55) return anschnitt.slice(0, teilsatz).trimEnd() + ' …';
+
+  // 3. Zuletzt an der Wortgrenze.
   const wortgrenze = anschnitt.lastIndexOf(' ');
-  return anschnitt.slice(0, wortgrenze > 0 ? wortgrenze : max).trimEnd() + '…';
+  return anschnitt.slice(0, wortgrenze > 0 ? wortgrenze : max).trimEnd() + ' …';
 }
 
 export function ortMitKanton(projekt: { ort: string; kanton: string }): string {

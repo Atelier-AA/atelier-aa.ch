@@ -23,7 +23,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!insight) return { title: 'Beitrag nicht gefunden' };
 
   return {
-    title: insight.titel,
+    /*
+     * `absolute` statt der Vorlage aus dem Layout: die hängt
+     * " | Atelier AA Architekten" an, also 25 Zeichen. Zusammen mit dem
+     * eigenen Titel überschritten 73 Seiten die rund 65 Zeichen, die Google
+     * in der Trefferliste zeigt — der längste hatte 114. Auf Detailseiten
+     * steht die Marke ohnehin in der Adresse und im Text.
+     */
+    title: { absolute: insight.titel },
     description: kurzbeschreibung(insight.lead),
     alternates: { canonical: `/insights/${insight.slug}` },
     openGraph: {

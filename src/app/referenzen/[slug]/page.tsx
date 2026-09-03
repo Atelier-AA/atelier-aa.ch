@@ -51,7 +51,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const seoTitel = `${projekt.title} ${ortMitKanton(projekt)}`;
 
   return {
-    title: seoTitel,
+    /*
+     * `absolute` statt der Vorlage aus dem Layout: die hängt
+     * " | Atelier AA Architekten" an, also 25 Zeichen. Zusammen mit dem
+     * eigenen Titel überschritten 73 Seiten die rund 65 Zeichen, die Google
+     * in der Trefferliste zeigt. Auf Detailseiten steht die Marke ohnehin in
+     * der Adresse und im Text.
+     */
+    title: { absolute: seoTitel },
     description: kurzbeschreibung(projekt.beschreibung),
     alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
