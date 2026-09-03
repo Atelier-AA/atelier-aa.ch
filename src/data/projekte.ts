@@ -553,7 +553,6 @@ export const projekte: Projekt[] = [
       thumbnail: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-thumb.jpg',
       heroImage: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg',
       galerie: [
-        '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-06.jpg',
         '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-01.jpg',
         '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-02.jpg',
         '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-04.jpg',

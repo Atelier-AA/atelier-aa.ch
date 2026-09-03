@@ -376,7 +376,11 @@ export const insights: Insight[] = [
     kategorie: 'Nachhaltigkeit',
     datum: '2026-06-17',
     lesezeit: 7,
-    bild: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-06.jpg',
+    /* Bis zum 03.09.2026 ein Bild aus Glashütten; das ist ein Neubau, während
+     * der Beitrag vom Bestand handelt. Dietikon zeigt das Haus zurückgebaut
+     * bis auf das tragende Backsteinmauerwerk — und ist mit 2000×2667 genau
+     * im 3:4 der Journalkarte, also ohne Beschnitt. */
+    bild: '/images/projekte/efh-dietikon/atelier-aa-efh-dietikon-02.jpg',
     abschnitte: [
       {
         titel: 'Graue Energie entscheidet mit',
