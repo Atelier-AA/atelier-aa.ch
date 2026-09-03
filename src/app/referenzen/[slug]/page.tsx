@@ -115,7 +115,13 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         name: `${projekt.title}, ${projekt.ort} ${projekt.kanton}`,
         description: kurzbeschreibung(projekt.beschreibung),
         image: `${BASIS}${projekt.heroImage}`,
-        dateCreated: projekt.jahr,
+        /*
+         * Nur echte Jahreszahlen. Das Feld `jahr` trägt auch Statuswerte wie
+         * «im Bau», «baubewilligt» oder «nicht realisiert»; als Schema.org-
+         * Datumsangabe sind die ungültig und standen auf 12 Projektseiten.
+         * Der Status steckt weiter unten in `creativeWorkStatus`.
+         */
+        ...(/^\d{4}$/.test(projekt.jahr) ? { dateCreated: projekt.jahr } : {}),
         inLanguage: 'de-CH',
         creator: { '@id': `${BASIS}/#organisation` },
         about: { '@type': 'Thing', name: projekt.typ },

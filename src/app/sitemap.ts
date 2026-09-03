@@ -36,7 +36,15 @@ function adr(pfad: string): string {
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const heute = new Date();
+  /*
+   * Bewusst KEIN lastModified für Inhalte ohne belastbares Datum.
+   *
+   * Vorher trug jeder Export das jeweils heutige Datum ein — 150 von 166
+   * Adressen behaupteten damit bei jedem Bauen, gerade geändert worden zu
+   * sein. Das entwertet die Angabe: Suchmaschinen können echte Änderungen
+   * nicht mehr von einem blossen Neubau unterscheiden. Nur die Fachbeiträge
+   * haben ein echtes Datum, das steht unten bei `i.datum`.
+   */
 
   const statisch = [
     { pfad: '', prio: 1.0, freq: 'monthly' as const },
@@ -58,13 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...statisch.map((s) => ({
       url: adr(s.pfad),
-      lastModified: heute,
       changeFrequency: s.freq,
       priority: s.prio,
     })),
     ...projekte.map((p) => ({
       url: adr(`/referenzen/${p.slug}`),
-      lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
@@ -76,13 +82,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...team.map((m) => ({
       url: adr(`/ueber-uns/${m.slug}`),
-      lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
     ...studien.map((s) => ({
       url: adr(`/studien/${s.slug}`),
-      lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
@@ -91,7 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Sitemap für Google Bilder & KI-Crawler weiterhin auffindbar.
     ...kleinprojekte.map((k) => ({
       url: adr(`/kleinprojekte/${k.slug}`),
-      lastModified: heute,
       changeFrequency: 'yearly' as const,
       priority: 0.4,
       images: k.bilder.map((b) => `${BASIS}${b}`),
@@ -99,7 +102,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...alleKantone().flatMap((k) => [
       {
         url: adr(`/regionen/${k.slug}`),
-        lastModified: heute,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       },
@@ -111,7 +113,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter((o) => o.projekte.length > 0)
         .map((o) => ({
           url: adr(`/regionen/${k.slug}/${o.slug}`),
-          lastModified: heute,
           changeFrequency: 'yearly' as const,
           priority: 0.6,
         })),

@@ -62,11 +62,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+  /*
+   * Nur Kartenform und Ersatzbild global. Titel und Beschreibung standen
+   * hier fest und wurden von keiner Unterseite überschrieben — geteilte
+   * Projekt- und Journalseiten zeigten deshalb alle denselben Text statt
+   * ihres eigenen. Ohne diese zwei Felder greift X auf die Angaben aus
+   * openGraph zurück, und die setzt jede Seite selbst.
+   */
   twitter: {
     card: 'summary_large_image',
-    title: 'Atelier AA Architekten',
-    description:
-      'Architekturbüro in Obfelden für Neubau, Umbau und Generalplanung in Zürich, Aargau und Zug.',
     images: ['/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-hero.jpg'],
   },
   // Signet aus dem alten WordPress (dort als site_icon hinterlegt).
@@ -76,9 +80,6 @@ export const metadata: Metadata = {
   },
   // Kanonische Adresse je Seite: verhindert, dass Varianten derselben Seite als
   // Dubletten gewertet werden und die Sichtbarkeit aufteilen.
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: true,
     follow: true,
