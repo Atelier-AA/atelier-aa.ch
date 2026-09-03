@@ -36,3 +36,8 @@ hostpoint/mailer/konfig.php
 # Anfang unter werkzeuge/ ist einmalig benutzt oder abgeleitet und lässt sich
 # jederzeit neu erzeugen — die dauerhaften Werkzeuge haben keinen Punkt.
 werkzeuge/.*
+
+# Testberichte und Browser-Artefakte
+playwright-report/
+test-results/
+coverage/
