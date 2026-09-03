@@ -9,7 +9,7 @@
 
 sendmail_from = info@atelier-aa.ch
 
-; Grosszügig genug für Anhänge im Mailer, aber nicht unbegrenzt.
+; Grosszügig genug für Anhänge am Kontaktformular, aber nicht unbegrenzt.
 upload_max_filesize = 8M
 post_max_size = 10M
 max_execution_time = 120

@@ -52,23 +52,8 @@ Die alte WordPress-Installation vorher **sichern**, dann entfernen. Bleiben
 alte Dateien liegen, kann `wp-config.php` weiterhin öffentlich erreichbar
 sein.
 
-## 4. Mailer einrichten (optional)
 
-Im Ordner `mailer-php`:
-
-1. `konfig.beispiel.php` nach `konfig.php` kopieren
-2. Brevo-Schlüssel eintragen (Brevo → SMTP & API → API-Keys)
-3. Geheimnis erzeugen: `openssl rand -base64 48`
-4. Beide Dateien hochladen
-
-Erreichbar unter `https://atelier-aa.ch/mailer-php/`, Anmeldung über einen
-Einmal-Link an `aljili@atelier-aa.ch`.
-
-**Ehrlicher Hinweis:** Brevo kann Listenimport, HTML einfügen, Testmail und
-Versand auch selbst. Für eine einzige Mail pro Jahr ist der Weg über
-brevo.com der geringere Aufwand.
-
-## 5. Vor dem Umschalten testen
+## 4. Vor dem Umschalten testen
 
 Solange die Domain noch auf die alte Website zeigt, lässt sich die neue über
 die Vorschauadresse von Hostpoint prüfen (Control Panel → Websites). Zu
@@ -83,7 +68,7 @@ kontrollieren:
 - [ ] Die Adresse `/gibt-es-nicht` zeigt die Fehlerseite
 - [ ] Cookie-Hinweis erscheint, Ablehnen funktioniert
 
-## 6. Domain umschalten
+## 5. Domain umschalten
 
 Erst wenn Schritt 5 durch ist. Die Website liegt dann schon am richtigen
 Ort, es ändert sich nur, welches Verzeichnis die Domain bedient.
@@ -96,7 +81,7 @@ Nach dem Umschalten sofort prüfen:
 - [ ] `https://atelier-aa.ch/robots.txt` und `/sitemap.xml` erreichbar
 - [ ] Kontaktformular noch einmal von aussen testen
 
-## 7. Nach dem Umschalten
+## 6. Nach dem Umschalten
 
 - Sitemap in der Google Search Console einreichen:
   `https://atelier-aa.ch/sitemap.xml`
@@ -111,8 +96,6 @@ Nach dem Umschalten sofort prüfen:
 Entscheidung und vertretbar: 376 von 428 Bildern sind ohnehin 1000 bis 2000
 Pixel breit, und Bilder unterhalb des Bildschirmrands werden weiterhin erst
 beim Scrollen geladen. Die schwersten Seiten laden 4 bis 7 MB.
-
-**Der Next.js-Mailer.** Ersetzt durch die PHP-Fassung in `mailer-php`.
 
 **Die Vorschauseiten** unter `/vorschau` sind nicht im Export. Zum
 Vergleichen der Menüvarianten bleiben sie auf der Vercel-Adresse.
