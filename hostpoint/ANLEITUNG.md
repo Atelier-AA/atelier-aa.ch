@@ -17,15 +17,11 @@ Link, alle 166 Sitemap-Adressen vorhanden, alle Canonicals auf
 
 ## 1. Postfach anlegen
 
-Im Hostpoint Control Panel zwei Adressen als **echte Postfächer**, nicht als
-Weiterleitung ins Leere:
-
-- `info@atelier-aa.ch` — Empfänger des Kontaktformulars
-- `news@atelier-aa.ch` — Absender des Newsletters
-
-Warum echte Postfächer: Rückläufer, Abwesenheitsmeldungen und Antworten von
-Leuten, die auf «Antworten» drücken, landen dort. Sieht niemand hinein,
-merkt man nicht, wenn Adressen abprallen.
+Im Hostpoint Control Panel `info@atelier-aa.ch` als **echtes Postfach**
+anlegen, nicht als Weiterleitung ins Leere. Dort landen die Anfragen aus dem
+Kontaktformular, dazu Rückläufer, Abwesenheitsmeldungen und Antworten von
+Leuten, die auf «Antworten» drücken. Sieht niemand hinein, merkt man nicht,
+wenn Adressen abprallen.
 
 ## 2. PHP-Version prüfen
 

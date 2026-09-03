@@ -15,7 +15,20 @@ export default function GoogleAnalytics() {
   const [erlaubt, setErlaubt] = useState(false);
 
   useEffect(() => {
-    const pruefen = () => setErlaubt(ladeEinwilligung()?.statistik === true);
+    const pruefen = () => {
+      const jetztErlaubt = ladeEinwilligung()?.statistik === true;
+      setErlaubt(jetztErlaubt);
+      /*
+       * Beim Widerruf genügt es nicht, die Komponente nicht mehr zu rendern:
+       * ein bereits geladenes gtag.js bleibt im Dokument und misst weiter,
+       * bis die Seite neu geladen wird. Dieser globale Schalter ist der von
+       * Google vorgesehene Weg, eine laufende Messung sofort stillzulegen.
+       */
+      if (GA_ID) {
+        (window as unknown as Record<string, boolean>)[`ga-disable-${GA_ID}`] =
+          !jetztErlaubt;
+      }
+    };
     pruefen();
     window.addEventListener(CONSENT_EVENT, pruefen);
     return () => window.removeEventListener(CONSENT_EVENT, pruefen);
