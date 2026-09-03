@@ -57,13 +57,13 @@ export default function Footer() {
             <p className="mt-4 space-y-1 text-sm">
               <a
                 href={`tel:${firma.telefonHref}`}
-                className="block rounded-sm text-white transition-opacity duration-300 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="block rounded-sm py-1.5 text-white transition-opacity duration-300 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {firma.telefon}
               </a>{' '}
               <a
                 href={`mailto:${firma.email}`}
-                className="block rounded-sm text-white transition-opacity duration-300 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="block rounded-sm py-1.5 text-white transition-opacity duration-300 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {firma.email}
               </a>
@@ -131,7 +131,7 @@ export default function Footer() {
                 <span key={k.slug}>
                   <Link
                     href={`/regionen/${k.slug}`}
-                    className="rounded-sm underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="inline-block rounded-sm py-1.5 underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     {k.name}
                   </Link>
@@ -145,14 +145,14 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="rounded-sm transition-colors duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="inline-block rounded-sm py-1.5 transition-colors duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
             <li>
-              <CookieSettingsLink className="rounded-sm transition-colors duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" />
+              <CookieSettingsLink className="inline-block rounded-sm py-1.5 transition-colors duration-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" />
             </li>
           </ul>
         </div>

@@ -23,7 +23,9 @@ const GAL_MAX = 2000;
  */
 const VIDEOPLAETZE = {
   'mfh-sihlaurain':  ['13'],
-  'mfh-hochwarting': ['06'],
+  /* Hochwarting hatte hier '06'. Der Clip ist am 03.09.2026 entfernt worden;
+     das Bild bleibt als gewöhnliches Foto in der Galerie und dient dem
+     Journalbeitrag "Kreislauffähig bauen" als Vorschaubild. */
 };
 
 /** HEIC vorwandeln — sharp dekodiert es hier nicht. */
@@ -71,7 +73,12 @@ for (const [slug, v] of Object.entries(man)) {
 
   // 3. Vorschaubild aus der Galerie nehmen (ausser das Projekt hat nur eines)
   const raus = v.galerie.length > 1 ? String(nrVorschau).padStart(2, '0') : null;
-  let dateien = [...v.galerie.map(g => g.nr), ...(VIDEOPLAETZE[slug] ?? [])].filter(nr => nr !== raus);
+  /* Auf Kundenwunsch entfernte Bilder (03.09.2026), damit ein Neuaufbau sie
+     nicht zurückholt. */
+  const ENTFERNT = { 'mfh-kuenten': ['03'] };
+  let dateien = [...v.galerie.map(g => g.nr), ...(VIDEOPLAETZE[slug] ?? [])]
+    .filter(nr => nr !== raus)
+    .filter(nr => !(ENTFERNT[slug] ?? []).includes(nr));
   if (raus && existsSync(`${dir}/atelier-aa-${slug}-${raus}.jpg`))
     unlinkSync(`${dir}/atelier-aa-${slug}-${raus}.jpg`);
 

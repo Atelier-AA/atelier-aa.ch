@@ -329,7 +329,6 @@ export const projekte: Projekt[] = [
         '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-02.jpg',
         '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-07.jpg',
         '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-01.jpg',
-        '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-03.jpg',
         '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-04.jpg',
         '/images/projekte/mfh-kuenten/atelier-aa-mfh-kuenten-06.jpg',
       ],
@@ -560,14 +559,6 @@ export const projekte: Projekt[] = [
         '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-04.jpg',
         '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-05.jpg',
       ],
-    videoClips: [
-      {
-        bildPfad: '/images/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-06.jpg',
-        mp4: '/images/projekte/mfh-hochwarting/videos/atelier-aa-mfh-hochwarting-06.mp4',
-        webm: '/images/projekte/mfh-hochwarting/videos/atelier-aa-mfh-hochwarting-06.webm',
-        poster: '/images/projekte/mfh-hochwarting/videos/atelier-aa-mfh-hochwarting-06-poster.jpg',
-      },
-    ],
     plaene: [
       { titel: 'Erdgeschoss', datei: '/dokumente/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-02-erdgeschoss.pdf' },
       { titel: 'Obergeschoss', datei: '/dokumente/projekte/mfh-hochwarting/atelier-aa-mfh-hochwarting-03-obergeschoss.pdf' },
@@ -1041,7 +1032,6 @@ export const projekte: Projekt[] = [
         '/images/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-03.jpg',
       ],
     plaene: [
-      { titel: 'Kataster', datei: '/dokumente/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-01-kataster.pdf' },
       { titel: 'Untergeschoss', datei: '/dokumente/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-02-untergeschoss.pdf' },
       { titel: 'Erdgeschoss / Umgebung', datei: '/dokumente/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-03-erdgeschoss-umgebung.pdf' },
       { titel: 'Obergeschoss', datei: '/dokumente/projekte/wohnueberbauung-zelgi/atelier-aa-wohnueberbauung-zelgi-04-obergeschoss.pdf' },

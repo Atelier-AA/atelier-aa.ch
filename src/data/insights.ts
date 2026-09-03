@@ -428,7 +428,11 @@ export const insights: Insight[] = [
     kategorie: 'Haltung',
     datum: '2026-03-11',
     lesezeit: 5,
-    bild: '/images/insights/atelier-aa-rolle-architekt.png',
+    /* Hier lag bis zum 03.09.2026 ein Bild unter /images/insights/, das eine
+     * Perspektive von Hochwarting zeigte, die es im Projektordner nicht mehr
+     * gibt — 768 px breit und dadurch auf der 3:4-Karte unscharf. Jetzt ein
+     * aktuelles Projektfoto, wie beim Beitrag zum kreislauffähigen Bauen. */
+    bild: '/images/projekte/mfh-alte-poststrasse/atelier-aa-mfh-alte-poststrasse-hero.jpg',
     abschnitte: [
       {
         titel: 'Die Aufgabe stellen, nicht nur lösen',

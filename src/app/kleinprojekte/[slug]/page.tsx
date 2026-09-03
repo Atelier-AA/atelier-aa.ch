@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
+import ProjektBilder from '@/components/projekte/ProjektBilder';
+import { bildMasse } from '@/lib/bildmasse';
 import { kleinprojekte, getKleinprojekt } from '@/data/kleinprojekte';
 import { breadcrumbSchema } from '@/lib/schema';
 
@@ -31,6 +33,23 @@ export default async function KleinprojektDetailPage({ params }: PageProps) {
   if (!projekt) notFound();
 
   const titel = projekt.strasse ? `${projekt.ort}, ${projekt.strasse}` : projekt.ort;
+
+  /*
+   * Diese Seiten sind bewusst nirgends verlinkt und nur über Suchmaschinen
+   * erreichbar. Wer hier landet, kam gezielt — und sah bisher 15 Wörter und
+   * kein einziges Bild, obwohl die Aufnahmen im Datenbestand liegen. Die
+   * Werkliste auf /projekte bleibt unverändert ohne Verweise.
+   *
+   * Pixelmasse zur Bauzeit lesen, wie bei den Referenzseiten, damit
+   * `next/image` das Seitenverhältnis kennt und nichts springt.
+   */
+  const bilder = await Promise.all(
+    (projekt.bilder ?? []).map(async (src, idx) => ({
+      src,
+      alt: `${projekt.gebaeudetyp}, ${titel}, Ansicht ${idx + 1}, Atelier AA Architekten`,
+      ...(await bildMasse(src)),
+    })),
+  );
 
   const breadcrumb = breadcrumbSchema([
     { name: 'Startseite', pfad: '/' },
@@ -65,6 +84,12 @@ export default async function KleinprojektDetailPage({ params }: PageProps) {
             </dl>
           </div>
         </div>
+
+        {bilder.length > 0 && (
+          <div className="mt-16 md:mt-24">
+            <ProjektBilder bilder={bilder} />
+          </div>
+        )}
       </Container>
     </div>
   );
