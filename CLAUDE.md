@@ -28,6 +28,14 @@ schreiben, den Skill `/weisheit` anwenden und die Liste nachführen.
   Namen ohne Quelle. Fehlende Angaben bleiben leer oder `null`.
 - Schweizer Rechtschreibung: ss statt ß.
 
+## Geschäftskonzept
+
+Wie aus Leitsatz 1 Einnahmen werden, steht in
+`KONZEPT-GELD-AUF-DER-STRASSE.md`: drei Motoren (Aufträge, Vermittlung,
+Abo), Zielgruppen, Zubringer, Angebote, Wochenroutine, 90-Tage-Plan.
+Das Netzwerk dazu in `NETZWERK.md`. Beide Dateien sind intern und werden
+nachgeführt, wenn Alisami Entscheide fällt oder Kontakte nennt.
+
 ## Akquise
 
 Wiederkehrende Markt- und Auftragsbeobachtung läuft über den Skill

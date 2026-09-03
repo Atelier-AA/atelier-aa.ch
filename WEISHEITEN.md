@@ -71,6 +71,8 @@ Konkrete Felder, in denen diese Muster heute greifen:
 
 **Wo es greift:**
 
+- Geschäftskonzept `KONZEPT-GELD-AUF-DER-STRASSE.md`: drei Motoren,
+  Zubringer, Angebote, Wochenroutine, 90-Tage-Plan.
 - Akquise-Radar (Skill `akquise-radar`): Leads werden nicht beobachtet,
   sondern angegangen. Der Lead ist der Auftraggeber und sein nächstes
   Vorhaben.
