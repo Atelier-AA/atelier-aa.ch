@@ -42,10 +42,46 @@ export function kurzbeschreibung(text: string, max = 155): string {
   );
   if (teilsatz > max * 0.55) return anschnitt.slice(0, teilsatz).trimEnd() + ' …';
 
-  // 3. Zuletzt an der Wortgrenze.
-  const wortgrenze = anschnitt.lastIndexOf(' ');
-  return anschnitt.slice(0, wortgrenze > 0 ? wortgrenze : max).trimEnd() + ' …';
+  // 3. Zuletzt an der Wortgrenze — aber nicht auf einem Wort, das einen
+  //    Anschluss verlangt. In den Suchergebnissen stand sonst
+  //    "…an der Flurstrasse in Nussbaumen liegt in der …", was mitten in der
+  //    Luft endet. Solche Wörter werden rückwärts weggelassen, bis ein Wort
+  //    steht, das für sich allein stehen kann.
+  let ende = anschnitt.lastIndexOf(' ');
+  if (ende <= 0) ende = max;
+  let rest = anschnitt.slice(0, ende).trimEnd();
+  while (rest.length > max * 0.4) {
+    const letzte = rest.slice(rest.lastIndexOf(' ') + 1).toLowerCase().replace(/[^a-zäöüß]/g, '');
+    if (!ANSCHLUSSWORT.has(letzte)) break;
+    rest = rest.slice(0, rest.lastIndexOf(' ')).trimEnd();
+  }
+  return rest + ' …';
 }
+
+/**
+ * Wörter, die im Deutschen einen Anschluss verlangen: Artikel, Präpositionen,
+ * Konjunktionen, Hilfsverben. Endet eine Kurzbeschreibung auf einem davon,
+ * fehlt dem Leser das Wichtigste — deshalb wird bis dahinter zurückgekürzt.
+ */
+const ANSCHLUSSWORT = new Set([
+  // Artikel
+  'der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem',
+  'einer', 'eines', 'kein', 'keine', 'keinen', 'keinem', 'keiner',
+  // Präpositionen
+  'in', 'im', 'an', 'am', 'auf', 'aus', 'bei', 'beim', 'mit', 'nach', 'von',
+  'vom', 'vor', 'zu', 'zur', 'zum', 'über', 'unter', 'durch', 'für', 'gegen',
+  'ohne', 'um', 'seit', 'bis', 'neben', 'zwischen', 'hinter', 'trotz', 'wegen',
+  'entlang', 'gemäss', 'laut', 'statt', 'samt', 'ab', 'je', 'pro', 'per',
+  // Konjunktionen und Verweiswörter
+  'und', 'oder', 'aber', 'sondern', 'denn', 'sowie', 'sowohl', 'weder', 'als',
+  'wie', 'dass', 'ob', 'weil', 'da', 'wenn', 'falls', 'damit', 'sodass',
+  'obwohl', 'während', 'bevor', 'nachdem', 'sobald',
+  // Hilfs- und Modalverben, Pronomen
+  'ist', 'sind', 'war', 'waren', 'wird', 'werden', 'wurde', 'wurden', 'hat',
+  'haben', 'hatte', 'hatten', 'kann', 'können', 'soll', 'sollen', 'muss',
+  'müssen', 'darf', 'dürfen', 'sich', 'es', 'man', 'auch', 'noch', 'nur',
+  'schon', 'rund', 'etwa', 'mehr', 'sehr', 'ganz', 'dabei', 'dafür', 'dazu',
+]);
 
 export function ortMitKanton(projekt: { ort: string; kanton: string }): string {
   return `${projekt.ort} ${projekt.kanton}`;

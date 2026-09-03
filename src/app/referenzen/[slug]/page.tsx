@@ -5,6 +5,7 @@ import ProjektBilder from '@/components/projekte/ProjektBilder';
 import WeitereProjekte from '@/components/projekte/WeitereProjekte';
 import { projekte, getProjekt, getWeitereProjekte } from '@/data/projekte';
 import { kurzbeschreibung, ortMitKanton } from '@/lib/utils';
+import { PROJEKT_BESCHREIBUNG } from '@/data/metabeschreibungen';
 import { alleKantone, slugify } from '@/lib/regionen';
 import FragenAntworten from '@/components/insights/FragenAntworten';
 import VorhabenCta from '@/components/ui/VorhabenCta';
@@ -59,12 +60,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
      * der Adresse und im Text.
      */
     title: { absolute: seoTitel },
-    description: kurzbeschreibung(projekt.beschreibung),
+    description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
     alternates: { canonical: `/referenzen/${projekt.slug}` },
     ...(inPlanung && { robots: { index: false, follow: true } }),
     openGraph: {
       title: seoTitel,
-      description: kurzbeschreibung(projekt.beschreibung),
+      description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
       images: [projekt.heroImage],
     },
   };
@@ -120,7 +121,7 @@ export default async function ProjektDetailPage({ params }: PageProps) {
         '@type': 'CreativeWork',
         '@id': `${url}#projekt`,
         name: `${projekt.title}, ${projekt.ort} ${projekt.kanton}`,
-        description: kurzbeschreibung(projekt.beschreibung),
+        description: (PROJEKT_BESCHREIBUNG[projekt.slug] ?? kurzbeschreibung(projekt.beschreibung)),
         image: `${BASIS}${projekt.heroImage}`,
         /*
          * Nur echte Jahreszahlen. Das Feld `jahr` trägt auch Statuswerte wie
