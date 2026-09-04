@@ -1,6 +1,6 @@
 # Netzwerk-Inventar
 
-Wer kennt wen. Grundlage für Motor B (Vermittlung) im Konzept
+Wer kennt wen. Grundlage für Motor B Riduan (Vermittlung) im Konzept
 `KONZEPT-GELD-AUF-DER-STRASSE.md`. Wird von Alisami Aljili gefüllt und von
 Claude nachgeführt. Interne Datei, nur echte Kontakte, nichts erfinden.
 

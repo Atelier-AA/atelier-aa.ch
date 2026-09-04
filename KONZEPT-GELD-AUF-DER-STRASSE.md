@@ -1,6 +1,6 @@
 # Konzept: Das Geld auf der Strasse sammeln
 
-Stand 2026-09-03. Entwurf zur Diskussion mit Alisami Aljili. Leitsatz Nr. 1
+Stand 2026-09-04. Entwurf zur Diskussion mit Alisami Aljili. Leitsatz Nr. 1
 aus `WEISHEITEN.md`. Alles, was mit **Annahme** markiert ist, ist ein
 Vorschlag und braucht seinen Entscheid.
 
@@ -30,18 +30,19 @@ Strasse wird von dem aufgehoben, der jeden Tag hinschaut.
 ## 2. Grundgedanke: drei Motoren, eine Strasse
 
 Keine neue Firma erfinden. Aus dem Vorhandenen eine Sammelmaschine bauen,
-die auf drei Arten verdient:
+die auf drei Arten verdient. Die Motoren tragen die Namen, die Alisami
+ihnen gegeben hat (2026-09-04): Leana, Riduan, Lea.
 
 | Motor | Was | Verdienst | Wer liefert |
 |---|---|---|---|
-| **A Eigene Aufträge** | Architekturleistung, vom Grundstücks-Check bis zur Realisierung | Honorar | Atelier AA |
-| **B Vermittlung** | Käufer, Verkäufer, Handwerker, Nachfolger, Investoren zusammenbringen | Provision | Netzwerk, Elindo, Partner |
-| **C Wiederkehrend** | Liegenschaften betreuen, Unterhalt planen, Handwerker koordinieren | Abo | Atelier AA, Handwerker |
+| **A Leana** (eigene Aufträge) | Architekturleistung, vom Grundstücks-Check bis zur Realisierung | Honorar | Atelier AA |
+| **B Riduan** (Vermittlung) | Käufer, Verkäufer, Handwerker, Nachfolger, Investoren zusammenbringen | Provision | Netzwerk, Elindo, Partner |
+| **C Lea** (wiederkehrend) | Liegenschaften betreuen, Unterhalt planen, Handwerker koordinieren | Abo | Atelier AA, Handwerker |
 
 Der Punkt: Alle drei Motoren laufen auf derselben Strasse. Derselbe
 Eigentümer, derselbe Erbe, derselbe KMU-Inhaber kann in jeden Motor münden.
-Ein Kontakt, drei Möglichkeiten zu verdienen. Wer nur Motor A hat, lässt
-zwei Drittel liegen.
+Ein Kontakt, drei Möglichkeiten zu verdienen. Wer nur Leana hat, lässt zwei
+Drittel liegen.
 
 ---
 
@@ -93,7 +94,7 @@ Niemand kauft beim ersten Gespräch die Generalplanung. Jedes Angebot ist
 klein, hat einen Fixpreis, ist in Wochen erledigt und öffnet die Tür zum
 nächsten.
 
-### Motor A: Eigene Aufträge
+### Motor A Leana: eigene Aufträge
 
 | Angebot | Inhalt | Dauer | Preis | Führt zu |
 |---|---|---|---|---|
@@ -101,7 +102,7 @@ nächsten.
 | **A2 Energie-Check** | Gebäudehülle, Heizungsersatz, Fotovoltaik, Fördergeld nach Gebäudeprogramm, Reihenfolge der Massnahmen | 2 Wochen | Fixpreis, **Annahme** unter A1 | Sanierungsplanung, Handwerker-Vermittlung |
 | **A3 Machbarkeitsstudie** | Bestehendes Angebot, bleibt | wie heute | wie heute | Projektentwicklung |
 
-### Motor B: Vermittlung
+### Motor B Riduan: Vermittlung
 
 | Angebot | Wie es verdient | Voraussetzung |
 |---|---|---|
@@ -110,7 +111,7 @@ nächsten.
 | **B3 Nachfolge und Gewerbeliegenschaft** | Provision bei Vermittlung von Käufer oder Nachfolger, zusammen mit Treuhänder | Fall für Fall vereinbaren |
 | **B4 Grundstücke an Investoren** | Provision oder Entwicklungsauftrag, wenn ein Investor ein zugeführtes Grundstück kauft | Erst ab bestehendem Investorenkreis |
 
-### Motor C: Wiederkehrend
+### Motor C Lea: wiederkehrend
 
 | Angebot | Inhalt | Preis |
 |---|---|---|
@@ -199,7 +200,7 @@ Jede Woche fünf Zahlen, mehr nicht:
 | Kontakte | Wurde aufgehoben oder nur hingeschaut |
 | Gespräche | Wie viele Kontakte wurden zu einem echten Gespräch |
 | Angebote | Wie viele Gespräche wurden zu einem Angebot mit Preis |
-| Aufträge | Was wurde unterschrieben, getrennt nach Motor A, B, C |
+| Aufträge | Was wurde unterschrieben, getrennt nach Leana, Riduan, Lea |
 | Zubringer-Meldungen | Wie viele Fälle kamen unaufgefordert vom Netzwerk |
 
 Die letzte Zahl ist die wichtigste. Wenn sie steigt, funktioniert das
@@ -208,19 +209,75 @@ vor die Tür gebracht.
 
 ---
 
-## 10. Was Alisami entscheiden muss
+## 10. Fragen an Alisami
 
-1. **Welche Motoren zuerst.** Vorschlag: A und B ab Woche 1, C ab Phase 3.
-2. **Vermittlung unter Atelier AA oder in einer eigenen Gesellschaft.**
-   Frage an den Treuhänder: Steuer, Haftung, Aussenwirkung.
-3. **Zeitbudget.** Das Konzept braucht rund fünf Stunden pro Woche,
-   fest im Kalender. Wer macht die Anrufe, wenn Alisami auf der Baustelle ist.
-4. **Preise** für A1, A2 und C1. Die Annahmen oben sind Platzhalter.
-5. **Netzwerk-Inventar.** Wen kennst du bei Notaren, Treuhändern, Banken,
-   Handwerkern, Gemeinden. Ohne diese Liste startet Motor B nicht.
-6. **Elindo.** Ist Elindo bereit für A1 als gemeinsames Angebot und für
-   eine Tippgeber-Vereinbarung.
+Die Entscheide aus dem Konzept als offene Fragen. Alisami antwortet
+schriftlich oder mündlich in eigenen Worten, es gibt keine vorgegebenen
+Antworten. Lieber zu viel gefragt als zu wenig. Beantwortete Fragen werden
+hier mit der Antwort und dem Datum nachgeführt.
 
-Sobald diese sechs Punkte entschieden sind, wird aus dem Konzept ein
-Wochenplan, und der Akquise-Radar bekommt die Zubringer und Zielgruppen als
-feste Suchfelder.
+### Die drei Motoren
+
+1. Was bedeuten die Namen Leana, Riduan und Lea für dich, und dürfen sie auch ausserhalb dieser internen Dateien vorkommen, etwa gegenüber Elindo oder Kunden?
+2. Mit welchem Motor willst du anfangen, und warum mit diesem?
+3. Gibt es einen Motor, den du gar nicht willst oder erst später?
+4. Wie soll das Geld zwischen den Motoren zusammenhängen: eine Kasse oder getrennt?
+
+### Deine Zeit und dein Alltag
+
+5. Wie viele Stunden pro Woche kannst du selbst für Akquise reservieren, und an welchen Tagen und Tageszeiten?
+6. Wie sieht eine normale Woche heute aus: wie viel Baustelle, Büro, Kundengespräche, Administration?
+7. Wer ausser dir könnte Anrufe machen, Besuche begleiten oder nachfassen? Gibt es jemanden im Büro, in der Familie, im Freundeskreis?
+8. Was tust du lieber: telefonieren, persönlich vorbeigehen, schreiben? Was fällt dir schwer?
+
+### Firma, Recht, Geld
+
+9. Soll die Vermittlung unter Atelier AA laufen oder in einer eigenen Firma? Hast du dazu schon eine Meinung oder eine Erfahrung?
+10. Wer ist dein Treuhänder, und soll ich ihm die Fragen zu Steuer und Haftung der Vermittlungseinnahmen vorbereiten?
+11. Hast du schon einmal Provisionen erhalten oder gezahlt? Wie war das geregelt, und was hast du dabei gelernt?
+12. Gibt es Versicherungen, Berufshaftpflicht oder Verträge, die bei Vermittlung oder Abo eine Rolle spielen?
+13. Wie viel zusätzlichen Umsatz pro Jahr brauchst du, damit sich der Aufwand für dich lohnt?
+
+### Elindo
+
+14. Wer ist deine Ansprechperson bei Elindo, und wie eng ist die Beziehung: Freundschaft, Geschäft, beides?
+15. Gibt es schon eine schriftliche Vereinbarung mit Elindo? Was steht drin, und was fehlt?
+16. Hast du selbst Anteile oder eine Rolle bei Elindo, oder jemand aus deinem Umfeld?
+17. Würde Elindo beim Grundstücks-Check „Bauen oder verkaufen?“ mitmachen, und wie stellst du dir die Aufteilung von Arbeit und Geld vor?
+18. Welche Provision hältst du für fair, wenn du Elindo ein Objekt zuführst, und umgekehrt?
+
+### Preise
+
+19. Was hat eine Machbarkeitsstudie bisher ungefähr gekostet, und wie lange hat sie gedauert?
+20. Was würdest du für den Grundstücks-Check verlangen? Was für den Energie-Check?
+21. Was wäre aus deiner Erfahrung mit deinen Bauherrschaften eine realistische Monatspauschale für ein Eigentümer-Abo, und was müsste drin sein, damit sie es zahlen?
+22. Welche Provision hältst du bei Handwerkern für fair, und würdest du sie dem Kunden offenlegen oder lieber als Rabatt weitergeben?
+23. Soll der Fixpreis bei einem Folgeauftrag angerechnet werden?
+
+### Dein Netzwerk
+
+24. Welche Notare, Treuhänder und Bankberater kennst du persönlich? Name, Ort, und wie gut ihr euch kennt.
+25. Mit welchen Handwerkern arbeitest du regelmässig? Welche würdest du ohne Bedenken empfehlen, welche nicht?
+26. Welche bisherigen Bauherrschaften würdest du für ein Eigentümer-Abo ansprechen, und welche eher nicht?
+27. Kennst du Investoren oder Leute, die Objekte oder Grundstücke suchen?
+28. Wo triffst du Leute: Vereine, Gewerbeverband, Gemeinde, Moschee oder Kirche, Sport, Eltern, Nachbarschaft?
+29. Woher kamen deine bisherigen Aufträge: Empfehlung, Website, Zufall, Bekannte? Wer hat dich am häufigsten weiterempfohlen?
+30. Gibt es Leute, die dir etwas schulden oder die du schon lange nicht mehr angerufen hast, aber solltest?
+
+### Region
+
+31. Welche Gemeinden kennst du am besten, wo hast du gebaut, wo wohnen deine Kontakte?
+32. Welche Quartiere oder Strassenzüge mit Einfamilienhäusern der 60er bis 80er Jahre fallen dir spontan ein?
+33. Wie weit willst du fahren: Knonauer Amt, Freiamt, Zug, Zürich, weiter?
+34. Gibt es Gemeinden, in denen du bewusst nicht arbeiten willst?
+
+### Ziele und Grenzen
+
+35. Was willst du in 90 Tagen erreicht haben? Was in einem Jahr?
+36. Was willst du auf keinen Fall machen: Kaltakquise bei Fremden, Briefe an Strassenzüge, Provisionsgeschäfte, bestimmte Kooperationen?
+37. Gibt es Konkurrenten oder Personen, mit denen du nichts zu tun haben willst?
+38. Was soll ich jede Woche automatisch tun, und wann willst du den Bericht: Montag früh, Freitag, anders?
+39. Was fehlt dir in diesem Konzept, was würdest du streichen?
+
+Sobald die Antworten da sind, wird aus dem Konzept ein Wochenplan, und der
+Akquise-Radar bekommt die Zubringer und Zielgruppen als feste Suchfelder.

@@ -31,8 +31,8 @@ schreiben, den Skill `/weisheit` anwenden und die Liste nachführen.
 ## Geschäftskonzept
 
 Wie aus Leitsatz 1 Einnahmen werden, steht in
-`KONZEPT-GELD-AUF-DER-STRASSE.md`: drei Motoren (Aufträge, Vermittlung,
-Abo), Zielgruppen, Zubringer, Angebote, Wochenroutine, 90-Tage-Plan.
+`KONZEPT-GELD-AUF-DER-STRASSE.md`: drei Motoren Leana (Aufträge),
+Riduan (Vermittlung), Lea (Abo), Zielgruppen, Zubringer, Angebote, Wochenroutine, 90-Tage-Plan.
 Das Netzwerk dazu in `NETZWERK.md`. Beide Dateien sind intern und werden
 nachgeführt, wenn Alisami Entscheide fällt oder Kontakte nennt.
 
