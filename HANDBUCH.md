@@ -927,6 +927,34 @@ Rückfrage laufen.
 
 ---
 
+### Der Mentor-Skill
+
+Unter `.claude/skills/mentor/` liegt ein Skill, der **nichts mit der Website
+zu tun hat**: ein persönlicher Gesprächs- und Sparringpartner für AA —
+Entscheidungen, schwierige Gespräche, Rückblicke. Aufruf mit `/mentor`.
+
+```
+.claude/skills/mentor/
+├── SKILL.md                      # Haltung, Gesprächsführung, Grenzen
+└── references/
+    ├── aa-kontext.md             # wer AA ist, Büro, Ziele — im Interview gefüllt
+    ├── mentor-journal.md         # Gesprächsverlauf, neuester Eintrag zuoberst
+    └── muster.md                 # was sich über Monate wiederholt
+```
+
+Zwei Dinge dazu:
+
+- **Die Referenzdateien sind persönlich.** Journal und Muster enthalten
+  Notizen über Gespräche, Personen und Vorsätze. Wer den Skill mit dem Team
+  teilt, teilt sie mit. Wenn das nicht gewollt ist: Ordner in
+  `.gitignore` aufnehmen oder den Skill kontoweit statt im Repo führen.
+- **Der Skill ist portierbar.** Er verweist auf keine Datei ausserhalb seines
+  eigenen Ordners. Für den kontoweiten Einsatz genügt es, den Ordner
+  `mentor/` ins persönliche Skill-Verzeichnis zu kopieren; dort gilt er dann
+  in jedem Projekt.
+
+---
+
 ## 15. Dieses Handbuch aktualisieren
 
 **Regel: Nach jeder abgeschlossenen Änderung an der Website wird dieses Handbuch
@@ -1010,4 +1038,4 @@ Die vier Schritte nach jeder Änderung:
 
 ---
 
-*Handbuch zuletzt aktualisiert: Juli 2026*
+*Handbuch zuletzt aktualisiert: September 2026*
