@@ -244,12 +244,37 @@ rm -rf "$(dirname "$SYMBOLORDNER")"
 
 sagen "5/6  Signieren"
 
-xattr -cr "$ZIEL" 2>/dev/null
+# codesign weist Pakete zurueck, an deren Dateien der Finder oder Spotlight
+# Zusatzattribute gehaengt hat ("detritus not allowed"). xattr -c erwischt
+# nicht alle davon. Deshalb: Paket mit ditto in eine saubere Kopie ohne
+# Attribute, Ressourcenzweige und Quarantaene umschreiben.
+saeubere_paket() {
+    find "$ZIEL" -name ".DS_Store" -delete 2>/dev/null
+    xattr -cr "$ZIEL" 2>/dev/null
+    local sauber
+    sauber="$(mktemp -d)/$PROGRAMM.app"
+    if ditto --norsrc --noextattr --noqtn "$ZIEL" "$sauber" 2>/dev/null; then
+        rm -rf "$ZIEL"
+        mv "$sauber" "$ZIEL"
+    fi
+    rm -rf "$(dirname "$sauber")" 2>/dev/null
+}
+saeubere_paket
+
+signiere() {
+    # $1 = Identitaet ("-" fuer ad hoc). Ein zweiter Versuch nach erneuter
+    # Saeuberung, falls zwischendurch wieder etwas angehaengt wurde.
+    if schritt "$2" codesign --force --deep --sign "$1" --timestamp=none "$ZIEL"; then
+        return 0
+    fi
+    hinweis "Noch einmal säubern und erneut versuchen …"
+    saeubere_paket
+    schritt "$2 (2. Versuch)" codesign --force --deep --sign "$1" --timestamp=none "$ZIEL"
+}
 
 MIT_ZERTIFIKAT=0
 if zertifikat_vorhanden; then
-    if schritt "Mit »${ZERTIFIKAT}« signieren" \
-            codesign --force --deep --sign "$ZERTIFIKAT" --timestamp=none "$ZIEL"; then
+    if signiere "$ZERTIFIKAT" "Mit »${ZERTIFIKAT}« signieren"; then
         MIT_ZERTIFIKAT=1
         hinweis "Feste Kennung — die Berechtigung bleibt über Neubauten erhalten."
     else
@@ -257,17 +282,22 @@ if zertifikat_vorhanden; then
     fi
 fi
 if [ "$MIT_ZERTIFIKAT" -eq 0 ]; then
-    if schritt "Ad-hoc signieren" codesign --force --deep --sign - "$ZIEL"; then
+    if signiere "-" "Ad-hoc signieren"; then
         hinweis "macOS fragt nach jedem Neubau erneut nach der Berechtigung."
     else
-        hinweis "Das Programm startet meist trotzdem."
+        hinweis "Das Programm startet meist trotzdem. Betroffene Dateien:"
+        xattr -lr "$ZIEL" 2>/dev/null | head -6 | sed 's/^/       /'
     fi
 fi
 codesign -dv "$ZIEL" 2>&1 | grep -E "^Authority=|^Signature=" | head -2 | sed 's/^/   /'
 
 # Berechtigung nur dann zuruecksetzen, wenn die Kennung sich geaendert hat:
-# beim Wechsel auf das neue Zertifikat oder ohne festes Zertifikat.
-if [ "$MODUS" != "neu" ] && { [ "$ZERTIFIKAT_NEU" -eq 1 ] || [ "$MIT_ZERTIFIKAT" -eq 0 ]; }; then
+# ohne festes Zertifikat immer, sonst beim Wechsel der Signaturart.
+SIGNATURART="adhoc"
+[ "$MIT_ZERTIFIKAT" -eq 1 ] && SIGNATURART="zertifikat"
+LETZTE_SIGNATURART="$(cat "$ORDNER/.letzte-signatur" 2>/dev/null || echo "")"
+printf '%s' "$SIGNATURART" > "$ORDNER/.letzte-signatur"
+if [ "$MODUS" != "neu" ] && { [ "$MIT_ZERTIFIKAT" -eq 0 ] || [ "$SIGNATURART" != "$LETZTE_SIGNATURART" ]; }; then
     tccutil reset ScreenCapture "$KENNUNG" >/dev/null 2>&1 \
         && hinweis "Alte Berechtigung »Bildschirmaufnahme« zurückgesetzt — beim ersten Kürzel fragt macOS neu."
 fi
