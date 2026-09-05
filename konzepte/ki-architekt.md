@@ -4,7 +4,8 @@ Ein Angebot von Atelier AA für Architekturbüros, Bauherrschaften und
 Behörden: Wie sich künstliche Intelligenz im Planungsalltag einsetzen lässt —
 welche Werkzeuge taugen, welche nicht, und wo die Grenze liegt.
 
-Stand: 5. September 2026 · Entwurf zur Freigabe durch AA
+Stand: 5. September 2026 · Entscheidungen aus Abschnitt 16 getroffen,
+Umsetzung ab Phase 1
 
 ---
 
@@ -25,7 +26,7 @@ Stand: 5. September 2026 · Entwurf zur Freigabe durch AA
 13. [Risiken und Grenzen](#13-risiken-und-grenzen)
 14. [Woran wir Erfolg messen](#14-woran-wir-erfolg-messen)
 15. [Vorgehen in fünf Phasen](#15-vorgehen-in-fünf-phasen)
-16. [Entscheidungen, die AA treffen muss](#16-entscheidungen-die-aa-treffen-muss)
+16. [Entscheidungen](#16-entscheidungen)
 17. [Quellen](#17-quellen)
 
 ---
@@ -161,15 +162,17 @@ Die Idee «ein KI-Architekt, der erzählt» lässt sich auf drei Arten bauen:
 | **B — Rubrik unter unserem Namen** | Eine feste Reihe auf atelier-aa.ch, verantwortet von einer namentlich genannten Person | **Empfohlen.** Passt zum bestehenden Ton, kostet nichts an Glaubwürdigkeit, ist rechtlich unheikel |
 | **C — Eigene Marke / eigene Domain** | Ein Angebot losgelöst vom Büro | Später möglich, wenn Nachfrage besteht. Jetzt zu teuer: eigene Domain, eigenes Vertrauen, eigene Reichweite von null |
 
-**Empfehlung: Variante B**, mit Option auf C nach zwölf Monaten.
+**Entschieden: Variante B**, mit Option auf C nach zwölf Monaten.
 
-Namensvorschläge für die Rubrik (nüchtern, ohne Superlativ — die
-Handbuchregel gilt):
+**Der Name der Rubrik ist «KI-Werkbank».** Werkstattcharakter, passt zur
+«eigenen Werkstatt» im bestehenden Beitrag *KI im Entwurf*, nüchtern und ohne
+Superlativ. Die Suchanfrage «KI im Architekturbüro» wird nicht als Name
+verwendet, sondern in Titeln, Beschreibungen und Fragen abgedeckt.
 
-- **«KI-Werkbank»** — Werkstattcharakter, passt zur «eigenen Werkstatt» im
-  bestehenden Beitrag *KI im Entwurf*. Erste Wahl.
-- «KI im Architekturbüro» — sperrig, aber genau die Suchanfrage.
-- «Werkzeugprüfung» — trocken, gut für Register und Tabelle.
+**Verantwortlich ist Alisami Aljili.** Sein Name steht unter den Beiträgen und
+unter den Urteilen im Register. Das ist der Grund, weshalb das Ganze
+glaubwürdig ist: Es haftet eine Person mit Namen dafür, so wie für ein
+Bauwerk auch.
 
 Ein KI-Beitrag von uns endet immer bei der gebauten Arbeit. Sonst kippt die
 Wahrnehmung vom Architekturbüro zur IT-Bude — das wäre teuer.
@@ -185,7 +188,14 @@ Wahrnehmung vom Architekturbüro zur IT-Bude — das wäre teuer.
 | **Gemeinden und Bauverwaltungen** | «Wie prüfen wir Eingaben, die mit KI erstellt wurden?» | Beitrag zur digitalen Baueingabe, Vortrag | Zugang zu Behörden, Sichtbarkeit vor Ort |
 | **Fachhochschulen, Verbände, Fachpresse** | Referenten und Praxisbeispiele | Vortrag, Fallzahlen aus dem Betrieb | Reichweite, Zitierbarkeit |
 
-Primär ist die erste Gruppe. Die zweite ist die, die zahlt — sie liest mit.
+**Entschieden: Kollegenbüros und Bauherrschaften werden parallel bedient**,
+im Wechsel von Beitrag zu Beitrag (siehe Spalte «Für wen» in Abschnitt 8).
+Das kostet Sorgfalt im Ton: Ein Beitrag für Kollegen darf fachlich sein, ein
+Beitrag für Bauherrschaften muss ohne Fachjargon auskommen. Beide bleiben in
+der Wir-Form und im nüchternen Ton der Website.
+
+Vermischen wir beides im selben Text, erreichen wir keinen von beiden. Darum
+gilt je Beitrag: eine Zielgruppe, und die steht vor dem Schreiben fest.
 
 ---
 
@@ -240,20 +250,23 @@ dazukommt, wird er ausgewiesen.
 
 Ein Beitrag pro Monat, je mit vier bis fünf Fragen im Q&A-Teil.
 
-| # | Beitrag | Kategorie | Kernaussage |
-|---|---|---|---|
-| 1 | Womit anfangen: die drei Aufgaben, bei denen KI im Architekturbüro heute wirklich Zeit spart | Digitalisierung | Text, Protokoll, Recherche — nicht Entwurf |
-| 2 | Was KI im Baugesuch darf und was nicht | Recht | Formales ja, Auslegung nein |
-| 3 | Visualisierung mit KI: Wann das Bild der Bauherrschaft schadet | Digitalisierung | Ein Bild, das nicht bewilligungsfähig ist, kostet Vertrauen |
-| 4 | Unsere KI-Regeln im Büro — als Vorlage zum Abschreiben | Digitalisierung | Öffentliche Bürorichtlinie, herunterladbar |
-| 5 | Datenschutz: Was in einen KI-Dienst gehört und was nie | Recht | revDSG praktisch, Projektdaten bleiben draussen |
-| 6 | Volumenstudien mit generativen Werkzeugen: der Test an einer echten Parzelle | Digitalisierung | Anschluss an die Machbarkeitsstudie |
-| 7 | Was uns die Werkzeuge im ersten Halbjahr gekostet und gebracht haben | Digitalisierung | Zahlen offenlegen |
-| 8 | KI und Urheberrecht: Wem gehört das erzeugte Bild | Recht | Ohne menschliche Gestaltung kein Schutz |
-| 9 | Die digitale Baueingabe ab 2027 — und was KI daran ändert | Recht | Behörden prüfen maschinell |
-| 10 | Was KI in der Ausführungsplanung nicht kann | Konstruktion | Haftung, Detail, Baustelle |
-| 11 | KI im Bewerbungsgespräch und im Büroalltag junger Planer | Haltung | Ausbildung, Handwerk, Urteil |
-| 12 | Ein Jahr KI-Werkbank: Was wir behalten, was wir abgeschaltet haben | Digitalisierung | Bilanz mit Absagen |
+| # | Beitrag | Für wen | Kategorie | Kernaussage |
+|---|---|---|---|---|
+| 1 | Womit anfangen: die drei Aufgaben, bei denen KI im Architekturbüro heute wirklich Zeit spart | Büros | Digitalisierung | Text, Protokoll, Recherche — nicht Entwurf |
+| 2 | Was mit Ihren Projektdaten passiert, wenn wir KI einsetzen | Bauherrschaft | Recht | Projektdaten bleiben draussen, revDSG praktisch |
+| 3 | Was KI im Baugesuch darf und was nicht | Büros | Recht | Formales ja, Auslegung nein |
+| 4 | Visualisierung mit KI: Wann das schöne Bild der Bauherrschaft schadet | Bauherrschaft | Digitalisierung | Ein Bild, das nicht bewilligungsfähig ist, kostet Vertrauen |
+| 5 | Unsere KI-Regeln im Büro — als Vorlage zum Abschreiben | Büros | Digitalisierung | Öffentliche Bürorichtlinie, herunterladbar |
+| 6 | Wird Planung mit KI günstiger? Was wir gemessen haben | Bauherrschaft | Digitalisierung | Zahlen aus den Prüfprotokollen, auch die enttäuschenden |
+| 7 | Volumenstudien mit generativen Werkzeugen: der Test an einer echten Parzelle | Büros | Digitalisierung | Anschluss an die Machbarkeitsstudie |
+| 8 | KI und Urheberrecht: Wem gehört das erzeugte Bild | Bauherrschaft | Recht | Ohne menschliche Gestaltung kein Schutz |
+| 9 | Die digitale Baueingabe ab 2027 — und was KI daran ändert | Büros | Recht | Behörden prüfen maschinell |
+| 10 | Was KI in der Ausführungsplanung nicht kann | Bauherrschaft | Konstruktion | Haftung, Detail, Baustelle |
+| 11 | Die erste Schweizer Zahl: Wie Architekturbüros hier wirklich mit KI arbeiten | Büros | Digitalisierung | Auswertung der eigenen Umfrage aus Phase 4 |
+| 12 | Ein Jahr KI-Werkbank: Was wir behalten, was wir abgeschaltet haben | beide | Digitalisierung | Bilanz mit Absagen |
+
+Ungerade Nummern für Kollegenbüros, gerade für Bauherrschaften — so bleibt der
+Wechsel im Rhythmus, ohne dass es jemand planen muss.
 
 Bestehende Kategorien werden weiterverwendet (`Digitalisierung`, `Recht`,
 `Konstruktion`, `Haltung`) — keine neuen erfinden, so steht es im Handbuch.
@@ -287,13 +300,23 @@ wenn drei Beiträge und das Register stehen — nicht vorher.
 | Stufe | Angebot | Preis | Ziel |
 |---|---|---|---|
 | 0 | Beiträge, Register, Bürorichtlinie als Vorlage | kostenlos | Reichweite, Auffindbarkeit |
-| 1 | Vortrag bei Verband, Gemeinde, Hochschule | Aufwandentschädigung oder kostenlos | Ruf, Kontakte |
-| 2 | Workshop im Büro der Kundschaft, Halbtag | nach Aufwand, Ansatz durch AA festzulegen | Direkter Ertrag |
+| 1 | Vortrag bei Verband, Gemeinde, Hochschule | nach Aufwand | Ruf, Kontakte |
+| 2 | Workshop im Büro der Kundschaft, Halbtag | nach Aufwand | Direkter Ertrag |
 | 3 | Begleitung bei der Einführung: Werkzeugauswahl, Richtlinie, Schulung, Nachkontrolle | nach Aufwand | Wiederkehrender Ertrag |
 | 4 | Für Bauherrschaften: Machbarkeitsstudie und Projektentwicklung, in denen wir die Werkzeuge selbst einsetzen | bestehendes Honorar | Das eigentliche Geschäft |
 
+**Entschieden: Vorträge und Workshops werden nach Aufwand verrechnet.**
+Weiterbildung ist damit ein zweites Standbein und keine Gratisleistung. Zwei
+Folgen daraus: Es braucht einen Halbtagessatz (offen, siehe Abschnitt 16), und
+Stufe 1 und 2 gehören ab Phase 4 als eigene Leistungsseite auf die Website,
+nicht nur in einen Beitrag.
+
+Ausnahme, bewusst gesetzt: Der erste Vortrag bei einem Verband oder einer
+Gemeinde darf zum Selbstkostenpreis laufen. Er ist die Referenz für die
+folgenden.
+
 Stufe 4 ist der Zweck des Ganzen. Die Stufen 0 bis 3 sind der Weg dorthin.
-Keine Preise in diesem Papier — die setzt AA.
+Keine Frankenbeträge in diesem Papier — die setzt AA.
 
 ---
 
@@ -336,10 +359,13 @@ Realistisch, damit das Vorhaben nicht nach drei Monaten einschläft:
 | Sprechstunde | 2 h |
 | **Summe** | **9–11 h pro Monat** |
 
-Dazu einmalig für Phase 1 und 2 rund 3 bis 4 Tage. Wenn dieser Aufwand nicht
-gesichert ist, lieber mit halber Frequenz starten (Beitrag alle zwei Monate)
-als mit voller Frequenz aufhören. Eine tote Rubrik schadet mehr, als sie je
-genützt hat.
+Dazu einmalig für Phase 1 und 2 rund 3 bis 4 Tage.
+
+**Entschieden: volle Frequenz, ein Beitrag pro Monat.** Damit das hält, gilt
+ab sofort ein fester Termin im Kalender statt Restzeit am Freitagabend —
+Vorschlag: ein halber Tag pro Monat, blockiert. Wenn zwei Monate in Folge
+ausfallen, wird auf zweimonatlich umgestellt, nicht stillschweigend
+weitergeschludert. Eine tote Rubrik schadet mehr, als sie je genützt hat.
 
 ---
 
@@ -399,37 +425,44 @@ weiterlaufen lassen.
 10. Sprechstunde einrichten und auf der Registerseite anbieten
 11. Zwei Bühnen anfragen (Verband, Gemeinde oder Hochschule)
 
-**Phase 4 — Eigene Zahlen (Monat 4 bis 6)**
-12. Kurze Umfrage unter Schweizer Büros zur KI-Nutzung — zehn Fragen, über
-    Newsletter, LinkedIn und Verbände verteilt. Wer die erste Schweizer Zahl
-    hat, wird zitiert und eingeladen
-13. Auswertung als Beitrag und als Vortragsgrundlage
+**Phase 4 — Eigene Zahlen und Leistungsseite (Monat 4 bis 6)**
+12. Umfrage unter Schweizer Büros zur KI-Nutzung — **entschieden, startet ab
+    Monat 4**. Zehn Fragen, verteilt über Newsletter, LinkedIn und
+    Verbandskontakte. Es gibt bisher keine Schweizer Zahl; wer sie erhebt,
+    wird zitiert und eingeladen
+13. Auswertung als Beitrag 11 und als Vortragsgrundlage
+14. Leistungsseite für Vortrag, Workshop und Begleitung anlegen, sobald der
+    Halbtagessatz feststeht
 
 **Phase 5 — Verstetigen oder beenden (Monat 6 und 12)**
-14. Halbjährliche Neuprüfung aller Registereinträge
-15. Kennzahlen aus Abschnitt 14 auswerten, Entscheid über Weiterführung,
+15. Halbjährliche Neuprüfung aller Registereinträge
+16. Kennzahlen aus Abschnitt 14 auswerten, Entscheid über Weiterführung,
     Ausbau (eigene Marke) oder Einfrieren
 
 ---
 
-## 16. Entscheidungen, die AA treffen muss
+## 16. Entscheidungen
 
-1. **Positionierung**: Rubrik unter unserem Namen (Variante B) — einverstanden?
-2. **Name der Rubrik**: «KI-Werkbank», «KI im Architekturbüro» oder anders?
-3. **Wer verantwortet die Rubrik**? Name, der unter den Beiträgen steht.
-4. **Zeitbudget**: 9–11 Stunden pro Monat gesichert, oder starten wir mit
-   halber Frequenz?
-5. **Welche Werkzeuge nutzt das Büro heute schon?** CAD/BIM-Programm,
-   Bildwerkzeuge, Sprachmodelle, Abos. Ohne diese Liste kann das Register
-   nicht bei uns selbst beginnen — und erfinden werden wir nichts.
-6. **Zielgruppen-Priorität**: Zuerst Kollegenbüros oder zuerst Bauherrschaften?
-   Davon hängt der Ton der ersten drei Beiträge ab.
-7. **Workshop-Ansatz**: Halbtagessatz und ob wir Weiterbildung überhaupt
-   verrechnen wollen.
-8. **Schweizer Umfrage in Phase 4**: ja oder nein — sie kostet Aufwand und
-   braucht Verbandskontakte.
+### Getroffen am 5. September 2026
 
----
+| Frage | Entscheid |
+|---|---|
+| Positionierung | Rubrik unter unserem Namen (Variante B), keine Kunstfigur. Eigene Marke frühestens nach zwölf Monaten |
+| Name der Rubrik | **«KI-Werkbank»** |
+| Verantwortlich | **Alisami Aljili** — sein Name steht unter Beiträgen und Urteilen |
+| Zielgruppen | Kollegenbüros und Bauherrschaften **parallel**, im Wechsel je Beitrag |
+| Zeitbudget | **Volle Frequenz**, ein Beitrag pro Monat, 9–11 Stunden monatlich, fester Kalendertermin |
+| Honorar | Vorträge und Workshops werden **nach Aufwand verrechnet**; erster Verbandsvortrag zum Selbstkostenpreis |
+| Schweizer Umfrage | **Ja**, Start ab Monat 4 |
+| Aufbau Website | **Eigene Seite `/ki-werkbank` mit Register plus Beiträge in den Insights** |
+
+### Noch offen
+
+| Punkt | Warum es blockiert |
+|---|---|
+| **Welche Programme und Abos nutzt das Büro heute?** CAD/BIM, Bildwerkzeuge, Sprachmodelle, bestehende Lizenzen | Ohne diese Liste kann das Register nicht bei uns selbst beginnen. Erfunden wird nichts — das ist die Grundlage für die ersten drei Prüfungen in Phase 1 |
+| **Halbtagessatz für Workshops** | Wird erst für die Leistungsseite in Phase 4 gebraucht, nicht für den Start |
+| **Bildmotive für die Rubrik** | Bestehende Insights-Bilder sind Behelf (Handbuch, Abschnitt 16). Für die KI-Werkbank wären eigene Motive besser — kann nachgezogen werden |
 
 ## 17. Quellen
 
@@ -470,5 +503,7 @@ Originalquelle zu prüfen.
 
 ---
 
-*Konzept erstellt am 5. September 2026. Nächster Schritt: Entscheidungen aus
-Abschnitt 16, danach Phase 1.*
+*Konzept erstellt am 5. September 2026, Entscheidungen am selben Tag
+getroffen. Nächster Schritt: Phase 1 — Werkzeugliste des Büros erfassen, drei
+Werkzeuge prüfen, Bürorichtlinie schreiben, Marktzahlen an den Originalquellen
+nachprüfen.*
