@@ -110,13 +110,27 @@ rm -rf "$(dirname "$SYMBOLORDNER")"
 
 sagen "4/5  Signieren"
 
-if codesign --force --sign - --timestamp=none "$ZIEL" >/dev/null 2>&1; then
+# Reste aus dem Kopieren entfernen — sie sind der haeufigste Grund,
+# weshalb codesign ein sonst einwandfreies Paket zurueckweist.
+xattr -cr "$ZIEL" 2>/dev/null
+
+SIGNATURMELDUNG="$(codesign --force --deep --sign - "$ZIEL" 2>&1)"
+if [ $? -eq 0 ]; then
     hinweis "Ad-hoc signiert."
     hinweis "Wichtig: Nach jedem Neubau ändert sich die Signatur. macOS erkennt"
     hinweis "das Programm dann als neu und fragt die Berechtigung zur"
     hinweis "Bildschirmaufnahme noch einmal ab. Das ist normal."
 else
-    hinweis "Signieren fehlgeschlagen — das Programm startet vermutlich trotzdem."
+    hinweis "Signieren fehlgeschlagen. Meldung von macOS:"
+    printf '   %s\n' "$SIGNATURMELDUNG"
+    hinweis ""
+    hinweis "Das Programm startet meist trotzdem. Ohne gültige Signatur kann"
+    hinweis "macOS die Berechtigung zur Bildschirmaufnahme aber schlechter"
+    hinweis "zuordnen — bitte diese Meldung weitergeben."
+fi
+
+if codesign --verify --verbose=1 "$ZIEL" >/dev/null 2>&1; then
+    hinweis "Signatur geprüft: in Ordnung."
 fi
 
 # ---------------------------------------------------------------- Fertig
