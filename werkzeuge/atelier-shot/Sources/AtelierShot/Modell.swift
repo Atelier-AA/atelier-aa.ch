@@ -210,6 +210,10 @@ final class Dokument {
 
     var anmerkungen: [Anmerkung] = []
 
+    /// Zaehlt jede inhaltliche Aenderung. Damit weiss das Fenster beim
+    /// Schliessen, ob seit dem letzten Sichern etwas passiert ist.
+    private(set) var aenderungsstand = 0
+
     private var verlaufZurueck: [[Anmerkung]] = []
     private var verlaufVor: [[Anmerkung]] = []
 
@@ -225,6 +229,7 @@ final class Dokument {
         verlaufZurueck.append(anmerkungen)
         if verlaufZurueck.count > 100 { verlaufZurueck.removeFirst() }
         verlaufVor.removeAll()
+        aenderungsstand += 1
     }
 
     var kannZurueck: Bool { !verlaufZurueck.isEmpty }
@@ -234,12 +239,20 @@ final class Dokument {
         guard let vorher = verlaufZurueck.popLast() else { return }
         verlaufVor.append(anmerkungen)
         anmerkungen = vorher
+        aenderungsstand += 1
     }
 
     func wiederherstellen() {
         guard let nachher = verlaufVor.popLast() else { return }
         verlaufZurueck.append(anmerkungen)
         anmerkungen = nachher
+        aenderungsstand += 1
+    }
+
+    /// Bild ersetzen (Hintergrund entfernen / Original zurueck).
+    func setzeBild(_ neues: NSImage) {
+        bild = neues
+        aenderungsstand += 1
     }
 
     /// Fortlaufende Nummer fuer das Nummern-Werkzeug.

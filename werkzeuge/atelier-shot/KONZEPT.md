@@ -38,7 +38,7 @@ Drei Regeln, an denen sich jede Entscheidung im Programm messen lassen muss:
                                             │
                                             ▼
 
-              ⌘C kopieren   ·   ⌘S sichern   ·   ⌘⇧S in Projektordner
+              ⌘C kopieren   ·   Fenster zu = gesichert   ·   ⌘⇧S in Projektordner
               (fertig in unter zehn Sekunden)
 ```
 
@@ -124,7 +124,8 @@ Strichstärke mit `[` und `]`, Rückgängig `⌘Z`, Wiederherstellen `⌘⇧Z`.
 |---|---|
 | `⌘C` | Fertiges Bild in die Zwischenablage — für Mail, Teams, WhatsApp |
 | `⌘S` | Sichern als PNG, volle Auflösung, mit Bildpunktdichte in der Datei |
-| `⌘⇧S` | Sichern in den Projektordner mit Namensschema (siehe unten) |
+| **Fenster schliessen** | **Sichert von selbst** in den Ablageordner (Vorgabe: Schreibtisch). Zumachen ist Sichern — kein Dialog, kein Ort wählen. Nur wenn seit der letzten Änderung schon gesichert wurde, passiert nichts doppelt |
+| `⌘⇧S` | Sichern in den Projektordner mit Namensschema (siehe unten), Fenster bleibt offen |
 | `⌘P` | Als PDF sichern — zum Anhängen an Protokolle |
 | Ziehen | Bild aus dem Fenster direkt in Mail oder den Finder ziehen |
 | `⌘⌥C` | Nur die Anmerkungsliste als Text kopieren (aus dem Nummern-Werkzeug) |

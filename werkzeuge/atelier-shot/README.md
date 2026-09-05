@@ -124,13 +124,18 @@ gerade ausgewählte Anmerkung.
 |---|---|
 | `⌘C` | Bild in die Zwischenablage |
 | `⌘S` | Sichern als PNG, volle Auflösung, mit Bildpunktdichte in der Datei |
-| `⇧⌘S` | In den gemerkten Ablageordner sichern, ohne Rückfrage |
+| **Fenster schliessen** (rotes X, `⌘W`) | **Sichert von selbst** als PNG auf den Schreibtisch, mit Datum und Uhrzeit im Namen — auch ohne Anmerkung. Kein Dialog, kein Ort wählen. Wurde seit der letzten Änderung schon von Hand gesichert, passiert nichts doppelt |
+| `⇧⌘S` | Jetzt schon in den Ablageordner sichern, ohne Rückfrage, Fenster bleibt offen |
 | `⌥⌘C` | Nur die Anmerkungsliste als Text — zum Einkleben ins Protokoll |
 | Ziehen | Das kleine Feld in der Fussleiste ins Mailfenster oder in den Finder ziehen |
 | `⌘Z` / `⇧⌘Z` | Rückgängig / Wiederherstellen |
 | `⌘B` | **Hintergrund entfernen** — Apples Bilderkennung, läuft auf dem Gerät. Ergebnis ist ein PNG mit durchsichtigem Hintergrund |
 | `⌥⌘Z` | Original wiederherstellen (nach „Hintergrund entfernen") |
 | `⌘0` / `⌘9` | Originalgrösse / ins Fenster einpassen |
+
+**Ablageordner:** Vorgabe ist der Schreibtisch, wie beim Apple-Werkzeug. Über
+das Menüleisten-Symbol lässt er sich ändern; der Menüpunkt zeigt, welcher
+gerade gilt. Dort steht auch der Schalter *Beim Schliessen sichern*.
 
 ### Die Grössenregel
 

@@ -11,6 +11,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var kuerzelFehlgeschlagen = false
 
     private var anmeldenEintrag: NSMenuItem?
+    private var ordnerEintrag: NSMenuItem?
 
     // MARK: - Start
 
@@ -226,7 +227,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         kopieren.state = Einstellungen.geteilte.automatischKopieren ? .on : .off
         menue.addItem(kopieren)
 
-        menue.addItem(eintragMit("Ablageordner wählen …", #selector(waehleAblageordner(_:))))
+        let schliessen = NSMenuItem(title: "Beim Schliessen sichern",
+                                    action: #selector(schalteBeimSchliessenSichern(_:)), keyEquivalent: "")
+        schliessen.target = self
+        schliessen.state = Einstellungen.geteilte.beimSchliessenSichern ? .on : .off
+        menue.addItem(schliessen)
+
+        let ordner = eintragMit("", #selector(waehleAblageordner(_:)))
+        menue.addItem(ordner)
+        ordnerEintrag = ordner
+        zeigeAblageordner()
         menue.addItem(eintragMit("Berechtigung „Bildschirmaufnahme“ öffnen …",
                                  #selector(oeffneBerechtigungen(_:))))
         menue.addItem(.separator())
@@ -253,6 +263,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         absender.state = Einstellungen.geteilte.automatischKopieren ? .on : .off
     }
 
+    @objc private func schalteBeimSchliessenSichern(_ absender: NSMenuItem) {
+        Einstellungen.geteilte.beimSchliessenSichern.toggle()
+        absender.state = Einstellungen.geteilte.beimSchliessenSichern ? .on : .off
+    }
+
+    /// Zeigt im Menue, wohin gesichert wird — z. B. "Ablageordner: Schreibtisch …".
+    private func zeigeAblageordner() {
+        let ordner = Einstellungen.geteilte.ablageordner
+        let istSchreibtisch = ordner.standardizedFileURL.path == Einstellungen.schreibtisch.standardizedFileURL.path
+        let name = istSchreibtisch ? "Schreibtisch" : ordner.lastPathComponent
+        ordnerEintrag?.title = "Ablageordner: \(name) …"
+    }
+
     @objc private func waehleAblageordner(_ absender: Any?) {
         zeigeAlsProgramm()
         NSApp.activate(ignoringOtherApps: true)
@@ -261,8 +284,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         dialog.canChooseFiles = false
         dialog.canCreateDirectories = true
         dialog.message = "Ordner für gesicherte Bildschirmfotos wählen"
+        dialog.directoryURL = Einstellungen.geteilte.ablageordner
         if dialog.runModal() == .OK, let ordner = dialog.url {
             Einstellungen.geteilte.ablageordner = ordner
+            zeigeAblageordner()
         }
         verschwindeInDenHintergrund()
     }
@@ -415,5 +440,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: NSMenuDelegate {
     func menuNeedsUpdate(_ menu: NSMenu) {
         anmeldenEintrag?.state = (SMAppService.mainApp.status == .enabled) ? .on : .off
+        zeigeAblageordner()
     }
 }

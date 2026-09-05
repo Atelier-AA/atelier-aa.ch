@@ -78,8 +78,8 @@ enum Ausgabe {
 
     static func vorschlagsname(endung: String = "png") -> String {
         let formatierer = DateFormatter()
-        formatierer.dateFormat = "yyyy-MM-dd_HHmm"
-        return "atelier-shot_\(formatierer.string(from: Date())).\(endung)"
+        formatierer.dateFormat = "yyyy-MM-dd_HH.mm.ss"
+        return "Atelier Shot \(formatierer.string(from: Date())).\(endung)"
     }
 
     /// Fragt nach Ort und Namen. Gibt den gesicherten Ort zurueck.
@@ -92,15 +92,12 @@ enum Ausgabe {
         dialog.nameFieldStringValue = vorschlagsname()
         dialog.canCreateDirectories = true
         dialog.message = "Bildschirmfoto sichern"
-        if let ordner = Einstellungen.geteilte.ablageordner {
-            dialog.directoryURL = ordner
-        }
+        dialog.directoryURL = Einstellungen.geteilte.ablageordner
 
         fenster?.makeKeyAndOrderFront(nil)
         guard dialog.runModal() == .OK, let ziel = dialog.url else { return nil }
         do {
             try daten.write(to: ziel)
-            Einstellungen.geteilte.ablageordner = ziel.deletingLastPathComponent()
             return ziel
         } catch {
             zeigeFehler("Sichern nicht möglich", text: error.localizedDescription)
@@ -108,17 +105,30 @@ enum Ausgabe {
         }
     }
 
-    /// Sichert ohne Rueckfrage in den gemerkten Ordner.
+    /// Sichert ohne Rueckfrage in den Ablageordner. Gibt es den Namen schon,
+    /// wird hochgezaehlt statt ueberschrieben.
     @discardableResult
-    static func sichernInAblageordner(_ dokument: Dokument) -> URL? {
-        guard let ordner = Einstellungen.geteilte.ablageordner else { return nil }
+    static func sichernInAblageordner(_ dokument: Dokument, leise: Bool = false) -> URL? {
+        let ordner = Einstellungen.geteilte.ablageordner
         guard let daten = pngDaten(dokument) else { return nil }
-        let ziel = ordner.appendingPathComponent(vorschlagsname())
+
+        let name = vorschlagsname()
+        var ziel = ordner.appendingPathComponent(name)
+        var zaehler = 2
+        while FileManager.default.fileExists(atPath: ziel.path) {
+            let ohneEndung = (name as NSString).deletingPathExtension
+            ziel = ordner.appendingPathComponent("\(ohneEndung) \(zaehler).png")
+            zaehler += 1
+        }
+
         do {
+            try FileManager.default.createDirectory(at: ordner, withIntermediateDirectories: true)
             try daten.write(to: ziel)
             return ziel
         } catch {
-            zeigeFehler("Sichern nicht möglich", text: error.localizedDescription)
+            if !leise {
+                zeigeFehler("Sichern nicht möglich", text: error.localizedDescription)
+            }
             return nil
         }
     }

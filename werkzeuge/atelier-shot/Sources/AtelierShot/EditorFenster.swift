@@ -57,6 +57,9 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
     let dokument: Dokument
     var beiSchliessen: ((EditorFenster) -> Void)?
 
+    /// Aenderungsstand des Dokuments beim letzten Sichern — nil heisst: noch nie.
+    private var gesichertBeiStand: Int?
+
     private let leinwand: LeinwandView
     private let leiste = WerkzeugLeiste(frame: .zero)
     private let bildlauf = NSScrollView()
@@ -278,6 +281,7 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
     @objc func sichern(_ absender: Any?) {
         leinwand.beendeTextbearbeitung()
         if let ort = Ausgabe.sichernMitDialog(dokument, fenster: window) {
+            gesichertBeiStand = dokument.aenderungsstand
             melde("Gesichert: \(ort.lastPathComponent)")
         }
     }
@@ -285,9 +289,19 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
     @objc func sichernInOrdner(_ absender: Any?) {
         leinwand.beendeTextbearbeitung()
         if let ort = Ausgabe.sichernInAblageordner(dokument) {
+            gesichertBeiStand = dokument.aenderungsstand
             melde("Gesichert: \(ort.lastPathComponent)")
-        } else {
-            sichern(absender)
+        }
+    }
+
+    /// Fenster zu heisst gesichert — ausser es wurde seit der letzten
+    /// Aenderung schon von Hand gesichert.
+    private func beimSchliessenSichern() {
+        guard Einstellungen.geteilte.beimSchliessenSichern else { return }
+        guard gesichertBeiStand != dokument.aenderungsstand else { return }
+        leinwand.beendeTextbearbeitung()
+        if Ausgabe.sichernInAblageordner(dokument, leise: true) != nil {
+            gesichertBeiStand = dokument.aenderungsstand
         }
     }
 
@@ -312,7 +326,7 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
         Freistellen.freistellen(dokument) { [weak self] ergebnis in
             guard let self else { return }
             if let ergebnis {
-                self.dokument.bild = ergebnis
+                self.dokument.setzeBild(ergebnis)
                 self.leinwand.needsDisplay = true
                 self.melde("Hintergrund entfernt — ⌘⌥Z stellt das Original wieder her")
             } else {
@@ -323,7 +337,7 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
 
     @objc func originalWiederherstellen(_ absender: Any?) {
         guard dokument.istFreigestellt else { return }
-        dokument.bild = dokument.originalbild
+        dokument.setzeBild(dokument.originalbild)
         leinwand.needsDisplay = true
         melde("Original wiederhergestellt")
     }
@@ -374,6 +388,7 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
     // MARK: - Fenster
 
     func windowWillClose(_ notification: Notification) {
+        beimSchliessenSichern()
         beiSchliessen?(self)
     }
 

@@ -15,6 +15,16 @@ final class Einstellungen {
         static let autoKopieren = "automatischKopieren"
         static let ordner = "ablageordner"
         static let anmelden = "beimAnmeldenStarten"
+        static let beimSchliessen = "beimSchliessenSichern"
+    }
+
+    /// Fenster zu heisst gesichert — ohne Dialog, ohne Ort waehlen.
+    var beimSchliessenSichern: Bool {
+        get {
+            if vorgaben.object(forKey: Schluessel.beimSchliessen) == nil { return true }
+            return vorgaben.bool(forKey: Schluessel.beimSchliessen)
+        }
+        set { vorgaben.set(newValue, forKey: Schluessel.beimSchliessen) }
     }
 
     /// Beim Anmelden starten — Vorgabe ja, denn das Programm soll wie das
@@ -62,13 +72,20 @@ final class Einstellungen {
         set { vorgaben.set(newValue, forKey: Schluessel.autoKopieren) }
     }
 
-    /// Zuletzt verwendeter Ablageordner.
-    var ablageordner: URL? {
+    /// Ablageordner — Vorgabe ist der Schreibtisch, wie beim Apple-Werkzeug.
+    var ablageordner: URL {
         get {
-            guard let pfad = vorgaben.string(forKey: Schluessel.ordner) else { return nil }
-            return URL(fileURLWithPath: pfad, isDirectory: true)
+            if let pfad = vorgaben.string(forKey: Schluessel.ordner) {
+                return URL(fileURLWithPath: pfad, isDirectory: true)
+            }
+            return Einstellungen.schreibtisch
         }
-        set { vorgaben.set(newValue?.path, forKey: Schluessel.ordner) }
+        set { vorgaben.set(newValue.path, forKey: Schluessel.ordner) }
+    }
+
+    static var schreibtisch: URL {
+        FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first
+            ?? URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Desktop", isDirectory: true)
     }
 
     var standardstil: Stil {
