@@ -248,20 +248,22 @@ xattr -cr "$ZIEL" 2>/dev/null
 
 MIT_ZERTIFIKAT=0
 if zertifikat_vorhanden; then
-    if codesign --force --deep --sign "$ZERTIFIKAT" --timestamp=none "$ZIEL" >/dev/null 2>&1; then
+    if schritt "Mit »${ZERTIFIKAT}« signieren" \
+            codesign --force --deep --sign "$ZERTIFIKAT" --timestamp=none "$ZIEL"; then
         MIT_ZERTIFIKAT=1
-        hinweis "Mit »${ZERTIFIKAT}« signiert — feste Kennung, Berechtigung bleibt erhalten."
+        hinweis "Feste Kennung — die Berechtigung bleibt über Neubauten erhalten."
     else
-        hinweis "Signieren mit Zertifikat fehlgeschlagen, weiche auf Ad-hoc aus."
+        hinweis "Weiche auf Ad-hoc aus."
     fi
 fi
 if [ "$MIT_ZERTIFIKAT" -eq 0 ]; then
-    if codesign --force --deep --sign - "$ZIEL" >/dev/null 2>&1; then
-        hinweis "Ad-hoc signiert — macOS fragt nach jedem Neubau erneut nach der Berechtigung."
+    if schritt "Ad-hoc signieren" codesign --force --deep --sign - "$ZIEL"; then
+        hinweis "macOS fragt nach jedem Neubau erneut nach der Berechtigung."
     else
-        hinweis "Signieren fehlgeschlagen. Das Programm startet meist trotzdem."
+        hinweis "Das Programm startet meist trotzdem."
     fi
 fi
+codesign -dv "$ZIEL" 2>&1 | grep -E "^Authority=|^Signature=" | head -2 | sed 's/^/   /'
 
 # Berechtigung nur dann zuruecksetzen, wenn die Kennung sich geaendert hat:
 # beim Wechsel auf das neue Zertifikat oder ohne festes Zertifikat.
