@@ -142,9 +142,9 @@ EOF
 
 ZERTIFIKAT_NEU=0
 if zertifikat_vorhanden; then
-    hinweis "»$ZERTIFIKAT« ist im Schlüsselbund vorhanden."
+    hinweis "»${ZERTIFIKAT}« ist im Schlüsselbund vorhanden."
 else
-    hinweis "Lege einmalig das Zertifikat »$ZERTIFIKAT« an …"
+    hinweis "Lege einmalig das Zertifikat »${ZERTIFIKAT}« an …"
     if zertifikat_erstellen && zertifikat_vorhanden; then
         hinweis "Zertifikat angelegt."
         ZERTIFIKAT_NEU=1
@@ -201,7 +201,7 @@ MIT_ZERTIFIKAT=0
 if zertifikat_vorhanden; then
     if codesign --force --deep --sign "$ZERTIFIKAT" --timestamp=none "$ZIEL" >/dev/null 2>&1; then
         MIT_ZERTIFIKAT=1
-        hinweis "Mit »$ZERTIFIKAT« signiert — feste Kennung, Berechtigung bleibt erhalten."
+        hinweis "Mit »${ZERTIFIKAT}« signiert — feste Kennung, Berechtigung bleibt erhalten."
     else
         hinweis "Signieren mit Zertifikat fehlgeschlagen, weiche auf Ad-hoc aus."
     fi
