@@ -56,7 +56,9 @@ final class Tastenkuerzel {
                                            EventParamName(kEventParamDirectObject),
                                            EventParamType(typeEventHotKeyID),
                                            nil,
-                                           ByteCount(MemoryLayout<EventHotKeyID>.size),
+                                           // numericCast statt eines festen Typnamens:
+                                           // Carbons "ByteCount" ist in Swift nicht sichtbar.
+                                           numericCast(MemoryLayout<EventHotKeyID>.size),
                                            nil,
                                            &kennzeichen)
             guard status == noErr else { return status }
