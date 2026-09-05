@@ -88,12 +88,29 @@ fi
 sagen "2/6  Zertifikat"
 
 zertifikat_vorhanden() {
-    security find-identity -v -p codesigning 2>/dev/null | grep -q "$ZERTIFIKAT"
+    security find-identity -p codesigning 2>/dev/null | grep -q "$ZERTIFIKAT"
+}
+
+# Gibt bei einem Fehler die Meldung des Werkzeugs aus, statt sie zu verschlucken.
+schritt() {
+    local beschreibung="$1"; shift
+    local protokoll
+    protokoll="$(mktemp)"
+    if "$@" >"$protokoll" 2>&1; then
+        hinweis "✓ $beschreibung"
+        rm -f "$protokoll"
+        return 0
+    fi
+    hinweis "✗ $beschreibung — Meldung:"
+    sed 's/^/       /' "$protokoll" | head -8
+    rm -f "$protokoll"
+    return 1
 }
 
 zertifikat_erstellen() {
     local ablage
     ablage="$(mktemp -d)"
+    hinweis "openssl: $(openssl version 2>/dev/null)"
 
     cat > "$ablage/zertifikat.cnf" <<EOF
 [req]
@@ -110,26 +127,33 @@ basicConstraints = critical, CA:false
 subjectKeyIdentifier = hash
 EOF
 
-    openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
-        -keyout "$ablage/schluessel.pem" -out "$ablage/zertifikat.pem" \
-        -config "$ablage/zertifikat.cnf" >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+    schritt "Schlüssel und Zertifikat erzeugen" \
+        openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
+            -keyout "$ablage/schluessel.pem" -out "$ablage/zertifikat.pem" \
+            -config "$ablage/zertifikat.cnf" \
+        || { rm -rf "$ablage"; return 1; }
 
     # Als PKCS12 buendeln — neuere OpenSSL-Fassungen brauchen dafuer "-legacy".
-    if ! openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
-            -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
-            -passout pass:ateliershot -name "$ZERTIFIKAT" >/dev/null 2>&1; then
-        openssl pkcs12 -export -legacy -out "$ablage/zertifikat.p12" \
-            -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
-            -passout pass:ateliershot -name "$ZERTIFIKAT" >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+    if ! schritt "Als PKCS12 bündeln" \
+            openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
+                -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+                -passout pass:ateliershot -name "$ZERTIFIKAT"; then
+        schritt "Als PKCS12 bündeln (legacy)" \
+            openssl pkcs12 -export -legacy -out "$ablage/zertifikat.p12" \
+                -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+                -passout pass:ateliershot -name "$ZERTIFIKAT" \
+            || { rm -rf "$ablage"; return 1; }
     fi
 
-    security import "$ablage/zertifikat.p12" -k "$SCHLUESSELBUND" -P ateliershot \
-        -T /usr/bin/codesign -T /usr/bin/security >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+    schritt "In den Schlüsselbund aufnehmen" \
+        security import "$ablage/zertifikat.p12" -k "$SCHLUESSELBUND" -P ateliershot \
+            -T /usr/bin/codesign -T /usr/bin/security \
+        || { rm -rf "$ablage"; return 1; }
 
     hinweis "macOS fragt jetzt nach deinem Anmeldepasswort (Vertrauen für das Zertifikat)."
-    security add-trusted-cert -r trustRoot -p codeSign -k "$SCHLUESSELBUND" \
-        "$ablage/zertifikat.pem" >/dev/null 2>&1 \
-        || hinweis "Vertrauen nicht gesetzt — signieren geht meist trotzdem."
+    schritt "Zertifikat als vertrauenswürdig eintragen" \
+        security add-trusted-cert -r trustRoot -p codeSign -k "$SCHLUESSELBUND" "$ablage/zertifikat.pem" \
+        || hinweis "Signieren geht meist trotzdem."
 
     # Erlaubt codesign den Zugriff auf den Schluessel, ohne jedes Mal zu fragen.
     hinweis "Noch einmal das Anmeldepasswort, damit codesign den Schlüssel nutzen darf:"
