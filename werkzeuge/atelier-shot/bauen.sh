@@ -133,22 +133,47 @@ EOF
             -config "$ablage/zertifikat.cnf" \
         || { rm -rf "$ablage"; return 1; }
 
-    # Als PKCS12 buendeln — neuere OpenSSL-Fassungen brauchen dafuer "-legacy".
-    if ! schritt "Als PKCS12 bündeln" \
-            openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
-                -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
-                -passout pass:ateliershot -name "$ZERTIFIKAT"; then
-        schritt "Als PKCS12 bündeln (legacy)" \
-            openssl pkcs12 -export -legacy -out "$ablage/zertifikat.p12" \
-                -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
-                -passout pass:ateliershot -name "$ZERTIFIKAT" \
-            || { rm -rf "$ablage"; return 1; }
+    # Als PKCS12 buendeln und in den Schluesselbund aufnehmen.
+    # OpenSSL 3 verpackt standardmaessig so, dass Apples "security import"
+    # das Paket zurueckweist ("MAC verification failed"). Deshalb zuerst die
+    # aeltere Verpackung (SHA1/3DES), die beide Seiten verstehen; danach die
+    # weiteren Varianten als Ausweichmoeglichkeit.
+    local aufgenommen=0
+    local variante
+    for variante in "sha1-3des" "legacy" "standard"; do
+        rm -f "$ablage/zertifikat.p12"
+        case "$variante" in
+            sha1-3des)
+                schritt "Als PKCS12 bündeln (SHA1/3DES)" \
+                    openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
+                        -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+                        -passout pass:ateliershot -name "$ZERTIFIKAT" \
+                        -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -macalg sha1 \
+                    || continue ;;
+            legacy)
+                schritt "Als PKCS12 bündeln (legacy)" \
+                    openssl pkcs12 -export -legacy -out "$ablage/zertifikat.p12" \
+                        -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+                        -passout pass:ateliershot -name "$ZERTIFIKAT" \
+                    || continue ;;
+            standard)
+                schritt "Als PKCS12 bündeln (Standard)" \
+                    openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
+                        -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+                        -passout pass:ateliershot -name "$ZERTIFIKAT" \
+                    || continue ;;
+        esac
+        if schritt "In den Schlüsselbund aufnehmen" \
+                security import "$ablage/zertifikat.p12" -k "$SCHLUESSELBUND" -P ateliershot \
+                    -T /usr/bin/codesign -T /usr/bin/security; then
+            aufgenommen=1
+            break
+        fi
+    done
+    if [ "$aufgenommen" -eq 0 ]; then
+        rm -rf "$ablage"
+        return 1
     fi
-
-    schritt "In den Schlüsselbund aufnehmen" \
-        security import "$ablage/zertifikat.p12" -k "$SCHLUESSELBUND" -P ateliershot \
-            -T /usr/bin/codesign -T /usr/bin/security \
-        || { rm -rf "$ablage"; return 1; }
 
     hinweis "macOS fragt jetzt nach deinem Anmeldepasswort (Vertrauen für das Zertifikat)."
     schritt "Zertifikat als vertrauenswürdig eintragen" \
