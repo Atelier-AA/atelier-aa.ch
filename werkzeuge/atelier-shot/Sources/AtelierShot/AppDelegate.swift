@@ -10,7 +10,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var aufnahmeLaeuft = false
     private var kuerzelFehlgeschlagen = false
 
-    private var appleKuerzelEintrag: NSMenuItem?
     private var anmeldenEintrag: NSMenuItem?
 
     // MARK: - Start
@@ -27,8 +26,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 text: "Das eingebaute Werkzeug \(Bildschirmaufnahme.werkzeug) wurde nicht gefunden. "
                     + "Ohne dieses Werkzeug kann Atelier Shot keine Aufnahme machen.")
         }
-
-        pruefeAppleKuerzel(mitDialog: !Einstellungen.geteilte.kuerzelHinweisGezeigt)
     }
 
     /// Wird nach dem Anmelden vom System oder von Hand aufgerufen — beides
@@ -128,9 +125,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Globale Kuerzel
 
     private func registriereKuerzel() {
-        let haupt = Tastenkuerzel.zusatztasten
-        let ersatz = Tastenkuerzel.ersatzZusatztasten
-
         let belegung: [(Int, Aufnahmeart)] = [
             (Tastenkuerzel.ausschnittTaste, .ausschnitt),
             (Tastenkuerzel.vollbildTaste, .vollbild),
@@ -138,44 +132,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ]
 
         for (taste, art) in belegung {
-            for zusatz in [haupt, ersatz] {
-                if let eintrag = Tastenkuerzel(taste: taste, zusatztasten: zusatz,
-                                               aktion: { [weak self] in self?.starteAufnahme(art) }) {
-                    kuerzel.append(eintrag)
-                } else if zusatz == haupt {
-                    kuerzelFehlgeschlagen = true
-                }
+            if let eintrag = Tastenkuerzel(taste: taste, zusatztasten: Tastenkuerzel.zusatztasten,
+                                           aktion: { [weak self] in self?.starteAufnahme(art) }) {
+                kuerzel.append(eintrag)
+            } else {
+                kuerzelFehlgeschlagen = true
             }
         }
-    }
-
-    /// Solange Apples eigene Bildschirmfoto-Kuerzel aktiv sind, faengt das
-    /// System `⌘⇧3/4/5` vor uns ab. Der Weg zur Einstellung wird gezeigt.
-    private func pruefeAppleKuerzel(mitDialog: Bool) {
-        let nochAktiv = Tastenkuerzel.appleKuerzelNochAktiv
-        appleKuerzelEintrag?.isHidden = !nochAktiv
-
-        guard nochAktiv, mitDialog else { return }
-        Einstellungen.geteilte.kuerzelHinweisGezeigt = true
-
-        NSApp.activate(ignoringOtherApps: true)
-        let hinweis = NSAlert()
-        hinweis.messageText = "Apples Bildschirmfoto-Kürzel sind noch eingeschaltet"
-        hinweis.informativeText =
-            "Atelier Shot übernimmt ⌘⇧3, ⌘⇧4 und ⌘⇧5. Damit sie hier ankommen, "
-            + "müssen Apples eigene Kürzel einmalig abgeschaltet werden:\n\n"
-            + "Systemeinstellungen → Tastatur → Tastaturkurzbefehle … → Bildschirmfotos\n"
-            + "→ dort alle Häkchen entfernen.\n\n"
-            + "Bis dahin funktionieren ⌃⇧3, ⌃⇧4 und ⌃⇧5 (mit ctrl statt cmd)."
-        hinweis.addButton(withTitle: "Systemeinstellungen öffnen")
-        hinweis.addButton(withTitle: "Später")
-        if hinweis.runModal() == .alertFirstButtonReturn {
-            Tastenkuerzel.oeffneTastaturEinstellungen()
-        }
-    }
-
-    @objc private func appleKuerzelAbschalten(_ absender: Any?) {
-        Tastenkuerzel.oeffneTastaturEinstellungen()
     }
 
     /// Erklaert die haeufigste Ursache: Schalter steht auf "an", gilt aber
@@ -185,14 +148,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let hinweis = NSAlert()
         hinweis.messageText = "macOS lässt die Bildschirmaufnahme noch nicht zu"
         hinweis.informativeText =
-            "Das passiert auch, wenn der Schalter in den Systemeinstellungen schon auf »an« steht: "
-            + "Nach einem Neubau erkennt macOS das Programm nicht wieder, und die alte Freigabe "
-            + "gilt nicht mehr.\n\n"
+            "Atelier Shot braucht einmalig die Berechtigung »Bildschirmaufnahme«.\n\n"
             + "So geht es:\n"
             + "1. Systemeinstellungen → Datenschutz & Sicherheit → Bildschirmaufnahme\n"
-            + "2. »Atelier Shot« in der Liste mit − entfernen\n"
-            + "3. Mit + aus dem Ordner »Programme« neu hinzufügen und einschalten\n"
-            + "4. Atelier Shot über das Menüleisten-Symbol beenden und neu öffnen"
+            + "2. Schalter neben »Atelier Shot« einschalten — fehlt der Eintrag, "
+            + "mit + aus dem Ordner »Programme« hinzufügen\n"
+            + "3. Atelier Shot über das Menüleisten-Symbol beenden und neu öffnen\n\n"
+            + "Das Programm merkt sich beim Start, ob es darf. Deshalb ist der Neustart nötig."
         hinweis.addButton(withTitle: "Systemeinstellungen öffnen")
         hinweis.addButton(withTitle: "Später")
         if hinweis.runModal() == .alertFirstButtonReturn {
@@ -240,19 +202,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menue = NSMenu()
-        menue.addItem(eintragMit("Ausschnitt aufnehmen   ⌘⇧4", #selector(aufnahmeAusschnitt(_:))))
-        menue.addItem(eintragMit("Ganzen Bildschirm aufnehmen   ⌘⇧3", #selector(aufnahmeVollbild(_:))))
-        menue.addItem(eintragMit("Fenster aufnehmen   ⌘⇧5", #selector(aufnahmeFenster(_:))))
+        menue.addItem(eintragMit("Ausschnitt aufnehmen   ⌃⇧4", #selector(aufnahmeAusschnitt(_:))))
+        menue.addItem(eintragMit("Ganzen Bildschirm aufnehmen   ⌃⇧3", #selector(aufnahmeVollbild(_:))))
+        menue.addItem(eintragMit("Fenster aufnehmen   ⌃⇧5", #selector(aufnahmeFenster(_:))))
         menue.addItem(.separator())
 
-        let apple = eintragMit("Apple-Kürzel noch aktiv — jetzt abschalten …",
-                               #selector(appleKuerzelAbschalten(_:)))
-        apple.isHidden = true
-        menue.addItem(apple)
-        appleKuerzelEintrag = apple
-
         if kuerzelFehlgeschlagen {
-            let hinweis = NSMenuItem(title: "Achtung: ⌘⇧-Kürzel von einem anderen Programm belegt",
+            let hinweis = NSMenuItem(title: "Achtung: ⌃⇧-Kürzel von einem anderen Programm belegt",
                                      action: nil, keyEquivalent: "")
             hinweis.isEnabled = false
             menue.addItem(hinweis)
@@ -356,11 +312,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let aufnahmeEintrag = NSMenuItem()
         let aufnahmeMenue = NSMenu(title: "Aufnahme")
         aufnahmeMenue.addItem(kuerzelEintrag("Ausschnitt aufnehmen", #selector(aufnahmeAusschnitt(_:)),
-                                             taste: "4", zusatz: [.command, .shift], ziel: self))
+                                             taste: "4", zusatz: [.control, .shift], ziel: self))
         aufnahmeMenue.addItem(kuerzelEintrag("Ganzen Bildschirm aufnehmen", #selector(aufnahmeVollbild(_:)),
-                                             taste: "3", zusatz: [.command, .shift], ziel: self))
+                                             taste: "3", zusatz: [.control, .shift], ziel: self))
         aufnahmeMenue.addItem(kuerzelEintrag("Fenster aufnehmen", #selector(aufnahmeFenster(_:)),
-                                             taste: "5", zusatz: [.command, .shift], ziel: self))
+                                             taste: "5", zusatz: [.control, .shift], ziel: self))
         aufnahmeEintrag.submenu = aufnahmeMenue
         hauptmenue.addItem(aufnahmeEintrag)
 
@@ -458,7 +414,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate: NSMenuDelegate {
     func menuNeedsUpdate(_ menu: NSMenu) {
-        pruefeAppleKuerzel(mitDialog: false)
         anmeldenEintrag?.state = (SMAppService.mainApp.status == .enabled) ? .on : .off
     }
 }

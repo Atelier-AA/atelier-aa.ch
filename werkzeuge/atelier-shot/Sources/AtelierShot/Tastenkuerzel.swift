@@ -71,42 +71,11 @@ final class Tastenkuerzel {
 
     // MARK: - Die Kuerzel des Programms
 
-    /// Atelier Shot ersetzt das Apple-Werkzeug und uebernimmt dessen Kuerzel:
-    /// `⌘⇧3` Bildschirm, `⌘⇧4` Ausschnitt, `⌘⇧5` Fenster. Damit sie bei uns
-    /// ankommen, muessen Apples eigene in den Systemeinstellungen abgeschaltet
-    /// sein — sonst faengt das System sie vorher ab. Bis dahin gelten die
-    /// Ersatzkuerzel mit ctrl.
+    /// `⌃⇧3` Bildschirm, `⌃⇧4` Ausschnitt, `⌃⇧5` Fenster — dieselbe Logik
+    /// wie bei Apple, nur mit ctrl statt cmd. Apples eigene Kuerzel bleiben
+    /// unangetastet und funktionieren weiter.
     static let ausschnittTaste = kVK_ANSI_4
     static let vollbildTaste = kVK_ANSI_3
     static let fensterTaste = kVK_ANSI_5
-    static let zusatztasten = cmdKey | shiftKey
-    static let ersatzZusatztasten = controlKey | shiftKey
-
-    // MARK: - Sind Apples Kuerzel noch aktiv?
-
-    /// Liest die Systemeinstellung fuer die Bildschirmfoto-Kuerzel.
-    /// Kennungen: 28/29 = ⌘⇧3, 30/31 = ⌘⇧4, 184 = ⌘⇧5.
-    /// Fehlt ein Eintrag, ist das Kuerzel bei Apple standardmaessig aktiv.
-    static var appleKuerzelNochAktiv: Bool {
-        guard let vorgaben = UserDefaults(suiteName: "com.apple.symbolichotkeys"),
-              let alle = vorgaben.dictionary(forKey: "AppleSymbolicHotKeys") else {
-            return true
-        }
-        for kennung in ["28", "29", "30", "31", "184"] {
-            if let eintrag = alle[kennung] as? [String: Any],
-               let aktiv = eintrag["enabled"] as? Bool, aktiv == false {
-                continue
-            }
-            return true
-        }
-        return false
-    }
-
-    /// Oeffnet die Systemeinstellungen bei den Tastaturkurzbefehlen.
-    static func oeffneTastaturEinstellungen() {
-        let ziel = "x-apple.systempreferences:com.apple.Keyboard-Settings.extension?Shortcuts"
-        if let adresse = URL(string: ziel) {
-            NSWorkspace.shared.open(adresse)
-        }
-    }
+    static let zusatztasten = controlKey | shiftKey
 }

@@ -15,7 +15,6 @@ final class Einstellungen {
         static let autoKopieren = "automatischKopieren"
         static let ordner = "ablageordner"
         static let anmelden = "beimAnmeldenStarten"
-        static let kuerzelHinweis = "kuerzelHinweisGezeigt"
     }
 
     /// Beim Anmelden starten — Vorgabe ja, denn das Programm soll wie das
@@ -28,12 +27,6 @@ final class Einstellungen {
         set { vorgaben.set(newValue, forKey: Schluessel.anmelden) }
     }
 
-    /// Der Hinweis zu den Apple-Kuerzeln wird nur einmal als Dialog gezeigt,
-    /// danach steht er still im Menue.
-    var kuerzelHinweisGezeigt: Bool {
-        get { vorgaben.bool(forKey: Schluessel.kuerzelHinweis) }
-        set { vorgaben.set(newValue, forKey: Schluessel.kuerzelHinweis) }
-    }
 
     private init() {}
 

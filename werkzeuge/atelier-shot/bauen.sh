@@ -2,27 +2,51 @@
 #
 # Baut "Atelier Shot" zu einem fertigen Programm.
 #
-#   ./bauen.sh              bauen
-#   ./bauen.sh installieren bauen und nach /Applications legen
+#   ./bauen.sh               nur bauen, Ergebnis liegt unter build/
+#   ./bauen.sh installieren  bauen, nach /Applications legen und starten
+#   ./bauen.sh neu           alles Alte entfernen, dann wie "installieren"
 #
 # Es genuegen die Command Line Tools. Das vollstaendige Xcode ist nicht noetig.
+#
+# Signatur: Beim ersten Bau wird ein eigenes Zertifikat "Atelier Shot Signatur"
+# im Schluesselbund angelegt (ohne Apple-Konto). Damit erkennt macOS das
+# Programm nach jedem Neubau wieder, und die Berechtigung "Bildschirmaufnahme"
+# muss nur ein einziges Mal erteilt werden. Ohne festes Zertifikat gilt jede
+# neue Fassung als neues Programm — das war der Grund fuer die Nachfragen.
 
 set -u
 
 ORDNER="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ORDNER"
 
+MODUS="${1:-}"
 PROGRAMM="Atelier Shot"
 BINAERNAME="AtelierShot"
+KENNUNG="ch.atelier-aa.atelier-shot"
 ZIEL="$ORDNER/build/$PROGRAMM.app"
+ZERTIFIKAT="Atelier Shot Signatur"
+SCHLUESSELBUND="$HOME/Library/Keychains/login.keychain-db"
 
 sagen()   { printf '\n\033[1m%s\033[0m\n' "$1"; }
 hinweis() { printf '   %s\n' "$1"; }
 fehler()  { printf '\n\033[1;31mAbbruch: %s\033[0m\n\n' "$1" >&2; }
 
+# ---------------------------------------------------------------- Aufraeumen
+
+if [ "$MODUS" = "neu" ]; then
+    sagen "0/6  Alles Alte entfernen"
+    osascript -e "tell application \"$PROGRAMM\" to quit" >/dev/null 2>&1
+    sleep 1
+    rm -rf "/Applications/$PROGRAMM.app" && hinweis "Programm aus /Applications entfernt."
+    rm -rf "$ORDNER/build" "$ORDNER/.build" && hinweis "Alte Bauergebnisse entfernt."
+    tccutil reset ScreenCapture "$KENNUNG" >/dev/null 2>&1 && hinweis "Berechtigung »Bildschirmaufnahme« zurückgesetzt."
+    defaults delete "$KENNUNG" >/dev/null 2>&1 && hinweis "Gemerkte Einstellungen gelöscht."
+    hinweis "Das Zertifikat im Schlüsselbund bleibt — es ist die feste Kennung."
+fi
+
 # ---------------------------------------------------------------- Voraussetzungen
 
-sagen "1/5  Voraussetzungen prüfen"
+sagen "1/6  Voraussetzungen prüfen"
 
 if [ "$(uname)" != "Darwin" ]; then
     fehler "Dieses Programm lässt sich nur auf einem Mac bauen."
@@ -44,11 +68,7 @@ fi
 
 if ! command -v swift >/dev/null 2>&1; then
     fehler "»swift« wurde nicht gefunden, obwohl die Entwicklerwerkzeuge da sind."
-    hinweis "Das kommt vor, wenn auf einen unvollständigen Ordner verwiesen wird."
-    hinweis "Versuche im Terminal:"
-    hinweis ""
-    hinweis "    sudo xcode-select --reset"
-    hinweis ""
+    hinweis "Versuche im Terminal:    sudo xcode-select --reset"
     exit 1
 fi
 
@@ -63,16 +83,84 @@ if [ -n "${SYSTEM_HAUPT:-}" ] && [ "$SYSTEM_HAUPT" -lt "$MINDESTVERSION" ]; then
     exit 1
 fi
 
+# ---------------------------------------------------------------- Zertifikat
+
+sagen "2/6  Zertifikat"
+
+zertifikat_vorhanden() {
+    security find-identity -v -p codesigning 2>/dev/null | grep -q "$ZERTIFIKAT"
+}
+
+zertifikat_erstellen() {
+    local ablage
+    ablage="$(mktemp -d)"
+
+    cat > "$ablage/zertifikat.cnf" <<EOF
+[req]
+distinguished_name = dn
+x509_extensions = ext
+prompt = no
+[dn]
+CN = $ZERTIFIKAT
+O = Atelier AA
+[ext]
+keyUsage = critical, digitalSignature
+extendedKeyUsage = critical, codeSigning
+basicConstraints = critical, CA:false
+subjectKeyIdentifier = hash
+EOF
+
+    openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
+        -keyout "$ablage/schluessel.pem" -out "$ablage/zertifikat.pem" \
+        -config "$ablage/zertifikat.cnf" >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+
+    # Als PKCS12 buendeln — neuere OpenSSL-Fassungen brauchen dafuer "-legacy".
+    if ! openssl pkcs12 -export -out "$ablage/zertifikat.p12" \
+            -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+            -passout pass:ateliershot -name "$ZERTIFIKAT" >/dev/null 2>&1; then
+        openssl pkcs12 -export -legacy -out "$ablage/zertifikat.p12" \
+            -inkey "$ablage/schluessel.pem" -in "$ablage/zertifikat.pem" \
+            -passout pass:ateliershot -name "$ZERTIFIKAT" >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+    fi
+
+    security import "$ablage/zertifikat.p12" -k "$SCHLUESSELBUND" -P ateliershot \
+        -T /usr/bin/codesign -T /usr/bin/security >/dev/null 2>&1 || { rm -rf "$ablage"; return 1; }
+
+    hinweis "macOS fragt jetzt nach deinem Anmeldepasswort (Vertrauen für das Zertifikat)."
+    security add-trusted-cert -r trustRoot -p codeSign -k "$SCHLUESSELBUND" \
+        "$ablage/zertifikat.pem" >/dev/null 2>&1 \
+        || hinweis "Vertrauen nicht gesetzt — signieren geht meist trotzdem."
+
+    # Erlaubt codesign den Zugriff auf den Schluessel, ohne jedes Mal zu fragen.
+    hinweis "Noch einmal das Anmeldepasswort, damit codesign den Schlüssel nutzen darf:"
+    security set-key-partition-list -S apple-tool:,apple:,codesign: -s "$SCHLUESSELBUND" >/dev/null 2>&1 \
+        || hinweis "Falls beim Signieren ein Fenster erscheint: »Immer erlauben« wählen."
+
+    rm -rf "$ablage"
+    return 0
+}
+
+ZERTIFIKAT_NEU=0
+if zertifikat_vorhanden; then
+    hinweis "»$ZERTIFIKAT« ist im Schlüsselbund vorhanden."
+else
+    hinweis "Lege einmalig das Zertifikat »$ZERTIFIKAT« an …"
+    if zertifikat_erstellen && zertifikat_vorhanden; then
+        hinweis "Zertifikat angelegt."
+        ZERTIFIKAT_NEU=1
+    else
+        hinweis "Zertifikat konnte nicht angelegt werden — es wird ohne festes"
+        hinweis "Zertifikat gebaut. Dann fragt macOS nach jedem Neubau erneut."
+    fi
+fi
+
 # ---------------------------------------------------------------- Übersetzen
 
-sagen "2/5  Programm übersetzen"
-hinweis "Das dauert beim ersten Mal ein bis zwei Minuten."
+sagen "3/6  Programm übersetzen"
 
 if ! swift build -c release; then
     fehler "Das Übersetzen ist fehlgeschlagen."
-    hinweis "Die Meldungen oben nennen Datei und Zeile."
-    hinweis "Bitte den Text von der ersten Fehlermeldung an weitergeben —"
-    hinweis "damit lässt sich die Stelle gezielt beheben."
+    hinweis "Bitte den Text ab der ersten Zeile mit »error:« weitergeben."
     exit 1
 fi
 
@@ -85,17 +173,14 @@ fi
 
 # ---------------------------------------------------------------- Paket bauen
 
-sagen "3/5  Programmpaket zusammensetzen"
+sagen "4/6  Programmpaket zusammensetzen"
 
 rm -rf "$ZIEL"
-mkdir -p "$ZIEL/Contents/MacOS"
-mkdir -p "$ZIEL/Contents/Resources"
-
+mkdir -p "$ZIEL/Contents/MacOS" "$ZIEL/Contents/Resources"
 cp "$BINAER" "$ZIEL/Contents/MacOS/$BINAERNAME"
 cp "$ORDNER/Ressourcen/Info.plist" "$ZIEL/Contents/Info.plist"
 printf 'APPL????' > "$ZIEL/Contents/PkgInfo"
 
-# Symbol — misslingt es, wird ohne gebaut.
 SYMBOLORDNER="$(mktemp -d)/AtelierShot.iconset"
 mkdir -p "$SYMBOLORDNER"
 if swift "$ORDNER/Ressourcen/symbol.swift" "$SYMBOLORDNER" >/dev/null 2>&1 \
@@ -108,86 +193,67 @@ rm -rf "$(dirname "$SYMBOLORDNER")"
 
 # ---------------------------------------------------------------- Signieren
 
-sagen "4/5  Signieren"
+sagen "5/6  Signieren"
 
-# Reste aus dem Kopieren entfernen — sie sind der haeufigste Grund,
-# weshalb codesign ein sonst einwandfreies Paket zurueckweist.
 xattr -cr "$ZIEL" 2>/dev/null
 
-SIGNATURMELDUNG="$(codesign --force --deep --sign - "$ZIEL" 2>&1)"
-if [ $? -eq 0 ]; then
-    hinweis "Ad-hoc signiert."
-    hinweis "Wichtig: Nach jedem Neubau ändert sich die Signatur. macOS erkennt"
-    hinweis "das Programm dann als neu und fragt die Berechtigung zur"
-    hinweis "Bildschirmaufnahme noch einmal ab. Das ist normal."
-else
-    hinweis "Signieren fehlgeschlagen. Meldung von macOS:"
-    printf '   %s\n' "$SIGNATURMELDUNG"
-    hinweis ""
-    hinweis "Das Programm startet meist trotzdem. Ohne gültige Signatur kann"
-    hinweis "macOS die Berechtigung zur Bildschirmaufnahme aber schlechter"
-    hinweis "zuordnen — bitte diese Meldung weitergeben."
+MIT_ZERTIFIKAT=0
+if zertifikat_vorhanden; then
+    if codesign --force --deep --sign "$ZERTIFIKAT" --timestamp=none "$ZIEL" >/dev/null 2>&1; then
+        MIT_ZERTIFIKAT=1
+        hinweis "Mit »$ZERTIFIKAT« signiert — feste Kennung, Berechtigung bleibt erhalten."
+    else
+        hinweis "Signieren mit Zertifikat fehlgeschlagen, weiche auf Ad-hoc aus."
+    fi
+fi
+if [ "$MIT_ZERTIFIKAT" -eq 0 ]; then
+    if codesign --force --deep --sign - "$ZIEL" >/dev/null 2>&1; then
+        hinweis "Ad-hoc signiert — macOS fragt nach jedem Neubau erneut nach der Berechtigung."
+    else
+        hinweis "Signieren fehlgeschlagen. Das Programm startet meist trotzdem."
+    fi
 fi
 
-if codesign --verify --verbose=1 "$ZIEL" >/dev/null 2>&1; then
-    hinweis "Signatur geprüft: in Ordnung."
-fi
-
-# Die Berechtigung "Bildschirmaufnahme" haengt an der Signatur der alten
-# Fassung. Sie bleibt in den Systemeinstellungen als "an" stehen, gilt aber
-# nicht mehr — macOS weist die neue Fassung still ab. Deshalb hier loeschen,
-# damit beim ersten Kuerzel sauber neu gefragt wird.
-if tccutil reset ScreenCapture ch.atelier-aa.atelier-shot >/dev/null 2>&1; then
-    hinweis "Alte Berechtigung »Bildschirmaufnahme« zurückgesetzt — beim"
-    hinweis "ersten Kürzel fragt macOS neu. Erlauben, dann Atelier Shot über"
-    hinweis "das Menüleisten-Symbol beenden und neu öffnen."
+# Berechtigung nur dann zuruecksetzen, wenn die Kennung sich geaendert hat:
+# beim Wechsel auf das neue Zertifikat oder ohne festes Zertifikat.
+if [ "$MODUS" != "neu" ] && { [ "$ZERTIFIKAT_NEU" -eq 1 ] || [ "$MIT_ZERTIFIKAT" -eq 0 ]; }; then
+    tccutil reset ScreenCapture "$KENNUNG" >/dev/null 2>&1 \
+        && hinweis "Alte Berechtigung »Bildschirmaufnahme« zurückgesetzt — beim ersten Kürzel fragt macOS neu."
 fi
 
 # ---------------------------------------------------------------- Fertig
 
-sagen "5/5  Fertig"
-hinweis "Das Programm liegt hier:"
-hinweis "$ZIEL"
+sagen "6/6  Fertig"
+hinweis "Das Programm liegt hier:  $ZIEL"
 
-if [ "${1:-}" = "installieren" ]; then
-    # Laeuft eine alte Fassung, zuerst beenden — sonst wird sie nicht ersetzt.
+if [ "$MODUS" = "installieren" ] || [ "$MODUS" = "neu" ]; then
     osascript -e "tell application \"$PROGRAMM\" to quit" >/dev/null 2>&1
     sleep 1
     if rm -rf "/Applications/$PROGRAMM.app" && cp -R "$ZIEL" "/Applications/"; then
         hinweis "Nach /Applications kopiert."
-        ZIEL="/Applications/$PROGRAMM.app"
-        open "$ZIEL" && hinweis "Gestartet."
+        open "/Applications/$PROGRAMM.app" && hinweis "Gestartet — Symbol oben rechts in der Menüleiste."
     else
         hinweis "Kopieren nach /Applications nicht möglich — bitte von Hand hineinziehen."
     fi
 else
     hinweis ""
     hinweis "Empfohlen:  ./bauen.sh installieren"
-    hinweis "Dann liegt das Programm in /Applications, startet beim Anmelden von"
-    hinweis "selbst und läuft wie das Apple-Werkzeug im Hintergrund."
 fi
 
 cat <<HINWEISE
 
-   Beim ersten Start
-   -----------------
-   1. Meldet macOS, das Programm stamme nicht aus dem App Store:
-      Systemeinstellungen → Datenschutz & Sicherheit → ganz unten
-      auf »Dennoch öffnen« klicken.
+   Erste Aufnahme
+   --------------
+   ⌃⇧4 drücken (ctrl + shift + 4).
 
-   2. Das Programm zeigt einen Hinweis zu den Apple-Kürzeln. Damit ⌘⇧4
-      bei Atelier Shot ankommt, in den Systemeinstellungen unter
-      Tastatur → Tastaturkurzbefehle → Bildschirmfotos alle Häkchen entfernen.
+   Fragt macOS nach der Berechtigung »Bildschirmaufnahme«: Erlauben.
+   Danach Atelier Shot über das Menüleisten-Symbol beenden und neu
+   öffnen (⌘Leertaste, »Atelier Shot«, Enter). Das ist einmalig.
 
-   3. Erste Aufnahme mit  ⌘⇧4  auslösen.
-      macOS fragt einmal nach der Berechtigung »Bildschirmaufnahme«.
-      Erlauben, dann Atelier Shot über das Menüleisten-Symbol beenden
-      und aus /Applications neu öffnen.
-
-   Kürzel — dieselben wie bisher bei Apple:
-        ⌘⇧4   Ausschnitt
-        ⌘⇧3   ganzer Bildschirm
-        ⌘⇧5   Fenster
-   Solange Apples Kürzel noch aktiv sind: dasselbe mit ctrl statt cmd.
+   Kürzel:
+        ⌃⇧4   Ausschnitt
+        ⌃⇧3   ganzer Bildschirm
+        ⌃⇧5   Fenster
+   Apples eigene Kürzel (⌘⇧3/4/5) bleiben unverändert.
 
 HINWEISE

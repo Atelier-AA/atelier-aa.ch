@@ -28,9 +28,20 @@ was zu tun ist, falls etwas fehlt. Gebraucht werden nur die **Command Line
 Tools** (`xcode-select --install`, rund 1 GB) — das vollständige Xcode ist
 **nicht** nötig.
 
-`installieren` legt das fertige Programm nach `/Applications` und startet es.
-Nur dort kann macOS es beim Anmelden zuverlässig mitstarten. Ohne das Wort
-bleibt es unter `build/Atelier Shot.app` liegen — zum Ausprobieren.
+Die drei Aufrufe:
+
+| | |
+|---|---|
+| `./bauen.sh` | nur bauen, Ergebnis unter `build/` — zum Ausprobieren |
+| `./bauen.sh installieren` | bauen, nach `/Applications` legen, starten — der Normalfall |
+| `./bauen.sh neu` | alles Alte entfernen (Programm, Bauergebnisse, Berechtigung, Einstellungen), dann wie `installieren` — der saubere Neuanfang |
+
+**Zertifikat:** Beim ersten Bau legt das Skript ein eigenes Zertifikat
+„Atelier Shot Signatur" im Schlüsselbund an, ohne Apple-Konto. macOS fragt
+dabei ein- bis zweimal nach dem Anmeldepasswort. Damit hat das Programm eine
+feste Kennung: macOS erkennt es nach jedem Neubau wieder, und die Berechtigung
+„Bildschirmaufnahme" muss nur ein einziges Mal erteilt werden. Ohne das
+Zertifikat wäre jede neue Fassung ein neues Programm mit erneuter Nachfrage.
 
 Der Code wurde in einer Linux-Umgebung ohne Swift geschrieben; der erste Bau
 auf dem Mac brauchte eine Korrektur, seither übersetzt er sauber. Kommt nach
@@ -39,30 +50,24 @@ Datei und Zeile.
 
 ## Erster Start
 
-1. **Öffnen.** Meldet macOS, das Programm stamme nicht aus dem App Store:
-   *Systemeinstellungen → Datenschutz & Sicherheit* → ganz unten
-   *Dennoch öffnen*. Das ist einmalig.
-2. **Apple-Kürzel abgeben.** Das Programm zeigt einen Hinweis und öffnet auf
-   Wunsch die richtige Stelle: *Systemeinstellungen → Tastatur →
-   Tastaturkurzbefehle → Bildschirmfotos* → alle Häkchen entfernen. Solange
-   das nicht geschehen ist, fängt macOS `⌘⇧4` vor Atelier Shot ab; als Ersatz
-   gilt bis dahin `⌃⇧4` (ctrl statt cmd).
-3. **Erste Aufnahme mit `⌘⇧4`.** macOS fragt nach der Berechtigung
-   *Bildschirmaufnahme*. Erlauben, danach das Programm über das
-   Menüleisten-Symbol beenden und neu öffnen.
-4. Ab jetzt läuft es wie das Apple-Werkzeug: **startet beim Anmelden von selbst,
+1. **Erste Aufnahme mit `⌃⇧4`** (ctrl + shift + 4). macOS fragt nach der
+   Berechtigung *Bildschirmaufnahme*. **Erlauben.**
+2. **Beenden und neu öffnen.** Über das Menüleisten-Symbol oben rechts
+   *Atelier Shot beenden*, dann `⌘Leertaste`, „Atelier Shot", Enter. Das
+   Programm merkt sich beim Start, ob es darf — deshalb der Neustart. Einmalig.
+3. Ab jetzt läuft es wie das Apple-Werkzeug: **startet beim Anmelden von selbst,
    kein Dock-Symbol, muss nie beendet werden.** Nur das Symbol oben rechts in
    der Menüleiste ist sichtbar. Sobald ein Fenster offen ist, erscheinen
    Menüleiste und Dock-Symbol — und verschwinden mit dem letzten Fenster wieder.
    `⌘Q` schliesst nur die Fenster; beenden geht bewusst nur über das
    Menüleisten-Symbol.
 
-**Wichtig zur Berechtigung:** Das Programm ist „ad hoc" signiert, also ohne
-Apple-Entwicklerzertifikat. Nach *jedem Neubau* hält macOS es für ein anderes
-Programm und fragt erneut. Im Alltag stört das nicht — nur bei jeder neuen
-Fassung einmal erneut erlauben. Dauerhaft lösbar wäre das mit einem
-Apple-Entwicklerzertifikat (99 $/Jahr). Der Menüpunkt
-*Berechtigung „Bildschirmaufnahme" öffnen* führt direkt an die richtige Stelle.
+Meldet macOS beim Öffnen, das Programm stamme nicht aus dem App Store:
+*Systemeinstellungen → Datenschutz & Sicherheit* → ganz unten *Dennoch öffnen*.
+
+Kommt beim Kürzel ein Fenster „macOS lässt die Bildschirmaufnahme noch nicht
+zu": Es sagt Schritt für Schritt, was zu tun ist, und öffnet die richtige
+Stelle in den Systemeinstellungen.
 
 ---
 
@@ -72,14 +77,12 @@ Apple-Entwicklerzertifikat (99 $/Jahr). Der Menüpunkt
 
 | Kürzel | |
 |---|---|
-| `⌘⇧4` | Ausschnitt ziehen (Leertaste wechselt zur Fensterauswahl, `Esc` bricht ab) |
-| `⌘⇧3` | Ganzer Bildschirm — der, auf dem der Zeiger steht |
-| `⌘⇧5` | Einzelnes Fenster |
+| `⌃⇧4` | Ausschnitt ziehen (Leertaste wechselt zur Fensterauswahl, `Esc` bricht ab) |
+| `⌃⇧3` | Ganzer Bildschirm — der, auf dem der Zeiger steht |
+| `⌃⇧5` | Einzelnes Fenster |
 
-Dieselben Kürzel wie bisher bei Apple — die Hände müssen nichts Neues lernen.
-Apples eigene Bildschirmfoto-Funktion bleibt über das Launchpad erreichbar,
-nur das Kürzel gehört jetzt Atelier Shot. Bis Apples Kürzel abgeschaltet sind,
-gilt jeweils dasselbe mit `ctrl` statt `cmd`.
+Dieselbe Logik wie bei Apple, nur mit `ctrl` statt `cmd`. Apples eigene Kürzel
+`⌘⇧3/4/5` bleiben unangetastet und funktionieren weiter wie bisher.
 
 ### Werkzeuge
 

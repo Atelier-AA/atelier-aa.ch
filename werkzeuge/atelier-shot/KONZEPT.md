@@ -25,7 +25,7 @@ Drei Regeln, an denen sich jede Entscheidung im Programm messen lassen muss:
 ## Der Ablauf
 
 ```
-  ⌘⇧4  ────►  Auswahl auf dem      ────►  Fenster „Atelier Shot" öffnet sich
+  ⌃⇧4  ────►  Auswahl auf dem      ────►  Fenster „Atelier Shot" öffnet sich
   drücken     Bildschirm ziehen           direkt an der Stelle der Aufnahme,
                                           Bild in Originalgrösse
 
@@ -144,14 +144,19 @@ Aufnahme gemerkt.
 
 ## Betrieb — wie das Apple-Werkzeug, nur besser
 
-Atelier Shot **ersetzt** das eingebaute Bildschirmfoto-Werkzeug, es ergänzt es
-nicht. Daraus folgt:
+Atelier Shot läuft neben dem eingebauten Bildschirmfoto-Werkzeug, so still wie
+dieses. Daraus folgt:
 
-- **Dieselben Kürzel.** `⌘⇧3` ganzer Bildschirm, `⌘⇧4` Ausschnitt, `⌘⇧5`
-  Fenster. Die Hände müssen nichts Neues lernen. Apples eigene Kürzel werden
-  dafür einmalig in den Systemeinstellungen abgeschaltet — das Programm merkt,
-  wenn das noch nicht geschehen ist, und führt direkt an die richtige Stelle.
-  Bis dahin gelten `⌃⇧3/4/5` als Ersatz.
+- **Dieselbe Logik bei den Kürzeln, nur mit `ctrl`.** `⌃⇧3` ganzer Bildschirm,
+  `⌃⇧4` Ausschnitt, `⌃⇧5` Fenster. Apples eigene `⌘⇧3/4/5` bleiben
+  unangetastet — nichts muss in den Systemeinstellungen umgestellt werden,
+  und wer einmal Apples Werkzeug braucht, hat es weiterhin.
+- **Feste Kennung.** Das Programm wird mit einem eigenen Zertifikat signiert,
+  das beim ersten Bau im Schlüsselbund angelegt wird — ohne Apple-Konto.
+  Dadurch erkennt macOS es nach jedem Neubau wieder, und die Berechtigung
+  „Bildschirmaufnahme" wird nur ein einziges Mal erteilt. Ohne feste Kennung
+  wäre jede neue Fassung ein neues Programm; genau das hat beim ersten Aufbau
+  für Verwirrung gesorgt.
 - **Läuft im Hintergrund.** Startet beim Anmelden von selbst, hat kein
   Dock-Symbol und muss nie beendet werden. Sichtbar ist nur das Symbol in der
   Menüleiste. Erst wenn ein Fenster offen ist, erscheint das Programm mit
@@ -179,7 +184,7 @@ Bewusst kurz gehalten, alle im Menü des Menüleisten-Symbols:
 ## Ausbaustufen
 
 **Stufe 1 — der Kern** (das, was den Alltag sofort besser macht)
-Aufnahme über die Apple-Kürzel (Ausschnitt, Vollbild, Fenster) · eigenes
+Aufnahme über Kürzel (Ausschnitt, Vollbild, Fenster) · eigenes
 Vorschaufenster in Originalgrösse · Auswählen/Verschieben · Pfeil, Linie,
 Rechteck, Ellipse, Freihand, Text, Marker · Revisionswolke · Textfahne ·
 Nummern · Unkenntlich machen · **Hintergrund entfernen** (Apples
