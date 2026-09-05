@@ -1,0 +1,159 @@
+# Atelier Shot
+
+Bildschirmfoto-Werkzeug für den Mac, gebaut für die Planprüfung im
+Architekturbüro. Aufnehmen, sofort beschriften, weitergeben — ohne Umweg über
+Schreibtisch, Finder und Vorschau, und **ohne dass das Bild dabei skaliert
+wird**.
+
+| | |
+|---|---|
+| Phase | Stufe 1 geschrieben, auf dem Mac noch nicht gebaut |
+| System | macOS 13 oder neuer |
+| Sprache | Swift, natives Mac-Programm, keine Fremdbibliotheken |
+| Datenschutz | Alles bleibt auf dem Gerät. Keine Cloud, kein Konto |
+
+---
+
+## Bauen
+
+Einmal im Terminal:
+
+```bash
+cd werkzeuge/atelier-shot
+./bauen.sh
+```
+
+Das Skript prüft zuerst selbst, ob alles Nötige da ist, und sagt im Klartext,
+was zu tun ist, falls etwas fehlt. Gebraucht werden nur die **Command Line
+Tools** (`xcode-select --install`, rund 1 GB) — das vollständige Xcode ist
+**nicht** nötig.
+
+Fertig gebaut liegt das Programm unter `build/Atelier Shot.app`.
+Mit `./bauen.sh installieren` wandert es zusätzlich nach `/Applications`.
+
+> **Beim allerersten Bau ist mit ein paar Übersetzungsfehlern zu rechnen.**
+> Der Code wurde in einer Linux-Umgebung ohne Swift und ohne macOS-Bausteine
+> geschrieben und konnte dort nicht ausprobiert werden. Das Skript gibt die
+> Fehler mit Datei und Zeile aus — diesen Text bitte weitergeben, dann lässt
+> sich jede Stelle gezielt beheben.
+
+## Erster Start
+
+1. **Öffnen.** Meldet macOS, das Programm stamme nicht aus dem App Store:
+   *Systemeinstellungen → Datenschutz & Sicherheit* → ganz unten
+   *Dennoch öffnen*. Das ist einmalig.
+2. **Erste Aufnahme mit `⌃⇧4`.** macOS fragt nach der Berechtigung
+   *Bildschirmaufnahme*. Erlauben, danach das Programm einmal beenden und neu
+   starten.
+3. Das Symbol oben rechts in der Menüleiste enthält dieselben Befehle.
+
+**Wichtig zur Berechtigung:** Das Programm ist „ad hoc" signiert, also ohne
+Apple-Entwicklerzertifikat. Nach *jedem Neubau* hält macOS es für ein anderes
+Programm und fragt erneut. Im Alltag stört das nicht — nur bei jeder neuen
+Fassung einmal erneut erlauben. Dauerhaft lösbar wäre das mit einem
+Apple-Entwicklerzertifikat (99 $/Jahr). Der Menüpunkt
+*Berechtigung „Bildschirmaufnahme" öffnen* führt direkt an die richtige Stelle.
+
+---
+
+## Bedienung
+
+### Aufnehmen
+
+| Kürzel | |
+|---|---|
+| `⌃⇧4` | Ausschnitt ziehen (Leertaste wechselt zur Fensterauswahl, `Esc` bricht ab) |
+| `⌃⇧3` | Ganzer Bildschirm — der, auf dem der Zeiger steht |
+| `⌃⇧5` | Einzelnes Fenster |
+
+Bewusst mit `ctrl` statt `cmd`: Apples eigene Kürzel `⌘⇧3/4/5` bleiben
+unangetastet und funktionieren weiter wie bisher.
+
+### Werkzeuge
+
+Ziffern und Buchstaben wirken direkt im Fenster, ohne Zusatztaste.
+
+| Taste | Werkzeug | |
+|---|---|---|
+| `V` | Auswählen | Anfassen, verschieben, an den Griffen ändern, `⌫` löscht |
+| `1` | Pfeil | mit `⇧` auf 15°-Schritte einrasten |
+| `2` | Linie | |
+| `3` | Rechteck | mit `⇧` quadratisch |
+| `4` | Ellipse | |
+| `5` | Freihand | |
+| `6` | Text | heller Hintergrund, damit er auf jedem Plan lesbar bleibt |
+| `7` | Marker | halbdurchsichtig |
+| `W` | **Revisionswolke** | der Standard für Änderungen und Korrekturen |
+| `F` | **Textfahne** | Kasten mit Führungslinie — verdeckt den Plan nicht |
+| `N` | **Nummer** | zählt automatisch hoch: ①②③ für Mängel und Pendenzen |
+| `U` | **Unkenntlich machen** | verpixelt wirklich, nicht nur überdeckt |
+
+Doppelklick auf einen Text oder eine Fahne öffnet ihn wieder zum Ändern.
+
+### Farben und Stärke
+
+| Taste | | Bedeutung |
+|---|---|---|
+| `R` | Rot | Korrektur, Mangel |
+| `G` | Grün | erledigt, freigegeben |
+| `B` | Blau | Frage, Hinweis |
+| `Y` | Gelb | Hervorhebung |
+| `K` | Schwarz | neutral |
+
+`[` und `]` ändern die Strichstärke. Eine Farbänderung wirkt auch auf die
+gerade ausgewählte Anmerkung.
+
+### Weitergeben
+
+| Kürzel | |
+|---|---|
+| `⌘C` | Bild in die Zwischenablage |
+| `⌘S` | Sichern als PNG, volle Auflösung, mit Bildpunktdichte in der Datei |
+| `⇧⌘S` | In den gemerkten Ablageordner sichern, ohne Rückfrage |
+| `⌥⌘C` | Nur die Anmerkungsliste als Text — zum Einkleben ins Protokoll |
+| Ziehen | Das kleine Feld in der Fussleiste ins Mailfenster oder in den Finder ziehen |
+| `⌘Z` / `⇧⌘Z` | Rückgängig / Wiederherstellen |
+| `⌘0` / `⌘9` | Originalgrösse / ins Fenster einpassen |
+
+### Die Grössenregel
+
+100 % heisst: genau so gross wie der Ausschnitt vorher auf dem Bildschirm war.
+Passt ein Bild nicht auf den Schirm, wird es beim Öffnen einmalig verkleinert —
+und die Fussleiste sagt dann ausdrücklich *nicht Originalgrösse*. `⌘0` stellt
+jederzeit 1:1 her. Gesichert wird immer in voller Auflösung.
+
+---
+
+## Unterlagen
+
+| Datei | Inhalt |
+|---|---|
+| [`RECHERCHE.md`](RECHERCHE.md) | Marktübersicht, Übernahme aus der Planprüfung, technische Grundlagen, Entscheidungen, Risiken, Quellen |
+| [`KONZEPT.md`](KONZEPT.md) | Leitgedanke, Ablauf, Werkzeugkasten, Fensteraufbau, Export, Ausbaustufen, Abgrenzung |
+
+## Aufbau des Programms
+
+| Datei | Aufgabe |
+|---|---|
+| `Sources/AtelierShot/main.swift` | Einstieg |
+| `AppDelegate.swift` | Menüleisten-Symbol, Hauptmenü, globale Kürzel, Aufnahme anstossen |
+| `Tastenkuerzel.swift` | Globale Kürzel über Carbon — der einzige Weg ohne Zusatzberechtigung |
+| `Aufnahme.swift` | Die Aufnahme selbst. Einzige Stelle, die später auf ScreenCaptureKit umgestellt wird |
+| `Modell.swift` | Werkzeuge, Farben, Anmerkung, Dokument, Verlauf |
+| `Zeichnen.swift` | Zeichnet jede Anmerkung und beantwortet Klicktreffer |
+| `LeinwandView.swift` | Zeichenfläche, Maus, Tastatur, Texteingabe |
+| `WerkzeugLeiste.swift` | Werkzeugleiste oben |
+| `EditorFenster.swift` | Das Vorschaufenster samt Grössenregel |
+| `Ausgabe.swift` | Fertiges Bild rechnen, kopieren, sichern, herausziehen |
+| `Einstellungen.swift` | Die wenigen Vorgaben |
+
+## Was noch nicht drin ist
+
+Stufe 2 und 3 aus dem Konzept: Massstab kalibrieren und messen, Stempel, Lupe,
+Zuschneiden, PDF-Export, Projektordner mit Namensschema, scrollende Aufnahme,
+Texterkennung.
+
+## Hinweis
+
+Dieses Verzeichnis gehört nicht zur Website. Es liegt nur im selben Ablageort,
+damit alles an einem Platz bleibt. `npm run build` der Website fasst es nicht an.

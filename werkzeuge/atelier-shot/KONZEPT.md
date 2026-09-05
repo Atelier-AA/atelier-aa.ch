@@ -1,7 +1,8 @@
-# Konzept — „Rotstift"
+# Konzept — „Atelier Shot"
 
 Ein Bildschirmfoto-Werkzeug für den Mac, gebaut für die Planprüfung.
-Arbeitsname: **Rotstift** — nach dem, womit im Büro seit jeher korrigiert wird.
+Name: **Atelier Shot** — gehört zum Büro, ist auch gegenüber Dritten
+unverfänglich, wenn das Fenster einmal in einer Besprechung mitläuft.
 
 Grundlage: `RECHERCHE.md`.
 
@@ -24,7 +25,7 @@ Drei Regeln, an denen sich jede Entscheidung im Programm messen lassen muss:
 ## Der Ablauf
 
 ```
-  ⌃⇧4  ────►  Auswahl auf dem      ────►  Fenster „Rotstift" öffnet sich
+  ⌃⇧4  ────►  Auswahl auf dem      ────►  Fenster „Atelier Shot" öffnet sich
   drücken     Bildschirm ziehen           direkt an der Stelle der Aufnahme,
                                           Bild in Originalgrösse
 
@@ -95,7 +96,7 @@ Strichstärke mit `[` und `]`, Rückgängig `⌘Z`, Wiederherstellen `⌘⇧Z`.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  ▣ Rotstift — Ausschnitt 1284 × 842                     ⌄    │  Titelzeile
+│  ▣ Atelier Shot — Ausschnitt 1284 × 842                     ⌄    │  Titelzeile
 ├──────────────────────────────────────────────────────────────┤
 │ V │ ↗ ─ □ ○ ✎ T ▮ │ ☁ ⚑ ① ↔ ⬗ ▨ ⌕ ⛶ │ ● ● ● ● │ [ ]  ↶ ↷    │  Werkzeugleiste
 ├──────────────────────────────────────────────────────────────┤
@@ -184,7 +185,7 @@ die du kennst — hinter einem austauschbaren Baustein, damit später ohne Umbau
 auf ScreenCaptureKit gewechselt werden kann. Anmerkungen sind Objekte in einem
 Dokumentmodell und werden erst beim Export gerechnet; deshalb bleibt alles bis
 zuletzt verschiebbar. Gebaut wird mit dem Swift Package Manager über ein
-Skript (`bauen.sh`), das ein fertiges `Rotstift.app` erzeugt — dafür genügen
+Skript (`bauen.sh`), das ein fertiges `Atelier Shot.app` erzeugt — dafür genügen
 die Command Line Tools, das vollständige Xcode ist nicht nötig.
 
 Einzelheiten und Begründungen: `RECHERCHE.md`, Abschnitte 4 und 5.
@@ -198,5 +199,5 @@ Einzelheiten und Begründungen: `RECHERCHE.md`, Abschnitte 4 und 5.
 - **Keine Videoaufnahme** in Stufe 1 und 2. Wenn Bildschirmvideos gebraucht
   werden, kann macOS das bereits mit `⌘⇧5`.
 - **Kein Ersatz für Bluebeam.** Wer ein ganzes Plan-PDF prüft, prüft es dort.
-  Rotstift ist für den schnellen Ausschnitt zwischendurch.
+  Atelier Shot ist für den schnellen Ausschnitt zwischendurch.
 - **Keine Cloud, kein Konto, kein Teilen-Link.**

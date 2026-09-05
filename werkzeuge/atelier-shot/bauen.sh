@@ -1,0 +1,157 @@
+#!/bin/bash
+#
+# Baut "Atelier Shot" zu einem fertigen Programm.
+#
+#   ./bauen.sh              bauen
+#   ./bauen.sh installieren bauen und nach /Applications legen
+#
+# Es genuegen die Command Line Tools. Das vollstaendige Xcode ist nicht noetig.
+
+set -u
+
+ORDNER="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ORDNER"
+
+PROGRAMM="Atelier Shot"
+BINAERNAME="AtelierShot"
+ZIEL="$ORDNER/build/$PROGRAMM.app"
+
+sagen()   { printf '\n\033[1m%s\033[0m\n' "$1"; }
+hinweis() { printf '   %s\n' "$1"; }
+fehler()  { printf '\n\033[1;31mAbbruch: %s\033[0m\n\n' "$1" >&2; }
+
+# ---------------------------------------------------------------- Voraussetzungen
+
+sagen "1/5  Voraussetzungen prüfen"
+
+if [ "$(uname)" != "Darwin" ]; then
+    fehler "Dieses Programm lässt sich nur auf einem Mac bauen."
+    hinweis "Erkanntes System: $(uname)"
+    exit 1
+fi
+
+if ! xcode-select -p >/dev/null 2>&1; then
+    fehler "Die Apple-Entwicklerwerkzeuge fehlen."
+    hinweis "So werden sie nachinstalliert — im Terminal eingeben:"
+    hinweis ""
+    hinweis "    xcode-select --install"
+    hinweis ""
+    hinweis "Es erscheint ein Fenster von Apple. Auf »Installieren« klicken und"
+    hinweis "warten (rund 1 GB, je nach Verbindung einige Minuten). Danach"
+    hinweis "dieses Skript noch einmal starten."
+    exit 1
+fi
+
+if ! command -v swift >/dev/null 2>&1; then
+    fehler "»swift« wurde nicht gefunden, obwohl die Entwicklerwerkzeuge da sind."
+    hinweis "Das kommt vor, wenn auf einen unvollständigen Ordner verwiesen wird."
+    hinweis "Versuche im Terminal:"
+    hinweis ""
+    hinweis "    sudo xcode-select --reset"
+    hinweis ""
+    exit 1
+fi
+
+hinweis "Werkzeuge: $(xcode-select -p)"
+hinweis "Swift:     $(swift --version 2>/dev/null | head -1)"
+hinweis "System:    macOS $(sw_vers -productVersion 2>/dev/null)"
+
+MINDESTVERSION=13
+SYSTEM_HAUPT="$(sw_vers -productVersion 2>/dev/null | cut -d. -f1)"
+if [ -n "${SYSTEM_HAUPT:-}" ] && [ "$SYSTEM_HAUPT" -lt "$MINDESTVERSION" ]; then
+    fehler "Atelier Shot braucht mindestens macOS $MINDESTVERSION."
+    exit 1
+fi
+
+# ---------------------------------------------------------------- Übersetzen
+
+sagen "2/5  Programm übersetzen"
+hinweis "Das dauert beim ersten Mal ein bis zwei Minuten."
+
+if ! swift build -c release; then
+    fehler "Das Übersetzen ist fehlgeschlagen."
+    hinweis "Die Meldungen oben nennen Datei und Zeile."
+    hinweis "Bitte den Text von der ersten Fehlermeldung an weitergeben —"
+    hinweis "damit lässt sich die Stelle gezielt beheben."
+    exit 1
+fi
+
+BINAERORDNER="$(swift build -c release --show-bin-path 2>/dev/null)"
+BINAER="$BINAERORDNER/$BINAERNAME"
+if [ ! -x "$BINAER" ]; then
+    fehler "Das übersetzte Programm wurde nicht gefunden: $BINAER"
+    exit 1
+fi
+
+# ---------------------------------------------------------------- Paket bauen
+
+sagen "3/5  Programmpaket zusammensetzen"
+
+rm -rf "$ZIEL"
+mkdir -p "$ZIEL/Contents/MacOS"
+mkdir -p "$ZIEL/Contents/Resources"
+
+cp "$BINAER" "$ZIEL/Contents/MacOS/$BINAERNAME"
+cp "$ORDNER/Ressourcen/Info.plist" "$ZIEL/Contents/Info.plist"
+printf 'APPL????' > "$ZIEL/Contents/PkgInfo"
+
+# Symbol — misslingt es, wird ohne gebaut.
+SYMBOLORDNER="$(mktemp -d)/AtelierShot.iconset"
+mkdir -p "$SYMBOLORDNER"
+if swift "$ORDNER/Ressourcen/symbol.swift" "$SYMBOLORDNER" >/dev/null 2>&1 \
+   && iconutil -c icns "$SYMBOLORDNER" -o "$ZIEL/Contents/Resources/$BINAERNAME.icns" >/dev/null 2>&1; then
+    hinweis "Symbol erzeugt."
+else
+    hinweis "Symbol konnte nicht erzeugt werden — das Programm läuft trotzdem."
+fi
+rm -rf "$(dirname "$SYMBOLORDNER")"
+
+# ---------------------------------------------------------------- Signieren
+
+sagen "4/5  Signieren"
+
+if codesign --force --sign - --timestamp=none "$ZIEL" >/dev/null 2>&1; then
+    hinweis "Ad-hoc signiert."
+    hinweis "Wichtig: Nach jedem Neubau ändert sich die Signatur. macOS erkennt"
+    hinweis "das Programm dann als neu und fragt die Berechtigung zur"
+    hinweis "Bildschirmaufnahme noch einmal ab. Das ist normal."
+else
+    hinweis "Signieren fehlgeschlagen — das Programm startet vermutlich trotzdem."
+fi
+
+# ---------------------------------------------------------------- Fertig
+
+sagen "5/5  Fertig"
+hinweis "Das Programm liegt hier:"
+hinweis "$ZIEL"
+
+if [ "${1:-}" = "installieren" ]; then
+    if rm -rf "/Applications/$PROGRAMM.app" && cp -R "$ZIEL" "/Applications/"; then
+        hinweis "Nach /Applications kopiert."
+        ZIEL="/Applications/$PROGRAMM.app"
+    else
+        hinweis "Kopieren nach /Applications nicht möglich — bitte von Hand hineinziehen."
+    fi
+fi
+
+cat <<HINWEISE
+
+   Beim ersten Start
+   -----------------
+   1. Programm öffnen (Doppelklick).
+      Meldet macOS, das Programm stamme nicht aus dem App Store:
+      Systemeinstellungen → Datenschutz & Sicherheit → ganz unten
+      auf »Dennoch öffnen« klicken.
+
+   2. Erste Aufnahme mit  ⌃⇧4  auslösen (ctrl + shift + 4).
+      macOS fragt einmal nach der Berechtigung »Bildschirmaufnahme«.
+      Erlauben, danach das Programm einmal beenden und neu starten.
+
+   3. Kürzel:
+        ⌃⇧4   Ausschnitt
+        ⌃⇧3   ganzer Bildschirm
+        ⌃⇧5   Fenster
+
+   Das Symbol in der Menüleiste oben rechts öffnet dieselben Befehle.
+
+HINWEISE
