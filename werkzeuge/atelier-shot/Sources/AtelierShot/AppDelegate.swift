@@ -66,6 +66,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func starteAufnahme(_ art: Aufnahmeart) {
         guard !aufnahmeLaeuft else { return }
+
+        // Vorher pruefen, ob macOS die Aufnahme ueberhaupt zulaesst. Sonst
+        // laeuft screencapture ins Leere und niemand erfaehrt, warum.
+        if !CGPreflightScreenCaptureAccess() {
+            // Zeigt Apples Dialog, falls noch nie gefragt wurde.
+            if !CGRequestScreenCaptureAccess() {
+                zeigeBerechtigungsHinweis()
+            }
+            return
+        }
+
         aufnahmeLaeuft = true
 
         // Eigene Fenster kurz wegblenden, damit sie nicht im Bild landen.
@@ -165,6 +176,28 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func appleKuerzelAbschalten(_ absender: Any?) {
         Tastenkuerzel.oeffneTastaturEinstellungen()
+    }
+
+    /// Erklaert die haeufigste Ursache: Schalter steht auf "an", gilt aber
+    /// fuer eine fruehere Fassung des Programms.
+    private func zeigeBerechtigungsHinweis() {
+        NSApp.activate(ignoringOtherApps: true)
+        let hinweis = NSAlert()
+        hinweis.messageText = "macOS lässt die Bildschirmaufnahme noch nicht zu"
+        hinweis.informativeText =
+            "Das passiert auch, wenn der Schalter in den Systemeinstellungen schon auf »an« steht: "
+            + "Nach einem Neubau erkennt macOS das Programm nicht wieder, und die alte Freigabe "
+            + "gilt nicht mehr.\n\n"
+            + "So geht es:\n"
+            + "1. Systemeinstellungen → Datenschutz & Sicherheit → Bildschirmaufnahme\n"
+            + "2. »Atelier Shot« in der Liste mit − entfernen\n"
+            + "3. Mit + aus dem Ordner »Programme« neu hinzufügen und einschalten\n"
+            + "4. Atelier Shot über das Menüleisten-Symbol beenden und neu öffnen"
+        hinweis.addButton(withTitle: "Systemeinstellungen öffnen")
+        hinweis.addButton(withTitle: "Später")
+        if hinweis.runModal() == .alertFirstButtonReturn {
+            oeffneBerechtigungen(nil)
+        }
     }
 
     // MARK: - Beim Anmelden starten

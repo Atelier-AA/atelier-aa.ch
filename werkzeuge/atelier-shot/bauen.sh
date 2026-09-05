@@ -133,6 +133,16 @@ if codesign --verify --verbose=1 "$ZIEL" >/dev/null 2>&1; then
     hinweis "Signatur geprüft: in Ordnung."
 fi
 
+# Die Berechtigung "Bildschirmaufnahme" haengt an der Signatur der alten
+# Fassung. Sie bleibt in den Systemeinstellungen als "an" stehen, gilt aber
+# nicht mehr — macOS weist die neue Fassung still ab. Deshalb hier loeschen,
+# damit beim ersten Kuerzel sauber neu gefragt wird.
+if tccutil reset ScreenCapture ch.atelier-aa.atelier-shot >/dev/null 2>&1; then
+    hinweis "Alte Berechtigung »Bildschirmaufnahme« zurückgesetzt — beim"
+    hinweis "ersten Kürzel fragt macOS neu. Erlauben, dann Atelier Shot über"
+    hinweis "das Menüleisten-Symbol beenden und neu öffnen."
+fi
+
 # ---------------------------------------------------------------- Fertig
 
 sagen "5/5  Fertig"
