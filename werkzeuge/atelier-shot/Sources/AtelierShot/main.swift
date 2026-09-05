@@ -6,5 +6,7 @@ import AppKit
 let programm = NSApplication.shared
 let delegierter = AppDelegate()
 programm.delegate = delegierter
-programm.setActivationPolicy(.regular)
+// Im Hintergrund wie das Apple-Werkzeug: kein Dock-Symbol, nur die Menueleiste.
+// Sobald ein Fenster offen ist, schaltet der AppDelegate auf .regular um.
+programm.setActivationPolicy(.accessory)
 programm.run()

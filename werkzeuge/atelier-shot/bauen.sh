@@ -140,32 +140,44 @@ hinweis "Das Programm liegt hier:"
 hinweis "$ZIEL"
 
 if [ "${1:-}" = "installieren" ]; then
+    # Laeuft eine alte Fassung, zuerst beenden — sonst wird sie nicht ersetzt.
+    osascript -e "tell application \"$PROGRAMM\" to quit" >/dev/null 2>&1
+    sleep 1
     if rm -rf "/Applications/$PROGRAMM.app" && cp -R "$ZIEL" "/Applications/"; then
         hinweis "Nach /Applications kopiert."
         ZIEL="/Applications/$PROGRAMM.app"
+        open "$ZIEL" && hinweis "Gestartet."
     else
         hinweis "Kopieren nach /Applications nicht möglich — bitte von Hand hineinziehen."
     fi
+else
+    hinweis ""
+    hinweis "Empfohlen:  ./bauen.sh installieren"
+    hinweis "Dann liegt das Programm in /Applications, startet beim Anmelden von"
+    hinweis "selbst und läuft wie das Apple-Werkzeug im Hintergrund."
 fi
 
 cat <<HINWEISE
 
    Beim ersten Start
    -----------------
-   1. Programm öffnen (Doppelklick).
-      Meldet macOS, das Programm stamme nicht aus dem App Store:
+   1. Meldet macOS, das Programm stamme nicht aus dem App Store:
       Systemeinstellungen → Datenschutz & Sicherheit → ganz unten
       auf »Dennoch öffnen« klicken.
 
-   2. Erste Aufnahme mit  ⌃⇧4  auslösen (ctrl + shift + 4).
+   2. Das Programm zeigt einen Hinweis zu den Apple-Kürzeln. Damit ⌘⇧4
+      bei Atelier Shot ankommt, in den Systemeinstellungen unter
+      Tastatur → Tastaturkurzbefehle → Bildschirmfotos alle Häkchen entfernen.
+
+   3. Erste Aufnahme mit  ⌘⇧4  auslösen.
       macOS fragt einmal nach der Berechtigung »Bildschirmaufnahme«.
-      Erlauben, danach das Programm einmal beenden und neu starten.
+      Erlauben, dann Atelier Shot über das Menüleisten-Symbol beenden
+      und aus /Applications neu öffnen.
 
-   3. Kürzel:
-        ⌃⇧4   Ausschnitt
-        ⌃⇧3   ganzer Bildschirm
-        ⌃⇧5   Fenster
-
-   Das Symbol in der Menüleiste oben rechts öffnet dieselben Befehle.
+   Kürzel — dieselben wie bisher bei Apple:
+        ⌘⇧4   Ausschnitt
+        ⌘⇧3   ganzer Bildschirm
+        ⌘⇧5   Fenster
+   Solange Apples Kürzel noch aktiv sind: dasselbe mit ctrl statt cmd.
 
 HINWEISE

@@ -7,8 +7,8 @@ wird**.
 
 | | |
 |---|---|
-| Phase | Stufe 1 geschrieben, auf dem Mac noch nicht gebaut |
-| System | macOS 13 oder neuer |
+| Phase | Stufe 1 gebaut und auf dem Mac lauffähig |
+| System | macOS 13 oder neuer, „Hintergrund entfernen" ab macOS 14 |
 | Sprache | Swift, natives Mac-Programm, keine Fremdbibliotheken |
 | Datenschutz | Alles bleibt auf dem Gerät. Keine Cloud, kein Konto |
 
@@ -20,7 +20,7 @@ Einmal im Terminal:
 
 ```bash
 cd werkzeuge/atelier-shot
-./bauen.sh
+./bauen.sh installieren
 ```
 
 Das Skript prüft zuerst selbst, ob alles Nötige da ist, und sagt im Klartext,
@@ -28,24 +28,34 @@ was zu tun ist, falls etwas fehlt. Gebraucht werden nur die **Command Line
 Tools** (`xcode-select --install`, rund 1 GB) — das vollständige Xcode ist
 **nicht** nötig.
 
-Fertig gebaut liegt das Programm unter `build/Atelier Shot.app`.
-Mit `./bauen.sh installieren` wandert es zusätzlich nach `/Applications`.
+`installieren` legt das fertige Programm nach `/Applications` und startet es.
+Nur dort kann macOS es beim Anmelden zuverlässig mitstarten. Ohne das Wort
+bleibt es unter `build/Atelier Shot.app` liegen — zum Ausprobieren.
 
-> **Beim allerersten Bau ist mit ein paar Übersetzungsfehlern zu rechnen.**
-> Der Code wurde in einer Linux-Umgebung ohne Swift und ohne macOS-Bausteine
-> geschrieben und konnte dort nicht ausprobiert werden. Das Skript gibt die
-> Fehler mit Datei und Zeile aus — diesen Text bitte weitergeben, dann lässt
-> sich jede Stelle gezielt beheben.
+Der Code wurde in einer Linux-Umgebung ohne Swift geschrieben; der erste Bau
+auf dem Mac brauchte eine Korrektur, seither übersetzt er sauber. Kommt nach
+einer Änderung eine Fehlermeldung: Text ab `error:` weitergeben, sie nennt
+Datei und Zeile.
 
 ## Erster Start
 
 1. **Öffnen.** Meldet macOS, das Programm stamme nicht aus dem App Store:
    *Systemeinstellungen → Datenschutz & Sicherheit* → ganz unten
    *Dennoch öffnen*. Das ist einmalig.
-2. **Erste Aufnahme mit `⌃⇧4`.** macOS fragt nach der Berechtigung
-   *Bildschirmaufnahme*. Erlauben, danach das Programm einmal beenden und neu
-   starten.
-3. Das Symbol oben rechts in der Menüleiste enthält dieselben Befehle.
+2. **Apple-Kürzel abgeben.** Das Programm zeigt einen Hinweis und öffnet auf
+   Wunsch die richtige Stelle: *Systemeinstellungen → Tastatur →
+   Tastaturkurzbefehle → Bildschirmfotos* → alle Häkchen entfernen. Solange
+   das nicht geschehen ist, fängt macOS `⌘⇧4` vor Atelier Shot ab; als Ersatz
+   gilt bis dahin `⌃⇧4` (ctrl statt cmd).
+3. **Erste Aufnahme mit `⌘⇧4`.** macOS fragt nach der Berechtigung
+   *Bildschirmaufnahme*. Erlauben, danach das Programm über das
+   Menüleisten-Symbol beenden und neu öffnen.
+4. Ab jetzt läuft es wie das Apple-Werkzeug: **startet beim Anmelden von selbst,
+   kein Dock-Symbol, muss nie beendet werden.** Nur das Symbol oben rechts in
+   der Menüleiste ist sichtbar. Sobald ein Fenster offen ist, erscheinen
+   Menüleiste und Dock-Symbol — und verschwinden mit dem letzten Fenster wieder.
+   `⌘Q` schliesst nur die Fenster; beenden geht bewusst nur über das
+   Menüleisten-Symbol.
 
 **Wichtig zur Berechtigung:** Das Programm ist „ad hoc" signiert, also ohne
 Apple-Entwicklerzertifikat. Nach *jedem Neubau* hält macOS es für ein anderes
@@ -62,12 +72,14 @@ Apple-Entwicklerzertifikat (99 $/Jahr). Der Menüpunkt
 
 | Kürzel | |
 |---|---|
-| `⌃⇧4` | Ausschnitt ziehen (Leertaste wechselt zur Fensterauswahl, `Esc` bricht ab) |
-| `⌃⇧3` | Ganzer Bildschirm — der, auf dem der Zeiger steht |
-| `⌃⇧5` | Einzelnes Fenster |
+| `⌘⇧4` | Ausschnitt ziehen (Leertaste wechselt zur Fensterauswahl, `Esc` bricht ab) |
+| `⌘⇧3` | Ganzer Bildschirm — der, auf dem der Zeiger steht |
+| `⌘⇧5` | Einzelnes Fenster |
 
-Bewusst mit `ctrl` statt `cmd`: Apples eigene Kürzel `⌘⇧3/4/5` bleiben
-unangetastet und funktionieren weiter wie bisher.
+Dieselben Kürzel wie bisher bei Apple — die Hände müssen nichts Neues lernen.
+Apples eigene Bildschirmfoto-Funktion bleibt über das Launchpad erreichbar,
+nur das Kürzel gehört jetzt Atelier Shot. Bis Apples Kürzel abgeschaltet sind,
+gilt jeweils dasselbe mit `ctrl` statt `cmd`.
 
 ### Werkzeuge
 
@@ -113,6 +125,8 @@ gerade ausgewählte Anmerkung.
 | `⌥⌘C` | Nur die Anmerkungsliste als Text — zum Einkleben ins Protokoll |
 | Ziehen | Das kleine Feld in der Fussleiste ins Mailfenster oder in den Finder ziehen |
 | `⌘Z` / `⇧⌘Z` | Rückgängig / Wiederherstellen |
+| `⌘B` | **Hintergrund entfernen** — Apples Bilderkennung, läuft auf dem Gerät. Ergebnis ist ein PNG mit durchsichtigem Hintergrund |
+| `⌥⌘Z` | Original wiederherstellen (nach „Hintergrund entfernen") |
 | `⌘0` / `⌘9` | Originalgrösse / ins Fenster einpassen |
 
 ### Die Grössenregel
@@ -145,6 +159,7 @@ jederzeit 1:1 her. Gesichert wird immer in voller Auflösung.
 | `WerkzeugLeiste.swift` | Werkzeugleiste oben |
 | `EditorFenster.swift` | Das Vorschaufenster samt Grössenregel |
 | `Ausgabe.swift` | Fertiges Bild rechnen, kopieren, sichern, herausziehen |
+| `Freistellen.swift` | Hintergrund entfernen über Apples Vision — auf dem Gerät, ab macOS 14 |
 | `Einstellungen.swift` | Die wenigen Vorgaben |
 
 ## Was noch nicht drin ist

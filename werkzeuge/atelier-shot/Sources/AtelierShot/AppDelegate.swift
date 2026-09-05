@@ -1,5 +1,6 @@
 import AppKit
 import Carbon.HIToolbox
+import ServiceManagement
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -9,12 +10,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var aufnahmeLaeuft = false
     private var kuerzelFehlgeschlagen = false
 
+    private var appleKuerzelEintrag: NSMenuItem?
+    private var anmeldenEintrag: NSMenuItem?
+
     // MARK: - Start
 
     func applicationDidFinishLaunching(_ benachrichtigung: Notification) {
         baueHauptmenue()
         registriereKuerzel()        // vor dem Menue: es zeigt an, wenn ein Kürzel belegt ist
         baueStatusEintrag()
+        richteAnmeldestartEin()
 
         if !Bildschirmaufnahme.werkzeugVorhanden {
             Ausgabe.zeigeFehler(
@@ -22,6 +27,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 text: "Das eingebaute Werkzeug \(Bildschirmaufnahme.werkzeug) wurde nicht gefunden. "
                     + "Ohne dieses Werkzeug kann Atelier Shot keine Aufnahme machen.")
         }
+
+        pruefeAppleKuerzel(mitDialog: !Einstellungen.geteilte.kuerzelHinweisGezeigt)
+    }
+
+    /// Wird nach dem Anmelden vom System oder von Hand aufgerufen — beides
+    /// landet hier. Das Programm bleibt still im Hintergrund.
+    func applicationShouldHandleReopen(_ programm: NSApplication, hasVisibleWindows: Bool) -> Bool {
+        false
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ programm: NSApplication) -> Bool {
@@ -30,6 +43,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationSupportsSecureRestorableState(_ programm: NSApplication) -> Bool {
         true
+    }
+
+    // MARK: - Sichtbarkeit: Dock-Symbol nur, solange ein Fenster offen ist
+
+    private func zeigeAlsProgramm() {
+        if NSApp.activationPolicy() != .regular {
+            NSApp.setActivationPolicy(.regular)
+        }
+    }
+
+    private func verschwindeInDenHintergrund() {
+        guard offeneFenster.isEmpty else { return }
+        NSApp.setActivationPolicy(.accessory)
     }
 
     // MARK: - Aufnahme
@@ -50,20 +76,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Bildschirmaufnahme.starte(art) { [weak self] ergebnis in
                 guard let self else { return }
                 self.aufnahmeLaeuft = false
-                guard let ergebnis else { return }   // Esc oder fehlende Berechtigung
+                guard let ergebnis else {
+                    // Esc oder fehlende Berechtigung — ausgeblendete Fenster zurückholen.
+                    if hatteFenster, NSApp.isHidden { NSApp.unhide(nil) }
+                    return
+                }
                 self.oeffne(ergebnis)
             }
         }
     }
 
     private func oeffne(_ aufnahme: Aufnahme) {
-        // Vor der Aufnahme wurde das Programm ausgeblendet — jetzt zurückholen.
+        zeigeAlsProgramm()
         if NSApp.isHidden { NSApp.unhide(nil) }
         NSApp.activate(ignoringOtherApps: true)
 
         let fenster = EditorFenster(aufnahme: aufnahme)
         fenster.beiSchliessen = { [weak self] geschlossenes in
-            self?.offeneFenster.removeAll { $0 === geschlossenes }
+            guard let self else { return }
+            self.offeneFenster.removeAll { $0 === geschlossenes }
+            // Erst nach dem Schliessen umschalten, sonst friert das Fenster kurz ein.
+            DispatchQueue.main.async { self.verschwindeInDenHintergrund() }
         }
         offeneFenster.append(fenster)
         fenster.zeige()
@@ -73,25 +106,90 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    /// `⌘Q` im Fenster: alles schliessen, aber nicht beenden — das Programm
+    /// bleibt wie das Apple-Werkzeug im Hintergrund bereit.
+    @objc func alleFensterSchliessen(_ absender: Any?) {
+        for fenster in offeneFenster {
+            fenster.window?.performClose(nil)
+        }
+    }
+
     // MARK: - Globale Kuerzel
 
     private func registriereKuerzel() {
-        let zusatz = Tastenkuerzel.zusatztasten
+        let haupt = Tastenkuerzel.zusatztasten
+        let ersatz = Tastenkuerzel.ersatzZusatztasten
 
-        if let taste = Tastenkuerzel(taste: Tastenkuerzel.ausschnittTaste, zusatztasten: zusatz,
-                                     aktion: { [weak self] in self?.starteAufnahme(.ausschnitt) }) {
-            kuerzel.append(taste)
-        } else { kuerzelFehlgeschlagen = true }
+        let belegung: [(Int, Aufnahmeart)] = [
+            (Tastenkuerzel.ausschnittTaste, .ausschnitt),
+            (Tastenkuerzel.vollbildTaste, .vollbild),
+            (Tastenkuerzel.fensterTaste, .fenster)
+        ]
 
-        if let taste = Tastenkuerzel(taste: Tastenkuerzel.vollbildTaste, zusatztasten: zusatz,
-                                     aktion: { [weak self] in self?.starteAufnahme(.vollbild) }) {
-            kuerzel.append(taste)
-        } else { kuerzelFehlgeschlagen = true }
+        for (taste, art) in belegung {
+            for zusatz in [haupt, ersatz] {
+                if let eintrag = Tastenkuerzel(taste: taste, zusatztasten: zusatz,
+                                               aktion: { [weak self] in self?.starteAufnahme(art) }) {
+                    kuerzel.append(eintrag)
+                } else if zusatz == haupt {
+                    kuerzelFehlgeschlagen = true
+                }
+            }
+        }
+    }
 
-        if let taste = Tastenkuerzel(taste: Tastenkuerzel.fensterTaste, zusatztasten: zusatz,
-                                     aktion: { [weak self] in self?.starteAufnahme(.fenster) }) {
-            kuerzel.append(taste)
-        } else { kuerzelFehlgeschlagen = true }
+    /// Solange Apples eigene Bildschirmfoto-Kuerzel aktiv sind, faengt das
+    /// System `⌘⇧3/4/5` vor uns ab. Der Weg zur Einstellung wird gezeigt.
+    private func pruefeAppleKuerzel(mitDialog: Bool) {
+        let nochAktiv = Tastenkuerzel.appleKuerzelNochAktiv
+        appleKuerzelEintrag?.isHidden = !nochAktiv
+
+        guard nochAktiv, mitDialog else { return }
+        Einstellungen.geteilte.kuerzelHinweisGezeigt = true
+
+        NSApp.activate(ignoringOtherApps: true)
+        let hinweis = NSAlert()
+        hinweis.messageText = "Apples Bildschirmfoto-Kürzel sind noch eingeschaltet"
+        hinweis.informativeText =
+            "Atelier Shot übernimmt ⌘⇧3, ⌘⇧4 und ⌘⇧5. Damit sie hier ankommen, "
+            + "müssen Apples eigene Kürzel einmalig abgeschaltet werden:\n\n"
+            + "Systemeinstellungen → Tastatur → Tastaturkurzbefehle … → Bildschirmfotos\n"
+            + "→ dort alle Häkchen entfernen.\n\n"
+            + "Bis dahin funktionieren ⌃⇧3, ⌃⇧4 und ⌃⇧5 (mit ctrl statt cmd)."
+        hinweis.addButton(withTitle: "Systemeinstellungen öffnen")
+        hinweis.addButton(withTitle: "Später")
+        if hinweis.runModal() == .alertFirstButtonReturn {
+            Tastenkuerzel.oeffneTastaturEinstellungen()
+        }
+    }
+
+    @objc private func appleKuerzelAbschalten(_ absender: Any?) {
+        Tastenkuerzel.oeffneTastaturEinstellungen()
+    }
+
+    // MARK: - Beim Anmelden starten
+
+    private func richteAnmeldestartEin() {
+        let gewuenscht = Einstellungen.geteilte.beimAnmeldenStarten
+        let dienst = SMAppService.mainApp
+        if gewuenscht, dienst.status != .enabled {
+            try? dienst.register()
+        } else if !gewuenscht, dienst.status == .enabled {
+            try? dienst.unregister()
+        }
+        anmeldenEintrag?.state = (dienst.status == .enabled) ? .on : .off
+    }
+
+    @objc private func schalteAnmeldestart(_ absender: NSMenuItem) {
+        Einstellungen.geteilte.beimAnmeldenStarten.toggle()
+        richteAnmeldestartEin()
+        if Einstellungen.geteilte.beimAnmeldenStarten, SMAppService.mainApp.status != .enabled {
+            Ausgabe.zeigeFehler(
+                "Start beim Anmelden nicht möglich",
+                text: "macOS hat die Anmeldung verweigert. Das klappt zuverlässig nur, wenn das "
+                    + "Programm in /Applications liegt — mit  ./bauen.sh installieren  kommt es dorthin. "
+                    + "Nachsehen lässt sich das unter Systemeinstellungen → Allgemein → Anmeldeobjekte.")
+        }
     }
 
     // MARK: - Menueleisten-Symbol
@@ -109,17 +207,29 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menue = NSMenu()
-        menue.addItem(eintragMit("Ausschnitt aufnehmen  ⌃⇧4", #selector(aufnahmeAusschnitt(_:))))
-        menue.addItem(eintragMit("Ganzen Bildschirm aufnehmen  ⌃⇧3", #selector(aufnahmeVollbild(_:))))
-        menue.addItem(eintragMit("Fenster aufnehmen  ⌃⇧5", #selector(aufnahmeFenster(_:))))
+        menue.addItem(eintragMit("Ausschnitt aufnehmen   ⌘⇧4", #selector(aufnahmeAusschnitt(_:))))
+        menue.addItem(eintragMit("Ganzen Bildschirm aufnehmen   ⌘⇧3", #selector(aufnahmeVollbild(_:))))
+        menue.addItem(eintragMit("Fenster aufnehmen   ⌘⇧5", #selector(aufnahmeFenster(_:))))
         menue.addItem(.separator())
 
+        let apple = eintragMit("Apple-Kürzel noch aktiv — jetzt abschalten …",
+                               #selector(appleKuerzelAbschalten(_:)))
+        apple.isHidden = true
+        menue.addItem(apple)
+        appleKuerzelEintrag = apple
+
         if kuerzelFehlgeschlagen {
-            let hinweis = NSMenuItem(title: "Achtung: Tastenkürzel ist belegt", action: nil, keyEquivalent: "")
+            let hinweis = NSMenuItem(title: "Achtung: ⌘⇧-Kürzel von einem anderen Programm belegt",
+                                     action: nil, keyEquivalent: "")
             hinweis.isEnabled = false
             menue.addItem(hinweis)
-            menue.addItem(.separator())
         }
+
+        let anmelden = NSMenuItem(title: "Beim Anmelden starten",
+                                  action: #selector(schalteAnmeldestart(_:)), keyEquivalent: "")
+        anmelden.target = self
+        menue.addItem(anmelden)
+        anmeldenEintrag = anmelden
 
         let kopieren = NSMenuItem(title: "Aufnahme sofort kopieren",
                                   action: #selector(schalteAutomatischKopieren(_:)), keyEquivalent: "")
@@ -132,9 +242,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                                  #selector(oeffneBerechtigungen(_:))))
         menue.addItem(.separator())
         menue.addItem(eintragMit("Über Atelier Shot", #selector(ueberDasProgramm(_:))))
-        menue.addItem(NSMenuItem(title: "Atelier Shot beenden",
-                                 action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menue.addItem(eintragMit("Atelier Shot beenden", #selector(beenden(_:))))
 
+        menue.delegate = self
         eintrag.menu = menue
         statusEintrag = eintrag
     }
@@ -145,12 +255,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return eintrag
     }
 
+    @objc private func beenden(_ absender: Any?) {
+        NSApp.terminate(nil)
+    }
+
     @objc private func schalteAutomatischKopieren(_ absender: NSMenuItem) {
         Einstellungen.geteilte.automatischKopieren.toggle()
         absender.state = Einstellungen.geteilte.automatischKopieren ? .on : .off
     }
 
     @objc private func waehleAblageordner(_ absender: Any?) {
+        zeigeAlsProgramm()
+        NSApp.activate(ignoringOtherApps: true)
         let dialog = NSOpenPanel()
         dialog.canChooseDirectories = true
         dialog.canChooseFiles = false
@@ -159,6 +275,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if dialog.runModal() == .OK, let ordner = dialog.url {
             Einstellungen.geteilte.ablageordner = ordner
         }
+        verschwindeInDenHintergrund()
     }
 
     @objc private func oeffneBerechtigungen(_ absender: Any?) {
@@ -169,6 +286,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc private func ueberDasProgramm(_ absender: Any?) {
+        zeigeAlsProgramm()
         NSApp.activate(ignoringOtherApps: true)
         NSApp.orderFrontStandardAboutPanel(options: [
             .applicationName: "Atelier Shot",
@@ -195,8 +313,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         programmMenue.addItem(.separator())
         programmMenue.addItem(NSMenuItem(title: "Atelier Shot ausblenden",
                                          action: #selector(NSApplication.hide(_:)), keyEquivalent: "h"))
-        programmMenue.addItem(NSMenuItem(title: "Atelier Shot beenden",
-                                         action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        programmMenue.addItem(kuerzelEintrag("Alle Fenster schliessen", #selector(alleFensterSchliessen(_:)),
+                                             taste: "q", zusatz: [.command], ziel: self))
+        programmMenue.addItem(eintragMit("Atelier Shot beenden", #selector(beenden(_:))))
         programmEintrag.submenu = programmMenue
         hauptmenue.addItem(programmEintrag)
 
@@ -204,11 +323,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let aufnahmeEintrag = NSMenuItem()
         let aufnahmeMenue = NSMenu(title: "Aufnahme")
         aufnahmeMenue.addItem(kuerzelEintrag("Ausschnitt aufnehmen", #selector(aufnahmeAusschnitt(_:)),
-                                             taste: "4", zusatz: [.control, .shift], ziel: self))
+                                             taste: "4", zusatz: [.command, .shift], ziel: self))
         aufnahmeMenue.addItem(kuerzelEintrag("Ganzen Bildschirm aufnehmen", #selector(aufnahmeVollbild(_:)),
-                                             taste: "3", zusatz: [.control, .shift], ziel: self))
+                                             taste: "3", zusatz: [.command, .shift], ziel: self))
         aufnahmeMenue.addItem(kuerzelEintrag("Fenster aufnehmen", #selector(aufnahmeFenster(_:)),
-                                             taste: "5", zusatz: [.control, .shift], ziel: self))
+                                             taste: "5", zusatz: [.command, .shift], ziel: self))
         aufnahmeEintrag.submenu = aufnahmeMenue
         hauptmenue.addItem(aufnahmeEintrag)
 
@@ -240,6 +359,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         bearbeitenMenue.addItem(kuerzelEintrag("Anmerkungsliste kopieren",
                                                #selector(EditorFenster.listeKopieren(_:)),
                                                taste: "c", zusatz: [.command, .option], ziel: nil))
+        bearbeitenMenue.addItem(.separator())
+        bearbeitenMenue.addItem(kuerzelEintrag("Hintergrund entfernen",
+                                               #selector(EditorFenster.hintergrundEntfernen(_:)),
+                                               taste: "b", zusatz: [.command], ziel: nil))
+        bearbeitenMenue.addItem(kuerzelEintrag("Original wiederherstellen",
+                                               #selector(EditorFenster.originalWiederherstellen(_:)),
+                                               taste: "z", zusatz: [.command, .option], ziel: nil))
         bearbeitenMenue.addItem(.separator())
         bearbeitenMenue.addItem(kuerzelEintrag("Alle Anmerkungen entfernen",
                                                #selector(EditorFenster.alleAnmerkungenEntfernen(_:)),
@@ -292,5 +418,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         eintrag.keyEquivalentModifierMask = zusatz
         eintrag.target = ziel        // nil = ueber die Responderkette ans aktive Fenster
         return eintrag
+    }
+}
+
+// MARK: - Menue der Menueleiste: Stand vor dem Aufklappen nachfuehren
+
+extension AppDelegate: NSMenuDelegate {
+    func menuNeedsUpdate(_ menu: NSMenu) {
+        pruefeAppleKuerzel(mitDialog: false)
+        anmeldenEintrag?.state = (SMAppService.mainApp.status == .enabled) ? .on : .off
     }
 }

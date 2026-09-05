@@ -14,6 +14,25 @@ final class Einstellungen {
         static let werkzeug = "standardwerkzeug"
         static let autoKopieren = "automatischKopieren"
         static let ordner = "ablageordner"
+        static let anmelden = "beimAnmeldenStarten"
+        static let kuerzelHinweis = "kuerzelHinweisGezeigt"
+    }
+
+    /// Beim Anmelden starten — Vorgabe ja, denn das Programm soll wie das
+    /// Apple-Werkzeug einfach da sein.
+    var beimAnmeldenStarten: Bool {
+        get {
+            if vorgaben.object(forKey: Schluessel.anmelden) == nil { return true }
+            return vorgaben.bool(forKey: Schluessel.anmelden)
+        }
+        set { vorgaben.set(newValue, forKey: Schluessel.anmelden) }
+    }
+
+    /// Der Hinweis zu den Apple-Kuerzeln wird nur einmal als Dialog gezeigt,
+    /// danach steht er still im Menue.
+    var kuerzelHinweisGezeigt: Bool {
+        get { vorgaben.bool(forKey: Schluessel.kuerzelHinweis) }
+        set { vorgaben.set(newValue, forKey: Schluessel.kuerzelHinweis) }
     }
 
     private init() {}

@@ -25,7 +25,7 @@ Drei Regeln, an denen sich jede Entscheidung im Programm messen lassen muss:
 ## Der Ablauf
 
 ```
-  ⌃⇧4  ────►  Auswahl auf dem      ────►  Fenster „Atelier Shot" öffnet sich
+  ⌘⇧4  ────►  Auswahl auf dem      ────►  Fenster „Atelier Shot" öffnet sich
   drücken     Bildschirm ziehen           direkt an der Stelle der Aufnahme,
                                           Bild in Originalgrösse
 
@@ -142,38 +142,72 @@ Aufnahme gemerkt.
 
 ---
 
+## Betrieb — wie das Apple-Werkzeug, nur besser
+
+Atelier Shot **ersetzt** das eingebaute Bildschirmfoto-Werkzeug, es ergänzt es
+nicht. Daraus folgt:
+
+- **Dieselben Kürzel.** `⌘⇧3` ganzer Bildschirm, `⌘⇧4` Ausschnitt, `⌘⇧5`
+  Fenster. Die Hände müssen nichts Neues lernen. Apples eigene Kürzel werden
+  dafür einmalig in den Systemeinstellungen abgeschaltet — das Programm merkt,
+  wenn das noch nicht geschehen ist, und führt direkt an die richtige Stelle.
+  Bis dahin gelten `⌃⇧3/4/5` als Ersatz.
+- **Läuft im Hintergrund.** Startet beim Anmelden von selbst, hat kein
+  Dock-Symbol und muss nie beendet werden. Sichtbar ist nur das Symbol in der
+  Menüleiste. Erst wenn ein Fenster offen ist, erscheint das Programm mit
+  Menüleiste und Dock-Symbol — und verschwindet wieder, sobald das letzte
+  Fenster zu ist.
+- **`⌘Q` beendet nicht.** Es schliesst alle Fenster, das Programm bleibt im
+  Hintergrund bereit. Beenden geht nur bewusst über das Menüleisten-Symbol.
+- **Liegt in `/Applications`.** Nur dort kann macOS es beim Anmelden zuverlässig
+  starten. `./bauen.sh installieren` legt es dorthin.
+
+---
+
 ## Einstellungen
 
-Bewusst kurz gehalten:
+Bewusst kurz gehalten, alle im Menü des Menüleisten-Symbols:
 
-- Tastenkürzel für Ausschnitt und Vollbild
-- Standard-Projektordner
-- Standardfarbe und Standardstrichstärke
-- Kürzel für den Stempel (z. B. „AA")
-- Automatisch in die Zwischenablage kopieren: ja/nein
-- Programm beim Anmelden starten: ja/nein
+- Beim Anmelden starten: ja/nein
+- Aufnahme sofort in die Zwischenablage: ja/nein
+- Ablageordner
+- Standardfarbe, Standardwerkzeug und Strichstärke merken sich von selbst
+- Kürzel für den Stempel (z. B. „AA") — ab Stufe 2
 
 ---
 
 ## Ausbaustufen
 
 **Stufe 1 — der Kern** (das, was den Alltag sofort besser macht)
-Aufnahme über Kürzel (Ausschnitt, Vollbild, Fenster) · eigenes Vorschaufenster
-in Originalgrösse · Auswählen/Verschieben · Pfeil, Linie, Rechteck, Ellipse,
-Freihand, Text, Marker · Revisionswolke · Textfahne · Nummern · Unkenntlich
-machen · Farben und Strichstärken · Rückgängig · Kopieren, Sichern, Ziehen ·
-Menüleisten-Symbol
+Aufnahme über die Apple-Kürzel (Ausschnitt, Vollbild, Fenster) · eigenes
+Vorschaufenster in Originalgrösse · Auswählen/Verschieben · Pfeil, Linie,
+Rechteck, Ellipse, Freihand, Text, Marker · Revisionswolke · Textfahne ·
+Nummern · Unkenntlich machen · **Hintergrund entfernen** (Apples
+Bilderkennung, läuft auf dem Gerät) · Farben und Strichstärken · Rückgängig ·
+Kopieren, Sichern, Ziehen, Anmerkungsliste als Text · Menüleisten-Symbol ·
+Hintergrundbetrieb mit Start beim Anmelden
 
-**Stufe 2 — die Bauwerkzeuge**
-Massstab kalibrieren und messen (Länge, Fläche, Winkel) · Stempel ·
-Lupe · Zuschneiden · PDF-Export · Anmerkungsliste als Text ·
-Projektordner mit Namensschema
+**Stufe 2 — die Bauwerkzeuge und der Projektbezug**
+**Projekt wählen nach der Aufnahme** (Liste aus dem Projektordner, ein Klick,
+Datei liegt richtig und heisst richtig) · Massstab kalibrieren und messen
+(Länge, Fläche, Winkel) · Stempel · Lupe · Zuschneiden · **Am Bildschirm
+anheften** (Aufnahme als schwebendes Fenster über Archicad liegen lassen) ·
+**Direkt als E-Mail** · PDF-Export
 
 **Stufe 3 — Kür**
-Scrollende Aufnahme langer Seiten · Texterkennung im Bild (Adresse aus einem
-Plankopf herauskopieren) · Vergleich zweier Aufnahmen nebeneinander ·
-eigene Stempel- und Werkzeugvorlagen · Umstellung der Aufnahme auf
-ScreenCaptureKit
+**Vorher/Nachher** (zwei Planstände übereinander, Transparenzregler) ·
+**Verlauf der letzten 30 Aufnahmen** · Texterkennung im Bild (Adresse aus
+einem Plankopf herauskopieren, auf dem Gerät) · Scrollende Aufnahme langer
+Seiten · Aufgabe aus dem Ausschnitt erstellen (sobald klar ist, wo die
+Aufgaben des Büros leben) · eigene Stempel- und Werkzeugvorlagen · Umstellung
+der Aufnahme auf ScreenCaptureKit
+
+**Bewusst offen: KI-Funktionen.** Ausschnitt an eine KI schicken, Planstände
+vergleichen lassen, Sprachnotizen transkribieren — alles machbar, aber dann
+verlässt das Bild das Gerät. Das widerspricht Regel 3 und ist deshalb keine
+Nebensache, sondern eine eigene Entscheidung: mit Kosten, einem Konto beim
+Anbieter und einem Schalter, der pro Bild ausdrücklich gedrückt werden muss.
+Wird erst nach Stufe 3 entschieden.
 
 ---
 
@@ -196,8 +230,13 @@ Einzelheiten und Begründungen: `RECHERCHE.md`, Abschnitte 4 und 5.
 
 - **Kein Bildbearbeitungsprogramm.** Keine Ebenen, keine Filter, keine
   Farbkorrektur.
-- **Keine Videoaufnahme** in Stufe 1 und 2. Wenn Bildschirmvideos gebraucht
-  werden, kann macOS das bereits mit `⌘⇧5`.
+- **Keine Videoaufnahme, kein GIF.** Wenn ein Bildschirmvideo gebraucht wird,
+  macht das die Bildschirmaufnahme von macOS weiterhin — sie bleibt über das
+  Launchpad erreichbar, nur das Kürzel gehört jetzt Atelier Shot.
 - **Kein Ersatz für Bluebeam.** Wer ein ganzes Plan-PDF prüft, prüft es dort.
   Atelier Shot ist für den schnellen Ausschnitt zwischendurch.
-- **Keine Cloud, kein Konto, kein Teilen-Link.**
+- **Keine Cloud, kein Konto, kein Teilen-Link, keine Grössen für Instagram.**
+  Das Büro prüft Pläne, es veröffentlicht keine Inhalte.
+- **Kein Fotowerkzeug.** Perspektive korrigieren gehört zu Baustellenfotos vom
+  Handy, nicht zu Bildschirmfotos. Farben misst der „Digital Color Meter", der
+  auf jedem Mac liegt.

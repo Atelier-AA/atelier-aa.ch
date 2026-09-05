@@ -302,6 +302,32 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
         melde("Anmerkungsliste kopiert")
     }
 
+    @objc func hintergrundEntfernen(_ absender: Any?) {
+        leinwand.beendeTextbearbeitung()
+        guard Freistellen.verfuegbar else {
+            melde("Braucht macOS 14 oder neuer")
+            return
+        }
+        melde("Hintergrund wird entfernt …")
+        Freistellen.freistellen(dokument) { [weak self] ergebnis in
+            guard let self else { return }
+            if let ergebnis {
+                self.dokument.bild = ergebnis
+                self.leinwand.needsDisplay = true
+                self.melde("Hintergrund entfernt — ⌘⌥Z stellt das Original wieder her")
+            } else {
+                self.melde("Kein Motiv erkannt")
+            }
+        }
+    }
+
+    @objc func originalWiederherstellen(_ absender: Any?) {
+        guard dokument.istFreigestellt else { return }
+        dokument.bild = dokument.originalbild
+        leinwand.needsDisplay = true
+        melde("Original wiederhergestellt")
+    }
+
     @objc func rueckgaengigAktion(_ absender: Any?) { leinwand.zurueck() }
     @objc func wiederherstellenAktion(_ absender: Any?) { leinwand.vor() }
     @objc func alleAnmerkungenEntfernen(_ absender: Any?) { leinwand.alleEntfernen() }
@@ -331,6 +357,10 @@ final class EditorFenster: NSWindowController, NSWindowDelegate, LeinwandDelegat
             return dokument.kannVor
         case #selector(listeKopieren(_:)):
             return !dokument.anmerkungsliste().isEmpty
+        case #selector(hintergrundEntfernen(_:)):
+            return Freistellen.verfuegbar && !dokument.istFreigestellt
+        case #selector(originalWiederherstellen(_:)):
+            return dokument.istFreigestellt
         case #selector(werkzeugAusMenue(_:)):
             if let roh = menuItem.representedObject as? String {
                 menuItem.state = (roh == leinwand.werkzeug.rawValue) ? .on : .off

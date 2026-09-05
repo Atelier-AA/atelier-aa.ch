@@ -192,7 +192,12 @@ struct Anmerkung {
 /// Bild plus Anmerkungen plus Verlauf. Kennt keine Ansicht.
 final class Dokument {
 
-    let bild: NSImage
+    /// Das Bild, wie es gezeigt und exportiert wird. Kann durch
+    /// "Hintergrund entfernen" ersetzt werden — das Original bleibt erhalten.
+    var bild: NSImage
+    let originalbild: NSImage
+    var istFreigestellt: Bool { bild !== originalbild }
+
     /// Groesse in Bildschirmpunkten — so gross war der Ausschnitt auf dem Schirm.
     let punktGroesse: CGSize
     /// Groesse in echten Bildpunkten der Datei.
@@ -210,6 +215,7 @@ final class Dokument {
 
     init(bild: NSImage, punktGroesse: CGSize, pixelGroesse: CGSize) {
         self.bild = bild
+        self.originalbild = bild
         self.punktGroesse = punktGroesse
         self.pixelGroesse = pixelGroesse
     }
